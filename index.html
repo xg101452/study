@@ -1129,7 +1129,7 @@ var SHARED_TRACKS = [
   {name:'说好不哭 — 周杰伦 / 五月天阿信', url:'shuohaobuku.mp3'}
 ];
 var noiseCtx = null, noiseNodes = null, noiseType = '', noisePaused = false;
-var musicCache = {}, musicPending = {}, musicBuffering = false, musicLoadSeq = 0;
+var musicBuffering = false;
 
 function musicInit(){
   musicAudio = new Audio();
@@ -1144,6 +1144,10 @@ function musicInit(){
   musicAudio.addEventListener('play', musicUI);
   musicAudio.addEventListener('pause', musicUI);
   musicAudio.addEventListener('ended', musicNext);
+  musicAudio.addEventListener('waiting', function(){ musicBuffering = true; musicUI(); });
+  musicAudio.addEventListener('stalled', function(){ musicBuffering = true; musicUI(); });
+  musicAudio.addEventListener('playing', function(){ musicBuffering = false; musicUI(); });
+  musicAudio.addEventListener('canplay', function(){ if(!musicAudio.paused) musicBuffering = false; musicUI(); });
   for(var si=0; si<SHARED_TRACKS.length; si++){
     if(SHARED_TRACKS[si] && SHARED_TRACKS[si].url){ musicTracks.push({name:SHARED_TRACKS[si].name, url:SHARED_TRACKS[si].url}); }
   }
@@ -1170,9 +1174,9 @@ function musicUI(){
   var tr = musicTracks[musicIdx];
   t.textContent = tr ? tr.name : '还没有音乐';
   if(musicBuffering){
-    tm.textContent = '正在缓冲整首歌…';
-    seek.value = 0;
-    play.textContent = '…';
+    tm.textContent = '正在缓冲…';
+    seek.value = musicAudio.duration ? Math.round(musicAudio.currentTime / musicAudio.duration * 1000) : 0;
+    play.textContent = musicAudio.paused ? '▶' : '⏸';
     return;
   }
   tm.textContent = fmtTime(musicAudio.currentTime) + ' / ' + fmtTime(musicAudio.duration);
@@ -1212,76 +1216,21 @@ function musicAddFiles(files){
   if(musicIdx < 0 && musicTracks.length){ musicIdx = 0; musicLoad(0, false); }
   renderMusicList(); musicUI();
 }
-function musicTrackUrlReady(tr){
-  return tr && /^(blob:|data:)/.test(tr.url);
-}
-function musicFetchTrack(tr){
-  if(musicCache[tr.url]) return Promise.resolve(musicCache[tr.url]);
-  if(musicPending[tr.url]) return musicPending[tr.url];
-  var p = fetch(tr.url, {cache:'force-cache'}).then(function(res){
-    if(!res.ok) throw new Error('HTTP ' + res.status);
-    return res.blob();
-  }).then(function(blob){
-    var u = URL.createObjectURL(blob);
-    musicCache[tr.url] = u;
-    delete musicPending[tr.url];
-    return u;
-  }).catch(function(err){
-    delete musicPending[tr.url];
-    throw err;
-  });
-  musicPending[tr.url] = p;
-  return p;
-}
 function musicLoad(i, autoplay){
   if(i < 0 || i >= musicTracks.length) return;
   noiseStop();
-  var seq = ++musicLoadSeq;
   musicIdx = i;
   var tr = musicTracks[i];
+  musicBuffering = false;
   musicAudio.pause();
-  if(musicTrackUrlReady(tr)){
-    musicBuffering = false;
-    musicAudio.src = tr.url;
-    musicAudio.load();
-    if(autoplay){ var p = musicAudio.play(); if(p && p.catch) p.catch(function(){}); }
-    renderMusicList(); musicUI();
-    return;
-  }
-  if(musicCache[tr.url]){
-    musicBuffering = false;
-    musicAudio.src = musicCache[tr.url];
-    musicAudio.load();
-    if(autoplay){ var p2 = musicAudio.play(); if(p2 && p2.catch) p2.catch(function(){}); }
-    renderMusicList(); musicUI();
-    return;
-  }
-  // 共享歌曲先整首下载到内存再播放，避免边下边播造成卡顿；本地添加的歌仍即时播放。
-  musicBuffering = true;
-  musicAudio.removeAttribute('src');
+  musicAudio.src = tr.url;
   musicAudio.load();
+  if(autoplay){ var p = musicAudio.play(); if(p && p.catch) p.catch(function(){}); }
   renderMusicList(); musicUI();
-  musicFetchTrack(tr).then(function(u){
-    if(seq !== musicLoadSeq || musicIdx !== i) return;
-    musicBuffering = false;
-    musicAudio.src = u;
-    musicAudio.load();
-    if(autoplay){ var p3 = musicAudio.play(); if(p3 && p3.catch) p3.catch(function(){}); }
-    renderMusicList(); musicUI();
-  }).catch(function(){
-    if(seq !== musicLoadSeq || musicIdx !== i) return;
-    musicBuffering = false;
-    // 缓冲失败时退回普通流式播放，至少不影响听歌。
-    musicAudio.src = tr.url;
-    musicAudio.load();
-    if(autoplay){ var p4 = musicAudio.play(); if(p4 && p4.catch) p4.catch(function(){}); }
-    renderMusicList(); musicUI();
-  });
 }
 function musicToggle(){
   if(noiseType){ noisePauseToggle(); return; }
   if(!musicTracks.length){ document.getElementById('musicFile').click(); return; }
-  if(musicBuffering) return;
   if(musicIdx < 0){ musicLoad(0, true); return; }
   if(!musicAudio.src){ musicLoad(musicIdx, true); return; }
   if(musicAudio.paused){ var p = musicAudio.play(); if(p && p.catch) p.catch(function(){}); }
@@ -1315,13 +1264,8 @@ function musicRemove(i){
   var tr = musicTracks[i]; if(!tr) return;
   try{ URL.revokeObjectURL(tr.url); }catch(e){}
   var was = musicIdx;
-  if(musicCache[tr.url]){
-    try{ URL.revokeObjectURL(musicCache[tr.url]); }catch(e){}
-    delete musicCache[tr.url];
-  }
   musicTracks.splice(i, 1);
   if(i === was){
-    musicLoadSeq++;
     musicBuffering = false;
     musicAudio.pause(); musicAudio.removeAttribute('src'); musicAudio.load(); musicIdx = -1;
     if(musicTracks.length){ musicIdx = Math.min(i, musicTracks.length - 1); musicLoad(musicIdx, false); }
