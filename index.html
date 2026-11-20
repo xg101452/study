@@ -226,6 +226,7 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:none;ba
 .mrow button.ghost:hover{background:#f6f2e9}
 .mrow button.danger{background:#fff;border-color:#e8c4be;color:var(--c4)}
 .mnote{margin-top:9px;font-size:12px;color:var(--c1);min-height:18px}
+#acctBtn{max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #acctBtn.on{background:var(--c1bg);border-color:#a8cfdd;color:#0b5a75;font-weight:700}
 .acct-box{width:min(520px,94vw)}
 .acct-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
@@ -269,6 +270,9 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:none;ba
 }
 @media(max-width:900px){
   .burger{display:block}
+  .top-r{gap:6px}
+  .tbtn{font-size:11.6px;padding:5px 9px}
+  .brand b{font-size:14px}
   aside{position:fixed;left:0;top:58px;bottom:0;width:272px;flex-basis:auto;z-index:40;transform:translateX(-102%);transition:transform .22s ease;box-shadow:0 8px 30px rgba(20,32,43,.18)}
   aside.open{transform:none}
   .brand span{display:none}
@@ -1709,10 +1713,10 @@ async function loadAdminData(){
     var totalA = 0, totalR = 0, active = 0, i, r, s;
     for(i = 0; i < rows.length; i++){
       s = rows[i].s;
-      if(s){ totalA += (+s.answered || 0); totalR += (+s.right || 0); if((+s.answered || 0) > 0 || s.lastActive) active++; }
+      if(s){ totalA += (+s.answered || 0); totalR += (+s.right || 0); if((+s.answered || 0) > 0) active++; }
     }
     var avg = totalA ? Math.round(totalR / totalA * 100) : 0;
-    var h = '<div class="admin-sum"><div><b>' + rows.length + '</b><span>账号总数</span></div><div><b>' + active + '</b><span>已有学习记录</span></div><div><b>' + totalA + '</b><span>合计已答</span></div><div><b>' + avg + '%</b><span>整体正确率</span></div></div>';
+    var h = '<div class="admin-sum"><div><b>' + rows.length + '</b><span>账号总数</span></div><div><b>' + active + '</b><span>有答题记录</span></div><div><b>' + totalA + '</b><span>合计已答</span></div><div><b>' + avg + '%</b><span>整体正确率</span></div></div>';
     h += '<table class="admin-table"><thead><tr><th>账号</th><th>角色</th><th>最后活跃</th><th>上次学习</th><th>已答</th><th>正确</th><th>错误</th><th>正确率</th><th>学习天数</th><th>待复习</th></tr></thead><tbody>';
     for(i = 0; i < rows.length; i++){
       r = rows[i]; s = r.s;
@@ -1879,6 +1883,9 @@ setInterval(function(){
   try{ sig = JSON.stringify(collectProgress()); }catch(e){ return; }
   if(sig !== lastCloudSig) scheduleCloudSync();
 }, 4000);
+document.addEventListener('visibilitychange', function(){
+  if(document.hidden && accountState && accountState.dk && !cloudBusy) syncCloud(true);
+});
 </script>
 <div style="position:fixed;left:50%;transform:translateX(-50%);bottom:6px;z-index:9999;font-size:12px;color:#a8987f;letter-spacing:.12em;opacity:.7;pointer-events:none;font-family:inherit">香菇喜欢你 · 小野诗</div></body>
 </html>
