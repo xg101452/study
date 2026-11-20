@@ -856,7 +856,7 @@ function homeSearchRender(v){
   box.classList.add('show');
 }
 
-var anchorSeq = 0;
+var anchorSeq = 0, pendingAnchor = '', pendingAnchorSeq = 0;
 function scrollToAnchor(anchor, seq){
   if(!seq) seq = ++anchorSeq;
   var tries = 0;
@@ -880,7 +880,9 @@ function scrollToAnchor(anchor, seq){
       }
       el.style.scrollMarginTop = '18px';
       el.classList.add('tyz-hit');
-      var y = el.getBoundingClientRect().top + (d.documentElement.scrollTop || d.body.scrollTop || 0) - 14;
+      var toc = d.querySelector('.toc');
+      var offset = (toc && toc.offsetHeight ? toc.offsetHeight : 0) + 14;
+      var y = el.getBoundingClientRect().top + (d.documentElement.scrollTop || d.body.scrollTop || 0) - offset;
       d.documentElement.style.scrollBehavior = 'auto';
       d.documentElement.scrollTop = y;
       d.body.scrollTop = y;
@@ -891,15 +893,52 @@ function scrollToAnchor(anchor, seq){
   step();
 }
 
+function bindFrameLinks(){
+  var d;
+  try{ d = frame.contentDocument; }catch(e){ return; }
+  if(!d || d.__tyzLinksBound) return;
+  d.__tyzLinksBound = true;
+  d.addEventListener('click', function(ev){
+    var el = ev.target;
+    while(el && el !== d && el.tagName !== 'A') el = el.parentNode;
+    if(!el || el.tagName !== 'A') return;
+    var href = el.getAttribute('href') || '';
+    if(href.indexOf('#/') === 0){
+      ev.preventDefault();
+      location.hash = href;
+      return;
+    }
+    if(href.charAt(0) !== '#' || href.length < 2) return;
+    ev.preventDefault();
+    var a = href.slice(1);
+    scrollToAnchor(a);
+    try{
+      var t = '#/' + viewName + '@' + a;
+      if(location.hash !== t) history.replaceState(null, '', t);
+    }catch(e){}
+  }, true);
+}
+
+frame.addEventListener('load', function(){
+  bindFrameLinks();
+  if(pendingAnchor && pendingAnchorSeq === anchorSeq){
+    var a = pendingAnchor, s = pendingAnchorSeq;
+    pendingAnchor = '';
+    scrollToAnchor(a, s);
+  }
+});
+
 function openDoc(id, noPush, anchor){
   var d = DOCS[id];
   if(!d){ homeView(noPush); return; }
   homeEl.style.display = 'none';
   frame.style.display = 'block';
-  anchorSeq++;
-  frame.onload = null;
+  var seq = ++anchorSeq;
+  pendingAnchor = anchor || '';
+  pendingAnchorSeq = seq;
   frame.srcdoc = dec(d.b);
-  if(anchor) scrollToAnchor(anchor, anchorSeq);
+  setTimeout(bindFrameLinks, 250);
+  if(anchor) setTimeout(function(){ scrollToAnchor(anchor, seq); }, 900);
   viewName = id;
   lsSet('tyz2027:last', id);
   var v = visited();
