@@ -277,7 +277,7 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:none;ba
     <div class="mp-list" id="mpList"></div>
     <div class="mp-foot"><button class="mp-add" onclick="document.getElementById('musicFile').click()">＋ 本地添加（仅自己可听）</button><button class="mp-hide" onclick="hideMusic()">隐藏</button></div>
     <input type="file" id="musicFile" accept="audio/*" multiple style="display:none" onchange="musicAddFiles(this.files)">
-    <div class="mp-hint">站内共享：内置《句号》，所有访问者都能听；「本地添加」只保存在你这台设备，不会上传或共享。</div>
+    <div class="mp-hint">站内共享：内置《句号》《说好不哭》，所有访问者都能听；「本地添加」只保存在你这台设备，不会上传或共享。</div>
   </div>
 </div>
 
@@ -934,7 +934,10 @@ function route(){
 }
 
 var musicTracks = [], musicIdx = -1, musicAudio = null;
-var DEFAULT_TRACK = {name:'句号 — G.E.M.邓紫棋', url:'juhao.mp3'};
+var SHARED_TRACKS = [
+  {name:'句号 — G.E.M.邓紫棋', url:'juhao.mp3'},
+  {name:'说好不哭 — 周杰伦 / 五月天阿信', url:'shuohaobuku.mp3'}
+];
 var noiseCtx = null, noiseNodes = null, noiseType = '', noisePaused = false;
 
 function musicInit(){
@@ -950,7 +953,10 @@ function musicInit(){
   musicAudio.addEventListener('play', musicUI);
   musicAudio.addEventListener('pause', musicUI);
   musicAudio.addEventListener('ended', musicNext);
-  if(DEFAULT_TRACK && DEFAULT_TRACK.url){ musicTracks.push({name:DEFAULT_TRACK.name, url:DEFAULT_TRACK.url}); musicIdx = 0; }
+  for(var si=0; si<SHARED_TRACKS.length; si++){
+    if(SHARED_TRACKS[si] && SHARED_TRACKS[si].url){ musicTracks.push({name:SHARED_TRACKS[si].name, url:SHARED_TRACKS[si].url}); }
+  }
+  if(musicTracks.length){ musicIdx = 0; }
   renderMusicList();
   musicUI();
 }
