@@ -1814,7 +1814,7 @@ function setAcctMsg(text, kind){
 function renderAccountUI(){
   var b = document.getElementById('acctBtn');
   if(b){
-    b.textContent = accountState ? (accountState.role === 'admin' ? accountState.name + ' · 管理员' : accountState.name) : '登录';
+    b.textContent = accountState ? (accountState.role === 'admin' ? '管理员' : accountState.name) : '登录';
     b.classList.toggle('on', !!accountState);
     b.title = accountState ? '账号中心' : '账号登录';
   }
