@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>橘子 · 隐私政策</title>
+<style>
+  :root{--paper:#fff8ee;--card:#fffdf8;--ink:#3b2d25;--soft:#6e5b4e;--muted:#9b8878;--line:#eadccb;--orange:#d96b12}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.85 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:28px 22px 56px}
+  .top{padding:20px 22px;border-radius:22px;background:linear-gradient(135deg,#f8b45b,#e97d26);color:#fff;box-shadow:0 12px 30px rgba(217,107,18,.16)}
+  .top h1{margin:0;font-size:26px;letter-spacing:.06em}
+  .top p{margin:8px 0 0;font-size:13px;opacity:.92}
+  h2{margin:28px 0 10px;font-size:18px;color:var(--orange)}
+  h3{margin:18px 0 6px;font-size:15px;color:var(--ink)}
+  p{margin:8px 0;color:var(--soft)}
+  ul{margin:8px 0 0;padding-left:22px;color:var(--soft)}
+  li{margin:5px 0}
+  .card{margin-top:18px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:18px}
+  .note{font-size:13px;color:var(--muted)}
+  code{background:#f6ede1;padding:1px 5px;border-radius:5px;font-size:13px;color:#8a5a00}
+  a{color:var(--orange);word-break:break-all}
+  .foot{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1>橘子 · 隐私政策</h1>
+    <p>生效日期：2026 年 11 月 21 日　｜　版本 1.1.1　｜　适用于“橘子”Android 应用及配套学习站</p>
+  </div>
+
+  <p>“橘子”是一个为四川专升本计算机基础备考准备的学习工具。我们把数据分成两类：一类只留在你的手机上；另一类只有在你主动登录账号、使用云同步或提交反馈时，才会传输到 Supabase。下面讲清楚每一类数据是什么、为什么处理、保存多久，以及你怎样删除。</p>
+
+  <h2>一、我们处理哪些信息</h2>
+  <div class="card">
+    <h3>1. 本机刷题、错题和学习统计</h3>
+    <p>你在 App 内做判断题、单选题、多选题、填空题时，App 会在本机记录题目编号、作答结果、作答时间、错题次数和学习统计，存放在 App 私有数据库中。未登录时这些数据不会离开手机；登录后，App 会把答题记录、错题和错题次数同步到 Supabase，以便换设备继续复习。</p>
+    <p>你可以在“设置与帮助 → 清除本机刷题数据”删除本机记录；注销账号会同时删除 Supabase 中属于该账号的数据。</p>
+
+    <h3>2. 邮箱账号与登录状态</h3>
+    <p>App 使用 Supabase Auth 提供邮箱登录和自助注册。登录时 Supabase 会处理你的邮箱、加密后的密码凭据、用户 ID、邮箱确认状态和登录令牌；App 会在本机保存访问令牌与刷新令牌，用于返回 App 后保持登录，避免重复输入密码。</p>
+    <p>内部账号和外部体验账号的权限不同：内部账号可查看完整 7 章资料和 55 道原生题；外部自助注册账号和未登录用户只能查看第一章资料、体验题等部分内容。内部账号由站长在后台标记，普通注册不会自动获得完整权限。</p>
+
+    <h3>3. 网站学习进度、错题和做题记录</h3>
+    <p>当你登录学习站时，网站会把学习进度、错题状态和部分答题记录保存到 Supabase 的 <code>study_progress</code>、<code>wrong_questions</code>、<code>attempts</code> 表，用于跨设备同步。网站仍会使用浏览器本地存储保存当前页面的学习状态；清除浏览器数据会删除本机副本。</p>
+
+    <h3>4. 意见反馈与截图</h3>
+    <p>你可以在 App 的“我的 → 意见反馈”提交 Bug、功能建议、题库纠错或其他反馈，并可选择上传截图。反馈内容会写入 Supabase 的 <code>feedback</code> 表；截图会存入私有的 <code>feedback-images</code> 存储桶，路径以你的用户 ID 开头，仅用于排查问题和改进题库。未登录时只允许提交纯文字反馈；截图上传需要登录账号。</p>
+    <p>反馈内容最多 2000 字，图片单张不超过 5MB。请不要在反馈中填写身份证号、银行卡号、密码等敏感信息。</p>
+
+    <h3>5. 学习提醒与导出</h3>
+    <p>每日学习提醒的开关和时间只保存在本机，通过 Android 通知触发；不开启不影响刷题。导出刷题记录使用 Android 系统文件选择器，由你决定保存位置，App 不会在后台读取你的文件。</p>
+  </div>
+
+  <h2>二、设备权限</h2>
+  <div class="card">
+    <ul>
+      <li><b>网络与网络状态</b>：用于 Supabase 登录/同步、打开学习站和提交反馈。</li>
+      <li><b>通知</b>：仅用于你主动开启的每日学习提醒。</li>
+      <li><b>开机广播</b>：用于重启手机后恢复你已开启的学习提醒。</li>
+      <li><b>文件选择</b>：仅在你主动选择反馈截图或导出 JSON 时，通过 Android 系统选择器读取你指定的文件。</li>
+    </ul>
+    <p class="note">App 不申请读取通讯录、短信、位置、相机、麦克风或电话状态的权限；不使用广告 SDK，不进行个性化广告推送，不向第三方出售个人信息。</p>
+  </div>
+
+  <h2>三、第三方服务</h2>
+  <div class="card">
+    <ul>
+      <li><b>Supabase</b>：提供邮箱账号、数据库、学习进度/错题/答题记录、反馈和私有截图存储。项目区域为东京（Northeast Asia / ap-northeast-1）。<br><a href="https://supabase.com/privacy" target="_blank" rel="noreferrer">Supabase 隐私政策</a></li>
+      <li><b>GitHub Pages</b>：托管学习站静态页面，访问时可能记录常规访问日志（IP、时间、请求路径）。<br><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noreferrer">GitHub 隐私声明</a></li>
+    </ul>
+    <p class="note">原生刷题、错题本、学习提醒和导出文件不经过 GitHub Pages；只有你登录或使用云同步时，相关数据才会写入 Supabase。第三方服务可能按照其自身政策在境外处理数据；如你不同意，请不要登录账号或使用云同步，仍可使用本机刷题和第一章体验内容。</p>
+  </div>
+
+  <h2>四、保存期限与安全</h2>
+  <p>本机数据保存到你在 App 内清除、注销账号或卸载 App 为止。Supabase 中的账号、学习进度、错题、答题记录和反馈，保存到账号被注销或你联系开发者删除为止；注销账号后，业务表通过外键级联删除，私有截图随账号数据清理。我们使用 HTTPS 传输，并禁止 App 使用明文 HTTP；数据库启用行级安全策略，每个登录用户只能访问自己的数据。任何网络传输都无法承诺绝对安全。</p>
+
+  <h2>五、你的权利</h2>
+  <ul>
+    <li><b>查询/复制</b>：在 App 内查看刷题统计，使用“导出本机刷题记录”；在“我的”查看当前账号类型和邮箱。</li>
+    <li><b>删除本机数据</b>：设置 → 清除本机刷题数据。</li>
+    <li><b>注销账号</b>：App “我的 → 注销账号”，输入“注销”确认后，Supabase 账号及关联数据会立即删除；网站账号面板也提供注销入口。注销不可恢复。</li>
+    <li><b>撤回同意</b>：退出登录、关闭学习提醒，或不再使用联网功能；撤回不影响此前基于同意进行的处理。</li>
+  </ul>
+
+  <h2>六、未成年人</h2>
+  <p>本应用面向备考专升本的学习者，不专门面向 14 周岁以下儿童。如果你未满 14 周岁，请在监护人陪同下阅读本政策并使用；监护人不同意时，请不要使用联网的账号、云同步和反馈功能。我们不会主动收集未成年人的身份信息。</p>
+
+  <h2>七、联系我们</h2>
+  <p>开发者：橘子 App 开发者（个人开发者）<br>
+  联系通道：<a href="https://github.com/xg101452/study/issues" target="_blank" rel="noreferrer">github.com/xg101452/study/issues</a><br>
+  我们会在 15 个工作日内回复隐私相关请求。</p>
+
+  <h2>八、政策更新</h2>
+  <p>如果功能、第三方服务或法律要求发生变化，我们会更新本页并在应用内提示；重大变化会重新取得你的同意。当前版本：1.1.1。</p>
+
+  <p class="foot">橘子是个人备考工具，不是四川省教育考试院官方应用；考试政策、报名与成绩信息请以官方发布为准。本页同时作为应用商店上架所需的隐私政策公开链接。<br>公开地址：<a href="https://paste.rs/0wVIc.md" target="_blank" rel="noreferrer">https://paste.rs/0wVIc.md</a></p>
+</div>
+</body>
+</html>
+
