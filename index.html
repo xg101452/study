@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://miaoda.feishu.cn; font-src 'self' data: https://sf3-scmcdn-cn.feishucdn.com; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' https://vassdtgvjjowlldnncad.supabase.co; frame-src 'self' data: blob:; form-action 'self'" />
 <title>小野寺 · 计算机基础手帐｜2027 四川专升本</title>
 <meta name="description" content="2027 四川统招专升本计算机基础：21 课讲义、7 册专项练习与冲刺测试、2026 真题定位、即时判分与进度记录。" />
 <link rel="preload" as="style" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -644,10 +646,10 @@ main{background:transparent}
           </div>
           <div id="suGateRegisterPane" style="display:none">
             <label>邮箱<input id="suGateRegEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
-            <label>密码<input id="suGateRegPass" type="password" autocomplete="new-password" placeholder="至少 6 位"></label>
+            <label>密码<input id="suGateRegPass" type="password" autocomplete="new-password" placeholder="至少 8 位"></label>
             <label>昵称（可选）<input id="suGateRegName" autocomplete="nickname" placeholder="例如 小橘"></label>
             <button type="button" class="acct-primary" id="suGateRegisterBtn" onclick="supaLoginFlow('suGate',true)">注册</button>
-            <div class="supa-note" style="font-size:10.5px;color:#7f8f96;line-height:1.6">注册后需要到邮箱点击确认链接，再回来登录。</div>
+            <div class="supa-note" style="font-size:10.5px;color:#7f8f96;line-height:1.6">注册后直接登录；建议用常用邮箱，方便以后找回密码。</div>
           </div>
           <div class="acct-status" id="suGateMsg"></div>
         </div>
@@ -731,7 +733,7 @@ main{background:transparent}
         </div>
         <div id="suAcctRegisterPane" style="display:none">
           <label>邮箱<input id="suAcctRegEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
-          <label>密码<input id="suAcctRegPass" type="password" autocomplete="new-password" placeholder="至少 6 位"></label>
+          <label>密码<input id="suAcctRegPass" type="password" autocomplete="new-password" placeholder="至少 8 位"></label>
           <label>昵称（可选）<input id="suAcctRegName" autocomplete="nickname" placeholder="例如 小橘"></label>
           <button type="button" class="acct-primary" id="suAcctRegisterBtn" onclick="supaLoginFlow('suAcct',true)">注册</button>
         </div>
@@ -1044,8 +1046,8 @@ function errCard(e){
     (e.user?'<div class="eans euser"><b>你的答案：</b>' + esc(e.user) + '</div>':'') +
     (e.explain?'<div class="explain">' + esc(e.explain) + '</div>':'') +
     '<div class="eacts">' +
-    '<button class="ok" onclick="toggleFixed(\'' + e.id + '\')">' + (e.fixed?'标记未掌握':'标记已掌握') + '</button>' +
-    '<button class="del" onclick="removeErr(\'' + e.id + '\')">移出错题集</button>' +
+    '<button class="ok" data-id="' + esc(e.id) + '" onclick="toggleFixed(this.dataset.id)">' + (e.fixed?'标记未掌握':'标记已掌握') + '</button>' +
+    '<button class="del" data-id="' + esc(e.id) + '" onclick="removeErr(this.dataset.id)">移出错题集</button>' +
     (lid?'<a href="#/' + lid + '">回第' + e.lesson + '课复习 →</a>':'') +
     (c?'<a href="#/' + c.book + '">打开本章练习册 →</a>':'') +
     '</div></div>';
@@ -2466,7 +2468,7 @@ document.addEventListener('visibilitychange', function(){
   if(document.hidden && accountState && accountState.dk && !cloudBusy) syncCloud(true);
 });
 </script>
-<div class="site-signature" style="position:fixed;left:50%;transform:translateX(-50%);bottom:6px;z-index:9999;font-size:12px;color:#a8987f;letter-spacing:.12em;opacity:.7;pointer-events:none;font-family:inherit">香菇喜欢你 · 小野寺 · v1.2.0</div>
+<div class="site-signature" style="position:fixed;left:50%;transform:translateX(-50%);bottom:6px;z-index:9999;font-size:12px;color:#a8987f;letter-spacing:.12em;opacity:.7;pointer-events:none;font-family:inherit">香菇喜欢你 · 小野寺 · v1.3.0</div>
 <script>
 /* ===== 橘子 Supabase 兼容层：邮箱登录、进度/错题/答题同步、注销 ===== */
 (function(){
@@ -2787,14 +2789,15 @@ document.addEventListener('visibilitychange', function(){
     var pass = (passEl && passEl.value || '');
     var name = (nameEl && nameEl.value || '').trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ supaMsg(prefix, '请输入有效邮箱', 'err'); return; }
-    if(pass.length < 6){ supaMsg(prefix, '密码至少 6 位', 'err'); return; }
+    if(isRegister && pass.length < 8){ supaMsg(prefix, '注册密码至少 8 位', 'err'); return; }
+    if(!pass){ supaMsg(prefix, '请输入密码', 'err'); return; }
     var label = btn ? btn.textContent : '';
     if(btn){ btn.disabled = true; btn.textContent = isRegister ? '正在注册…' : '正在登录…'; }
     supaMsg(prefix, isRegister ? '正在创建账号…' : '正在连接 Supabase…', '');
     try{
       var s = isRegister ? await supaRegister(email, pass, name) : await supaLogin(email, pass);
       if(isRegister && (!s || !s.access_token)){
-        supaMsg(prefix, '注册成功，请到邮箱点击确认链接后再登录。', 'ok');
+        supaMsg(prefix, '注册成功，请直接登录。', 'ok');
         if(passEl) passEl.value = '';
         return;
       }
@@ -2960,6 +2963,16 @@ document.addEventListener('visibilitychange', function(){
   restoreSession();
   // 启动恢复阶段先隐藏登录表单，避免已登录用户看到登录页再跳内容
   setTimeout(function(){ document.body.classList.remove('booting'); }, 120);
+})();
+</script>
+<script>
+(function(){
+  try{
+    if(window.top !== window.self && document.getElementById('frame') && document.getElementById('home')){
+      document.documentElement.style.visibility = 'hidden';
+      try{ window.top.location = window.location.href; }catch(e){}
+    }
+  }catch(e){}
 })();
 </script>
 </body>
