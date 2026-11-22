@@ -320,6 +320,123 @@ body.locked .auth-gate{display:grid}
   .card h3{font-size:15px}
   .cont b{font-size:13px}
 }
+
+/* 2026-11-22 首页与站内搜索版式修正 */
+.home{overflow-x:hidden}
+.home-wrap{width:100%}
+.hero{grid-template-columns:minmax(0,1.05fr) minmax(280px,390px);gap:clamp(16px,2vw,26px);padding:clamp(22px,2.6vw,32px)}
+.hero h1{font-size:clamp(29px,3.5vw,42px)}
+.hero p{max-width:580px}
+.hero-art{min-height:340px}
+.cont b{flex:1;min-width:0}
+.search-page{max-width:1120px}
+.search-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 304px;gap:26px;padding:30px 32px 26px;border:1px solid #ebd9e0;border-radius:26px;background:linear-gradient(135deg,#fffdfb 0%,#fff4f5 48%,#f1f5fb 100%);box-shadow:0 18px 46px rgba(99,68,79,.10);overflow:hidden}
+.search-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 86% 8%,rgba(238,171,184,.22),transparent 34%),radial-gradient(circle at 8% 100%,rgba(110,139,181,.12),transparent 38%);pointer-events:none}
+.search-hero-copy{position:relative;z-index:2;min-width:0}
+.search-kicker{font-size:10.5px;letter-spacing:.2em;color:#a76072;font-weight:700}
+.search-hero h1{font-family:"Noto Serif SC",serif;font-size:clamp(28px,3vw,40px);line-height:1.2;letter-spacing:.05em;margin:8px 0 8px;color:#332831}
+.search-hero h1 em{font-style:normal;color:#b4566d;white-space:nowrap;text-decoration:underline;text-decoration-color:rgba(230,151,168,.32);text-decoration-thickness:7px;text-underline-offset:-4px}
+.search-hero p{margin:0 0 16px;max-width:650px;color:#73616b;font-size:13px;line-height:1.85}
+.search-field{background:#fffdfa;border:2px solid #e6c7d1;border-radius:16px;padding:6px 8px 6px 13px;box-shadow:0 8px 24px rgba(182,91,115,.09)}
+.search-field input{font-size:16px;padding:10px 6px}
+.search-field .sbtn{background:#b65b73;border-radius:10px;padding:10px 17px;font-size:13px}
+.search-kinds{margin:12px 0 3px}
+.search-kinds button{font-size:12px;padding:4px 12px}
+.search-kinds button.on{background:#fbe8ee;border-color:#e2b9c5;color:#8f3c54}
+.search-hint{font-size:11.5px;color:#8a7580;margin:6px 0 0}
+.search-stats{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.search-stats span{font-size:10.5px;color:#8a737e;background:#fffaf8;border:1px solid #ecdde4;border-radius:20px;padding:4px 9px}
+.search-stats b{font-family:"Noto Serif SC",serif;font-size:15px;color:#a65069;margin-right:2px}
+.search-hero-art{position:relative;z-index:2;min-height:300px;border:1px solid #e6d6dd;border-radius:18px;overflow:hidden;background-color:#fffaf8;background-size:cover;background-position:center 22%;box-shadow:8px 10px 0 rgba(103,74,83,.06)}
+.search-hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(255,249,247,.94) 100%)}
+.search-art-cap{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:10px 14px 12px;font-family:"Noto Serif SC",serif;font-size:11px;color:#6b5360;letter-spacing:.03em;text-align:center}
+.search-body{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:16px;margin-top:14px;align-items:start}
+.search-main{min-width:0}
+.search-side{display:flex;flex-direction:column;gap:12px}
+.side-card{background:#fffdfb;border:1px solid #ecdde4;border-radius:16px;padding:14px 16px;box-shadow:0 8px 22px rgba(99,68,79,.05)}
+.side-card h4{margin:0 0 9px;font-family:"Noto Serif SC",serif;font-size:14px;color:#3b2d36}
+.side-card p{margin:7px 0;font-size:11.7px;line-height:1.75;color:#7c6872}
+.side-card ul{margin:0;padding-left:17px;color:#7c6872;font-size:11.7px;line-height:1.8}
+.side-card .chip{margin:0 4px 5px 0}
+.side-link{display:grid;grid-template-columns:1fr auto;gap:2px 8px;align-items:center;text-decoration:none;border-top:1px dashed #eadde4;padding:8px 0;color:#5c4d57}
+.side-link:first-of-type{border-top:0;padding-top:2px}
+.side-link span{font-size:10.5px;color:#a45c6f;grid-column:1;grid-row:1}
+.side-link b{font-size:12px;font-weight:700;grid-column:1;grid-row:2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.side-link i{grid-column:2;grid-row:1/3;font-style:normal;color:#b65b73;font-size:15px}
+.side-link:hover b{color:#8f3c54}
+.side-note{background:linear-gradient(135deg,#fffaf8,#f6f0ea);color:#7c6872;font-size:11.5px;line-height:1.75}
+.side-note b{color:#a65069}
+.search-discovery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.disc-card{background:#fffdfb;border:1px solid #ecdde4;border-radius:17px;padding:15px 17px;box-shadow:0 8px 22px rgba(99,68,79,.05)}
+.disc-card.disc-wide{grid-column:1/-1}
+.disc-head{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.disc-ico{width:23px;height:23px;border-radius:8px;display:grid;place-items:center;background:#fbe8ee;color:#9b435c;font-family:"Noto Serif SC",serif;font-size:12px;font-weight:700}
+.disc-head h4{margin:0;font-family:"Noto Serif SC",serif;font-size:14px;color:#3b2d36}
+.disc-card p{margin:2px 0 9px;color:#8a7580;font-size:11.5px;line-height:1.65}
+.chap-list{display:flex;flex-wrap:wrap;gap:6px}
+.chap-list a{font-size:11.3px;line-height:1.6;text-decoration:none;color:#5f5059;background:#fffbf8;border:1px solid #eddde4;border-radius:7px;padding:3px 8px}
+.chap-list a:hover{background:#fbe9ee;border-color:#e2b9c5;color:#95465d}
+.quick-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.quick-links a{display:block;text-decoration:none;background:#fffaf8;border:1px solid #eddde4;border-radius:10px;padding:9px 11px;transition:.15s}
+.quick-links a:hover{background:#fbe9ee;border-color:#e2b9c5;transform:translateY(-1px)}
+.quick-links b{display:block;font-size:12.3px;color:#8f3c54}
+.quick-links span{display:block;margin-top:2px;font-size:10.5px;color:#8a7580;line-height:1.5}
+@media(max-width:1180px){
+  .home-wrap{max-width:1020px}
+  .hero{grid-template-columns:minmax(0,1fr) 310px;gap:18px;padding:24px}
+  .hero-art{min-height:310px}
+  .p-floral{width:190px;height:252px;right:0}
+  .p-floral .art{height:222px}
+  .p-blue{width:146px;height:164px}
+  .p-blue .art{height:134px}
+  .p-love{width:120px;height:112px}
+  .p-love .art{height:86px}
+  .hero-note{left:54px;top:28px}
+}
+@media(max-width:1080px){
+  .hero{grid-template-columns:1fr;gap:4px}
+  .hero-copy{max-width:680px}
+  .hero-art{width:100%;max-width:500px;min-height:320px;margin:4px auto 0}
+  .p-floral{width:200px;height:268px;right:7%}
+  .p-floral .art{height:238px}
+  .p-blue{width:150px;height:168px;left:3%}
+  .p-blue .art{height:138px}
+  .p-love{width:124px;height:116px;right:2%}
+  .p-love .art{height:90px}
+  .hero-note{left:8%;top:16px}
+  .search-hero{grid-template-columns:1fr;gap:12px;padding:24px}
+  .search-hero-art{min-height:200px;max-height:220px}
+  .search-body{grid-template-columns:1fr}
+  .search-side{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));width:100%;min-width:0}
+}
+@media(max-width:760px){
+  .home{padding:14px 12px 50px}
+  .hero{padding:18px 16px;border-radius:20px}
+  .hero h1{font-size:clamp(24px,7vw,32px)}
+  .hero h1 em{white-space:normal}
+  .hero-art{height:200px;max-width:none;gap:7px;padding:8px 4px 0}
+  .p-floral{width:142px;height:184px;right:auto}
+  .p-floral .art{height:156px}
+  .p-blue{width:104px;height:118px;left:auto}
+  .p-blue .art{height:90px}
+  .p-love{width:86px;height:84px;right:auto}
+  .p-love .art{height:60px}
+  .hero-note{display:none}
+  .home-search{grid-template-columns:1fr;padding:14px}
+  .hs-side{display:none}
+  .cont{flex-wrap:wrap;gap:6px;padding:10px 12px}
+  .cont-tag{order:1}
+  .cont b{flex:1 1 100%;order:2}
+  .cont-go{order:3;margin-left:auto}
+  .hero-stats div{min-width:calc(50% - 8px)}
+  .grid{grid-template-columns:1fr}
+  .search-hero{padding:20px 16px;border-radius:20px}
+  .search-hero-art{display:none}
+  .search-side{grid-template-columns:1fr}
+  .search-discovery{grid-template-columns:1fr}
+  .disc-card.disc-wide{grid-column:auto}
+  .quick-links{grid-template-columns:1fr}
+}
 </style>
 <style id="onodera-theme">
 :root{
@@ -436,6 +553,62 @@ main{background:transparent}
   .brand b{font-size:16px;letter-spacing:.04em;white-space:nowrap}
   .brand span{display:none}
   .site-signature{position:static!important;left:auto!important;transform:none!important;text-align:center;padding:18px 0 10px;font-size:10.5px!important}
+}
+</style>
+<style id="layout-fix">
+@media(max-width:1180px){
+  .home{padding:24px 22px 60px}
+  .home-wrap{max-width:1020px}
+  .hero{grid-template-columns:minmax(0,1fr) 310px;gap:18px;padding:24px}
+  .hero-art{min-height:310px}
+  .p-floral{width:190px;height:252px;right:0}
+  .p-floral .art{height:222px}
+  .p-blue{width:146px;height:164px}
+  .p-blue .art{height:134px}
+  .p-love{width:120px;height:112px}
+  .p-love .art{height:86px}
+  .hero-note{left:54px;top:28px}
+}
+@media(max-width:1080px){
+  .home{padding:20px 18px 56px}
+  .hero{grid-template-columns:1fr;gap:4px;padding:24px}
+  .hero-copy{max-width:680px}
+  .hero-art{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;max-width:none;min-height:0;height:250px;margin:6px auto 0;padding:12px 8px 0}
+  .polaroid{position:relative!important;inset:auto!important;flex:0 0 auto}
+  .p-floral{order:2;width:180px;height:232px;right:auto;top:auto;transform:rotate(3deg)}
+  .p-floral .art{height:202px}
+  .p-blue{order:1;width:130px;height:146px;left:auto;bottom:auto;transform:rotate(-5deg)}
+  .p-blue .art{height:116px}
+  .p-love{order:3;width:104px;height:100px;right:auto;bottom:auto;transform:rotate(6deg)}
+  .p-love .art{height:74px}
+  .hero-note{left:50%;top:0;transform:translateX(-50%) rotate(-2deg);font-size:10px;padding:5px 9px}
+}
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+}
+@media(max-width:760px){
+  .home{padding:14px 12px 50px}
+  .hero{padding:18px 16px;border-radius:20px}
+  .hero h1{font-size:clamp(24px,7vw,32px)}
+  .hero h1 em{white-space:normal}
+  .hero-art{height:190px;max-width:none;gap:7px;padding:8px 4px 0}
+  .p-floral{width:132px;height:170px;right:auto}
+  .p-floral .art{height:144px}
+  .p-blue{width:96px;height:110px;left:auto}
+  .p-blue .art{height:82px}
+  .p-love{width:80px;height:78px;right:auto}
+  .p-love .art{height:56px}
+  .hero-note{display:none}
+  .top-r .tbtn[href="#/search"],.top-r .tbtn[href="#/home"],#backupBtn{display:none}
+  .top-r .tbtn{padding:7px 10px;font-size:11.5px}
+  .home-search{grid-template-columns:1fr;padding:14px}
+  .hs-side{display:none}
+  .cont{flex-wrap:wrap;gap:6px;padding:10px 12px}
+  .cont-tag{order:1}
+  .cont b{flex:1 1 100%;order:2}
+  .cont-go{order:3;margin-left:auto}
+  .hero-stats div{min-width:calc(50% - 8px)}
+  .grid{grid-template-columns:1fr}
 }
 </style></head>
 <body class="locked booting">
@@ -773,6 +946,7 @@ function buildHome(){
   h += '<div class="hs-tags"><span>试试：</span><a href="javascript:void(0)" onclick="homeQuick(\'冯·诺依曼\')">冯·诺依曼</a><a href="javascript:void(0)" onclick="homeQuick(\'数制转换\')">数制转换</a><a href="javascript:void(0)" onclick="homeQuick(\'Excel 函数\')">Excel 函数</a><a href="javascript:void(0)" onclick="homeQuick(\'IP 地址\')">IP 地址</a></div>';
   h += '<div class="hs-res" id="homeRes"></div></div>';
   h += '<div class="hs-side art art-comic" role="img" aria-label="手绘漫画：学累了也可以喘口气"><span class="hs-cap">小野寺 · 学累了也可以喘口气</span></div>';
+  h += '</div>';
   if(hasFullAccess()){
     h += '<a class="cont" href="recite.html" style="border-left-color:#c46980"><span class="cont-tag" style="background:#fbe8ee;color:#8f3c54">背诵册</span><b>高频背诵册 · 7 章 40 个骨架 · 填空 / 简答 / 错题 / A4 打印</b><span class="cont-go">打开 →</span></a>';
   }
@@ -803,6 +977,7 @@ function buildHome(){
     h += '<div class="bookrow"><a href="#/' + c.book + '">专项练习与冲刺 →</a><span class="muted">' + c.q + ' 题 · 40 分钟卷</span></div>';
     h += '</div>';
   }
+  h += '<div class="card" style="border-left:4px solid #6f9079"><h3>下一步怎么学<span class="w">3 步</span></h3><p class="p">先读第 1 课，再做第一章 66 题，最后用错题集回炉。之后每一章都按「讲义 → 练习 → 错题」闭环推进。</p><div class="bookrow"><a href="#/map">打开学习地图 →</a><span class="muted">三轮复习路线</span></div></div>';
   h += '</div>';
   h += '<div class="grid" style="margin-top:13px">';
   if(ext){
@@ -1082,13 +1257,41 @@ function buildSearch(){
   for(var i=0;i<kinds.length;i++){
     kh += '<button data-kind="' + kinds[i][0] + '"' + (searchKind===kinds[i][0]?' class="on"':'') + ' onclick="setSearchKind(\'' + kinds[i][0] + '\')">' + kinds[i][1] + '</button>';
   }
+  var ext = isExternalAccount();
+  var lessonTotal = ext ? 3 : 0, qTotal = 0;
+  for(var ci=0; ci<(ext?1:CHAP.length); ci++){
+    qTotal += CHAP[ci].q;
+    if(!ext) lessonTotal += CHAP[ci].lessons.length;
+  }
+  var last = ls('tyz2027:last') || 'ch1-l1';
+  if(!DOCS[last] || (ext && !isFreeDoc(last))) last = 'ch1-l1';
+  var lastTitle = DOCS[last] ? DOCS[last].t : '第 1 课 计算机概述';
+  var openErrs = errOpenCount();
   homeEl.innerHTML = '<div class="search-page">' +
-    '<div class="search-head"><h1>站内搜索</h1><p>搜知识点、题目、真题；结果直接跳到对应小节或题目。按 <b>/</b> 或 <b>Ctrl+K</b> 随时打开。</p></div>' +
-    '<div class="search-field"><input id="q" type="search" autocomplete="off" placeholder="例如：冯·诺依曼、数制转换、Excel 函数、IP 地址、二叉树" value="' + esc(searchQuery) + '" oninput="onSearchInput(this.value)" onkeydown="if(event.key===\'Enter\'){event.preventDefault();renderSearch();}"><button class="sbtn" onclick="renderSearch()">搜索</button></div>' +
-    '<div class="search-kinds">' + kh + '</div>' +
-    '<div class="search-hint" id="searchHint">输入关键词，至少 2 个字。</div>' +
-    '<div class="sres" id="sres"></div>' +
-    '</div>';
+    '<section class="search-hero">' +
+      '<div class="search-hero-copy">' +
+        '<div class="search-kicker">SEARCH NOTEBOOK · 2027</div>' +
+        '<h1>站内<em>搜索</em></h1>' +
+        '<p>搜知识点、题目、真题；结果直接跳到对应小节或题目。按 <b>/</b> 或 <b>Ctrl+K</b> 随时打开。</p>' +
+        '<div class="search-field"><input id="q" type="search" autocomplete="off" placeholder="例如：冯·诺依曼、数制转换、Excel 函数、IP 地址、二叉树" value="' + esc(searchQuery) + '" oninput="onSearchInput(this.value)" onkeydown="if(event.key===\'Enter\'){event.preventDefault();renderSearch();}"><button class="sbtn" onclick="renderSearch()">搜索</button></div>' +
+        '<div class="search-kinds">' + kh + '</div>' +
+        '<div class="search-hint" id="searchHint">输入关键词，至少 2 个字。</div>' +
+        '<div class="search-stats"><span><b>' + lessonTotal + '</b>课讲义</span><span><b>' + (ext ? 1 : 7) + '</b>册练习</span><span><b>' + qTotal + '</b>道题</span><span><b>600+</b>考点</span></div>' +
+      '</div>' +
+      '<div class="search-hero-art art art-floral" role="img" aria-label="小野寺樱花与白玫瑰手绘"><span class="search-art-cap">小野寺 · 把知识点翻成一页手帐</span></div>' +
+    '</section>' +
+    '<div class="search-body">' +
+      '<div class="search-main"><div class="sres" id="sres"></div></div>' +
+      '<aside class="search-side">' +
+        '<div class="side-card"><h4>搜索小贴士</h4><ul><li>先搜考点名，再搜题干里的关键词。</li><li>两三个字更容易命中；找不到就换同义词。</li><li>结果会按讲义、练习、真题资料分类。</li></ul></div>' +
+        '<div class="side-card"><h4>最近在学</h4>' +
+          '<a class="side-link" href="#/' + last + '"><span>继续上次</span><b>' + esc(lastTitle) + '</b><i>→</i></a>' +
+          '<a class="side-link" href="#/errors"><span>错题集</span><b>' + (openErrs ? openErrs + ' 道待复习' : '还没有待复习错题') + '</b><i>→</i></a>' +
+          (hasFullAccess() ? '<a class="side-link" href="recite.html"><span>背诵工具</span><b>高频背诵册 · 40 个骨架</b><i>→</i></a>' : '') +
+        '</div>' +
+        '<div class="side-card side-note">按 <b>/</b> 或 <b>Ctrl+K</b> 随时回到这里；搜索不会打乱当前学习进度。</div>' +
+      '</aside>' +
+    '</div></div>';
   renderSearch();
   setTimeout(function(){ var q = document.getElementById('q'); if(q && searchQuery){ q.focus(); q.setSelectionRange(q.value.length, q.value.length); } }, 30);
 }
@@ -1151,11 +1354,23 @@ function renderSearch(){
   var q = (searchQuery || '').trim();
   var hint = document.getElementById('searchHint');
   if(!q){
-    box.innerHTML = '<div class="sugs"><h4>可以这样搜</h4>' +
-      ['冯·诺依曼','数制转换','Excel 函数','IP 地址','二叉树','数据库','云计算','信息安全'].map(function(s){ return '<a class="chip" href="javascript:void(0)" onclick="quickSearch(\'' + esc(s) + '\')">' + esc(s) + '</a>'; }).join('') +
-      '</div><div class="sugs" style="margin-top:8px"><h4>按章节找</h4>' +
-      (isExternalAccount() ? CHAP.slice(0,1) : CHAP).map(function(c){ return '<a class="chip" href="' + (isExternalAccount() ? '#/ch1-l1' : '#/map') + '">' + esc(c.name.split(' · ')[0]) + ' · ' + esc(c.name.split(' · ')[1]) + '</a>'; }).join('') + '</div>';
-    if(hint) hint.textContent = '输入关键词，至少 2 个字；也可直接点上面的示例。';
+    var hot = ['冯·诺依曼','数制转换','Excel 函数','IP 地址','二叉树','数据库','云计算','信息安全'];
+    var hotHtml = hot.map(function(s){ return '<a class="chip" href="javascript:void(0)" onclick="quickSearch(\'' + esc(s) + '\')">' + esc(s) + '</a>'; }).join('');
+    var chapHtml = '';
+    var chapList = isExternalAccount() ? CHAP.slice(0,1) : CHAP;
+    for(var ci=0; ci<chapList.length; ci++){
+      var cc = chapList[ci], cp = cc.name.split(' · ');
+      chapHtml += '<a href="#/' + cc.lessons[0] + '">' + esc(cp[0]) + (cp[1] ? ' · ' + esc(cp[1]) : '') + '</a>';
+    }
+    box.innerHTML = '<div class="search-discovery">' +
+      '<div class="disc-card"><div class="disc-head"><span class="disc-ico">热</span><h4>热门考点</h4></div><p>不知道搜什么？先从一个高频词开始。</p><div class="chips">' + hotHtml + '</div></div>' +
+      '<div class="disc-card"><div class="disc-head"><span class="disc-ico">章</span><h4>按章节找</h4></div><p>直接翻到对应章节的第一课，再顺着目录往下看。</p><div class="chap-list">' + chapHtml + '</div></div>' +
+      '<div class="disc-card disc-wide"><div class="disc-head"><span class="disc-ico">快</span><h4>快捷入口</h4></div><div class="quick-links">' +
+        '<a href="#/home"><b>学习总览</b><span>看进度与 7 章地图</span></a>' +
+        '<a href="#/errors"><b>错题集</b><span>把做错的题收回来</span></a>' +
+        (hasFullAccess() ? '<a href="recite.html"><b>高频背诵册</b><span>7 章 40 个骨架</span></a>' : '<a href="#/ch1-l1"><b>第一章讲义</b><span>体验模式从这里开始</span></a>') +
+      '</div></div></div>';
+    if(hint) hint.textContent = '输入关键词，至少 2 个字；也可以直接从下面的卡片开始。';
     return;
   }
   var rawTerms = q.split(/\s+/).filter(function(x){ return !!x; });
