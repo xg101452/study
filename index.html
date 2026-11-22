@@ -2351,8 +2351,9 @@ function applyCode(txt){
     else obj = JSON.parse(decodeURIComponent(atob(txt.replace(/\s+/g, ''))));
   }catch(e){ return '学习码格式不对，请重新复制完整内容'; }
   var n = 0, k;
+  var allow = {'tyz2027:last':1,'tyz2027:visited':1,'tyz2027:days':1,'tyz2027:errors':1,'tyz2027:musicVol':1};
   for(k in obj){
-    if(k.indexOf('tyz2027:') === 0){ lsSet(k, obj[k]); n++; }
+    if(allow[k] === 1){ lsSet(k, obj[k]); n++; }
   }
   if(!n) return '这段学习码里没有进度记录';
   setTimeout(function(){ location.reload(); }, 350);
