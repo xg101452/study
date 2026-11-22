@@ -1040,7 +1040,7 @@ function errCard(e){
   return '<div class="ecard">' +
     '<div class="emeta"><span class="pill">' + errTypeName(e.type) + '</span><span>' + esc(c?c.name:'') + '</span>' +
     (e.section?'<span class="kp">' + esc(e.section) + '</span>':'') +
-    '<span style="margin-left:auto">错 ' + (e.count||1) + ' 次</span></div>' +
+    '<span style="margin-left:auto">错 ' + (Math.max(1, parseInt(e.count, 10) || 1)) + ' 次</span></div>' +
     '<div class="estem">' + esc(e.stem) + '</div>' + opts +
     (e.answer?'<div class="eans"><b>正确答案：</b>' + esc(e.answer) + '</div>':'') +
     (e.user?'<div class="eans euser"><b>你的答案：</b>' + esc(e.user) + '</div>':'') +
