@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第七章第1课 云计算·大数据·物联网·人工智能 · 考点精简（2027 四川专升本）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
+  --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:44px 0 30px;background:
+  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
+  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
+  border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
+  color:var(--c4);font-weight:700;margin-bottom:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(24px,3.2vw,36px);
+  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.4px;max-width:830px;margin:12px 0 0}
+.syl{margin-top:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+@media(max-width:820px){.syl{grid-template-columns:1fr}}
+.syl-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.syl-box h3{margin:0 0 7px;font-size:12.5px;letter-spacing:1px;color:var(--c1)}
+.syl-box p{margin:0;font-size:13.4px;color:var(--ink2)}
+.q{font-family:"Noto Serif SC",serif;color:var(--ink);background:var(--c1bg);
+  border-left:3px solid var(--c1);padding:7px 12px;border-radius:0 8px 8px 0;margin:6px 0 0;font-size:13.1px}
+.q.warn{border-left-color:var(--c4);background:var(--c4bg)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{flex:0 0 auto;font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;
+  border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap;transition:.18s}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
+  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
+.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
+.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
+table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
+th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+td.c{text-align:center;white-space:nowrap}
+tr:nth-child(even) td{background:#fdfcf9}
+.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
+  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
+.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
+.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
+.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
+.f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
+.cut{color:#9aa5ae}
+.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip b{color:var(--c1)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.okbox b{color:#1f6b4a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
+.mem b{color:var(--gold)}
+.human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
+.human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
+.flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
+  white-space:pre;overflow-x:auto;margin:9px 0}
+.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
+.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
+  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qz b{color:var(--ink)}
+.qz .no{color:#8a5a00;font-weight:700}
+.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--c1);margin-right:8px;font-weight:700;display:inline-block}
+details[open] summary::before{content:'▾'}
+details .ans{margin-top:7px;padding:9px 12px;background:var(--c5bg);border-left:3px solid var(--c5);
+  border-radius:0 8px 8px 0;font-size:13.1px;color:#1b4a36;line-height:1.76}
+details .ans b{color:#14402c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);
+  color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.3px}.toc,.btnrow{display:none}.hero{padding:16px 0 10px}
+  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第七章第 1 课</span>
+    <h1>云计算 · 大数据 · 物联网 · 人工智能
+      <span class="light">IaaS·PaaS·SaaS ｜ 大数据 5V ｜ 物联网感知·网络·应用 ｜ AI 里程碑 ｜ 伦理与法律</span>
+    </h1>
+    <p class="lead">新技术章只占 <b>5%（约 7 分）</b>，但<b>每年必考</b>，且考点高度集中：<b>云的三种服务模式、大数据特征（哪个不是）、物联网三层、AI 标志事件</b>。这一课背完就能拿满。</p>
+
+    <div class="syl">
+      <div class="syl-box">
+        <h3>考纲原文</h3>
+        <p class="q">七、1. 云计算：<b>了解</b>概念、行业应用场景、公有云/私有云/混合云、IaaS/PaaS/SaaS。2. 大数据：<b>了解</b>概念、结构类型、核心特征、安全风险与法规。3. 物联网：<b>了解</b>概念、应用、发展趋势、与新技术融合、感知层/网络层/应用层。4. 人工智能：<b>了解</b>定义、特征、社会价值、发展历程、应用、伦理与法律。</p>
+      </div>
+      <div class="syl-box">
+        <h3>本课在卷面上值多少</h3>
+        <p class="q warn"><b>2025：单选 8（不属大数据特征＝Validity）、多选 38（云计算 ABCD）、填空 48（感知层）、判断 30（DeepSeek R1）</b>；<b>2026：判断 29（AI 造谣违法）</b>。合计 <b>8～11 分</b>，是"背了就得分"的一块。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">考 / 不考</a>
+    <a href="#s1">① 云计算</a>
+    <a href="#s2">② 三种服务模式</a>
+    <a href="#s3">③ 大数据 5V</a>
+    <a href="#s4">④ 物联网三层</a>
+    <a href="#s5">⑤ 人工智能</a>
+    <a href="#s6">⑥ 伦理与法律</a>
+    <a href="#s7">易错清单</a>
+    <a href="#s8">必背 14 条</a>
+    <a href="#s9">自测 14 题</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section class="mod" id="s0">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">0</div>
+    <div>
+      <h2>本课考 / 不考</h2>
+      <span class="tag">四个主题，四张必背表</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:74px">考频</th><th style="width:40%">内容</th><th>怎么处理</th></tr>
+    <tr><td class="c"><span class="f f3">★★★</span></td>
+      <td><b>IaaS / PaaS / SaaS 的区分</b> · <b>大数据 5V 与"哪个不是"</b> · <b>物联网三层（感知层在最底层）</b> · <b>AI 三大里程碑</b> · <b>AI 伦理与法律</b></td>
+      <td>必须记准</td></tr>
+    <tr><td class="c"><span class="f f2">★★</span></td>
+      <td>云计算的定义与五大特点 · 公有云/私有云/混合云 · 数据结构三类型 · 物联网定义与典型应用 · AI 定义与典型应用</td>
+      <td>能判断、能列举</td></tr>
+    <tr><td class="c"><span class="f f1">★</span></td>
+      <td>大数据处理流程（采集—存储—分析—可视化）· 国产大模型 · 《数据安全法》《个人信息保护法》</td>
+      <td>认得即可</td></tr>
+    <tr><td class="c"><span class="f f0">✂</span></td>
+      <td class="cut">虚拟化技术细节（Hypervisor、容器编排）· Hadoop/Spark 组件原理 · 神经网络的反向传播推导</td>
+      <td class="cut">考纲"了解"，不会深入</td></tr>
+  </table>
+  <div class="tip"><b>本课"白送分"三句：</b><b>①IaaS 给"机房"、PaaS 给"开发平台"、SaaS 给"能用的软件"；②大数据的特征是 5V，"Validity（有效性）"不是；③物联网三层从下往上是感知层、网络层、应用层。</b></div>
+</section>
+
+<section class="mod" id="s1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
+    <div>
+      <h2>云计算：把算力变成"水电"</h2>
+      <span class="tag"><span class="f f2">★★</span>2025 多选 38</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="human"><span class="lb">定义（人话版）</span>
+  <b>云计算</b>是通过网络<b>按需、按量</b>获取计算资源（服务器、存储、网络、软件）的服务模式——<b>像用电一样，用多少付多少，不用自己建机房</b>。
+  </div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:140px">特点</th><th>含义</th></tr>
+    <tr><td><b>按需自助服务</b></td><td>用户自己申请、自己开通，无需人工干预</td></tr>
+    <tr><td><b>广泛的网络接入</b></td><td>通过网络（电脑、手机）随时访问</td></tr>
+    <tr><td><b>资源池化</b></td><td>大量资源组成共享池，<b>按需分配、位置透明</b></td></tr>
+    <tr><td><b>弹性伸缩</b></td><td>高峰扩容、低谷缩容，<b>快速弹性</b></td></tr>
+    <tr><td><b>可计量服务</b></td><td>使用量可计量、<b>按使用付费</b></td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 多选 38（3 分）</b>　关于云计算，下列说法正确的是（　）<br>
+  <span class="no">答案：<b>ABCD（四项均正确）</b>。常见正确项包括：<b>按需付费、资源池化、弹性伸缩、通过网络提供服务</b>。<br>
+  <b>提醒：</b>四川卷这道题四项全对，<b>别硬找错项</b>。</span></div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:140px">部署模式</th><th>说明</th></tr>
+    <tr><td><b>公有云</b></td><td>服务商建设、<b>向社会公众开放</b>（阿里云、腾讯云、华为云）</td></tr>
+    <tr><td><b>私有云</b></td><td>某单位<b>自建自用</b>，数据可控、安全性高，成本高</td></tr>
+    <tr><td><b>混合云</b></td><td><b>公有云＋私有云</b>组合，敏感数据放私有、弹性业务放公有</td></tr>
+  </table>
+
+  <div class="okbox"><b>典型应用场景：</b>云存储与备份、云办公与协同、云主机/云数据库、视频转码与渲染、大数据分析平台、企业 ERP/CRM 上云。</div>
+</section>
+
+<section class="mod" id="s2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">②</div>
+    <div>
+      <h2>IaaS / PaaS / SaaS：三层服务</h2>
+      <span class="tag"><span class="f f3">★★★</span>用"盖房子"类比最快</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:100px">模式</th><th style="width:170px">全称与含义</th><th>用户拿到什么</th><th style="width:28%">例子</th></tr>
+    <tr><td><b>IaaS</b></td><td>基础设施即服务</td><td><b>服务器、存储、网络等"硬件资源"</b>（相当于租一块地和建材）</td><td>阿里云 ECS 云主机、云磁盘</td></tr>
+    <tr><td><b>PaaS</b></td><td>平台即服务</td><td><b>开发运行环境</b>（操作系统、数据库、中间件），<b>开发者只管写代码</b></td><td>云数据库、应用托管平台</td></tr>
+    <tr><td><b>SaaS</b></td><td>软件即服务</td><td><b>直接可用的软件</b>，打开浏览器就能用，<b>不用装、不用维护</b></td><td>在线文档、企业邮箱、在线 CRM</td></tr>
+  </table>
+
+  <div class="mem"><b>一句话分辨：</b><b>IaaS 给"地皮"、PaaS 给"装修好的毛坯房+工具"、SaaS 给"拎包入住"。</b><br>
+  换成用户视角：<b>自己装系统 → IaaS；自己写代码部署 → PaaS；只管用功能 → SaaS。</b></div>
+
+  <div class="warnbox"><b>易错点：</b>三个模式<b>没有高低级之分</b>，是"服务层次不同"。<b>层级从底到顶是 IaaS → PaaS → SaaS</b>；越往上，用户管得越少、越省事。</div>
+</section>
+
+<section class="mod" id="s3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">③</div>
+    <div>
+      <h2>大数据：5V 特征与三个"V"的陷阱</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 单选第 8 题</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="human"><span class="lb">定义</span>
+  <b>大数据</b>是指<b>规模巨大、类型多样、产生速度快</b>，<b>无法在可接受时间内用常规软件工具</b>进行采集、存储、管理和分析的数据集合。
+  </div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">特征（5V）</th><th>含义</th></tr>
+    <tr><td><b>Volume</b> 大量</td><td>数据规模从 TB 到 PB、EB 级</td></tr>
+    <tr><td><b>Velocity</b> 高速</td><td>产生与处理速度快，很多要求<b>实时</b></td></tr>
+    <tr><td><b>Variety</b> 多样</td><td>结构化、半结构化、非结构化数据并存</td></tr>
+    <tr><td><b>Value</b> 价值密度低</td><td><b>总体价值大，但单位数据价值密度低</b>（大量数据里只有少量有用）</td></tr>
+    <tr><td><b>Veracity</b> 真实性</td><td>数据质量与可信度</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 8（2 分）</b>　下列不属于大数据特征的是（　）<br>
+  A. Volume　B. Velocity　C. <b>Validity</b>　D. Variety<br>
+  <span class="no">答案：<b>C</b>。<b>大数据的 5V 是 Volume、Velocity、Variety、Value、Veracity</b>；<b>Validity（有效性）不在其中</b>。<br>
+  <b>这是典型的"拼一个看着很像的词"来钓鱼</b>——所以 5V 要按英文原词背，别只记中文。</span></div>
+
+  <div class="qz"><span class="lb">真题</span><b>2024 · 判断</b>　大数据的价值密度低，但整体价值高。<br>
+  <span class="no">→ <b>正确</b>。<b>"价值密度低"是大数据的典型特征</b>：数据量越大，单位数据的有用信息越稀疏，但汇总分析后整体价值很高。</span></div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">按结构分类</th><th>例子</th></tr>
+    <tr><td><b>结构化数据</b></td><td>能用二维表表示：数据库表、Excel 表格</td></tr>
+    <tr><td><b>半结构化数据</b></td><td>有一定结构但不严格：XML、JSON、HTML</td></tr>
+    <tr><td><b>非结构化数据</b></td><td>无固定结构：文本、图片、音视频、日志</td></tr>
+  </table>
+
+  <div class="mem"><b>处理流程四步：</b><b>数据采集 → 数据存储 → 数据分析挖掘 → 数据可视化与应用</b>。</div>
+</section>
+
+<section class="mod" id="s4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">④</div>
+    <div>
+      <h2>物联网：万物互联的三层结构</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 填空第 48 题</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="human"><span class="lb">定义</span>
+  <b>物联网</b>是通过<b>射频识别（RFID）、传感器、全球定位系统</b>等信息传感设备，<b>把物品与互联网连接起来</b>，进行信息交换与通信，实现对物品的<b>智能化识别、定位、跟踪、监控和管理</b>的网络。
+  </div>
+
+  <div class="flow">物联网三层（从下往上）
+┌─────────────────────────────┐
+│  应用层  → 智能家居、智慧城市、车联网、工业互联网  │
+├─────────────────────────────┤
+│  网络层  → 互联网、移动通信网、接入与传输          │
+├─────────────────────────────┤
+│  感知层  → 传感器、RFID、摄像头、GPS（采集数据）    │
+└─────────────────────────────┘</div>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 填空 48（3 分）</b>　物联网体系结构从下往上依次为 ______、网络层、应用层。<br>
+  <span class="no">答案：<b>感知层</b>。<br>
+  <b>记忆抓手：</b>最下面是"感知"（传感器采集），中间是"网络"（传输），最上面是"应用"（给人用）。<b>顺序不能颠倒。</b></span></div>
+
+  <div class="okbox"><b>典型应用：</b>智能家居（门锁、空调）、智慧城市（路灯、停车）、车联网与自动驾驶、工业互联网、智能农业（土壤监测）、智慧医疗（可穿戴设备）。</div>
+
+  <div class="tip"><b>三个"网"的关系（可能出判断题）：</b><b>物联网</b>解决"物与物"的连接；<b>互联网</b>解决"人与人/人与信息"的连接；<b>大数据</b>是物联网产生的海量数据的"加工厂"；<b>AI</b>是让这些数据"变聪明"的大脑。<b>四者互相支撑，不是替代关系。</b></div>
+</section>
+
+<section class="mod" id="s5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
+    <div>
+      <h2>人工智能：三个必须记住的时间点</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 判断 30：DeepSeek R1</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="human"><span class="lb">定义</span>
+  <b>人工智能（AI）</b>是研究<b>让机器模拟、延伸和扩展人类智能</b>的科学，包括<b>感知、学习、推理、决策、语言理解</b>等能力。
+  </div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">里程碑</th><th>要点</th></tr>
+    <tr><td><b>1950 图灵测试</b></td><td>图灵提出"<b>机器能否思考</b>"的测试方法，被称为<b>计算机科学之父、人工智能之父</b></td></tr>
+    <tr><td><b>1956 达特茅斯会议</b></td><td><b>"人工智能"一词正式提出</b>，标志 AI 作为学科诞生</td></tr>
+    <tr><td>1997 深蓝</td><td>IBM 深蓝<b>战胜国际象棋世界冠军</b>卡斯帕罗夫</td></tr>
+    <tr><td>2016 AlphaGo</td><td><b>战胜围棋世界冠军</b>李世石，深度学习引起广泛关注</td></tr>
+    <tr><td>近年大模型</td><td><b>ChatGPT、DeepSeek、通义千问、文心一言</b>等大语言模型（LLM）</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 30</b>　DeepSeek R1 是我国自主研发的大语言模型。<br>
+  <span class="no">→ <b>正确</b>。<b>DeepSeek（深度求索）是国产大模型</b>；同类国产大模型还有<b>通义千问、文心一言、豆包、混元</b>等。<b>看到"我国自主研发的大模型"，一般判对。</b></span></div>
+
+  <div class="okbox"><b>典型应用（能列举三条即可）：</b>语音识别与合成（智能音箱）、图像识别（人脸识别、医学影像）、机器翻译、智能推荐、自动驾驶、智能客服、AIGC（AI 生成文本/图片/视频）。</div>
+
+  <div class="mem"><b>"三驾马车"记法：</b><b>数据（燃料）＋ 算法（引擎）＋ 算力（马力）</b>，三者共同驱动人工智能。<b>深度学习</b>是目前主流方法，<b>需要大量标注数据与强大算力</b>。</div>
+</section>
+
+<section class="mod" id="s6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑥</div>
+    <div>
+      <h2>新技术的伦理与法律</h2>
+      <span class="tag"><span class="f f3">★★★</span>2026 判断第 29 题</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="qz"><span class="lb">2026 真题</span><b>判断 第 29 题</b>　利用 AI 合成技术制作并传播不实新闻，属于违法违规行为。<br>
+  <span class="no">→ <b>正确</b>。<br>
+  <b>2026 专门设了这一道，说明"技术＋伦理法律"已成固定考点。</b>记住三条底线：<b>①不得用 AI 造谣、诈骗、侵权；②AI 生成内容要标识、要核实；③转发前先查来源。</b></span></div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">风险</th><th>表现</th></tr>
+    <tr><td><b>隐私泄露</b></td><td>人脸、行踪、健康数据被过度采集</td></tr>
+    <tr><td><b>算法偏见</b></td><td>训练数据不均衡导致歧视性结果</td></tr>
+    <tr><td><b>深度伪造</b></td><td>AI 换脸、拟声用于诈骗与造谣</td></tr>
+    <tr><td>知识产权</td><td>AI 生成内容的版权归属争议</td></tr>
+    <tr><td>就业冲击</td><td>部分岗位被自动化替代</td></tr>
+  </table>
+
+  <div class="okbox"><b>相关法规：</b>《<b>网络安全法</b>》《<b>数据安全法</b>》《<b>个人信息保护法</b>》，以及针对生成式 AI 的管理规定。<b>核心原则：合法、正当、必要；以人为本、可控可信。</b></div>
+
+  <div class="mem"><b>一句话总结社会责任：</b><b>技术无罪，使用有界——不造谣、不侵权、不越权采集、不滥用生成内容。</b></div>
+</section>
+
+<section class="mod" id="s7">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑦</div>
+    <div>
+      <h2>本课易错清单</h2>
+      <span class="tag">十二条</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:36px">#</th><th style="width:250px">错误说法</th><th>正确说法</th></tr>
+    <tr><td class="c">1</td><td>SaaS 提供服务器和存储</td><td>那是 <b>IaaS</b>；SaaS 提供<b>可直接使用的软件</b></td></tr>
+    <tr><td class="c">2</td><td>PaaS 是给用户现成的软件用</td><td>PaaS 给的是<b>开发运行平台</b></td></tr>
+    <tr><td class="c">3</td><td>私有云安全性低、公有云最安全</td><td><b>私有云可控性最强</b>；公有云共享资源</td></tr>
+    <tr><td class="c">4</td><td>大数据的特征包括 Validity</td><td>5V 是 <b>Volume/Velocity/Variety/Value/Veracity</b></td></tr>
+    <tr><td class="c">5</td><td>大数据价值密度高</td><td><b>价值密度低、整体价值高</b>（2024 判断）</td></tr>
+    <tr><td class="c">6</td><td>JSON 属于结构化数据</td><td>JSON 属<b>半结构化</b>数据</td></tr>
+    <tr><td class="c">7</td><td>物联网三层是应用层、网络层、感知层（从上往下）</td><td>从下往上是<b>感知层、网络层、应用层</b></td></tr>
+    <tr><td class="c">8</td><td>物联网就是互联网的另一种叫法</td><td>物联网侧重<b>物与物</b>的连接，是互联网的延伸</td></tr>
+    <tr><td class="c">9</td><td>人工智能一词是 1950 年图灵提出的</td><td><b>1956 年达特茅斯会议</b>正式提出；1950 是图灵测试</td></tr>
+    <tr><td class="c">10</td><td>图灵被称为现代计算机之父</td><td>冯·诺依曼是<b>现代计算机之父</b>；图灵是<b>计算机科学之父、AI 之父</b></td></tr>
+    <tr><td class="c">11</td><td>DeepSeek 是国外的大模型</td><td><b>国产</b>（2025 判断 30 为正确）</td></tr>
+    <tr><td class="c">12</td><td>AI 生成内容可以随意传播</td><td><b>不得用于造谣诈骗</b>（2026 判断 29）</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s8">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
+    <div>
+      <h2>本课必背 14 条</h2>
+      <span class="tag">进考场前扫一眼</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:40px">#</th><th>内容</th></tr>
+    <tr><td class="c">1</td><td><b>云计算</b>：网络按需提供计算资源，<b>按使用付费</b>；特点<b>按需自助、广泛接入、资源池化、弹性伸缩、可计量</b></td></tr>
+    <tr><td class="c">2</td><td><b>IaaS</b>＝基础设施（服务器/存储/网络）；<b>PaaS</b>＝开发运行平台；<b>SaaS</b>＝可直接用的软件</td></tr>
+    <tr><td class="c">3</td><td>层级从底到顶：<b>IaaS → PaaS → SaaS</b>（越往上用户管得越少）</td></tr>
+    <tr><td class="c">4</td><td>部署模式：<b>公有云、私有云、混合云</b></td></tr>
+    <tr><td class="c">5</td><td><b>大数据 5V</b>：<b>Volume 大量、Velocity 高速、Variety 多样、Value 价值密度低、Veracity 真实性</b></td></tr>
+    <tr><td class="c">6</td><td><b>Validity（有效性）不是大数据特征</b>——2025 单选 8</td></tr>
+    <tr><td class="c">7</td><td>数据结构三类型：<b>结构化、半结构化（XML/JSON）、非结构化（文本/图片/音视频）</b></td></tr>
+    <tr><td class="c">8</td><td>大数据流程：<b>采集 → 存储 → 分析挖掘 → 可视化应用</b></td></tr>
+    <tr><td class="c">9</td><td><b>物联网</b>：传感设备把物品连入网络，实现<b>识别、定位、跟踪、监控、管理</b></td></tr>
+    <tr><td class="c">10</td><td>物联网三层（从下往上）：<b>感知层 → 网络层 → 应用层</b>（2025 填空 48）</td></tr>
+    <tr><td class="c">11</td><td><b>AI</b>：让机器模拟人类智能，含<b>感知、学习、推理、决策</b>；三驾马车＝<b>数据＋算法＋算力</b></td></tr>
+    <tr><td class="c">12</td><td>里程碑：<b>1950 图灵测试、1956 达特茅斯会议（AI 诞生）、1997 深蓝、2016 AlphaGo</b></td></tr>
+    <tr><td class="c">13</td><td><b>图灵</b>＝计算机科学之父 / AI 之父；<b>冯·诺依曼</b>＝现代计算机之父</td></tr>
+    <tr><td class="c">14</td><td>国产大模型：<b>DeepSeek、通义千问、文心一言、豆包</b>；<b>不得用 AI 造谣诈骗侵权</b>（2026 判断 29）</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s9">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
+    <div>
+      <h2>自测 14 题</h2>
+      <span class="tag">点题目看答案</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>1. 大数据的价值密度低，但整体价值高。</summary><div class="ans"><b>正确。</b>2024 判断原题。</div></details>
+    <details><summary>2. DeepSeek R1 是我国自主研发的大语言模型。</summary><div class="ans"><b>正确。</b>2025 判断 30。</div></details>
+    <details><summary>3. 物联网体系结构从下往上依次是感知层、网络层、应用层。</summary><div class="ans"><b>正确。</b>2025 填空 48。</div></details>
+    <details><summary>4. SaaS 向用户提供的是服务器、存储等基础设施。</summary><div class="ans"><b>错误。</b>那是 IaaS；SaaS 提供软件。</div></details>
+    <details><summary>5. 利用 AI 合成技术制作并传播不实新闻属于违法违规行为。</summary><div class="ans"><b>正确。</b>2026 判断 29。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>6. 下列不属于大数据特征的是（　）<br>A. Volume　B. Velocity　C. Validity　D. Variety</summary><div class="ans"><b>C。</b>2025 单选 8 原题。</div></details>
+    <details><summary>7. 用户通过网络直接使用在线文档、企业邮箱，这种服务模式属于（　）<br>A. IaaS　B. PaaS　C. SaaS　D. DaaS</summary><div class="ans"><b>C。</b>直接拿到能用的软件＝SaaS。</div></details>
+    <details><summary>8. 物联网中负责采集数据的一层是（　）<br>A. 应用层　B. 网络层　C. 感知层　D. 传输层</summary><div class="ans"><b>C。</b></div></details>
+    <details><summary>9. "人工智能"一词正式提出的标志性事件是（　）<br>A. 1950 年图灵测试　B. 1956 年达特茅斯会议　C. 1997 年深蓝获胜　D. 2016 年 AlphaGo</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>10. 下列不属于云计算特点的是（　）<br>A. 按需自助服务　B. 弹性伸缩　C. 资源池化　D. 必须自建机房</summary><div class="ans"><b>D。</b>云计算的初衷就是"不用自建机房"。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（4 题）</b></p>
+  <div class="qa">
+    <details><summary>11. 云计算的服务模式分为 IaaS、______ 和 SaaS。</summary><div class="ans"><b>PaaS（平台即服务）</b>。</div></details>
+    <details><summary>12. 大数据的 5V 特征中，表示"价值密度低"的是 ______。</summary><div class="ans"><b>Value</b>。</div></details>
+    <details><summary>13. 简述云计算的特点与三种服务模式。</summary><div class="ans"><b>参考答案：</b>①<b>特点</b>：按需自助服务、广泛的网络接入、资源池化、快速弹性伸缩、服务可计量（按使用付费）。②<b>服务模式</b>：<b>IaaS</b> 提供服务器、存储、网络等基础设施；<b>PaaS</b> 提供开发与运行平台（操作系统、数据库、中间件）；<b>SaaS</b> 提供可直接使用的应用软件。③<b>部署模式</b>：公有云、私有云、混合云。</div></details>
+    <details><summary>14. 简述物联网的体系结构及各层作用。</summary><div class="ans"><b>参考答案：</b>物联网分三层：①<b>感知层</b>（最底层）：通过传感器、RFID、摄像头、GPS 等<b>采集数据、识别物体</b>；②<b>网络层</b>：借助互联网、移动通信网等<b>传输数据</b>，实现互联互通；③<b>应用层</b>（最上层）：对数据<b>处理分析并与行业业务结合</b>，实现智能家居、智慧城市、车联网等应用。</div></details>
+  </div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"七、1～4"；<br>
+  真题来源：2024 判断（价值密度）；2025 单选 8、多选 38、填空 48、判断 30；2026 判断 29。<br>
+  上一课：第六章第1课 数据库基础与关系数据库　｜　全七章已完结，可回到《00-课程目录与学习地图》安排三轮复习 · Ctrl+P 可打印
+</footer>
+
+</main>
+</body>
+</html>

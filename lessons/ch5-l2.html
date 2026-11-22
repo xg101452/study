@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第五章第2课 三种基本结构与经典算法 · 考点精简（2027 四川专升本）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
+  --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:44px 0 30px;background:
+  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
+  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
+  border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
+  color:var(--c4);font-weight:700;margin-bottom:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(25px,3.4vw,38px);
+  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.4px;max-width:830px;margin:12px 0 0}
+.syl{margin-top:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+@media(max-width:820px){.syl{grid-template-columns:1fr}}
+.syl-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.syl-box h3{margin:0 0 7px;font-size:12.5px;letter-spacing:1px;color:var(--c1)}
+.syl-box p{margin:0;font-size:13.4px;color:var(--ink2)}
+.q{font-family:"Noto Serif SC",serif;color:var(--ink);background:var(--c1bg);
+  border-left:3px solid var(--c1);padding:7px 12px;border-radius:0 8px 8px 0;margin:6px 0 0;font-size:13.1px}
+.q.warn{border-left-color:var(--c4);background:var(--c4bg)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{flex:0 0 auto;font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;
+  border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap;transition:.18s}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
+  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
+.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
+.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
+table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
+th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+td.c{text-align:center;white-space:nowrap}
+tr:nth-child(even) td{background:#fdfcf9}
+.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
+  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
+.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
+.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
+.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
+.f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
+.cut{color:#9aa5ae}
+.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip b{color:var(--c1)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.okbox b{color:#1f6b4a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
+.mem b{color:var(--gold)}
+.human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
+.human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
+.flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
+  white-space:pre;overflow-x:auto;margin:9px 0}
+.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
+.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
+  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qz b{color:var(--ink)}
+.qz .no{color:#8a5a00;font-weight:700}
+.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--c1);margin-right:8px;font-weight:700;display:inline-block}
+details[open] summary::before{content:'▾'}
+details .ans{margin-top:7px;padding:9px 12px;background:var(--c5bg);border-left:3px solid var(--c5);
+  border-radius:0 8px 8px 0;font-size:13.1px;color:#1b4a36;line-height:1.76}
+details .ans b{color:#14402c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);
+  color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.3px}.toc,.btnrow{display:none}.hero{padding:16px 0 10px}
+  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第五章第 2 课</span>
+    <h1>三种基本结构与经典算法
+      <span class="light">顺序·选择·循环 ｜ while 可能 0 次 ｜ 冒泡 n−1 趟 ｜ 二分必须有序 ｜ 看流程图算结果</span>
+    </h1>
+    <p class="lead">这一课是整章<b>最容易拿分也最容易丢分</b>的地方：给一张流程图让你算结果，或者让你数"最多比较多少次"。所有公式都不需要推导，<b>记住几个固定数字就能答题</b>。</p>
+
+    <div class="syl">
+      <div class="syl-box">
+        <h3>考纲原文</h3>
+        <p class="q">五、4. 基本结构：<b>理解</b>顺序、选择、循环三种基本结构。5. 流程图：<b>理解</b>流程图的基本符号；<b>能根据流程图判断算法功能与计算结果</b>，涉及累加、累乘、顺序查找、二分查找、冒泡排序。</p>
+      </div>
+      <div class="syl-box">
+        <h3>本课在卷面上值多少</h3>
+        <p class="q warn">2025：判断 34（语句至少执行一次→错）、判断 35（冒泡某趟无交换可结束→对）、填空 54（二进制减法）；<b>2026 综合应用题 2 道（20 分）落在算法章</b>。本课直接影响 <b>10～20 分</b>。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">考 / 不考</a>
+    <a href="#s1">① 三种结构</a>
+    <a href="#s2">② 循环的两种型</a>
+    <a href="#s3">③ 流程图符号</a>
+    <a href="#s4">④ 累加与累乘</a>
+    <a href="#s5">⑤ 顺序与二分查找</a>
+    <a href="#s6">⑥ 冒泡排序</a>
+    <a href="#s7">⑦ 读图三步法</a>
+    <a href="#s8">必背 12 条</a>
+    <a href="#s9">自测 14 题</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section class="mod" id="s0">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">0</div>
+    <div>
+      <h2>本课考 / 不考</h2>
+      <span class="tag">三种结构 + 四个经典算法</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:74px">考频</th><th style="width:40%">内容</th><th>怎么处理</th></tr>
+    <tr><td class="c"><span class="f f3">★★★</span></td>
+      <td><b>三种基本结构的识别</b> · <b>while 循环体可能一次都不执行</b> · <b>冒泡 n−1 趟、某趟无交换即结束</b> · <b>二分查找必须有序</b> · <b>看流程图算结果</b></td>
+      <td>必须会判断、会算</td></tr>
+    <tr><td class="c"><span class="f f2">★★</span></td>
+      <td>流程图五种基本符号 · 累加/累乘的初值与通项 · 顺序查找最多 n 次 · 二分查找最多 ⌈log₂n⌉ 次</td>
+      <td>记住数字</td></tr>
+    <tr><td class="c"><span class="f f1">★</span></td>
+      <td>选择结构的三种形式（单分支/双分支/多分支）</td>
+      <td>认得即可</td></tr>
+    <tr><td class="c"><span class="f f0">✂</span></td>
+      <td class="cut">其他排序（快排、希尔、堆排）的具体过程 · 递归算法的展开 · 复杂嵌套循环的手工推演</td>
+      <td class="cut">考纲只点冒泡，其余不必深挖</td></tr>
+  </table>
+  <div class="tip"><b>本课"两个固定数字"：</b><b>冒泡排序 n 个数最多做 n−1 趟</b>；<b>顺序查找最多比较 n 次</b>。这两句几乎能直接换成分数。</div>
+</section>
+
+<section class="mod" id="s1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
+    <div>
+      <h2>三种基本结构</h2>
+      <span class="tag"><span class="f f3">★★★</span>共同点：一个入口、一个出口</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:120px">结构</th><th>执行方式</th><th style="width:32%">典型语句</th></tr>
+    <tr><td><b>顺序结构</b></td><td>按书写顺序<b>从上到下逐条执行</b>，每条执行一次</td><td>赋值、输入、输出</td></tr>
+    <tr><td><b>选择结构</b></td><td>根据<b>条件是否成立</b>决定走哪条分支，<b>必有一条被执行</b></td><td>if、if-else、switch / 多分支</td></tr>
+    <tr><td><b>循环结构</b></td><td>条件成立时<b>反复执行</b>循环体，直到条件不成立</td><td>while、do-while、for</td></tr>
+  </table>
+
+  <div class="okbox"><b>三种结构的共同特征（判断题爱考）：</b>①<b>只有一个入口和一个出口</b>；②<b>结构内的每一部分都有机会被执行到</b>（不存在永远走不到的死代码）；③<b>结构内不存在死循环</b>。<b>这三条就是"结构化程序设计"的基本要求。</b></div>
+
+  <div class="mem"><b>结构化程序设计的三种基本结构：顺序、选择、循环。</b>（有的教材加"模块化"，但基本结构只有这三种。）</div>
+</section>
+
+<section class="mod" id="s2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">②</div>
+    <div>
+      <h2>当型与直到型：循环体执行几次</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 判断第 34 题</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">当型（while）：先判断，后执行
+  ┌→ 判断条件 ─ 假 → 退出
+  │      │真
+  │      ▼
+  └── 执行循环体
+  → 条件一开始就不成立时，循环体执行 【0 次】
+
+直到型（do-while）：先执行，后判断
+  ┌→ 执行循环体
+  │      ▼
+  └── 判断条件 ─ 真 → 回去再执行
+                 └ 假 → 退出
+  → 无论条件如何，循环体至少执行 【1 次】</div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">对比项</th><th>当型（while）</th><th>直到型（do-while）</th></tr>
+    <tr><td>判断位置</td><td>循环体<b>之前</b>判断</td><td>循环体<b>之后</b>判断</td></tr>
+    <tr><td>最少执行次数</td><td><b>0 次</b></td><td><b>1 次</b></td></tr>
+    <tr><td>条件为真时</td><td>继续执行</td><td><b>继续执行</b>（真→回去）</td></tr>
+    <tr><td>适用</td><td>可能一次都不做的情况</td><td>至少要执行一次的情况</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 34</b>　在循环结构中，循环体中的语句至少会被执行一次。<br>
+  <span class="no">→ <b>错误</b>。<b>当型（while）循环先判断条件，条件一开始就为假时，循环体一次都不执行。</b>"至少执行一次"只对<b>直到型</b>成立。<br>
+  <b>看到"至少执行一次""一定执行"这类绝对化表述，先想 while。</b></span></div>
+
+  <div class="warnbox"><b>另一个常见坑：</b><b>for 循环</b> <code style="background:#f4f1ea;padding:1px 5px;border-radius:4px">for(i=1;i&lt;=n;i++)</code> 的循环体执行 <b>n 次</b>；而 <code style="background:#f4f1ea;padding:1px 5px;border-radius:4px">for(i=0;i&lt;n;i++)</code> 也是 <b>n 次</b>。<b>数次数看的是初值与终值的关系，不是看写法。</b></div>
+</section>
+
+<section class="mod" id="s3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">③</div>
+    <div>
+      <h2>流程图的基本符号</h2>
+      <span class="tag"><span class="f f2">★★</span>认框的形状就能答</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:150px">符号（形状）</th><th>名称</th><th>用途</th></tr>
+    <tr><td><b>圆角矩形 / 椭圆</b></td><td><b>起止框</b></td><td>表示算法的<b>开始与结束</b></td></tr>
+    <tr><td><b>矩形</b></td><td><b>处理框</b></td><td>赋值、计算等<b>处理操作</b></td></tr>
+    <tr><td><b>菱形</b></td><td><b>判断框</b></td><td><b>条件判断</b>，有"是/否"两条出口</td></tr>
+    <tr><td><b>平行四边形</b></td><td><b>输入 / 输出框</b></td><td>输入数据、输出结果</td></tr>
+    <tr><td>圆形 / 小圆</td><td>连接点</td><td>连接流程图的断开部分</td></tr>
+    <tr><td>带箭头直线</td><td>流程线</td><td>表示<b>执行方向</b></td></tr>
+    <tr><td>注释符（虚线框）</td><td>注释</td><td>对流程的说明</td></tr>
+  </table>
+
+  <div class="mem"><b>四句话记形状：</b><b>圆角起止、矩形处理、菱形判断、平行四边形输入输出</b>。<b>看到菱形，就找"是/否"分支；看到平行四边形，就知道在读数或印数。</b></div>
+</section>
+
+<section class="mod" id="s4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">④</div>
+    <div>
+      <h2>累加与累乘：初值最容易错</h2>
+      <span class="tag"><span class="f f2">★★</span>看流程图算结果的主角</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">累加 1+2+3+…+n
+  s ← 0            ← 初值必须是 0
+  i ← 1
+  当 i ≤ n 时：
+      s ← s + i
+      i ← i + 1
+  输出 s
+  结果 = n(n+1)/2      n=100 → 5050
+
+累乘 1×2×3×…×n （即 n!）
+  p ← 1            ← 初值必须是 1（写 0 就永远是 0）
+  i ← 1
+  当 i ≤ n 时：
+      p ← p × i
+      i ← i + 1
+  输出 p
+  结果 = n!            n=5 → 120</div>
+
+  <div class="warnbox"><b>初值三句话：</b><b>累加初值写 0，累乘初值写 1，计数器初值看起点。</b><br>
+  如果把累乘的 p 初始化成 0，无论乘多少次结果都是 0——<b>这是流程图题最常见的"埋雷"方式</b>，做题时第一眼就去看初值。</div>
+
+  <div class="tip"><b>变体：累加偶数和</b>（1～100 的偶数之和＝2550）。做法是循环里加一个判断 <b>i 除以 2 余数为 0</b> 才累加，<b>这就是"循环＋选择"的组合</b>，也是综合题最爱考的形式。</div>
+</section>
+
+<section class="mod" id="s5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
+    <div>
+      <h2>顺序查找与二分查找</h2>
+      <span class="tag"><span class="f f3">★★★</span>二分的前提是有序</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:120px">对比项</th><th>顺序查找</th><th>二分查找（折半查找）</th></tr>
+    <tr><td><b>前提</b></td><td><b>无要求</b>，任何序列都行</td><td><b>必须有序</b>（递增或递减均可）——2024 判断考过</td></tr>
+    <tr><td>做法</td><td>从头到尾<b>逐个比较</b></td><td>每次与<b>中间元素</b>比较，排除一半</td></tr>
+    <tr><td><b>最多比较次数</b></td><td><b>n 次</b></td><td><b>⌈log₂n⌉ 次</b>（n=1000 时约 10 次）</td></tr>
+    <tr><td>平均比较次数</td><td>(n+1)/2</td><td>约 log₂n</td></tr>
+    <tr><td>时间复杂度</td><td><b>O(n)</b></td><td><b>O(log₂n)</b></td></tr>
+    <tr><td>适用</td><td>数据少、无序、频繁插入删除</td><td>数据多、有序、很少变动</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2024 · 判断</b>　二分查找法要求线性表必须按关键字递减有序排列。<br>
+  <span class="no">→ <b>错误</b>。原题表述为"必须递增有序"，也错——<b>递增或递减有序都可以</b>，关键是<b>有序</b>。所以"必须是递增""必须是递减"这类限定都不对。<br>
+  <b>记结论：二分查找的前提是"有序"，不是"递增有序"。</b></span></div>
+
+  <div class="okbox"><b>算次数的小技巧：</b>二分查找 n 个元素，最多比较 <b>⌈log₂n⌉</b> 次。<b>2⁹＝512、2¹⁰＝1024</b>，所以 <b>1000 个元素最多 10 次</b>，<b>100 个元素最多 7 次</b>（2⁶＝64 不够，2⁷＝128 够）。</div>
+</section>
+
+<section class="mod" id="s6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑥</div>
+    <div>
+      <h2>冒泡排序：趟数、次数、提前结束</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 判断第 35 题</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="human"><span class="lb">做法（人话版）</span>
+  从头开始，<b>相邻两个数比较，大的往后换</b>；走完一趟，<b>最大的数就"冒"到了最后一位</b>。下一趟只在前 n−1 个里继续，直到全部有序。
+  </div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:170px">问题</th><th>答案</th></tr>
+    <tr><td>n 个数最多需要几趟</td><td><b>n−1 趟</b>（每趟定住一个数，最后一个自然就位）</td></tr>
+    <tr><td>第 i 趟需要比较几次</td><td><b>n−i 次</b></td></tr>
+    <tr><td>总共比较多少次（最坏）</td><td><b>n(n−1)/2</b></td></tr>
+    <tr><td>时间复杂度</td><td><b>O(n²)</b></td></tr>
+    <tr><td><b>什么时候可以提前结束</b></td><td><b>某一趟没有发生任何交换</b>，说明已经有序，可立即结束</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 35</b>　在冒泡排序过程中，如果某一趟比较没有发生任何数据交换，则可以提前结束排序。<br>
+  <span class="no">→ <b>正确</b>。<b>没有交换＝相邻元素都已满足顺序＝整个序列已有序</b>，再比较下去也是白做。<b>这也是冒泡排序"最好情况 O(n)"的原因</b>（原序列已有序时只需一趟）。</span></div>
+
+  <div class="mem"><b>三个数字背下来：</b><b>n−1 趟、第 i 趟比 n−i 次、总共 n(n−1)/2 次。</b><br>
+  例：<b>5 个数排序</b>→ 最多 <b>4 趟</b>，比较 <b>4+3+2+1＝10</b> 次。</div>
+
+  <div class="warnbox"><b>冒泡的方向别搞错：</b>升序排列时，每趟把<b>最大的</b>送到末尾（<b>大的往后换</b>）；降序则相反。<b>题目问"第一趟结束后哪个数一定在最终位置"——答"最大（或最小）的那个数"。</b></div>
+</section>
+
+<section class="mod" id="s7">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">⑦</div>
+    <div>
+      <h2>看流程图算结果：三步法</h2>
+      <span class="tag"><span class="f f3">★★★</span>综合应用题的原型</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">第一步：找初值 —— 循环开始前，每个变量等于几？
+第二步：找条件 —— 循环在什么条件下继续？什么时候停？
+第三步：找规律 —— 循环体每次对变量做了什么？（加？乘？交换？）
+
+三步走完，把 n 取小一点（如 n=3、4）手工跑一遍，答案就出来了。</div>
+
+  <div class="qz"><span class="lb">例题</span><b>看下面流程，写出输出结果（n 输入为 5）</b><br>
+  <div class="flow" style="margin:8px 0 0">输入 n
+s ← 0 ;  i ← 1
+当 i ≤ n 时：
+    s ← s + i × i
+    i ← i + 1
+输出 s</div>
+  <span class="no">解析：这是<b>平方累加</b>。s ＝ 1²+2²+3²+4²+5² ＝ 1+4+9+16+25 ＝ <b>55</b>。<br>
+  <b>识别关键：</b>初值 0 → 是累加；循环体是 <b>i×i</b> 而不是 i → 加的是平方，不是自然数。</span></div>
+
+  <div class="okbox"><b>四类"看图说功能"的标准答案：</b><br>
+  ① <b>s←s+i</b> → <b>累加求和</b>；② <b>p←p*i</b> → <b>累乘求阶乘</b>；③ <b>比较并交换 + 双层循环</b> → <b>排序（冒泡）</b>；④ <b>有序序列中取中间比较、缩小区间</b> → <b>二分查找</b>。</div>
+
+  <div class="tip"><b>答题格式提醒：</b>综合应用题按<b>步骤给分</b>。写"功能"时不要只写"求和"，要写<b>"求 1 到 n 的平方和"</b>；写"结果"时把<b>算式和数值都写上</b>，例如"1²+2²+…+5²＝55"。</div>
+</section>
+
+<section class="mod" id="s8">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
+    <div>
+      <h2>本课必背 12 条</h2>
+      <span class="tag">进考场前扫一眼</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:40px">#</th><th>内容</th></tr>
+    <tr><td class="c">1</td><td>三种基本结构：<b>顺序、选择、循环</b>；共同点<b>一个入口一个出口、无死代码、无死循环</b></td></tr>
+    <tr><td class="c">2</td><td><b>当型（while）先判断后执行，循环体可执行 0 次</b>；<b>直到型（do-while）先执行后判断，至少 1 次</b></td></tr>
+    <tr><td class="c">3</td><td>流程图符号：<b>圆角起止、矩形处理、菱形判断、平行四边形输入输出</b></td></tr>
+    <tr><td class="c">4</td><td><b>累加初值 0，累乘初值 1</b>（累乘初值写 0 则结果永远为 0）</td></tr>
+    <tr><td class="c">5</td><td>1+2+…+n ＝ <b>n(n+1)/2</b>（n=100 → 5050）；n! 如 5! ＝ <b>120</b></td></tr>
+    <tr><td class="c">6</td><td><b>顺序查找</b>无前提，最多比 <b>n 次</b>，平均 (n+1)/2，<b>O(n)</b></td></tr>
+    <tr><td class="c">7</td><td><b>二分查找必须有序</b>（递增或递减都行），最多 <b>⌈log₂n⌉</b> 次，<b>O(log₂n)</b></td></tr>
+    <tr><td class="c">8</td><td>二分次数速算：<b>2⁹=512、2¹⁰=1024</b>；1000 个元素最多 <b>10 次</b></td></tr>
+    <tr><td class="c">9</td><td><b>冒泡排序 n 个数最多 n−1 趟</b>；<b>第 i 趟比较 n−i 次</b>；总共 <b>n(n−1)/2</b> 次；<b>O(n²)</b></td></tr>
+    <tr><td class="c">10</td><td><b>冒泡某趟无交换即可提前结束</b>（说明已有序）</td></tr>
+    <tr><td class="c">11</td><td>升序冒泡每趟把<b>最大值</b>送到末尾；一趟结束，最大数<b>已在最终位置</b></td></tr>
+    <tr><td class="c">12</td><td>看流程图三步：<b>找初值 → 找条件 → 找规律</b>，再取小 n 手工跑一遍</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s9">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
+    <div>
+      <h2>自测 14 题</h2>
+      <span class="tag">点题目看答案</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>1. 循环体中的语句至少会被执行一次。</summary><div class="ans"><b>错误。</b>2025 判断 34；while 循环可 0 次。</div></details>
+    <details><summary>2. 冒泡排序某趟没有发生交换，可以提前结束。</summary><div class="ans"><b>正确。</b>2025 判断 35。</div></details>
+    <details><summary>3. 二分查找要求数据必须按关键字递增排列。</summary><div class="ans"><b>错误。</b>只要求<b>有序</b>，递增或递减均可。</div></details>
+    <details><summary>4. 三种基本结构的共同点是只有一个入口和一个出口。</summary><div class="ans"><b>正确。</b></div></details>
+    <details><summary>5. 求 n! 时，累乘变量的初值应设为 0。</summary><div class="ans"><b>错误。</b>应设为 <b>1</b>，设 0 则结果永远为 0。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>6. 对 n 个元素进行冒泡排序，最多需要进行的趟数是（　）<br>A. n　B. n−1　C. n+1　D. n²</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>7. 在长度为 n 的线性表中进行顺序查找，最多比较次数为（　）<br>A. 1　B. log₂n　C. n　D. n²</summary><div class="ans"><b>C。</b></div></details>
+    <details><summary>8. 1000 个有序元素做二分查找，最多比较次数约为（　）<br>A. 10　B. 100　C. 500　D. 1000</summary><div class="ans"><b>A。</b>2¹⁰＝1024。</div></details>
+    <details><summary>9. 流程图中表示"判断"的符号是（　）<br>A. 矩形　B. 菱形　C. 平行四边形　D. 圆角矩形</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>10. 5 个数用冒泡排序（最坏情况），总比较次数为（　）<br>A. 5　B. 10　C. 15　D. 25</summary><div class="ans"><b>B。</b>5×4/2＝10。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（4 题）</b></p>
+  <div class="qa">
+    <details><summary>11. 三种基本结构是顺序结构、选择结构和 ______。</summary><div class="ans"><b>循环结构</b>。</div></details>
+    <details><summary>12. 执行"s←0；i←1；当 i≤100 时 s←s+i，i←i+1"，输出 s ＝ ______。</summary><div class="ans"><b>5050</b>（1+2+…+100）。</div></details>
+    <details><summary>13. 简述当型循环与直到型循环的区别。</summary><div class="ans"><b>参考答案：</b>①<b>当型（while）</b>在循环体<b>之前</b>判断条件，条件为真才执行循环体，<b>条件一开始不成立时循环体一次都不执行（最少 0 次）</b>；②<b>直到型（do-while）</b>先执行循环体、<b>之后</b>再判断条件，条件为真则继续，<b>循环体至少执行一次</b>。</div></details>
+    <details><summary>14. 简述冒泡排序的基本思想，并说明 n 个数最多需要多少趟。</summary><div class="ans"><b>参考答案：</b>①<b>基本思想</b>：从第一个元素开始，<b>相邻两两比较，若顺序不符合要求则交换</b>，一趟下来最大的（升序时）元素被送到末尾；下一趟在剩余元素中重复，直到全部有序。②<b>趟数</b>：n 个数最多需要 <b>n−1 趟</b>；第 i 趟比较 n−i 次，最坏共比较 n(n−1)/2 次，时间复杂度 O(n²)。③若<b>某一趟没有发生交换</b>，说明已有序，<b>可提前结束</b>。</div></details>
+  </div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"五、4～5"；<br>
+  真题来源：2024 判断（二分查找前提）；2025 判断 34、判断 35；2026 综合应用题（算法章）。<br>
+  上一课：第五章第1课 计算思维与算法基础　｜　下一章：第六章第1课 数据库基础与关系数据库 · Ctrl+P 可打印
+</footer>
+
+</main>
+</body>
+</html>

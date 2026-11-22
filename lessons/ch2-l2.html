@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第二章第2课 计算机硬件系统 · 考点精简（2027 四川专升本）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
+  --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:44px 0 30px;background:
+  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
+  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
+  border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
+  color:var(--c4);font-weight:700;margin-bottom:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(25px,3.4vw,38px);
+  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.4px;max-width:830px;margin:12px 0 0}
+.syl{margin-top:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+@media(max-width:820px){.syl{grid-template-columns:1fr}}
+.syl-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.syl-box h3{margin:0 0 7px;font-size:12.5px;letter-spacing:1px;color:var(--c1)}
+.syl-box p{margin:0;font-size:13.4px;color:var(--ink2)}
+.q{font-family:"Noto Serif SC",serif;color:var(--ink);background:var(--c1bg);
+  border-left:3px solid var(--c1);padding:7px 12px;border-radius:0 8px 8px 0;margin:6px 0 0;font-size:13.1px}
+.q.warn{border-left-color:var(--c4);background:var(--c4bg)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{flex:0 0 auto;font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;
+  border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap;transition:.18s}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
+  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
+.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
+.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
+table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
+th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+td.c{text-align:center;white-space:nowrap}
+tr:nth-child(even) td{background:#fdfcf9}
+.tbl-note{font-size:12.5px;color:var(--muted);margin:5px 0 0}
+.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
+  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
+.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
+.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
+.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
+.f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
+.cut{color:#9aa5ae}
+.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip b{color:var(--c1)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.okbox b{color:#1f6b4a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
+.mem b{color:var(--gold)}
+.human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
+.human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
+.flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
+  white-space:pre;overflow-x:auto;margin:9px 0}
+.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
+.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
+  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qz b{color:var(--ink)}
+.qz .no{color:#8a5a00;font-weight:700}
+.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--c1);margin-right:8px;font-weight:700;display:inline-block}
+details[open] summary::before{content:'▾'}
+details .ans{margin-top:7px;padding:9px 12px;background:var(--c5bg);border-left:3px solid var(--c5);
+  border-radius:0 8px 8px 0;font-size:13.1px;color:#1b4a36;line-height:1.76}
+details .ans b{color:#14402c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);
+  color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.3px}.toc,.btnrow{display:none}.hero{padding:16px 0 10px}
+  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第二章第 2 课</span>
+    <h1>计算机硬件系统
+      <span class="light">CPU ｜ 存储器层次 ｜ RAM / ROM / Cache / 虚拟内存 ｜ 输入输出设备 ｜ 性能指标</span>
+    </h1>
+    <p class="lead">第二章里考点最密的一课。它的特点是：<b>不用算，但必须分清</b>——RAM 和 ROM 谁断电丢数据、Cache 和内存谁快、外存大会不会更快。这些"分不清"就是判断题的失分点。</p>
+
+    <div class="syl">
+      <div class="syl-box">
+        <h3>考纲原文</h3>
+        <p class="q">二、2. 计算机硬件系统：<b>了解</b>微型计算机五大部件的发展历史和基本功能；<b>理解</b>微型计算机工作原理和工作过程；<b>了解</b>微型计算机主要性能指标。</p>
+      </div>
+      <div class="syl-box">
+        <h3>本课在卷面上值多少</h3>
+        <p class="q warn">2025：单选 1（触摸屏）、判断 21（主频）、22（外存）、24（虚拟内存）、25（簇）；<b>2026：单选 3（RAM 断电）</b>。近两年合计 <b>7 分左右</b>，且几乎全在判断里。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">考 / 不考</a>
+    <a href="#s1">① CPU</a>
+    <a href="#s2">② 存储器层次</a>
+    <a href="#s3">③ 内存与外存</a>
+    <a href="#s4">④ 输入输出设备</a>
+    <a href="#s5">⑤ 性能指标</a>
+    <a href="#s6">2026 真题</a>
+    <a href="#s7">易错清单</a>
+    <a href="#s8">必背 12 条</a>
+    <a href="#s9">自测 12 题</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section class="mod" id="s0">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">0</div>
+    <div>
+      <h2>本课考 / 不考</h2>
+      <span class="tag">"理解 + 了解"级别，考辨析、考归属</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:74px">考频</th><th style="width:40%">内容</th><th>怎么处理</th></tr>
+    <tr><td class="c"><span class="f f3">★★★</span></td>
+      <td>RAM 与 ROM 的区别（断电是否丢失、可否写入）· Cache 的作用（解决 CPU 与内存速度差）· 虚拟内存的实质（<b>硬盘上的一块空间</b>）· 存储器层次"容量与速度反向"· 既是输入又是输出（触摸屏）</td>
+      <td>必须能<b>逐条判断对错</b></td></tr>
+    <tr><td class="c"><span class="f f2">★★</span></td>
+      <td>CPU 的组成（运算器 + 控制器 + 寄存器）· 主频/字长/核心数/缓存 · 硬盘按<b>簇</b>分配空间 · 多线程的作用</td>
+      <td>能说清指标含义与相互关系</td></tr>
+    <tr><td class="c"><span class="f f1">★</span></td>
+      <td>打印机分类（针式/喷墨/激光）· 显示器分辨率与刷新率 · 光盘与 SSD 的定位</td>
+      <td>认得、能归类即可</td></tr>
+    <tr><td class="c"><span class="f f0">✂</span></td>
+      <td class="cut">各代内存 DDR 的参数 · SSD 主控与闪存颗粒类型 · CPU 微架构代号 · 显卡核心参数 · 电源功耗计算</td>
+      <td class="cut">纯参数，考纲无、真题无</td></tr>
+  </table>
+  <div class="tip"><b>本课的核心只有一句话：</b>存储器是一个<b>金字塔</b>——越往上越快越贵越小，越往下越慢越便宜越大。<b>所有关于存储的判断题，本质都在问"你在金字塔的哪一层"。</b></div>
+</section>
+
+<section class="mod" id="s1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
+    <div>
+      <h2>CPU：大脑的三件套</h2>
+      <span class="tag"><span class="f f3">★★★</span>组成与指标，年年有小分值</span>
+    </div>
+      </div>
+  <div class="hr"></div>
+
+  <div class="flow">CPU（中央处理器）
+├── 运算器 ALU —— 算术运算（+ − × ÷）+ 逻辑运算（与 或 非 比较）
+├── 控制器 CU  —— 取指令、译码、发控制信号，指挥全机
+└── 寄存器组   —— 暂存指令、数据和地址，速度最快
+    
+CPU 与内存之间还有一层：Cache（高速缓冲存储器）</div>
+
+  <table>
+    <tr><th style="width:120px">指标</th><th>含义</th><th style="width:32%">考点</th></tr>
+    <tr><td><b>主频</b></td><td>时钟频率，单位 GHz，表示每秒的时钟周期数</td><td>主频越高，单位时间内完成的指令周期越多，<b>运算速度通常越快</b>，但<b>不是唯一因素</b></td></tr>
+    <tr><td><b>字长</b></td><td>CPU 一次能并行处理的二进制位数</td><td>32 位 / 64 位；字长越长，精度和一次处理能力越强</td></tr>
+    <tr><td>核心数/线程数</td><td>物理核心数量、可并行的线程数量</td><td>多线程可让 CPU 在等待 I/O 时去做别的事，<b>减少闲置</b></td></tr>
+    <tr><td>缓存容量</td><td>L1 / L2 / L3 的容量</td><td>缓存越大，命中率越高，速度越快</td></tr>
+    <tr><td>指令集</td><td>CPU 能执行的全部指令</td><td>由硬件决定，不同架构不能直接互通</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 21</b>　CPU 的主频越高，计算机的运行速度越快。<br>
+  <span class="no">→ <b>正确</b>。注意题干没有"唯一""一定"这类字眼，说的是"通常越快"，命题组判对。<br>
+  <b>但如果题干写成"主频是决定计算机性能的唯一指标"，就是错的</b>——字长、缓存、核心数、硬盘速度都影响整体性能。同一句话加不加"唯一"，答案就相反。</span></div>
+
+  <div class="qz"><span class="lb">真题</span><b>2024 · 判断 4</b>　多线程可以减少 CPU 的闲置时间。<br>
+  <span class="no">→ <b>正确</b>。一个线程等 I/O 时，CPU 可以切去执行另一个线程，等待时间被利用起来。</span></div>
+</section>
+
+<section class="mod" id="s2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">②</div>
+    <div>
+      <h2>存储器层次：一个金字塔</h2>
+      <span class="tag"><span class="f f3">★★★</span>本课最重要的模型，判断全靠它</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">            容量小、速度快、价格高
+    ┌──────────────────────────┐
+    │  寄存器（CPU 内部，最快）  │
+    ├──────────────────────────┤
+    │  Cache（L1/L2/L3）        │
+    ├──────────────────────────┤
+    │  内存（主存，RAM）         │
+    ├──────────────────────────┤
+    │  外存（硬盘 / U盘 / 光盘） │
+    └──────────────────────────┘
+            容量大、速度慢、价格低</div>
+
+  <table>
+    <tr><th style="width:110px">层次</th><th>特点</th><th style="width:30%">一句话定位</th></tr>
+    <tr><td>寄存器</td><td>CPU 内部，容量极小（几十字节级）、速度最快</td><td>CPU 的"手边抽屉"</td></tr>
+    <tr><td><b>Cache</b></td><td>位于 CPU 与内存之间，容量小、速度接近 CPU</td><td><b>解决"CPU 快、内存慢"的速度差</b>，存放近期常用数据</td></tr>
+    <tr><td><b>内存</b>（主存）</td><td>CPU 可直接访问，<b>断电丢失</b></td><td>存放<b>正在运行</b>的程序和数据</td></tr>
+    <tr><td><b>外存</b>（辅存）</td><td>容量大、单位成本低、<b>断电不丢</b>，但速度慢</td><td>长期存放程序和数据，需先调入内存才能被 CPU 处理</td></tr>
+  </table>
+
+  <div class="human"><span class="lb">人话解释 · 为什么必须分层</span>
+  如果全用和 CPU 一样快的存储，电脑会贵到买不起；如果全用硬盘，CPU 每次都要等几百个时钟周期。所以做成"<b>少量极快的 Cache + 适量较快的内存 + 大量便宜的外存</b>"，让常用数据待在快的地方，不常用的躺在慢的地方。<b>这就是"局部性原理"的工程实现</b>。
+  </div>
+
+  <div class="okbox"><b>由此可以一步推出三条判断题的答案：</b><br>
+  ① 外存容量越大，读取速度越快？<b>错</b>——容量和速度是两回事，同代技术下容量大≠速度快。<br>
+  ② Cache 的作用是扩大内存容量？<b>错</b>——它是提速的，不是扩容的。<br>
+  ③ 内存比外存快但容量小？<b>对</b>——这正是金字塔的方向。</div>
+</section>
+
+<section class="mod" id="s3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">③</div>
+    <div>
+      <h2>内存与外存：四个必考点</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 判断 22、24、25 连着三题都在这</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:96px">对比项</th><th>RAM（随机存储器）</th><th>ROM（只读存储器）</th></tr>
+    <tr><td>读写</td><td>可读可写</td><td>正常只能读，写入需专用设备/特殊条件</td></tr>
+    <tr><td>断电后</td><td><b>数据丢失</b></td><td><b>数据保留</b></td></tr>
+    <tr><td>用途</td><td>内存条，存放运行中的程序与数据</td><td>存放 BIOS、固件等不需修改的程序</td></tr>
+    <tr><td>细分</td><td><b>DRAM</b>（内存条，需定时刷新）、<b>SRAM</b>（Cache，不需刷新）</td><td>PROM / EPROM / EEPROM / Flash</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">2026 真题</span><b>单选 第 3 题（2 分）</b>　下列存储器中，断电后所存数据会丢失的是（　）<br>
+  <span class="no">答案：<b>RAM</b>。U 盘、硬盘（外存）断电不丢，ROM 断电不丢，只有 RAM 断电即失。<br>
+  <b>这题 2025 判断第 22、24 题、2026 单选第 3 题连着考同一个点</b>：只要问"断电"，答案一定指向 RAM。</span></div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">考点</th><th>结论</th></tr>
+    <tr><td><b>虚拟内存</b></td><td>当物理内存不够时，在<b>硬盘</b>上划出一块空间当内存用。<b>它不能替代物理内存</b>，速度远低于内存；断电后虚拟内存文件也不再起作用</td></tr>
+    <tr><td><b>簇（Cluster）</b></td><td>硬盘分配空间的最小单位，常见 4KB。所以<b>一个 4KB 以下的文件在硬盘上也要占满一个簇</b>——占位大于实际大小</td></tr>
+    <tr><td>格式化</td><td>建立文件系统、划分簇；<b>不是</b>把磁盘"清空成空白物理盘"</td></tr>
+    <tr><td>缓冲区（Buffer）</td><td>内存中临时存放数据的一块区域，用于协调速度差异</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 24</b>　计算机有了虚拟内存，就不再需要物理内存了。<br>
+  <span class="no">→ <b>错</b>。虚拟内存是物理内存不够时的<b>补充</b>，本身就在硬盘上，速度差一到两个数量级，不能取代物理内存。</span></div>
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 25</b>　一个 4KB 的文件保存在硬盘上，占用的空间会大于 4KB。<br>
+  <span class="no">→ <b>正确</b>。硬盘按<b>簇</b>分配，簇通常为 4KB，文件还要占目录项等开销，所以实际占用会略大于 4KB。</span></div>
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 22</b>　外存容量越大，读写速度越快。<br>
+  <span class="no">→ <b>错</b>。容量与速度无必然关系；决定速度的是接口、转速/闪存类型、缓存等。</span></div>
+</section>
+
+<section class="mod" id="s4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">④</div>
+    <div>
+      <h2>输入输出设备：只考"归类"</h2>
+      <span class="tag"><span class="f f2">★★</span>2025 单选第 1 题就在这</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:110px">类别</th><th>典型设备</th><th style="width:32%">易错点</th></tr>
+    <tr><td><b>输入设备</b></td><td>键盘、鼠标、扫描仪、麦克风、摄像头、手写板、条形码阅读器</td><td>摄像头是输入，显示器是输出，别对调</td></tr>
+    <tr><td><b>输出设备</b></td><td>显示器、打印机、绘图仪、音箱、投影仪</td><td>投影仪<b>只输出</b>，不能输入</td></tr>
+    <tr><td><b>既输入又输出</b></td><td><b>触摸屏</b>、网卡、调制解调器、磁盘驱动器（可读可写）</td><td>这是选择题的常客，答案通常就是"触摸屏"</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 1（2 分）</b>　下列设备中，既是输入设备又是输出设备的是（　）<br>
+  <span class="no">答案：<b>触摸屏</b>。手指点按是输入，屏幕显示是输出。<br>
+  同类可归入"既输入又输出"的还有：网卡（收发数据）、调制解调器、可读写的磁盘驱动器。</span></div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:110px">设备</th><th>分类与考点</th></tr>
+    <tr><td>打印机</td><td><b>针式</b>（击打、可复写多联单据）、<b>喷墨</b>（彩色、成本低）、<b>激光</b>（速度快、质量高、办公主流）</td></tr>
+    <tr><td>显示器</td><td>主要指标：<b>分辨率</b>（像素数）、<b>刷新率</b>（Hz）、<b>色深</b>（位数）、尺寸</td></tr>
+    <tr><td>扫描仪</td><td>输入设备，指标为<b>分辨率</b>（dpi）与色彩位数</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
+    <div>
+      <h2>微型计算机的主要性能指标</h2>
+      <span class="tag"><span class="f f2">★★</span>记"六大指标 + 谁能代表整机速度"</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:110px">指标</th><th>说明</th><th style="width:26%">备注</th></tr>
+    <tr><td><b>字长</b></td><td>CPU 一次处理的二进制位数</td><td>越长越好，直接影响精度与能力</td></tr>
+    <tr><td><b>主频</b></td><td>时钟频率，GHz</td><td>不等于整机速度</td></tr>
+    <tr><td><b>运算速度</b></td><td>常用 <b>MIPS</b>（每秒百万条指令）表示</td><td>综合指标，比主频更接近"快不快"</td></tr>
+    <tr><td>内存容量</td><td>可运行的程序规模</td><td>容量不足会频繁使用虚拟内存而变慢</td></tr>
+    <tr><td>外存容量</td><td>能装多少数据</td><td>与速度无关</td></tr>
+    <tr><td>可靠性/可用性</td><td>平均无故障时间等</td><td>服务器尤其看重</td></tr>
+  </table>
+
+  <div class="mem"><b>一句话记法：</b>字长看"一次能吃多少"，主频看"每秒咬几口"，MIPS 看"实际吃得多快"，容量看"能吃多久不饿"。<b>四个词分开记，别用一个"性能好"糊过去。</b></div>
+</section>
+
+<section class="mod" id="s6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#6b4a7a,#8f6aa4)">26</div>
+    <div>
+      <h2>2026 年真题（本课部分）</h2>
+      <span class="tag">2026 年 4 月 16 日实考卷 · 考后讲评整理</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="qz"><span class="lb">2026 · 单选 第 3 题</span><b>2 分</b>　断电后数据会丢失的存储器是（　）<br>
+  A. 硬盘　B. U 盘　C. ROM　D. RAM<br>
+  <span class="no">答案：<b>D</b>。硬盘、U 盘是外存，断电不丢；ROM 只读、断电不丢；只有 <b>RAM（内存条）</b>断电即失。<br>
+  这题的三个干扰项分别代表"外存、外存、只读内存"，<b>它考的不是记忆，而是"能不能把四类存储器按断电特性排好"</b>。</span></div>
+
+  <div class="qz"><span class="lb">2026 · 判断 第 2 题</span><b>1 分</b>　两个二进制数按位进行逻辑与运算，题面给出运算结果为 1001，判断该结果是否正确。<br>
+  <span class="no">答案：<b>正确</b>。<br>
+  逻辑与的规则：<b>1∧1=1，其余（1∧0、0∧1、0∧0）全为 0</b>——"有 0 则 0"。所以只要两个数中某一位有 0，该位结果就是 0；只有两位都是 1，该位才是 1。<br>
+  <b>命题意图：</b>把算术运算与逻辑运算混在一起考。注意区分——<b>算术加法 1+1=10（进位）</b>，<b>逻辑与 1∧1=1（不进位）</b>。</span></div>
+
+  <div class="okbox"><b>2026 在本课给出的信号：</b>①"断电丢不丢"是必考中的必考，2025 判断 22/24、2026 单选 3 连考；②逻辑运算开始以判断题形式出现，且专门和算术运算对照着考。这两条都是"懂了就不会错"的题，别丢。</div>
+</section>
+
+<section class="mod" id="s7">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑦</div>
+    <div>
+      <h2>本课易错清单</h2>
+      <span class="tag">十条，每条都对应一个真实的判断陷阱</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:36px">#</th><th style="width:240px">错误说法</th><th>正确说法</th></tr>
+    <tr><td class="c">1</td><td>ROM 断电后数据丢失</td><td>ROM <b>断电保留</b>；RAM 才丢失</td></tr>
+    <tr><td class="c">2</td><td>Cache 是用来扩大内存容量的</td><td>Cache 是用来<b>提速</b>的，容量很小</td></tr>
+    <tr><td class="c">3</td><td>虚拟内存就是物理内存的一部分</td><td>虚拟内存是<b>硬盘</b>上的一块空间</td></tr>
+    <tr><td class="c">4</td><td>有了虚拟内存就不需要物理内存</td><td>虚拟内存只是<b>补充</b>，速度慢得多</td></tr>
+    <tr><td class="c">5</td><td>外存容量越大，读写越快</td><td>容量与速度<b>无关</b></td></tr>
+    <tr><td class="c">6</td><td>4KB 的文件在硬盘上正好占 4KB</td><td>按<b>簇</b>分配，通常占用≥4KB，还会略多</td></tr>
+    <tr><td class="c">7</td><td>投影仪既是输入又是输出设备</td><td>投影仪<b>只输出</b>；触摸屏才是两用</td></tr>
+    <tr><td class="c">8</td><td>主频是决定计算机性能的唯一指标</td><td>字长、缓存、核心数、硬盘速度都影响性能</td></tr>
+    <tr><td class="c">9</td><td>逻辑与 1∧1=10</td><td>逻辑与 <b>1∧1=1</b>；1+1=10 是算术加法</td></tr>
+    <tr><td class="c">10</td><td>CPU 就是运算器</td><td>CPU = <b>运算器 + 控制器</b>（+寄存器）</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s8">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
+    <div>
+      <h2>本课必背 12 条</h2>
+      <span class="tag">进考场前扫一眼</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:40px">#</th><th>内容</th></tr>
+    <tr><td class="c">1</td><td>CPU = <b>运算器 + 控制器</b>（另有寄存器组）；运算器做算术与逻辑运算，控制器指挥全机</td></tr>
+    <tr><td class="c">2</td><td>CPU 指标：<b>主频（GHz）、字长、核心数、缓存容量、指令集</b>；主频高不等于整机快</td></tr>
+    <tr><td class="c">3</td><td>存储器金字塔（快→慢）：<b>寄存器 → Cache → 内存 → 外存</b>；容量与速度反向</td></tr>
+    <tr><td class="c">4</td><td><b>Cache 解决 CPU 与内存的速度差</b>，靠"局部性"提速，不扩容</td></tr>
+    <tr><td class="c">5</td><td><b>RAM 可读写、断电丢失</b>；<b>ROM 只读、断电保留</b>（存 BIOS）</td></tr>
+    <tr><td class="c">6</td><td>DRAM 需刷新（内存条）；SRAM 不需刷新（Cache）</td></tr>
+    <tr><td class="c">7</td><td><b>虚拟内存 = 硬盘上划出的空间</b>，不能替代物理内存，速度慢</td></tr>
+    <tr><td class="c">8</td><td>硬盘按<b>簇</b>分配空间（常见 4KB），小文件也占满一个簇</td></tr>
+    <tr><td class="c">9</td><td>外存：断电不丢、容量大、速度慢；<b>容量大小与读写速度无必然关系</b></td></tr>
+    <tr><td class="c">10</td><td><b>触摸屏</b>、网卡、调制解调器属"既输入又输出"；投影仪只输出</td></tr>
+    <tr><td class="c">11</td><td>性能指标：字长、主频、<b>运算速度（MIPS）</b>、内存容量、外存容量、可靠性</td></tr>
+    <tr><td class="c">12</td><td>运算对照：算术 <b>1+1=10</b>；逻辑与 <b>1∧1=1</b>，有 0 则 0</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s9">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
+    <div>
+      <h2>自测 12 题</h2>
+      <span class="tag">点题目看答案 · 判断错一条就回原文重看那一节</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>1. ROM 中的信息断电后不会丢失，RAM 中的信息断电后会丢失。</summary><div class="ans"><b>正确。</b>这正是两者最本质的区别。</div></details>
+    <details><summary>2. Cache 的作用是扩大内存的容量。</summary><div class="ans"><b>错误。</b>Cache 容量很小，作用是<b>缓解 CPU 与内存的速度差</b>。</div></details>
+    <details><summary>3. 计算机的虚拟内存是在内存条上划分出来的。</summary><div class="ans"><b>错误。</b>虚拟内存在<b>硬盘</b>上。</div></details>
+    <details><summary>4. 外存储器的容量越大，其读写速度就越快。</summary><div class="ans"><b>错误。</b>容量与速度无关。</div></details>
+    <details><summary>5. 硬盘上一个 3KB 的文件实际占用的空间可能大于 3KB。</summary><div class="ans"><b>正确。</b>按簇分配，最小占用一个簇（常见 4KB）。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>6. 下列设备中，既是输入设备又是输出设备的是（　）<br>A. 键盘　B. 显示器　C. 触摸屏　D. 打印机</summary><div class="ans"><b>C。</b>2025 单选第 1 题同款。</div></details>
+    <details><summary>7. CPU 由（　）组成<br>A. 运算器和存储器　B. 运算器和控制器　C. 控制器和存储器　D. 寄存器和外存</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>8. 计算机中用于解决 CPU 与内存速度不匹配问题的部件是（　）<br>A. 寄存器　B. Cache　C. 硬盘　D. 虚拟内存</summary><div class="ans"><b>B。</b>Cache 是关键。虚拟内存解决的是"容量不够"，不是"速度差"。</div></details>
+    <details><summary>9. 下列存储器中，断电后数据会丢失的是（　）<br>A. 硬盘　B. U 盘　C. ROM　D. RAM</summary><div class="ans"><b>D。</b>2026 单选第 3 题原题。</div></details>
+    <details><summary>10. 表示计算机运算速度的常用指标是（　）<br>A. MIPS　B. dpi　C. Hz 只表示分辨率　D. GB</summary><div class="ans"><b>A。</b>MIPS＝每秒百万条指令；dpi 是打印/扫描分辨率，Hz 是频率，GB 是容量。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>11. 计算机的存储器层次中，速度最快的是 ______。</summary><div class="ans"><b>寄存器</b>（CPU 内部，比 Cache 更快）。</div></details>
+    <details><summary>12. 逻辑运算中，1 与 1 的结果是 ______。</summary><div class="ans"><b>1。</b>逻辑与"有 0 则 0，全 1 才 1"，不进位；算术加法 1+1 才是 10。</div></details>
+  </div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"二、2. 计算机硬件系统"；<br>
+  真题来源：2025 年单选 1、判断 21/22/24/25；2026 年单选 3、判断 2；2024 年判断 4。<br>
+  上一课：第二章第1课 系统组成与体系结构　｜　下一课：第二章第3课 计算机软件系统与操作系统 · Ctrl+P 可打印
+</footer>
+
+</main>
+</body>
+</html>

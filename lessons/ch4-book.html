@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第四章 专项练习 · 复习题 · 冲刺测试（2027 四川专升本计算机）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{--ink:#15212c;--ink2:#3b4b59;--muted:#6b7a88;--paper:#f7f5f0;--card:#fff;--line:#e3ded4;
+--c1:#0e6b8a;--c1bg:#e9f2f6;--c4:#b23a2e;--c4bg:#fbeeec;--c5:#1f6b4a;--c5bg:#e8f2ed;
+--gold:#8a5a00;--goldbg:#fbf3dd;--c3:#2b4a8b;--c3bg:#eaeef7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:40px 0 26px;background:radial-gradient(900px 320px at 8% -30%,rgba(178,58,46,.11),transparent 60%),radial-gradient(700px 280px at 92% -20%,rgba(14,107,138,.10),transparent 60%),#fff;border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;color:var(--c4);font-weight:700;margin-bottom:11px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4)}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(24px,3.2vw,34px);line-height:1.3;margin:0 0 8px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.6em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.3px;max-width:830px;margin:10px 0 0}
+.stat{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.stat span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 14px;font-size:12.8px;color:var(--ink2)}
+.stat b{color:var(--c4)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:8px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:22px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:58px}
+.mod-h{display:flex;align-items:flex-start;gap:11px}
+.mod-no{flex:0 0 auto;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19px;margin:1px 0 0}
+.mod-h .tag{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:11px 0 12px}
+.sub{margin:16px 0 6px;padding:6px 12px;background:var(--c3bg);border-left:3px solid var(--c3);border-radius:0 8px 8px 0;font-size:13.2px;font-weight:700;color:#1e356b}
+.qi{border-bottom:1px dashed #e6e0d4;padding:9px 0 10px}
+.qi:last-child{border-bottom:0}
+.qh{font-size:13.9px;line-height:1.75}
+.qn{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;background:#eef1f3;color:#42535f;border-radius:6px;font-weight:700;font-size:12.5px;margin-right:7px}
+.opt{margin-top:3px;color:#4a5a67;font-size:13.2px;line-height:1.9}
+.tp{font-size:11px;font-weight:700;color:#7a5a00;background:var(--goldbg);border:1px solid #ecd9a5;border-radius:4px;padding:0 6px;margin-right:6px}
+details{margin-top:5px}
+summary{cursor:pointer;list-style:none;font-size:12.6px;color:var(--c1);font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸ '}
+details[open] summary::before{content:'▾ '}
+.ans{margin-top:5px;padding:8px 12px;background:var(--c5bg);border-left:3px solid var(--c5);border-radius:0 8px 8px 0;font-size:13px;color:#1b4a36;line-height:1.78}
+.ans b{color:#123c2a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:13.3px}
+.mem b{color:var(--gold)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:26px 20px 50px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.2px}.toc,.btnrow,.qfoot,.scorebar,.sbar,.st,.mini{display:none}.op{border:0;background:none;padding:2px 0}.op b{background:none;color:#333}.hero{padding:14px 0 8px}
+.mod{box-shadow:none;break-inside:avoid;margin:10px 0;padding:14px 16px}}
+
+.qhead{display:flex;gap:9px;align-items:flex-start}
+.qh{flex:1;font-size:13.9px;line-height:1.75}
+.st{flex:0 0 auto;font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px;background:#eef1f3;color:#7a8794;white-space:nowrap;margin-top:3px;border:1px solid #e2e7ea}
+.st.right{background:#e3f3ea;color:#1a6b48;border-color:#b9ddc9}
+.st.wrong{background:#fbeeec;color:#a32a1c;border-color:#efc4bc}
+.st.done{background:#e9effa;color:#2b4a8b;border-color:#c3d0ea}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:6px;margin:7px 0 2px}
+.op{display:flex;gap:8px;align-items:flex-start;text-align:left;font-family:inherit;font-size:13.2px;line-height:1.7;color:#3d4d5a;background:#fcfcfa;border:1px solid #e3ded4;border-radius:9px;padding:7px 11px;cursor:pointer;transition:background .12s,border-color .12s}
+.op:hover{border-color:#a8cfdd;background:#f2f9fc}
+.op b{flex:0 0 auto;width:20px;height:20px;line-height:20px;text-align:center;border-radius:5px;background:#eef1f3;color:#42535f;font-size:12px;margin-top:1px}
+.op em{margin-left:auto;font-style:normal;font-weight:700;font-size:12px;padding-left:6px}
+.op.correct{border-color:#3f9b74;background:#e8f5ee}
+.op.correct b{background:#3f9b74;color:#fff}
+.op.correct em{color:#1f6b4a}
+.op.wrong{border-color:#d1584a;background:#fbeeec}
+.op.wrong b{background:#d1584a;color:#fff}
+.op.wrong em{color:#a32a1c}
+.op.sel{border-color:#2b4a8b;background:#eaeef7}
+.op.sel b{background:#2b4a8b;color:#fff}
+.op.lock{cursor:default}
+.op.lock:hover{border-color:#e3ded4;background:#fcfcfa}
+.op.correct.lock:hover{border-color:#3f9b74;background:#e8f5ee}
+.op.wrong.lock:hover{border-color:#d1584a;background:#fbeeec}
+.qfoot{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap;align-items:center}
+.mini{cursor:pointer;font-family:inherit;font-size:11.6px;border:1px solid #dcd6c9;background:#fff;color:#66757f;border-radius:7px;padding:3px 11px;transition:.12s}
+.mini:hover{color:#0b5a75;border-color:#a8cfdd;background:#f2f9fc}
+.mini.on{border-color:#a8cfdd;background:#e9f2f6;color:#0b5a75;font-weight:700}
+.tip{font-size:11.6px;color:#a32a1c;margin-left:2px}
+.ansbox{display:none;margin-top:6px}
+.ansbox.show{display:block}
+.sbar{display:flex;align-items:center;gap:10px;margin:2px 0 10px;font-size:11.8px;color:#6b7a88}
+.sbar-t{flex:0 0 auto;font-variant-numeric:tabular-nums}
+.track{flex:1;height:5px;background:#ece6da;border-radius:3px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c93b0,#1f6b4a);border-radius:3px;transition:width .2s}
+.scorebar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:12.2px;color:#5a6975;padding:5px 26px 3px;margin:0 auto}
+.scorebar b{color:#b23a2e;font-variant-numeric:tabular-nums}
+.scorebar .hint{color:#8b929a;font-size:11.4px}
+
+.fillrow{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:7px}
+.fill{flex:1 1 220px;min-width:170px;font-family:inherit;font-size:13.3px;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:8px;padding:6px 11px;line-height:1.6}
+.fill::placeholder{color:#a8b0b7}
+.fill:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
+.fill.right{border-color:#3f9b74;background:#f3fbf7}
+.fill.wrong{border-color:#d1584a;background:#fdf4f2}
+.fill:disabled{opacity:.92;cursor:default}
+@media print{.fillrow{display:none}}
+
+.essay{margin-top:7px;width:100%;min-height:86px;font-family:inherit;font-size:13.2px;line-height:1.72;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:9px;padding:8px 11px;resize:vertical}
+.essay::placeholder{color:#a8b0b7}
+.essay:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
+.essay.right{border-color:#3f9b74;background:#f6fcf8}
+.essay.wrong{border-color:#d1584a;background:#fdf5f3}
+@media print{.essay{display:none}}
+
+.mini.primary{border-color:#0e6b8a;background:#0e6b8a;color:#fff}
+.mini.primary:hover{background:#0b5a75;border-color:#0b5a75;color:#fff}
+.ejudge{font-size:11.8px;color:#5a6975}
+.ejudge.ok{color:#1f6b4a;font-weight:700}
+.ejudge.bad{color:#a32a1c;font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第四章练习册</span>
+    <h1>第四章 网络与信息安全
+      <span class="light">专项练习（按小节）→ 章末复习题 → 限时冲刺测试</span>
+    </h1>
+    <p class="lead">本章约 <b>15 分</b>，特点是"<b>概念少、考法固定</b>"：拓扑五种、协议五种、防火墙三种"做不到"，几乎年年以判断/单选出现。<b>简答题的高频素材也在这里</b>（拓扑 5 种）。</p>
+    <div class="stat">
+      <span>专项练习 <b>30</b> 题</span>
+      <span>章末复习 <b>8</b> 题</span>
+      <span>冲刺测试 <b>20</b> 题 / <b>53</b> 分</span>
+      <span>合计 <b>58</b> 题</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#l1">1 网络基础</a>
+    <a href="#l2">2 Internet</a>
+    <a href="#l3">3 信息安全</a>
+    <a href="#rev">章末复习</a>
+    <a href="#test">冲刺测试</a>
+  </div>
+</nav>
+<div class="wrap scorebar"><span>已完成 <b id="cDone">0</b>/<span id="cTotal">0</span> 题</span><span>正确 <b id="cRight">0</b></span><span>正确率 <b id="cRate">—</b></span><span class="hint">点选项即时判分，进度自动存在本机</span><button class="mini" id="resetAll">重置进度</button></div>
+
+<main class="wrap">
+
+<section class="mod" id="l1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">1</div>
+    <div><h2>第 1 课　计算机网络基础</h2><span class="tag">专项 10 题 · 功能 / 拓扑 / 分层 / 设备</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　概念、功能与分类</div>
+  <div class="qi" data-q="l1-1" data-type="fill" data-key="资源共享、数据通信">
+  <div class="qhead"><span class="qn">1</span><div class="qh">计算机网络最主要的功能是 ______，最基本的功能是 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>资源共享、数据通信。</b>其他功能：分布式处理、提高可靠性、负载均衡。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="l1-2" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">2</span><div class="qh">按覆盖范围分，网络分为局域网、城域网和（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>广域网</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>星型网</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>总线网</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>无线网</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b><b>LAN（局域网，几公里内）—MAN（城域网，城市级）—WAN（广域网，跨地区/国家）</b>；<b>Internet 是最大的广域网</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-3" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">3</span><div class="qh"><span class="tp">判断</span>Internet 本身就是一个巨大的广域网。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>Internet 由无数 LAN、MAN、WAN 互联而成，是"网络的网络"，按覆盖范围属广域网。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　五种拓扑结构</div>
+  <div class="qi" data-q="l1-4" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">4</span><div class="qh"><span class="tp">简答/多选</span>计算机网络常见的拓扑结构有哪五种？</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>星型、总线型、环型、树型、网状型</b>（2025 简答 57 原题）。答题时按顺序写，五种写全即满分。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+  <div class="qi" data-q="l1-5" data-type="fill" data-key="网状、星型">
+  <div class="qhead"><span class="qn">5</span><div class="qh">可靠性最高、但结构最复杂的拓扑是（　）；结构最简单、以中心节点为核心的是（　）。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>网状、星型。</b>网状有多条路径可选，<b>一条断了还能绕</b>；星型全靠中心节点转发，<b>中心一坏全网瘫</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="l1-6" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">6</span><div class="qh"><span class="tp">判断</span>在总线型网络中，任意一台主机出现故障都会导致整个网络瘫痪。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b>总线型中<b>单台主机故障一般只影响自己</b>，只有<b>总线（主干）断开</b>才会全网瘫痪。星型才是"中心节点故障→全网瘫"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　体系结构与网络设备</div>
+  <div class="qi" data-q="l1-7" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">7</span><div class="qh">OSI 参考模型自下而上的七层依次是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>物理、数据链路、网络、传输、会话、表示、应用</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>应用、表示、会话、传输、网络、数据链路、物理</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>物理、网络、数据链路、传输、会话、表示、应用</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>物理、数据链路、传输、网络、会话、表示、应用</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>口诀"<b>物数网传会表应</b>"；<b>TCP/IP 则为四层：网络接口层、网际层、传输层、应用层</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-8" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">8</span><div class="qh">工作在<b>网络层</b>、负责在不同网络之间选择路径的设备是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>集线器</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>交换机</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>路由器</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>中继器</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>分层对应：<b>集线器/中继器——物理层；交换机/网桥——数据链路层；路由器——网络层；网关——高层协议转换</b>（2025 单选 15）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-9" data-type="fill" data-key="48 位、物理（硬件）地址">
+  <div class="qhead"><span class="qn">9</span><div class="qh">MAC 地址的长度是（　）位，它是（　）地址。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>48 位、物理（硬件）地址。</b>通常写成 6 组十六进制；<b>IP 是逻辑地址，MAC 是物理地址</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+
+  <div class="sub">易错辨析（B 组）</div>
+  <div class="qi" data-q="l1-10" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">10</span><div class="qh">一条 100 Mbps 的网络，理论最大传输速率约为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>100 MB/s</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>12.5 MB/s</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>10 MB/s</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>1.25 MB/s</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>1 B＝8 bit</b>，故 100 Mbps÷8＝<b>12.5 MB/s</b>。<b>看到"Mb"（小写 b）是比特，别当成字节。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">2</div>
+    <div><h2>第 2 课　Internet 基础与应用</h2><span class="tag">专项 10 题 · IP / 域名 / 服务 / 检索</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　起源与 IP 地址</div>
+  <div class="qi" data-q="l2-1" data-type="fill" data-key="ARPANET、1969、1994">
+  <div class="qhead"><span class="qn">1</span><div class="qh">Internet 的前身是（　），诞生于（　）年；我国正式接入国际互联网是在（　）年。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>ARPANET、1969、1994。</b>1983 年 TCP/IP 成为正式协议；1987 年我国发出第一封电子邮件。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="l2-2" data-type="fill" data-key="32、128">
+  <div class="qhead"><span class="qn">2</span><div class="qh">IPv4 地址长度为（　）位，IPv6 为（　）位。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>32、128。</b>IPv4 写成 4 段十进制（每段 0~255）；IPv6 写成 8 组十六进制。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="l2-3" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">3</span><div class="qh">一个 C 类 IP 地址段最多可容纳的主机数是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>256</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>255</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>254</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>128</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b><b>2⁸−2＝254</b>（去掉网络地址与广播地址）（2026 单选 17）。<b>B 类的对应值是 65534。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-4" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">4</span><div class="qh">下列 IP 地址中属于 C 类的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>10.1.2.3</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>172.16.5.4</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>192.168.1.1</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>224.0.0.1</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>首字节 <b>1~126 是 A、128~191 是 B、192~223 是 C、224 以上是 D/E</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-5" data-type="fill" data-key="127.0.0.1">
+  <div class="qhead"><span class="qn">5</span><div class="qh">本机回环地址是 ______；私有地址包括 10.x.x.x、172.16~172.31.x.x 和 192.168.x.x。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>127.0.0.1</b>（即 localhost），用于本机测试网络协议栈是否正常。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+
+  <div class="sub">小节二　域名与 DNS</div>
+  <div class="qi" data-q="l2-6" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">6</span><div class="qh">DNS 的作用是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>把 IP 翻译成域名</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>把域名解析为 IP</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>分配 IP 地址</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>过滤垃圾邮件</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>方向别反：<b>DNS＝域名 → IP</b>；分配 IP 的是 DHCP。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-7" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">7</span><div class="qh"><span class="tp">判断</span>访问同一个网站，既可以用域名，也可以直接输入它的 IP 地址。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>域名只是 IP 的"别名"（2025 判断 26）。<b>但域名与 IP 不是一一对应</b>：一个域名可对应多台服务器，一个 IP 也可承载多个网站。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-8" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">8</span><div class="qh">顶级域名 .edu、.gov、.com 分别表示（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>教育、政府、商业</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>政府、教育、组织</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>教育、组织、商业</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>商业、政府、教育</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>.org 非营利组织、.net 网络服务、.cn 中国、.mil 军事。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　主要服务与信息检索</div>
+  <div class="qi" data-q="l2-9" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">9</span><div class="qh">发送邮件与接收邮件分别使用（　）协议。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>POP3、SMTP</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>SMTP、POP3</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>HTTP、FTP</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>FTP、SMTP</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>"S"＝Send 发信；<b>POP3/IMAP 收信</b>；HTTP 传网页、FTP 传文件。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-10" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">10</span><div class="qh">测试本机与目标主机是否连通的命令是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>ftp</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>ping</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>telnet</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>http</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>2025 单选 14；<b>ipconfig 查看本机 IP 配置</b>。检索技巧补一句：<b>引号＝精确匹配、site: 限站点、filetype: 限类型</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">3</div>
+    <div><h2>第 3 课　信息安全与信息素养</h2><span class="tag">专项 10 题 · CIA / 病毒 / 防火墙 / 伦理</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　信息安全三要素与技术</div>
+  <div class="qi" data-q="l3-1" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">1</span><div class="qh">信息安全的基本要素是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>保密性、完整性、可用性</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>准确性、及时性、完整性</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>保密性、经济性、可靠性</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>安全性、稳定性、可扩展性</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b><b>CIA</b>：Confidentiality 保密、Integrity 完整、Availability 可用；另含<b>可控性、不可否认性</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-2" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">2</span><div class="qh">成绩被他人偷偷改动，破坏的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>保密性</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>完整性</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>可用性</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>可控性</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>被看到→保密性；<b>被改动→完整性</b>；用不了→可用性。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-3" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">3</span><div class="qh">关于数字签名，正确的说法是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>用公钥签名、私钥验证</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>用私钥签名、公钥验证</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>主要作用是对文件加密</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>无法防止否认</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>私钥签名、公钥验签</b>，可保证<b>身份真实、内容完整、不可否认</b>（2025 多选 42）。<b>签名≠加密</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　计算机病毒与防火墙</div>
+  <div class="qi" data-q="l3-4" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">4</span><div class="qh">计算机病毒最本质的特征是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>破坏性</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>潜伏性</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>传染性</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>隐蔽性</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>六特征：<b>传染性（最本质）、潜伏性、破坏性、隐蔽性、可触发性、衍生性</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-5" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">5</span><div class="qh">伪装成正常程序、为攻击者提供远程控制通道的恶意程序是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>蠕虫</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>木马</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>宏病毒</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>引导区病毒</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>木马</b>＝远程控制、<b>一般不自我复制</b>；<b>蠕虫</b>＝自我复制、主动通过网络传播、耗带宽。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-6" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">6</span><div class="qh"><span class="tp">判断</span>计算机感染病毒后，只能通过重装操作系统才能清除。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b>可用<b>杀毒软件查杀、手工清除、备份恢复、打补丁</b>；重装只是最后手段（2026 判断 27）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-7" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">7</span><div class="qh">关于防火墙，下列说法正确的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>只能硬件实现</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>可以查杀病毒</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>可软可硬，在内外网之间过滤流量</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>能防止内部人员越权</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>防火墙<b>可软可硬</b>（2024 判断）；<b>不能杀毒、不能防内部滥用、不能防绕过</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　信息素养与社会责任</div>
+  <div class="qi" data-q="l3-8" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">8</span><div class="qh"><span class="tp">多选</span>信息素养通常包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>信息意识</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>信息知识</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>信息能力</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>信息道德</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>四项全对（2025 多选 37），别硬找错项。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="l3-9" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">9</span><div class="qh"><span class="tp">判断</span>网络伦理的构建需要技术、法律、伦理三方面共同推进。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>技术是基础、法律是底线、伦理是自觉（2025 判断 33）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-10" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">10</span><div class="qh"><span class="tp">判断</span>利用 AI 合成技术制作并传播不实新闻，属于违法违规行为。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>2026 判断 29；<b>不造谣、不传谣、不侵权</b>是网络社会责任的三条底线。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="rev">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">Ⅱ</div>
+    <div><h2>章末复习题</h2><span class="tag">8 题 · 网络 + 安全合练</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/8</span><div class="track"><i></i></div></div>
+
+  <div class="qi" data-q="rev-1" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">1</span><div class="qh">下列设备中工作在网络层的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>集线器</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>交换机</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>路由器</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>中继器</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>物理层：集线器/中继器；链路层：交换机/网桥；<b>网络层：路由器</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-2" data-type="fill" data-key="四层">
+  <div class="qhead"><span class="qn">2</span><div class="qh">TCP/IP 体系结构分为（　）层。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>四层</b>：网络接口层、网际层（IP）、传输层（TCP/UDP）、应用层。<b>TCP/IP 是一个协议族，不只是两个协议。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="rev-3" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">3</span><div class="qh">IP 地址 192.168.3.10 中，网络号是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>192</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>192.168</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>192.168.3.0</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>192.168.3</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>C 类掩码 255.255.255.0，<b>网络号＝前三段＋0，即 192.168.3.0</b>（2025 填空 55）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-4" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">4</span><div class="qh"><span class="tp">判断</span>双绞线的单段最大传输距离约为 100 米。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>超五类/六类双绞线布线标准为 <b>100 m</b>；<b>光纤</b>传输距离远、带宽最高。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-5" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">5</span><div class="qh">下列属于"防火墙做不到"的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>过滤非法 IP</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>阻断未授权端口</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>查杀病毒</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>记录访问日志</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>杀毒靠杀毒软件；防火墙只管"谁能进出"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-6" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">6</span><div class="qh">某网站被大量虚假请求淹没、无法正常访问，这破坏了信息的（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>保密性</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>完整性</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>可用性</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>不可否认性</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>DDoS 攻击的实质是<b>让服务不可用</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-7" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">7</span><div class="qh"><span class="tp">简答</span>写出计算机网络的五种拓扑结构，并指出最可靠的一种。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>星型、总线型、环型、树型、网状型；其中<b>网状型可靠性最高</b>，因为任意两节点之间有多条路径，单条链路故障可由其他路径绕行。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+  <div class="qi" data-q="rev-8" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">8</span><div class="qh"><span class="tp">简答</span>简述防火墙的作用与两点局限。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>作用：部署在内外网之间，<b>按预设规则监控与过滤进出流量</b>，阻断未授权访问、允许合法通信并可记录日志；形式上有硬件与软件两种。局限：①<b>不能查杀病毒</b>；②<b>不能防止内部人员滥用合法权限</b>；③不能防范绕过防火墙的途径（U 盘、内网直连）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+</section>
+
+<section class="mod" id="test">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">Ⅲ</div>
+    <div><h2>第四章冲刺测试</h2><span class="tag">满分 53 分 · 建议 40 分钟</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/20</span><div class="track"><i></i></div></div>
+  <div class="warnbox"><b>计分：</b>判断 5×1＝5；单选 6×2＝12；多选 3×3＝9；填空 4×3＝12；简答 1×5＝5；综合 1×10＝10。</div>
+
+  <div class="sub">一、判断题（5 题，每题 1 分）</div>
+  <div class="qi" data-q="test-1" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">1</span><div class="qh">Internet 是最大的广域网。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-2" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">2</span><div class="qh">域名与 IP 地址是一一对应的关系。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错。</b>可多对多。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-3" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">3</span><div class="qh">计算机病毒最本质的特征是传染性。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-4" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">4</span><div class="qh">防火墙可以查杀计算机病毒。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错。</b>只过滤流量。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-5" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">5</span><div class="qh">数字签名用发送者私钥签名、接收者用公钥验证。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b>2025 多选 42。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">二、单项选择题（6 题，每题 2 分）</div>
+  <div class="qi" data-q="test-6" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">6</span><div class="qh">一个 C 类地址段最多容纳的主机数是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>128</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>254</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>255</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>256</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>2⁸−2（2026 单选 17）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-7" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">7</span><div class="qh">用于测试网络连通性的命令是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>ping</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>ftp</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>telnet</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>http</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>2025 单选 14。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-8" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">8</span><div class="qh">工作在数据链路层的设备是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>集线器</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>交换机</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>路由器</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>网关</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>交换机按 MAC 转发。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-9" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">9</span><div class="qh">接收电子邮件使用的协议是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>SMTP</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>POP3</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>HTTP</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>FTP</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>发信 SMTP。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-10" data-type="single" data-ans="D">
+  <div class="qhead"><span class="qn">10</span><div class="qh">可靠性与生存能力最强的拓扑是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>星型</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>总线型</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>环型</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>网状</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>D。</b>多路径冗余。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-11" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">11</span><div class="qh">100 Mbps 约等于（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>100 MB/s</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>12.5 MB/s</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>1.25 MB/s</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>10 MB/s</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>÷8。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">三、多项选择题（3 题，每题 3 分）</div>
+  <div class="qi" data-q="test-12" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">12</span><div class="qh">计算机网络的拓扑结构包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>星型</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>总线型</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>环型</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>网状</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>另有树型，共 5 种。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="test-13" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">13</span><div class="qh">关于数字签名，正确的有（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>用私钥签名</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>用公钥验证</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>保证完整性</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>保证不可否认</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>2025 多选 42（错项为"主要用于加密文件"）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="test-14" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">14</span><div class="qh">下列属于计算机病毒特征的有（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>传染性</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>潜伏性</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>可触发性</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>衍生性</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>六特征中的四项，全对。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+
+  <div class="sub">四、填空题（4 题，每题 3 分）</div>
+  <div class="qi" data-q="test-15" data-type="fill" data-key="32">
+  <div class="qhead"><span class="qn">15</span><div class="qh">IPv4 地址长度为 ______ 位。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>32</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-16" data-type="fill" data-key="DNS">
+  <div class="qhead"><span class="qn">16</span><div class="qh">把域名解析为 IP 地址的服务是 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>DNS</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-17" data-type="fill" data-key="远程控制（后门）">
+  <div class="qhead"><span class="qn">17</span><div class="qh">木马的主要危害是为攻击者提供 ______ 通道。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>远程控制（后门）</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-18" data-type="fill" data-key="可用性">
+  <div class="qhead"><span class="qn">18</span><div class="qh">信息安全三要素是保密性、完整性和 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>可用性</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+
+  <div class="sub">五、简答题（1 题，5 分）</div>
+  <div class="qi" data-q="test-19" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">19</span><div class="qh">简述计算机病毒的特征。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>①<b>传染性</b>：能自我复制并传播，<b>最本质</b>；②<b>潜伏性</b>：侵入后不立即发作；③<b>破坏性</b>：破坏数据或影响系统运行；④<b>隐蔽性</b>：藏于正常程序中；⑤<b>可触发性</b>：满足特定条件才发作；⑥<b>衍生性</b>：可变形产生新变种。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+
+  <div class="sub">六、综合应用题（1 题，10 分）</div>
+  <div class="qi" data-q="test-20" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">20</span><div class="qh">某小型办公室有 10 台电脑，需要共享文件与打印机，并接入 Internet。<br>（1）适合组建哪种网络（按覆盖范围）？<br>（2）要连接这些电脑并共享打印机，至少需要什么设备？<br>（3）为保障安全，列出三条可采取的防护措施。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b><br>（1）<b>局域网（LAN）</b>。<br>（2）<b>交换机</b>（或路由器自带交换模块）用于组网，<b>路由器</b>用于接入 Internet 并分配 IP，打印机可接在交换机/路由器上共享。<br>（3）①安装<b>杀毒软件并及时更新病毒库</b>；②启用<b>防火墙</b>并关闭无用端口；③<b>设置强密码与不同账号权限（最小权限）</b>；④<b>定期备份重要数据</b>；⑤及时<b>打系统补丁</b>。（写出三条即可，每条要具体到动作。）</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="window.__allAns(true)">展开全部答案</button>
+    <button class="btn" onclick="window.__allAns(false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  依据：四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》第四章；<br>
+  题型配比参照 2024—2026 三年真题 · 本册共 58 题 · <b>Ctrl+P 可打印</b>
+</footer>
+
+</main>
+
+<script>
+(function(){
+  var KEY='tyz2027:ch4-book';
+  var data={};
+  try{ data=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ data={}; }
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(data)); }catch(e){} }
+  function each(list,fn){ for(var i=0;i<list.length;i++) fn(list[i],i); }
+  var QS=[].slice.call(document.querySelectorAll('.qi'));
+  var total=QS.length;
+  function st(q){ return data[q.getAttribute('data-q')]||''; }
+  function setSt(q,v){ if(v){ data[q.getAttribute('data-q')]=v; } else { delete data[q.getAttribute('data-q')]; } save(); badge(q); update(); }
+  function badge(q){
+    var b=q.querySelector('.st'), s=st(q);
+    b.className='st';
+    if(s==='right'){ b.className='st right'; b.textContent='✓ 正确'; }
+    else if(s==='wrong'){ b.className='st wrong'; b.textContent='✗ 做错'; }
+    else if(s==='done'){ b.className='st done'; b.textContent='✓ 已完成'; }
+    else { b.textContent='未做'; }
+  }
+  function showAns(q,on){
+    var box=q.querySelector('.ansbox');
+    if(!box) return;
+    if(on===undefined) on=!box.classList.contains('show');
+    box.classList.toggle('show',on);
+    var btn=q.querySelector('.act-reveal');
+    if(btn) btn.classList.toggle('on',on);
+  }
+  function lockAll(q){
+    q.setAttribute('data-locked','1');
+    each(q.querySelectorAll('.op'),function(o){ o.classList.add('lock'); });
+  }
+  function grade(q,k){
+    if(q.getAttribute('data-locked')) return;
+    var ans=q.getAttribute('data-ans'), list=ans.split(','), ok=(list.indexOf(k)>-1);
+    lockAll(q);
+    each(q.querySelectorAll('.op'),function(o){
+      if(list.indexOf(o.getAttribute('data-k'))>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      else if(o.getAttribute('data-k')===k && !ok){ o.classList.add('wrong'); o.querySelector('em').textContent='错'; }
+      else { o.querySelector('em').textContent=''; }
+    });
+    setSt(q, ok?'right':'wrong');
+    if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, k); }
+    showAns(q,true);
+  }
+  function submitMulti(q){
+    if(q.getAttribute('data-locked')) return;
+    var ans=q.getAttribute('data-ans'), ops=q.querySelectorAll('.op'), chosen=[];
+    each(ops,function(o){ if(o.classList.contains('sel')) chosen.push(o.getAttribute('data-k')); });
+    if(!chosen.length){ var t=q.querySelector('.tip'); if(t){ t.textContent='请先选择答案'; t.style.display='inline'; } return; }
+    var ok=(chosen.slice().sort().join('')===ans.split('').sort().join(''));
+    lockAll(q);
+    each(ops,function(o){
+      var k=o.getAttribute('data-k');
+      o.classList.remove('sel');
+      if(ans.indexOf(k)>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      else if(chosen.indexOf(k)>-1){ o.classList.add('wrong'); o.querySelector('em').textContent='错'; }
+      else { o.querySelector('em').textContent=''; }
+    });
+    setSt(q, ok?'right':'wrong');
+    if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, chosen.join('')); }
+    showAns(q,true);
+  }
+  function normKey(s){
+    s=(s||'').replace(/[\s\u3000]/g,'');
+    s=s.replace(/[，。、；：”“‘’（）()《》〈〉【】…·\-—?!！?]/g,'');
+    s=s.replace(/[Ａ-Ｚａ-ｚ０-９]/g,function(c){ return String.fromCharCode(c.charCodeAt(0)-65248); });
+    return s.toLowerCase();
+  }
+  function hitKey(u,k){
+    var un=normKey(u); if(!un) return false;
+    var cands=[k], m=k.match(/（[^）]*）/g)||[];
+    for(var i=0;i<m.length;i++){ cands.push(m[i].slice(1,-1)); }
+    var flat=k.replace(/（[^）]*）/g,''); if(flat) cands.push(flat);
+    var parts=k.split(/[、，；\/]|或/);
+    for(var j=0;j<parts.length;j++){ if(parts[j]) cands.push(parts[j]); }
+    for(var c=0;c<cands.length;c++){
+      var cn=normKey(cands[c]); if(!cn) continue;
+      if(un===cn) return true;
+      if(cn.length>=2 && un.length>=2 && (cn.indexOf(un)>-1 || un.indexOf(cn)>-1)) return true;
+    }
+    return false;
+  }
+  function redoQuestion(q){
+    var type=q.getAttribute('data-type');
+    if(type==='fill'){ retryFill(q); return; }
+    if(type==='essay'){ rewriteEssay(q); return; }
+    q.removeAttribute('data-locked');
+    each(q.querySelectorAll('.op'),function(o){
+      o.classList.remove('correct','wrong','sel','lock');
+      var em=o.querySelector('em'); if(em) em.textContent='';
+    });
+    var tip=q.querySelector('.tip'); if(tip) tip.style.display='none';
+    var fd=q.querySelector('.filljudge'); if(fd){ fd.className='ejudge filljudge'; fd.textContent=''; }
+    setSt(q,''); showAns(q,false); badge(q); update();
+    var first=q.querySelector('.op'); if(first) first.focus();
+  }
+  function checkFill(q){
+    if(q.getAttribute('data-locked')) return;
+    var inp=q.querySelector('.fill'), key=q.getAttribute('data-key')||'';
+    var v=(inp.value||'').replace(/^\s+|\s+$/g,'');
+    if(!v){ inp.focus(); return; }
+    var res = window.TYZGrade ? window.TYZGrade.fill(key,v) : {ok:hitKey(v,key),hits:0,total:1,rate:0};
+    q.setAttribute('data-locked','1');
+    inp.disabled=true; inp.classList.add(res.ok?'right':'wrong');
+    setSt(q, res.ok?'right':'wrong');
+    if(res.ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, v); }
+    showAns(q,true);
+    var fd=q.querySelector('.filljudge');
+    if(!fd){
+      fd=document.createElement('span'); fd.className='ejudge filljudge';
+      var row=q.querySelector('.qfoot');
+      if(row) row.appendChild(fd); else q.appendChild(fd);
+    }
+    fd.className='ejudge filljudge '+(res.ok?'ok':'bad');
+    if(res.ok) fd.textContent='自动核对：要点全对';
+    else if(res.total>1) fd.textContent='自动核对：只对 '+res.hits+'/'+res.total+' 个要点（错别字或意思不符不计分）';
+    else fd.textContent='自动核对：未命中要点（错别字或意思不符不计分）';
+    update();
+  }
+  function retryFill(q){
+    var inp=q.querySelector('.fill');
+    q.removeAttribute('data-locked');
+    inp.disabled=false; inp.value=''; inp.classList.remove('right','wrong');
+    var fd=q.querySelector('.filljudge'); if(fd){ fd.className='ejudge filljudge'; fd.textContent=''; }
+    setSt(q,''); showAns(q,false); update(); inp.focus();
+  }
+  function rewriteEssay(q){
+    var ta=q.querySelector('.essay');
+    var j=q.querySelector('.ejudge'); if(j){ j.className='ejudge'; j.textContent=''; }
+    ta.value=''; ta.classList.remove('right','wrong');
+    setSt(q,''); showAns(q,false); update(); ta.focus();
+  }
+  function essayPoints(q){
+    var box=q.querySelector('.ans'), list=[], seen={};
+    if(!box) return list;
+    each(box.querySelectorAll('b'),function(b){
+      var t=normKey(b.textContent);
+      if(t.length<2) return;
+      if(t.indexOf('参考')>-1 || t.indexOf('解析')>-1 || t.indexOf('评分')>-1) return;
+      if(t.length>26) return;
+      if(seen[t]) return; seen[t]=1; list.push(t);
+    });
+    return list;
+  }
+  function coverRate(p,u){
+    var hit=0;
+    for(var i=0;i<p.length;i++){ if(u.indexOf(p.charAt(i))>-1) hit++; }
+    return p.length? hit/p.length : 0;
+  }
+  function diceSim(a,b){
+    if(a.length<2||b.length<2) return 0;
+    var A={},B={},na=0,nb=0,k,i,j;
+    for(i=0;i<a.length-1;i++){ k=a.substr(i,2); if(!A[k]){ A[k]=1; na++; } }
+    for(j=0;j<b.length-1;j++){ k=b.substr(j,2); if(!B[k]){ B[k]=1; nb++; } }
+    var inter=0; for(k in A){ if(B[k]) inter++; }
+    return 2*inter/(na+nb);
+  }
+  function autoEssay(q){
+    var ta=q.querySelector('.essay'), u=normKey(ta.value||'');
+    if(u.length<2){ ta.focus(); return; }
+    var box=q.querySelector('.ans'), ref=box?normKey(box.textContent):'';
+    var pts=essayPoints(q), hits=0, cov=0, sim=0, ok=false;
+    each(pts,function(p){ if(coverRate(p,u)>=0.6) hits++; });
+    cov=pts.length? hits/pts.length : 0;
+    sim=diceSim(u,ref.slice(0,420));
+    ok=((pts.length>0 && cov>=0.5) || sim>=0.32);
+    var judge=q.querySelector('.ejudge');
+    if(judge){
+      judge.className='ejudge '+(ok?'ok':'bad');
+      judge.textContent='要点命中 '+hits+'/'+pts.length+'（'+Math.round(cov*100)+'%）· 相似度 '+Math.round(sim*100)+'% · 自动判：'+(ok?'正确':'未达标');
+    }
+    ta.classList.remove('right','wrong');
+    ta.classList.add(ok?'right':'wrong');
+    setSt(q, ok?'right':'wrong'); if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, ta.value); } showAns(q,true);
+  }
+  function toggleDone(q){
+    var s=st(q);
+    if(s==='right'||s==='wrong') return;
+    setSt(q, s==='done'?'':'done');
+  }
+  function applySaved(q){
+    var s=st(q), ans=q.getAttribute('data-ans'), list=(ans||'').split(',');
+    if(!s) return;
+    if(s==='right'||s==='wrong'){
+      lockAll(q);
+      each(q.querySelectorAll('.op'),function(o){
+        if(list.indexOf(o.getAttribute('data-k'))>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      });
+      showAns(q,true);
+    }
+    var inp=q.querySelector('.fill');
+    if(inp && (s==='right'||s==='wrong')){ inp.disabled=true; inp.classList.add(s==='right'?'right':'wrong'); }
+    var ta=q.querySelector('.essay');
+    if(ta && (s==='right'||s==='wrong')){ ta.classList.add(s==='right'?'right':'wrong'); }
+    badge(q);
+  }
+  function update(){
+    var done=0, right=0, wrong=0;
+    each(QS,function(q){ var s=st(q); if(s){ done++; if(s==='right') right++; if(s==='wrong') wrong++; } });
+    var d=document.getElementById('cDone'), r=document.getElementById('cRight'), t=document.getElementById('cTotal'), rt=document.getElementById('cRate');
+    if(d) d.textContent=done;
+    if(r) r.textContent=right;
+    if(t) t.textContent=total;
+    if(rt) rt.textContent=(right+wrong)?(Math.round(right*100/(right+wrong))+'%'):'—';
+    each(document.querySelectorAll('.mod'),function(sec){
+      var qs=sec.querySelectorAll('.qi'), bar=sec.querySelector('.sbar'), n=0;
+      if(!bar) return;
+      each(qs,function(q){ if(st(q)) n++; });
+      bar.querySelector('.sbar-t').textContent=n+'/'+qs.length;
+      bar.querySelector('.track i').style.width=(qs.length?(n*100/qs.length):0)+'%';
+    });
+  }
+  each(QS,function(q){
+    var type=q.getAttribute('data-type');
+    if(type==='fill' || type==='essay'){
+      var rb=q.querySelector('.act-retry') || q.querySelector('.act-rewrite');
+      if(rb) rb.textContent='重做本题';
+    } else {
+      var foot=q.querySelector('.qfoot');
+      if(foot && !foot.querySelector('.act-redo')){
+        var rb2=document.createElement('button');
+        rb2.type='button'; rb2.className='mini act-redo'; rb2.textContent='重做本题';
+        rb2.addEventListener('click',function(){ redoQuestion(q); });
+        foot.appendChild(rb2);
+      }
+    }
+    each(q.querySelectorAll('.op'),function(o){
+      o.addEventListener('click',function(){
+        if(q.getAttribute('data-locked')) return;
+        if(type==='multi'){ o.classList.toggle('sel'); return; }
+        grade(q,o.getAttribute('data-k'));
+      });
+    });
+    var sub=q.querySelector('.act-submit');
+    if(sub) sub.addEventListener('click',function(){ submitMulti(q); });
+    var rev=q.querySelector('.act-reveal');
+    if(rev) rev.addEventListener('click',function(){ showAns(q); });
+    var mk=q.querySelector('.act-mark');
+    if(mk) mk.addEventListener('click',function(){ toggleDone(q); });
+    var chk=q.querySelector('.act-check');
+    if(chk) chk.addEventListener('click',function(){ checkFill(q); });
+    var ret=q.querySelector('.act-retry');
+    if(ret) ret.addEventListener('click',function(){ retryFill(q); });
+    var inp=q.querySelector('.fill');
+    if(inp) inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); checkFill(q); } });
+    var au=q.querySelector('.act-auto');
+    if(au) au.addEventListener('click',function(){ autoEssay(q); });
+    var rw=q.querySelector('.act-rewrite');
+    if(rw) rw.addEventListener('click',function(){ rewriteEssay(q); });
+    applySaved(q);
+  });
+  var reset=document.getElementById('resetAll');
+  if(reset) reset.addEventListener('click',function(){
+    data={}; save();
+    each(QS,function(q){
+      q.removeAttribute('data-locked');
+      each(q.querySelectorAll('.op'),function(o){ o.classList.remove('correct','wrong','sel','lock'); o.querySelector('em').textContent=''; });
+      showAns(q,false);
+      var inp=q.querySelector('.fill');
+      if(inp){ inp.value=''; inp.disabled=false; inp.classList.remove('right','wrong'); }
+      var ta=q.querySelector('.essay');
+      if(ta){ ta.value=''; ta.classList.remove('right','wrong'); }
+      var t=q.querySelector('.tip'); if(t){ t.style.display='none'; }
+      var fj=q.querySelector('.filljudge'); if(fj){ fj.className='ejudge filljudge'; fj.textContent=''; }
+      var ej=q.querySelector('.ejudge'); if(ej && !ej.classList.contains('filljudge')){ ej.className='ejudge'; ej.textContent=''; }
+      badge(q);
+    });
+    update();
+  });
+  update();
+})();
+</script>
+
+
+<script>
+window.__allAns=function(on){
+  var list=document.querySelectorAll('.ansbox'), btns=document.querySelectorAll('.act-reveal');
+  for(var i=0;i<list.length;i++) list[i].classList.toggle('show',on);
+  for(var j=0;j<btns.length;j++) btns[j].classList.toggle('on',on);
+};
+window.__resetMarks=function(){ var b=document.getElementById('resetAll'); if(b) b.click(); };
+</script>
+
+<script>
+(function(){
+  var ALTS_RAW = {
+    '硬件系统': ['硬件'],
+    '软件系统': ['软件'],
+    '智能化': ['智能'],
+    '计算机辅助设计': ['cad', '计算机辅助设计技术'],
+    '一次能传输的二进制位数': ['字长', '数据总线宽度', '一次传输位数', '一次传输的位数'],
+    '可寻址的内存空间大小': ['寻址空间', '可寻址空间', '地址空间', '内存空间大小', '可寻址的内存空间'],
+    '运算器': ['alu', '算术逻辑单元'],
+    '控制器': ['cu', '控制单元'],
+    '任意多个字符': ['任意字符', '多个字符', '任意多个', '任意数量字符'],
+    '任意一个字符': ['任意字符', '单个字符', '一个字符', '单一字符'],
+    '存储器': ['内存', '主存'],
+    '数据总线': ['数据线', '数据总线宽度'],
+    '文档': ['文档资料', '技术文档'],
+    '物理地址': ['硬件地址', 'mac地址', '物理硬件地址'],
+    '资源共享': ['共享资源'],
+    '数据通信': ['通信', '数据传输'],
+    '降序': ['从高到低', '由高到低', '递减'],
+    '总分': ['总成绩'],
+    '排序': ['排列'],
+    '四层': ['4层', '四层模型'],
+    '数据库管理系统': ['dbms'],
+    '属性': ['字段'],
+    '远程控制': ['后门', '远程控制通道'],
+    '操作数': ['地址码'],
+    '可用性': ['可用'],
+    '需求分析': ['需求调研', '需求分析阶段'],
+    '|': ['竖线', '管道符', '竖杠', '竖线符'],
+    'O(log₂n)': ['o(logn)', 'o(log2n)', 'log2n', 'logn'],
+    'ARPANET': ['arpanet网', '阿帕网'],
+    '1 张': ['1', '一张'],
+    '48 位': ['48', '48位'],
+    '6763 个': ['6763', '6763个'],
+    '2020': ['20h20h', '2020h'],
+    '3021': ['3021h'],
+    '2': ['2', '二'],
+    '16': ['16', '十六'],
+    '3': ['3', '三'],
+    '8': ['8', '八'],
+    '9': ['9', '九'],
+    '10': ['10', '十'],
+    '32': ['32', '三十二'],
+    '128': ['128', '一百二十八'],
+    '255': ['255', '二百五十五'],
+    '1024': ['1024', '一千零二十四'],
+    '5050': ['5050', '五千零五十'],
+    '236': ['236', '二百三十六'],
+    '72': ['72', '七十二'],
+    '2020': ['2020', '2020h'],
+    '数据库管理系统（DBMS）': ['数据库管理系统', 'dbms']
+  };
+  var ALTS = {};
+  var scripts = ['₂','₃','⁰','¹','²','³'];
+  var subMap = {'₂':'2','₃':'3','₀':'0','₁':'1','⁰':'0','¹':'1','²':'2','³':'3'};
+  function norm(s){
+    s = String(s == null ? '' : s);
+    s = s.replace(/[\uFF01-\uFF5E]/g, function(ch){ return String.fromCharCode(ch.charCodeAt(0) - 65248); });
+    s = s.replace(/[\u3000\s]/g, '');
+    s = s.replace(/[“”"'‘’]/g, '');
+    s = s.replace(/[，,。；;：:、（）()《》〈〉【】\[\]{}…·\-—–_!！?？]/g, '');
+    s = s.replace(/[₀₁₂₃⁰¹²³]/g, function(ch){ return subMap[ch] || ''; });
+    return s.toLowerCase();
+  }
+  function rawVariants(t){
+    t = String(t == null ? '' : t);
+    var out = [t], m = t.match(/（[^）]*）/g) || [], flat, i;
+    flat = t.replace(/（[^）]*）/g, '');
+    if(flat && flat !== t) out.push(flat);
+    for(i = 0; i < m.length; i++){
+      var inner = m[i].slice(1, -1);
+      if(inner) out.push(inner);
+    }
+    var cleaned = t.replace(/[“”"'‘’]/g, '');
+    if(cleaned !== t) out.push(cleaned);
+    return out;
+  }
+  for(var k in ALTS_RAW){
+    if(!Object.prototype.hasOwnProperty.call(ALTS_RAW, k)) continue;
+    ALTS[norm(k)] = ALTS_RAW[k].map(norm);
+  }
+  function numVal(s){
+    var m = norm(s).match(/^(-?\d+(?:\.\d+)?)(个|张|位|字节|次|年|b|h|kb|mb|gb)?$/);
+    return m ? parseFloat(m[1]) : null;
+  }
+  function hasAlias(v, u, allowContain){
+    var list = ALTS[v] || [];
+    for(var i = 0; i < list.length; i++){
+      var a = list[i];
+      if(!a) continue;
+      if(u === a) return true;
+      if(allowContain && a.length >= 3 && u.indexOf(a) >= 0) return true;
+    }
+    return false;
+  }
+  function matchOne(user, target, allowContain){
+    var u = norm(user), t = norm(target);
+    if(!u || !t) return false;
+    var uv = rawVariants(user).map(norm), tv = rawVariants(target).map(norm), i, j;
+    for(i = 0; i < uv.length; i++){
+      if(uv[i] === t) return true;
+    }
+    var un = numVal(user), tn = numVal(target);
+    if(un !== null && tn !== null) return un === tn;
+    if(t.charAt(0) === '.' && u === t.slice(1)) return true;
+    if(u.charAt(0) === '.' && t === u.slice(1)) return true;
+    if(t.indexOf('表名') >= 0){
+      var pre = t.replace('表名', '');
+      if(u.indexOf(pre) === 0 && u.length > pre.length) return true;
+    }
+    if(ALTS[t]){
+      for(i = 0; i < ALTS[t].length; i++){
+        var a = ALTS[t][i];
+        if(u === a || (allowContain && a.length >= 3 && u.indexOf(a) >= 0)) return true;
+      }
+    }
+    for(i = 0; i < tv.length; i++){
+      var v = tv[i];
+      if(!v) continue;
+      if(u === v) return true;
+      if(allowContain && v.length >= 3 && u.indexOf(v) >= 0) return true;
+      if(hasAlias(v, u, allowContain)) return true;
+    }
+    for(j = 0; j < uv.length; j++){
+      if(tv.indexOf(uv[j]) >= 0) return true;
+    }
+    return false;
+  }
+  function splitTargets(key){
+    return String(key == null ? '' : key).split('、').map(function(s){ return s.trim(); }).filter(Boolean);
+  }
+  function splitUsers(user, n){
+    var raw = String(user == null ? '' : user), strategies = [];
+    strategies.push([raw]);
+    strategies.push(raw.split(/[、,，;；\n]+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/[和与及]/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/\s+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    var all = [];
+    for(var i = 0; i < strategies.length; i++){
+      if(strategies[i].length === n) all.push(strategies[i]);
+    }
+    return all.length ? all : [strategies[0]];
+  }
+  function evalAlt(key, user){
+    var targets = splitTargets(key), n = targets.length;
+    var splits = splitUsers(user, n), best = {hits: 0, total: n, parts: []};
+    for(var s = 0; s < splits.length; s++){
+      var parts = splits[s], hits = 0, detail = [];
+      if(parts.length === n){
+        for(var i = 0; i < n; i++){
+          var ok = matchOne(parts[i], targets[i]);
+          if(ok) hits++;
+          detail.push({t: targets[i], u: parts[i], ok: ok});
+        }
+      } else {
+        for(var j = 0; j < n; j++){
+          var ok2 = matchOne(user, targets[j]);
+          if(ok2) hits++;
+          detail.push({t: targets[j], u: user, ok: ok2});
+        }
+      }
+      if(hits > best.hits) best = {hits: hits, total: n, parts: detail};
+    }
+    return best;
+  }
+  function fill(key, user){
+    var groups = String(key == null ? '' : key).split('~'), best = null;
+    for(var i = 0; i < groups.length; i++){
+      var r = evalAlt(groups[i], user);
+      var rate = r.total ? r.hits / r.total : 0;
+      if(!best || rate > best.rate || (rate === best.rate && r.hits > best.hits)) best = {ok: false, hits: r.hits, total: r.total, rate: rate, parts: r.parts};
+    }
+    if(!best) best = {ok: false, hits: 0, total: 1, rate: 0, parts: []};
+    best.ok = best.total > 0 && best.hits === best.total;
+    return best;
+  }
+  function termMatch(user, target){
+    return matchOne(user, target, true);
+  }
+  function termInText(user, target){
+    var u = norm(user), t = norm(target);
+    return !!(u && t && u.indexOf(t) >= 0);
+  }
+  function pointsGrade(points, user){
+    points = points || [];
+    var max = 0, score = 0, hits = 0, details = [];
+    for(var i = 0; i < points.length; i++){
+      var p = points[i] || {};
+      var w = typeof p.w === 'number' ? p.w : 1;
+      max += w;
+      var ok = false, j;
+      if(p.all && p.all.length){
+        ok = true;
+        for(j = 0; j < p.all.length; j++){
+          if(!termInText(user, p.all[j])){ ok = false; break; }
+        }
+      } else {
+        var terms = [];
+        if(p.t) terms.push(p.t);
+        if(p.a) terms = terms.concat(p.a);
+        if(p.any) terms = terms.concat(p.any);
+        for(j = 0; j < terms.length; j++){
+          if(matchOne(user, terms[j], true)){ ok = true; break; }
+        }
+      }
+      if(ok){ hits++; score += w; }
+      details.push({t: p.t || (p.all || []).join('、') || '', a: p.a || [], w: w, ok: ok});
+    }
+    return {score: score, max: max, hits: hits, total: points.length, rate: max ? score / max : 0, details: details};
+  }
+  window.TYZGrade = {norm: norm, fill: fill, term: termMatch, inText: termInText, points: pointsGrade, variants: rawVariants};
+})();
+
+</script>
+
+<script>
+(function(){
+  var BK='ch4-book', EK='tyz2027:errors';
+  function rd(){ try{ return JSON.parse(localStorage.getItem(EK)||'{}')||{}; }catch(e){ return {}; } }
+  function sv(o){ try{ localStorage.setItem(EK, JSON.stringify(o)); }catch(e){} }
+  function nm(s){ return (s||'').replace(/\s+/g,' ').trim(); }
+  function sect(q){
+    var p=q.parentNode, last='';
+    if(!p) return '';
+    for(var i=0;i<p.children.length;i++){ var el=p.children[i]; if(el===q) break; if(el.className && (' '+el.className+' ').indexOf(' sub ')>-1) last=nm(el.textContent); }
+    return last.replace(/^小节[一二三四五六七八九十]+[\s\u3000]*/,'');
+  }
+  function opts(q){
+    var a=[], os=q.querySelectorAll('.op');
+    for(var i=0;i<os.length;i++){ var tx=os[i].querySelector('span'); a.push({k:os[i].getAttribute('data-k')||'', t:nm(tx?tx.textContent:os[i].textContent)}); }
+    return a;
+  }
+  window.__tyzWrong=function(q,user){
+    var id=BK+':'+(q.getAttribute('data-q')||'');
+    var e=rd(), r=e[id]||{count:0};
+    r.book=BK; r.qid=q.getAttribute('data-q')||''; r.type=q.getAttribute('data-type')||'';
+    r.id=id; r.section=sect(q);
+    var lm=(r.qid||'').match(/^l(\d+)-/); r.lesson=lm?parseInt(lm[1],10):0;
+    var qh=q.querySelector('.qh'); r.stem=nm(qh?qh.textContent:'');
+    r.options=opts(q);
+    r.answer=q.getAttribute('data-ans')||q.getAttribute('data-key')||'';
+    var ab=q.querySelector('.ans'); r.explain=nm(ab?ab.textContent:'');
+    r.user=nm(user||'').slice(0,300);
+    r.at=Date.now(); r.count=(r.count||0)+1; r.fixed=false;
+    e[id]=r; sv(e);
+    try{ parent.postMessage({type:'tyz-error',id:id},'*'); }catch(err){}
+  };
+  window.__tyzFixed=function(q){
+    var id=BK+':'+(q.getAttribute('data-q')||''); var e=rd();
+    if(e[id]){ e[id].fixed=true; e[id].fixedAt=Date.now(); sv(e); try{ parent.postMessage({type:'tyz-fixed',id:id},'*'); }catch(err){} }
+  };
+})();
+</script>
+</body>
+</html>

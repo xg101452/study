@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第三章 专项练习 · 复习题 · 冲刺测试（2027 四川专升本计算机）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{--ink:#15212c;--ink2:#3b4b59;--muted:#6b7a88;--paper:#f7f5f0;--card:#fff;--line:#e3ded4;
+--c1:#0e6b8a;--c1bg:#e9f2f6;--c4:#b23a2e;--c4bg:#fbeeec;--c5:#1f6b4a;--c5bg:#e8f2ed;
+--gold:#8a5a00;--goldbg:#fbf3dd;--c3:#2b4a8b;--c3bg:#eaeef7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:40px 0 26px;background:radial-gradient(900px 320px at 8% -30%,rgba(178,58,46,.11),transparent 60%),radial-gradient(700px 280px at 92% -20%,rgba(14,107,138,.10),transparent 60%),#fff;border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;color:var(--c4);font-weight:700;margin-bottom:11px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4)}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(24px,3.2vw,34px);line-height:1.3;margin:0 0 8px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.6em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.3px;max-width:830px;margin:10px 0 0}
+.stat{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.stat span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 14px;font-size:12.8px;color:var(--ink2)}
+.stat b{color:var(--c4)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:8px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:22px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:58px}
+.mod-h{display:flex;align-items:flex-start;gap:11px}
+.mod-no{flex:0 0 auto;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19px;margin:1px 0 0}
+.mod-h .tag{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:11px 0 12px}
+.sub{margin:16px 0 6px;padding:6px 12px;background:var(--c3bg);border-left:3px solid var(--c3);border-radius:0 8px 8px 0;font-size:13.2px;font-weight:700;color:#1e356b}
+.qi{border-bottom:1px dashed #e6e0d4;padding:9px 0 10px}
+.qi:last-child{border-bottom:0}
+.qh{font-size:13.9px;line-height:1.75}
+.qn{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;background:#eef1f3;color:#42535f;border-radius:6px;font-weight:700;font-size:12.5px;margin-right:7px}
+.opt{margin-top:3px;color:#4a5a67;font-size:13.2px;line-height:1.9}
+.tp{font-size:11px;font-weight:700;color:#7a5a00;background:var(--goldbg);border:1px solid #ecd9a5;border-radius:4px;padding:0 6px;margin-right:6px}
+details{margin-top:5px}
+summary{cursor:pointer;list-style:none;font-size:12.6px;color:var(--c1);font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸ '}
+details[open] summary::before{content:'▾ '}
+.ans{margin-top:5px;padding:8px 12px;background:var(--c5bg);border-left:3px solid var(--c5);border-radius:0 8px 8px 0;font-size:13px;color:#1b4a36;line-height:1.78}
+.ans b{color:#123c2a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:13.3px}
+.mem b{color:var(--gold)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:26px 20px 50px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.2px}.toc,.btnrow,.qfoot,.scorebar,.sbar,.st,.mini{display:none}.op{border:0;background:none;padding:2px 0}.op b{background:none;color:#333}.hero{padding:14px 0 8px}
+.mod{box-shadow:none;break-inside:avoid;margin:10px 0;padding:14px 16px}}
+
+.qhead{display:flex;gap:9px;align-items:flex-start}
+.qh{flex:1;font-size:13.9px;line-height:1.75}
+.st{flex:0 0 auto;font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px;background:#eef1f3;color:#7a8794;white-space:nowrap;margin-top:3px;border:1px solid #e2e7ea}
+.st.right{background:#e3f3ea;color:#1a6b48;border-color:#b9ddc9}
+.st.wrong{background:#fbeeec;color:#a32a1c;border-color:#efc4bc}
+.st.done{background:#e9effa;color:#2b4a8b;border-color:#c3d0ea}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:6px;margin:7px 0 2px}
+.op{display:flex;gap:8px;align-items:flex-start;text-align:left;font-family:inherit;font-size:13.2px;line-height:1.7;color:#3d4d5a;background:#fcfcfa;border:1px solid #e3ded4;border-radius:9px;padding:7px 11px;cursor:pointer;transition:background .12s,border-color .12s}
+.op:hover{border-color:#a8cfdd;background:#f2f9fc}
+.op b{flex:0 0 auto;width:20px;height:20px;line-height:20px;text-align:center;border-radius:5px;background:#eef1f3;color:#42535f;font-size:12px;margin-top:1px}
+.op em{margin-left:auto;font-style:normal;font-weight:700;font-size:12px;padding-left:6px}
+.op.correct{border-color:#3f9b74;background:#e8f5ee}
+.op.correct b{background:#3f9b74;color:#fff}
+.op.correct em{color:#1f6b4a}
+.op.wrong{border-color:#d1584a;background:#fbeeec}
+.op.wrong b{background:#d1584a;color:#fff}
+.op.wrong em{color:#a32a1c}
+.op.sel{border-color:#2b4a8b;background:#eaeef7}
+.op.sel b{background:#2b4a8b;color:#fff}
+.op.lock{cursor:default}
+.op.lock:hover{border-color:#e3ded4;background:#fcfcfa}
+.op.correct.lock:hover{border-color:#3f9b74;background:#e8f5ee}
+.op.wrong.lock:hover{border-color:#d1584a;background:#fbeeec}
+.qfoot{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap;align-items:center}
+.mini{cursor:pointer;font-family:inherit;font-size:11.6px;border:1px solid #dcd6c9;background:#fff;color:#66757f;border-radius:7px;padding:3px 11px;transition:.12s}
+.mini:hover{color:#0b5a75;border-color:#a8cfdd;background:#f2f9fc}
+.mini.on{border-color:#a8cfdd;background:#e9f2f6;color:#0b5a75;font-weight:700}
+.tip{font-size:11.6px;color:#a32a1c;margin-left:2px}
+.ansbox{display:none;margin-top:6px}
+.ansbox.show{display:block}
+.sbar{display:flex;align-items:center;gap:10px;margin:2px 0 10px;font-size:11.8px;color:#6b7a88}
+.sbar-t{flex:0 0 auto;font-variant-numeric:tabular-nums}
+.track{flex:1;height:5px;background:#ece6da;border-radius:3px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c93b0,#1f6b4a);border-radius:3px;transition:width .2s}
+.scorebar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:12.2px;color:#5a6975;padding:5px 26px 3px;margin:0 auto}
+.scorebar b{color:#b23a2e;font-variant-numeric:tabular-nums}
+.scorebar .hint{color:#8b929a;font-size:11.4px}
+
+.fillrow{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:7px}
+.fill{flex:1 1 220px;min-width:170px;font-family:inherit;font-size:13.3px;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:8px;padding:6px 11px;line-height:1.6}
+.fill::placeholder{color:#a8b0b7}
+.fill:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
+.fill.right{border-color:#3f9b74;background:#f3fbf7}
+.fill.wrong{border-color:#d1584a;background:#fdf4f2}
+.fill:disabled{opacity:.92;cursor:default}
+@media print{.fillrow{display:none}}
+
+.essay{margin-top:7px;width:100%;min-height:86px;font-family:inherit;font-size:13.2px;line-height:1.72;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:9px;padding:8px 11px;resize:vertical}
+.essay::placeholder{color:#a8b0b7}
+.essay:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
+.essay.right{border-color:#3f9b74;background:#f6fcf8}
+.essay.wrong{border-color:#d1584a;background:#fdf5f3}
+@media print{.essay{display:none}}
+
+.mini.primary{border-color:#0e6b8a;background:#0e6b8a;color:#fff}
+.mini.primary:hover{background:#0b5a75;border-color:#0b5a75;color:#fff}
+.ejudge{font-size:11.8px;color:#5a6975}
+.ejudge.ok{color:#1f6b4a;font-weight:700}
+.ejudge.bad{color:#a32a1c;font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第三章练习册</span>
+    <h1>第三章 办公自动化
+      <span class="light">Word · Excel · PowerPoint：全卷 52 分，练到"手熟"为止</span>
+    </h1>
+    <p class="lead">本章是全卷最重的一块（<b>约 52 分</b>），真题特点是"<b>考操作后的结果，不考菜单位置</b>"。Excel 部分建议<b>边做边在电脑上验证</b>：引用会不会变、函数返回什么错误值，动手一遍胜过背十遍。</p>
+    <div class="stat">
+      <span>专项练习 <b>60</b> 题</span>
+      <span>章末复习 <b>8</b> 题</span>
+      <span>冲刺测试 <b>20</b> 题 / <b>53</b> 分</span>
+      <span>合计 <b>88</b> 题</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#l1">1 Word 基础</a>
+    <a href="#l2">2 Word 进阶</a>
+    <a href="#l3">3 Excel 基础</a>
+    <a href="#l4">4 Excel 函数</a>
+    <a href="#l5">5 Excel 图表</a>
+    <a href="#l6">6 PowerPoint</a>
+    <a href="#rev">章末复习</a>
+    <a href="#test">冲刺测试</a>
+  </div>
+</nav>
+<div class="wrap scorebar"><span>已完成 <b id="cDone">0</b>/<span id="cTotal">0</span> 题</span><span>正确 <b id="cRight">0</b></span><span>正确率 <b id="cRate">—</b></span><span class="hint">点选项即时判分，进度自动存在本机</span><button class="mini" id="resetAll">重置进度</button></div>
+
+<main class="wrap">
+
+<section class="mod" id="l1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">1</div>
+    <div><h2>第 1 课　Word 基本操作与排版</h2><span class="tag">专项 10 题 · 视图 / 选定 / 格式 / 页面</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　视图与文档操作</div>
+  <div class="qi" data-q="l1-1" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">1</span><div class="qh">保存文档与"另存为"的快捷键分别是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>Ctrl+S、F12</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>Ctrl+S、Ctrl+O</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>F12、Ctrl+S</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>Ctrl+P、F12</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>Ctrl+S 保存（覆盖原文件），<b>F12 另存为</b>（可改路径、文件名、格式）；Ctrl+O 打开、Ctrl+P 打印。Word 默认扩展名 <b>.docx</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-2" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">2</span><div class="qh"><span class="tp">判断</span>在 Word 中按 Ctrl+F4 可以关闭当前文档窗口而不退出 Word 程序。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b><b>Ctrl+F4 关文档、Alt+F4 关程序</b>，这是常考的一对。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-3" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">3</span><div class="qh">能显示页眉页脚、分栏、分页效果，"所见即所得"的视图是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>草稿视图</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>大纲视图</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>页面视图</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>阅读视图</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b><b>页面视图</b>最接近打印效果；草稿视图省资源不显示图形；大纲视图用于组织标题层级。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　文本选定与编辑</div>
+  <div class="qi" data-q="l1-4" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">4</span><div class="qh">在文档左侧的选定区（文本左边界外）<b>连续三击</b>，会选中（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>一行</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>一段</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>整篇文档</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>一个词</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>口诀：<b>单击选一行、双击选一段、三击选全篇</b>（2026 单选 6）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-5" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">5</span><div class="qh">撤销上一步操作的快捷键是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>Ctrl+Z</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>Ctrl+Y</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>Ctrl+X</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>Ctrl+S</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>Ctrl+Z 撤销、<b>Ctrl+Y 恢复（重做）</b>、Ctrl+X 剪切。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　字符与段落格式</div>
+  <div class="qi" data-q="l1-6" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">6</span><div class="qh">把行距设置为 1.2，Word 的"行距"下拉框中会显示为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>单倍行距</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>1.5 倍行距</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>多倍行距</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>固定值</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>Word 只提供<b>单倍、1.5 倍、2 倍、最小值、固定值、多倍</b>六种；<b>1.2 这类自定义倍数归入"多倍行距"</b>（2026 单选 7）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-7" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">7</span><div class="qh">使段落"第一行向右缩进，其余各行不动"的设置是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>悬挂缩进</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>首行缩进</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>左缩进</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>右缩进</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>首行缩进</b>只动第一行（中文常设 2 字符）；<b>悬挂缩进</b>是首行不动、其余行右移。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-8" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">8</span><div class="qh"><span class="tp">判断</span>页码只能插入到页脚，不能插入到页眉。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b>页码可放在<b>页眉或页脚</b>的任意位置（2025 判断 32）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">易错辨析（B 组）</div>
+  <div class="qi" data-q="l1-9" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">9</span><div class="qh"><span class="tp">判断</span>分页符与分节符作用相同，都只是把内容换到下一页。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b><b>分页符</b>只强制换页；<b>分节符</b>把文档分成不同"节"，<b>可让各节使用不同的页眉页脚、页码、分栏、纸张方向</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-10" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">10</span><div class="qh">给文字加粗、倾斜、下划线的快捷键依次是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>Ctrl+B、Ctrl+I、Ctrl+U</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>Ctrl+I、Ctrl+B、Ctrl+U</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>Ctrl+U、Ctrl+B、Ctrl+I</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>Ctrl+B、Ctrl+U、Ctrl+I</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>B＝Bold、I＝Italic、U＝Underline；<b>三者可以同时使用</b>（2025 判断 31 的考点是"不能同时使用"为错）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">2</div>
+    <div><h2>第 2 课　Word 表格、图文、目录与邮件合并</h2><span class="tag">专项 10 题 · 环绕 7 种 / 目录 9 级 / 合并 5 步</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　表格操作</div>
+  <div class="qi" data-q="l2-1" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">1</span><div class="qh">在 Word 表格中，对光标所在列上方的数字求和，应使用的公式是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>=SUM(LEFT)</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>=SUM(ABOVE)</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>=SUM(RIGHT)</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>=AVERAGE(ABOVE)</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>Word 表格公式用<b>方位参数</b>：ABOVE 上方、LEFT 左侧、RIGHT 右侧、BELOW 下方。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-2" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">2</span><div class="qh"><span class="tp">判断</span>合并多个单元格后，原来各单元格的内容会全部保留并合并在一起。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b>Word/Excel 合并单元格后<b>只保留左上角单元格的内容</b>，其余内容被丢弃。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　图片与文字环绕</div>
+  <div class="qi" data-q="l2-3" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">3</span><div class="qh"><span class="tp">多选</span>Word 中图片的文字环绕方式包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>嵌入型</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>四周型</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>紧密型</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>浮于文字上方</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>共 <b>7 种</b>：嵌入型、四周型、紧密型、穿越型、上下型、衬于文字下方、浮于文字上方（2025 简答 56）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="l2-4" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">4</span><div class="qh"><span class="tp">判断</span>嵌入型图片会像字符一样随文字移动，不能自由拖动到任意位置。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>嵌入型把图片当作"一个大字符"；<b>其余 6 种都是浮动型</b>可自由定位。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　目录与邮件合并</div>
+  <div class="qi" data-q="l2-5" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">5</span><div class="qh">Word 自动生成目录时，最多可以提取（　）级标题。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>3</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>5</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>9</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>不限</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b><b>最多 9 级</b>（2025 单选 9）；且<b>前提是正文使用了内置标题样式</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-6" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">6</span><div class="qh"><span class="tp">判断</span>正文修改后，目录中的页码不会自动变化，需要手动"更新目录（更新域）"。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>目录是"域"，<b>需右键→更新域</b>（或 F9）刷新页码与条目。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-7" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">7</span><div class="qh">邮件合并的正确顺序是（　）<br>①插入合并域 ②建立主文档 ③完成合并 ④选择数据源 ⑤预览结果</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>②④①⑤③</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>②①④③⑤</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>④②①⑤③</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>②④⑤①③</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>五步：<b>建主文档 → 选数据源 → 插入合并域 → 预览 → 完成合并</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-8" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">8</span><div class="qh"><span class="tp">判断</span>邮件合并可以一次为通讯录中每个收件人生成一封独立文档（或邮件）。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>这正是邮件合并的用途：<b>一份主文档 + 一份数据表 → 批量生成</b>（录取通知书、工资条）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">易错辨析（B 组）</div>
+  <div class="qi" data-q="l2-9" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">9</span><div class="qh">关于批注与修订，下列说法正确的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>批注会直接改动正文</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>修订会留下修改痕迹并可接受或拒绝</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>两者完全相同</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>修订不能关闭</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>批注</b>是旁注意见，不改正文；<b>修订</b>记录增删改痕迹，可逐条"接受/拒绝"（2025 填空 51）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-10" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">10</span><div class="qh"><span class="tp">判断</span>给文档设置"打开密码"与"限制编辑"是一回事。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b><b>打开密码</b>管"能不能打开"；<b>限制编辑</b>管"打开后能不能改"（可设只读、仅批注等）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">3</div>
+    <div><h2>第 3 课　Excel 基础操作与单元格地址</h2><span class="tag">专项 10 题 · 输入技巧 / 三种引用 / 跨表引用</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　工作簿与数据输入</div>
+  <div class="qi" data-q="l3-1" data-type="fill" data-key=".xlsx、1 张">
+  <div class="qhead"><span class="qn">1</span><div class="qh">Excel 文件的默认扩展名是 ______，一个工作簿默认包含 ______ 张工作表。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>.xlsx、1 张</b>（名为 Sheet1，可按需插入多张）。<b>工作簿＝文件，工作表＝页</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="l3-2" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">2</span><div class="qh">要在单元格中显示学号 001（保留前导 0），正确做法是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>直接输入 001</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>先输入英文单引号 ' 再输入 001</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>输入"001"</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>先设成数值格式</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>加 <b>'</b> 强制转成<b>文本</b>；也可先把单元格格式设为"文本"。直接输入 001 会变成 1。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-3" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">3</span><div class="qh">要在单元格中输入分数 1/2，正确操作是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>直接输入 1/2</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>输入 0 空格 1/2</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>输入"1/2"</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>先合并单元格</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>直接输 1/2 会被识别为<b>日期（1月2日）</b>；<b>先输 0 再空格再输 1/2</b>才是分数。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-4" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">4</span><div class="qh">在单元格内换行（同一格内另起一行）应按（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>Enter</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>Alt+Enter</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>Shift+Enter</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>Ctrl+Enter</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>Enter 是确认并下移；<b>Alt+Enter 格内换行</b>；Ctrl+Enter 把内容填满所选区域。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　三种引用与跨表</div>
+  <div class="qi" data-q="l3-5" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">5</span><div class="qh">公式中 <b>$A$1</b> 表示（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>相对引用</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>绝对引用</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>混合引用</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>三维引用</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>行号列标前都加 $ → <b>绝对引用</b>，复制到任何位置都不变；<b>A1 相对</b>（都变）；<b>A$1 / $A1 混合</b>（只变一个）。<b>F4 键循环切换四种状态</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-6" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">6</span><div class="qh">公式 <b>=A$1*SUM($B1:$B3)</b> 位于 C1，将其复制到 D3 后，公式变为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>=B$1*SUM($B3:$B5)</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>=B$3*SUM($B3:$B5)</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>=A$1*SUM($B1:$B3)</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>=B$1*SUM($C1:$C3)</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>列 +1（C→D 即 A→B），行 +2（1→3）。<b>A$1 的行锁定 → 仍是 $1</b>；<b>$B1:$B3 的列锁定 → 仍是 $B，行各 +2 → $B3:$B5</b>（2025 单选 11）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-7" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">7</span><div class="qh">公式 <b>=MAX(A1!B1:B9)</b> 中，"A1"表示（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>单元格 A1</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>工作表名</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>工作簿名</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>区域名称</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>表名!单元格区域</b>是跨表引用的写法，此处的 A1 是<b>工作表的名字</b>（2025 单选 12）。若表名含空格需加单引号：<b>'销售 表'!A1</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　格式化</div>
+  <div class="qi" data-q="l3-8" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">8</span><div class="qh">根据数值大小自动给单元格加底色/字体色，应使用（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>条件格式</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>单元格样式</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>数据验证</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>冻结窗格</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b><b>条件格式</b>按规则动态变化；<b>单元格样式</b>是静态外观。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l3-9" data-type="fill" data-key="左、右">
+  <div class="qhead"><span class="qn">9</span><div class="qh">默认情况下，文本在单元格中（　）对齐，数字（　）对齐。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>左、右。</b>逻辑值居中对齐；日期时间<b>右对齐</b>。<b>靠这个规律能一眼看出"输入的是文本还是数字"。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+
+  <div class="sub">易错辨析（B 组）</div>
+  <div class="qi" data-q="l3-10" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">10</span><div class="qh">拖动填充柄向下复制 <b>1、3、5、7</b>，得到的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>全是 1</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>9、11、13…（等差数列）</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>1、3、5、7 循环</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>报错</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>Excel 会按前两个数的<b>差值</b>推断等差序列；若只选一个单元格拖动，则<b>复制</b>该值。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">4</div>
+    <div><h2>第 4 课　Excel 公式与函数</h2><span class="tag">专项 10 题 · 18 函数 / 错误值 / 运算符</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　运算符与连接</div>
+  <div class="qi" data-q="l4-1" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">1</span><div class="qh">公式 <b>=123&amp;345</b> 的结果是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>468</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>123345</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>123 345</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>出错</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>&amp; 是文本连接符</b>，把两个值"接"成字符串（2025 填空 50）；若结果要参与计算，需先用 VALUE 转换。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l4-2" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">2</span><div class="qh">Excel 运算符的优先级，从高到低正确的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>引用 → 负号 → 百分号 → 乘除 → 加减 → 连接 → 比较</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>加减 → 乘除 → 引用 → 比较</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>比较 → 连接 → 加减 → 乘除</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>乘除 → 引用 → 加减 → 连接</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>记忆：<b>先引用取值，再算负号/百分号，然后乘除，再加减，再 &amp; 连接，最后比较</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　常用函数</div>
+  <div class="qi" data-q="l4-3" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">3</span><div class="qh">区域 A1:C3 全部为 1，则 <b>=SUM(A1:B3,B1:C3)</b> 的结果是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>9</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>12</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>18</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>6</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>两个区域<b>各自 6 个单元格</b>，中间 B 列<b>重叠被算两次</b>：6+6＝<b>12</b>（2026 单选 9）。<b>SUM 不去重</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l4-4" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">4</span><div class="qh">关于 VLOOKUP，下列说法正确的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>可以在任意列查找</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>查找值必须在区域首列，第 4 参数为 0 表示精确匹配</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>只能精确匹配</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>返回整行内容</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>语法 <b>VLOOKUP(查找值, 区域, 返回第几列, 0/1)</b>：<b>首列必须放查找值</b>，<b>0（或 FALSE）精确匹配，1（TRUE）近似匹配</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l4-5" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">5</span><div class="qh">公式 <b>=RANK(E2,$E$2:$E$10,0)</b> 中，最后的 0 表示（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>升序排名</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>降序排名</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>精确匹配</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>不排名</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>0 或省略＝降序（分数越高名次越前）</b>；非 0＝升序。第二参数<b>必须用绝对引用</b>，否则填充会错位。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l4-6" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">6</span><div class="qh"><b>=YEAR(20500502)</b> 的结果是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>2050</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>502</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>#NUM!</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>#VALUE!</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>YEAR 的参数须是<b>合法日期序列值</b>，20500502 超出可表示范围 → <b>#NUM!</b>（2026 单选 11）。<b>正确写法如 =YEAR("2050-05-02")。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l4-7" data-type="single" data-ans="A,D">
+  <div class="qhead"><span class="qn">7</span><div class="qh">要从"2027-05-18"中取出"05"，应使用（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>=MID(A1,5,2)</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>=LEFT(A1,2)</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>=RIGHT(A1,2)</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>=MONTH(A1)</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A 或 D 均可。</b>按文本截取用 <b>MID(文本, 起始位置, 长度)</b>；按日期取月份用 <b>MONTH</b>。单选题若只有一个正确项，注意题干是"文本"还是"日期"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　错误值</div>
+  <div class="qi" data-q="l4-8" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">8</span><div class="qh">公式中出现"文本参与算术运算"，会返回（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>#DIV/0!</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>#VALUE!</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>#NAME?</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>#REF!</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>#VALUE!＝数据类型错误</b>（2025 单选 13）；#DIV/0! 除零、#NAME? 名称拼错、#REF! 引用失效、#N/A 找不到、#NUM! 数值非法、#NULL! 区域无交集。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l4-9" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">9</span><div class="qh">公式 <b>=A1/B1</b>，若 B1 为空，结果通常是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>0</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>#DIV/0!</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>#VALUE!</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>空白</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>空单元格按 <b>0</b> 参与运算，除数为 0 → <b>#DIV/0!</b>。可用 <b>IFERROR</b> 屏蔽错误。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">易错辨析（B 组）</div>
+  <div class="qi" data-q="l4-10" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">10</span><div class="qh">若 A1 与 A2 内容相同，公式 <b>=A1=A2</b> 的结果是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>0</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>TRUE</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>1</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>#VALUE!</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>比较运算返回<b>逻辑值 TRUE/FALSE</b>，不是数字 1/0；参与算术时才被当作 1/0（2026 单选 12）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">5</div>
+    <div><h2>第 5 课　Excel 图表与数据清单</h2><span class="tag">专项 10 题 · 图表 / 排序 / 筛选 / 分类汇总</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　图表</div>
+  <div class="qi" data-q="l5-1" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">1</span><div class="qh">要表现"各季度销售额占总量的比例"，最合适的图表是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>柱形图</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>折线图</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>饼图</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>散点图</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>饼图表示<b>部分与整体的比例</b>；柱形比大小、折线看趋势、散点看相关。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l5-2" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">2</span><div class="qh"><span class="tp">判断</span>饼图只能表示<b>一个</b>数据系列。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>饼图是"一个圆的切分"，<b>多系列应改用圆环图或柱形图</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l5-3" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">3</span><div class="qh"><span class="tp">判断</span>图表与源数据是联动的，修改源数据后图表会自动更新。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>这就是"图表链接数据源"的意义；若想固定，可复制为图片。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　排序与筛选</div>
+  <div class="qi" data-q="l5-4" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">4</span><div class="qh"><span class="tp">多选</span>Excel 排序可以依据（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>单元格数值</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>单元格颜色/字体颜色</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>自定义序列</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>多个关键字（主次排序）</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>四项都支持（2025 多选 39）；<b>多关键字排序需在"自定义排序"中添加"次要关键字"</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="l5-5" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">5</span><div class="qh"><span class="tp">判断</span>筛选会把不满足条件的行删除掉。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b>筛选只是<b>隐藏</b>不满足条件的行，<b>数据仍在</b>；取消筛选即恢复。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l5-6" data-type="fill" data-key="&quot;与&quot;（同时满足）、&quot;或&quot;（满足其一）">
+  <div class="qhead"><span class="qn">6</span><div class="qh">高级筛选中，多个条件写在<b>同一行</b>表示（　），写在<b>不同行</b>表示（　）。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>"与"（同时满足）、"或"（满足其一）。</b>这是高级筛选最容易考的一句话。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+
+  <div class="sub">小节三　分类汇总与打印</div>
+  <div class="qi" data-q="l5-7" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">7</span><div class="qh">使用分类汇总之前，必须先对分类字段进行（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>筛选</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>排序</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>冻结</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>保护</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>不排序就汇总，<b>同一类数据会散落在多处</b>，得到多个错误的小计。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l5-8" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">8</span><div class="qh">冻结窗格的作用是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>锁定单元格禁止修改</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>让指定行/列在滚动时始终可见</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>隐藏数据</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>加密工作簿</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>冻结≠锁定</b>：冻结只是"显示固定"，不限制编辑；<b>锁定</b>要配合"保护工作表"才生效。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l5-9" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">9</span><div class="qh">多页表格打印时，让每页都出现表头，应设置（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>打印区域</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>打印标题（重复标题行）</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>页边距</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>缩放比例</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>在"页面布局→打印标题"中指定<b>顶端标题行</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">易错辨析（B 组）</div>
+  <div class="qi" data-q="l5-10" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">10</span><div class="qh"><span class="tp">判断</span>分类汇总可以嵌套（多级汇总），但每级都必须先按对应字段排序。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>嵌套汇总时按"<b>先外后内</b>"依次排序，否则分组会乱。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">6</div>
+    <div><h2>第 6 课　PowerPoint 演示文稿</h2><span class="tag">专项 10 题 · 视图 / 母版 / 动画 / 放映</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/10</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　视图</div>
+  <div class="qi" data-q="l6-1" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">1</span><div class="qh">启动 PowerPoint 后默认进入的视图是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>普通视图</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>幻灯片浏览视图</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>备注页视图</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>幻灯片放映</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>普通视图＝"左边缩略图 + 中间编辑区 + 下方备注"；<b>浏览视图</b>用于整体调整顺序（2025 填空 52 考"普通视图"）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l6-2" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">2</span><div class="qh">要一次性调整所有幻灯片的标题位置和字体，应修改（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>某一张幻灯片</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>幻灯片母版</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>备注母版</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>讲义母版</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>幻灯片母版</b>控制所有幻灯片的统一外观（占位符位置、字体、背景）（2026 单选 13）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　母版、主题与版式</div>
+  <div class="qi" data-q="l6-3" data-type="multi" data-ans="ABC">
+  <div class="qhead"><span class="qn">3</span><div class="qh"><span class="tp">多选</span>PowerPoint 提供的母版类型包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>幻灯片母版</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>讲义母版</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>备注母版</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>切换母版</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABC。</b>只有三种母版，<b>"切换效果"不属于母版</b>（2025 多选 40 的错项就设在这里）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="l6-4" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">4</span><div class="qh"><span class="tp">判断</span>主题决定整体配色与字体方案，背景只影响当前（或所选）幻灯片的填充。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>主题是"整套设计"，背景是"这一页的底"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　动画、切换与放映</div>
+  <div class="qi" data-q="l6-5" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">5</span><div class="qh">PowerPoint 的动画效果分为四类，即（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>进入、强调、退出、动作路径</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>出现、消失、移动、变色</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>文字、图片、声音、视频</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>单击、双击、自动、定时</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>四类：<b>进入、强调、退出、动作路径</b>；<b>动画作用于对象，切换作用于整页</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l6-6" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">6</span><div class="qh"><span class="tp">判断</span>幻灯片"切换效果"作用于整张幻灯片，而不是其中的某个对象。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>这是动画与切换的分界线，判断题高频。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l6-7" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">7</span><div class="qh">从头开始放映与从当前页开始放映的快捷键分别是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>F5、Shift+F5</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>Shift+F5、F5</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>F5、Ctrl+F5</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>Ctrl+F5、F5</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b><b>F5 从头、Shift+F5 从当前页</b>；放映中按 Esc 退出。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l6-8" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">8</span><div class="qh">展台（自助）放映的特点是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>需要人工逐页点击</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>自动循环播放，观众无法干预</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>只播放一页</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>只能全屏</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>"展台浏览"＝<b>自动循环 + 禁用鼠标干预</b>，适合展会、博物馆。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">易错辨析（B 组）</div>
+  <div class="qi" data-q="l6-9" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">9</span><div class="qh">打印讲义时，一页纸最多可以放置（　）张幻灯片缩略图。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>3</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>6</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>9</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>12</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b><b>讲义一页最多 9 张</b>（2025 填空 53），常见还有 2、3、4、6 张版式。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l6-10" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">10</span><div class="qh"><span class="tp">判断</span>把演示文稿"打包"后，即使目标电脑没有安装 PowerPoint，也能播放。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>打包会<b>连同播放器与链接的媒体文件</b>一起带走，解决"换机器字体丢失、视频放不出"的问题。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="rev">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">Ⅱ</div>
+    <div><h2>章末复习题</h2><span class="tag">8 题 · Word / Excel / PPT 打通</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/8</span><div class="track"><i></i></div></div>
+
+  <div class="qi" data-q="rev-1" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">1</span><div class="qh">Word 中要把一段文字同时加粗并倾斜，正确认识是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>不能同时设置</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>可以同时设置</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>只能先加粗后倾斜</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>必须用样式</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>字符格式可叠加（2025 判断 31 的原题是"不能同时使用"→错）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-2" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">2</span><div class="qh">Word 目录能自动生成的前提是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>全文使用同一种字体</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>各级标题应用了内置标题样式</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>插入了页码</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>设置了页边距</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>Word 靠"标题样式"识别层级；手工加粗标题不算。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-3" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">3</span><div class="qh">公式 <b>=SUMIF(B2:B10,"&gt;=90",C2:C10)</b> 的含义是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>统计 B 列大于等于 90 的个数</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>对 B 列满足条件的行，求 C 列之和</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>求 C 列平均值</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>条件计数</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>SUMIF(条件区域, 条件, 求和区域)</b>；只数个数的是 <b>COUNTIF</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-4" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">4</span><div class="qh">若 A1=80、B1=90，公式 <b>=IF(A1&gt;B1,"优","良")</b> 的结果是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>优</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>良</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>TRUE</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>80</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>条件不成立取第二参数；<b>IF(条件, 真值, 假值)</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-5" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">5</span><div class="qh"><span class="tp">判断</span>Excel 中删除工作表后可以用 Ctrl+Z 撤销恢复。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b>删除工作表<b>不可撤销</b>，删除前应确认或备份。这是与"清除内容"的重要区别。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-6" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">6</span><div class="qh">PPT 中要让某张图片"飞入"画面，应设置（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>切换效果</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>进入动画</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>强调动画</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>动作路径</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>"飞入"属于<b>进入</b>动画；强调是"已在画面上再突出"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-7" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">7</span><div class="qh"><span class="tp">简答</span>写出 Word 图片的 7 种文字环绕方式。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b><b>嵌入型、四周型、紧密型、穿越型、上下型、衬于文字下方、浮于文字上方</b>。（2025 简答 56 原题，7 点写全即可满分。）</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+  <div class="qi" data-q="rev-8" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">8</span><div class="qh"><span class="tp">简答</span>简述邮件合并的五个步骤。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>①<b>建立主文档</b>（写好固定内容的信函/通知）；②<b>选择数据源</b>（Excel 表或 Access 表）；③<b>插入合并域</b>（把"姓名""分数"等字段放进主文档）；④<b>预览结果</b>逐条核对；⑤<b>完成合并</b>，生成新文档或直接输出打印/邮件。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+</section>
+
+<section class="mod" id="test">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">Ⅲ</div>
+    <div><h2>第三章冲刺测试</h2><span class="tag">满分 53 分 · 建议 40 分钟</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/20</span><div class="track"><i></i></div></div>
+  <div class="warnbox"><b>计分：</b>判断 5×1＝5；单选 6×2＝12；多选 3×3＝9（少选多选错选均不得分）；填空 4×3＝12；简答 1×5＝5；综合 1×10＝10。</div>
+
+  <div class="sub">一、判断题（5 题，每题 1 分）</div>
+  <div class="qi" data-q="test-1" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">1</span><div class="qh">在文档左侧选定区三击可选中整篇文档。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b>2026 单选 6 的同源考点。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-2" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">2</span><div class="qh">行距设为 1.2 时，Word 显示为"多倍行距"。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b>2026 单选 7。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-3" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">3</span><div class="qh">页码只能插入页脚，不能插入页眉。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错。</b>2025 判断 32。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-4" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">4</span><div class="qh">筛选会删除不符合条件的数据行。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错。</b>只是隐藏。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-5" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">5</span><div class="qh">饼图只能表示一个数据系列。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">二、单项选择题（6 题，每题 2 分）</div>
+  <div class="qi" data-q="test-6" data-type="single" data-ans="D">
+  <div class="qhead"><span class="qn">6</span><div class="qh">Word 自动目录最多可提取的标题级别是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>3</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>5</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>7</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>9</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>D。</b>2025 单选 9。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-7" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">7</span><div class="qh">公式 =A$1*SUM($B1:$B3) 位于 C1，复制到 D3 后为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>=A$1*SUM($B1:$B3)</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>=B$1*SUM($B3:$B5)</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>=B$3*SUM($B3:$B5)</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>=B$1*SUM($C3:$C5)</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>2025 单选 11。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-8" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">8</span><div class="qh">=MAX(A1!B1:B9) 中的 A1 是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>单元格</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>工作表名</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>工作簿名</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>区域名</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>2025 单选 12。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-9" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">9</span><div class="qh">文本参与算术运算时返回的错误值是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>#DIV/0!</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>#VALUE!</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>#NAME?</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>#REF!</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>2025 单选 13。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-10" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">10</span><div class="qh">设置所有幻灯片统一字体与占位符位置，应修改（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>幻灯片母版</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>讲义母版</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>备注母版</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>主题颜色</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>2026 单选 13。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-11" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">11</span><div class="qh">要输入分数 1/2，正确做法是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>直接输 1/2</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>输入 0 空格 1/2</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>输入 '1/2</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>设为百分比</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>A 会变成日期；C 会变成文本。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">三、多项选择题（3 题，每题 3 分）</div>
+  <div class="qi" data-q="test-12" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">12</span><div class="qh">Word 中的文字环绕方式包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>嵌入型</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>四周型</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>上下型</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>衬于文字下方</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>2025 简答 56 的选项化。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="test-13" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">13</span><div class="qh">Excel 排序可依据（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>数值大小</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>单元格颜色</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>自定义序列</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>多关键字</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>2025 多选 39。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="test-14" data-type="multi" data-ans="ABC">
+  <div class="qhead"><span class="qn">14</span><div class="qh">PowerPoint 的母版包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>幻灯片母版</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>讲义母版</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>备注母版</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>动画母版</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABC。</b>2025 多选 40（原题错项为"切换效果"）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+
+  <div class="sub">四、填空题（4 题，每题 3 分）</div>
+  <div class="qi" data-q="test-15" data-type="fill" data-key="123345">
+  <div class="qhead"><span class="qn">15</span><div class="qh">公式 =123&amp;345 的结果是 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>123345</b>。2025 填空 50。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-16" data-type="fill" data-key="9">
+  <div class="qhead"><span class="qn">16</span><div class="qh">打印讲义时，一页最多可放 ______ 张幻灯片。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>9</b>。2025 填空 53。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-17" data-type="fill" data-key="$A$1">
+  <div class="qhead"><span class="qn">17</span><div class="qh">Excel 中表示"绝对引用 A1 单元格"的写法是 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>$A$1</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-18" data-type="fill" data-key="修订">
+  <div class="qhead"><span class="qn">18</span><div class="qh">Word 中记录修改痕迹、可逐条接受或拒绝的功能是 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>修订</b>。2025 填空 51。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+
+  <div class="sub">五、简答题（1 题，5 分）</div>
+  <div class="qi" data-q="test-19" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">19</span><div class="qh">写出 Excel 中 SUM、AVERAGE、COUNT、COUNTIF、SUMIF 五个函数的作用。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>①<b>SUM</b>：对指定区域求和；②<b>AVERAGE</b>：求算术平均值；③<b>COUNT</b>：统计<b>数值</b>单元格个数；④<b>COUNTIF</b>：统计满足<b>条件</b>的单元格个数；⑤<b>SUMIF</b>：对满足<b>条件</b>的对应区域求和。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+
+  <div class="sub">六、综合应用题（1 题，10 分）</div>
+  <div class="qi" data-q="test-20" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">20</span><div class="qh">某成绩表：A 列姓名、B 列语文、C 列数学、D 列总分（=B2+C2）。<br>（1）要按总分从高到低排名，写出 E2 单元格的 RANK 公式；<br>（2）要统计语文≥90 的人数，写出公式；<br>（3）说明为什么排序前不能只选中 D 列直接排序。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b><br>（1）<b>=RANK(D2,$D$2:$D$11,0)</b>（假设共 10 行数据；0 表示降序，区域必须绝对引用）。<br>（2）<b>=COUNTIF(B2:B11,"&gt;=90")</b>。<br>（3）只选中 D 列排序会造成<b>"行错位"</b>——总分被重排，而姓名、各科成绩留在原位，数据与人对不上。正确做法是<b>选中整个数据区域（含标题行）再排序</b>，或使用"自定义排序"并勾选"数据包含标题"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="window.__allAns(true)">展开全部答案</button>
+    <button class="btn" onclick="window.__allAns(false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  依据：四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》第三章；<br>
+  题型配比参照 2024—2026 三年真题 · 本册共 88 题 · <b>Ctrl+P 可打印</b>
+</footer>
+
+</main>
+
+<script>
+(function(){
+  var KEY='tyz2027:ch3-book';
+  var data={};
+  try{ data=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ data={}; }
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(data)); }catch(e){} }
+  function each(list,fn){ for(var i=0;i<list.length;i++) fn(list[i],i); }
+  var QS=[].slice.call(document.querySelectorAll('.qi'));
+  var total=QS.length;
+  function st(q){ return data[q.getAttribute('data-q')]||''; }
+  function setSt(q,v){ if(v){ data[q.getAttribute('data-q')]=v; } else { delete data[q.getAttribute('data-q')]; } save(); badge(q); update(); }
+  function badge(q){
+    var b=q.querySelector('.st'), s=st(q);
+    b.className='st';
+    if(s==='right'){ b.className='st right'; b.textContent='✓ 正确'; }
+    else if(s==='wrong'){ b.className='st wrong'; b.textContent='✗ 做错'; }
+    else if(s==='done'){ b.className='st done'; b.textContent='✓ 已完成'; }
+    else { b.textContent='未做'; }
+  }
+  function showAns(q,on){
+    var box=q.querySelector('.ansbox');
+    if(!box) return;
+    if(on===undefined) on=!box.classList.contains('show');
+    box.classList.toggle('show',on);
+    var btn=q.querySelector('.act-reveal');
+    if(btn) btn.classList.toggle('on',on);
+  }
+  function lockAll(q){
+    q.setAttribute('data-locked','1');
+    each(q.querySelectorAll('.op'),function(o){ o.classList.add('lock'); });
+  }
+  function grade(q,k){
+    if(q.getAttribute('data-locked')) return;
+    var ans=q.getAttribute('data-ans'), list=ans.split(','), ok=(list.indexOf(k)>-1);
+    lockAll(q);
+    each(q.querySelectorAll('.op'),function(o){
+      if(list.indexOf(o.getAttribute('data-k'))>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      else if(o.getAttribute('data-k')===k && !ok){ o.classList.add('wrong'); o.querySelector('em').textContent='错'; }
+      else { o.querySelector('em').textContent=''; }
+    });
+    setSt(q, ok?'right':'wrong');
+    if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, k); }
+    showAns(q,true);
+  }
+  function submitMulti(q){
+    if(q.getAttribute('data-locked')) return;
+    var ans=q.getAttribute('data-ans'), ops=q.querySelectorAll('.op'), chosen=[];
+    each(ops,function(o){ if(o.classList.contains('sel')) chosen.push(o.getAttribute('data-k')); });
+    if(!chosen.length){ var t=q.querySelector('.tip'); if(t){ t.textContent='请先选择答案'; t.style.display='inline'; } return; }
+    var ok=(chosen.slice().sort().join('')===ans.split('').sort().join(''));
+    lockAll(q);
+    each(ops,function(o){
+      var k=o.getAttribute('data-k');
+      o.classList.remove('sel');
+      if(ans.indexOf(k)>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      else if(chosen.indexOf(k)>-1){ o.classList.add('wrong'); o.querySelector('em').textContent='错'; }
+      else { o.querySelector('em').textContent=''; }
+    });
+    setSt(q, ok?'right':'wrong');
+    if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, chosen.join('')); }
+    showAns(q,true);
+  }
+  function normKey(s){
+    s=(s||'').replace(/[\s\u3000]/g,'');
+    s=s.replace(/[，。、；：”“‘’（）()《》〈〉【】…·\-—?!！?]/g,'');
+    s=s.replace(/[Ａ-Ｚａ-ｚ０-９]/g,function(c){ return String.fromCharCode(c.charCodeAt(0)-65248); });
+    return s.toLowerCase();
+  }
+  function hitKey(u,k){
+    var un=normKey(u); if(!un) return false;
+    var cands=[k], m=k.match(/（[^）]*）/g)||[];
+    for(var i=0;i<m.length;i++){ cands.push(m[i].slice(1,-1)); }
+    var flat=k.replace(/（[^）]*）/g,''); if(flat) cands.push(flat);
+    var parts=k.split(/[、，；\/]|或/);
+    for(var j=0;j<parts.length;j++){ if(parts[j]) cands.push(parts[j]); }
+    for(var c=0;c<cands.length;c++){
+      var cn=normKey(cands[c]); if(!cn) continue;
+      if(un===cn) return true;
+      if(cn.length>=2 && un.length>=2 && (cn.indexOf(un)>-1 || un.indexOf(cn)>-1)) return true;
+    }
+    return false;
+  }
+  function redoQuestion(q){
+    var type=q.getAttribute('data-type');
+    if(type==='fill'){ retryFill(q); return; }
+    if(type==='essay'){ rewriteEssay(q); return; }
+    q.removeAttribute('data-locked');
+    each(q.querySelectorAll('.op'),function(o){
+      o.classList.remove('correct','wrong','sel','lock');
+      var em=o.querySelector('em'); if(em) em.textContent='';
+    });
+    var tip=q.querySelector('.tip'); if(tip) tip.style.display='none';
+    var fd=q.querySelector('.filljudge'); if(fd){ fd.className='ejudge filljudge'; fd.textContent=''; }
+    setSt(q,''); showAns(q,false); badge(q); update();
+    var first=q.querySelector('.op'); if(first) first.focus();
+  }
+  function checkFill(q){
+    if(q.getAttribute('data-locked')) return;
+    var inp=q.querySelector('.fill'), key=q.getAttribute('data-key')||'';
+    var v=(inp.value||'').replace(/^\s+|\s+$/g,'');
+    if(!v){ inp.focus(); return; }
+    var res = window.TYZGrade ? window.TYZGrade.fill(key,v) : {ok:hitKey(v,key),hits:0,total:1,rate:0};
+    q.setAttribute('data-locked','1');
+    inp.disabled=true; inp.classList.add(res.ok?'right':'wrong');
+    setSt(q, res.ok?'right':'wrong');
+    if(res.ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, v); }
+    showAns(q,true);
+    var fd=q.querySelector('.filljudge');
+    if(!fd){
+      fd=document.createElement('span'); fd.className='ejudge filljudge';
+      var row=q.querySelector('.qfoot');
+      if(row) row.appendChild(fd); else q.appendChild(fd);
+    }
+    fd.className='ejudge filljudge '+(res.ok?'ok':'bad');
+    if(res.ok) fd.textContent='自动核对：要点全对';
+    else if(res.total>1) fd.textContent='自动核对：只对 '+res.hits+'/'+res.total+' 个要点（错别字或意思不符不计分）';
+    else fd.textContent='自动核对：未命中要点（错别字或意思不符不计分）';
+    update();
+  }
+  function retryFill(q){
+    var inp=q.querySelector('.fill');
+    q.removeAttribute('data-locked');
+    inp.disabled=false; inp.value=''; inp.classList.remove('right','wrong');
+    var fd=q.querySelector('.filljudge'); if(fd){ fd.className='ejudge filljudge'; fd.textContent=''; }
+    setSt(q,''); showAns(q,false); update(); inp.focus();
+  }
+  function rewriteEssay(q){
+    var ta=q.querySelector('.essay');
+    var j=q.querySelector('.ejudge'); if(j){ j.className='ejudge'; j.textContent=''; }
+    ta.value=''; ta.classList.remove('right','wrong');
+    setSt(q,''); showAns(q,false); update(); ta.focus();
+  }
+  function essayPoints(q){
+    var box=q.querySelector('.ans'), list=[], seen={};
+    if(!box) return list;
+    each(box.querySelectorAll('b'),function(b){
+      var t=normKey(b.textContent);
+      if(t.length<2) return;
+      if(t.indexOf('参考')>-1 || t.indexOf('解析')>-1 || t.indexOf('评分')>-1) return;
+      if(t.length>26) return;
+      if(seen[t]) return; seen[t]=1; list.push(t);
+    });
+    return list;
+  }
+  function coverRate(p,u){
+    var hit=0;
+    for(var i=0;i<p.length;i++){ if(u.indexOf(p.charAt(i))>-1) hit++; }
+    return p.length? hit/p.length : 0;
+  }
+  function diceSim(a,b){
+    if(a.length<2||b.length<2) return 0;
+    var A={},B={},na=0,nb=0,k,i,j;
+    for(i=0;i<a.length-1;i++){ k=a.substr(i,2); if(!A[k]){ A[k]=1; na++; } }
+    for(j=0;j<b.length-1;j++){ k=b.substr(j,2); if(!B[k]){ B[k]=1; nb++; } }
+    var inter=0; for(k in A){ if(B[k]) inter++; }
+    return 2*inter/(na+nb);
+  }
+  function autoEssay(q){
+    var ta=q.querySelector('.essay'), u=normKey(ta.value||'');
+    if(u.length<2){ ta.focus(); return; }
+    var box=q.querySelector('.ans'), ref=box?normKey(box.textContent):'';
+    var pts=essayPoints(q), hits=0, cov=0, sim=0, ok=false;
+    each(pts,function(p){ if(coverRate(p,u)>=0.6) hits++; });
+    cov=pts.length? hits/pts.length : 0;
+    sim=diceSim(u,ref.slice(0,420));
+    ok=((pts.length>0 && cov>=0.5) || sim>=0.32);
+    var judge=q.querySelector('.ejudge');
+    if(judge){
+      judge.className='ejudge '+(ok?'ok':'bad');
+      judge.textContent='要点命中 '+hits+'/'+pts.length+'（'+Math.round(cov*100)+'%）· 相似度 '+Math.round(sim*100)+'% · 自动判：'+(ok?'正确':'未达标');
+    }
+    ta.classList.remove('right','wrong');
+    ta.classList.add(ok?'right':'wrong');
+    setSt(q, ok?'right':'wrong'); if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, ta.value); } showAns(q,true);
+  }
+  function toggleDone(q){
+    var s=st(q);
+    if(s==='right'||s==='wrong') return;
+    setSt(q, s==='done'?'':'done');
+  }
+  function applySaved(q){
+    var s=st(q), ans=q.getAttribute('data-ans'), list=(ans||'').split(',');
+    if(!s) return;
+    if(s==='right'||s==='wrong'){
+      lockAll(q);
+      each(q.querySelectorAll('.op'),function(o){
+        if(list.indexOf(o.getAttribute('data-k'))>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      });
+      showAns(q,true);
+    }
+    var inp=q.querySelector('.fill');
+    if(inp && (s==='right'||s==='wrong')){ inp.disabled=true; inp.classList.add(s==='right'?'right':'wrong'); }
+    var ta=q.querySelector('.essay');
+    if(ta && (s==='right'||s==='wrong')){ ta.classList.add(s==='right'?'right':'wrong'); }
+    badge(q);
+  }
+  function update(){
+    var done=0, right=0, wrong=0;
+    each(QS,function(q){ var s=st(q); if(s){ done++; if(s==='right') right++; if(s==='wrong') wrong++; } });
+    var d=document.getElementById('cDone'), r=document.getElementById('cRight'), t=document.getElementById('cTotal'), rt=document.getElementById('cRate');
+    if(d) d.textContent=done;
+    if(r) r.textContent=right;
+    if(t) t.textContent=total;
+    if(rt) rt.textContent=(right+wrong)?(Math.round(right*100/(right+wrong))+'%'):'—';
+    each(document.querySelectorAll('.mod'),function(sec){
+      var qs=sec.querySelectorAll('.qi'), bar=sec.querySelector('.sbar'), n=0;
+      if(!bar) return;
+      each(qs,function(q){ if(st(q)) n++; });
+      bar.querySelector('.sbar-t').textContent=n+'/'+qs.length;
+      bar.querySelector('.track i').style.width=(qs.length?(n*100/qs.length):0)+'%';
+    });
+  }
+  each(QS,function(q){
+    var type=q.getAttribute('data-type');
+    if(type==='fill' || type==='essay'){
+      var rb=q.querySelector('.act-retry') || q.querySelector('.act-rewrite');
+      if(rb) rb.textContent='重做本题';
+    } else {
+      var foot=q.querySelector('.qfoot');
+      if(foot && !foot.querySelector('.act-redo')){
+        var rb2=document.createElement('button');
+        rb2.type='button'; rb2.className='mini act-redo'; rb2.textContent='重做本题';
+        rb2.addEventListener('click',function(){ redoQuestion(q); });
+        foot.appendChild(rb2);
+      }
+    }
+    each(q.querySelectorAll('.op'),function(o){
+      o.addEventListener('click',function(){
+        if(q.getAttribute('data-locked')) return;
+        if(type==='multi'){ o.classList.toggle('sel'); return; }
+        grade(q,o.getAttribute('data-k'));
+      });
+    });
+    var sub=q.querySelector('.act-submit');
+    if(sub) sub.addEventListener('click',function(){ submitMulti(q); });
+    var rev=q.querySelector('.act-reveal');
+    if(rev) rev.addEventListener('click',function(){ showAns(q); });
+    var mk=q.querySelector('.act-mark');
+    if(mk) mk.addEventListener('click',function(){ toggleDone(q); });
+    var chk=q.querySelector('.act-check');
+    if(chk) chk.addEventListener('click',function(){ checkFill(q); });
+    var ret=q.querySelector('.act-retry');
+    if(ret) ret.addEventListener('click',function(){ retryFill(q); });
+    var inp=q.querySelector('.fill');
+    if(inp) inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); checkFill(q); } });
+    var au=q.querySelector('.act-auto');
+    if(au) au.addEventListener('click',function(){ autoEssay(q); });
+    var rw=q.querySelector('.act-rewrite');
+    if(rw) rw.addEventListener('click',function(){ rewriteEssay(q); });
+    applySaved(q);
+  });
+  var reset=document.getElementById('resetAll');
+  if(reset) reset.addEventListener('click',function(){
+    data={}; save();
+    each(QS,function(q){
+      q.removeAttribute('data-locked');
+      each(q.querySelectorAll('.op'),function(o){ o.classList.remove('correct','wrong','sel','lock'); o.querySelector('em').textContent=''; });
+      showAns(q,false);
+      var inp=q.querySelector('.fill');
+      if(inp){ inp.value=''; inp.disabled=false; inp.classList.remove('right','wrong'); }
+      var ta=q.querySelector('.essay');
+      if(ta){ ta.value=''; ta.classList.remove('right','wrong'); }
+      var t=q.querySelector('.tip'); if(t){ t.style.display='none'; }
+      var fj=q.querySelector('.filljudge'); if(fj){ fj.className='ejudge filljudge'; fj.textContent=''; }
+      var ej=q.querySelector('.ejudge'); if(ej && !ej.classList.contains('filljudge')){ ej.className='ejudge'; ej.textContent=''; }
+      badge(q);
+    });
+    update();
+  });
+  update();
+})();
+</script>
+
+
+<script>
+window.__allAns=function(on){
+  var list=document.querySelectorAll('.ansbox'), btns=document.querySelectorAll('.act-reveal');
+  for(var i=0;i<list.length;i++) list[i].classList.toggle('show',on);
+  for(var j=0;j<btns.length;j++) btns[j].classList.toggle('on',on);
+};
+window.__resetMarks=function(){ var b=document.getElementById('resetAll'); if(b) b.click(); };
+</script>
+
+<script>
+(function(){
+  var ALTS_RAW = {
+    '硬件系统': ['硬件'],
+    '软件系统': ['软件'],
+    '智能化': ['智能'],
+    '计算机辅助设计': ['cad', '计算机辅助设计技术'],
+    '一次能传输的二进制位数': ['字长', '数据总线宽度', '一次传输位数', '一次传输的位数'],
+    '可寻址的内存空间大小': ['寻址空间', '可寻址空间', '地址空间', '内存空间大小', '可寻址的内存空间'],
+    '运算器': ['alu', '算术逻辑单元'],
+    '控制器': ['cu', '控制单元'],
+    '任意多个字符': ['任意字符', '多个字符', '任意多个', '任意数量字符'],
+    '任意一个字符': ['任意字符', '单个字符', '一个字符', '单一字符'],
+    '存储器': ['内存', '主存'],
+    '数据总线': ['数据线', '数据总线宽度'],
+    '文档': ['文档资料', '技术文档'],
+    '物理地址': ['硬件地址', 'mac地址', '物理硬件地址'],
+    '资源共享': ['共享资源'],
+    '数据通信': ['通信', '数据传输'],
+    '降序': ['从高到低', '由高到低', '递减'],
+    '总分': ['总成绩'],
+    '排序': ['排列'],
+    '四层': ['4层', '四层模型'],
+    '数据库管理系统': ['dbms'],
+    '属性': ['字段'],
+    '远程控制': ['后门', '远程控制通道'],
+    '操作数': ['地址码'],
+    '可用性': ['可用'],
+    '需求分析': ['需求调研', '需求分析阶段'],
+    '|': ['竖线', '管道符', '竖杠', '竖线符'],
+    'O(log₂n)': ['o(logn)', 'o(log2n)', 'log2n', 'logn'],
+    'ARPANET': ['arpanet网', '阿帕网'],
+    '1 张': ['1', '一张'],
+    '48 位': ['48', '48位'],
+    '6763 个': ['6763', '6763个'],
+    '2020': ['20h20h', '2020h'],
+    '3021': ['3021h'],
+    '2': ['2', '二'],
+    '16': ['16', '十六'],
+    '3': ['3', '三'],
+    '8': ['8', '八'],
+    '9': ['9', '九'],
+    '10': ['10', '十'],
+    '32': ['32', '三十二'],
+    '128': ['128', '一百二十八'],
+    '255': ['255', '二百五十五'],
+    '1024': ['1024', '一千零二十四'],
+    '5050': ['5050', '五千零五十'],
+    '236': ['236', '二百三十六'],
+    '72': ['72', '七十二'],
+    '2020': ['2020', '2020h'],
+    '数据库管理系统（DBMS）': ['数据库管理系统', 'dbms']
+  };
+  var ALTS = {};
+  var scripts = ['₂','₃','⁰','¹','²','³'];
+  var subMap = {'₂':'2','₃':'3','₀':'0','₁':'1','⁰':'0','¹':'1','²':'2','³':'3'};
+  function norm(s){
+    s = String(s == null ? '' : s);
+    s = s.replace(/[\uFF01-\uFF5E]/g, function(ch){ return String.fromCharCode(ch.charCodeAt(0) - 65248); });
+    s = s.replace(/[\u3000\s]/g, '');
+    s = s.replace(/[“”"'‘’]/g, '');
+    s = s.replace(/[，,。；;：:、（）()《》〈〉【】\[\]{}…·\-—–_!！?？]/g, '');
+    s = s.replace(/[₀₁₂₃⁰¹²³]/g, function(ch){ return subMap[ch] || ''; });
+    return s.toLowerCase();
+  }
+  function rawVariants(t){
+    t = String(t == null ? '' : t);
+    var out = [t], m = t.match(/（[^）]*）/g) || [], flat, i;
+    flat = t.replace(/（[^）]*）/g, '');
+    if(flat && flat !== t) out.push(flat);
+    for(i = 0; i < m.length; i++){
+      var inner = m[i].slice(1, -1);
+      if(inner) out.push(inner);
+    }
+    var cleaned = t.replace(/[“”"'‘’]/g, '');
+    if(cleaned !== t) out.push(cleaned);
+    return out;
+  }
+  for(var k in ALTS_RAW){
+    if(!Object.prototype.hasOwnProperty.call(ALTS_RAW, k)) continue;
+    ALTS[norm(k)] = ALTS_RAW[k].map(norm);
+  }
+  function numVal(s){
+    var m = norm(s).match(/^(-?\d+(?:\.\d+)?)(个|张|位|字节|次|年|b|h|kb|mb|gb)?$/);
+    return m ? parseFloat(m[1]) : null;
+  }
+  function hasAlias(v, u, allowContain){
+    var list = ALTS[v] || [];
+    for(var i = 0; i < list.length; i++){
+      var a = list[i];
+      if(!a) continue;
+      if(u === a) return true;
+      if(allowContain && a.length >= 3 && u.indexOf(a) >= 0) return true;
+    }
+    return false;
+  }
+  function matchOne(user, target, allowContain){
+    var u = norm(user), t = norm(target);
+    if(!u || !t) return false;
+    var uv = rawVariants(user).map(norm), tv = rawVariants(target).map(norm), i, j;
+    for(i = 0; i < uv.length; i++){
+      if(uv[i] === t) return true;
+    }
+    var un = numVal(user), tn = numVal(target);
+    if(un !== null && tn !== null) return un === tn;
+    if(t.charAt(0) === '.' && u === t.slice(1)) return true;
+    if(u.charAt(0) === '.' && t === u.slice(1)) return true;
+    if(t.indexOf('表名') >= 0){
+      var pre = t.replace('表名', '');
+      if(u.indexOf(pre) === 0 && u.length > pre.length) return true;
+    }
+    if(ALTS[t]){
+      for(i = 0; i < ALTS[t].length; i++){
+        var a = ALTS[t][i];
+        if(u === a || (allowContain && a.length >= 3 && u.indexOf(a) >= 0)) return true;
+      }
+    }
+    for(i = 0; i < tv.length; i++){
+      var v = tv[i];
+      if(!v) continue;
+      if(u === v) return true;
+      if(allowContain && v.length >= 3 && u.indexOf(v) >= 0) return true;
+      if(hasAlias(v, u, allowContain)) return true;
+    }
+    for(j = 0; j < uv.length; j++){
+      if(tv.indexOf(uv[j]) >= 0) return true;
+    }
+    return false;
+  }
+  function splitTargets(key){
+    return String(key == null ? '' : key).split('、').map(function(s){ return s.trim(); }).filter(Boolean);
+  }
+  function splitUsers(user, n){
+    var raw = String(user == null ? '' : user), strategies = [];
+    strategies.push([raw]);
+    strategies.push(raw.split(/[、,，;；\n]+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/[和与及]/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/\s+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    var all = [];
+    for(var i = 0; i < strategies.length; i++){
+      if(strategies[i].length === n) all.push(strategies[i]);
+    }
+    return all.length ? all : [strategies[0]];
+  }
+  function evalAlt(key, user){
+    var targets = splitTargets(key), n = targets.length;
+    var splits = splitUsers(user, n), best = {hits: 0, total: n, parts: []};
+    for(var s = 0; s < splits.length; s++){
+      var parts = splits[s], hits = 0, detail = [];
+      if(parts.length === n){
+        for(var i = 0; i < n; i++){
+          var ok = matchOne(parts[i], targets[i]);
+          if(ok) hits++;
+          detail.push({t: targets[i], u: parts[i], ok: ok});
+        }
+      } else {
+        for(var j = 0; j < n; j++){
+          var ok2 = matchOne(user, targets[j]);
+          if(ok2) hits++;
+          detail.push({t: targets[j], u: user, ok: ok2});
+        }
+      }
+      if(hits > best.hits) best = {hits: hits, total: n, parts: detail};
+    }
+    return best;
+  }
+  function fill(key, user){
+    var groups = String(key == null ? '' : key).split('~'), best = null;
+    for(var i = 0; i < groups.length; i++){
+      var r = evalAlt(groups[i], user);
+      var rate = r.total ? r.hits / r.total : 0;
+      if(!best || rate > best.rate || (rate === best.rate && r.hits > best.hits)) best = {ok: false, hits: r.hits, total: r.total, rate: rate, parts: r.parts};
+    }
+    if(!best) best = {ok: false, hits: 0, total: 1, rate: 0, parts: []};
+    best.ok = best.total > 0 && best.hits === best.total;
+    return best;
+  }
+  function termMatch(user, target){
+    return matchOne(user, target, true);
+  }
+  function termInText(user, target){
+    var u = norm(user), t = norm(target);
+    return !!(u && t && u.indexOf(t) >= 0);
+  }
+  function pointsGrade(points, user){
+    points = points || [];
+    var max = 0, score = 0, hits = 0, details = [];
+    for(var i = 0; i < points.length; i++){
+      var p = points[i] || {};
+      var w = typeof p.w === 'number' ? p.w : 1;
+      max += w;
+      var ok = false, j;
+      if(p.all && p.all.length){
+        ok = true;
+        for(j = 0; j < p.all.length; j++){
+          if(!termInText(user, p.all[j])){ ok = false; break; }
+        }
+      } else {
+        var terms = [];
+        if(p.t) terms.push(p.t);
+        if(p.a) terms = terms.concat(p.a);
+        if(p.any) terms = terms.concat(p.any);
+        for(j = 0; j < terms.length; j++){
+          if(matchOne(user, terms[j], true)){ ok = true; break; }
+        }
+      }
+      if(ok){ hits++; score += w; }
+      details.push({t: p.t || (p.all || []).join('、') || '', a: p.a || [], w: w, ok: ok});
+    }
+    return {score: score, max: max, hits: hits, total: points.length, rate: max ? score / max : 0, details: details};
+  }
+  window.TYZGrade = {norm: norm, fill: fill, term: termMatch, inText: termInText, points: pointsGrade, variants: rawVariants};
+})();
+
+</script>
+
+<script>
+(function(){
+  var BK='ch3-book', EK='tyz2027:errors';
+  function rd(){ try{ return JSON.parse(localStorage.getItem(EK)||'{}')||{}; }catch(e){ return {}; } }
+  function sv(o){ try{ localStorage.setItem(EK, JSON.stringify(o)); }catch(e){} }
+  function nm(s){ return (s||'').replace(/\s+/g,' ').trim(); }
+  function sect(q){
+    var p=q.parentNode, last='';
+    if(!p) return '';
+    for(var i=0;i<p.children.length;i++){ var el=p.children[i]; if(el===q) break; if(el.className && (' '+el.className+' ').indexOf(' sub ')>-1) last=nm(el.textContent); }
+    return last.replace(/^小节[一二三四五六七八九十]+[\s\u3000]*/,'');
+  }
+  function opts(q){
+    var a=[], os=q.querySelectorAll('.op');
+    for(var i=0;i<os.length;i++){ var tx=os[i].querySelector('span'); a.push({k:os[i].getAttribute('data-k')||'', t:nm(tx?tx.textContent:os[i].textContent)}); }
+    return a;
+  }
+  window.__tyzWrong=function(q,user){
+    var id=BK+':'+(q.getAttribute('data-q')||'');
+    var e=rd(), r=e[id]||{count:0};
+    r.book=BK; r.qid=q.getAttribute('data-q')||''; r.type=q.getAttribute('data-type')||'';
+    r.id=id; r.section=sect(q);
+    var lm=(r.qid||'').match(/^l(\d+)-/); r.lesson=lm?parseInt(lm[1],10):0;
+    var qh=q.querySelector('.qh'); r.stem=nm(qh?qh.textContent:'');
+    r.options=opts(q);
+    r.answer=q.getAttribute('data-ans')||q.getAttribute('data-key')||'';
+    var ab=q.querySelector('.ans'); r.explain=nm(ab?ab.textContent:'');
+    r.user=nm(user||'').slice(0,300);
+    r.at=Date.now(); r.count=(r.count||0)+1; r.fixed=false;
+    e[id]=r; sv(e);
+    try{ parent.postMessage({type:'tyz-error',id:id},'*'); }catch(err){}
+  };
+  window.__tyzFixed=function(q){
+    var id=BK+':'+(q.getAttribute('data-q')||''); var e=rd();
+    if(e[id]){ e[id].fixed=true; e[id].fixedAt=Date.now(); sv(e); try{ parent.postMessage({type:'tyz-fixed',id:id},'*'); }catch(err){} }
+  };
+})();
+</script>
+</body>
+</html>

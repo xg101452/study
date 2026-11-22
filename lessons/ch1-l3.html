@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第一章第3课 数值数据与字符数据的表示 · 考点精简（2027 四川专升本）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
+  --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:44px 0 30px;background:
+  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
+  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
+  border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
+  color:var(--c4);font-weight:700;margin-bottom:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(25px,3.4vw,38px);
+  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.4px;max-width:830px;margin:12px 0 0}
+.syl{margin-top:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+@media(max-width:820px){.syl{grid-template-columns:1fr}}
+.syl-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.syl-box h3{margin:0 0 7px;font-size:12.5px;letter-spacing:1px;color:var(--c1)}
+.syl-box p{margin:0;font-size:13.4px;color:var(--ink2)}
+.q{font-family:"Noto Serif SC",serif;color:var(--ink);background:var(--c1bg);
+  border-left:3px solid var(--c1);padding:7px 12px;border-radius:0 8px 8px 0;margin:6px 0 0;font-size:13.1px}
+.q.warn{border-left-color:var(--c4);background:var(--c4bg)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{flex:0 0 auto;font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;
+  border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap;transition:.18s}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
+  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
+.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
+.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
+table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
+th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+td.c{text-align:center;white-space:nowrap}
+tr:nth-child(even) td{background:#fdfcf9}
+.tbl-note{font-size:12.5px;color:var(--muted);margin:5px 0 0}
+.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
+  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
+.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
+.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
+.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
+.f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
+.cut{color:#9aa5ae}
+.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip b{color:var(--c1)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.okbox b{color:#1f6b4a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
+.mem b{color:var(--gold)}
+.human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
+.human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
+.flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
+  white-space:pre;overflow-x:auto;margin:9px 0}
+.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
+.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
+  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qz b{color:var(--ink)}
+.qz .no{color:#8a5a00;font-weight:700}
+.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--c1);margin-right:8px;font-weight:700;display:inline-block}
+details[open] summary::before{content:'▾'}
+details .ans{margin-top:7px;padding:9px 12px;background:var(--c5bg);border-left:3px solid var(--c5);
+  border-radius:0 8px 8px 0;font-size:13.1px;color:#1b4a36;line-height:1.76}
+details .ans b{color:#14402c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);
+  color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.3px}.toc,.btnrow{display:none}.hero{padding:16px 0 10px}
+  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第一章第 3 课</span>
+    <h1>数值数据与字符数据的表示
+      <span class="light">信息单位 ｜ 原码反码补码 ｜ 定点浮点 ｜ ASCII ｜ 汉字编码 ｜ 容量计算</span>
+    </h1>
+    <p class="lead">第一章里<b>考点最密</b>的一课：2025 年这一课直接在四个选择题、一个多选里出题。特点是——<b>概念少、计算多</b>，而且很多数字（48、65、97、6763、2020H）必须精确记住，差一点就选错。</p>
+
+    <div class="syl">
+      <div class="syl-box">
+        <h3>考纲原文</h3>
+        <p class="q">一、计算机基础知识 → <b>3. 数值数据与字符数据的表示</b>：<b>掌握</b>数值数据和字符数据的表示方法、计算机中的信息单位。</p>
+      </div>
+      <div class="syl-box">
+        <h3>本课在卷面上值多少</h3>
+        <p class="q warn">2025 年：<strong>单选 17、18、19、20</strong>（补码、无符号个数、浮点精度、位图容量，共 8 分）＋ <strong>多选 45</strong>（汉字编码，3 分）。2024 年：判断 1、2。<b>约 11～14 分</b>，是第一章的主力得分区。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">考 / 不考</a>
+    <a href="#s1">① 信息单位</a>
+    <a href="#s2">② 数值：原反补</a>
+    <a href="#s3">③ 定点与浮点</a>
+    <a href="#s4">④ ASCII 码</a>
+    <a href="#s5">⑤ 汉字编码</a>
+    <a href="#s6">⑥ 容量计算</a>
+    <a href="#s6b">2026 真题</a>
+    <a href="#s7">易错清单</a>
+    <a href="#s8">必背 12 条</a>
+    <a href="#s9">自测 12 题</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ S0 ============ -->
+<section class="mod" id="s0">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">0</div>
+    <div>
+      <h2>本课考 / 不考</h2>
+      <span class="tag">"掌握"级别，计算题大户</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:74px">考频</th><th style="width:38%">内容</th><th>怎么处理</th></tr>
+    <tr><td class="c"><span class="f f3">★★★</span></td>
+      <td>信息单位换算（B/KB/MB/GB）· 原码反码补码<b>互推</b> · 无符号 / 有符号表示范围 · <b>ASCII 关键码值</b>（48/65/97/32）· <b>区位码→国标码→机内码</b>（+2020H/+8080H）· 图像与音频容量公式</td>
+      <td>必须<b>会算、会推</b>，每个都单独练过</td></tr>
+    <tr><td class="c"><span class="f f2">★★</span></td>
+      <td>bit / Byte / 字长 / 字 的区别 · 定点与浮点的分工（阶码管范围、尾数管精度）· 汉字字形码点阵计算 · GB2312 / GBK / UTF-8 的定位</td>
+      <td>能判断、能说清区别</td></tr>
+    <tr><td class="c"><span class="f f1">★</span></td>
+      <td>输入码（外码）与内码、字型码的区别 · 机内码为什么加 8080H</td>
+      <td>理解即可</td></tr>
+    <tr><td class="c"><span class="f f0">✂</span></td>
+      <td class="cut">IEEE 754 各字段位数 · BCD 码 · 汉字的造字法与字形结构 · Unicode 码点分区 · 视频码率与压缩算法细节</td>
+      <td class="cut">考纲未列、真题未出现，跳过</td></tr>
+  </table>
+  <div class="tip"><b>这一课的正确打开方式：</b>凡是涉及"数值"的部分（原反补、范围、容量），<b>一定动手算</b>；凡是涉及"标准"的部分（ASCII、GB2312），<b>只背关键数字</b>，不要试图理解为什么是 6763——它就是个规定。</div>
+</section>
+
+<!-- ============ S1 信息单位 ============ -->
+<section class="mod" id="s1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
+    <div>
+      <h2>计算机中的信息单位</h2>
+      <span class="tag"><span class="f f3">★★★</span>最简单的送分点，但每年都有人栽在 1000 和 1024 上</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:110px">单位</th><th style="width:110px">中文</th><th style="width:150px">换算</th><th>说明</th></tr>
+    <tr><td><b>bit</b>（b）</td><td>位 / 比特</td><td>最小单位</td><td>一个二进制位，只有 0 或 1 两种状态。<b>信息的最小单位</b></td></tr>
+    <tr><td><b>Byte</b>（B）</td><td>字节</td><td><b>1 B = 8 bit</b></td><td><b>存储容量的基本单位</b>。1 个字节可以存 1 个 ASCII 字符</td></tr>
+    <tr><td>KB</td><td>千字节</td><td><b>1 KB = 1024 B</b>（2<sup>10</sup>）</td><td rowspan="5">每级都是 <b>1024</b> 倍，不是 1000 倍。<br>顺序：B → KB → MB → GB → TB → PB</td></tr>
+    <tr><td>MB</td><td>兆字节</td><td>1 MB = 1024 KB</td></tr>
+    <tr><td>GB</td><td>吉字节</td><td>1 GB = 1024 MB</td></tr>
+    <tr><td>TB</td><td>太字节</td><td>1 TB = 1024 GB</td></tr>
+    <tr><td>PB</td><td>拍字节</td><td>1 PB = 1024 TB</td></tr>
+  </table>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:80px">概念</th><th>定义</th><th style="width:32%">为什么重要</th></tr>
+    <tr><td><b>字长</b></td><td>CPU <b>一次能并行处理</b>的二进制位数。如 32 位、64 位</td><td>字长越长，一次处理的数据越多、精度越高，是<b>衡量 CPU 性能的重要指标</b>。常与"主频"一起出判断题</td></tr>
+    <tr><td><b>字</b>（Word）</td><td>CPU 一次存取、处理的一组二进制位，通常是字节的整数倍</td><td>与字长相关但不等同，考试很少深挖</td></tr>
+    <tr><td><b>字节</b></td><td>8 个二进制位，编址的基本单位</td><td>说"内存 8GB"指的是<b>字节数</b></td></tr>
+  </table>
+
+  <div class="warnbox"><b>高频判断题：</b>"1KB = 1000B"——<b>错</b>，是 1024。但注意硬盘厂商宣传容量时常用 1000 进制，这不是考试口径，考试一律按 1024 算。</div>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 18（2 分）</b>　16 位二进制可以表示的无符号整数个数是（　）　A. 16　B. 65535　C. 65536　D. 32768<br>
+  <span class="no">答案：C。n 位二进制能表示 2<sup>n</sup> 个不同组合；16 位 → 2<sup>16</sup>=65536 个，取值范围 0~65535。<b>"个数"和"最大值"差 1，这是本题唯一的坑。</b></span></div>
+</section>
+
+<!-- ============ S2 数值 ============ -->
+<section class="mod" id="s2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">②</div>
+    <div>
+      <h2>数值数据：无符号数、原码、反码、补码</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 单选第 17 题就考这里，几乎是必考题型</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="human"><span class="lb">先说清楚一件事：符号位</span>
+  计算机里没有"负号"这个字符，只有 0 和 1。所以规定：<b>最高位当符号位，0 表示正，1 表示负</b>，剩下的 n−1 位表示数值。<br>
+  8 位二进制中：<b>0xxxxxxx</b> 是正数，<b>1xxxxxxx</b> 是负数。这就是一切的原点。
+  </div>
+
+  <table>
+    <tr><th style="width:76px">编码</th><th style="width:150px">正数</th><th>负数</th><th style="width:26%">用途</th></tr>
+    <tr><td><b>原码</b></td><td>符号位 0 + 数值绝对值</td><td>符号位 1 + 数值绝对值</td><td>最直观，但<b>加减运算不方便</b>（要判断符号、比较大小）</td></tr>
+    <tr><td><b>反码</b></td><td>同原码</td><td>符号位不变，<b>其余按位取反</b></td><td>只是求补码的中间步骤</td></tr>
+    <tr><td><b>补码</b></td><td>同原码</td><td><b>反码 + 1</b>（＝原码取反加 1，符号位不动）</td><td><b>计算机内部实际使用的形式</b>。它把减法变成加法，硬件只需一个加法器</td></tr>
+  </table>
+
+  <div class="flow">【例】求 −70 的三种编码（8 位）
+① 原码：70 = 0100 0110 → 符号位置 1 → 1 100 0110
+② 反码：符号位不动，其余取反       → 1 011 1001
+③ 补码：反码末位加 1               → 1 011 1010   即 10111010
+
+【逆推】已知补码 10111010，求它的真值
+① 最高位是 1 → 负数
+② 补码取反加一还原原码：10111010 → 取反 01000101 → 加 1 → 01000110 = 70
+③ 加上符号 → 真值 = −70</div>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 17（2 分）</b>　某 8 位补码为 (10111010)<sub>2</sub>，其对应的十进制真值是（　）<br>
+  <span class="no">答案：−70。<br>
+  走法：最高位 1 → 是负数；把补码"取反加一"得 01000110 = 70；所以真值 −70。<br>
+  常见的错法：把 10111010 直接当二进制数算出 186，再拿 186 减 256 得 −86。<b>−86 是错的</b>，因为它是"按位权算出来再减"，而补码不是位权表示法。</span></div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:20px 0 8px;padding-left:11px;border-left:4px solid var(--c2)">表示范围（8 位为例，必须记）</h3>
+  <table>
+    <tr><th style="width:130px">类型</th><th style="width:170px">范围</th><th>个数</th></tr>
+    <tr><td>8 位无符号</td><td><b>0 ~ 255</b></td><td>256 = 2<sup>8</sup></td></tr>
+    <tr><td>8 位有符号（补码）</td><td><b>−128 ~ +127</b></td><td>256</td></tr>
+    <tr><td>n 位无符号</td><td>0 ~ 2<sup>n</sup>−1</td><td>2<sup>n</sub></td></tr>
+    <tr><td>n 位有符号（补码）</td><td>−2<sup>n−1</sup> ~ 2<sup>n−1</sup>−1</td><td>2<sup>n</sup></td></tr>
+  </table>
+  <div class="mem"><b>为什么补码比原码多一个 −128？</b>因为补码里 1000 0000 被解释成 −128，而原码里它表示"负零"，是浪费掉的一个编码。所以补码<b>没有负零</b>，能多表示一个数。<br><b>口诀：n 位补码，范围是 −2<sup>n−1</sup> 到 2<sup>n−1</sup>−1。</b></div>
+</section>
+
+<!-- ============ S3 定点浮点 ============ -->
+<section class="mod" id="s3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">③</div>
+    <div>
+      <h2>定点数与浮点数</h2>
+      <span class="tag"><span class="f f2">★★</span>只考"谁管范围、谁管精度"这一个判断</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:96px">类型</th><th>含义</th><th style="width:30%">特点</th></tr>
+    <tr><td><b>定点数</b></td><td>小数点的位置<b>固定不变</b>（约定在最低位之后＝定点整数，或约定在符号位之后＝定点小数）</td><td>实现简单、速度快；<b>表示范围小</b>，容易溢出</td></tr>
+    <tr><td><b>浮点数</b></td><td>小数点位置<b>浮动</b>，用"阶码 + 尾数"表示：数值 = 尾数 × 基数<sup>阶码</sup></td><td><b>范围大、精度可调</b>，是计算机表示实数的通用方式</td></tr>
+  </table>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:100px">组成</th><th style="width:120px">管什么</th><th>说明</th></tr>
+    <tr><td><b>阶码</b>（指数部分）</td><td><b>决定表示范围</b></td><td>位数越多，能表示的数值<b>范围越大</b>（能到很大或很小的数）</td></tr>
+    <tr><td><b>尾数</b>（有效数字部分）</td><td><b>决定表示精度</b></td><td>位数越多，<b>有效数字越多、精度越高</b>（小数点后能算得更细）</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 19（2 分）</b>　浮点数表示中，决定其精度的是（　）<br>
+  <span class="no">答案：尾数的位数。<br>
+  <b>一句话记法：阶码管"能有多大"，尾数管"能有多准"。</b>这两句在判断、选择里反复出现，务必分清。</span></div>
+</section>
+
+<!-- ============ S4 ASCII ============ -->
+<section class="mod" id="s4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">④</div>
+    <div>
+      <h2>字符数据：ASCII 码</h2>
+      <span class="tag"><span class="f f3">★★★</span>48 / 65 / 97 / 32 这四个数必背</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <ul style="margin:0;padding-left:20px;font-size:13.6px;color:var(--ink2)">
+    <li><b>用 7 位二进制编码</b>，共 <b>2<sup>7</sup>=128</b> 个字符（0~127）。存的时候一般占 1 个字节（8 位），最高位补 0</li>
+    <li>分为<b>控制字符</b>（0~31 和 127，共 33 个，如换行、回车）和<b>可打印字符</b>（32~126，含空格、数字、字母、标点）</li>
+    <li>码值按顺序排列：<b>空格 &lt; 数字 &lt; 大写字母 &lt; 小写字母</b>，这个顺序是<b>比较大小题的答案来源</b></li>
+  </ul>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:170px">字符</th><th style="width:110px">十进制码值</th><th>记忆点</th></tr>
+    <tr><td>空格 Space</td><td class="c"><b>32</b></td><td>可打印字符里最小的一个</td></tr>
+    <tr><td>数字 0 ~ 9</td><td class="c"><b>48 ~ 57</b></td><td>'0'=48，往后逐个 +1，'9'=57</td></tr>
+    <tr><td>大写字母 A ~ Z</td><td class="c"><b>65 ~ 90</b></td><td>'A'=65，往后逐个 +1</td></tr>
+    <tr><td>小写字母 a ~ z</td><td class="c"><b>97 ~ 122</b></td><td>'a'=97。大小写同字母差 <b>32</b>（97−65）</td></tr>
+  </table>
+
+  <div class="mem"><b>口诀：</b>空 32、零 48、A 65、a 97。<br><b>推论题：</b>'D' = 65+3 = 68；'e' = 97+4 = 101；'A' 与 'a' 差 32。这类"给一个求另一个"的题，答案全靠这四个基准数加减。</div>
+
+  <div class="qz"><span class="lb">真题</span><b>2024 · 判断 1</b>　ASCII 码中的"0"字符在计算机中没有使用。<span class="no">→ <b>错</b>。'0' 的码值是 48，它是数字字符的起点、天天在用；真正"没用满"的是 7 位之外的编码空间。</span></div>
+</section>
+
+<!-- ============ S5 汉字编码 ============ -->
+<section class="mod" id="s5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
+    <div>
+      <h2>汉字编码：四种码，一条转换链</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 多选第 45 题；2020H / 8080H 的加法几乎年年出现</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">输入码（外码） →  国标码 / 区位码  →  机内码（内码）  →  字形码（字型码）
+  拼音、五笔        用于交换、存储           计算机内部实际存储      用于显示与打印</div>
+
+  <table>
+    <tr><th style="width:110px">编码</th><th style="width:150px">怎么来的</th><th>说明</th></tr>
+    <tr><td><b>输入码</b>（外码）</td><td>—</td><td>人用的：拼音码、五笔字型码、区位码。<b>同一个人可以用不同输入码</b></td></tr>
+    <tr><td><b>区位码</b></td><td>区号 + 位号，各 2 位十进制</td><td>94 个区 × 94 个位，如"啊"＝1601（16 区 01 位）</td></tr>
+    <tr><td><b>国标码</b></td><td><b>区位码 + 2020H</b></td><td>GB 2312 的交换码，两个字节，每字节 21H~7EH</td></tr>
+    <tr><td><b>机内码</b>（内码）</td><td><b>国标码 + 8080H</b>（＝区位码 + A0A0H）</td><td><b>计算机内部真正存储</b>的形式。加 8080H 是为了让每个字节最高位变 1，<b>从而与 ASCII 码区分开</b></td></tr>
+    <tr><td><b>字形码</b>（字型码）</td><td>点阵或矢量描述</td><td>决定字的<b>形状</b>，存在字库文件里，与存储无关（同一字可有多套字号）</td></tr>
+  </table>
+
+  <div class="flow">【例】"啊"的区位码是 1601，求国标码与机内码
+区位码：区 16 → 10H，位 01 → 01H
+国标码：10H + 20H = 30H，01H + 20H = 21H  →  3021H
+机内码：3021H + 8080H = B0A1H
+
+【反向题】若某汉字的机内码是 B0A1H，则它的国标码 = B0A1H − 8080H = 3021H</div>
+
+  <div class="warnbox"><b>方向别搞反：</b>加 2020H 得国标码，再加 8080H 得机内码。<b>减</b>的时候顺序相反，先减 8080H 再减 2020H。题目若问"区号是多少"，就是 (10H)=16，即 16 区。</div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:110px">字符集</th><th style="width:130px">收录量</th><th>定位与考点</th></tr>
+    <tr><td><b>GB 2312</b></td><td><b>6763</b> 个汉字 + 682 个图形符号 = <b>7445</b></td><td>1980 年发布，<b>第一个汉字国家标准</b>。一级汉字 3755 个（按拼音）、二级 3008 个（按部首）。<b>6763 这个数字必背</b></td></tr>
+    <tr><td><b>GBK</b></td><td>2 万余个</td><td>GB 2312 的<b>扩展</b>，向下兼容，收录繁体与生僻字</td></tr>
+    <tr><td><b>GB 18030</b></td><td>规模更大</td><td>我国目前<b>最新的汉字编码强制性国家标准</b>，覆盖全部中日韩汉字</td></tr>
+    <tr><td><b>Unicode / UTF-8</b></td><td>全球统一码</td><td>为<b>全世界所有字符</b>统一编号；<b>UTF-8 是变长编码</b>（1~4 字节，一个汉字通常 3 字节），是网页与跨平台的首选</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 多选 45（3 分）</b>　下列编码中能表示汉字的是（　）　A. ASCII　B. GB2312　C. GBK　D. UTF-8<br>
+  <span class="no">答案：BCD。ASCII 只管英文字符与控制码（128 个），<b>一个汉字都表示不了</b>——这是唯一的排除项。</span></div>
+  <div class="qz"><span class="lb">真题</span><b>2024 · 判断 2</b>　UTF-8 是变长度编码的 Unicode 字符编码。<span class="no">→ <b>对</b>。UTF-8 用 1~4 个字节表示一个字符，所以叫"变长"；相对地 UTF-16 定长 2 字节（基本平面）。</span></div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c5)">字形码：点阵占多少字节</h3>
+  <div class="flow">16×16 点阵 = 16 行 × 16 列 = 256 个点
+每个点用 1 位二进制表示（黑 / 白）
+256 bit ÷ 8 = 32 字节
+
+通用公式： n×n 点阵的一个汉字字形码 = n² ÷ 8 字节
+（24×24 → 576 bit → 72 B；32×32 → 1024 bit → 128 B）</div>
+  <div class="tip"><b>注意区分：</b>这道题问的是<b>字形码（点阵）</b>占多少，不是机内码。一个汉字在计算机里<b>存储</b>只占 2 字节（GB2312 机内码），但<b>显示</b>用的 16×16 点阵要 32 字节。两个数字差 16 倍，正是考题爱设的陷阱。</div>
+</section>
+
+<!-- ============ S6 容量计算 ============ -->
+<section class="mod" id="s6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑥</div>
+    <div>
+      <h2>容量计算：图像、音频、视频</h2>
+      <span class="tag"><span class="f f3">★★★</span>两个公式 + 一次单位换算，2025 单选第 20 题</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:88px">类型</th><th style="width:290px">公式</th><th>说明</th></tr>
+    <tr><td><b>图像</b></td><td><b>数据量(B) = 水平像素 × 垂直像素 × 颜色深度 ÷ 8</b></td><td>颜色深度（位深）指每个像素用几位表示颜色：24 位＝真彩色（约 1677 万色），8 位＝256 色，1 位＝黑白</td></tr>
+    <tr><td><b>音频</b></td><td><b>数据量(B) = 采样频率 × 采样位数 × 声道数 × 时长 ÷ 8</b></td><td>采样频率单位 Hz，CD 音质 44.1kHz；采样位数（量化位数）常见 16 位；声道 1（单声道）、2（立体声）；时长以<b>秒</b>为单位</td></tr>
+    <tr><td>视频</td><td>数据量 ≈ 每帧数据量 × 帧率 × 时长</td><td>未压缩时算法与图像相同，逐帧累加；实际视频都压缩过，考试只考"未压缩"的估算</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 20（2 分）</b>　一幅 160×160 像素、24 位真彩色的未压缩图像，其数据量约为（　）<br>
+  <span class="no">答案：75 KB。<br>
+  计算：160 × 160 × 24 ÷ 8 = 76 800 B；76 800 ÷ 1024 = <b>75 KB</b>。<br>
+  <b>陷阱就在最后一步：</b>76 800 B 直接当 75KB 是"凑巧对"，因为 76 800÷1024 正好等于 75。但若题目给 320×240×24，得 230 400 B ÷ 1024 ≈ 225 KB，<b>不能写成 230KB</b>。单位换算这一步必须做。</span></div>
+
+  <div class="flow">【例】44.1kHz 采样、16 位量化、双声道的立体声，未压缩 1 分钟数据量：
+44100 × 16 × 2 × 60 ÷ 8 = 10 584 000 B
+10 584 000 ÷ 1024 ≈ 10 336 KB ≈ 10.1 MB
+
+【例】640×480、24 位色、未压缩图像：
+640 × 480 × 24 ÷ 8 = 921 600 B ÷ 1024 = 900 KB</div>
+
+  <div class="mem"><b>三句话记住：</b>图像乘"像素×色深"，音频乘"采样×位深×声道×时长"，<b>最后都 ÷8 变成字节，再 ÷1024 变成 KB</b>。÷8 是把"位"变"字节"，÷1024 是把"字节"变"KB"——两步都不能漏。</div>
+</section>
+
+<!-- ============ S7 易错 ============ -->
+<!-- ============ 2026 真题 ============ -->
+<section class="mod" id="s6b">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#6b4a7a,#8f6aa4)">26</div>
+    <div>
+      <h2>2026 年真题（本课部分）</h2>
+      <span class="tag">2026 年 4 月 16 日实考卷 · 考后讲评整理</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="qz"><span class="lb">2026 · 单选 第 1 题</span><b>2 分</b>　下列关于计算机存储容量单位换算，正确的是（　）<br>
+  A. 1KB = 1000B　B. 1MB = 1000KB　C. 1GB = 2<sup>40</sup>B　D. 1PB = 2<sup>10</sup>TB<br>
+  <span class="no">答案：D。<br>
+  A、B 错在把 1024 写成 1000；C 错在指数——1GB = 2<sup>30</sup>B（字节→KB→MB→GB 共三级，每级 2<sup>10</sup>），2<sup>40</sup> 是 1TB。<br>
+  <b>2026 的出题手法变了：</b>2025 是"给你一个数让你换算"，2026 改成"四个选项各埋一个坑，让你逐个判对错"。这就要求<b>每一级的指数都能自己推</b>：B→KB 是 2<sup>10</sup>，B→MB 是 2<sup>20</sup>，B→GB 是 2<sup>30</sup>，B→TB 是 2<sup>40</sup>。</span></div>
+
+  <div class="qz"><span class="lb">2026 · 判断 第 3 题</span><b>1 分</b>　字符在计算机中占用的字节数与其使用的编码方式无关。<br>
+  <span class="no">答案：<b>错</b>。<br>
+  字符占几个字节，正是由编码方式决定的：一个英文字母在 ASCII 下占 <b>1 字节</b>；一个汉字在 GB2312/GBK 下占 <b>2 字节</b>，在 UTF-8 下通常占 <b>3 字节</b>。<br>
+  <b>题干里的"无关"就是信号词</b>——凡是"与……无关""不受……影响""只由……决定"这类绝对化表述，先怀疑它错。</span></div>
+
+  <div class="okbox"><b>2026 在本课给出的信号：</b>①单位换算不再送分，四个选项就是四个坑，指数必须能推；②编码题的考法从"记数字"转向"理解编码与字节数的因果关系"。这正好对应本课两条主线——单位链路要熟、字符编码要知道"为什么不同"。</div>
+
+  <div class="tip"><b>顺手补一个连带考点：</b>一个 6763 字的 GB2312 汉字库，只存机内码约需 6763×2 ≈ 13.5KB；但若存 16×16 点阵字形码，则需 6763×32 ≈ 216KB。<b>同一个字，存"码"和存"形"差 16 倍</b>——这就是本课第 ⑤ 节强调的那组数字。</div>
+</section>
+<section class="mod" id="s7">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#5a4a7a,#7d6a9e)">⑦</div>
+    <div>
+      <h2>本课易错清单</h2>
+      <span class="tag">每条都是一个具体的失分动作</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:36px">#</th><th style="width:240px">错误做法</th><th>正确处理</th></tr>
+    <tr><td class="c">1</td><td>1KB 按 1000B 算</td><td>一律 <b>1024</b></td></tr>
+    <tr><td class="c">2</td><td>求补码真值时，把补码按位权算出 170 再减 256</td><td>先<b>取反加一</b>还原成 70，再加负号 → −70</td></tr>
+    <tr><td class="c">3</td><td>求负数的补码时，把符号位也取反了</td><td><b>符号位始终不动</b>，只对数值位取反</td></tr>
+    <tr><td class="c">4</td><td>把"表示个数"和"最大值"混为一谈</td><td>n 位无符号：<b>个数 2<sup>n</sup>，最大值 2<sup>n</sup>−1</b></td></tr>
+    <tr><td class="c">5</td><td>认为"尾数管范围、阶码管精度"</td><td>反了：<b>阶码管范围，尾数管精度</b></td></tr>
+    <tr><td class="c">6</td><td>ASCII 记成"8 位、256 个字符"</td><td><b>7 位、128 个</b>（存储时占 1 字节）</td></tr>
+    <tr><td class="c">7</td><td>区位码直接加 8080H 当机内码</td><td>必须<b>两步</b>：先加 2020H 得国标码，再加 8080H 得机内码</td></tr>
+    <tr><td class="c">8</td><td>把"存储一个汉字占 2 字节"和"16×16 字形码占 32 字节"搞混</td><td>存储看机内码（2B），显示看字形码点阵（n²÷8 B）</td></tr>
+    <tr><td class="c">9</td><td>图像容量算出字节数就直接写 KB</td><td>还要 <b>÷1024</b></td></tr>
+    <tr><td class="c">10</td><td>认为 GB2312 能表示所有汉字</td><td>只有 6763 个常用字；繁体和生僻字要靠 <b>GBK / GB18030</b></td></tr>
+  </table>
+</section>
+
+<!-- ============ S8 必背 ============ -->
+<section class="mod" id="s8">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
+    <div>
+      <h2>本课必背 12 条</h2>
+      <span class="tag">数字型的，一个都不能记错</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:40px">#</th><th>内容</th></tr>
+    <tr><td class="c">1</td><td><b>1 B = 8 bit</b>；1 KB = 1024 B；1 MB = 1024 KB；1 GB = 1024 MB；1 TB = 1024 GB</td></tr>
+    <tr><td class="c">2</td><td>信息最小单位 <b>位（bit）</b>；存储容量基本单位 <b>字节（B）</b>；字长＝CPU 一次处理的位数</td></tr>
+    <tr><td class="c">3</td><td>符号位：最高位，<b>0 正 1 负</b>；原码、反码（数值位取反）、补码（反码+1）</td></tr>
+    <tr><td class="c">4</td><td>计算机内部<b>用补码</b>存放整数，因为它能把减法变加法</td></tr>
+    <tr><td class="c">5</td><td>8 位无符号 0~255；8 位补码 <b>−128~+127</b>；n 位补码 −2<sup>n−1</sup>~2<sup>n−1</sup>−1</td></tr>
+    <tr><td class="c">6</td><td>浮点数：<b>阶码管范围、尾数管精度</b></td></tr>
+    <tr><td class="c">7</td><td>ASCII：<b>7 位、128 个</b>；空格 32、'0' 48、'A' 65、'a' 97；大小写差 32</td></tr>
+    <tr><td class="c">8</td><td>汉字四种码：<b>输入码（外码）→ 国标码 → 机内码 → 字形码</b></td></tr>
+    <tr><td class="c">9</td><td><b>国标码 = 区位码 + 2020H；机内码 = 国标码 + 8080H</b></td></tr>
+    <tr><td class="c">10</td><td>GB 2312 收 <b>6763</b> 个汉字（+682 符号 = 7445）；GBK 是其扩展；UTF-8 是变长 Unicode</td></tr>
+    <tr><td class="c">11</td><td>n×n 点阵字形码 = <b>n²÷8 字节</b>；16×16 = <b>32 B</b></td></tr>
+    <tr><td class="c">12</td><td>图像 = 水平×垂直×色深÷8；音频 = 采样率×量化位×声道×时长÷8</td></tr>
+  </table>
+</section>
+
+<!-- ============ S9 自测 ============ -->
+<section class="mod" id="s9">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
+    <div>
+      <h2>自测 12 题</h2>
+      <span class="tag">点题目看答案与推导 · 做错的题一定回到原文那一节</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>1. 1KB 等于 1000 字节。</summary><div class="ans"><b>错误。</b>1KB = 1024B = 2<sup>10</sup>B。</div></details>
+    <details><summary>2. 8 位二进制补码所能表示的整数范围是 −128 ~ +127。</summary><div class="ans"><b>正确。</b>−2<sup>7</sup> ~ 2<sup>7</sup>−1。注意补码没有负零，所以比原码多一个负数。</div></details>
+    <details><summary>3. ASCII 码用 8 位二进制编码，共可表示 256 个字符。</summary><div class="ans"><b>错误。</b>ASCII 是 <b>7 位编码、128 个字符</b>；8 位是它"存储时占用的字节宽度"，最高位通常补 0。</div></details>
+    <details><summary>4. 一个 16×16 点阵汉字的字形码占 32 个字节。</summary><div class="ans"><b>正确。</b>16×16 = 256 个点，每点 1 位 → 256 bit ÷ 8 = 32 B。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>5. 计算机中存储容量的基本单位是（　）<br>A. 位　B. 字节　C. 字　D. 千字节</summary><div class="ans"><b>B。</b>位是信息最小单位，字节才是容量基本单位——两个"基本/最小"极易混，看清题干问哪个。</div></details>
+    <details><summary>6. 某计算机字长为 32 位，表示该机（　）<br>A. 内存容量为 32 位　B. 一次能处理 32 位二进制数据　C. 有 32 个 CPU　D. 主频为 32MHz</summary><div class="ans"><b>B。</b>字长＝CPU 一次并行处理的二进制位数。</div></details>
+    <details><summary>7. 已知字符 'A' 的 ASCII 码为 65，则字符 'D' 的 ASCII 码是（　）<br>A. 66　B. 67　C. 68　D. 100</summary><div class="ans"><b>C。</b>A→65，B→66，C→67，D→68，逐个大写字母 +1。</div></details>
+    <details><summary>8. 某 8 位补码为 1001 0110，其真值是（　）<br>A. −22　B. −106　C. 150　D. −150</summary><div class="ans"><b>B。</b>最高位 1 → 负。取反加一：10010110 → 01101001 → +1 → 01101010 = 106 → <b>−106</b>。（若误按位权算出 150 再减 256 得 −106 也一样，但方法不同、易错）</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（3 题）</b></p>
+  <div class="qa">
+    <details><summary>9. 1 GB = ______ MB。</summary><div class="ans"><b>1024。</b></div></details>
+    <details><summary>10. 一幅 640×480 像素、24 位真彩色的未压缩图像，数据量约为 ______ KB。</summary><div class="ans"><b>900 KB。</b>640×480×24÷8 = 921 600 B；921 600÷1024 = 900 KB。</div></details>
+    <details><summary>11. 某汉字的区位码为 1601，则它的机内码是 ______H。</summary><div class="ans"><b>B0A1H。</b>国标码 = 10H+20H=30H、01H+20H=21H → 3021H；机内码 = 3021H+8080H = B0A1H。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、简答题（1 题，5 分）</b></p>
+  <div class="qa">
+    <details><summary>12. 简述计算机中常用的信息存储单位及其换算关系。</summary>
+    <div class="ans"><b>参考答案：</b><br>
+    ①<b>位（bit）</b>：一个二进制位，是信息的最小单位；<br>
+    ②<b>字节（Byte）</b>：8 个二进制位，是存储容量的基本单位，1B = 8bit；<br>
+    ③更大的单位依次为 KB、MB、GB、TB，<b>每级均为 1024 倍</b>，即 1KB=1024B，1MB=1024KB，1GB=1024MB，1TB=1024GB；<br>
+    ④此外还有<b>字长</b>，指 CPU 一次能并行处理的二进制位数，是衡量计算机性能的重要指标。<br>
+    <span style="color:#5a6b4a">答法要点：先"最小"再"基本"，然后 4 级换算各写一句，最后补字长——四分点齐了就是满分。</span></div></details>
+  </div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"一、3. 数值数据与字符数据的表示"；<br>
+  真题来源：2024、2025 年四川省普通高校专升本统考《计算机基础》试卷（可核实回忆版）。<b>2026 年真题已整理出约 15 道</b>（官方从不公布试题，来源为考后讲评转写，非全套）。说明：网上自称"2026 真题"的版本题型结构与本卷完全不符（写成"单选 40 题、每题 2 分"），属拼凑件，未采用。2026 的可核实题目已分别写进各课的"2026 年真题"小节。2026 年命题仍依据 2024 年考试要求，故 2024、2025 真题对 2027 仍具参考价值。<br>
+  上一课：第一章第2课 数制及其转换　｜　下一章：第二章第1课 计算机系统组成与体系结构 · Ctrl+P 可打印
+</footer>
+
+</main>
+</body>
+</html>

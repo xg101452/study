@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第四章第1课 计算机网络基础 · 考点精简（2027 四川专升本）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
+  --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:44px 0 30px;background:
+  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
+  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
+  border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
+  color:var(--c4);font-weight:700;margin-bottom:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(25px,3.4vw,38px);
+  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.4px;max-width:830px;margin:12px 0 0}
+.syl{margin-top:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+@media(max-width:820px){.syl{grid-template-columns:1fr}}
+.syl-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.syl-box h3{margin:0 0 7px;font-size:12.5px;letter-spacing:1px;color:var(--c1)}
+.syl-box p{margin:0;font-size:13.4px;color:var(--ink2)}
+.q{font-family:"Noto Serif SC",serif;color:var(--ink);background:var(--c1bg);
+  border-left:3px solid var(--c1);padding:7px 12px;border-radius:0 8px 8px 0;margin:6px 0 0;font-size:13.1px}
+.q.warn{border-left-color:var(--c4);background:var(--c4bg)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{flex:0 0 auto;font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;
+  border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap;transition:.18s}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
+  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
+.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
+.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
+table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
+th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+td.c{text-align:center;white-space:nowrap}
+tr:nth-child(even) td{background:#fdfcf9}
+.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
+  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
+.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
+.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
+.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
+.f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
+.cut{color:#9aa5ae}
+.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip b{color:var(--c1)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.okbox b{color:#1f6b4a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
+.mem b{color:var(--gold)}
+.human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
+.human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
+.flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
+  white-space:pre;overflow-x:auto;margin:9px 0}
+.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
+.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
+  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qz b{color:var(--ink)}
+.qz .no{color:#8a5a00;font-weight:700}
+.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--c1);margin-right:8px;font-weight:700;display:inline-block}
+details[open] summary::before{content:'▾'}
+details .ans{margin-top:7px;padding:9px 12px;background:var(--c5bg);border-left:3px solid var(--c5);
+  border-radius:0 8px 8px 0;font-size:13.1px;color:#1b4a36;line-height:1.76}
+details .ans b{color:#14402c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);
+  color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.3px}.toc,.btnrow{display:none}.hero{padding:16px 0 10px}
+  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第四章第 1 课</span>
+    <h1>计算机网络基础
+      <span class="light">功能与分类 ｜ 五种拓扑 ｜ OSI 七层与 TCP/IP 四层 ｜ 网卡·交换机·路由器 ｜ 传输介质与带宽</span>
+    </h1>
+    <p class="lead">第四章占 <b>10%（约 15 分）</b>，是"背多分"的一章。网络部分最爱考三件事：<b>哪种设备工作在哪层</b>、<b>拓扑有哪几种</b>、<b>TCP/IP 是不是"只有两个协议"</b>。三个点都在近两年真题里出现过。</p>
+
+    <div class="syl">
+      <div class="syl-box">
+        <h3>考纲原文</h3>
+        <p class="q">四、1. 计算机网络：<b>了解</b>计算机网络的概念、发展历史、分类、体系结构与拓扑结构；<b>了解</b>网络的硬件组成与常见网络设备。</p>
+      </div>
+      <div class="syl-box">
+        <h3>本课在卷面上值多少</h3>
+        <p class="q warn">2025：单选 15（路由器）、<b>简答 57（五种拓扑，5 分）</b>；2024 判断（TCP/IP 协议族）。合计 <b>7～9 分</b>，简答几乎必考拓扑。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">考 / 不考</a>
+    <a href="#s1">① 概念与功能</a>
+    <a href="#s2">② 发展与分类</a>
+    <a href="#s3">③ 五种拓扑</a>
+    <a href="#s4">④ 体系结构</a>
+    <a href="#s5">⑤ 网络设备</a>
+    <a href="#s6">⑥ 介质与带宽</a>
+    <a href="#s7">易错清单</a>
+    <a href="#s8">必背 14 条</a>
+    <a href="#s9">自测 14 题</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section class="mod" id="s0">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">0</div>
+    <div>
+      <h2>本课考 / 不考</h2>
+      <span class="tag">设备分层 + 拓扑五种的默写</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:74px">考频</th><th style="width:40%">内容</th><th>怎么处理</th></tr>
+    <tr><td class="c"><span class="f f3">★★★</span></td>
+      <td><b>五种拓扑</b>（星、总线、环、树、网状）· <b>路由器工作在网络层、交换机在数据链路层、集线器在物理层</b> · <b>TCP/IP 是协议族不是两个协议</b> · 网络最主要功能＝<b>资源共享</b> · 局域网/城域网/广域网按范围分</td>
+      <td>简答与选择都能出，必须背</td></tr>
+    <tr><td class="c"><span class="f f2">★★</span></td>
+      <td>OSI 七层名称与顺序 · 带宽单位 bps 与 B/s 的换算 · 双绞线/光纤的特点 · MAC 地址与 IP 地址的分工</td>
+      <td>能对应、能换算</td></tr>
+    <tr><td class="c"><span class="f f1">★</span></td>
+      <td>网络发展四阶段 · 有线/无线 · 公用网与专用网 · 调制解调器的作用</td>
+      <td>认得名词</td></tr>
+    <tr><td class="c"><span class="f f0">✂</span></td>
+      <td class="cut">各层协议的完整清单 · CSMA/CD 的退避算法 · 路由算法的具体实现</td>
+      <td class="cut">考纲未要求，真题未涉及</td></tr>
+  </table>
+  <div class="tip"><b>本课最省力的背法：</b>先背"<b>五拓扑 + 四层设备 + 三范围</b>"这三组数字，再补 OSI 七层的名字。<b>三组数字＝本课 80% 的分。</b></div>
+</section>
+
+<section class="mod" id="s1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
+    <div>
+      <h2>网络是什么，用来干什么</h2>
+      <span class="tag"><span class="f f3">★★★</span>"最主要功能"是必考点</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="human"><span class="lb">定义（一句话）</span>
+  计算机网络是把<b>地理位置分散</b>、具有<b>独立功能</b>的多台计算机，通过<b>通信线路与网络设备</b>连接起来，在<b>网络协议</b>管理下实现<b>资源共享与数据通信</b>的系统。
+  </div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">功能</th><th>说明</th><th style="width:26%">地位</th></tr>
+    <tr><td><b>资源共享</b></td><td>共享<b>硬件</b>（打印机、存储）、<b>软件</b>、<b>数据</b>（数据库、文件）</td><td><b>最主要、最本质的功能</b></td></tr>
+    <tr><td>数据通信</td><td>电子邮件、即时消息、文件传输</td><td>最基本的功能</td></tr>
+    <tr><td>分布式处理</td><td>把大任务拆给多台机器协同完成</td><td>提高效率</td></tr>
+    <tr><td>提高可靠性</td><td>一台故障可由另一台替代</td><td>容错</td></tr>
+  </table>
+
+  <div class="warnbox"><b>题干出现"计算机网络最主要的功能"→ 答<b>资源共享</b>，不要答"数据通信"。</b>数据通信是"最基本"的，资源共享是"最主要/最本质"的——<b>"最基本"和"最主要"在四川卷里是两个不同的答案</b>。</div>
+
+  <div class="flow">网络的三个组成要素
+① 多台<b>独立</b>的计算机（各自能独立工作）
+② 连接它们的<b>通信线路与设备</b>（介质 + 网卡/交换机/路由器）
+③ 共同遵守的<b>网络协议</b>（没有协议就只是"连着的机器"，不是网络）</div>
+
+  <div class="okbox"><b>为什么强调"独立功能"？</b>因为"一台主机 + 若干终端"（如早期终端连主机）不算真正的网络——终端本身不能独立处理任务。<b>判断题常在这里设陷阱。</b></div>
+</section>
+
+<section class="mod" id="s2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">②</div>
+    <div>
+      <h2>发展与分类：三组划分标准</h2>
+      <span class="tag"><span class="f f2">★★</span>按范围分是重点</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:120px">阶段</th><th>特征</th></tr>
+    <tr><td>第一代</td><td><b>面向终端</b>的计算机网络：一台主机 + 多个终端，终端无独立处理能力</td></tr>
+    <tr><td>第二代</td><td><b>计算机—计算机网络</b>：多台主机互联，采用<b>分组交换</b></td></tr>
+    <tr><td>第三代</td><td><b>开放标准化网络</b>：提出 <b>OSI 参考模型</b>，网络走向标准化</td></tr>
+    <tr><td>第四代</td><td><b>高速网络 / Internet</b>：光纤、宽带、多媒体应用</td></tr>
+  </table>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">分类标准</th><th>类型</th><th style="width:32%">范围/说明</th></tr>
+    <tr><td><b>按覆盖范围</b></td><td><b>局域网 LAN</b></td><td>几米～几公里，一个房间/楼/校园；<b>速度最快、误码率最低</b></td></tr>
+    <tr><td></td><td><b>城域网 MAN</b></td><td>一个城市范围（几公里～几十公里）</td></tr>
+    <tr><td></td><td><b>广域网 WAN</b></td><td>跨城市、跨国家；<b>Internet 是最大的广域网</b></td></tr>
+    <tr><td>按拓扑结构</td><td>星型、总线型、环型、树型、网状</td><td>见下一节</td></tr>
+    <tr><td>按传输介质</td><td>有线网、无线网</td><td>双绞线/光纤 vs Wi-Fi/蜂窝</td></tr>
+    <tr><td>按使用范围</td><td><b>公用网</b>、<b>专用网</b></td><td>电信运营商 vs 企业内部（如校园内网）</td></tr>
+  </table>
+
+  <div class="mem"><b>范围三兄弟的口诀：</b><b>LAN 一个院、MAN 一个城、WAN 一个国家</b>。速度是反过来：<b>LAN 最快，WAN 最慢</b>。<br>
+  考试常问"Internet 属于哪种网络"→ <b>广域网（WAN）</b>，而不是"城域网"。</div>
+</section>
+
+<section class="mod" id="s3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">③</div>
+    <div>
+      <h2>五种拓扑结构（2025 简答题原题）</h2>
+      <span class="tag"><span class="f f3">★★★</span>必须能默写名字 + 各说一句优缺点</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">① 星型            ② 总线型            ③ 环型
+    ○                ○─○─○─○             ○──○
+   /|\               │ │ │              │    │
+  ○─●─○            ──┴─┴─┴──            ○──○
+   （中心节点）        （共享一条总线）      （首尾相连成环）
+
+④ 树型                    ⑤ 网状
+     ●                      ○───○
+   / | \                   / \ / \
+  ○  ○  ○                 ○───○───○
+ （分级的星型）            （多路径互连）</div>
+
+  <table>
+    <tr><th style="width:96px">拓扑</th><th>特点</th><th style="width:32%">优点 / 缺点</th></tr>
+    <tr><td><b>星型</b></td><td>所有节点连到一个<b>中心节点</b>（交换机/集线器）</td><td>结构简单、易扩展；<b>中心节点故障则全网瘫痪</b></td></tr>
+    <tr><td><b>总线型</b></td><td>所有节点共享<b>一条总线</b>，任一时刻只能一个发</td><td>布线省、成本低；<b>易冲突</b>、总线断了全网断</td></tr>
+    <tr><td><b>环型</b></td><td>节点<b>首尾相连成环</b>，数据沿环单向（或双向）传递</td><td>传输确定、无冲突；<b>任一节点故障可能断环</b></td></tr>
+    <tr><td><b>树型</b></td><td>分级的星型，有根节点与分支</td><td>层次清晰、易管理；依赖上层节点</td></tr>
+    <tr><td><b>网状</b></td><td>节点间<b>多路径互连</b>，可绕道</td><td><b>可靠性最高</b>（有冗余路径）；结构复杂、成本高</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 简答 57（5 分）</b>　简述计算机网络的拓扑结构（至少列出四种）。<br>
+  <span class="no"><b>参考答案（写全五种）：</b>常见的网络拓扑结构有五种：①<b>星型</b>，所有节点连接到一个中心节点，结构简单但中心节点故障会导致全网瘫痪；②<b>总线型</b>，所有节点共享一条传输总线，布线简单但易发生冲突；③<b>环型</b>，节点首尾相连成环，传输顺序确定但单点故障影响较大；④<b>树型</b>，是分级的星型结构，层次清晰便于管理；⑤<b>网状</b>，节点间有多条路径互连，可靠性最高但结构复杂。<br>
+  <b>答法：</b>5 分题列 5 条，<b>每条"名称 + 一句结构 + 一句优缺点"</b>，正好 5 分。</span></div>
+
+  <div class="mem"><b>三个"最"要记牢：</b>可靠性<b>最高</b>＝<b>网状</b>；结构<b>最简单</b>＝<b>星型</b>；成本<b>最低/最省线</b>＝<b>总线型</b>。</div>
+</section>
+
+<section class="mod" id="s4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">④</div>
+    <div>
+      <h2>体系结构：OSI 七层与 TCP/IP 四层</h2>
+      <span class="tag"><span class="f f3">★★★</span>"TCP/IP 只有两个协议"是经典错项</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:44px">层</th><th style="width:150px">OSI 七层（理论模型）</th><th style="width:170px">TCP/IP 四层（实际标准）</th><th>这一层管什么</th></tr>
+    <tr><td class="c">7</td><td><b>应用层</b></td><td rowspan="3"><b>应用层</b></td><td>为用户的程序提供服务（HTTP、FTP、SMTP、DNS）</td></tr>
+    <tr><td class="c">6</td><td>表示层</td><td>数据格式转换、加密、压缩</td></tr>
+    <tr><td class="c">5</td><td>会话层</td><td>建立、管理、结束会话</td></tr>
+    <tr><td class="c">4</td><td><b>传输层</b></td><td><b>传输层</b></td><td>端到端可靠传输，<b>TCP / UDP</b></td></tr>
+    <tr><td class="c">3</td><td><b>网络层</b></td><td><b>网际层（互联网层）</b></td><td><b>IP 寻址与路由选择</b>，路由器在这一层</td></tr>
+    <tr><td class="c">2</td><td><b>数据链路层</b></td><td rowspan="2"><b>网络接口层</b></td><td>相邻节点间的帧传输、差错控制，<b>交换机/MAC</b></td></tr>
+    <tr><td class="c">1</td><td><b>物理层</b></td><td>比特流的传输、接口与介质，<b>集线器/中继器</b></td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2024 · 判断</b>　TCP/IP 协议族就是 TCP 和 IP 两个协议。<br>
+  <span class="no">→ <b>错</b>。<b>TCP/IP 是一个"协议族/协议栈"</b>，除 TCP 与 IP 外还包含 <b>UDP、HTTP、FTP、SMTP、DNS、ARP、ICMP</b> 等大量协议。<b>"族"字本身就说明它是一群协议。</b></span></div>
+
+  <div class="okbox"><b>三个层次常识：</b>①OSI 是<b>理论/参考模型</b>（七层），TCP/IP 是<b>事实标准</b>（四层）；②分层的好处是"<b>各层独立、对等通信</b>"，改一层不影响其他层；③<b>数据在发送时逐层封装（加头），接收时逐层解封装（去头）</b>。</div>
+
+  <div class="mem"><b>七层顺序记忆：</b>从下往上——<b>物、数、网、传、会、表、应</b>。取谐音："<b>物数网传会表应</b>"。倒过来背也可以："应用—表示—会话—传输—网络—链路—物理"。</div>
+</section>
+
+<section class="mod" id="s5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
+    <div>
+      <h2>网络设备：谁在哪一层</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 单选第 15 题：路由器</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:130px">设备</th><th style="width:130px">工作层次</th><th>作用</th></tr>
+    <tr><td><b>网卡（NIC）</b></td><td>物理层 + 链路层</td><td>让计算机接入网络；每块网卡有唯一的 <b>MAC 地址</b>（物理地址）</td></tr>
+    <tr><td>中继器 / 集线器 Hub</td><td><b>物理层</b></td><td>放大、整形信号；<b>共享带宽</b>，所有端口同处一个冲突域</td></tr>
+    <tr><td><b>交换机 Switch</b></td><td><b>数据链路层</b></td><td>按 <b>MAC 地址</b>转发帧；每个端口<b>独享带宽</b>，减少冲突</td></tr>
+    <tr><td><b>路由器 Router</b></td><td><b>网络层</b></td><td>按 <b>IP 地址</b>选择路径、<b>连接不同的网络</b>（局域网↔互联网）</td></tr>
+    <tr><td>调制解调器 Modem</td><td>物理层</td><td><b>数字信号 ↔ 模拟信号</b>转换（电话线上网、光纤猫）</td></tr>
+    <tr><td>网关 Gateway</td><td>高层</td><td><b>协议转换</b>，连接不同体系结构的网络</td></tr>
+    <tr><td>无线 AP</td><td>链路层</td><td>提供 Wi-Fi 接入点</td></tr>
+    <tr><td>防火墙</td><td>网络层/应用层</td><td>按规则过滤进出流量（下一课细讲）</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 15（2 分）</b>　实现不同网络之间互联、并根据 IP 地址选择路径的设备是（　）<br>
+  A. 集线器　B. 交换机　C. <b>路由器</b>　D. 中继器<br>
+  <span class="no">答案：<b>C</b>。<br>
+  <b>三个关键词锁定路由器：</b>"<b>不同网络之间</b>"、"<b>IP 地址</b>"、"<b>选择路径</b>"。<br>
+  对照：集线器（物理层，只放大信号）、交换机（链路层，按 MAC 转发）、中继器（物理层，延长距离）——<b>它们都不能连接"不同网络"</b>。</span></div>
+
+  <div class="mem"><b>一句分层口诀：</b><b>集线器在物理层、交换机在链路层、路由器在网络层</b>——"<b>越聪明的设备在越上层</b>"。交换机看 MAC，路由器看 IP。</div>
+</section>
+
+<section class="mod" id="s6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑥</div>
+    <div>
+      <h2>传输介质与带宽</h2>
+      <span class="tag"><span class="f f2">★★</span>bps 与 B/s 差 8 倍</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:120px">介质</th><th>特点</th></tr>
+    <tr><td><b>双绞线</b></td><td>最常用（网线），<b>有效距离约 100 米</b>；分屏蔽/非屏蔽；超五类、六类支持千兆</td></tr>
+    <tr><td>同轴电缆</td><td>早期有线电视/总线网络使用，现已少用</td></tr>
+    <tr><td><b>光纤</b></td><td><b>带宽最高、抗电磁干扰、传输距离远</b>；分单模（远距离）与多模（短距离）</td></tr>
+    <tr><td>无线</td><td>Wi-Fi、蓝牙、蜂窝（4G/5G）；灵活但受干扰、安全性较弱</td></tr>
+  </table>
+
+  <div class="mem"><b>带宽与下载速度的换算（每年都可能考）：</b><br>
+  <b>带宽单位是 bps（比特/秒）</b>，<b>下载速度单位常是 B/s（字节/秒）</b>，<b>1 B = 8 bit</b>。<br>
+  所以<b>100 Mbps 的宽带，理论最高下载速度 ≈ 100 ÷ 8 = 12.5 MB/s</b>。<br>
+  <b>看到"100M 宽带下载 100MB/s"——一定是错的。</b></div>
+
+  <div class="okbox"><b>MAC 地址 vs IP 地址：</b><b>MAC</b> 是网卡的<b>物理地址</b>（出厂固定，48 位），用于<b>同一局域网内</b>寻址；<b>IP</b> 是<b>逻辑地址</b>（可配置、可变化），用于<b>跨网络</b>寻址。<b>交换机认 MAC，路由器认 IP。</b></div>
+</section>
+
+<section class="mod" id="s7">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑦</div>
+    <div>
+      <h2>本课易错清单</h2>
+      <span class="tag">十二条</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:36px">#</th><th style="width:250px">错误说法</th><th>正确说法</th></tr>
+    <tr><td class="c">1</td><td>计算机网络最主要的功能是数据通信</td><td>最主要/最本质的是<b>资源共享</b></td></tr>
+    <tr><td class="c">2</td><td>Internet 属于城域网</td><td>Internet 是最大的<b>广域网</b></td></tr>
+    <tr><td class="c">3</td><td>局域网覆盖一个城市</td><td>那是<b>城域网</b>；局域网是一个房间/楼/校园</td></tr>
+    <tr><td class="c">4</td><td>网络拓扑只有星型和总线型</td><td>共五种：<b>星、总线、环、树、网状</b></td></tr>
+    <tr><td class="c">5</td><td>星型结构可靠性最高</td><td>可靠性最高的是<b>网状</b>；星型中心节点故障全网瘫痪</td></tr>
+    <tr><td class="c">6</td><td>OSI 是实际使用的标准，共四层</td><td>OSI 是<b>七层理论模型</b>；TCP/IP 是四层事实标准</td></tr>
+    <tr><td class="c">7</td><td>TCP/IP 协议族只有 TCP 和 IP 两个协议</td><td>是一族，还含 <b>UDP、HTTP、FTP、DNS</b> 等（2024 判断）</td></tr>
+    <tr><td class="c">8</td><td>交换机根据 IP 地址转发数据</td><td>交换机按 <b>MAC</b>；路由器才按 <b>IP</b></td></tr>
+    <tr><td class="c">9</td><td>路由器工作在数据链路层</td><td>路由器在<b>网络层</b>；交换机在链路层；集线器在物理层</td></tr>
+    <tr><td class="c">10</td><td>集线器能为每个端口提供独享带宽</td><td>集线器<b>共享带宽</b>；交换机才独享</td></tr>
+    <tr><td class="c">11</td><td>100 Mbps 宽带下载速度是 100 MB/s</td><td>≈ <b>12.5 MB/s</b>（÷8）</td></tr>
+    <tr><td class="c">12</td><td>MAC 地址是可以随意修改的逻辑地址</td><td>MAC 是<b>物理地址</b>（出厂固定）；IP 才是逻辑地址</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s8">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
+    <div>
+      <h2>本课必背 14 条</h2>
+      <span class="tag">进考场前扫一眼</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:40px">#</th><th>内容</th></tr>
+    <tr><td class="c">1</td><td>网络＝多台<b>独立</b>计算机 + 通信线路设备 + <b>网络协议</b></td></tr>
+    <tr><td class="c">2</td><td>最主要功能＝<b>资源共享</b>（硬件、软件、数据）；最基本功能＝<b>数据通信</b></td></tr>
+    <tr><td class="c">3</td><td>按范围：<b>LAN（局域网）／MAN（城域网）／WAN（广域网）</b>；<b>Internet 是最大的广域网</b></td></tr>
+    <tr><td class="c">4</td><td>局域网<b>速度最快、误码率最低</b>；广域网覆盖最广</td></tr>
+    <tr><td class="c">5</td><td><b>五种拓扑：星型、总线型、环型、树型、网状</b></td></tr>
+    <tr><td class="c">6</td><td>星型<b>最简单</b>、网状<b>最可靠</b>、总线型最省钱但易冲突</td></tr>
+    <tr><td class="c">7</td><td>OSI <b>七层</b>：物理、数据链路、网络、传输、会话、表示、应用（<b>物数网传会表应</b>）</td></tr>
+    <tr><td class="c">8</td><td>TCP/IP <b>四层</b>：网络接口层、网际层、传输层、应用层</td></tr>
+    <tr><td class="c">9</td><td><b>TCP/IP 是协议族</b>，还包括 UDP、HTTP、FTP、SMTP、DNS 等</td></tr>
+    <tr><td class="c">10</td><td>设备分层：<b>集线器/中继器→物理层；交换机→数据链路层；路由器→网络层</b></td></tr>
+    <tr><td class="c">11</td><td>路由器按 <b>IP</b> 选路、连接不同网络；交换机按 <b>MAC</b> 转发</td></tr>
+    <tr><td class="c">12</td><td>调制解调器做<b>数字↔模拟</b>转换；网关做<b>协议转换</b></td></tr>
+    <tr><td class="c">13</td><td>双绞线有效距离约 <b>100 米</b>；<b>光纤</b>带宽最高、抗干扰最强</td></tr>
+    <tr><td class="c">14</td><td><b>1 B = 8 bit</b>；100 Mbps ≈ <b>12.5 MB/s</b></td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s9">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
+    <div>
+      <h2>自测 14 题</h2>
+      <span class="tag">点题目看答案</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>1. 计算机网络最主要的功能是数据通信。</summary><div class="ans"><b>错误。</b>最主要的是<b>资源共享</b>。</div></details>
+    <details><summary>2. Internet 是当今世界上最大的广域网。</summary><div class="ans"><b>正确。</b></div></details>
+    <details><summary>3. 星型拓扑的可靠性最高，因为结构简单。</summary><div class="ans"><b>错误。</b>可靠性最高的是<b>网状</b>；星型中心节点故障会全网瘫痪。</div></details>
+    <details><summary>4. TCP/IP 协议族只包含 TCP 和 IP 两个协议。</summary><div class="ans"><b>错误。</b>还含 UDP、HTTP、FTP、DNS 等（2024 判断）。</div></details>
+    <details><summary>5. 交换机和路由器都根据 IP 地址转发数据。</summary><div class="ans"><b>错误。</b>交换机按 <b>MAC</b>，路由器按 <b>IP</b>。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>6. 实现不同网络互联并根据 IP 地址选择路径的设备是（　）<br>A. 集线器　B. 交换机　C. 路由器　D. 中继器</summary><div class="ans"><b>C。</b>2025 单选第 15 题原题。</div></details>
+    <details><summary>7. 下列网络中覆盖范围最大的是（　）<br>A. 局域网　B. 城域网　C. 广域网　D. 校园网</summary><div class="ans"><b>C。</b></div></details>
+    <details><summary>8. OSI 参考模型共分为（　）层<br>A. 四　B. 五　C. 六　D. 七</summary><div class="ans"><b>D。</b>TCP/IP 才是四层。</div></details>
+    <details><summary>9. 100 Mbps 的宽带，理论最高下载速度约为（　）<br>A. 100 MB/s　B. 50 MB/s　C. 12.5 MB/s　D. 1 MB/s</summary><div class="ans"><b>C。</b>100 ÷ 8 = 12.5。</div></details>
+    <details><summary>10. 下列设备中工作在物理层的是（　）<br>A. 交换机　B. 路由器　C. 集线器　D. 网关</summary><div class="ans"><b>C。</b></div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题与简答（4 题）</b></p>
+  <div class="qa">
+    <details><summary>11. 计算机网络按覆盖范围可分为局域网、城域网和 ______。</summary><div class="ans"><b>广域网（WAN）</b>。</div></details>
+    <details><summary>12. 交换机根据 ______ 地址转发数据帧。</summary><div class="ans"><b>MAC</b>（物理地址）。</div></details>
+    <details><summary>13. 简述计算机网络的五种拓扑结构及其特点。</summary><div class="ans"><b>参考答案：</b>①<b>星型</b>：所有节点连接中心节点，结构简单易扩展，但中心故障则全网瘫痪；②<b>总线型</b>：共享一条总线，布线省、成本低，但易冲突；③<b>环型</b>：节点首尾相连成环，传输顺序确定，但单点故障影响大；④<b>树型</b>：分级的星型结构，层次清晰便于管理；⑤<b>网状</b>：多路径互连，可靠性最高，但结构复杂成本高。</div></details>
+    <details><summary>14. 简述 OSI 七层模型的层次名称（自下而上）。</summary><div class="ans"><b>参考答案：</b>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</div></details>
+  </div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"四、1. 计算机网络"；<br>
+  真题来源：2025 单选 15、简答 57；2024 判断（TCP/IP 协议族）。<br>
+  上一课：第三章第6课 PowerPoint 演示文稿　｜　下一课：第四章第2课 Internet 与网络服务 · Ctrl+P 可打印
+</footer>
+
+</main>
+</body>
+</html>

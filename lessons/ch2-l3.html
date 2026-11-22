@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第二章第3课 计算机软件系统与操作系统 · 考点精简（2027 四川专升本）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
+  --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:44px 0 30px;background:
+  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
+  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
+  border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
+  color:var(--c4);font-weight:700;margin-bottom:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(25px,3.4vw,38px);
+  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.4px;max-width:830px;margin:12px 0 0}
+.syl{margin-top:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+@media(max-width:820px){.syl{grid-template-columns:1fr}}
+.syl-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.syl-box h3{margin:0 0 7px;font-size:12.5px;letter-spacing:1px;color:var(--c1)}
+.syl-box p{margin:0;font-size:13.4px;color:var(--ink2)}
+.q{font-family:"Noto Serif SC",serif;color:var(--ink);background:var(--c1bg);
+  border-left:3px solid var(--c1);padding:7px 12px;border-radius:0 8px 8px 0;margin:6px 0 0;font-size:13.1px}
+.q.warn{border-left-color:var(--c4);background:var(--c4bg)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{flex:0 0 auto;font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;
+  border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap;transition:.18s}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
+  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
+.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
+.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
+table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
+th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+td.c{text-align:center;white-space:nowrap}
+tr:nth-child(even) td{background:#fdfcf9}
+.tbl-note{font-size:12.5px;color:var(--muted);margin:5px 0 0}
+.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
+  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
+.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
+.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
+.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
+.f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
+.cut{color:#9aa5ae}
+.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip b{color:var(--c1)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.okbox b{color:#1f6b4a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
+.mem b{color:var(--gold)}
+.human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
+.human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
+.flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
+  white-space:pre;overflow-x:auto;margin:9px 0}
+.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
+.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
+  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qz b{color:var(--ink)}
+.qz .no{color:#8a5a00;font-weight:700}
+.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--c1);margin-right:8px;font-weight:700;display:inline-block}
+details[open] summary::before{content:'▾'}
+details .ans{margin-top:7px;padding:9px 12px;background:var(--c5bg);border-left:3px solid var(--c5);
+  border-radius:0 8px 8px 0;font-size:13.1px;color:#1b4a36;line-height:1.76}
+details .ans b{color:#14402c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);
+  color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.3px}.toc,.btnrow{display:none}.hero{padding:16px 0 10px}
+  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第二章第 3 课</span>
+    <h1>计算机软件系统与操作系统
+      <span class="light">软件三要素 ｜ OS 的定位 ｜ 发展四阶段 ｜ 五大管理功能 ｜ Windows / Linux / 国产 OS</span>
+    </h1>
+    <p class="lead">这一课最容易犯的错，是<b>用别的教材的"五大功能"去答题</b>。很多教材写"处理器、存储、设备、文件、作业"五大管理，但<b>四川考纲写的是"处理器管理、存储器管理、设备管理、文件管理和用户接口"</b>——作业管理不在里面。按考纲记，别按记忆记。</p>
+
+    <div class="syl">
+      <div class="syl-box">
+        <h3>考纲原文</h3>
+        <p class="q">二、3. 计算机软件系统：<b>理解</b>计算机软件及软件系统的概念；<b>了解</b>操作系统的概念、发展历史和分类；<b>了解</b>操作系统的处理器管理、存储器管理、设备管理、文件管理和用户接口的基本功能；<b>了解</b> Windows、Linux 等主流操作系统的特点。</p>
+      </div>
+      <div class="syl-box">
+        <h3>本课在卷面上值多少</h3>
+        <p class="q warn">2025：多选 36（国产操作系统）、判断 27（进程与程序）。<b>3～5 分</b>，题量不大，但"五大功能"和"国产 OS"是稳定的可命题点。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">考 / 不考</a>
+    <a href="#s1">① 软件与软件系统</a>
+    <a href="#s2">② OS 是什么</a>
+    <a href="#s3">③ 发展史与分类</a>
+    <a href="#s4">④ 五大功能</a>
+    <a href="#s5">⑤ 主流 OS 与国产</a>
+    <a href="#s6">易错清单</a>
+    <a href="#s7">必背 12 条</a>
+    <a href="#s8">自测 12 题</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section class="mod" id="s0">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">0</div>
+    <div>
+      <h2>本课考 / 不考</h2>
+      <span class="tag">"理解 + 了解"，考归类与功能列举</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:74px">考频</th><th style="width:40%">内容</th><th>怎么处理</th></tr>
+    <tr><td class="c"><span class="f f3">★★★</span></td>
+      <td><b>OS 五大功能</b>（按考纲：处理器、存储器、设备、文件、用户接口）· OS 是最基本的系统软件 · 进程与程序的区别 · 国产操作系统（麒麟、鸿蒙、UOS）</td>
+      <td>必须能<b>默写</b>、能识破"作业管理"这类非考纲项</td></tr>
+    <tr><td class="c"><span class="f f2">★★</span></td>
+      <td>软件 = 程序 + 数据 + 文档 · 系统软件/应用软件分界 · Linux 特点（开源免费、多用户多任务）· Windows 特点（图形界面、易用）</td>
+      <td>能判断归属、能对比特点</td></tr>
+    <tr><td class="c"><span class="f f1">★</span></td>
+      <td>OS 发展四阶段（批处理 → 分时 → 实时 → 网络/个人）· 分时与实时的区别 · 移动 OS（Android 基于 Linux、iOS 类 Unix）</td>
+      <td>认得顺序、能说一句区别</td></tr>
+    <tr><td class="c"><span class="f f0">✂</span></td>
+      <td class="cut">各类调度算法的计算公式 · 页式/段式存储管理的地址变换细节 · 死锁四大条件的证明 · 各 Linux 发行版的内核版本</td>
+      <td class="cut">考纲未要求、真题未出现</td></tr>
+  </table>
+  <div class="tip"><b>三句话进本课：</b>OS 是"最底层的系统软件"，管四样东西（<b>处理器、存储器、设备、文件</b>）并给一个"<b>用户接口</b>"；Linux 是开源的，Windows 是商业的；国产 OS 里最常考<b>麒麟、鸿蒙、UOS</b>三个名字。</div>
+</section>
+
+<section class="mod" id="s1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
+    <div>
+      <h2>软件与软件系统</h2>
+      <span class="tag"><span class="f f2">★★</span>先把"三要素"钉死，后面才不会错</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">软件 = 程序 + 数据 + 文档        （三者缺一不可，不是"只有程序"）
+
+软件系统
+├── 系统软件（由厂商提供，管理硬件、支撑应用）
+│    ├── 操作系统  ← 最基本、最核心
+│    ├── 语言处理程序（汇编/编译/解释程序）
+│    ├── 数据库管理系统（DBMS）
+│    └── 各类服务性程序（诊断、备份、杀毒等）
+└── 应用软件（为解决某一具体问题而开发）
+     ├── 通用应用软件：Office、浏览器、压缩工具
+     └── 专用应用软件：CAD、财务软件、教务系统</div>
+
+  <table>
+    <tr><th style="width:150px">对比</th><th>系统软件</th><th>应用软件</th></tr>
+    <tr><td>目的</td><td>管理、调度硬件，为其他软件提供运行环境</td><td>解决用户的<b>某一具体问题</b></td></tr>
+    <tr><td>来源</td><td><b>由厂商/专业公司提供</b></td><td>可由用户或软件公司开发</td></tr>
+    <tr><td>典型</td><td>Windows、Linux、编译程序、DBMS</td><td>Word、Excel、微信、浏览器</td></tr>
+    <tr><td>地位</td><td>没有它，应用软件无法运行</td><td>没有它，机器能跑但"没事可干"</td></tr>
+  </table>
+
+  <div class="warnbox"><b>两个判断题模板：</b>①"软件就是程序"——<b>错</b>（还有数据和文档）；②"系统软件是用户为解决某个问题开发的"——<b>错</b>（那是应用软件）。这两句话 2026 年还以多选的形式出现过，属于年年可考的老陷阱。</div>
+</section>
+
+<section class="mod" id="s2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">②</div>
+    <div>
+      <h2>操作系统是什么：三个身份</h2>
+      <span class="tag"><span class="f f3">★★★</span>"最基本"三个字是一定要记住的</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="human"><span class="lb">一句话定义（背下来）</span>
+  操作系统是<b>管理计算机硬件与软件资源、控制程序运行、并为用户提供操作接口的系统软件</b>，是<b>最基本的系统软件</b>，是用户与计算机之间的<b>接口</b>。
+  </div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">身份</th><th>含义</th></tr>
+    <tr><td><b>资源管理者</b></td><td>管处理器、内存、设备、文件——这就是"五大功能"的来源</td></tr>
+    <tr><td><b>用户接口</b></td><td>让用户能操作机器：命令行、图形界面、系统调用</td></tr>
+    <tr><td><b>运行平台</b></td><td>所有应用软件都跑在 OS 之上，OS 提供运行环境</td></tr>
+  </table>
+
+  <div class="flow">层次结构（从下往上）
+硬件 → 操作系统 → 其他系统软件 → 应用软件 → 用户
+       ↑
+   越靠下越"底层"，越靠近硬件</div>
+
+  <div class="okbox"><b>这条层次链能直接答三个判断：</b>①OS 是最基本的系统软件（对）；②OS 属于应用软件（错）；③应用软件可以直接控制硬件（错，必须通过 OS）。</div>
+</section>
+
+<section class="mod" id="s3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">③</div>
+    <div>
+      <h2>操作系统的发展与分类</h2>
+      <span class="tag"><span class="f f1">★</span>只考"顺序"和"分时/实时的区别"</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:110px">阶段</th><th>特征</th><th style="width:26%">解决的问题</th></tr>
+    <tr><td>手工操作</td><td>用户独占机器，人工装纸带/插线</td><td>效率极低，CPU 大量空闲</td></tr>
+    <tr><td><b>批处理</b></td><td>把一批作业交给系统，由系统自动依次执行（单道 → 多道）</td><td>减少人工干预，<b>提高 CPU 利用率</b>（多道可"重叠"运行）</td></tr>
+    <tr><td><b>分时</b></td><td>把 CPU 时间切成<b>时间片</b>，轮流分给多个终端用户</td><td>实现<b>多用户交互</b>，每人都觉得"独占"</td></tr>
+    <tr><td><b>实时</b></td><td>在<b>严格的时间限制内</b>响应外部事件</td><td>用于工业控制、军事、医疗等"来不及就出事"的场景</td></tr>
+    <tr><td>网络 / 分布式 / 个人 / 移动</td><td>联网共享资源；多台机器协同；PC 与手机普及</td><td>资源共享、可靠性、便携</td></tr>
+  </table>
+
+  <div class="mem"><b>分时 vs 实时，一句话分清：</b>分时是"<b>大家轮流用，人人有份</b>"（追求公平与交互）；实时是"<b>必须马上响应</b>"（追求时限与可靠）。题目里出现"时间片"→分时；出现"限时响应/工业控制"→实时。</div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">分类角度</th><th>类型</th></tr>
+    <tr><td>按功能/用途</td><td>批处理 OS、分时 OS、实时 OS</td></tr>
+    <tr><td>按用户数</td><td>单用户 OS、多用户 OS</td></tr>
+    <tr><td>按任务数</td><td>单任务 OS、多任务 OS</td></tr>
+    <tr><td>按硬件/场景</td><td>网络 OS、分布式 OS、嵌入式 OS、移动 OS</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">④</div>
+    <div>
+      <h2>操作系统的五大功能（按四川考纲记这一版）</h2>
+      <span class="tag"><span class="f f3">★★★</span>简答、多选、判断都能出；关键是"用户接口"这一项</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:44px">#</th><th style="width:150px">功能</th><th>具体做什么</th></tr>
+    <tr><td class="c">1</td><td><b>处理器管理</b><br>（进程管理）</td><td>为进程分配 CPU、进行<b>进程调度</b>、进程的创建与撤销、处理同步与互斥。<b>核心是"让 CPU 不停工"</b></td></tr>
+    <tr><td class="c">2</td><td><b>存储器管理</b></td><td>内存的分配与回收、地址映射、内存保护、<b>虚拟存储</b>（内存不够时借用硬盘）</td></tr>
+    <tr><td class="c">3</td><td><b>设备管理</b></td><td>设备的分配与回收、驱动程序的调用、<b>缓冲技术</b>、即插即用的识别</td></tr>
+    <tr><td class="c">4</td><td><b>文件管理</b></td><td>文件的组织与目录管理、<b>按名存取</b>、读写、共享与保护、磁盘空间分配</td></tr>
+    <tr><td class="c">5</td><td><b>用户接口</b></td><td><b>命令接口</b>（命令行）、<b>图形用户界面</b>（窗口/图标/菜单）、<b>程序接口</b>（系统调用）</td></tr>
+  </table>
+
+  <div class="warnbox"><b>这里有个四川卷特有的坑：</b>不少教材把第五项写成"<b>作业管理</b>"。四川考纲原文列的是"<b>用户接口</b>"，所以多选题若给出"作业管理"和"用户接口"两个选项，<b>按考纲选"用户接口"</b>。答题时以考纲为准，不要被旧教材带偏。</div>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 27</b>　进程与程序是一一对应的关系。<br>
+  <span class="no">→ <b>错</b>。<br>
+  <b>程序</b>是静态的、存放在磁盘上的指令集合；<b>进程</b>是程序在内存中的<b>一次执行过程</b>，是动态的、有生命周期的。<br>
+  <b>关系是"多对多"</b>：同一个程序可以被多次运行，产生多个进程（如开了三个 Word 窗口）；一个进程也可以调用多个程序。所以既不是"一一对应"，也不是"程序就是进程"。</span></div>
+
+  <div class="okbox"><b>怎么答"操作系统的基本功能"这道简答（5 分）：</b>先一句总起"操作系统是最基本的系统软件，负责管理计算机的软硬件资源并为用户提供接口"，再分五条（处理器管理、存储器管理、设备管理、文件管理、用户接口），每条后面加半句解释。<b>总—分条—每条一句</b>，这是四川简答的标准结构。</div>
+</section>
+
+<section class="mod" id="s5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
+    <div>
+      <h2>主流操作系统与国产 OS</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 多选第 36 题：国产操作系统</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:110px">系统</th><th>特点</th><th style="width:30%">考点提示</th></tr>
+    <tr><td><b>Windows</b></td><td>图形界面友好、易用、兼容性强、多任务；商业授权收费</td><td>"Windows 是应用软件"是错的，它是 OS</td></tr>
+    <tr><td><b>Linux</b></td><td><b>开源、免费</b>；多用户多任务；稳定、安全；命令行功能强大；<b>服务器领域主流</b></td><td>由<b>内核 + 发行版</b>构成，发行版如 Ubuntu、CentOS、RedHat</td></tr>
+    <tr><td>Unix</td><td>多用户多任务、稳定可靠，早期服务器系统</td><td>Linux 的设计思想源于 Unix，但 Linux 是独立实现</td></tr>
+    <tr><td>macOS</td><td>苹果设备专用，图形化好，类 Unix 内核</td><td>只能装在苹果硬件上（正版环境）</td></tr>
+    <tr><td>Android</td><td>移动 OS，<b>基于 Linux 内核</b>，开源</td><td>"Android 基于 Linux"是常考的对应关系</td></tr>
+    <tr><td>iOS</td><td>移动 OS，类 Unix，<b>闭源</b>，仅苹果设备</td><td>与 Android 对照：一个开源一个闭源</td></tr>
+    <tr><td><b>国产 OS</b></td><td><b>麒麟</b>（银河麒麟/中标麒麟）、<b>统信 UOS</b>、<b>鸿蒙 HarmonyOS</b></td><td>这五个字必背，是多选的答案来源</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 多选 36（3 分）</b>　下列属于国产操作系统的是（　）　A. 麒麟　B. 鸿蒙　C. UOS　D. Windows<br>
+  <span class="no">答案：<b>ABC</b>。Windows 是美国的商业系统，唯一的排除项。<br>
+  <b>这类题的套路：</b>三个国产 + 一个国外，只要记住"麒麟、鸿蒙、UOS"三个名字，剩下那个自动排除。</span></div>
+
+  <div class="mem"><b>特点对比口诀：</b>Windows <b>好用</b>、Linux <b>免费又稳</b>、macOS <b>只认苹果</b>、Android <b>开源靠 Linux</b>、iOS <b>封闭</b>、国产认<b>麒麟鸿蒙UOS</b>。</div>
+</section>
+
+<section class="mod" id="s6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑥</div>
+    <div>
+      <h2>本课易错清单</h2>
+      <span class="tag">十条</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:36px">#</th><th style="width:250px">错误说法</th><th>正确说法</th></tr>
+    <tr><td class="c">1</td><td>软件就是程序</td><td>软件 = 程序 + 数据 + 文档</td></tr>
+    <tr><td class="c">2</td><td>操作系统属于应用软件</td><td>OS 是<b>最基本的系统软件</b></td></tr>
+    <tr><td class="c">3</td><td>OS 五大功能里有"作业管理"</td><td>按四川考纲是<b>处理器、存储器、设备、文件、用户接口</b></td></tr>
+    <tr><td class="c">4</td><td>进程与程序一一对应</td><td>程序静态、进程动态，<b>多对多</b></td></tr>
+    <tr><td class="c">5</td><td>分时系统追求"限时响应"</td><td>那是<b>实时</b>；分时靠时间片实现多用户交互</td></tr>
+    <tr><td class="c">6</td><td>Linux 是收费的商业系统</td><td>Linux <b>开源免费</b>，服务器主流</td></tr>
+    <tr><td class="c">7</td><td>Android 基于 Windows 内核</td><td>Android 基于 <b>Linux</b> 内核</td></tr>
+    <tr><td class="c">8</td><td>鸿蒙、UOS 是国外系统</td><td>都是<b>国产</b>操作系统</td></tr>
+    <tr><td class="c">9</td><td>没有操作系统，应用软件也能直接控制硬件</td><td>必须通过 OS 提供的接口</td></tr>
+    <tr><td class="c">10</td><td>编译程序属于应用软件</td><td>语言处理程序属于<b>系统软件</b></td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s7">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
+    <div>
+      <h2>本课必背 12 条</h2>
+      <span class="tag">进考场前扫一眼</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:40px">#</th><th>内容</th></tr>
+    <tr><td class="c">1</td><td>软件 = <b>程序 + 数据 + 文档</b></td></tr>
+    <tr><td class="c">2</td><td>系统软件：<b>操作系统、语言处理程序、数据库管理系统、服务程序</b>；应用软件：Office、浏览器等</td></tr>
+    <tr><td class="c">3</td><td>OS 是<b>最基本的系统软件</b>，是用户与计算机之间的<b>接口</b></td></tr>
+    <tr><td class="c">4</td><td><b>OS 五大功能：处理器管理、存储器管理、设备管理、文件管理、用户接口</b></td></tr>
+    <tr><td class="c">5</td><td>用户接口三种形式：<b>命令接口、图形用户界面、程序接口（系统调用）</b></td></tr>
+    <tr><td class="c">6</td><td>发展顺序：<b>手工 → 批处理 → 分时 → 实时 → 网络/个人/移动</b></td></tr>
+    <tr><td class="c">7</td><td><b>批处理</b>提高 CPU 利用率；<b>分时</b>用时间片实现多用户交互；<b>实时</b>强调限时响应</td></tr>
+    <tr><td class="c">8</td><td>程序<b>静态</b>、进程<b>动态</b>；一个程序可对应多个进程，<b>不是一一对应</b></td></tr>
+    <tr><td class="c">9</td><td>Windows：图形界面、易用、商业授权；Linux：<b>开源免费、多用户多任务、服务器主流</b></td></tr>
+    <tr><td class="c">10</td><td>Linux = <b>内核 + 发行版</b>（Ubuntu、CentOS、RedHat）</td></tr>
+    <tr><td class="c">11</td><td>Android <b>基于 Linux 内核</b>、开源；iOS 类 Unix、闭源</td></tr>
+    <tr><td class="c">12</td><td>国产 OS：<b>麒麟、鸿蒙（HarmonyOS）、统信 UOS</b></td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s8">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
+    <div>
+      <h2>自测 12 题</h2>
+      <span class="tag">点题目看答案</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>1. 操作系统是最基本的系统软件。</summary><div class="ans"><b>正确。</b>它管理软硬件资源并为其他软件提供运行环境。</div></details>
+    <details><summary>2. 进程与程序是一一对应的。</summary><div class="ans"><b>错误。</b>程序静态、进程动态，同一程序可产生多个进程（2025 判断 27）。</div></details>
+    <details><summary>3. Linux 是开源免费的操作系统，常用作服务器系统。</summary><div class="ans"><b>正确。</b></div></details>
+    <details><summary>4. 分时操作系统的主要目标是限时响应外部事件。</summary><div class="ans"><b>错误。</b>那是<b>实时</b>系统的目标；分时靠时间片实现多用户交互。</div></details>
+    <details><summary>5. 编译程序属于应用软件。</summary><div class="ans"><b>错误。</b>语言处理程序属于<b>系统软件</b>。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>6. 操作系统的基本功能不包括（　）<br>A. 处理器管理　B. 文件管理　C. 用户接口　D. 财务管理</summary><div class="ans"><b>D。</b>"财务管理"是应用软件干的事。</div></details>
+    <details><summary>7. 下列全部属于国产操作系统的一组是（　）<br>A. 麒麟、鸿蒙、UOS　B. Windows、Linux、iOS　C. Android、Ubuntu、macOS　D. 麒麟、Windows、UOS</summary><div class="ans"><b>A。</b>2025 多选 36 的同源考点。</div></details>
+    <details><summary>8. 用户与计算机之间的接口是（　）<br>A. 应用软件　B. 操作系统　C. 编译程序　D. 数据库</summary><div class="ans"><b>B。</b>OS 兼具"资源管理者"和"用户接口"两个身份。</div></details>
+    <details><summary>9. 多道批处理系统主要解决的问题是（　）<br>A. 提高 CPU 利用率　B. 提高显示分辨率　C. 增加外存容量　D. 缩短开机时间</summary><div class="ans"><b>A。</b>多道程序"重叠"执行，减少 CPU 等待。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、简答题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>10. 简述操作系统的五大基本功能。</summary><div class="ans"><b>参考答案：</b>操作系统是最基本的系统软件，负责管理计算机的软硬件资源并为用户提供操作接口。其基本功能包括：①<b>处理器管理</b>，为进程分配 CPU 并进行调度；②<b>存储器管理</b>，完成内存分配回收与虚拟存储；③<b>设备管理</b>，负责设备分配、驱动与缓冲；④<b>文件管理</b>，实现文件的按名存取、共享与保护；⑤<b>用户接口</b>，提供命令接口、图形界面与系统调用。</div></details>
+    <details><summary>11. 简述 Windows 与 Linux 的主要区别。</summary><div class="ans"><b>参考答案：</b>①<b>授权方式</b>：Windows 为商业软件需授权付费，Linux 开源免费；②<b>界面</b>：Windows 以图形界面为主、易用性强，Linux 命令行功能更强；③<b>稳定性与安全</b>：Linux 多用户多任务、稳定性和安全性更好，常用于服务器；④<b>应用生态</b>：Windows 桌面软件与游戏丰富，Linux 服务器与开发工具生态更强。</div></details>
+  </div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"二、3. 计算机软件系统"；<br>
+  真题来源：2025 年多选第 36 题（国产操作系统）、判断第 27 题（进程与程序）。<br>
+  上一课：第二章第2课 计算机硬件系统　｜　下一课：第二章第4课 Windows 基本操作与常用工具 · Ctrl+P 可打印
+</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第七章 专项练习 · 复习题 · 冲刺测试（2027 四川专升本计算机）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{--ink:#15212c;--ink2:#3b4b59;--muted:#6b7a88;--paper:#f7f5f0;--card:#fff;--line:#e3ded4;
+--c1:#0e6b8a;--c1bg:#e9f2f6;--c4:#b23a2e;--c4bg:#fbeeec;--c5:#1f6b4a;--c5bg:#e8f2ed;
+--gold:#8a5a00;--goldbg:#fbf3dd;--c3:#2b4a8b;--c3bg:#eaeef7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:40px 0 26px;background:radial-gradient(900px 320px at 8% -30%,rgba(178,58,46,.11),transparent 60%),radial-gradient(700px 280px at 92% -20%,rgba(14,107,138,.10),transparent 60%),#fff;border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;color:var(--c4);font-weight:700;margin-bottom:11px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4)}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(24px,3.2vw,34px);line-height:1.3;margin:0 0 8px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.6em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.3px;max-width:830px;margin:10px 0 0}
+.stat{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.stat span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 14px;font-size:12.8px;color:var(--ink2)}
+.stat b{color:var(--c4)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:8px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:22px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:58px}
+.mod-h{display:flex;align-items:flex-start;gap:11px}
+.mod-no{flex:0 0 auto;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19px;margin:1px 0 0}
+.mod-h .tag{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:11px 0 12px}
+.sub{margin:16px 0 6px;padding:6px 12px;background:var(--c3bg);border-left:3px solid var(--c3);border-radius:0 8px 8px 0;font-size:13.2px;font-weight:700;color:#1e356b}
+.qi{border-bottom:1px dashed #e6e0d4;padding:9px 0 10px}
+.qi:last-child{border-bottom:0}
+.qh{font-size:13.9px;line-height:1.75}
+.qn{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;background:#eef1f3;color:#42535f;border-radius:6px;font-weight:700;font-size:12.5px;margin-right:7px}
+.opt{margin-top:3px;color:#4a5a67;font-size:13.2px;line-height:1.9}
+.tp{font-size:11px;font-weight:700;color:#7a5a00;background:var(--goldbg);border:1px solid #ecd9a5;border-radius:4px;padding:0 6px;margin-right:6px}
+details{margin-top:5px}
+summary{cursor:pointer;list-style:none;font-size:12.6px;color:var(--c1);font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸ '}
+details[open] summary::before{content:'▾ '}
+.ans{margin-top:5px;padding:8px 12px;background:var(--c5bg);border-left:3px solid var(--c5);border-radius:0 8px 8px 0;font-size:13px;color:#1b4a36;line-height:1.78}
+.ans b{color:#123c2a}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:26px 20px 50px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.2px}.toc,.btnrow,.qfoot,.scorebar,.sbar,.st,.mini{display:none}.op{border:0;background:none;padding:2px 0}.op b{background:none;color:#333}.hero{padding:14px 0 8px}
+.mod{box-shadow:none;break-inside:avoid;margin:10px 0;padding:14px 16px}}
+
+.qhead{display:flex;gap:9px;align-items:flex-start}
+.qh{flex:1;font-size:13.9px;line-height:1.75}
+.st{flex:0 0 auto;font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px;background:#eef1f3;color:#7a8794;white-space:nowrap;margin-top:3px;border:1px solid #e2e7ea}
+.st.right{background:#e3f3ea;color:#1a6b48;border-color:#b9ddc9}
+.st.wrong{background:#fbeeec;color:#a32a1c;border-color:#efc4bc}
+.st.done{background:#e9effa;color:#2b4a8b;border-color:#c3d0ea}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:6px;margin:7px 0 2px}
+.op{display:flex;gap:8px;align-items:flex-start;text-align:left;font-family:inherit;font-size:13.2px;line-height:1.7;color:#3d4d5a;background:#fcfcfa;border:1px solid #e3ded4;border-radius:9px;padding:7px 11px;cursor:pointer;transition:background .12s,border-color .12s}
+.op:hover{border-color:#a8cfdd;background:#f2f9fc}
+.op b{flex:0 0 auto;width:20px;height:20px;line-height:20px;text-align:center;border-radius:5px;background:#eef1f3;color:#42535f;font-size:12px;margin-top:1px}
+.op em{margin-left:auto;font-style:normal;font-weight:700;font-size:12px;padding-left:6px}
+.op.correct{border-color:#3f9b74;background:#e8f5ee}
+.op.correct b{background:#3f9b74;color:#fff}
+.op.correct em{color:#1f6b4a}
+.op.wrong{border-color:#d1584a;background:#fbeeec}
+.op.wrong b{background:#d1584a;color:#fff}
+.op.wrong em{color:#a32a1c}
+.op.sel{border-color:#2b4a8b;background:#eaeef7}
+.op.sel b{background:#2b4a8b;color:#fff}
+.op.lock{cursor:default}
+.op.lock:hover{border-color:#e3ded4;background:#fcfcfa}
+.op.correct.lock:hover{border-color:#3f9b74;background:#e8f5ee}
+.op.wrong.lock:hover{border-color:#d1584a;background:#fbeeec}
+.qfoot{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap;align-items:center}
+.mini{cursor:pointer;font-family:inherit;font-size:11.6px;border:1px solid #dcd6c9;background:#fff;color:#66757f;border-radius:7px;padding:3px 11px;transition:.12s}
+.mini:hover{color:#0b5a75;border-color:#a8cfdd;background:#f2f9fc}
+.mini.on{border-color:#a8cfdd;background:#e9f2f6;color:#0b5a75;font-weight:700}
+.tip{font-size:11.6px;color:#a32a1c;margin-left:2px}
+.ansbox{display:none;margin-top:6px}
+.ansbox.show{display:block}
+.sbar{display:flex;align-items:center;gap:10px;margin:2px 0 10px;font-size:11.8px;color:#6b7a88}
+.sbar-t{flex:0 0 auto;font-variant-numeric:tabular-nums}
+.track{flex:1;height:5px;background:#ece6da;border-radius:3px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c93b0,#1f6b4a);border-radius:3px;transition:width .2s}
+.scorebar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:12.2px;color:#5a6975;padding:5px 26px 3px;margin:0 auto}
+.scorebar b{color:#b23a2e;font-variant-numeric:tabular-nums}
+.scorebar .hint{color:#8b929a;font-size:11.4px}
+
+.fillrow{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:7px}
+.fill{flex:1 1 220px;min-width:170px;font-family:inherit;font-size:13.3px;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:8px;padding:6px 11px;line-height:1.6}
+.fill::placeholder{color:#a8b0b7}
+.fill:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
+.fill.right{border-color:#3f9b74;background:#f3fbf7}
+.fill.wrong{border-color:#d1584a;background:#fdf4f2}
+.fill:disabled{opacity:.92;cursor:default}
+@media print{.fillrow{display:none}}
+
+.essay{margin-top:7px;width:100%;min-height:86px;font-family:inherit;font-size:13.2px;line-height:1.72;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:9px;padding:8px 11px;resize:vertical}
+.essay::placeholder{color:#a8b0b7}
+.essay:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
+.essay.right{border-color:#3f9b74;background:#f6fcf8}
+.essay.wrong{border-color:#d1584a;background:#fdf5f3}
+@media print{.essay{display:none}}
+
+.mini.primary{border-color:#0e6b8a;background:#0e6b8a;color:#fff}
+.mini.primary:hover{background:#0b5a75;border-color:#0b5a75;color:#fff}
+.ejudge{font-size:11.8px;color:#5a6975}
+.ejudge.ok{color:#1f6b4a;font-weight:700}
+.ejudge.bad{color:#a32a1c;font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第七章练习册</span>
+    <h1>第七章 新一代信息技术
+      <span class="light">专项练习（按小节）→ 章末复习题 → 限时冲刺测试</span>
+    </h1>
+    <p class="lead">本章约 <b>5%≈7 分</b>，<b>全是"名词解释型"考点</b>：云计算三层、大数据 5V、物联网三层、人工智能三阶段。这类题不靠计算，靠<b>记准归属</b>——把"哪个词属于哪一层"对上号就能拿分。</p>
+    <div class="stat">
+      <span>专项练习 <b>12</b> 题</span>
+      <span>章末复习 <b>8</b> 题</span>
+      <span>冲刺测试 <b>20</b> 题 / <b>53</b> 分</span>
+      <span>合计 <b>40</b> 题</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#l1">1 云计算与大数据</a>
+    <a href="#l2">2 物联网与人工智能</a>
+    <a href="#rev">章末复习</a>
+    <a href="#test">冲刺测试</a>
+  </div>
+</nav>
+<div class="wrap scorebar"><span>已完成 <b id="cDone">0</b>/<span id="cTotal">0</span> 题</span><span>正确 <b id="cRight">0</b></span><span>正确率 <b id="cRate">—</b></span><span class="hint">点选项即时判分，进度自动存在本机</span><button class="mini" id="resetAll">重置进度</button></div>
+
+<main class="wrap">
+
+<section class="mod" id="l1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">1</div>
+    <div><h2>第 1 课　云计算与大数据</h2><span class="tag">专项 6 题 · 三层服务 / 5V / 处理流程</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/6</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　云计算</div>
+  <div class="qi" data-q="l1-1" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">1</span><div class="qh">云计算的本质是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>把数据存在本地硬盘</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>通过网络按需提供可弹性伸缩的计算资源</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>只提供存储空间</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>一种新的操作系统</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>核心是<b>资源池化 + 按需分配 + 弹性伸缩</b>，用户按使用量付费。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-2" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">2</span><div class="qh">用户直接使用云端提供的软件（如在线文档），属于（　）服务模式</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>IaaS</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>PaaS</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>SaaS</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>DaaS</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>三层记法：<b>IaaS 给基础设施（服务器/存储）、PaaS 给开发平台、SaaS 给软件应用</b>——越往上越"成品"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-3" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">3</span><div class="qh"><span class="tp">多选</span>云计算的部署模式包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>公有云</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>私有云</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>混合云</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>社区云</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>四种部署模式全对；<b>私有云</b>数据自控性最强，<b>公有云</b>成本最低。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+
+  <div class="sub">小节二　大数据</div>
+  <div class="qi" data-q="l1-4" data-type="single" data-ans="D">
+  <div class="qhead"><span class="qn">4</span><div class="qh">大数据的"5V"不包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>Volume（体量大）</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>Velocity（速度快）</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>Variety（类型多）</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>Validity（准确性）</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>D。</b>5V＝<b>Volume、Velocity、Variety、Value（价值密度低）、Veracity（真实性）</b>（2025 单选 8）。<b>"Validity"是编出来的假项。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-5" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">5</span><div class="qh"><span class="tp">判断</span>大数据的价值密度低，意味着数据总量越大，单位数据的价值越低。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>2024 判断；所以要用<b>数据挖掘</b>从海量数据里提炼少量高价值信息。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-6" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">6</span><div class="qh">大数据处理的一般流程是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>采集→预处理→存储→分析挖掘→可视化</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>存储→采集→分析→可视化</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>分析→采集→存储→展示</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>采集→可视化→分析→存储</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>先有数据（采集），清洗后入库（预处理+存储），再算（分析挖掘），最后呈现（可视化）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">2</div>
+    <div><h2>第 2 课　物联网与人工智能</h2><span class="tag">专项 6 题 · 三层架构 / 图灵测试 / 机器学习</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/6</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　物联网</div>
+  <div class="qi" data-q="l2-1" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">7</span><div class="qh">物联网体系结构自下而上分为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>感知层、网络层、应用层</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>物理层、链路层、应用层</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>采集层、传输层、展示层</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>设备层、云层、终端层</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>2025 填空 48 考"感知层"；<b>感知层负责采集（传感器/RFID/摄像头），网络层负责传输，应用层负责业务处理</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-2" data-type="single" data-ans="D">
+  <div class="qhead"><span class="qn">8</span><div class="qh">下列<b>不属于</b>物联网感知层设备的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>温湿度传感器</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>RFID 标签</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>摄像头</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>路由器</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>D。</b>路由器属于<b>网络层</b>；感知层是"采数的"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-3" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">9</span><div class="qh">物联网的核心特征可概括为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>全面感知、可靠传输、智能处理</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>高速计算、大容量存储</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>虚拟化、按需服务</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>深度学习、自动推理</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>三句话正好对应三层；<b>B 是计算机硬件、C 是云计算、D 是 AI</b>，别串门。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　人工智能</div>
+  <div class="qi" data-q="l2-4" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">10</span><div class="qh">图灵测试的目的是判断机器是否具有（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>计算能力</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>智能</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>存储能力</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>联网能力</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>1950 年图灵提出：<b>人通过对话分辨不出对方是机器还是人，就认为机器具有智能</b>（2025 多选 44）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-5" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">11</span><div class="qh">让机器从<b>带标签</b>的数据中学习规律，属于（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>监督学习</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>无监督学习</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>强化学习</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>迁移学习</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>有标签＝监督（分类/回归）；<b>无标签＝无监督（聚类）</b>；<b>靠奖惩试错＝强化学习</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-6" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">12</span><div class="qh"><span class="tp">判断</span>DeepSeek 是国产的人工智能大模型。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>2025 判断 30；同类的还有通义千问、文心一言、豆包等。<b>AIGC＝AI 生成内容</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="rev">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">Ⅱ</div>
+    <div><h2>章末复习题</h2><span class="tag">8 题 · 四块技术合练</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/8</span><div class="track"><i></i></div></div>
+
+  <div class="qi" data-q="rev-1" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">1</span><div class="qh">云计算区别于传统 IT 的关键技术是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>虚拟化</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>打印技术</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>编译技术</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>双绞线</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>虚拟化把物理资源池化，才能弹性分配。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-2" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">2</span><div class="qh">在线使用网页版 Office 编辑文档，属于（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>IaaS</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>PaaS</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>SaaS</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>私有云</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>直接给成品软件。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-3" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">3</span><div class="qh">大数据 5V 中，Value 指的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>数据量大</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>价值密度低</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>处理速度快</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>类型多样</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>注意是<b>"价值密度低"</b>，不是"价值高"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-4" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">4</span><div class="qh">Hadoop 的核心组件是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>HDFS 与 MapReduce</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>Word 与 Excel</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>TCP 与 UDP</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>CPU 与 内存</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>HDFS 负责分布式存储，MapReduce 负责分布式计算；Spark 是内存计算框架。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-5" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">5</span><div class="qh">物联网中负责"把数据传出去"的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>感知层</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>网络层</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>应用层</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>表示层</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>感知采、网络传、应用算。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-6" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">6</span><div class="qh">人工智能发展的三个阶段依次是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>计算智能、感知智能、认知智能</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>感知智能、计算智能、认知智能</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>认知智能、感知智能、计算智能</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>计算智能、认知智能、感知智能</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>会算 → 会看会听 → 会理解会推理。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-7" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">7</span><div class="qh"><span class="tp">判断</span>无监督学习使用的是没有标签的数据。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>典型任务是聚类。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-8" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">8</span><div class="qh"><span class="tp">简答</span>简述物联网的三层结构及各层作用。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>①<b>感知层</b>：由传感器、RFID、摄像头、二维码等组成，负责<b>采集物理世界的各类数据</b>；②<b>网络层</b>：借助互联网、移动通信网、无线传感网等，负责<b>把数据可靠地传输</b>到处理中心；③<b>应用层</b>：对数据进行分析处理，<b>面向具体行业提供智能应用</b>（如智能家居、智慧农业、车联网）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+</section>
+
+<section class="mod" id="test">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">Ⅲ</div>
+    <div><h2>第七章冲刺测试</h2><span class="tag">满分 53 分 · 建议 40 分钟</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/20</span><div class="track"><i></i></div></div>
+  <div class="warnbox"><b>计分：</b>判断 5×1＝5；单选 6×2＝12；多选 3×3＝9；填空 4×3＝12；简答 1×5＝5；综合 1×10＝10。</div>
+
+  <div class="sub">一、判断题（5 题，每题 1 分）</div>
+  <div class="qi" data-q="test-1" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">1</span><div class="qh">云计算就是"把数据存到网盘"。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错。</b>云计算是提供计算资源与服务，存储只是其中一部分。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-2" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">2</span><div class="qh">大数据的价值密度低。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b>2024 判断。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-3" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">3</span><div class="qh">物联网的感知层负责数据传输。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错。</b>感知层采集，网络层传输。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-4" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">4</span><div class="qh">图灵测试由图灵于 1950 年提出。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-5" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">5</span><div class="qh">DeepSeek 是国产大模型。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b>2025 判断 30。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">二、单项选择题（6 题，每题 2 分）</div>
+  <div class="qi" data-q="test-6" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">6</span><div class="qh">提供服务器、存储等基础资源的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>IaaS</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>PaaS</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>SaaS</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>社区云</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>Infrastructure as a Service。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-7" data-type="single" data-ans="D">
+  <div class="qhead"><span class="qn">7</span><div class="qh">下列不属于大数据特征的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>体量大</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>速度快</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>类型多</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>准确性（Validity）</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>D。</b>2025 单选 8。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-8" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">8</span><div class="qh">物联网三层结构自上而下是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>应用层、网络层、感知层</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>感知层、网络层、应用层</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>网络层、感知层、应用层</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>应用层、感知层、网络层</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>"自上而下"是反着问，注意方向。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-9" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">9</span><div class="qh">从带标签数据学习，属于（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>监督学习</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>无监督学习</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>强化学习</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>深度学习</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-10" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">10</span><div class="qh">HDFS 的作用是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>分布式存储</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>分布式计算</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>数据可视化</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>数据采集</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>计算归 MapReduce。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-11" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">11</span><div class="qh">AI 生成文本、图片的技术简称（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>AIGC</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>IoT</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>VR</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>GIS</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>Artificial Intelligence Generated Content。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">三、多项选择题（3 题，每题 3 分）</div>
+  <div class="qi" data-q="test-12" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">12</span><div class="qh">云计算的特点包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>虚拟化</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>弹性伸缩</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>按需服务</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>资源池化</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>2025 多选 38。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="test-13" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">13</span><div class="qh">大数据 5V 包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>Volume</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>Velocity</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>Variety</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>Value</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>第五个是 Veracity。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="test-14" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">14</span><div class="qh">物联网的关键技术有（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>RFID</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>传感器</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>嵌入式系统</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>二维码</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>四项都属感知与标识技术。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+
+  <div class="sub">四、填空题（4 题，每题 3 分）</div>
+  <div class="qi" data-q="test-15" data-type="fill" data-key="SaaS">
+  <div class="qhead"><span class="qn">15</span><div class="qh">云计算三层服务模式是 IaaS、PaaS 和 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>SaaS</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-16" data-type="fill" data-key="感知">
+  <div class="qhead"><span class="qn">16</span><div class="qh">物联网体系结构的最底层是 ______ 层。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>感知</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-17" data-type="fill" data-key="图灵">
+  <div class="qhead"><span class="qn">17</span><div class="qh">判断机器是否具有智能的经典方法是 ______ 测试。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>图灵</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-18" data-type="fill" data-key="HDFS">
+  <div class="qhead"><span class="qn">18</span><div class="qh">Hadoop 的分布式文件系统简称 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>HDFS</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+
+  <div class="sub">五、简答题（1 题，5 分）</div>
+  <div class="qi" data-q="test-19" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">19</span><div class="qh">简述云计算的三层服务模式及各自提供的资源。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>①<b>IaaS（基础设施即服务）</b>：提供服务器、存储、网络等<b>硬件资源</b>，用户自助配置；②<b>PaaS（平台即服务）</b>：提供<b>开发运行环境、数据库、中间件</b>等平台能力，供开发者部署应用；③<b>SaaS（软件即服务）</b>：直接提供<b>可使用的软件</b>（如在线办公、在线邮箱），用户无需安装维护。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+
+  <div class="sub">六、综合应用题（1 题，10 分）</div>
+  <div class="qi" data-q="test-20" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">20</span><div class="qh">某农场要建"智慧大棚"：用温湿度传感器采集数据，通过无线网络传到云平台，平台自动分析并控制喷淋与补光。<br>（1）这属于哪一类新技术应用？<br>（2）按物联网三层结构，分别说明传感器、无线网络、云平台分析各属哪一层。<br>（3）云平台按服务模式属于哪一类？若农场自行搭建机房则属于哪种部署模式？</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b><br>（1）<b>物联网（结合云计算与大数据分析）</b>的典型应用。<br>（2）<b>传感器→感知层</b>（采集数据）；<b>无线网络→网络层</b>（传输数据）；<b>云平台分析→应用层</b>（处理并形成业务决策）。<br>（3）云平台提供平台与软件能力，属 <b>PaaS/SaaS</b>；农场自建机房、数据自控，属 <b>私有云</b>。<br><b>评分点：</b>识别技术（2 分）、三层归属各 2 分、服务模式与部署模式（4 分）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="window.__allAns(true)">展开全部答案</button>
+    <button class="btn" onclick="window.__allAns(false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  依据：四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》第七章；<br>
+  题型配比参照 2024—2026 三年真题 · 本册共 40 题 · <b>Ctrl+P 可打印</b>
+</footer>
+
+</main>
+
+<script>
+(function(){
+  var KEY='tyz2027:ch7-book';
+  var data={};
+  try{ data=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ data={}; }
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(data)); }catch(e){} }
+  function each(list,fn){ for(var i=0;i<list.length;i++) fn(list[i],i); }
+  var QS=[].slice.call(document.querySelectorAll('.qi'));
+  var total=QS.length;
+  function st(q){ return data[q.getAttribute('data-q')]||''; }
+  function setSt(q,v){ if(v){ data[q.getAttribute('data-q')]=v; } else { delete data[q.getAttribute('data-q')]; } save(); badge(q); update(); }
+  function badge(q){
+    var b=q.querySelector('.st'), s=st(q);
+    b.className='st';
+    if(s==='right'){ b.className='st right'; b.textContent='✓ 正确'; }
+    else if(s==='wrong'){ b.className='st wrong'; b.textContent='✗ 做错'; }
+    else if(s==='done'){ b.className='st done'; b.textContent='✓ 已完成'; }
+    else { b.textContent='未做'; }
+  }
+  function showAns(q,on){
+    var box=q.querySelector('.ansbox');
+    if(!box) return;
+    if(on===undefined) on=!box.classList.contains('show');
+    box.classList.toggle('show',on);
+    var btn=q.querySelector('.act-reveal');
+    if(btn) btn.classList.toggle('on',on);
+  }
+  function lockAll(q){
+    q.setAttribute('data-locked','1');
+    each(q.querySelectorAll('.op'),function(o){ o.classList.add('lock'); });
+  }
+  function grade(q,k){
+    if(q.getAttribute('data-locked')) return;
+    var ans=q.getAttribute('data-ans'), list=ans.split(','), ok=(list.indexOf(k)>-1);
+    lockAll(q);
+    each(q.querySelectorAll('.op'),function(o){
+      if(list.indexOf(o.getAttribute('data-k'))>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      else if(o.getAttribute('data-k')===k && !ok){ o.classList.add('wrong'); o.querySelector('em').textContent='错'; }
+      else { o.querySelector('em').textContent=''; }
+    });
+    setSt(q, ok?'right':'wrong');
+    if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, k); }
+    showAns(q,true);
+  }
+  function submitMulti(q){
+    if(q.getAttribute('data-locked')) return;
+    var ans=q.getAttribute('data-ans'), ops=q.querySelectorAll('.op'), chosen=[];
+    each(ops,function(o){ if(o.classList.contains('sel')) chosen.push(o.getAttribute('data-k')); });
+    if(!chosen.length){ var t=q.querySelector('.tip'); if(t){ t.textContent='请先选择答案'; t.style.display='inline'; } return; }
+    var ok=(chosen.slice().sort().join('')===ans.split('').sort().join(''));
+    lockAll(q);
+    each(ops,function(o){
+      var k=o.getAttribute('data-k');
+      o.classList.remove('sel');
+      if(ans.indexOf(k)>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      else if(chosen.indexOf(k)>-1){ o.classList.add('wrong'); o.querySelector('em').textContent='错'; }
+      else { o.querySelector('em').textContent=''; }
+    });
+    setSt(q, ok?'right':'wrong');
+    if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, chosen.join('')); }
+    showAns(q,true);
+  }
+  function normKey(s){
+    s=(s||'').replace(/[\s\u3000]/g,'');
+    s=s.replace(/[，。、；：”“‘’（）()《》〈〉【】…·\-—?!！?]/g,'');
+    s=s.replace(/[Ａ-Ｚａ-ｚ０-９]/g,function(c){ return String.fromCharCode(c.charCodeAt(0)-65248); });
+    return s.toLowerCase();
+  }
+  function hitKey(u,k){
+    var un=normKey(u); if(!un) return false;
+    var cands=[k], m=k.match(/（[^）]*）/g)||[];
+    for(var i=0;i<m.length;i++){ cands.push(m[i].slice(1,-1)); }
+    var flat=k.replace(/（[^）]*）/g,''); if(flat) cands.push(flat);
+    var parts=k.split(/[、，；\/]|或/);
+    for(var j=0;j<parts.length;j++){ if(parts[j]) cands.push(parts[j]); }
+    for(var c=0;c<cands.length;c++){
+      var cn=normKey(cands[c]); if(!cn) continue;
+      if(un===cn) return true;
+      if(cn.length>=2 && un.length>=2 && (cn.indexOf(un)>-1 || un.indexOf(cn)>-1)) return true;
+    }
+    return false;
+  }
+  function redoQuestion(q){
+    var type=q.getAttribute('data-type');
+    if(type==='fill'){ retryFill(q); return; }
+    if(type==='essay'){ rewriteEssay(q); return; }
+    q.removeAttribute('data-locked');
+    each(q.querySelectorAll('.op'),function(o){
+      o.classList.remove('correct','wrong','sel','lock');
+      var em=o.querySelector('em'); if(em) em.textContent='';
+    });
+    var tip=q.querySelector('.tip'); if(tip) tip.style.display='none';
+    var fd=q.querySelector('.filljudge'); if(fd){ fd.className='ejudge filljudge'; fd.textContent=''; }
+    setSt(q,''); showAns(q,false); badge(q); update();
+    var first=q.querySelector('.op'); if(first) first.focus();
+  }
+  function checkFill(q){
+    if(q.getAttribute('data-locked')) return;
+    var inp=q.querySelector('.fill'), key=q.getAttribute('data-key')||'';
+    var v=(inp.value||'').replace(/^\s+|\s+$/g,'');
+    if(!v){ inp.focus(); return; }
+    var res = window.TYZGrade ? window.TYZGrade.fill(key,v) : {ok:hitKey(v,key),hits:0,total:1,rate:0};
+    q.setAttribute('data-locked','1');
+    inp.disabled=true; inp.classList.add(res.ok?'right':'wrong');
+    setSt(q, res.ok?'right':'wrong');
+    if(res.ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, v); }
+    showAns(q,true);
+    var fd=q.querySelector('.filljudge');
+    if(!fd){
+      fd=document.createElement('span'); fd.className='ejudge filljudge';
+      var row=q.querySelector('.qfoot');
+      if(row) row.appendChild(fd); else q.appendChild(fd);
+    }
+    fd.className='ejudge filljudge '+(res.ok?'ok':'bad');
+    if(res.ok) fd.textContent='自动核对：要点全对';
+    else if(res.total>1) fd.textContent='自动核对：只对 '+res.hits+'/'+res.total+' 个要点（错别字或意思不符不计分）';
+    else fd.textContent='自动核对：未命中要点（错别字或意思不符不计分）';
+    update();
+  }
+  function retryFill(q){
+    var inp=q.querySelector('.fill');
+    q.removeAttribute('data-locked');
+    inp.disabled=false; inp.value=''; inp.classList.remove('right','wrong');
+    var fd=q.querySelector('.filljudge'); if(fd){ fd.className='ejudge filljudge'; fd.textContent=''; }
+    setSt(q,''); showAns(q,false); update(); inp.focus();
+  }
+  function rewriteEssay(q){
+    var ta=q.querySelector('.essay');
+    var j=q.querySelector('.ejudge'); if(j){ j.className='ejudge'; j.textContent=''; }
+    ta.value=''; ta.classList.remove('right','wrong');
+    setSt(q,''); showAns(q,false); update(); ta.focus();
+  }
+  function essayPoints(q){
+    var box=q.querySelector('.ans'), list=[], seen={};
+    if(!box) return list;
+    each(box.querySelectorAll('b'),function(b){
+      var t=normKey(b.textContent);
+      if(t.length<2) return;
+      if(t.indexOf('参考')>-1 || t.indexOf('解析')>-1 || t.indexOf('评分')>-1) return;
+      if(t.length>26) return;
+      if(seen[t]) return; seen[t]=1; list.push(t);
+    });
+    return list;
+  }
+  function coverRate(p,u){
+    var hit=0;
+    for(var i=0;i<p.length;i++){ if(u.indexOf(p.charAt(i))>-1) hit++; }
+    return p.length? hit/p.length : 0;
+  }
+  function diceSim(a,b){
+    if(a.length<2||b.length<2) return 0;
+    var A={},B={},na=0,nb=0,k,i,j;
+    for(i=0;i<a.length-1;i++){ k=a.substr(i,2); if(!A[k]){ A[k]=1; na++; } }
+    for(j=0;j<b.length-1;j++){ k=b.substr(j,2); if(!B[k]){ B[k]=1; nb++; } }
+    var inter=0; for(k in A){ if(B[k]) inter++; }
+    return 2*inter/(na+nb);
+  }
+  function autoEssay(q){
+    var ta=q.querySelector('.essay'), u=normKey(ta.value||'');
+    if(u.length<2){ ta.focus(); return; }
+    var box=q.querySelector('.ans'), ref=box?normKey(box.textContent):'';
+    var pts=essayPoints(q), hits=0, cov=0, sim=0, ok=false;
+    each(pts,function(p){ if(coverRate(p,u)>=0.6) hits++; });
+    cov=pts.length? hits/pts.length : 0;
+    sim=diceSim(u,ref.slice(0,420));
+    ok=((pts.length>0 && cov>=0.5) || sim>=0.32);
+    var judge=q.querySelector('.ejudge');
+    if(judge){
+      judge.className='ejudge '+(ok?'ok':'bad');
+      judge.textContent='要点命中 '+hits+'/'+pts.length+'（'+Math.round(cov*100)+'%）· 相似度 '+Math.round(sim*100)+'% · 自动判：'+(ok?'正确':'未达标');
+    }
+    ta.classList.remove('right','wrong');
+    ta.classList.add(ok?'right':'wrong');
+    setSt(q, ok?'right':'wrong'); if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, ta.value); } showAns(q,true);
+  }
+  function toggleDone(q){
+    var s=st(q);
+    if(s==='right'||s==='wrong') return;
+    setSt(q, s==='done'?'':'done');
+  }
+  function applySaved(q){
+    var s=st(q), ans=q.getAttribute('data-ans'), list=(ans||'').split(',');
+    if(!s) return;
+    if(s==='right'||s==='wrong'){
+      lockAll(q);
+      each(q.querySelectorAll('.op'),function(o){
+        if(list.indexOf(o.getAttribute('data-k'))>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      });
+      showAns(q,true);
+    }
+    var inp=q.querySelector('.fill');
+    if(inp && (s==='right'||s==='wrong')){ inp.disabled=true; inp.classList.add(s==='right'?'right':'wrong'); }
+    var ta=q.querySelector('.essay');
+    if(ta && (s==='right'||s==='wrong')){ ta.classList.add(s==='right'?'right':'wrong'); }
+    badge(q);
+  }
+  function update(){
+    var done=0, right=0, wrong=0;
+    each(QS,function(q){ var s=st(q); if(s){ done++; if(s==='right') right++; if(s==='wrong') wrong++; } });
+    var d=document.getElementById('cDone'), r=document.getElementById('cRight'), t=document.getElementById('cTotal'), rt=document.getElementById('cRate');
+    if(d) d.textContent=done;
+    if(r) r.textContent=right;
+    if(t) t.textContent=total;
+    if(rt) rt.textContent=(right+wrong)?(Math.round(right*100/(right+wrong))+'%'):'—';
+    each(document.querySelectorAll('.mod'),function(sec){
+      var qs=sec.querySelectorAll('.qi'), bar=sec.querySelector('.sbar'), n=0;
+      if(!bar) return;
+      each(qs,function(q){ if(st(q)) n++; });
+      bar.querySelector('.sbar-t').textContent=n+'/'+qs.length;
+      bar.querySelector('.track i').style.width=(qs.length?(n*100/qs.length):0)+'%';
+    });
+  }
+  each(QS,function(q){
+    var type=q.getAttribute('data-type');
+    if(type==='fill' || type==='essay'){
+      var rb=q.querySelector('.act-retry') || q.querySelector('.act-rewrite');
+      if(rb) rb.textContent='重做本题';
+    } else {
+      var foot=q.querySelector('.qfoot');
+      if(foot && !foot.querySelector('.act-redo')){
+        var rb2=document.createElement('button');
+        rb2.type='button'; rb2.className='mini act-redo'; rb2.textContent='重做本题';
+        rb2.addEventListener('click',function(){ redoQuestion(q); });
+        foot.appendChild(rb2);
+      }
+    }
+    each(q.querySelectorAll('.op'),function(o){
+      o.addEventListener('click',function(){
+        if(q.getAttribute('data-locked')) return;
+        if(type==='multi'){ o.classList.toggle('sel'); return; }
+        grade(q,o.getAttribute('data-k'));
+      });
+    });
+    var sub=q.querySelector('.act-submit');
+    if(sub) sub.addEventListener('click',function(){ submitMulti(q); });
+    var rev=q.querySelector('.act-reveal');
+    if(rev) rev.addEventListener('click',function(){ showAns(q); });
+    var mk=q.querySelector('.act-mark');
+    if(mk) mk.addEventListener('click',function(){ toggleDone(q); });
+    var chk=q.querySelector('.act-check');
+    if(chk) chk.addEventListener('click',function(){ checkFill(q); });
+    var ret=q.querySelector('.act-retry');
+    if(ret) ret.addEventListener('click',function(){ retryFill(q); });
+    var inp=q.querySelector('.fill');
+    if(inp) inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); checkFill(q); } });
+    var au=q.querySelector('.act-auto');
+    if(au) au.addEventListener('click',function(){ autoEssay(q); });
+    var rw=q.querySelector('.act-rewrite');
+    if(rw) rw.addEventListener('click',function(){ rewriteEssay(q); });
+    applySaved(q);
+  });
+  var reset=document.getElementById('resetAll');
+  if(reset) reset.addEventListener('click',function(){
+    data={}; save();
+    each(QS,function(q){
+      q.removeAttribute('data-locked');
+      each(q.querySelectorAll('.op'),function(o){ o.classList.remove('correct','wrong','sel','lock'); o.querySelector('em').textContent=''; });
+      showAns(q,false);
+      var inp=q.querySelector('.fill');
+      if(inp){ inp.value=''; inp.disabled=false; inp.classList.remove('right','wrong'); }
+      var ta=q.querySelector('.essay');
+      if(ta){ ta.value=''; ta.classList.remove('right','wrong'); }
+      var t=q.querySelector('.tip'); if(t){ t.style.display='none'; }
+      var fj=q.querySelector('.filljudge'); if(fj){ fj.className='ejudge filljudge'; fj.textContent=''; }
+      var ej=q.querySelector('.ejudge'); if(ej && !ej.classList.contains('filljudge')){ ej.className='ejudge'; ej.textContent=''; }
+      badge(q);
+    });
+    update();
+  });
+  update();
+})();
+</script>
+
+
+<script>
+window.__allAns=function(on){
+  var list=document.querySelectorAll('.ansbox'), btns=document.querySelectorAll('.act-reveal');
+  for(var i=0;i<list.length;i++) list[i].classList.toggle('show',on);
+  for(var j=0;j<btns.length;j++) btns[j].classList.toggle('on',on);
+};
+</script>
+
+<script>
+(function(){
+  var ALTS_RAW = {
+    '硬件系统': ['硬件'],
+    '软件系统': ['软件'],
+    '智能化': ['智能'],
+    '计算机辅助设计': ['cad', '计算机辅助设计技术'],
+    '一次能传输的二进制位数': ['字长', '数据总线宽度', '一次传输位数', '一次传输的位数'],
+    '可寻址的内存空间大小': ['寻址空间', '可寻址空间', '地址空间', '内存空间大小', '可寻址的内存空间'],
+    '运算器': ['alu', '算术逻辑单元'],
+    '控制器': ['cu', '控制单元'],
+    '任意多个字符': ['任意字符', '多个字符', '任意多个', '任意数量字符'],
+    '任意一个字符': ['任意字符', '单个字符', '一个字符', '单一字符'],
+    '存储器': ['内存', '主存'],
+    '数据总线': ['数据线', '数据总线宽度'],
+    '文档': ['文档资料', '技术文档'],
+    '物理地址': ['硬件地址', 'mac地址', '物理硬件地址'],
+    '资源共享': ['共享资源'],
+    '数据通信': ['通信', '数据传输'],
+    '降序': ['从高到低', '由高到低', '递减'],
+    '总分': ['总成绩'],
+    '排序': ['排列'],
+    '四层': ['4层', '四层模型'],
+    '数据库管理系统': ['dbms'],
+    '属性': ['字段'],
+    '远程控制': ['后门', '远程控制通道'],
+    '操作数': ['地址码'],
+    '可用性': ['可用'],
+    '需求分析': ['需求调研', '需求分析阶段'],
+    '|': ['竖线', '管道符', '竖杠', '竖线符'],
+    'O(log₂n)': ['o(logn)', 'o(log2n)', 'log2n', 'logn'],
+    'ARPANET': ['arpanet网', '阿帕网'],
+    '1 张': ['1', '一张'],
+    '48 位': ['48', '48位'],
+    '6763 个': ['6763', '6763个'],
+    '2020': ['20h20h', '2020h'],
+    '3021': ['3021h'],
+    '2': ['2', '二'],
+    '16': ['16', '十六'],
+    '3': ['3', '三'],
+    '8': ['8', '八'],
+    '9': ['9', '九'],
+    '10': ['10', '十'],
+    '32': ['32', '三十二'],
+    '128': ['128', '一百二十八'],
+    '255': ['255', '二百五十五'],
+    '1024': ['1024', '一千零二十四'],
+    '5050': ['5050', '五千零五十'],
+    '236': ['236', '二百三十六'],
+    '72': ['72', '七十二'],
+    '2020': ['2020', '2020h'],
+    '数据库管理系统（DBMS）': ['数据库管理系统', 'dbms']
+  };
+  var ALTS = {};
+  var scripts = ['₂','₃','⁰','¹','²','³'];
+  var subMap = {'₂':'2','₃':'3','₀':'0','₁':'1','⁰':'0','¹':'1','²':'2','³':'3'};
+  function norm(s){
+    s = String(s == null ? '' : s);
+    s = s.replace(/[\uFF01-\uFF5E]/g, function(ch){ return String.fromCharCode(ch.charCodeAt(0) - 65248); });
+    s = s.replace(/[\u3000\s]/g, '');
+    s = s.replace(/[“”"'‘’]/g, '');
+    s = s.replace(/[，,。；;：:、（）()《》〈〉【】\[\]{}…·\-—–_!！?？]/g, '');
+    s = s.replace(/[₀₁₂₃⁰¹²³]/g, function(ch){ return subMap[ch] || ''; });
+    return s.toLowerCase();
+  }
+  function rawVariants(t){
+    t = String(t == null ? '' : t);
+    var out = [t], m = t.match(/（[^）]*）/g) || [], flat, i;
+    flat = t.replace(/（[^）]*）/g, '');
+    if(flat && flat !== t) out.push(flat);
+    for(i = 0; i < m.length; i++){
+      var inner = m[i].slice(1, -1);
+      if(inner) out.push(inner);
+    }
+    var cleaned = t.replace(/[“”"'‘’]/g, '');
+    if(cleaned !== t) out.push(cleaned);
+    return out;
+  }
+  for(var k in ALTS_RAW){
+    if(!Object.prototype.hasOwnProperty.call(ALTS_RAW, k)) continue;
+    ALTS[norm(k)] = ALTS_RAW[k].map(norm);
+  }
+  function numVal(s){
+    var m = norm(s).match(/^(-?\d+(?:\.\d+)?)(个|张|位|字节|次|年|b|h|kb|mb|gb)?$/);
+    return m ? parseFloat(m[1]) : null;
+  }
+  function hasAlias(v, u, allowContain){
+    var list = ALTS[v] || [];
+    for(var i = 0; i < list.length; i++){
+      var a = list[i];
+      if(!a) continue;
+      if(u === a) return true;
+      if(allowContain && a.length >= 3 && u.indexOf(a) >= 0) return true;
+    }
+    return false;
+  }
+  function matchOne(user, target, allowContain){
+    var u = norm(user), t = norm(target);
+    if(!u || !t) return false;
+    var uv = rawVariants(user).map(norm), tv = rawVariants(target).map(norm), i, j;
+    for(i = 0; i < uv.length; i++){
+      if(uv[i] === t) return true;
+    }
+    var un = numVal(user), tn = numVal(target);
+    if(un !== null && tn !== null) return un === tn;
+    if(t.charAt(0) === '.' && u === t.slice(1)) return true;
+    if(u.charAt(0) === '.' && t === u.slice(1)) return true;
+    if(t.indexOf('表名') >= 0){
+      var pre = t.replace('表名', '');
+      if(u.indexOf(pre) === 0 && u.length > pre.length) return true;
+    }
+    if(ALTS[t]){
+      for(i = 0; i < ALTS[t].length; i++){
+        var a = ALTS[t][i];
+        if(u === a || (allowContain && a.length >= 3 && u.indexOf(a) >= 0)) return true;
+      }
+    }
+    for(i = 0; i < tv.length; i++){
+      var v = tv[i];
+      if(!v) continue;
+      if(u === v) return true;
+      if(allowContain && v.length >= 3 && u.indexOf(v) >= 0) return true;
+      if(hasAlias(v, u, allowContain)) return true;
+    }
+    for(j = 0; j < uv.length; j++){
+      if(tv.indexOf(uv[j]) >= 0) return true;
+    }
+    return false;
+  }
+  function splitTargets(key){
+    return String(key == null ? '' : key).split('、').map(function(s){ return s.trim(); }).filter(Boolean);
+  }
+  function splitUsers(user, n){
+    var raw = String(user == null ? '' : user), strategies = [];
+    strategies.push([raw]);
+    strategies.push(raw.split(/[、,，;；\n]+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/[和与及]/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/\s+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    var all = [];
+    for(var i = 0; i < strategies.length; i++){
+      if(strategies[i].length === n) all.push(strategies[i]);
+    }
+    return all.length ? all : [strategies[0]];
+  }
+  function evalAlt(key, user){
+    var targets = splitTargets(key), n = targets.length;
+    var splits = splitUsers(user, n), best = {hits: 0, total: n, parts: []};
+    for(var s = 0; s < splits.length; s++){
+      var parts = splits[s], hits = 0, detail = [];
+      if(parts.length === n){
+        for(var i = 0; i < n; i++){
+          var ok = matchOne(parts[i], targets[i]);
+          if(ok) hits++;
+          detail.push({t: targets[i], u: parts[i], ok: ok});
+        }
+      } else {
+        for(var j = 0; j < n; j++){
+          var ok2 = matchOne(user, targets[j]);
+          if(ok2) hits++;
+          detail.push({t: targets[j], u: user, ok: ok2});
+        }
+      }
+      if(hits > best.hits) best = {hits: hits, total: n, parts: detail};
+    }
+    return best;
+  }
+  function fill(key, user){
+    var groups = String(key == null ? '' : key).split('~'), best = null;
+    for(var i = 0; i < groups.length; i++){
+      var r = evalAlt(groups[i], user);
+      var rate = r.total ? r.hits / r.total : 0;
+      if(!best || rate > best.rate || (rate === best.rate && r.hits > best.hits)) best = {ok: false, hits: r.hits, total: r.total, rate: rate, parts: r.parts};
+    }
+    if(!best) best = {ok: false, hits: 0, total: 1, rate: 0, parts: []};
+    best.ok = best.total > 0 && best.hits === best.total;
+    return best;
+  }
+  function termMatch(user, target){
+    return matchOne(user, target, true);
+  }
+  function termInText(user, target){
+    var u = norm(user), t = norm(target);
+    return !!(u && t && u.indexOf(t) >= 0);
+  }
+  function pointsGrade(points, user){
+    points = points || [];
+    var max = 0, score = 0, hits = 0, details = [];
+    for(var i = 0; i < points.length; i++){
+      var p = points[i] || {};
+      var w = typeof p.w === 'number' ? p.w : 1;
+      max += w;
+      var ok = false, j;
+      if(p.all && p.all.length){
+        ok = true;
+        for(j = 0; j < p.all.length; j++){
+          if(!termInText(user, p.all[j])){ ok = false; break; }
+        }
+      } else {
+        var terms = [];
+        if(p.t) terms.push(p.t);
+        if(p.a) terms = terms.concat(p.a);
+        if(p.any) terms = terms.concat(p.any);
+        for(j = 0; j < terms.length; j++){
+          if(matchOne(user, terms[j], true)){ ok = true; break; }
+        }
+      }
+      if(ok){ hits++; score += w; }
+      details.push({t: p.t || (p.all || []).join('、') || '', a: p.a || [], w: w, ok: ok});
+    }
+    return {score: score, max: max, hits: hits, total: points.length, rate: max ? score / max : 0, details: details};
+  }
+  window.TYZGrade = {norm: norm, fill: fill, term: termMatch, inText: termInText, points: pointsGrade, variants: rawVariants};
+})();
+
+</script>
+
+<script>
+(function(){
+  var BK='ch7-book', EK='tyz2027:errors';
+  function rd(){ try{ return JSON.parse(localStorage.getItem(EK)||'{}')||{}; }catch(e){ return {}; } }
+  function sv(o){ try{ localStorage.setItem(EK, JSON.stringify(o)); }catch(e){} }
+  function nm(s){ return (s||'').replace(/\s+/g,' ').trim(); }
+  function sect(q){
+    var p=q.parentNode, last='';
+    if(!p) return '';
+    for(var i=0;i<p.children.length;i++){ var el=p.children[i]; if(el===q) break; if(el.className && (' '+el.className+' ').indexOf(' sub ')>-1) last=nm(el.textContent); }
+    return last.replace(/^小节[一二三四五六七八九十]+[\s\u3000]*/,'');
+  }
+  function opts(q){
+    var a=[], os=q.querySelectorAll('.op');
+    for(var i=0;i<os.length;i++){ var tx=os[i].querySelector('span'); a.push({k:os[i].getAttribute('data-k')||'', t:nm(tx?tx.textContent:os[i].textContent)}); }
+    return a;
+  }
+  window.__tyzWrong=function(q,user){
+    var id=BK+':'+(q.getAttribute('data-q')||'');
+    var e=rd(), r=e[id]||{count:0};
+    r.book=BK; r.qid=q.getAttribute('data-q')||''; r.type=q.getAttribute('data-type')||'';
+    r.id=id; r.section=sect(q);
+    var lm=(r.qid||'').match(/^l(\d+)-/); r.lesson=lm?parseInt(lm[1],10):0;
+    var qh=q.querySelector('.qh'); r.stem=nm(qh?qh.textContent:'');
+    r.options=opts(q);
+    r.answer=q.getAttribute('data-ans')||q.getAttribute('data-key')||'';
+    var ab=q.querySelector('.ans'); r.explain=nm(ab?ab.textContent:'');
+    r.user=nm(user||'').slice(0,300);
+    r.at=Date.now(); r.count=(r.count||0)+1; r.fixed=false;
+    e[id]=r; sv(e);
+    try{ parent.postMessage({type:'tyz-error',id:id},'*'); }catch(err){}
+  };
+  window.__tyzFixed=function(q){
+    var id=BK+':'+(q.getAttribute('data-q')||''); var e=rd();
+    if(e[id]){ e[id].fixed=true; e[id].fixedAt=Date.now(); sv(e); try{ parent.postMessage({type:'tyz-fixed',id:id},'*'); }catch(err){} }
+  };
+})();
+</script>
+</body>
+</html>

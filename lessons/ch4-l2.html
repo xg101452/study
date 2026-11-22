@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第四章第2课 Internet 与网络服务 · 考点精简（2027 四川专升本）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
+  --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:44px 0 30px;background:
+  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
+  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
+  border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
+  color:var(--c4);font-weight:700;margin-bottom:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(25px,3.4vw,38px);
+  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.4px;max-width:830px;margin:12px 0 0}
+.syl{margin-top:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+@media(max-width:820px){.syl{grid-template-columns:1fr}}
+.syl-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.syl-box h3{margin:0 0 7px;font-size:12.5px;letter-spacing:1px;color:var(--c1)}
+.syl-box p{margin:0;font-size:13.4px;color:var(--ink2)}
+.q{font-family:"Noto Serif SC",serif;color:var(--ink);background:var(--c1bg);
+  border-left:3px solid var(--c1);padding:7px 12px;border-radius:0 8px 8px 0;margin:6px 0 0;font-size:13.1px}
+.q.warn{border-left-color:var(--c4);background:var(--c4bg)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{flex:0 0 auto;font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;
+  border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap;transition:.18s}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
+  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
+.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
+.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
+table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
+th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+td.c{text-align:center;white-space:nowrap}
+tr:nth-child(even) td{background:#fdfcf9}
+.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
+  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
+.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
+.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
+.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
+.f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
+.cut{color:#9aa5ae}
+.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip b{color:var(--c1)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.okbox b{color:#1f6b4a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
+.mem b{color:var(--gold)}
+.human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
+.human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
+.flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
+  white-space:pre;overflow-x:auto;margin:9px 0}
+.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
+.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
+  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qz b{color:var(--ink)}
+.qz .no{color:#8a5a00;font-weight:700}
+.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--c1);margin-right:8px;font-weight:700;display:inline-block}
+details[open] summary::before{content:'▾'}
+details .ans{margin-top:7px;padding:9px 12px;background:var(--c5bg);border-left:3px solid var(--c5);
+  border-radius:0 8px 8px 0;font-size:13.1px;color:#1b4a36;line-height:1.76}
+details .ans b{color:#14402c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);
+  color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.3px}.toc,.btnrow{display:none}.hero{padding:16px 0 10px}
+  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第四章第 2 课</span>
+    <h1>Internet 与网络服务
+      <span class="light">ARPANET ｜ IPv4 分类 ｜ C 类 254 台主机 ｜ 域名与 DNS ｜ WWW·电子邮件·FTP ｜ 信息检索</span>
+    </h1>
+    <p class="lead">这一课有两处"必须会算"：<b>C 类地址最多能连多少台主机</b>（2026 考了）；以及<b>给你一个 IP 判断属于哪一类</b>。其余全是"协议—作用"的对应，比如 SMTP 发信、POP3 收信、HTTP 传网页。</p>
+
+    <div class="syl">
+      <div class="syl-box">
+        <h3>考纲原文</h3>
+        <p class="q">四、2. Internet：<b>了解</b> Internet 的起源与发展；<b>理解</b> IP 地址与域名；<b>了解</b> Internet 的主要服务（WWW、电子邮件、文件传输、远程登录等）与信息检索方法。</p>
+      </div>
+      <div class="syl-box">
+        <h3>本课在卷面上值多少</h3>
+        <p class="q warn"><b>2026：单选 17（C 类地址最大主机数 254）</b>；2025：单选 14（ping）、判断 26（IP 或域名访问）。合计 <b>6～8 分</b>，稳定出题。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">考 / 不考</a>
+    <a href="#s1">① 起源与发展</a>
+    <a href="#s2">② IP 地址</a>
+    <a href="#s3">③ 主机数计算</a>
+    <a href="#s4">④ 域名与 DNS</a>
+    <a href="#s5">⑤ 主要服务</a>
+    <a href="#s6">⑥ 信息检索</a>
+    <a href="#s7">易错清单</a>
+    <a href="#s8">必背 14 条</a>
+    <a href="#s9">自测 14 题</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section class="mod" id="s0">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">0</div>
+    <div>
+      <h2>本课考 / 不考</h2>
+      <span class="tag">一个计算 + 一张协议对照表</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:74px">考频</th><th style="width:40%">内容</th><th>怎么处理</th></tr>
+    <tr><td class="c"><span class="f f3">★★★</span></td>
+      <td><b>IPv4 分类与首字节范围</b> · <b>C 类最多 254 台主机（2⁸−2）</b> · <b>域名结构</b>（www.xxx.com）与顶级域含义 · <b>DNS 的作用</b> · <b>SMTP 发 / POP3 收</b> · HTTP 与 HTTPS · ping 的作用</td>
+      <td>必须记准，含一个计算</td></tr>
+    <tr><td class="c"><span class="f f2">★★</span></td>
+      <td>ARPANET 与 TCP/IP 的地位 · URL 的组成 · 电子邮件地址格式 · FTP 的用途 · 私有地址</td>
+      <td>能对应、能判断</td></tr>
+    <tr><td class="c"><span class="f f1">★</span></td>
+      <td>中国接入 Internet 的时间 · IPv6 的位数 · 搜索引擎与检索符号</td>
+      <td>认得即可</td></tr>
+    <tr><td class="c"><span class="f f0">✂</span></td>
+      <td class="cut">子网划分的具体算法（借位、变长掩码）· 各端口号的完整清单 · BGP/OSPF 协议细节</td>
+      <td class="cut">考纲"了解/理解"，真题未深入</td></tr>
+  </table>
+  <div class="tip"><b>本课最值钱的一条公式：</b><b>可用主机数 ＝ 2<sup>主机位数</sup> − 2</b>（去掉"网络地址"和"广播地址"两个）。C 类主机位 8 位 → 2<sup>8</sup>−2＝<b>254</b>。这条能直接拿下 2026 那道题。</div>
+</section>
+
+<section class="mod" id="s1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
+    <div>
+      <h2>Internet 的来历</h2>
+      <span class="tag"><span class="f f1">★</span>三个年份/名字够用</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:120px">节点</th><th>要点</th></tr>
+    <tr><td><b>ARPANET</b></td><td><b>1969 年</b>美国国防部高级研究计划局建立，最初只有 <b>4 个节点</b>——Internet 的<b>前身</b></td></tr>
+    <tr><td><b>TCP/IP</b></td><td>1983 年成为 ARPANET 的正式协议，为 Internet 的统一互联奠定基础</td></tr>
+    <tr><td>Internet 名称</td><td>由"interconnected networks"（互联的网络）而来，<b>不是单一网络，而是"网络的网络"</b></td></tr>
+    <tr><td><b>中国接入</b></td><td><b>1994 年</b>我国正式接入国际互联网（此前 1987 年发出第一封电子邮件）</td></tr>
+  </table>
+
+  <div class="mem"><b>三个"第一"别混：</b>1969 <b>ARPANET</b>（前身，4 节点）；1983 <b>TCP/IP</b> 成为标准；1994 中国<b>正式接入</b>。</div>
+
+  <div class="okbox"><b>"Internet 是网络的网络"这句话常在判断里出现，是对的。</b>它由成千上万个局域网、城域网、广域网互联而成，没有一个"总开关"。</div>
+</section>
+
+<section class="mod" id="s2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">②</div>
+    <div>
+      <h2>IP 地址：四段十进制与五类地址</h2>
+      <span class="tag"><span class="f f3">★★★</span>看首字节就能判类</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">IPv4 地址 = 32 位二进制，写成 4 段十进制（每段 0～255）
+例：192.168.1.100
+     └┬─┘ └┬┘ └┬┘ └─┬─┘
+     网络部分      主机部分（由子网掩码划分）
+
+每一段 8 位 → 2⁸ = 256 种取值（0～255）
+IPv6 = 128 位，写成 8 组十六进制，如 2001:0db8::1</div>
+
+  <table>
+    <tr><th style="width:80px">类别</th><th style="width:150px">首字节范围</th><th style="width:130px">默认掩码</th><th>用途</th></tr>
+    <tr><td><b>A 类</b></td><td><b>1 ～ 126</b></td><td>255.0.0.0（/8）</td><td>超大型网络，可容纳极多主机</td></tr>
+    <tr><td><b>B 类</b></td><td><b>128 ～ 191</b></td><td>255.255.0.0（/16）</td><td>中型网络</td></tr>
+    <tr><td><b>C 类</b></td><td><b>192 ～ 223</b></td><td>255.255.255.0（/24）</td><td>小型网络（校园、企业最常见）</td></tr>
+    <tr><td>D 类</td><td>224 ～ 239</td><td>—</td><td><b>组播（多播）</b>地址，不分配给主机</td></tr>
+    <tr><td>E 类</td><td>240 ～ 255</td><td>—</td><td>保留实验用</td></tr>
+  </table>
+
+  <div class="mem"><b>判类口诀：</b>看第一段数字落在哪个区间——<b>1～126 是 A，128～191 是 B，192～223 是 C，224 以上是 D/E</b>。<br>
+  例：<b>10.0.0.1</b>→A 类；<b>172.16.5.4</b>→B 类；<b>192.168.3.10</b>→C 类。</div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">特殊地址</th><th>含义</th></tr>
+    <tr><td><b>127.0.0.1</b></td><td><b>本机回环地址</b>（localhost），用于本机测试</td></tr>
+    <tr><td>255.255.255.255</td><td><b>广播地址</b>（发往本网所有主机）</td></tr>
+    <tr><td><b>私有地址</b></td><td><b>10.x.x.x、172.16～172.31.x.x、192.168.x.x</b>——只在局域网内部使用，不能直接在公网路由</td></tr>
+    <tr><td>0.0.0.0</td><td>表示"本网络/任意地址"</td></tr>
+  </table>
+
+  <div class="okbox"><b>子网掩码的作用：</b>用一串"1"标出<b>网络号占几位</b>，"0"标出<b>主机号占几位</b>。IP 与掩码<b>按位与</b>得到网络号。<b>255.255.255.0 表示前 24 位是网络号、后 8 位是主机号。</b></div>
+</section>
+
+<section class="mod" id="s3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">③</div>
+    <div>
+      <h2>一台 C 类网络能连多少台主机（2026 真题）</h2>
+      <span class="tag"><span class="f f3">★★★</span>2<sup>n</sup>−2 的算法</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="qz"><span class="lb">2026 真题</span><b>单选 第 17 题（2 分）</b>　一个 C 类 IP 地址段最多可以容纳的主机数是（　）<br>
+  A. 256　B. 255　C. <b>254</b>　D. 128<br>
+  <span class="no">答案：<b>C</b>。</span></div>
+
+  <div class="human"><span class="lb">为什么是 254 而不是 256</span>
+  C 类默认掩码 <b>255.255.255.0</b>，前 24 位是网络号，<b>后 8 位是主机号</b>。<br>
+  8 位主机号共有 <b>2<sup>8</sup> ＝ 256</b> 种组合，但其中<b>两个不能用</b>：<br>
+  　· 主机号<b>全 0</b> → 代表<b>网络本身</b>（网络地址，如 192.168.1.0）<br>
+  　· 主机号<b>全 1</b> → 代表<b>广播地址</b>（如 192.168.1.255）<br>
+  所以可用主机数 ＝ <b>2<sup>8</sup> − 2 ＝ 254</b>。
+  </div>
+
+  <div class="mem"><b>通用公式：</b><b>可用主机数 ＝ 2<sup>主机位数</sup> − 2</b>。<br>
+  A 类主机位 24 → 2<sup>24</sup>−2 ≈ <b>1677 万</b>；B 类主机位 16 → <b>65 534</b>；C 类主机位 8 → <b>254</b>。<br>
+  <b>看到选项里给"256"，那就是故意留给"忘了减 2"的人。</b></div>
+
+  <div class="warnbox"><b>反过来也要会：</b>题目问"哪个地址不能分配给主机"，答案通常是<b>网络地址（末段为 0）</b>或<b>广播地址（末段为 255）</b>（C 类情况下）。<b>192.168.1.0 与 192.168.1.255 都不能给主机用。</b></div>
+</section>
+
+<section class="mod" id="s4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">④</div>
+    <div>
+      <h2>域名与 DNS：给人看的地址</h2>
+      <span class="tag"><span class="f f3">★★★</span>2025 判断第 26 题就在这</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">URL 拆解（考试常让"指出各部分"）
+https:// www.scedu.gov.cn :8080 /news/2026.html
+ 协议     域名（主机名+二级+顶级）  端口   路径与文件名
+
+域名的层级：从右往左读，越往右级别越高
+www . scedu . gov . cn
+ │      │      │     └─ 顶级域（.cn 国家）
+ │      │      └─────── 二级/三级域（gov 政府）
+ │      └────────────── 二级域（scedu 单位名）
+ └───────────────────── 主机名（www 表示网站服务器）</div>
+
+  <table>
+    <tr><th style="width:110px">顶级域</th><th>含义</th><th style="width:110px">顶级域</th><th>含义</th></tr>
+    <tr><td><b>.com</b></td><td>商业机构</td><td><b>.edu</b></td><td>教育机构</td></tr>
+    <tr><td><b>.gov</b></td><td>政府机构</td><td><b>.org</b></td><td>非营利组织</td></tr>
+    <tr><td><b>.net</b></td><td>网络服务</td><td><b>.cn</b></td><td>中国</td></tr>
+    <tr><td>.mil</td><td>军事</td><td>.jp / .uk</td><td>日本 / 英国</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 判断 26</b>　访问一个网站时，既可以使用域名，也可以直接使用它的 IP 地址。<br>
+  <span class="no">→ <b>正确</b>。<b>域名只是 IP 的"别名"</b>，DNS 把它翻译成 IP；直接输入 IP 同样能打开网站（只是记忆不便、且一个 IP 上可能挂多个网站时会有差异）。<br>
+  <b>记住"域名→IP"的方向：</b>DNS 做的是<b>域名解析</b>，即"<b>把域名翻译成 IP</b>"，不是反过来。</span></div>
+
+  <div class="okbox"><b>三个"不一定"（判断题素材）：</b>①一个域名<b>可以</b>对应多个 IP（大型网站多台服务器）；②一个 IP <b>可以</b>对应多个域名（虚拟主机）；③域名与 IP <b>不是一一对应</b>。<b>凡是说"域名与 IP 一一对应"的，一律错。</b></div>
+</section>
+
+<section class="mod" id="s5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
+    <div>
+      <h2>Internet 的主要服务</h2>
+      <span class="tag"><span class="f f3">★★★</span>协议与功能必须一一对上</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:120px">服务</th><th style="width:150px">协议</th><th>说明与考点</th></tr>
+    <tr><td><b>WWW 万维网</b></td><td><b>HTTP / HTTPS</b></td><td>基于<b>超文本</b>的信息浏览；<b>B/S 结构</b>（浏览器—服务器）；HTTPS 是加密版，默认端口 443</td></tr>
+    <tr><td><b>电子邮件</b></td><td>发：<b>SMTP</b><br>收：<b>POP3 / IMAP</b></td><td>地址格式<b>用户名@域名</b>；可带附件；<b>"发信用 SMTP、收信用 POP3"必须分清</b></td></tr>
+    <tr><td><b>文件传输</b></td><td><b>FTP</b></td><td>在<b>不同主机之间上传/下载文件</b>；可设匿名登录</td></tr>
+    <tr><td>远程登录</td><td>Telnet / <b>SSH</b></td><td>登录到远程主机并像本地一样操作；SSH 加密更安全</td></tr>
+    <tr><td><b>域名解析</b></td><td><b>DNS</b></td><td>域名 ↔ IP 的翻译服务</td></tr>
+    <tr><td>网络诊断</td><td><b>ping</b> / ipconfig</td><td><b>ping 测试两台主机是否连通、往返时延</b>；ipconfig 查看本机 IP 配置</td></tr>
+  </table>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 14（2 分）</b>　用于测试本地主机与目标主机之间网络是否连通的命令是（　）<br>
+  A. ftp　B. <b>ping</b>　C. telnet　D. http<br>
+  <span class="no">答案：<b>B</b>。<br>
+  <b>四个选项各管一件事：</b>ftp 传文件、ping 测连通、telnet 远程登录、http 传网页。<b>"是否连通/能不能通"这句话只对应 ping。</b></span></div>
+
+  <div class="mem"><b>协议速记：</b><b>HTTP 看网页、SMTP 发邮件、POP3 收邮件、FTP 传文件、DNS 翻域名、ping 试连通、SSH 远程管</b>。<br>
+  邮件那条单独记：<b>"S" 是 Send（发），"POP" 是收到信箱里（收）</b>。</div>
+
+  <div class="tip"><b>B/S 与 C/S 的区别（可能出选择）：</b><b>B/S</b>＝浏览器/服务器（不用装客户端，如网银、教务系统）；<b>C/S</b>＝客户端/服务器（要装软件，如 QQ、微信桌面版）。<b>WWW 属于 B/S。</b></div>
+</section>
+
+<section class="mod" id="s6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑥</div>
+    <div>
+      <h2>信息检索：把搜索变准的五个符号</h2>
+      <span class="tag"><span class="f f1">★</span>考纲"了解"，认得用法即可</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:150px">检索方式</th><th>作用</th><th style="width:30%">例子</th></tr>
+    <tr><td>空格 / AND</td><td>同时包含多个关键词（<b>缩小</b>范围）</td><td>四川 专升本 计算机</td></tr>
+    <tr><td>OR</td><td>包含任一个（<b>扩大</b>范围）</td><td>专升本 OR 专插本</td></tr>
+    <tr><td>−（减号）</td><td>排除某词</td><td>苹果 -手机</td></tr>
+    <tr><td><b>"引号"</b></td><td><b>精确匹配整句</b></td><td>"四川省普通高校专升本考试要求"</td></tr>
+    <tr><td><b>site:</b></td><td>限定<b>站点</b></td><td>site:edu.sc.gov.cn 专升本</td></tr>
+    <tr><td><b>filetype:</b></td><td>限定<b>文件类型</b></td><td>filetype:pdf 计算机基础 考纲</td></tr>
+  </table>
+
+  <div class="okbox"><b>搜索引擎两类：</b><b>全文搜索引擎</b>（按关键词抓取网页全文，如百度、Google）与<b>目录/分类搜索引擎</b>（人工分类目录）。<b>另有元搜索、垂直搜索（学术、图片、视频）。</b></div>
+
+  <div class="mem"><b>检索三原则：</b><b>先精确后宽泛</b>（先用引号与 site 缩小）；<b>换词比换页快</b>（同义词、学名、英文名）；<b>看来源辨真伪</b>（优先官网、权威机构、正式出版物）。</div>
+</section>
+
+<section class="mod" id="s7">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑦</div>
+    <div>
+      <h2>本课易错清单</h2>
+      <span class="tag">十二条</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:36px">#</th><th style="width:250px">错误说法</th><th>正确说法</th></tr>
+    <tr><td class="c">1</td><td>Internet 的前身是 TCP/IP</td><td>前身是 <b>ARPANET</b>（1969）</td></tr>
+    <tr><td class="c">2</td><td>IPv4 地址是 64 位</td><td><b>32 位</b>；IPv6 才是 128 位</td></tr>
+    <tr><td class="c">3</td><td>192.168.1.1 属于 B 类地址</td><td>首段 192 → <b>C 类</b></td></tr>
+    <tr><td class="c">4</td><td>一个 C 类网络可容纳 256 台主机</td><td><b>254</b>（2⁸−2，去掉网络与广播地址）</td></tr>
+    <tr><td class="c">5</td><td>192.168.1.0 可以分配给主机</td><td>那是<b>网络地址</b>，不能分配给主机</td></tr>
+    <tr><td class="c">6</td><td>DNS 把 IP 翻译成域名</td><td>DNS 做<b>域名→IP</b> 的解析</td></tr>
+    <tr><td class="c">7</td><td>域名与 IP 地址一一对应</td><td>可<b>多对多</b>，不是一一对应</td></tr>
+    <tr><td class="c">8</td><td>.edu 表示政府机构</td><td>.edu 是<b>教育</b>；.gov 才是政府</td></tr>
+    <tr><td class="c">9</td><td>收电子邮件用 SMTP</td><td>发信 <b>SMTP</b>；收信 <b>POP3/IMAP</b></td></tr>
+    <tr><td class="c">10</td><td>FTP 用于浏览网页</td><td>FTP 用于<b>文件传输</b>；浏览网页是 HTTP</td></tr>
+    <tr><td class="c">11</td><td>ping 用来上传文件</td><td>ping 用于<b>测试连通性</b></td></tr>
+    <tr><td class="c">12</td><td>搜索时加引号会扩大范围</td><td>引号是<b>精确匹配</b>，会缩小范围</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s8">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
+    <div>
+      <h2>本课必背 14 条</h2>
+      <span class="tag">进考场前扫一眼</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:40px">#</th><th>内容</th></tr>
+    <tr><td class="c">1</td><td><b>ARPANET 1969</b>（4 个节点）是 Internet 前身；<b>1983</b> 采用 TCP/IP；<b>1994</b> 中国正式接入</td></tr>
+    <tr><td class="c">2</td><td>Internet 是"<b>网络的网络</b>"</td></tr>
+    <tr><td class="c">3</td><td><b>IPv4 32 位</b>（4 段 0～255）；<b>IPv6 128 位</b>（8 组十六进制）</td></tr>
+    <tr><td class="c">4</td><td>IP ＝ <b>网络号 + 主机号</b>，由<b>子网掩码</b>划分</td></tr>
+    <tr><td class="c">5</td><td><b>A 类 1～126、B 类 128～191、C 类 192～223、D 类组播 224～239</b></td></tr>
+    <tr><td class="c">6</td><td><b>可用主机数 ＝ 2<sup>主机位</sup> − 2</b>；C 类＝<b>254</b>，B 类＝65534</td></tr>
+    <tr><td class="c">7</td><td>网络地址（末段 0）与广播地址（末段 255）<b>不能分配给主机</b></td></tr>
+    <tr><td class="c">8</td><td><b>127.0.0.1</b> 是本机回环；私有地址 <b>10.x / 172.16-31.x / 192.168.x</b></td></tr>
+    <tr><td class="c">9</td><td>域名从右往左级别升高；<b>.com 商业、.edu 教育、.gov 政府、.cn 中国</b></td></tr>
+    <tr><td class="c">10</td><td><b>DNS</b> 把<b>域名解析为 IP</b>；域名与 IP <b>不是一一对应</b></td></tr>
+    <tr><td class="c">11</td><td>URL：<b>协议://域名:端口/路径/文件名</b></td></tr>
+    <tr><td class="c">12</td><td><b>HTTP</b> 传网页（HTTPS 加密）、<b>SMTP</b> 发邮件、<b>POP3/IMAP</b> 收邮件、<b>FTP</b> 传文件、<b>SSH</b> 远程登录</td></tr>
+    <tr><td class="c">13</td><td><b>ping</b> 测试连通性；ipconfig 查看本机 IP 配置</td></tr>
+    <tr><td class="c">14</td><td>检索：<b>引号精确、site: 限站点、filetype: 限类型、OR 扩范围、减号排除</b></td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s9">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
+    <div>
+      <h2>自测 14 题</h2>
+      <span class="tag">点题目看答案</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>1. Internet 的前身是 ARPANET。</summary><div class="ans"><b>正确。</b>1969 年建立，最初 4 个节点。</div></details>
+    <details><summary>2. IPv4 地址由 64 位二进制数组成。</summary><div class="ans"><b>错误。</b>IPv4 是 <b>32 位</b>，IPv6 才是 128 位。</div></details>
+    <details><summary>3. 一个 C 类网络最多可容纳 254 台主机。</summary><div class="ans"><b>正确。</b>2⁸−2＝254（2026 单选 17）。</div></details>
+    <details><summary>4. DNS 的作用是把 IP 地址转换为域名。</summary><div class="ans"><b>错误。</b>是<b>域名→IP</b>。</div></details>
+    <details><summary>5. 访问网站既可用域名，也可直接用 IP 地址。</summary><div class="ans"><b>正确。</b>2025 判断第 26 题。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>6. 一个 C 类 IP 地址段最多可容纳的主机数是（　）<br>A. 256　B. 255　C. 254　D. 128</summary><div class="ans"><b>C。</b>2026 单选第 17 题原题。</div></details>
+    <details><summary>7. 测试与目标主机是否连通的命令是（　）<br>A. ftp　B. ping　C. telnet　D. http</summary><div class="ans"><b>B。</b>2025 单选第 14 题原题。</div></details>
+    <details><summary>8. 下列 IP 地址中属于 B 类的是（　）<br>A. 10.1.2.3　B. 172.16.5.4　C. 192.168.1.1　D. 224.0.0.1</summary><div class="ans"><b>B。</b>A 是 A 类，C 是 C 类，D 是 D 类组播。</div></details>
+    <details><summary>9. 发送电子邮件使用的协议是（　）<br>A. POP3　B. SMTP　C. FTP　D. HTTP</summary><div class="ans"><b>B。</b>"S" 即 Send。</div></details>
+    <details><summary>10. 下列顶级域名中表示教育机构的是（　）<br>A. .com　B. .gov　C. .edu　D. .org</summary><div class="ans"><b>C。</b></div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>11. IPv4 地址长度为 ______ 位。</summary><div class="ans"><b>32</b>。</div></details>
+    <details><summary>12. 一个 B 类网络最多可容纳 ______ 台主机。</summary><div class="ans"><b>65 534</b>（2¹⁶−2）。</div></details>
+    <details><summary>13. 域名解析服务使用的协议是 ______。</summary><div class="ans"><b>DNS</b>。</div></details>
+    <details><summary>14. 本机回环地址是 ______。</summary><div class="ans"><b>127.0.0.1</b>。</div></details>
+  </div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"四、2. Internet"；<br>
+  真题来源：2025 单选 14、判断 26；2026 单选 17。<br>
+  上一课：第四章第1课 计算机网络基础　｜　下一课：第四章第3课 信息安全与信息素养 · Ctrl+P 可打印
+</footer>
+
+</main>
+</body>
+</html>

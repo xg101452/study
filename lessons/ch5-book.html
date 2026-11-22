@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第五章 专项练习 · 复习题 · 冲刺测试（2027 四川专升本计算机）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{--ink:#15212c;--ink2:#3b4b59;--muted:#6b7a88;--paper:#f7f5f0;--card:#fff;--line:#e3ded4;
+--c1:#0e6b8a;--c1bg:#e9f2f6;--c4:#b23a2e;--c4bg:#fbeeec;--c5:#1f6b4a;--c5bg:#e8f2ed;
+--gold:#8a5a00;--goldbg:#fbf3dd;--c3:#2b4a8b;--c3bg:#eaeef7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:40px 0 26px;background:radial-gradient(900px 320px at 8% -30%,rgba(178,58,46,.11),transparent 60%),radial-gradient(700px 280px at 92% -20%,rgba(14,107,138,.10),transparent 60%),#fff;border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;color:var(--c4);font-weight:700;margin-bottom:11px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4)}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(24px,3.2vw,34px);line-height:1.3;margin:0 0 8px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.6em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.3px;max-width:830px;margin:10px 0 0}
+.stat{margin-top:16px;display:flex;flex-wrap:wrap;gap:9px}
+.stat span{background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px 14px;font-size:12.8px;color:var(--ink2)}
+.stat b{color:var(--c4)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:8px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:22px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:58px}
+.mod-h{display:flex;align-items:flex-start;gap:11px}
+.mod-no{flex:0 0 auto;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19px;margin:1px 0 0}
+.mod-h .tag{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:11px 0 12px}
+.sub{margin:16px 0 6px;padding:6px 12px;background:var(--c3bg);border-left:3px solid var(--c3);border-radius:0 8px 8px 0;font-size:13.2px;font-weight:700;color:#1e356b}
+.qi{border-bottom:1px dashed #e6e0d4;padding:9px 0 10px}
+.qi:last-child{border-bottom:0}
+.qh{font-size:13.9px;line-height:1.75}
+.qn{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;background:#eef1f3;color:#42535f;border-radius:6px;font-weight:700;font-size:12.5px;margin-right:7px}
+.opt{margin-top:3px;color:#4a5a67;font-size:13.2px;line-height:1.9}
+.tp{font-size:11px;font-weight:700;color:#7a5a00;background:var(--goldbg);border:1px solid #ecd9a5;border-radius:4px;padding:0 6px;margin-right:6px}
+.flow{background:#fcfcf9;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-family:Consolas,"Courier New",monospace;font-size:12.4px;line-height:1.85;white-space:pre;overflow-x:auto;margin:6px 0 2px;color:#2a3743}
+details{margin-top:5px}
+summary{cursor:pointer;list-style:none;font-size:12.6px;color:var(--c1);font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸ '}
+details[open] summary::before{content:'▾ '}
+.ans{margin-top:5px;padding:8px 12px;background:var(--c5bg);border-left:3px solid var(--c5);border-radius:0 8px 8px 0;font-size:13px;color:#1b4a36;line-height:1.78}
+.ans b{color:#123c2a}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:10px;padding:10px 14px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:26px 20px 50px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.2px}.toc,.btnrow,.qfoot,.scorebar,.sbar,.st,.mini{display:none}.op{border:0;background:none;padding:2px 0}.op b{background:none;color:#333}.hero{padding:14px 0 8px}
+.mod{box-shadow:none;break-inside:avoid;margin:10px 0;padding:14px 16px}}
+
+.qhead{display:flex;gap:9px;align-items:flex-start}
+.qh{flex:1;font-size:13.9px;line-height:1.75}
+.st{flex:0 0 auto;font-size:11px;font-weight:700;padding:1px 8px;border-radius:20px;background:#eef1f3;color:#7a8794;white-space:nowrap;margin-top:3px;border:1px solid #e2e7ea}
+.st.right{background:#e3f3ea;color:#1a6b48;border-color:#b9ddc9}
+.st.wrong{background:#fbeeec;color:#a32a1c;border-color:#efc4bc}
+.st.done{background:#e9effa;color:#2b4a8b;border-color:#c3d0ea}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:6px;margin:7px 0 2px}
+.op{display:flex;gap:8px;align-items:flex-start;text-align:left;font-family:inherit;font-size:13.2px;line-height:1.7;color:#3d4d5a;background:#fcfcfa;border:1px solid #e3ded4;border-radius:9px;padding:7px 11px;cursor:pointer;transition:background .12s,border-color .12s}
+.op:hover{border-color:#a8cfdd;background:#f2f9fc}
+.op b{flex:0 0 auto;width:20px;height:20px;line-height:20px;text-align:center;border-radius:5px;background:#eef1f3;color:#42535f;font-size:12px;margin-top:1px}
+.op em{margin-left:auto;font-style:normal;font-weight:700;font-size:12px;padding-left:6px}
+.op.correct{border-color:#3f9b74;background:#e8f5ee}
+.op.correct b{background:#3f9b74;color:#fff}
+.op.correct em{color:#1f6b4a}
+.op.wrong{border-color:#d1584a;background:#fbeeec}
+.op.wrong b{background:#d1584a;color:#fff}
+.op.wrong em{color:#a32a1c}
+.op.sel{border-color:#2b4a8b;background:#eaeef7}
+.op.sel b{background:#2b4a8b;color:#fff}
+.op.lock{cursor:default}
+.op.lock:hover{border-color:#e3ded4;background:#fcfcfa}
+.op.correct.lock:hover{border-color:#3f9b74;background:#e8f5ee}
+.op.wrong.lock:hover{border-color:#d1584a;background:#fbeeec}
+.qfoot{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap;align-items:center}
+.mini{cursor:pointer;font-family:inherit;font-size:11.6px;border:1px solid #dcd6c9;background:#fff;color:#66757f;border-radius:7px;padding:3px 11px;transition:.12s}
+.mini:hover{color:#0b5a75;border-color:#a8cfdd;background:#f2f9fc}
+.mini.on{border-color:#a8cfdd;background:#e9f2f6;color:#0b5a75;font-weight:700}
+.tip{font-size:11.6px;color:#a32a1c;margin-left:2px}
+.ansbox{display:none;margin-top:6px}
+.ansbox.show{display:block}
+.sbar{display:flex;align-items:center;gap:10px;margin:2px 0 10px;font-size:11.8px;color:#6b7a88}
+.sbar-t{flex:0 0 auto;font-variant-numeric:tabular-nums}
+.track{flex:1;height:5px;background:#ece6da;border-radius:3px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c93b0,#1f6b4a);border-radius:3px;transition:width .2s}
+.scorebar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:12.2px;color:#5a6975;padding:5px 26px 3px;margin:0 auto}
+.scorebar b{color:#b23a2e;font-variant-numeric:tabular-nums}
+.scorebar .hint{color:#8b929a;font-size:11.4px}
+
+.fillrow{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:7px}
+.fill{flex:1 1 220px;min-width:170px;font-family:inherit;font-size:13.3px;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:8px;padding:6px 11px;line-height:1.6}
+.fill::placeholder{color:#a8b0b7}
+.fill:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
+.fill.right{border-color:#3f9b74;background:#f3fbf7}
+.fill.wrong{border-color:#d1584a;background:#fdf4f2}
+.fill:disabled{opacity:.92;cursor:default}
+@media print{.fillrow{display:none}}
+
+.essay{margin-top:7px;width:100%;min-height:86px;font-family:inherit;font-size:13.2px;line-height:1.72;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:9px;padding:8px 11px;resize:vertical}
+.essay::placeholder{color:#a8b0b7}
+.essay:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
+.essay.right{border-color:#3f9b74;background:#f6fcf8}
+.essay.wrong{border-color:#d1584a;background:#fdf5f3}
+@media print{.essay{display:none}}
+
+.mini.primary{border-color:#0e6b8a;background:#0e6b8a;color:#fff}
+.mini.primary:hover{background:#0b5a75;border-color:#0b5a75;color:#fff}
+.ejudge{font-size:11.8px;color:#5a6975}
+.ejudge.ok{color:#1f6b4a;font-weight:700}
+.ejudge.bad{color:#a32a1c;font-weight:700}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第五章练习册</span>
+    <h1>第五章 算法与程序设计
+      <span class="light">专项练习（按小节）→ 章末复习题 → 限时冲刺测试</span>
+    </h1>
+    <p class="lead">本章约 <b>15 分</b>，而且是<b>综合应用题的主力</b>。练习重点不是背概念，而是<b>会数、会算</b>：数循环执行几次、算流程图输出什么、比较多少次。做题时<b>准备一张纸，把变量逐行写出来</b>，比在脑子里想可靠得多。</p>
+    <div class="stat">
+      <span>专项练习 <b>24</b> 题</span>
+      <span>章末复习 <b>8</b> 题</span>
+      <span>冲刺测试 <b>20</b> 题 / <b>53</b> 分</span>
+      <span>合计 <b>52</b> 题</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#l1">1 计算思维与算法</a>
+    <a href="#l2">2 三种结构与经典算法</a>
+    <a href="#rev">章末复习</a>
+    <a href="#test">冲刺测试</a>
+  </div>
+</nav>
+<div class="wrap scorebar"><span>已完成 <b id="cDone">0</b>/<span id="cTotal">0</span> 题</span><span>正确 <b id="cRight">0</b></span><span>正确率 <b id="cRate">—</b></span><span class="hint">点选项即时判分，进度自动存在本机</span><button class="mini" id="resetAll">重置进度</button></div>
+
+<main class="wrap">
+
+<section class="mod" id="l1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">1</div>
+    <div><h2>第 1 课　计算思维与算法基础</h2><span class="tag">专项 12 题 · 特性 / 复杂度 / 语言与翻译</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/12</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　计算与计算思维</div>
+  <div class="qi" data-q="l1-1" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">1</span><div class="qh">计算可以概括为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>数据＋操作</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>硬件＋软件</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>程序＋文档</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>输入＋输出</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>计算＝对数据按规则施加操作，得到结果。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-2" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">2</span><div class="qh"><span class="tp">多选</span>计算思维的主要特征包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>抽象</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>分解</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>算法</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>自动化</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>四词记法：<b>抽象、分解、算法、自动化</b>（另含递归/迭代）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+
+  <div class="sub">小节二　算法的概念与五大特性</div>
+  <div class="qi" data-q="l1-3" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">3</span><div class="qh">算法的五个特性是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>有穷性、确定性、可行性、输入、输出</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>正确性、可读性、健壮性、输入、输出</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>有穷性、灵活性、可行性、输入、输出</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>抽象性、确定性、可行性、输入、输出</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>五特性必背，尤其<b>输入可为 0 个、输出至少 1 个</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-4" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">4</span><div class="qh"><span class="tp">判断</span>一个算法必须至少有一个输入。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b><b>输入可以是 0 个</b>（如直接输出 1~100 的和）；<b>输出至少 1 个</b>，没有输出就不叫算法。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-5" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">5</span><div class="qh">"算法必须在有限步之内结束"描述的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>确定性</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>有穷性</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>可行性</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>输出</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>有穷性管"会不会停"，确定性管"每步是否唯一"</b>，两者常被互换来考。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　时间复杂度与空间复杂度</div>
+  <div class="qi" data-q="l1-6" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">6</span><div class="qh">某算法基本操作次数为 3n²+5n+7，其时间复杂度是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>O(n)</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>O(n²)</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>O(3n²)</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>O(1)</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>大 O 只取<b>最高阶项</b>、去系数与低阶项。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-7" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">7</span><div class="qh"><span class="tp">判断</span>算法的时间复杂度越高，执行效率越高。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b>复杂度数值越大，运算量增长越快，<b>效率越低</b>（2024 判断）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-8" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">8</span><div class="qh">下列复杂度由低到高排列正确的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>O(n)＜O(1)＜O(log n)</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>O(1)＜O(log n)＜O(n)＜O(n²)</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>O(n²)＜O(n)＜O(log n)</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>O(log n)＜O(1)＜O(n)</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>口诀：<b>常数 ＜ 对数 ＜ 线性 ＜ 线性对数 ＜ 平方 ＜ 指数</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节四　算法的描述方法</div>
+  <div class="qi" data-q="l1-9" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">9</span><div class="qh"><span class="tp">判断</span>算法不能用自然语言来描述。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b>自然语言是描述方法之一，只是<b>易生歧义、不够严谨</b>（2024 判断）。四种方法：<b>自然语言、流程图、N-S 图、伪代码</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节五　语言与翻译过程</div>
+  <div class="qi" data-q="l1-10" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">10</span><div class="qh">计算机唯一能直接识别和执行的语言是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>汇编语言</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>机器语言</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>高级语言</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>伪代码</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>机器语言是二进制指令；<b>汇编需经汇编程序、高级语言需经编译或解释</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-11" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">11</span><div class="qh">关于编译与解释，正确的说法是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>编译逐条翻译执行</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>解释会生成目标程序</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>编译生成目标程序、执行快；解释不生成目标程序、执行慢</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>两者完全相同</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>这是本章最经典的一对概念，<b>判断题常把两者特征互换</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l1-12" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">12</span><div class="qh">源程序变为可执行程序，通常要经过（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>编译→汇编</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>翻译（编译/汇编）→链接</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>链接→编译</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>直接运行</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>路径：<b>源程序 →（编译/汇编）→ 目标程序 →（链接）→ 可执行程序</b>；<b>目标程序还不能直接运行</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="l2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">2</div>
+    <div><h2>第 2 课　三种基本结构与经典算法</h2><span class="tag">专项 12 题 · 循环 / 流程图 / 查找 / 冒泡</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/12</span><div class="track"><i></i></div></div>
+
+  <div class="sub">小节一　三种基本结构</div>
+  <div class="qi" data-q="l2-1" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">1</span><div class="qh">结构化程序设计的三种基本结构是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>顺序、选择、循环</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>顺序、跳转、循环</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>输入、处理、输出</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>主程序、子程序、函数</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>三种结构共同点：<b>一个入口一个出口、无死代码、无死循环</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-2" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">2</span><div class="qh"><span class="tp">判断</span>循环体中的语句至少会被执行一次。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错误。</b><b>当型（while）先判断后执行，条件一开始为假则执行 0 次</b>；只有直到型（do-while）至少 1 次（2025 判断 34）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-3" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">3</span><div class="qh">循环 <b>for(i=1;i&lt;=5;i++)</b> 的循环体共执行（　）次</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>4</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>5</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>6</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>0</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>i 取 1、2、3、4、5，共 <b>5 次</b>；若写成 i&lt;5 则为 4 次。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节二　流程图符号</div>
+  <div class="qi" data-q="l2-4" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">4</span><div class="qh">流程图中表示"判断"的符号是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>矩形</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>菱形</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>平行四边形</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>圆角矩形</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>圆角起止、矩形处理、菱形判断、平行四边形输入输出</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-5" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">5</span><div class="qh">表示"输入/输出"的符号是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>菱形</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>矩形</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>平行四边形</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>圆</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>看到平行四边形，就知道在<b>读数或印数</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节三　累加与累乘</div>
+  <div class="qi" data-q="l2-6" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">6</span><div class="qh">求 1+2+…+n 时，累加变量 s 的初值应设为（　）；求 n! 时，累乘变量 p 的初值应设为（　）。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>0、0</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>1、1</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>0、1</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>1、0</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b><b>累加初值 0，累乘初值 1</b>；累乘若写 0，结果永远是 0（命题人最爱的"埋雷"）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-7" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">7</span><div class="qh">执行"s←0；i←1；当 i≤100 时 s←s+i，i←i+1"，输出 s＝（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>100</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>4950</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>5050</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>5051</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>1+2+…+100＝100×101/2＝<b>5050</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节四　顺序查找与二分查找</div>
+  <div class="qi" data-q="l2-8" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">8</span><div class="qh">在长度为 n 的线性表中顺序查找，最多比较（　）次。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>1</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>log₂n</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>n</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>n²</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b>最坏情况要扫到最后一个；<b>时间复杂度 O(n)</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-9" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">9</span><div class="qh">二分查找的前提是数据（　）；1000 个元素最多比较约（　）次。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>无序、10</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>有序、10</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>有序、100</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>无序、100</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>必须有序</b>（递增或递减均可）；<b>⌈log₂1000⌉＝10</b>（2¹⁰＝1024）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">小节五　冒泡排序</div>
+  <div class="qi" data-q="l2-10" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">10</span><div class="qh">对 n 个数进行冒泡排序（升序），最多需要（　）趟。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>n</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>n−1</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>n+1</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>n²</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>每趟定住一个数，最后一个自然就位。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-11" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">11</span><div class="qh">5 个数冒泡排序（最坏情况）总共比较（　）次。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>5</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>10</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>15</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>20</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>n(n−1)/2＝5×4/2＝10</b>；公式通用。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="l2-12" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">12</span><div class="qh"><span class="tp">判断</span>冒泡排序中若某一趟没有发生交换，说明已有序，可提前结束。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>正确。</b>没有交换＝相邻元素都已符合顺序（2025 判断 35）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+</section>
+
+<section class="mod" id="rev">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">Ⅱ</div>
+    <div><h2>章末复习题</h2><span class="tag">8 题 · 含两道读图计算</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/8</span><div class="track"><i></i></div></div>
+
+  <div class="qi" data-q="rev-1" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">1</span><div class="qh">算法与程序的关系可表述为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>程序＝算法＋数据结构</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>算法＝程序＋数据</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>程序＝算法＋文档</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>二者等价</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b>沃思公式；<b>算法是"解法"，程序是"解法的实现"</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-2" data-type="single" data-ans="D">
+  <div class="qhead"><span class="qn">2</span><div class="qh">下列复杂度中效率最高的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>O(n)</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>O(log n)</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>O(n²)</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>O(1)</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>D。</b>常数时间与问题规模无关。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-3" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">3</span><div class="qh">把汇编语言源程序翻译成机器语言目标程序的程序是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>编译程序</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>汇编程序</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>解释程序</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>链接程序</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b><b>汇编程序对汇编语言，编译程序对高级语言</b>，别混。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-4" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">4</span><div class="qh"><span class="tp">读图</span>下面的流程输出 s 为多少？
+    <div class="flow">s ← 0
+i ← 1
+当 i ≤ 5 时：
+    s ← s + i × i
+    i ← i + 1
+输出 s</div></div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>55。</b>1²+2²+3²+4²+5²＝1+4+9+16+25＝<b>55</b>。<b>识别要点：初值 0＝累加，通项是 i×i＝平方。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+  <div class="qi" data-q="rev-5" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">5</span><div class="qh"><span class="tp">读图</span>下面流程输出 p 为多少？
+    <div class="flow">p ← 1
+i ← 1
+当 i ≤ 4 时：
+    p ← p × i
+    i ← i + 1
+输出 p</div></div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>24。</b>4!＝1×2×3×4＝<b>24</b>；<b>初值 1 才对</b>，若初值为 0 则输出 0。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+  <div class="qi" data-q="rev-6" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">6</span><div class="qh">二分查找 100 个有序元素，最多比较（　）次</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>5</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>7</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>10</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>50</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b>2⁶＝64 不够，2⁷＝128 够，故 <b>7 次</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="rev-7" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">7</span><div class="qh"><span class="tp">简答</span>写出算法的五个特性，并各用一句话解释。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>①<b>有穷性</b>：执行有限步后必须结束；②<b>确定性</b>：每一步含义明确，同样输入得同样结果；③<b>可行性</b>：每一步都能实际执行并在有限时间内完成；④<b>输入</b>：有 0 个或多个输入；⑤<b>输出</b>：有 1 个或多个输出。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+  <div class="qi" data-q="rev-8" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">8</span><div class="qh"><span class="tp">简答</span>简述冒泡排序的基本思想与最多趟数。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>从第一个元素开始，<b>相邻两两比较，不符合顺序则交换</b>；一趟结束，最大（升序时）元素被送到末尾；下一趟在剩余元素中重复。<b>n 个数最多 n−1 趟</b>，第 i 趟比较 n−i 次，最坏共 n(n−1)/2 次，时间复杂度 O(n²)；<b>某趟无交换即可提前结束</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+</section>
+
+<section class="mod" id="test">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">Ⅲ</div>
+    <div><h2>第五章冲刺测试</h2><span class="tag">满分 53 分 · 建议 40 分钟</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="sbar"><span class="sbar-t">0/20</span><div class="track"><i></i></div></div>
+  <div class="warnbox"><b>计分：</b>判断 5×1＝5；单选 6×2＝12；多选 3×3＝9；填空 4×3＝12；简答 1×5＝5；综合 1×10＝10。</div>
+
+  <div class="sub">一、判断题（5 题，每题 1 分）</div>
+  <div class="qi" data-q="test-1" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">1</span><div class="qh">算法的时间复杂度越高，效率越高。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错。</b>2024 判断。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-2" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">2</span><div class="qh">算法必须有输出，但可以没有输入。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-3" data-type="judge" data-ans="错">
+  <div class="qhead"><span class="qn">3</span><div class="qh">while 循环的循环体至少执行一次。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>错。</b>2025 判断 34。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-4" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">4</span><div class="qh">冒泡排序某趟无交换即可提前结束。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b>2025 判断 35。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-5" data-type="judge" data-ans="对">
+  <div class="qhead"><span class="qn">5</span><div class="qh">解释程序不生成目标程序。</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="对"><b>√</b><span>正确</span><em></em></button><button type="button" class="op" data-k="错"><b>×</b><span>错误</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>对。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">二、单项选择题（6 题，每题 2 分）</div>
+  <div class="qi" data-q="test-6" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">6</span><div class="qh">算法五特性中，表示"每步含义唯一"的是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>有穷性</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>确定性</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>可行性</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>输出</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-7" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">7</span><div class="qh">O(2n²+3n) 应记为（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>O(n)</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>O(n²)</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>O(2n²)</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>O(n³)</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-8" data-type="single" data-ans="A">
+  <div class="qhead"><span class="qn">8</span><div class="qh">二分查找 1000 个元素最多比较（　）次</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>10</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>100</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>500</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>1000</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>A。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-9" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">9</span><div class="qh">n 个数冒泡排序最多需要（　）趟</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>n</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>n−1</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>n+1</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>n²</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-10" data-type="single" data-ans="C">
+  <div class="qhead"><span class="qn">10</span><div class="qh">流程图中菱形表示（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>起止</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>处理</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>判断</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>输入输出</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>C。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+  <div class="qi" data-q="test-11" data-type="single" data-ans="B">
+  <div class="qhead"><span class="qn">11</span><div class="qh">计算机唯一能直接执行的语言是（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>汇编语言</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>机器语言</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>C 语言</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>Python</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>B。</b></div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button></div>
+</div>
+
+  <div class="sub">三、多项选择题（3 题，每题 3 分）</div>
+  <div class="qi" data-q="test-12" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">12</span><div class="qh">算法的描述方法包括（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>自然语言</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>流程图</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>N-S 图</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>伪代码</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>四种全对。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="test-13" data-type="multi" data-ans="ABCD">
+  <div class="qhead"><span class="qn">13</span><div class="qh">关于编译与解释，正确的有（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>编译生成目标程序</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>解释逐条翻译执行</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>编译执行速度快</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>解释不生成目标程序</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABCD。</b>四项均为标准表述。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+  <div class="qi" data-q="test-14" data-type="multi" data-ans="ABC">
+  <div class="qhead"><span class="qn">14</span><div class="qh">下列属于三种基本结构的有（　）</div><span class="st">未做</span></div>
+  <div class="opts"><button type="button" class="op" data-k="A"><b>A</b><span>顺序结构</span><em></em></button><button type="button" class="op" data-k="B"><b>B</b><span>选择结构</span><em></em></button><button type="button" class="op" data-k="C"><b>C</b><span>循环结构</span><em></em></button><button type="button" class="op" data-k="D"><b>D</b><span>跳转结构</span><em></em></button></div>
+  <div class="ansbox"><div class="ans"><b>ABC。</b>没有"跳转结构"。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-submit">提交答案</button><button type="button" class="mini act-reveal">查看解析</button><button type="button" class="mini act-mark">标记完成</button><span class="tip" style="display:none"></span></div>
+</div>
+
+  <div class="sub">四、填空题（4 题，每题 3 分）</div>
+  <div class="qi" data-q="test-15" data-type="fill" data-key="数据结构">
+  <div class="qhead"><span class="qn">15</span><div class="qh">程序 ＝ 算法 ＋ ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>数据结构</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-16" data-type="fill" data-key="5050">
+  <div class="qhead"><span class="qn">16</span><div class="qh">求 1+2+…+100 的结果是 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>5050</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-17" data-type="fill" data-key="10">
+  <div class="qhead"><span class="qn">17</span><div class="qh">冒泡排序 5 个数最坏情况共比较 ______ 次。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>10</b>（5×4/2）。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+  <div class="qi" data-q="test-18" data-type="fill" data-key="O(log₂n)">
+  <div class="qhead"><span class="qn">18</span><div class="qh">二分查找的时间复杂度是 ______。</div><span class="st">未做</span></div>
+  
+  <div class="fillrow"><input class="fill" type="text" autocomplete="off" spellcheck="false" placeholder="在这里输入答案，写完点右侧「核对」"><button type="button" class="mini act-check">核对</button><button type="button" class="mini act-retry">再答一次</button></div>
+  <div class="ansbox"><div class="ans"><b>O(log₂n)</b>。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button></div>
+</div>
+
+  <div class="sub">五、简答题（1 题，5 分）</div>
+  <div class="qi" data-q="test-19" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">19</span><div class="qh">简述当型循环与直到型循环的区别。</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b>①<b>当型（while）</b>在循环体<b>之前</b>判断条件，条件为真才执行，<b>条件一开始不成立时循环体执行 0 次</b>；②<b>直到型（do-while）</b>先执行循环体、<b>之后</b>判断条件，条件为真继续，<b>循环体至少执行 1 次</b>；③前者适合"可能一次都不做"的场合，后者适合"至少做一次"的场合。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+
+  <div class="sub">六、综合应用题（1 题，10 分）</div>
+  <div class="qi" data-q="test-20" data-type="essay" data-ans="">
+  <div class="qhead"><span class="qn">20</span><div class="qh">阅读下面的流程，回答问题。
+    <div class="flow">输入 n
+s ← 0 ;  i ← 1
+当 i ≤ n 时：
+    若 i 除以 2 的余数为 0，则 s ← s + i
+    i ← i + 1
+输出 s</div>
+（1）该算法的功能是什么？<br>（2）当 n＝10 时，输出 s 等于多少？<br>（3）若把"余数为 0"改成"余数为 1"，n＝10 时输出多少？</div><span class="st">未做</span></div>
+  
+  <textarea class="essay" rows="3" spellcheck="false" placeholder="在这里写出你的答案：简答题请分点，综合题请写出步骤与结果"></textarea>
+  <div class="ansbox"><div class="ans"><b>参考答案：</b><br>（1）求 <b>1 到 n 之间所有偶数之和</b>（循环＋选择结构组合）。<br>（2）2+4+6+8+10＝<b>30</b>。<br>（3）改为奇数：1+3+5+7+9＝<b>25</b>。<br><b>按步骤给分：</b>写出"功能"（2 分）、列出加数（4 分）、算出结果（4 分）。读图题一定要把<b>初值、条件、循环体动作</b>三处先标出来。</div></div>
+  <div class="qfoot"><button type="button" class="mini act-reveal">查看参考答案</button><button type="button" class="mini act-auto primary">自动判分</button><button type="button" class="mini act-rewrite">重写</button><span class="ejudge"></span></div>
+</div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="window.__allAns(true)">展开全部答案</button>
+    <button class="btn" onclick="window.__allAns(false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  依据：四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》第五章；<br>
+  题型配比参照 2024—2026 三年真题 · 本册共 52 题 · <b>Ctrl+P 可打印</b>
+</footer>
+
+</main>
+
+<script>
+(function(){
+  var KEY='tyz2027:ch5-book';
+  var data={};
+  try{ data=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ data={}; }
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(data)); }catch(e){} }
+  function each(list,fn){ for(var i=0;i<list.length;i++) fn(list[i],i); }
+  var QS=[].slice.call(document.querySelectorAll('.qi'));
+  var total=QS.length;
+  function st(q){ return data[q.getAttribute('data-q')]||''; }
+  function setSt(q,v){ if(v){ data[q.getAttribute('data-q')]=v; } else { delete data[q.getAttribute('data-q')]; } save(); badge(q); update(); }
+  function badge(q){
+    var b=q.querySelector('.st'), s=st(q);
+    b.className='st';
+    if(s==='right'){ b.className='st right'; b.textContent='✓ 正确'; }
+    else if(s==='wrong'){ b.className='st wrong'; b.textContent='✗ 做错'; }
+    else if(s==='done'){ b.className='st done'; b.textContent='✓ 已完成'; }
+    else { b.textContent='未做'; }
+  }
+  function showAns(q,on){
+    var box=q.querySelector('.ansbox');
+    if(!box) return;
+    if(on===undefined) on=!box.classList.contains('show');
+    box.classList.toggle('show',on);
+    var btn=q.querySelector('.act-reveal');
+    if(btn) btn.classList.toggle('on',on);
+  }
+  function lockAll(q){
+    q.setAttribute('data-locked','1');
+    each(q.querySelectorAll('.op'),function(o){ o.classList.add('lock'); });
+  }
+  function grade(q,k){
+    if(q.getAttribute('data-locked')) return;
+    var ans=q.getAttribute('data-ans'), list=ans.split(','), ok=(list.indexOf(k)>-1);
+    lockAll(q);
+    each(q.querySelectorAll('.op'),function(o){
+      if(list.indexOf(o.getAttribute('data-k'))>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      else if(o.getAttribute('data-k')===k && !ok){ o.classList.add('wrong'); o.querySelector('em').textContent='错'; }
+      else { o.querySelector('em').textContent=''; }
+    });
+    setSt(q, ok?'right':'wrong');
+    if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, k); }
+    showAns(q,true);
+  }
+  function submitMulti(q){
+    if(q.getAttribute('data-locked')) return;
+    var ans=q.getAttribute('data-ans'), ops=q.querySelectorAll('.op'), chosen=[];
+    each(ops,function(o){ if(o.classList.contains('sel')) chosen.push(o.getAttribute('data-k')); });
+    if(!chosen.length){ var t=q.querySelector('.tip'); if(t){ t.textContent='请先选择答案'; t.style.display='inline'; } return; }
+    var ok=(chosen.slice().sort().join('')===ans.split('').sort().join(''));
+    lockAll(q);
+    each(ops,function(o){
+      var k=o.getAttribute('data-k');
+      o.classList.remove('sel');
+      if(ans.indexOf(k)>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      else if(chosen.indexOf(k)>-1){ o.classList.add('wrong'); o.querySelector('em').textContent='错'; }
+      else { o.querySelector('em').textContent=''; }
+    });
+    setSt(q, ok?'right':'wrong');
+    if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, chosen.join('')); }
+    showAns(q,true);
+  }
+  function normKey(s){
+    s=(s||'').replace(/[\s\u3000]/g,'');
+    s=s.replace(/[，。、；：”“‘’（）()《》〈〉【】…·\-—?!！?]/g,'');
+    s=s.replace(/[Ａ-Ｚａ-ｚ０-９]/g,function(c){ return String.fromCharCode(c.charCodeAt(0)-65248); });
+    return s.toLowerCase();
+  }
+  function hitKey(u,k){
+    var un=normKey(u); if(!un) return false;
+    var cands=[k], m=k.match(/（[^）]*）/g)||[];
+    for(var i=0;i<m.length;i++){ cands.push(m[i].slice(1,-1)); }
+    var flat=k.replace(/（[^）]*）/g,''); if(flat) cands.push(flat);
+    var parts=k.split(/[、，；\/]|或/);
+    for(var j=0;j<parts.length;j++){ if(parts[j]) cands.push(parts[j]); }
+    for(var c=0;c<cands.length;c++){
+      var cn=normKey(cands[c]); if(!cn) continue;
+      if(un===cn) return true;
+      if(cn.length>=2 && un.length>=2 && (cn.indexOf(un)>-1 || un.indexOf(cn)>-1)) return true;
+    }
+    return false;
+  }
+  function redoQuestion(q){
+    var type=q.getAttribute('data-type');
+    if(type==='fill'){ retryFill(q); return; }
+    if(type==='essay'){ rewriteEssay(q); return; }
+    q.removeAttribute('data-locked');
+    each(q.querySelectorAll('.op'),function(o){
+      o.classList.remove('correct','wrong','sel','lock');
+      var em=o.querySelector('em'); if(em) em.textContent='';
+    });
+    var tip=q.querySelector('.tip'); if(tip) tip.style.display='none';
+    var fd=q.querySelector('.filljudge'); if(fd){ fd.className='ejudge filljudge'; fd.textContent=''; }
+    setSt(q,''); showAns(q,false); badge(q); update();
+    var first=q.querySelector('.op'); if(first) first.focus();
+  }
+  function checkFill(q){
+    if(q.getAttribute('data-locked')) return;
+    var inp=q.querySelector('.fill'), key=q.getAttribute('data-key')||'';
+    var v=(inp.value||'').replace(/^\s+|\s+$/g,'');
+    if(!v){ inp.focus(); return; }
+    var res = window.TYZGrade ? window.TYZGrade.fill(key,v) : {ok:hitKey(v,key),hits:0,total:1,rate:0};
+    q.setAttribute('data-locked','1');
+    inp.disabled=true; inp.classList.add(res.ok?'right':'wrong');
+    setSt(q, res.ok?'right':'wrong');
+    if(res.ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, v); }
+    showAns(q,true);
+    var fd=q.querySelector('.filljudge');
+    if(!fd){
+      fd=document.createElement('span'); fd.className='ejudge filljudge';
+      var row=q.querySelector('.qfoot');
+      if(row) row.appendChild(fd); else q.appendChild(fd);
+    }
+    fd.className='ejudge filljudge '+(res.ok?'ok':'bad');
+    if(res.ok) fd.textContent='自动核对：要点全对';
+    else if(res.total>1) fd.textContent='自动核对：只对 '+res.hits+'/'+res.total+' 个要点（错别字或意思不符不计分）';
+    else fd.textContent='自动核对：未命中要点（错别字或意思不符不计分）';
+    update();
+  }
+  function retryFill(q){
+    var inp=q.querySelector('.fill');
+    q.removeAttribute('data-locked');
+    inp.disabled=false; inp.value=''; inp.classList.remove('right','wrong');
+    var fd=q.querySelector('.filljudge'); if(fd){ fd.className='ejudge filljudge'; fd.textContent=''; }
+    setSt(q,''); showAns(q,false); update(); inp.focus();
+  }
+  function rewriteEssay(q){
+    var ta=q.querySelector('.essay');
+    var j=q.querySelector('.ejudge'); if(j){ j.className='ejudge'; j.textContent=''; }
+    ta.value=''; ta.classList.remove('right','wrong');
+    setSt(q,''); showAns(q,false); update(); ta.focus();
+  }
+  function essayPoints(q){
+    var box=q.querySelector('.ans'), list=[], seen={};
+    if(!box) return list;
+    each(box.querySelectorAll('b'),function(b){
+      var t=normKey(b.textContent);
+      if(t.length<2) return;
+      if(t.indexOf('参考')>-1 || t.indexOf('解析')>-1 || t.indexOf('评分')>-1) return;
+      if(t.length>26) return;
+      if(seen[t]) return; seen[t]=1; list.push(t);
+    });
+    return list;
+  }
+  function coverRate(p,u){
+    var hit=0;
+    for(var i=0;i<p.length;i++){ if(u.indexOf(p.charAt(i))>-1) hit++; }
+    return p.length? hit/p.length : 0;
+  }
+  function diceSim(a,b){
+    if(a.length<2||b.length<2) return 0;
+    var A={},B={},na=0,nb=0,k,i,j;
+    for(i=0;i<a.length-1;i++){ k=a.substr(i,2); if(!A[k]){ A[k]=1; na++; } }
+    for(j=0;j<b.length-1;j++){ k=b.substr(j,2); if(!B[k]){ B[k]=1; nb++; } }
+    var inter=0; for(k in A){ if(B[k]) inter++; }
+    return 2*inter/(na+nb);
+  }
+  function autoEssay(q){
+    var ta=q.querySelector('.essay'), u=normKey(ta.value||'');
+    if(u.length<2){ ta.focus(); return; }
+    var box=q.querySelector('.ans'), ref=box?normKey(box.textContent):'';
+    var pts=essayPoints(q), hits=0, cov=0, sim=0, ok=false;
+    each(pts,function(p){ if(coverRate(p,u)>=0.6) hits++; });
+    cov=pts.length? hits/pts.length : 0;
+    sim=diceSim(u,ref.slice(0,420));
+    ok=((pts.length>0 && cov>=0.5) || sim>=0.32);
+    var judge=q.querySelector('.ejudge');
+    if(judge){
+      judge.className='ejudge '+(ok?'ok':'bad');
+      judge.textContent='要点命中 '+hits+'/'+pts.length+'（'+Math.round(cov*100)+'%）· 相似度 '+Math.round(sim*100)+'% · 自动判：'+(ok?'正确':'未达标');
+    }
+    ta.classList.remove('right','wrong');
+    ta.classList.add(ok?'right':'wrong');
+    setSt(q, ok?'right':'wrong'); if(ok){ if(window.__tyzFixed) window.__tyzFixed(q); } else { if(window.__tyzWrong) window.__tyzWrong(q, ta.value); } showAns(q,true);
+  }
+  function toggleDone(q){
+    var s=st(q);
+    if(s==='right'||s==='wrong') return;
+    setSt(q, s==='done'?'':'done');
+  }
+  function applySaved(q){
+    var s=st(q), ans=q.getAttribute('data-ans'), list=(ans||'').split(',');
+    if(!s) return;
+    if(s==='right'||s==='wrong'){
+      lockAll(q);
+      each(q.querySelectorAll('.op'),function(o){
+        if(list.indexOf(o.getAttribute('data-k'))>-1){ o.classList.add('correct'); o.querySelector('em').textContent='正确'; }
+      });
+      showAns(q,true);
+    }
+    var inp=q.querySelector('.fill');
+    if(inp && (s==='right'||s==='wrong')){ inp.disabled=true; inp.classList.add(s==='right'?'right':'wrong'); }
+    var ta=q.querySelector('.essay');
+    if(ta && (s==='right'||s==='wrong')){ ta.classList.add(s==='right'?'right':'wrong'); }
+    badge(q);
+  }
+  function update(){
+    var done=0, right=0, wrong=0;
+    each(QS,function(q){ var s=st(q); if(s){ done++; if(s==='right') right++; if(s==='wrong') wrong++; } });
+    var d=document.getElementById('cDone'), r=document.getElementById('cRight'), t=document.getElementById('cTotal'), rt=document.getElementById('cRate');
+    if(d) d.textContent=done;
+    if(r) r.textContent=right;
+    if(t) t.textContent=total;
+    if(rt) rt.textContent=(right+wrong)?(Math.round(right*100/(right+wrong))+'%'):'—';
+    each(document.querySelectorAll('.mod'),function(sec){
+      var qs=sec.querySelectorAll('.qi'), bar=sec.querySelector('.sbar'), n=0;
+      if(!bar) return;
+      each(qs,function(q){ if(st(q)) n++; });
+      bar.querySelector('.sbar-t').textContent=n+'/'+qs.length;
+      bar.querySelector('.track i').style.width=(qs.length?(n*100/qs.length):0)+'%';
+    });
+  }
+  each(QS,function(q){
+    var type=q.getAttribute('data-type');
+    if(type==='fill' || type==='essay'){
+      var rb=q.querySelector('.act-retry') || q.querySelector('.act-rewrite');
+      if(rb) rb.textContent='重做本题';
+    } else {
+      var foot=q.querySelector('.qfoot');
+      if(foot && !foot.querySelector('.act-redo')){
+        var rb2=document.createElement('button');
+        rb2.type='button'; rb2.className='mini act-redo'; rb2.textContent='重做本题';
+        rb2.addEventListener('click',function(){ redoQuestion(q); });
+        foot.appendChild(rb2);
+      }
+    }
+    each(q.querySelectorAll('.op'),function(o){
+      o.addEventListener('click',function(){
+        if(q.getAttribute('data-locked')) return;
+        if(type==='multi'){ o.classList.toggle('sel'); return; }
+        grade(q,o.getAttribute('data-k'));
+      });
+    });
+    var sub=q.querySelector('.act-submit');
+    if(sub) sub.addEventListener('click',function(){ submitMulti(q); });
+    var rev=q.querySelector('.act-reveal');
+    if(rev) rev.addEventListener('click',function(){ showAns(q); });
+    var mk=q.querySelector('.act-mark');
+    if(mk) mk.addEventListener('click',function(){ toggleDone(q); });
+    var chk=q.querySelector('.act-check');
+    if(chk) chk.addEventListener('click',function(){ checkFill(q); });
+    var ret=q.querySelector('.act-retry');
+    if(ret) ret.addEventListener('click',function(){ retryFill(q); });
+    var inp=q.querySelector('.fill');
+    if(inp) inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); checkFill(q); } });
+    var au=q.querySelector('.act-auto');
+    if(au) au.addEventListener('click',function(){ autoEssay(q); });
+    var rw=q.querySelector('.act-rewrite');
+    if(rw) rw.addEventListener('click',function(){ rewriteEssay(q); });
+    applySaved(q);
+  });
+  var reset=document.getElementById('resetAll');
+  if(reset) reset.addEventListener('click',function(){
+    data={}; save();
+    each(QS,function(q){
+      q.removeAttribute('data-locked');
+      each(q.querySelectorAll('.op'),function(o){ o.classList.remove('correct','wrong','sel','lock'); o.querySelector('em').textContent=''; });
+      showAns(q,false);
+      var inp=q.querySelector('.fill');
+      if(inp){ inp.value=''; inp.disabled=false; inp.classList.remove('right','wrong'); }
+      var ta=q.querySelector('.essay');
+      if(ta){ ta.value=''; ta.classList.remove('right','wrong'); }
+      var t=q.querySelector('.tip'); if(t){ t.style.display='none'; }
+      var fj=q.querySelector('.filljudge'); if(fj){ fj.className='ejudge filljudge'; fj.textContent=''; }
+      var ej=q.querySelector('.ejudge'); if(ej && !ej.classList.contains('filljudge')){ ej.className='ejudge'; ej.textContent=''; }
+      badge(q);
+    });
+    update();
+  });
+  update();
+})();
+</script>
+
+
+<script>
+window.__allAns=function(on){
+  var list=document.querySelectorAll('.ansbox'), btns=document.querySelectorAll('.act-reveal');
+  for(var i=0;i<list.length;i++) list[i].classList.toggle('show',on);
+  for(var j=0;j<btns.length;j++) btns[j].classList.toggle('on',on);
+};
+window.__resetMarks=function(){ var b=document.getElementById('resetAll'); if(b) b.click(); };
+</script>
+
+<script>
+(function(){
+  var ALTS_RAW = {
+    '硬件系统': ['硬件'],
+    '软件系统': ['软件'],
+    '智能化': ['智能'],
+    '计算机辅助设计': ['cad', '计算机辅助设计技术'],
+    '一次能传输的二进制位数': ['字长', '数据总线宽度', '一次传输位数', '一次传输的位数'],
+    '可寻址的内存空间大小': ['寻址空间', '可寻址空间', '地址空间', '内存空间大小', '可寻址的内存空间'],
+    '运算器': ['alu', '算术逻辑单元'],
+    '控制器': ['cu', '控制单元'],
+    '任意多个字符': ['任意字符', '多个字符', '任意多个', '任意数量字符'],
+    '任意一个字符': ['任意字符', '单个字符', '一个字符', '单一字符'],
+    '存储器': ['内存', '主存'],
+    '数据总线': ['数据线', '数据总线宽度'],
+    '文档': ['文档资料', '技术文档'],
+    '物理地址': ['硬件地址', 'mac地址', '物理硬件地址'],
+    '资源共享': ['共享资源'],
+    '数据通信': ['通信', '数据传输'],
+    '降序': ['从高到低', '由高到低', '递减'],
+    '总分': ['总成绩'],
+    '排序': ['排列'],
+    '四层': ['4层', '四层模型'],
+    '数据库管理系统': ['dbms'],
+    '属性': ['字段'],
+    '远程控制': ['后门', '远程控制通道'],
+    '操作数': ['地址码'],
+    '可用性': ['可用'],
+    '需求分析': ['需求调研', '需求分析阶段'],
+    '|': ['竖线', '管道符', '竖杠', '竖线符'],
+    'O(log₂n)': ['o(logn)', 'o(log2n)', 'log2n', 'logn'],
+    'ARPANET': ['arpanet网', '阿帕网'],
+    '1 张': ['1', '一张'],
+    '48 位': ['48', '48位'],
+    '6763 个': ['6763', '6763个'],
+    '2020': ['20h20h', '2020h'],
+    '3021': ['3021h'],
+    '2': ['2', '二'],
+    '16': ['16', '十六'],
+    '3': ['3', '三'],
+    '8': ['8', '八'],
+    '9': ['9', '九'],
+    '10': ['10', '十'],
+    '32': ['32', '三十二'],
+    '128': ['128', '一百二十八'],
+    '255': ['255', '二百五十五'],
+    '1024': ['1024', '一千零二十四'],
+    '5050': ['5050', '五千零五十'],
+    '236': ['236', '二百三十六'],
+    '72': ['72', '七十二'],
+    '2020': ['2020', '2020h'],
+    '数据库管理系统（DBMS）': ['数据库管理系统', 'dbms']
+  };
+  var ALTS = {};
+  var scripts = ['₂','₃','⁰','¹','²','³'];
+  var subMap = {'₂':'2','₃':'3','₀':'0','₁':'1','⁰':'0','¹':'1','²':'2','³':'3'};
+  function norm(s){
+    s = String(s == null ? '' : s);
+    s = s.replace(/[\uFF01-\uFF5E]/g, function(ch){ return String.fromCharCode(ch.charCodeAt(0) - 65248); });
+    s = s.replace(/[\u3000\s]/g, '');
+    s = s.replace(/[“”"'‘’]/g, '');
+    s = s.replace(/[，,。；;：:、（）()《》〈〉【】\[\]{}…·\-—–_!！?？]/g, '');
+    s = s.replace(/[₀₁₂₃⁰¹²³]/g, function(ch){ return subMap[ch] || ''; });
+    return s.toLowerCase();
+  }
+  function rawVariants(t){
+    t = String(t == null ? '' : t);
+    var out = [t], m = t.match(/（[^）]*）/g) || [], flat, i;
+    flat = t.replace(/（[^）]*）/g, '');
+    if(flat && flat !== t) out.push(flat);
+    for(i = 0; i < m.length; i++){
+      var inner = m[i].slice(1, -1);
+      if(inner) out.push(inner);
+    }
+    var cleaned = t.replace(/[“”"'‘’]/g, '');
+    if(cleaned !== t) out.push(cleaned);
+    return out;
+  }
+  for(var k in ALTS_RAW){
+    if(!Object.prototype.hasOwnProperty.call(ALTS_RAW, k)) continue;
+    ALTS[norm(k)] = ALTS_RAW[k].map(norm);
+  }
+  function numVal(s){
+    var m = norm(s).match(/^(-?\d+(?:\.\d+)?)(个|张|位|字节|次|年|b|h|kb|mb|gb)?$/);
+    return m ? parseFloat(m[1]) : null;
+  }
+  function hasAlias(v, u, allowContain){
+    var list = ALTS[v] || [];
+    for(var i = 0; i < list.length; i++){
+      var a = list[i];
+      if(!a) continue;
+      if(u === a) return true;
+      if(allowContain && a.length >= 3 && u.indexOf(a) >= 0) return true;
+    }
+    return false;
+  }
+  function matchOne(user, target, allowContain){
+    var u = norm(user), t = norm(target);
+    if(!u || !t) return false;
+    var uv = rawVariants(user).map(norm), tv = rawVariants(target).map(norm), i, j;
+    for(i = 0; i < uv.length; i++){
+      if(uv[i] === t) return true;
+    }
+    var un = numVal(user), tn = numVal(target);
+    if(un !== null && tn !== null) return un === tn;
+    if(t.charAt(0) === '.' && u === t.slice(1)) return true;
+    if(u.charAt(0) === '.' && t === u.slice(1)) return true;
+    if(t.indexOf('表名') >= 0){
+      var pre = t.replace('表名', '');
+      if(u.indexOf(pre) === 0 && u.length > pre.length) return true;
+    }
+    if(ALTS[t]){
+      for(i = 0; i < ALTS[t].length; i++){
+        var a = ALTS[t][i];
+        if(u === a || (allowContain && a.length >= 3 && u.indexOf(a) >= 0)) return true;
+      }
+    }
+    for(i = 0; i < tv.length; i++){
+      var v = tv[i];
+      if(!v) continue;
+      if(u === v) return true;
+      if(allowContain && v.length >= 3 && u.indexOf(v) >= 0) return true;
+      if(hasAlias(v, u, allowContain)) return true;
+    }
+    for(j = 0; j < uv.length; j++){
+      if(tv.indexOf(uv[j]) >= 0) return true;
+    }
+    return false;
+  }
+  function splitTargets(key){
+    return String(key == null ? '' : key).split('、').map(function(s){ return s.trim(); }).filter(Boolean);
+  }
+  function splitUsers(user, n){
+    var raw = String(user == null ? '' : user), strategies = [];
+    strategies.push([raw]);
+    strategies.push(raw.split(/[、,，;；\n]+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/[和与及]/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/\s+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    var all = [];
+    for(var i = 0; i < strategies.length; i++){
+      if(strategies[i].length === n) all.push(strategies[i]);
+    }
+    return all.length ? all : [strategies[0]];
+  }
+  function evalAlt(key, user){
+    var targets = splitTargets(key), n = targets.length;
+    var splits = splitUsers(user, n), best = {hits: 0, total: n, parts: []};
+    for(var s = 0; s < splits.length; s++){
+      var parts = splits[s], hits = 0, detail = [];
+      if(parts.length === n){
+        for(var i = 0; i < n; i++){
+          var ok = matchOne(parts[i], targets[i]);
+          if(ok) hits++;
+          detail.push({t: targets[i], u: parts[i], ok: ok});
+        }
+      } else {
+        for(var j = 0; j < n; j++){
+          var ok2 = matchOne(user, targets[j]);
+          if(ok2) hits++;
+          detail.push({t: targets[j], u: user, ok: ok2});
+        }
+      }
+      if(hits > best.hits) best = {hits: hits, total: n, parts: detail};
+    }
+    return best;
+  }
+  function fill(key, user){
+    var groups = String(key == null ? '' : key).split('~'), best = null;
+    for(var i = 0; i < groups.length; i++){
+      var r = evalAlt(groups[i], user);
+      var rate = r.total ? r.hits / r.total : 0;
+      if(!best || rate > best.rate || (rate === best.rate && r.hits > best.hits)) best = {ok: false, hits: r.hits, total: r.total, rate: rate, parts: r.parts};
+    }
+    if(!best) best = {ok: false, hits: 0, total: 1, rate: 0, parts: []};
+    best.ok = best.total > 0 && best.hits === best.total;
+    return best;
+  }
+  function termMatch(user, target){
+    return matchOne(user, target, true);
+  }
+  function termInText(user, target){
+    var u = norm(user), t = norm(target);
+    return !!(u && t && u.indexOf(t) >= 0);
+  }
+  function pointsGrade(points, user){
+    points = points || [];
+    var max = 0, score = 0, hits = 0, details = [];
+    for(var i = 0; i < points.length; i++){
+      var p = points[i] || {};
+      var w = typeof p.w === 'number' ? p.w : 1;
+      max += w;
+      var ok = false, j;
+      if(p.all && p.all.length){
+        ok = true;
+        for(j = 0; j < p.all.length; j++){
+          if(!termInText(user, p.all[j])){ ok = false; break; }
+        }
+      } else {
+        var terms = [];
+        if(p.t) terms.push(p.t);
+        if(p.a) terms = terms.concat(p.a);
+        if(p.any) terms = terms.concat(p.any);
+        for(j = 0; j < terms.length; j++){
+          if(matchOne(user, terms[j], true)){ ok = true; break; }
+        }
+      }
+      if(ok){ hits++; score += w; }
+      details.push({t: p.t || (p.all || []).join('、') || '', a: p.a || [], w: w, ok: ok});
+    }
+    return {score: score, max: max, hits: hits, total: points.length, rate: max ? score / max : 0, details: details};
+  }
+  window.TYZGrade = {norm: norm, fill: fill, term: termMatch, inText: termInText, points: pointsGrade, variants: rawVariants};
+})();
+
+</script>
+
+<script>
+(function(){
+  var BK='ch5-book', EK='tyz2027:errors';
+  function rd(){ try{ return JSON.parse(localStorage.getItem(EK)||'{}')||{}; }catch(e){ return {}; } }
+  function sv(o){ try{ localStorage.setItem(EK, JSON.stringify(o)); }catch(e){} }
+  function nm(s){ return (s||'').replace(/\s+/g,' ').trim(); }
+  function sect(q){
+    var p=q.parentNode, last='';
+    if(!p) return '';
+    for(var i=0;i<p.children.length;i++){ var el=p.children[i]; if(el===q) break; if(el.className && (' '+el.className+' ').indexOf(' sub ')>-1) last=nm(el.textContent); }
+    return last.replace(/^小节[一二三四五六七八九十]+[\s\u3000]*/,'');
+  }
+  function opts(q){
+    var a=[], os=q.querySelectorAll('.op');
+    for(var i=0;i<os.length;i++){ var tx=os[i].querySelector('span'); a.push({k:os[i].getAttribute('data-k')||'', t:nm(tx?tx.textContent:os[i].textContent)}); }
+    return a;
+  }
+  window.__tyzWrong=function(q,user){
+    var id=BK+':'+(q.getAttribute('data-q')||'');
+    var e=rd(), r=e[id]||{count:0};
+    r.book=BK; r.qid=q.getAttribute('data-q')||''; r.type=q.getAttribute('data-type')||'';
+    r.id=id; r.section=sect(q);
+    var lm=(r.qid||'').match(/^l(\d+)-/); r.lesson=lm?parseInt(lm[1],10):0;
+    var qh=q.querySelector('.qh'); r.stem=nm(qh?qh.textContent:'');
+    r.options=opts(q);
+    r.answer=q.getAttribute('data-ans')||q.getAttribute('data-key')||'';
+    var ab=q.querySelector('.ans'); r.explain=nm(ab?ab.textContent:'');
+    r.user=nm(user||'').slice(0,300);
+    r.at=Date.now(); r.count=(r.count||0)+1; r.fixed=false;
+    e[id]=r; sv(e);
+    try{ parent.postMessage({type:'tyz-error',id:id},'*'); }catch(err){}
+  };
+  window.__tyzFixed=function(q){
+    var id=BK+':'+(q.getAttribute('data-q')||''); var e=rd();
+    if(e[id]){ e[id].fixed=true; e[id].fixedAt=Date.now(); sv(e); try{ parent.postMessage({type:'tyz-fixed',id:id},'*'); }catch(err){} }
+  };
+})();
+</script>
+</body>
+</html>

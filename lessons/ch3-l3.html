@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>第三章第3课 Excel 工作簿·录入·格式化·单元格地址 · 考点精简（2027 四川专升本）</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
+  --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+.hero{padding:44px 0 30px;background:
+  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
+  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
+  border-bottom:1px solid var(--line)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
+  color:var(--c4);font-weight:700;margin-bottom:12px}
+.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
+h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(25px,3.4vw,38px);
+  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
+h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margin-top:9px;letter-spacing:1px}
+.lead{color:var(--ink2);font-size:14.4px;max-width:830px;margin:12px 0 0}
+.syl{margin-top:20px;display:grid;grid-template-columns:1.05fr 1fr;gap:14px}
+@media(max-width:820px){.syl{grid-template-columns:1fr}}
+.syl-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+.syl-box h3{margin:0 0 7px;font-size:12.5px;letter-spacing:1px;color:var(--c1)}
+.syl-box p{margin:0;font-size:13.4px;color:var(--ink2)}
+.q{font-family:"Noto Serif SC",serif;color:var(--ink);background:var(--c1bg);
+  border-left:3px solid var(--c1);padding:7px 12px;border-radius:0 8px 8px 0;margin:6px 0 0;font-size:13.1px}
+.q.warn{border-left-color:var(--c4);background:var(--c4bg)}
+.toc{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.toc .wrap{display:flex;flex-wrap:wrap;gap:6px 8px}
+.toc a{flex:0 0 auto;font-size:12.4px;text-decoration:none;color:var(--ink2);background:#fff;
+  border:1px solid var(--line);border-radius:20px;padding:4px 12px;white-space:nowrap;transition:.18s}
+.toc a:hover{color:var(--c1);border-color:#a8cfdd;background:var(--c1bg)}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
+  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
+.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
+.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif SC",serif}
+.mod-h h2{font-family:"Noto Serif SC",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
+.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
+.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
+table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
+th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+td.c{text-align:center;white-space:nowrap}
+tr:nth-child(even) td{background:#fdfcf9}
+.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
+  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
+.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
+.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
+.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
+.f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
+.cut{color:#9aa5ae}
+.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip b{color:var(--c1)}
+.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.warnbox b{color:#a32a1c}
+.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
+.okbox b{color:#1f6b4a}
+.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
+.mem b{color:var(--gold)}
+.human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
+.human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
+.flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
+  font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
+  white-space:pre;overflow-x:auto;margin:9px 0}
+.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
+.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
+  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
+.qz b{color:var(--ink)}
+.qz .no{color:#8a5a00;font-weight:700}
+.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--c1);margin-right:8px;font-weight:700;display:inline-block}
+details[open] summary::before{content:'▾'}
+details .ans{margin-top:7px;padding:9px 12px;background:var(--c5bg);border-left:3px solid var(--c5);
+  border-radius:0 8px 8px 0;font-size:13.1px;color:#1b4a36;line-height:1.76}
+details .ans b{color:#14402c}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:13px 0 0}
+.btn{cursor:pointer;font-family:inherit;font-size:12.8px;border:1px solid #a8cfdd;background:var(--c1bg);
+  color:#0b5a75;border-radius:9px;padding:6px 14px;font-weight:700}
+.btn:hover{background:#d9edf4}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
+footer b{color:var(--ink2)}
+@media print{body{background:#fff;font-size:12.3px}.toc,.btnrow{display:none}.hero{padding:16px 0 10px}
+  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}details{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第三章第 3 课</span>
+    <h1>Excel 基本操作、格式化与单元格地址
+      <span class="light">工作簿/工作表/单元格 ｜ 录入技巧 ｜ 数字格式 ｜ 相对·绝对·混合引用 ｜ 跨表引用</span>
+    </h1>
+    <p class="lead">Excel 是第三章里<b>最能拉开差距</b>的一块。四川卷的 Excel 题有一个固定套路：<b>给一个公式，问复制到另一格后变成什么</b>。这类题只考一件事——你会不会分辨 <code>$</code> 锁住了行还是列。</p>
+
+    <div class="syl">
+      <div class="syl-box">
+        <h3>考纲原文</h3>
+        <p class="q">三、2. 电子表格：<b>掌握</b>电子表格软件的基本操作（工作簿与工作表、数据录入与编辑）；<b>掌握</b>工作表的格式化；<b>理解</b>单元格地址（相对、绝对、混合引用）。</p>
+      </div>
+      <div class="syl-box">
+        <h3>本课在卷面上值多少</h3>
+        <p class="q warn">2025：<b>单选 11（引用复制）、单选 12（跨表引用）</b>；2026 也考了引用与区域。本课与第 4、5 课合计约 <b>20 分</b>，是第三章的重心。</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#s0">考 / 不考</a>
+    <a href="#s1">① 三个层级</a>
+    <a href="#s2">② 录入技巧</a>
+    <a href="#s3">③ 格式化</a>
+    <a href="#s4">④ 三种引用</a>
+    <a href="#s5">⑤ 引用题实战</a>
+    <a href="#s6">易错清单</a>
+    <a href="#s7">必背 14 条</a>
+    <a href="#s8">自测 14 题</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section class="mod" id="s0">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">0</div>
+    <div>
+      <h2>本课考 / 不考</h2>
+      <span class="tag">引用是核心，录入技巧是送分</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:74px">考频</th><th style="width:40%">内容</th><th>怎么处理</th></tr>
+    <tr><td class="c"><span class="f f3">★★★</span></td>
+      <td><b>相对引用 A1 / 绝对引用 $A$1 / 混合引用 A$1、$A1</b>· <b>F4 切换</b>· <b>公式复制后地址怎么变</b>· <b>跨工作表引用"表名!单元格"</b>· 输入文本型数字（前置 <b>'</b>）· 输入分数（<b>0 空格</b>）</td>
+      <td>必须能算对，不能靠猜</td></tr>
+    <tr><td class="c"><span class="f f2">★★</span></td>
+      <td>文本左对齐、数字右对齐 · 填充柄与序列 · 数字格式（数值/货币/百分比/日期）· 合并居中 · 条件格式 · Alt+Enter 单元格内换行</td>
+      <td>能判断、能解释</td></tr>
+    <tr><td class="c"><span class="f f1">★</span></td>
+      <td>工作簿与工作表的关系 · 工作表重命名/移动/复制/隐藏 · 行高列宽 · 选择性粘贴</td>
+      <td>认得操作</td></tr>
+    <tr><td class="c"><span class="f f0">✂</span></td>
+      <td class="cut">Excel 的行列上限具体数字 · 自定义格式代码（如 [$-409]）· 宏与 VBA</td>
+      <td class="cut">真题未考，考纲未要求</td></tr>
+  </table>
+  <div class="tip"><b>本课最值钱的一句话：</b><code>$</code> 在字母前锁<b>列</b>，在数字前锁<b>行</b>，两个都有就都锁。<b>复制公式时，没被锁的部分才跟着"走"。</b>这句话能解开绝大多数引用题。</div>
+</section>
+
+<section class="mod" id="s1">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
+    <div>
+      <h2>三个层级：工作簿 → 工作表 → 单元格</h2>
+      <span class="tag"><span class="f f1">★</span>谁包含谁，一定要分清</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="flow">工作簿（.xlsx 文件）        ← 一个文件
+ ├── 工作表1（Sheet1）        ← 一张"页"，下方标签
+ │    ├── 单元格 A1
+ │    ├── 单元格 B2
+ │    └── 区域 A1:C3
+ ├── 工作表2
+ └── 工作表3</div>
+
+  <table>
+    <tr><th style="width:120px">概念</th><th>说明</th></tr>
+    <tr><td><b>工作簿</b></td><td>一个 Excel <b>文件</b>，扩展名 <b>.xlsx</b>（旧版 .xls）</td></tr>
+    <tr><td><b>工作表</b></td><td>工作簿里的一张"表"，用底部<b>标签</b>区分；可增、删、<b>重命名（双击标签）</b>、移动、复制、隐藏</td></tr>
+    <tr><td><b>单元格</b></td><td>行列交叉的最小单位，是<b>数据的最小载体</b></td></tr>
+    <tr><td><b>单元格地址</b></td><td><b>列标 + 行号</b>：A1、B3、XFD1048576</td></tr>
+    <tr><td><b>区域</b></td><td>用<b>冒号</b>表示左上到右下：<b>A1:C3</b>（3 行 3 列，共 9 格）</td></tr>
+    <tr><td>多个不连续区域</td><td>用<b>逗号</b>分隔：A1:A3,C1:C3</td></tr>
+  </table>
+
+  <div class="warnbox"><b>两句必记：</b>①"工作表就是工作簿"——<b>错</b>，工作簿是文件，工作表是文件里的一页；②"删除工作表就是把内容清空"——<b>错</b>，删除会把<b>整张表连同格式</b>一起去掉，且不可撤销（清空内容才只是 Clear）。</div>
+
+  <div class="mem"><b>区域计数速算：</b>A1:C3 = 3 列 × 3 行 = <b>9 个单元格</b>；B2:D5 = 3 列 × 4 行 = <b>12 个单元格</b>。<b>先数列、再数行、相乘</b>，别一个个点。</div>
+</section>
+
+<section class="mod" id="s2">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">②</div>
+    <div>
+      <h2>数据录入与编辑的五个"技巧点"</h2>
+      <span class="tag"><span class="f f3">★★★</span>这些细节年年出现在选择/填空里</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:180px">要输入的内容</th><th>正确做法</th><th>直接输入会怎样</th></tr>
+    <tr><td><b>编号 001、002</b>（文本型数字）</td><td>先输<b>英文单引号 <code>'</code></b>，再输 001</td><td>变成数字 1，前面的 0 消失</td></tr>
+    <tr><td><b>分数 1/2</b></td><td>先输 <b>0 和一个空格</b>，再输 1/2</td><td>被识别成<b>日期</b>（1 月 2 日）</td></tr>
+    <tr><td><b>以 = 开头的文本</b></td><td>前置单引号 <code>'=</code></td><td>被当成公式并报错</td></tr>
+    <tr><td>单元格内<b>换行</b></td><td><b>Alt + Enter</b></td><td>按 Enter 会跳到<b>下一格</b></td></tr>
+    <tr><td>当前日期 / 时间</td><td><b>Ctrl + ;</b> 日期，<b>Ctrl + Shift + ;</b> 时间</td><td>手工输入也可以，但易错格式</td></tr>
+    <tr><td>一列有规律的序列</td><td>拖<b>填充柄</b>（单元格右下角小黑点）</td><td>——</td></tr>
+  </table>
+
+  <div class="flow">填充柄的两种行为（考"按住 Ctrl 拖会怎样"）
+直接拖填充柄   → 复制相同内容（文本、数字都一样）
+按住 Ctrl 拖   → 递增（1,2,3…）
+输入前两个再选两个一起拖 → 按"等差"规律填充（1,3,5…）
+日期、星期、月份、甲乙丙 → 内置序列，直接拖就递增</div>
+
+  <div class="mem"><b>一眼判断数据类型：</b><b>文本靠左、数字靠右、逻辑值居中</b>。看到某个"数字"靠左对齐，多半是被当成了文本（这也是输入身份证号、手机号要加 <code>'</code> 的原因）。</div>
+
+  <div class="tip"><b>选择性粘贴（常考小题）：</b>复制后"选择性粘贴"可以只粘<b>数值</b>（去掉公式）、只粘<b>格式</b>、只粘<b>列宽</b>、<b>转置</b>（行列互换）。题目问"只保留计算结果不要公式"，答案＝<b>选择性粘贴→数值</b>。</div>
+</section>
+
+<section class="mod" id="s3">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#2b4a8b,#4a6bb0)">③</div>
+    <div>
+      <h2>工作表格式化</h2>
+      <span class="tag"><span class="f f2">★★</span>数字格式与条件格式是重点</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:130px">格式类别</th><th>说明</th></tr>
+    <tr><td><b>常规</b></td><td>默认格式，输入什么显示什么</td></tr>
+    <tr><td><b>数值</b></td><td>可设<b>小数位数</b>、是否使用<b>千位分隔符</b>、负数显示方式</td></tr>
+    <tr><td>货币 / 会计专用</td><td>带货币符号（￥、$），会计专用会对齐货币符号</td></tr>
+    <tr><td><b>百分比</b></td><td>0.25 显示为 <b>25%</b>（数值本身不变，只改显示）</td></tr>
+    <tr><td>日期 / 时间</td><td>多种显示样式，如 2026-11-19、2026年11月19日</td></tr>
+    <tr><td>科学记数</td><td>如 1.23E+05</td></tr>
+    <tr><td><b>文本</b></td><td>按文本处理，长数字不再变科学记数</td></tr>
+    <tr><td>自定义</td><td>自己写格式代码（了解即可）</td></tr>
+  </table>
+
+  <div class="okbox"><b>关键理解：改格式≠改数值。</b>把 0.25 设成百分比，单元格里存的还是 0.25，只是<b>显示</b>为 25%；把数字设成"两位小数"，实际值也不变，参与计算仍用原值。<b>题目说"设置格式后数值变小了"——一律判错。</b></div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">其他格式化</th><th>要点</th></tr>
+    <tr><td>字体 / 对齐 / 边框 / 底纹</td><td>与 Word 类似；单元格内可设水平+垂直对齐</td></tr>
+    <tr><td><b>合并居中</b></td><td>把多个单元格并成一个（做标题常用）。<b>合并后只保留左上角的值</b>，且会影响排序与筛选</td></tr>
+    <tr><td>行高 / 列宽</td><td>可拖动边界，也可"自动调整"；双击列标边界＝按内容自动调宽</td></tr>
+    <tr><td><b>条件格式</b></td><td>满足条件才变样式：<b>数据条、色阶、图标集</b>、突出显示规则（如大于 90 分标红）</td></tr>
+    <tr><td>格式刷</td><td>把一处格式<b>复制</b>到另一处；双击格式刷可连续刷</td></tr>
+    <tr><td>套用表格格式 / 单元格样式</td><td>一键套用成套配色与边框</td></tr>
+  </table>
+
+  <div class="warnbox"><b>合并居中的副作用要记：</b>合并后的区域<b>只保留左上角单元格的数据</b>，其余被清空；且合并区域无法正常参与排序、筛选、透视，也无法单独复制其中一格。<b>"为了排序方便先合并居中"是错的。</b></div>
+</section>
+
+<section class="mod" id="s4">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">④</div>
+    <div>
+      <h2>三种单元格地址：相对、绝对、混合</h2>
+      <span class="tag"><span class="f f3">★★★</span>四川卷 Excel 部分的"必得分"</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <table>
+    <tr><th style="width:150px">引用形式</th><th style="width:130px">名称</th><th>复制到别的单元格时</th></tr>
+    <tr><td><b>A1</b></td><td>相对引用</td><td>行、列<b>都跟着变</b>（随位移偏移）</td></tr>
+    <tr><td><b>$A$1</b></td><td>绝对引用</td><td>行、列<b>都不变</b></td></tr>
+    <tr><td><b>A$1</b></td><td>混合引用（锁行）</td><td><b>列变、行不变</b></td></tr>
+    <tr><td><b>$A1</b></td><td>混合引用（锁列）</td><td><b>列不变、行变</b></td></tr>
+  </table>
+
+  <div class="mem"><b>口诀：</b><code>$</code> 在<b>字母</b>前 → 锁<b>列</b>；<code>$</code> 在<b>数字</b>前 → 锁<b>行</b>；两个 <code>$</code> → 行列都锁。<br>
+  <b>复制时"锁住的不动，没锁的跟着走"</b>——往下复制只改行号，往右复制只改列标。</div>
+
+  <div class="flow">切换方式：选中地址后反复按 <b>F4</b>
+A1 → $A$1 → A$1 → $A1 → A1  （四种状态循环）
+（注意顺序：先全锁，再锁行，再锁列）</div>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 12（2 分）</b>　公式 <code>=MAX(A1!B1:B9)</code> 中，A1 表示（　）<br>
+  A. 单元格地址　B. <b>工作表名</b>　C. 工作簿名　D. 函数名<br>
+  <span class="no">答案：<b>B</b>。<br>
+  <b>跨工作表引用的写法：<code>工作表名!单元格区域</code></b>，中间的<b>感叹号</b>是"跨表"的标志。若表名含空格或特殊字符，要加单引号，如 <code>'销售 表'!B1</code>。<br>
+  本题里 A1 不是单元格，而是<b>名为 A1 的工作表</b>——这是出题人故意的陷阱，看到 <code>!</code> 就要条件反射"前面是表名"。</span></div>
+
+  <div class="tip"><b>跨工作簿引用</b>还要加文件名：<code>[成绩.xlsx]Sheet1!A1</code>。这个只需认得，不必深究。</div>
+</section>
+
+<section class="mod" id="s5">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
+    <div>
+      <h2>引用题实战：2025 那道 2 分题</h2>
+      <span class="tag">"复制公式"类题的标准解法</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="qz"><span class="lb">真题</span><b>2025 · 单选 11（2 分）</b>　C1 单元格中的公式为 <code>=A$1*SUM($B1:$B3)</code>，将该公式复制到 D3 单元格后，公式变为（　）<br>
+  A. =B$1*SUM($B3:$B5)　B. =B$3*SUM($C1:$C3)　C. =A$3*SUM($B3:$B5)　D. =B$3*SUM($B1:$B3)<br>
+  <span class="no">答案：<b>A</b>。</span></div>
+
+  <div class="human"><span class="lb">三步解法（每道引用题都这么做）</span>
+  <b>第 1 步：算位移。</b>C1 → D3：列从 C 到 D，<b>右移 1 列</b>；行从 1 到 3，<b>下移 2 行</b>。<br>
+  <b>第 2 步：逐个地址判断"锁没锁"。</b><br>
+  　<code>A$1</code>：字母 A <b>没锁</b> → 列 +1 变 B；数字 $1 <b>锁了</b> → 行不变。结果 <b>B$1</b>。<br>
+  　<code>$B1</code>：字母 $B <b>锁了</b> → 列不变；数字 1 <b>没锁</b> → 行 +2 变 3。结果 <b>$B3</b>。<br>
+  　<code>$B3</code>（区域右下角）：同理 → <b>$B5</b>。<br>
+  <b>第 3 步：拼回去。</b><code>=B$1*SUM($B3:$B5)</code>，选 <b>A</b>。
+  </div>
+
+  <div class="okbox"><b>三个"看错就错"的地方：</b>①区域 <code>$B1:$B3</code> 的<b>两个端点都要各自换算</b>，不能只改一个；②<b>行号加的是 2 不是 3</b>（1→3 是 +2）；③函数名 <code>SUM</code> <b>不参与变化</b>，别把 SUM 也改了。</div>
+
+  <div class="mem"><b>一句话总结整节：</b>先算"右移几列、下移几行"，再看每个地址的 <code>$</code> 锁在哪，<b>锁住的不动、没锁的加位移</b>，最后原样拼回公式。</div>
+</section>
+
+<section class="mod" id="s6">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑥</div>
+    <div>
+      <h2>本课易错清单</h2>
+      <span class="tag">十二条</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:36px">#</th><th style="width:250px">错误说法</th><th>正确说法</th></tr>
+    <tr><td class="c">1</td><td>工作表就是工作簿</td><td>工作簿是<b>文件</b>，工作表是文件里的一页</td></tr>
+    <tr><td class="c">2</td><td>输入 001 会显示 001</td><td>会变成 <b>1</b>；要显示 001 须前置 <b>'</b></td></tr>
+    <tr><td class="c">3</td><td>直接输入 1/2 就是分数</td><td>会被当<b>日期</b>；分数要先输 <b>0 空格</b></td></tr>
+    <tr><td class="c">4</td><td>单元格内换行按 Enter</td><td>Enter 换格；格内换行用 <b>Alt+Enter</b></td></tr>
+    <tr><td class="c">5</td><td>拖填充柄一定递增</td><td>直接拖是<b>复制</b>；按住 <b>Ctrl</b> 才递增</td></tr>
+    <tr><td class="c">6</td><td>文本默认右对齐</td><td>文本<b>左</b>对齐、数字<b>右</b>对齐、逻辑值居中</td></tr>
+    <tr><td class="c">7</td><td>设为百分比后数值变大了</td><td>只改<b>显示</b>，实际值不变</td></tr>
+    <tr><td class="c">8</td><td>$A$1 复制到别处会跟着变</td><td>绝对引用<b>行列都不变</b></td></tr>
+    <tr><td class="c">9</td><td>A$1 锁的是列</td><td>锁的是<b>行</b>（$ 在数字前）</td></tr>
+    <tr><td class="c">10</td><td>A1:C3 表示 6 个单元格</td><td>3 列 × 3 行 = <b>9 个</b></td></tr>
+    <tr><td class="c">11</td><td>合并居中后各格数据都保留</td><td>只保留<b>左上角</b>的值</td></tr>
+    <tr><td class="c">12</td><td>A1!B1:B9 中的 A1 是单元格</td><td><code>!</code> 前是<b>工作表名</b>（2025 单选 12）</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s7">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
+    <div>
+      <h2>本课必背 14 条</h2>
+      <span class="tag">进考场前扫一眼</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+  <table>
+    <tr><th style="width:40px">#</th><th>内容</th></tr>
+    <tr><td class="c">1</td><td>工作簿（<b>.xlsx</b>）⊃ 工作表 ⊃ 单元格；工作表标签可双击<b>重命名</b></td></tr>
+    <tr><td class="c">2</td><td>单元格地址＝<b>列标+行号</b>（A1）；区域＝<b>左上:右下</b>（A1:C3＝9 格）</td></tr>
+    <tr><td class="c">3</td><td>文本型数字前置 <b>英文单引号 '</b>（如 '001）</td></tr>
+    <tr><td class="c">4</td><td>输入分数：先输 <b>0 ＋ 空格</b>；否则被当日期</td></tr>
+    <tr><td class="c">5</td><td>单元格内换行 <b>Alt+Enter</b>；Enter 是跳到下一格</td></tr>
+    <tr><td class="c">6</td><td><b>文本左对齐、数字右对齐、逻辑值居中</b></td></tr>
+    <tr><td class="c">7</td><td>填充柄：直接拖＝<b>复制</b>；按住 <b>Ctrl</b> 拖＝<b>递增</b>；日期/星期/月份是内置序列</td></tr>
+    <tr><td class="c">8</td><td>数字格式有常规、数值、货币、会计、<b>百分比</b>、日期时间、科学记数、文本、自定义；<b>改格式不改值</b></td></tr>
+    <tr><td class="c">9</td><td>合并居中只保留<b>左上角</b>数据，且影响排序筛选</td></tr>
+    <tr><td class="c">10</td><td>条件格式：<b>数据条、色阶、图标集</b>、突出显示规则</td></tr>
+    <tr><td class="c">11</td><td>三种引用：<b>相对 A1</b>（都变）、<b>绝对 $A$1</b>（都不变）、<b>混合 A$1 / $A1</b>（变一半）</td></tr>
+    <tr><td class="c">12</td><td><b>$ 在字母前锁列、在数字前锁行</b>；<b>F4</b> 循环切换四种</td></tr>
+    <tr><td class="c">13</td><td>复制公式：<b>锁住的不动，没锁的加位移</b>（右移几列、下移几行）</td></tr>
+    <tr><td class="c">14</td><td>跨表引用 <b>工作表名!单元格</b>（如 <b>A1!B1:B9</b>）；跨工作簿还要加 [文件名]</td></tr>
+  </table>
+</section>
+
+<section class="mod" id="s8">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
+    <div>
+      <h2>自测 14 题</h2>
+      <span class="tag">点题目看答案</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>1. 一个工作簿只能包含一张工作表。</summary><div class="ans"><b>错误。</b>可包含多张，可增删。</div></details>
+    <details><summary>2. 在单元格中输入 001，会显示为 001。</summary><div class="ans"><b>错误。</b>显示为 1；要保留前导 0 须前置英文单引号。</div></details>
+    <details><summary>3. $A$1 是绝对引用，复制到其他单元格时行列都不变。</summary><div class="ans"><b>正确。</b></div></details>
+    <details><summary>4. 把单元格设为百分比格式后，其中的数值会随之变大。</summary><div class="ans"><b>错误。</b>只改变显示方式，实际值不变。</div></details>
+    <details><summary>5. 合并居中后，被合并区域内每个单元格的数据都会保留。</summary><div class="ans"><b>错误。</b>只保留左上角单元格的数据。</div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <div class="qa">
+    <details><summary>6. C1 中公式为 =A$1*SUM($B1:$B3)，复制到 D3 后变为（　）<br>A. =B$1*SUM($B3:$B5)　B. =B$3*SUM($C1:$C3)　C. =A$3*SUM($B3:$B5)　D. =B$3*SUM($B1:$B3)</summary><div class="ans"><b>A。</b>2025 单选第 11 题原题。</div></details>
+    <details><summary>7. 公式 =MAX(A1!B1:B9) 中 A1 表示（　）<br>A. 单元格　B. 工作表名　C. 工作簿名　D. 函数名</summary><div class="ans"><b>B。</b>2025 单选第 12 题原题；"!" 前是工作表名。</div></details>
+    <details><summary>8. 要在单元格内换行，应按（　）<br>A. Enter　B. Alt+Enter　C. Ctrl+Enter　D. Shift+Enter</summary><div class="ans"><b>B。</b>Ctrl+Enter 是"填充到选中区域"，Shift+Enter 是向上跳格。</div></details>
+    <details><summary>9. 在 Excel 中输入分数 1/2，正确的方法是（　）<br>A. 直接输入 1/2　B. 输入 0 空格 1/2　C. 输入 "1/2"　D. 输入 1-2</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>10. 下列属于绝对引用的是（　）<br>A. A1　B. A$1　C. $A1　D. $A$1</summary><div class="ans"><b>D。</b></div></details>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>11. 区域 A1:C3 共包含 ______ 个单元格。</summary><div class="ans"><b>9</b>（3 列 × 3 行）。</div></details>
+    <details><summary>12. 在 B2 单元格中输入公式的"绝对引用"形式，应为 ______。</summary><div class="ans"><b>$B$2</b>。</div></details>
+    <details><summary>13. 要使输入的数字作为文本处理并保留前导零，应在数字前加 ______。</summary><div class="ans"><b>英文单引号 '</b>。</div></details>
+    <details><summary>14. 引用其他工作表中 A1:A5 区域，写法为 ______。</summary><div class="ans"><b>工作表名!A1:A5</b>（如 Sheet2!A1:A5）。</div></details>
+  </div>
+
+  <div class="btnrow">
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
+    <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
+  </div>
+</section>
+
+<footer>
+  <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"三、2. 电子表格（基本操作、格式化、单元格地址）"；<br>
+  真题来源：2025 年单选 11（引用复制）、单选 12（跨表引用）。<br>
+  上一课：第三章第2课 Word 表格·图文混排·目录·邮件合并　｜　下一课：第三章第4课 Excel 公式与函数 · Ctrl+P 可打印
+</footer>
+
+</main>
+</body>
+</html>
