@@ -1,0 +1,35 @@
+name: Unpack 1.4.1 site bundle
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - site-bundle-1.4.1.zip
+
+permissions:
+  contents: write
+
+concurrency:
+  group: unpack-site-1.4.1
+  cancel-in-progress: false
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Unpack site bundle
+        run: |
+          unzip -o site-bundle-1.4.1.zip -d .
+          rm site-bundle-1.4.1.zip
+
+      - name: Commit unpacked site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "release: 1.4.1 性能优化与 AI 后端接通" || echo "no changes"
+          git push
