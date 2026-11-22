@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>小野寺 · 计算机基础手帐｜2027 四川专升本</title>
 <meta name="description" content="2027 四川统招专升本计算机基础：21 课讲义、7 册专项练习与冲刺测试、2026 真题定位、即时判分与进度记录。" />
-<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<link rel="preload" as="style" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"></noscript>
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
@@ -307,6 +308,7 @@ body.locked .auth-gate{display:grid}
   .burger{display:block}
   .top-r{gap:6px}
   .tbtn{font-size:11.6px;padding:5px 9px}
+  #reciteTop{display:none!important}
   .brand b{font-size:14px}
   aside{position:fixed;left:0;top:58px;bottom:0;width:272px;flex-basis:auto;z-index:40;transform:translateX(-102%);transition:transform .22s ease;box-shadow:0 8px 30px rgba(20,32,43,.18)}
   aside.open{transform:none}
@@ -443,6 +445,7 @@ main{background:transparent}
   <div class="top-r">
     <a class="tbtn" href="#/search">站内搜索</a>
     <a class="tbtn" href="#/home">学习总览</a>
+    <a class="tbtn" id="reciteTop" href="recite.html" style="display:none">背诵册</a>
     <button class="tbtn" id="acctBtn" onclick="openAccount()">登录</button>
     <button class="tbtn" id="backupBtn">进度备份</button>
   </div>
@@ -697,6 +700,10 @@ function buildNav(){
   h += '<a href="#/home" data-id="home"><span class="tag">首</span>学习总览</a>';
   h += '<a href="#/search" data-id="search"><span class="tag" style="background:#e9f2f6;color:#0b5a75">搜</span>站内搜索<span style="margin-left:auto;font-size:10px;color:#a7b1ba;border:1px solid var(--line);border-radius:4px;padding:0 5px;line-height:1.8">/</span></a>';
   h += '<a href="#/errors" data-id="errors"><span class="tag" style="background:#fbeeec;color:#b23a2e">错</span>错题集<span class="cnt" id="errCnt">' + errOpenCount() + '</span></a>';
+  if(hasFullAccess()){
+    h += '<div class="nav-chap">背诵工具<em>1 份</em></div>';
+    h += '<a href="recite.html" data-id="recite"><span class="tag" style="background:#fbe8ee;color:#8f3c54">背</span>高频背诵册</a>';
+  }
   if(hasFullAccess() && accountState && accountState.provider === 'legacy' && accountState.role === 'admin'){
     h += '<a href="#/admin" data-id="admin"><span class="tag" style="background:#fbf3dd;color:#8a5a00">后</span>账号后台</a>';
   }
@@ -766,6 +773,9 @@ function buildHome(){
   h += '<div class="hs-tags"><span>试试：</span><a href="javascript:void(0)" onclick="homeQuick(\'冯·诺依曼\')">冯·诺依曼</a><a href="javascript:void(0)" onclick="homeQuick(\'数制转换\')">数制转换</a><a href="javascript:void(0)" onclick="homeQuick(\'Excel 函数\')">Excel 函数</a><a href="javascript:void(0)" onclick="homeQuick(\'IP 地址\')">IP 地址</a></div>';
   h += '<div class="hs-res" id="homeRes"></div></div>';
   h += '<div class="hs-side art art-comic" role="img" aria-label="手绘漫画：学累了也可以喘口气"><span class="hs-cap">小野寺 · 学累了也可以喘口气</span></div>';
+  if(hasFullAccess()){
+    h += '<a class="cont" href="recite.html" style="border-left-color:#c46980"><span class="cont-tag" style="background:#fbe8ee;color:#8f3c54">背诵册</span><b>高频背诵册 · 7 章 40 个骨架 · 填空 / 简答 / 错题 / A4 打印</b><span class="cont-go">打开 →</span></a>';
+  }
   if(!ext){
     h += '<a class="cont" href="#/sprint" style="border-left-color:#b23a2e"><span class="cont-tag" style="background:#fbeeec;color:#b23a2e">冲刺卷</span><b>四川专升本计算机基础冲刺模拟卷（一） · 150 分 / 120 分钟</b><span class="cont-go">开始模考 →</span></a>';
   }
@@ -1820,6 +1830,8 @@ function renderAccountUI(){
   }
   var adminBtn = document.getElementById('adminBtn');
   if(adminBtn) adminBtn.style.display = (accountState && accountState.provider === 'legacy' && accountState.role === 'admin') ? 'inline-block' : 'none';
+  var reciteBtn = document.getElementById('reciteTop');
+  if(reciteBtn) reciteBtn.style.display = hasFullAccess() ? 'inline-block' : 'none';
 }
 function refreshAccountModal(){
   var login = document.getElementById('acctLogin'), panel = document.getElementById('acctPanel');
@@ -2239,7 +2251,7 @@ document.addEventListener('visibilitychange', function(){
   if(document.hidden && accountState && accountState.dk && !cloudBusy) syncCloud(true);
 });
 </script>
-<div class="site-signature" style="position:fixed;left:50%;transform:translateX(-50%);bottom:6px;z-index:9999;font-size:12px;color:#a8987f;letter-spacing:.12em;opacity:.7;pointer-events:none;font-family:inherit">香菇喜欢你 · 小野寺 · v1.1.4</div>
+<div class="site-signature" style="position:fixed;left:50%;transform:translateX(-50%);bottom:6px;z-index:9999;font-size:12px;color:#a8987f;letter-spacing:.12em;opacity:.7;pointer-events:none;font-family:inherit">香菇喜欢你 · 小野寺 · v1.2.0</div>
 <script>
 /* ===== 橘子 Supabase 兼容层：邮箱登录、进度/错题/答题同步、注销 ===== */
 (function(){
