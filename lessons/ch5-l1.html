@@ -151,7 +151,21 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   .tip,.warnbox,.okbox,.mem,.human,.qz{font-size:13.6px}
   .btn{font-size:13px;min-height:36px}
 }
-</style></head>
+</style><style id="lesson-pager-style">
+.lesson-pager{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;margin:28px 0 8px;padding-top:14px;border-top:1px solid #e8dccf}
+.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fffaf5;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
+.lesson-pager a:hover{background:#fbe9ee;border-color:#dfb9c5;color:#8c4057}
+.lesson-pager .pager-prev{align-items:flex-start;text-align:left}
+.lesson-pager .pager-next{align-items:flex-end;text-align:right}
+.lesson-pager .pager-k{font-size:11px;letter-spacing:.08em;color:#a18672}
+.lesson-pager .pager-t{max-width:100%;font-size:14px;font-weight:600;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lesson-pager .pager-mid{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;min-width:108px;padding:4px 10px;text-align:center;font-size:11.5px;color:#9a6a3a}
+.lesson-pager .pager-pos{font-weight:700;letter-spacing:.03em;white-space:nowrap}
+.lesson-pager .pager-mid a{display:inline;min-width:0;padding:0;border:0;background:transparent;font-size:11.5px;color:#9a6a3a;text-decoration:underline;text-underline-offset:2px}
+.lesson-pager .pager-mid a:hover{background:transparent;color:#8c4057}
+@media(max-width:640px){.lesson-pager{grid-template-columns:1fr;gap:8px}.lesson-pager .pager-mid{order:-1;padding:0 0 2px;gap:4px}.lesson-pager a{padding:10px 12px}.lesson-pager .pager-next{align-items:flex-start;text-align:left}}
+</style>
+</head>
 <body>
 
 <header class="hero">
@@ -495,10 +509,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   </div>
 </section>
 
+<nav class="lesson-pager" aria-label="课程翻页">
+  <a class="pager-prev" href="ch4-l3.html"><span class="pager-k">← 上一课</span><span class="pager-t">第3课 信息安全与信息素养</span></a>
+  <div class="pager-mid"><span class="pager-pos">第五章 · 第1/2课</span><a href="map.html">课程地图</a><a href="#s0">本课目录</a></div>
+  <a class="pager-next" href="ch5-l2.html"><span class="pager-k">下一课 →</span><span class="pager-t">第2课 三种结构与经典算法</span></a>
+</nav>
 <footer>
   <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"五、1～3"；<br>
   真题来源：2024 判断（复杂度方向、自然语言描述、算法特征）。<br>
-  上一课：第四章第3课 信息安全与信息素养　｜　下一课：第五章第2课 三种基本结构与经典算法 · Ctrl+P 可打印
+  Ctrl+P 可打印
 </footer>
 
 </main>
