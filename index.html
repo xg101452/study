@@ -739,6 +739,171 @@ body.locked #aiFab{display:none}
   #aiToast{bottom:calc(106px + env(safe-area-inset-bottom))}
 }
 @media print{#aiFab,#aiOverlay{display:none!important}}
+</style>
+<style id="design-refresh-20261123">
+/* ===== 2026-11-23 设计审计 B：可读性 + 首页今日/继续 ===== */
+:root{--muted:#5b6976}
+body{font-size:16px;line-height:1.75;color:#332a35}
+
+/* 键盘焦点与减弱动效 */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid #8a5a00;outline-offset:3px;border-radius:8px;
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* 顶部与侧栏的可点击面积 */
+.burger{width:40px;height:40px}
+.tbtn{font-size:13px;min-height:36px;display:inline-flex;align-items:center;justify-content:center;padding:6px 11px}
+.nav a{font-size:13px;min-height:36px;align-items:center;padding:7px 9px}
+.nav-chap{font-size:11.5px}
+.chip{font-size:12.5px;min-height:32px;display:inline-flex;align-items:center;padding:5px 10px}
+.hs-tags{font-size:12px}
+.hs-tags a{font-size:12px;min-height:32px;display:inline-flex;align-items:center;padding:4px 10px}
+.hs-field button{min-height:44px;font-size:13.5px}
+
+/* 首页文字层级 */
+.hero p{font-size:14.5px;line-height:1.8;color:#5f4e58}
+.hero-kicker{font-size:11.5px;color:#8f4b5f}
+.hero-meta span{font-size:11.5px;color:#7b5f6a}
+.hero-actions a{font-size:14px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:10px 18px}
+.hero-stats span{font-size:11.5px;color:#6f5b66}
+.card .meta{font-size:12px;color:#6f5b66}
+.card p,.p{font-size:13.5px;line-height:1.75;color:#5f4e58}
+.bookrow{font-size:12.5px}
+.bookrow .muted{font-size:12px;color:#6f5b66}
+.cont{min-height:56px}
+.cont b{font-size:14.5px}
+.cont-go{font-size:13px}
+.note{font-size:13.5px;line-height:1.75}
+.hs-kicker{font-size:11.5px}
+.hs-res a{font-size:12.5px}
+.hs-res .k{font-size:10.5px}
+.hs-res .go{font-size:11px;color:#6f5b66}
+.hs-none{font-size:12px;color:#6f5b66}
+
+/* 搜索页与辅助卡片 */
+.search-kicker{font-size:11.5px;color:#8f4b5f}
+.search-hero p{font-size:14px;color:#5f4e58}
+.search-hint{font-size:12.5px;color:#6f5b66}
+.search-kinds button{font-size:12.5px;min-height:32px;padding:5px 12px}
+.search-stats span{font-size:11.5px;color:#6f5b66}
+.side-card h4{font-size:15px}
+.side-card p,.side-card ul{font-size:12.5px;color:#6f5b66}
+.disc-card p{font-size:12.5px;color:#6f5b66}
+.chap-list a{font-size:12.5px;min-height:32px;display:inline-flex;align-items:center}
+.quick-links b{font-size:13.5px}
+.quick-links span{font-size:11.5px;color:#6f5b66}
+.pagehead p{font-size:13px;line-height:1.7;color:#6f5b66}
+
+/* AI 面板的正文与按钮 */
+#aiFab{font-size:13px;min-height:44px}
+.ai-hd-txt span{font-size:11.5px;color:#755661}
+.ai-status .ai-pill,.ai-status .ai-srcline{font-size:11px}
+.ai-welcome p{font-size:12.5px;color:#755661}
+.ai-chip{font-size:12px;min-height:32px;padding:6px 10px}
+.ai-hd-actions button{font-size:12px;min-height:32px}
+#aiInput{font-size:14px;line-height:1.65}
+.ai-bubble{font-size:14px;line-height:1.8}
+.ai-disclaimer{font-size:11px}
+#aiLoginCard p{font-size:12.5px;color:#755661}
+
+/* 页脚版本信息不再过淡 */
+.site-signature{color:#6f5b66!important;font-size:11.5px!important}
+
+/* 主按钮统一到可读的深玫瑰色；ghost 仍保持透明 */
+.hero-actions a{background:#a94c64}
+.hs-field button,.search-field .sbtn{background:#a94c64}
+
+/* ===== 首页“今日学习”卡 ===== */
+.today-card{
+  position:relative;overflow:hidden;margin:0 0 14px;padding:20px 22px 18px;
+  border:1px solid #e4c8d2;border-radius:22px;
+  background:
+    radial-gradient(circle at 100% 0,rgba(225,146,164,.20),transparent 34%),
+    linear-gradient(135deg,#fffdfb 0%,#fff7f6 56%,#f6f8fc 100%);
+  box-shadow:0 12px 30px rgba(99,68,79,.07);
+}
+.today-card:after{
+  content:"TODAY";position:absolute;right:20px;top:15px;font-size:10px;letter-spacing:.2em;
+  color:#a65069;opacity:.55;font-weight:700;
+}
+.today-kicker{font-size:11.5px;letter-spacing:.18em;color:#a65069;font-weight:700}
+.today-title{
+  margin:7px 0 0;font-family:"Noto Serif CJK SC","Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;
+  font-size:clamp(22px,2.6vw,29px);line-height:1.3;letter-spacing:.03em;color:#3b2d36;
+}
+.today-sub{margin:6px 0 0;font-size:13.5px;line-height:1.7;color:#6f5b66;max-width:640px}
+.today-list{margin-top:12px}
+.today-step{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;
+  padding:10px 0;border-top:1px dashed #ecd6dd;text-decoration:none;color:inherit;transition:background .15s;
+}
+.today-list .today-step:first-child{border-top:0}
+.today-step:hover{background:rgba(255,255,255,.55);border-radius:10px}
+.today-step-no{
+  width:30px;height:30px;display:grid;place-items:center;border-radius:50%;
+  background:#fbe9ee;color:#8f3c54;font-size:11.5px;font-weight:700;
+}
+.today-step-copy{min-width:0}
+.today-step-copy b{display:block;font-size:13.5px;line-height:1.5;color:#3b2d36}
+.today-step-copy em{display:block;margin-top:2px;font-style:normal;font-size:12px;line-height:1.5;color:#6f5b66}
+.today-step-arrow{font-size:15px;color:#a65069}
+.today-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:13px}
+.today-cta{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;
+  background:#a94c64;color:#fffaf9;text-decoration:none;border-radius:11px;
+  font-size:13.5px;font-weight:700;box-shadow:0 8px 18px rgba(169,76,100,.22);
+}
+.today-cta:hover{filter:brightness(1.03);transform:translateY(-1px)}
+.today-meta{font-size:12px;color:#6f5b66}
+
+/* 错题复习状态与操作尺寸 */
+.review-badge{display:inline-flex;align-items:center;min-height:26px;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;line-height:1.4;white-space:nowrap}
+.review-badge.due{background:#fde9e3;color:#8a2f1c;border:1px solid #f3c7b8}
+.review-badge.scheduled{background:#eef3f6;color:#2f5f73;border:1px solid #cddde5}
+.review-badge.fixed{background:#eef6ee;color:#356b3b;border:1px solid #cfe3d0}
+.qbtn{font-size:13.5px;min-height:40px;padding:8px 14px}
+.fbtn{font-size:13px;min-height:36px}
+.eacts button,.eacts a{font-size:12.5px;min-height:34px;display:inline-flex;align-items:center}
+
+/* 错题页直接挂在 .home 下，强制按容器宽度排版，避免手机横向溢出 */
+.home > .pagehead,.home > .filters,.home > .weakbox,.home > .ecard,.home > .quizwrap{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+.pagehead > div{min-width:0}
+.pagehead p{max-width:100%}
+
+/* 返回用户：压缩欢迎区，把“今天”放前面 */
+.hero-compact{grid-template-columns:1fr;padding:22px 26px 20px}
+.hero-compact .hero-art{display:none}
+.hero-compact .hero-copy{max-width:760px}
+.hero-compact h1{font-size:clamp(24px,3vw,34px);margin:7px 0 9px}
+.hero-compact p{max-width:760px}
+.hero-compact .hero-actions{margin-top:14px}
+.hero-compact .hero-meta{margin-top:12px}
+
+@media(max-width:760px){
+  .top-r .tbtn{font-size:13px;min-height:36px;padding:6px 10px}
+  .today-card{padding:17px 15px 14px;border-radius:18px;margin-bottom:10px}
+  .today-title{font-size:22px}
+  .today-sub{font-size:13px}
+  .today-step{padding:9px 0;gap:9px}
+  .today-step-copy b{font-size:13px}
+  .today-step-copy em{font-size:11.5px}
+  .today-foot{gap:8px}
+  .today-cta{width:100%;justify-content:center}
+  .hero-compact{padding:18px 16px;border-radius:20px}
+  .hero-compact h1{font-size:26px}
+  .hero-compact .hero-actions a{width:100%}
+  .pagehead{display:block}
+  .pagehead > div{width:100%}
+  .estat{margin-top:9px}
+  .estat div{flex:1 1 calc(50% - 8px);min-width:0}
+  .filters{gap:5px}
+  .weakbox,.ecard{padding:12px}
+  .eacts{gap:6px}
+  .eacts button,.eacts a{min-height:36px;font-size:12.5px}
+}
 </style></head>
 <body class="locked booting">
 <header class="top">
@@ -965,7 +1130,45 @@ function errArr(){
   return a;
 }
 function errOpenCount(){ var a=errArr(), n=0; for(var i=0;i<a.length;i++) if(!a[i].fixed) n++; return n; }
-function refreshErrBadge(){ var el=document.getElementById('errCnt'); if(el) el.textContent=errOpenCount(); }
+var REVIEW_DAY = 86400000;
+var REVIEW_INTERVALS = [1,3,7,14];
+function reviewStageOf(e){ var n = parseInt(e && e.reviewStage, 10); return (n >= 0 && n <= 4) ? n : 0; }
+function reviewDueAt(e){ if(!e || e.fixed) return 0; return Number(e.dueAt || e.at || 0); }
+function reviewIsDue(e, now){ if(!e || e.fixed) return false; return !e.dueAt || Number(e.dueAt) <= (now || Date.now()); }
+function errDueCount(){ var a=errArr(), now=Date.now(), n=0; for(var i=0;i<a.length;i++) if(reviewIsDue(a[i], now)) n++; return n; }
+function reviewWhen(ts){
+  if(!ts) return '今天到期';
+  var now = new Date(), d = new Date(ts);
+  var a = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+  var b = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+  var diff = Math.round((b - a) / REVIEW_DAY);
+  if(diff <= 0) return '今天到期';
+  if(diff === 1) return '明天复习';
+  if(diff <= 7) return diff + ' 天后复习';
+  return (d.getMonth() + 1) + '月' + d.getDate() + '日复习';
+}
+function reviewStatus(e){
+  var stage = reviewStageOf(e);
+  if(e.fixed) return { text:'已掌握', cls:'fixed' };
+  if(reviewIsDue(e)) return { text:'今天到期 · 第 ' + Math.min(4, stage + 1) + '/4 次', cls:'due' };
+  return { text:reviewWhen(e.dueAt || e.at) + ' · 第 ' + Math.min(4, stage + 1) + '/4 次', cls:'scheduled' };
+}
+function scheduleReview(r, ok){
+  var now = Date.now();
+  r.lastReviewAt = now;
+  r.reviewCount = (parseInt(r.reviewCount, 10) || 0) + 1;
+  if(!ok){
+    r.reviewStage = 0; r.reviewInterval = 1; r.dueAt = now + REVIEW_DAY;
+    r.fixed = false; r.fixedAt = 0; r.lapses = (parseInt(r.lapses, 10) || 0) + 1;
+    return;
+  }
+  var stage = Math.min(4, reviewStageOf(r) + 1);
+  var interval = REVIEW_INTERVALS[Math.min(stage, 4) - 1] || 14;
+  r.reviewStage = stage; r.reviewInterval = interval; r.dueAt = now + interval * REVIEW_DAY;
+  if(stage >= 4){ r.fixed = true; r.fixedAt = now; }
+  else { r.fixed = false; r.fixedAt = 0; }
+}
+function refreshErrBadge(){ var el=document.getElementById('errCnt'); if(el) el.textContent=errDueCount(); }
 function chapterOfBook(b){ for(var i=0;i<CHAP.length;i++) if(CHAP[i].book===b) return CHAP[i]; return null; }
 function hasFullAccess(){ return !!(accountState && accountState.isInternal === true); }
 function isAdminAccount(){ return !!(accountState && accountState.role === 'admin'); }
@@ -1001,7 +1204,7 @@ function buildNav(){
   var h = '<div class="nav-chap nav-first">内容导航<em>31 份</em></div>';
   h += '<a href="#/home" data-id="home"><span class="tag">首</span>学习总览</a>';
   h += '<a href="#/search" data-id="search"><span class="tag" style="background:#e9f2f6;color:#0b5a75">搜</span>站内搜索<span style="margin-left:auto;font-size:10px;color:#a7b1ba;border:1px solid var(--line);border-radius:4px;padding:0 5px;line-height:1.8">/</span></a>';
-  h += '<a href="#/errors" data-id="errors"><span class="tag" style="background:#fbeeec;color:#b23a2e">错</span>错题集<span class="cnt" id="errCnt">' + errOpenCount() + '</span></a>';
+  h += '<a href="#/errors" data-id="errors"><span class="tag" style="background:#fbeeec;color:#b23a2e">错</span>错题集<span class="cnt" id="errCnt">' + errDueCount() + '</span></a>';
   if(hasFullAccess()){
     h += '<div class="nav-chap">背诵工具<em>1 份</em></div>';
     h += '<a href="recite.html" data-id="recite"><span class="tag" style="background:#fbe8ee;color:#8f3c54">背</span>高频背诵册</a>';
@@ -1048,6 +1251,14 @@ function buildHome(){
   var rate = A ? Math.round(R / A * 100) : 0;
   var last = ls('tyz2027:last') || 'ch1-l1';
   if(!DOCS[last] || (ext && !isFreeDoc(last))) last = 'ch1-l1';
+  var lastTitle = DOCS[last].t;
+  var lastChapM = /^ch(\d+)-/.exec(last);
+  var lastBook = lastChapM ? ('ch' + lastChapM[1] + '-book') : CHAP[0].book;
+  var lastBookTitle = DOCS[lastBook] ? DOCS[lastBook].t : DOCS[CHAP[0].book].t;
+  var lastBookShort = lastBookTitle.replace('练习册 · ', '');
+  var openErrs = errArr().filter(function(e){ return !e.fixed; });
+  var dueErrs = openErrs.filter(function(e){ return reviewIsDue(e); });
+  var isReturning = (A > 0 || last !== 'ch1-l1' || dueErrs.length > 0);
 
   var h = '<div class="home-wrap">';
   if(ext){
@@ -1056,12 +1267,41 @@ function buildHome(){
       '<button type="button" class="acct-primary" style="margin-left:10px;padding:4px 10px;font-size:12px" onclick="openAccount()">登录 / 注册</button></div>' +
       '<div class="art art-comic" role="img" aria-label="手绘漫画：学累了也可以喘口气"></div></div>';
   }
-  h += '<div class="hero"><div class="hero-copy">';
-  h += '<div class="hero-kicker">ONODERA STUDY LOG · 2027</div>';
-  h += '<h1>把计算机基础<br><em>写成一页手帐</em></h1>';
-  h += '<p>2027 四川统招专升本 ｜ 依据省教育厅《考试要求》2024 版 ｜ ' + (ext ? '第一章 3 节讲义 + 第一章练习，先从这里开始。' : '21 课讲义 · 7 册练习 422 题 · 1 套冲刺卷 · 2026 真题定位。') + '</p>';
+  var showToday = true;
+  if(showToday){
+    var dueCount = dueErrs.length;
+    var secondLink = dueCount ? '#/errors' : '#/' + lastBook;
+    var secondTitle = dueCount ? ('错题复习 · ' + dueCount + ' 道今天到期') : ('本章练习 · ' + lastBookShort);
+    var secondMeta = dueCount ? '约 5 分钟 · 先回顾最薄弱的一题' : '约 5 分钟 · 用本章新题验证刚才学的';
+    var reciteOk = hasFullAccess();
+    var thirdLink = reciteOk ? 'recite.html' : '#/map';
+    var thirdTitle = reciteOk ? '背 5 个高频骨架' : '看学习地图';
+    var thirdMeta = reciteOk ? '约 5 分钟 · 填空 / 简答 / A4 打印' : '约 5 分钟 · 三轮复习路线';
+    var todaySub = isReturning ? '已经按你上次停下的位置排好：先接上，再复习，最后背一点。' : '先从第一章起步；学完后，下一天会自动接上。';
+    h += '<section class="today-card" aria-label="今日学习">';
+    h += '<div class="today-kicker">TODAY · 今日学习</div>';
+    h += '<div class="today-title">今天，只做三件事。</div>';
+    h += '<p class="today-sub">' + esc(todaySub) + '</p>';
+    h += '<div class="today-list">';
+    h += '<a class="today-step" href="#/' + last + '"><span class="today-step-no">01</span><span class="today-step-copy"><b>继续「' + esc(lastTitle) + '」</b><em>约 8 分钟 · ' + (isReturning ? '从上次停下的位置开始' : '先看完这一课') + '</em></span><span class="today-step-arrow">→</span></a>';
+    h += '<a class="today-step" href="' + secondLink + '"><span class="today-step-no">02</span><span class="today-step-copy"><b>' + esc(secondTitle) + '</b><em>' + esc(secondMeta) + '</em></span><span class="today-step-arrow">→</span></a>';
+    h += '<a class="today-step" href="' + thirdLink + '"><span class="today-step-no">03</span><span class="today-step-copy"><b>' + thirdTitle + '</b><em>' + esc(thirdMeta) + '</em></span><span class="today-step-arrow">→</span></a>';
+    h += '</div>';
+    h += '<div class="today-foot"><a class="today-cta" href="#/' + last + '">开始今天的第一件事</a><span class="today-meta">约 18 分钟 · 先接上，再复习。</span></div>';
+    h += '</section>';
+  }
+  var heroClass = isReturning ? 'hero hero-compact' : 'hero';
+  h += '<div class="' + heroClass + '"><div class="hero-copy">';
+  h += '<div class="hero-kicker">' + (isReturning ? 'WELCOME BACK · ONODERA STUDY LOG' : 'ONODERA STUDY LOG · 2027') + '</div>';
+  if(isReturning){
+    h += '<h1>今天，接着上次<br><em>继续写这一页</em></h1>';
+    h += '<p>上次学到「' + esc(lastTitle) + '」。不从头翻，先接上；今天的任务已经排在上面。</p>';
+  } else {
+    h += '<h1>把计算机基础<br><em>写成一页手帐</em></h1>';
+    h += '<p>2027 四川统招专升本 ｜ 依据省教育厅《考试要求》2024 版 ｜ ' + (ext ? '第一章 3 节讲义 + 第一章练习，先从这里开始。' : '21 课讲义 · 7 册练习 422 题 · 1 套冲刺卷 · 2026 真题定位。') + '</p>';
+  }
   h += '<div class="hero-meta"><span>樱花粉 · 蓝铅笔</span><span>' + (ext ? '第一章体验' : '7 章全量') + '</span><span>手写笔记风</span></div>';
-  h += '<div class="hero-actions"><a href="#/ch1-l1">从第一课开始</a><a class="ghost" href="javascript:void(0)" onclick="openAccount()">' + (ext ? '登录解锁全部' : '账号中心') + '</a></div>';
+  h += '<div class="hero-actions"><a href="#/' + (isReturning ? last : 'ch1-l1') + '">' + (isReturning ? '继续上次学习' : '从第一课开始') + '</a><a class="ghost" href="javascript:void(0)" onclick="openAccount()">' + (ext ? '登录解锁全部' : '账号中心') + '</a></div>';
   h += '</div><div class="hero-art">';
   h += '<div class="hero-note">“先看懂，再记住。”</div>';
   h += '<div class="polaroid p-floral"><div class="art art-floral" role="img" aria-label="樱花与白玫瑰手绘少女"></div><span>小野寺 · 樱花与白玫瑰</span></div>';
@@ -1082,12 +1322,11 @@ function buildHome(){
   if(!ext){
     h += '<a class="cont" href="#/sprint" style="border-left-color:#b23a2e"><span class="cont-tag" style="background:#fbeeec;color:#b23a2e">冲刺卷</span><b>四川专升本计算机基础冲刺模拟卷（一） · 150 分 / 120 分钟</b><span class="cont-go">开始模考 →</span></a>';
   }
-  h += '<a class="cont" href="#/' + last + '"><span class="cont-tag">继续上次</span><b>' + DOCS[last].t + '</b><span class="cont-go">进入 →</span></a>';
-  var eopen = errArr().filter(function(e){ return !e.fixed; });
+  var eopen = openErrs;
   if(eopen.length){
     var eg = groupErrs(eopen), top = eg[0];
-    h += '<a class="cont" href="#/errors" style="border-left-color:#c9a227"><span class="cont-tag" style="background:#fbf3dd;color:#8a5a00">错题集</span><b>' + eopen.length + ' 道错题待复习' + (top?' · 最薄弱：'+esc(top.label)+'（'+top.list.length+' 题）':'') + '</b><span class="cont-go">去回顾 →</span></a>';
-    h += '<a class="cont" href="#/redo" style="border-left-color:#0e6b8a"><span class="cont-tag" style="background:#e9f2f6;color:#0b5a75">重练</span><b>错题重练：从错题里抽 10 题，答对即标记掌握</b><span class="cont-go">开始 →</span></a>';
+    h += '<a class="cont" href="#/errors" style="border-left-color:#c9a227"><span class="cont-tag" style="background:#fbf3dd;color:#8a5a00">错题集</span><b>' + eopen.length + ' 道在复习队列' + (dueErrs.length ? ' · 今天到期 ' + dueErrs.length + ' 道' : ' · 今天没有到期') + (top?' · 最薄弱：'+esc(top.label)+'（'+top.list.length+' 题）':'') + '</b><span class="cont-go">去回顾 →</span></a>';
+    h += '<a class="cont" href="#/redo" style="border-left-color:#0e6b8a"><span class="cont-tag" style="background:#e9f2f6;color:#0b5a75">复习</span><b>' + (dueErrs.length ? '今日到期复习：' + dueErrs.length + ' 道，按间隔安排' : '今天没有到期错题 · 可进入错题集查看下次日期') + '</b><span class="cont-go">' + (dueErrs.length ? '开始复习 →' : '看计划 →') + '</span></a>';
   }
   h += '<div class="grid">';
   for(i = 0; i < (ext ? 1 : CHAP.length); i++){
@@ -1122,13 +1361,14 @@ function buildHome(){
   homeEl.innerHTML = h;
 }
 
-var viewName = 'home', errFilter = 'open', errChap = 'all', redoState = null;
+var viewName = 'home', errFilter = 'due', errChap = 'all', redoState = null;
 
 function setErrFilter(f){ errFilter = f; buildErrors(); }
 function setErrChap(c){ errChap = c; buildErrors(); }
 function toggleFixed(id){
-  var o = readErrors(); if(!o[id]) return;
-  o[id].fixed = !o[id].fixed; if(o[id].fixed) o[id].fixedAt = Date.now();
+  var o = readErrors(), e = o[id]; if(!e) return;
+  if(e.fixed){ e.fixed = false; e.fixedAt = 0; e.reviewStage = 0; e.dueAt = Date.now(); }
+  else { e.fixed = true; e.fixedAt = Date.now(); e.dueAt = 0; }
   saveErrors(o); buildErrors();
 }
 function removeErr(id){
@@ -1151,6 +1391,7 @@ function exportErrors(){
     md += '**题目：** ' + e.stem + '\n\n';
     if(e.options && e.options.length){ for(var j=0;j<e.options.length;j++) md += '- ' + e.options[j].k + '. ' + e.options[j].t + '\n'; md += '\n'; }
     md += '**正确答案：** ' + e.answer + '\n\n';
+    md += '**复习状态：** ' + reviewStatus(e).text + '\n\n';
     if(e.user) md += '**我的答案：** ' + e.user + '\n\n';
     if(e.explain) md += '**解析：** ' + e.explain + '\n\n';
   }
@@ -1159,14 +1400,15 @@ function exportErrors(){
 }
 function errTypeName(t){ return {single:'单选',judge:'判断',multi:'多选',fill:'填空',essay:'解答'}[t] || '题目'; }
 function errCard(e){
-  var c = chapterOfBook(e.book), opts = '';
+  var c = chapterOfBook(e.book), opts = '', rv = reviewStatus(e);
   var lid = (e.lesson && c && c.lessons[e.lesson-1]) ? c.lessons[e.lesson-1] : '';
   if(e.options && e.options.length){
-    for(var i=0;i<e.options.length;i++) opts += '<div style="font-size:11.6px;color:var(--muted);line-height:1.7">' + esc(e.options[i].k) + '. ' + esc(e.options[i].t) + '</div>';
+    for(var i=0;i<e.options.length;i++) opts += '<div style="font-size:13px;color:var(--muted);line-height:1.7">' + esc(e.options[i].k) + '. ' + esc(e.options[i].t) + '</div>';
   }
   return '<div class="ecard">' +
     '<div class="emeta"><span class="pill">' + errTypeName(e.type) + '</span><span>' + esc(c?c.name:'') + '</span>' +
     (e.section?'<span class="kp">' + esc(e.section) + '</span>':'') +
+    '<span class="review-badge ' + rv.cls + '">' + esc(rv.text) + '</span>' +
     '<span style="margin-left:auto">错 ' + (Math.max(1, parseInt(e.count, 10) || 1)) + ' 次</span></div>' +
     '<div class="estem">' + esc(e.stem) + '</div>' + opts +
     (e.answer?'<div class="eans"><b>正确答案：</b>' + esc(e.answer) + '</div>':'') +
@@ -1184,17 +1426,20 @@ function buildErrors(){
   var all = errArr();
   var open = all.filter(function(e){ return !e.fixed; });
   var fixed = all.filter(function(e){ return e.fixed; });
+  var due = all.filter(function(e){ return reviewIsDue(e); });
   var grp = groupErrs(open);
   var list = all.filter(function(e){
     if(errChap !== 'all' && e.book !== errChap) return false;
+    if(errFilter === 'due') return reviewIsDue(e);
     if(errFilter === 'open') return !e.fixed;
     if(errFilter === 'fixed') return e.fixed;
     return true;
   });
-  var h = '<div class="pagehead"><div><h1>错题集</h1><p>做错的题会自动收进这里，按“章 · 小节”归类；点小节标签可直接回到对应讲义复习。</p></div>' +
-    '<div class="estat"><div><b>' + open.length + '</b><span>待复习</span></div><div><b>' + fixed.length + '</b><span>已掌握</span></div><div><b>' + grp.length + '</b><span>薄弱知识点</span></div></div></div>';
+  var h = '<div class="pagehead"><div><h1>错题集</h1><p>做错的题会自动收进这里，按“章 · 小节”归类；答对后按 1 / 3 / 7 / 14 天间隔安排下一次，连续答对 4 次才算掌握。</p></div>' +
+    '<div class="estat"><div><b>' + due.length + '</b><span>今天到期</span></div><div><b>' + open.length + '</b><span>在复习队列</span></div><div><b>' + fixed.length + '</b><span>已掌握</span></div><div><b>' + grp.length + '</b><span>薄弱知识点</span></div></div></div>';
 
-  h += '<div class="filters"><button class="fbtn' + (errFilter==='open'?' on':'') + '" onclick="setErrFilter(\'open\')">待复习 ' + open.length + '</button>' +
+  h += '<div class="filters"><button class="fbtn' + (errFilter==='due'?' on':'') + '" onclick="setErrFilter(\'due\')">今天到期 ' + due.length + '</button>' +
+    '<button class="fbtn' + (errFilter==='open'?' on':'') + '" onclick="setErrFilter(\'open\')">在队列 ' + open.length + '</button>' +
     '<button class="fbtn' + (errFilter==='fixed'?' on':'') + '" onclick="setErrFilter(\'fixed\')">已掌握 ' + fixed.length + '</button>' +
     '<button class="fbtn' + (errFilter==='all'?' on':'') + '" onclick="setErrFilter(\'all\')">全部 ' + all.length + '</button></div>';
 
@@ -1212,14 +1457,17 @@ function buildErrors(){
       h += '<div class="weakrow"><b>' + esc(grp[g].label) + '</b><span>错 ' + grp[g].list.length + ' 题</span>' + lessonChipsFor(grp[g].chapter) + '</div>';
     }
     h += '</div>';
-    h += '<div class="filters" style="margin-top:-2px;margin-bottom:14px"><button class="qbtn" onclick="startRedoView()">错题重练（抽 10 题）</button>' +
+    h += '<div class="filters" style="margin-top:-2px;margin-bottom:14px">' + (due.length ? '<button class="qbtn" onclick="startRedoView(\'due\')">开始今日复习（' + due.length + ' 题）</button>' : '<button class="qbtn" onclick="setErrFilter(\'open\')">查看复习队列</button>') +
+      '<button class="qbtn ghost" onclick="startRedoView(\'all\')">全部错题加练</button>' +
       '<button class="qbtn ghost" onclick="exportErrors()">导出 Markdown</button>' +
       (fixed.length?'<button class="qbtn ghost" onclick="clearFixedErrs()">清空已掌握</button>':'') + '</div>';
   }
 
   if(!list.length){
-    h += '<div class="empty"><b>' + (all.length?'当前筛选下没有错题':'还没有错题') + '</b>' +
-      (all.length?'换个筛选条件看看。':'去练习册答题，做错的题会自动出现在这里。') + '</div>';
+    var emptyTitle = all.length ? (errFilter==='due' ? '今天没有到期错题' : '当前筛选下没有错题') : '还没有错题';
+    var emptyHint = all.length ? (errFilter==='due' ? '错题都排在未来日期了。点“在队列”查看每道题的下次复习时间。' : '换个筛选条件看看。') : '去练习册答题，做错的题会自动出现在这里。';
+    h += '<div class="empty"><b>' + emptyTitle + '</b>' + emptyHint +
+      (all.length && errFilter==='due' ? '<br><br><button class="qbtn ghost" onclick="setErrFilter(\'open\')">查看复习队列</button>' : '') + '</div>';
   } else {
     for(var k=0;k<list.length;k++) h += errCard(list[k]);
   }
@@ -1235,14 +1483,18 @@ function errorsView(noPush){
 function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
 function qnorm(s){ return String(s==null?'':s).toLowerCase().replace(/[\s\u3000]/g,'').replace(/[，。、；：""''（）()《》〈〉【】\[\]…·,.;:!?！？\-—_]/g,''); }
 
-function startRedoView(){
+function startRedoView(mode){
   var pool = errArr();
-  if(!pool.length){ redoState = {empty:true, list:[]}; }
+  var open = pool.filter(function(e){ return !e.fixed; });
+  if(mode !== 'all'){ mode = 'due'; open = open.filter(function(e){ return reviewIsDue(e); }); }
+  if(!open.length){ redoState = {empty:true, list:[], mode:mode}; }
   else {
-    var open = pool.filter(function(e){ return !e.fixed; });
-    if(!open.length) open = pool;
-    shuffle(open);
-    redoState = {list: open.slice(0,10), i:0, right:0, wrong:0, answered:false, choice:[], result:null, user:'', revealed:false, empty:false};
+    open.sort(function(a,b){
+      var ad = reviewDueAt(a) || 0, bd = reviewDueAt(b) || 0;
+      if(ad !== bd) return ad - bd;
+      return (parseInt(b.count,10)||1) - (parseInt(a.count,10)||1);
+    });
+    redoState = {list: open.slice(0,10), i:0, right:0, wrong:0, answered:false, choice:[], result:null, user:'', revealed:false, empty:false, mode:mode, nextText:''};
   }
   redoView();
 }
@@ -1287,11 +1539,14 @@ function redoEssay(ok){
 }
 function redoRecord(ok, user){
   var st = redoState, e = st.list[st.i], o = readErrors(), r = o[e.id] || {};
-  if(ok){ r.fixed = true; r.fixedAt = Date.now(); st.right++; }
-  else { r.fixed = false; r.count = (r.count||1) + 1; r.at = Date.now(); r.user = String(user||'').slice(0,300); st.wrong++; }
+  var baseCount = parseInt(r.count,10) || parseInt(e.count,10) || 1;
+  if(ok){ st.right++; r.count = baseCount; }
+  else { st.wrong++; r.count = baseCount + 1; r.at = Date.now(); r.lastWrongAt = Date.now(); r.user = String(user||'').slice(0,300); }
   r.book = e.book; r.qid = e.qid; r.type = e.type; r.section = e.section; r.stem = e.stem;
   r.options = e.options; r.answer = e.answer; r.explain = e.explain;
-  if(!r.count) r.count = e.count || 1;
+  if(!r.count) r.count = baseCount;
+  scheduleReview(r, !!ok);
+  st.nextText = reviewStatus(r).text;
   o[e.id] = r; saveErrors(o);
   st.answered = true; st.result = !!ok; st.user = String(user||'');
   buildRedo();
@@ -1303,12 +1558,26 @@ function redoNext(){
 function buildRedo(){
   var st = redoState;
   if(!st || st.empty || !st.list.length){
-    homeEl.innerHTML = '<div class="quizwrap"><div class="empty"><b>错题集还是空的</b>先去练习册答题，做错的题会自动进来。<br><br><a class="qbtn" href="#/ch1-book" style="text-decoration:none;display:inline-block">去做第一章练习 →</a></div></div>';
+    var allErrs = errArr();
+    var openErrs = allErrs.filter(function(e){ return !e.fixed; });
+    var next = null, k;
+    for(k=0;k<openErrs.length;k++){
+      var due = Number(openErrs[k].dueAt || 0);
+      if(due && (!next || due < next)) next = due;
+    }
+    var emptyTitle = !allErrs.length ? '错题集还是空的' : (!openErrs.length ? '错题都掌握了' : (st && st.mode === 'all' ? '没有可加练的错题' : '今天没有到期错题'));
+    var emptyHint = !allErrs.length ? '先去练习册答题，做错的题会自动进来，并按间隔安排复习。' :
+      (!openErrs.length ? '错题都已标记为掌握，之后仍可随时回看。' :
+      (st && st.mode === 'all' ? '当前没有未掌握的错题。' : '复习队列已经排到未来：' + (next ? reviewWhen(next) : '稍后') + '。到日期再回来，不用一次刷完。'));
+    var emptyActions = openErrs.length ?
+      '<button class="qbtn" onclick="startRedoView(\'all\')">全部错题加练</button> <a class="qbtn ghost" href="#/errors" style="text-decoration:none;display:inline-block;margin-left:6px">查看复习队列</a>' :
+      '<a class="qbtn" href="#/ch1-book" style="text-decoration:none;display:inline-block">去做第一章练习 →</a> <a class="qbtn ghost" href="#/errors" style="text-decoration:none;display:inline-block;margin-left:6px">回错题集</a>';
+    homeEl.innerHTML = '<div class="quizwrap"><div class="empty"><b>' + emptyTitle + '</b>' + emptyHint + '<br><br>' + emptyActions + '</div></div>';
     markNav('redo'); return;
   }
   if(st.i >= st.list.length){
-    homeEl.innerHTML = '<div class="quizwrap"><div class="empty"><b>本轮重练完成</b>答对 ' + st.right + ' 题 · 答错 ' + st.wrong + ' 题<br>答对的题已标记为“已掌握”，答错的仍留在错题集。<br><br>' +
-      '<button class="qbtn" onclick="startRedoView()">再来一轮</button> <a class="qbtn ghost" href="#/errors" style="text-decoration:none;display:inline-block;margin-left:6px">回错题集</a></div></div>';
+    homeEl.innerHTML = '<div class="quizwrap"><div class="empty"><b>本轮复习完成</b>答对 ' + st.right + ' 题 · 答错 ' + st.wrong + ' 题<br>答对的题已按 1 / 3 / 7 / 14 天安排下次复习；答错的明天再复习。<br><br>' +
+      '<button class="qbtn" onclick="startRedoView(\'all\')">加练全部错题</button> <a class="qbtn ghost" href="#/errors" style="text-decoration:none;display:inline-block;margin-left:6px">查看下次日期</a></div></div>';
     markNav('redo'); return;
   }
   var e = st.list[st.i], c = chapterOfBook(e.book);
@@ -1333,7 +1602,7 @@ function buildRedo(){
       h += '<button class="qopt' + clsm + '" onclick="redoToggle(\'' + esc(om.k) + '\')"' + (st.answered?' disabled':'') + '><b>' + esc(om.k) + '</b><span>' + esc(om.t) + '</span></button>';
     }
     h += '</div>';
-    if(!st.answered) h += '<div class="qnext"><span style="font-size:11.5px;color:var(--muted)">多选题：选全再提交</span><button class="qbtn" onclick="redoMultiSubmit()">提交答案</button></div>';
+    if(!st.answered) h += '<div class="qnext"><span style="font-size:13px;color:var(--muted)">多选题：选全再提交</span><button class="qbtn" onclick="redoMultiSubmit()">提交答案</button></div>';
   } else if(e.type === 'fill'){
     h += '<div class="qfill"><input id="redoInput" value="' + esc(st.user) + '" placeholder="输入答案，多个答案用逗号分隔"' + (st.answered?' disabled':'') + '>' +
       (st.answered?'':'<button class="qbtn" onclick="redoFill()">核对答案</button>') + '</div>';
@@ -1342,15 +1611,16 @@ function buildRedo(){
       h += '<div class="qfill"><button class="qbtn" onclick="redoReveal()">查看参考答案并自评</button></div>';
     } else {
       h += '<div class="qfill"><textarea id="redoInput" placeholder="写下你的答案，再对照下方参考答案自评"' + (st.answered?' disabled':'') + '>' + esc(st.user) + '</textarea></div>';
-      if(!st.answered) h += '<div class="qnext"><span style="font-size:11.5px;color:var(--muted)">对照参考答案，意思大体一致就算对</span><button class="qbtn ghost" onclick="redoEssay(false)">还差点</button><button class="qbtn" onclick="redoEssay(true)">意思对了</button></div>';
+      if(!st.answered) h += '<div class="qnext"><span style="font-size:13px;color:var(--muted)">对照参考答案，意思大体一致就算对</span><button class="qbtn ghost" onclick="redoEssay(false)">还差点</button><button class="qbtn" onclick="redoEssay(true)">意思对了</button></div>';
     }
   }
 
   if(st.answered){
-    h += '<div class="qfeed ' + (st.result?'ok':'bad') + '">' + (st.result?'✓ 答对了，这题已标记为掌握。':'✗ 这题又错了，已重新记入待复习。') +
+    h += '<div class="qfeed ' + (st.result?'ok':'bad') + '">' + (st.result?'✓ 答对了。':'✗ 这题又错了。') +
+      (st.nextText?' 下次复习：' + esc(st.nextText) + '。':'') +
       (st.user?'<br>你的答案：' + esc(st.user):'') +
       '<span class="exp">' + (e.answer?'正确答案：' + esc(e.answer):'') + (e.explain?(e.answer?'<br>解析：':'') + esc(e.explain):'') + '</span></div>';
-    h += '<div class="qnext"><span style="font-size:11.5px;color:var(--muted)">' + (st.result?'已掌握':'回看上面解析') + '</span><button class="qbtn" onclick="redoNext()">' + (st.i+1>=st.list.length?'看本轮结果':'下一题') + ' →</button></div>';
+    h += '<div class="qnext"><span style="font-size:13px;color:var(--muted)">' + esc(st.nextText || '回看上面解析') + '</span><button class="qbtn" onclick="redoNext()">' + (st.i+1>=st.list.length?'看本轮结果':'下一题') + ' →</button></div>';
   }
   h += '</div></div>';
   homeEl.innerHTML = h; markNav('redo');
