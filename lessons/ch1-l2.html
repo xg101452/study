@@ -190,7 +190,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <div class="wrap">
     <span class="kicker">2027 四川统招专升本 · 计算机基础 · 第一章第 2 课</span>
     <h1>数制及其转换
-      <span class="light">基数与位权 ｜ 二 / 八 / 十 / 十六互转 ｜ 二进制运算 ｜ 为什么用二进制</span>
+      <span class="light">基数与位权 ｜ 二 / 八 / 十 / 十六互转 ｜ 二进制运算与逻辑运算 ｜ 为什么用二进制</span>
     </h1>
     <p class="lead">考纲对本课的要求是<b>"理解数制，掌握进制之间的相互转换"</b>——"掌握"是三层要求里最高的。"掌握"意味着<b>会算、会写过程</b>，所以这一课不是认识题，是<b>计算题和简答题</b>。</p>
 
@@ -201,7 +201,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
       </div>
       <div class="syl-box">
         <h3>本课在卷面上值多少</h3>
-        <p class="q warn">2025 年：<b>填空 54</b>（二进制减法）＋ <b>简答 58</b>（三数比较大小，要求写过程），<b>8 分</b>。加上单选题里的进制题，本课实际贡献 <b>10 分上下</b>，是第一章里最值钱的一节。</p>
+        <p class="q warn">2025 年：<b>填空 54</b>（二进制减法）＋ <b>简答 58</b>（三数比较大小，要求写过程），<b>8 分</b>；2026 年：<b>判断 22</b>（按位与，1 分）。加上单选题里的进制题，本课实际贡献 <b>10 分上下</b>，是第一章里最值钱的一节。</p>
       </div>
     </div>
   </div>
@@ -214,9 +214,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     <a href="#s2">② 四种进制对照</a>
     <a href="#s3">③ 为什么用二进制</a>
     <a href="#s4">④ 转换四类</a>
-    <a href="#s5">⑤ 二进制运算</a>
+    <a href="#s5">⑤ 二进制运算与逻辑</a>
     <a href="#s6">⑥ 易错清单</a>
-    <a href="#s7">必背 8 条</a>
+    <a href="#s7">必背 9 条</a>
     <a href="#s8">自测 12 题</a>
   </div>
 </nav>
@@ -240,8 +240,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
       <td>四种进制的按权展开 · 除基取余 / 乘基取整 · 二↔八（3 位一组）· 二↔十六（4 位一组）· <b>三数比大小的完整过程</b></td>
       <td><b>必须会算，且能手写过程</b>。简答题 5 分就在这里</td></tr>
     <tr><td class="c"><span class="f f2">★★</span></td>
-      <td>基数 / 位权 / 数码三个概念 · 十六进制字母 A~F · 二进制四则运算</td>
-      <td>能说出定义、能算加减即可</td></tr>
+      <td>基数 / 位权 / 数码三个概念 · 十六进制字母 A~F · 二进制四则运算 · <b>逻辑运算（与 / 或 / 非 / 异或）</b></td>
+      <td>能说出定义、能算加减与按位逻辑运算</td></tr>
     <tr><td class="c"><span class="f f1">★</span></td>
       <td>计算机采用二进制的原因（四条理由）</td>
       <td>简答可能考，背四条关键词</td></tr>
@@ -421,8 +421,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
     <div>
-      <h2>二进制四则运算</h2>
-      <span class="tag"><span class="f f2">★★</span>填空常考一道减法，别在进位处翻车</span>
+      <h2>二进制四则运算与逻辑运算</h2>
+      <span class="tag"><span class="f f2">★★</span>四则运算记进位，逻辑运算记"逐位、不进位"</span>
     </div>
   </div>
   <div class="hr"></div>
@@ -439,6 +439,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <span style="color:#6b7a88">两种算法都能拿分：①先各自转十进制 164−153=11；②直接二进制相减得 00001011，再转十进制得 11。<b>稳妥做法是先转十进制</b>，不容易在借位处出错。</span></div>
 
   <div class="tip"><b>一个省时间的技巧：</b>填空题只要求最后结果，不要求过程。所以遇到二进制加减，可以<b>先心算成十进制、算完再换回去</b>，比逐位借位快且不容易错。</div>
+
+  <div class="mem" style="margin-top:14px"><b>同一节还有逻辑运算：</b>它和四则运算不是一回事——<b>按位对齐、逐位判断，不产生进位或借位</b>。2026 年判断第 22 题就只考了一条"与运算"。</div>
+
+  <table style="margin-top:10px">
+    <tr><th style="width:120px">运算</th><th style="width:150px">规则</th><th>4 位例子</th></tr>
+    <tr><td><b>与</b>（AND，&amp;）</td><td><b>全 1 才得 1</b>，只要有一位是 0，结果就是 0</td><td>1101 &amp; 1001 = <b>1001</b></td></tr>
+    <tr><td><b>或</b>（OR，|）</td><td><b>有 1 就得 1</b>，只有两位全是 0 才得 0</td><td>1101 | 1001 = <b>1101</b></td></tr>
+    <tr><td><b>异或</b>（XOR，^）</td><td><b>相同得 0，不同得 1</b></td><td>1101 ^ 1001 = <b>0100</b></td></tr>
+    <tr><td><b>非</b>（NOT，~）</td><td><b>逐位取反</b>：0 变 1，1 变 0</td><td>~1010 = <b>0101</b>（按 4 位看）</td></tr>
+  </table>
+
+  <div class="mem"><b>四句口诀：</b>与——<b>全 1 才 1</b>；或——<b>有 1 就 1</b>；异或——<b>不同才 1</b>；非——<b>逐位反过来</b>。做题时先把两个数上下对齐，再一位一位写结果，不要当成十进制相加。</div>
+
+  <div class="qz"><span class="lb">2026 · 判断 第 22 题</span><b>1 分</b>　二进制数 1101 与二进制数 1001 做与运算的结果为 1001。<br>
+  <span class="no">答案：<b>对</b>。按位与：<b>1101 &amp; 1001 = 1001</b>。从右往左看：1&amp;1=1、0&amp;0=0、1&amp;0=0、1&amp;1=1，所以结果是 1001。<br>
+  这题不需要转十进制；把"与＝全 1 才 1"套到每一位即可。若把"与"误当成加法，会得到 10110，正好掉进陷阱。</span></div>
 </section>
 
 <!-- ============ S6 易错 ============ -->
@@ -466,6 +482,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <div class="okbox"><b>2026 在本课给出的信号：</b>进制题仍是必考，但从"单纯计算"变成了"计算 + 概念辨析"双考。两条线都要硬：①按权展开、分组换算要快而准，不能漏权；②"为什么用二进制"要能判断出哪条说法是假。</div>
 
   <div class="mem"><b>顺带记一个 2026 的易错点：</b>D 选项那种"能精确表示小数"的说法，不只是知识没写，<b>它在数学上就是错的</b>。反过来，这也解释了为什么浮点数会有精度误差——0.1 在二进制里同样无法精确表示。这一点 2027 很可能换个说法再考。</div>
+
+  <div class="tip"><b>本课另一道 2026 题：</b>判断第 22 题（1101 与 1001 做与运算）已放在第⑤节"逻辑运算"里，答案是<b>对</b>；不要把"与"当成加法。</div>
 </section>
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -495,7 +513,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 8 条</h2>
+      <h2>本课必背 9 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -509,8 +527,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     <tr><td class="c">4</td><td>十进制 → 其他：整数<b>除基取余、倒序读</b>；小数<b>乘基取整、正序读</b></td></tr>
     <tr><td class="c">5</td><td>二 ↔ 八：<b>3 位一组</b>；二 ↔ 十六：<b>4 位一组</b>；八 ↔ 十六：<b>经二进制中转</b></td></tr>
     <tr><td class="c">6</td><td>二进制加法<b>逢二进一</b>（1+1=10）；减法<b>借一当二</b></td></tr>
-    <tr><td class="c">7</td><td>采用二进制四理由：易物理实现 · 规则简单 · 便于逻辑运算 · 可靠性高</td></tr>
-    <tr><td class="c">8</td><td>2 的幂记到 2<sup>10</sup>=1024；2<sup>8</sup>=256、2<sup>7</sup>=128、2<sup>6</sup>=64 最常用</td></tr>
+    <tr><td class="c">7</td><td>逻辑运算：<b>与全 1 才 1、或有 1 就 1、异或不同才 1、非逐位取反</b>；按位算，不进位</td></tr>
+    <tr><td class="c">8</td><td>采用二进制四理由：易物理实现 · 规则简单 · 便于逻辑运算 · 可靠性高</td></tr>
+    <tr><td class="c">9</td><td>2 的幂记到 2<sup>10</sup>=1024；2<sup>8</sup>=256、2<sup>7</sup>=128、2<sup>6</sup>=64 最常用</td></tr>
   </table>
 </section>
 
@@ -572,7 +591,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 </nav>
 <footer>
   <b>依据：</b>四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》"一、2. 数制及其转换"；<br>
-  真题来源：2024、2025 年四川省普通高校专升本统考《计算机基础》试卷（可核实回忆版）。<b>2026 年真题已整理出约 15 道</b>（官方从不公布试题，来源为考后讲评转写，非全套）。说明：网上自称"2026 真题"的版本题型结构与本卷完全不符（写成"单选 40 题、每题 2 分"），属拼凑件，未采用。2026 的可核实题目已分别写进各课的"2026 年真题"小节。2026 年命题仍依据 2024 年考试要求，故 2024、2025 真题对 2027 仍具参考价值。<br>
+  真题来源：2024、2025 年四川省普通高校专升本统考《计算机基础》试卷（回忆版，考后整理）。<b>2026 年重点题 15 道（考后讲评整理）</b>；10 页 60 题练习卷见《2026 年真题档案》，供整卷练习。2026 年命题仍依据 2024 年考试要求，故 2024、2025 真题对 2027 仍具参考价值。<br>
   Ctrl+P 可打印
 </footer>
 

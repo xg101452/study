@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>2026 年四川专升本计算机真题（可核实部分）· 按考点定位</title>
+<title>2026 年四川专升本计算机真题档案 · 15 道重点题 + 60 题练习卷</title>
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
@@ -117,16 +117,41 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   .tip,.warnbox,.okbox,.mem,.human,.qz{font-size:13.6px}
   .btn{font-size:13px;min-height:36px}
 }
+</style><style id="exam-2026-full-scan">
+/* 2026 考后练习卷：扫描页 + 答案总表 */
+.scan-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 4px}
+.scan-card{margin:0;background:#fbfaf7;border:1px solid #ddd8cc;border-radius:11px;padding:8px;box-shadow:0 2px 8px rgba(20,32,43,.05)}
+.scan-card a{display:block;line-height:0;border-radius:6px;overflow:hidden}
+.scan-card img{width:100%;height:auto;display:block;border:1px solid #e4dfd4;background:#fff}
+.scan-card figcaption{font-size:12.2px;color:var(--muted);text-align:center;padding:6px 4px 0;line-height:1.55}
+.scan-card figcaption b{color:var(--ink2)}
+.anskey{font-size:13.2px}
+.anskey td:first-child{white-space:nowrap;font-weight:700;color:#3b4b59;background:#faf8f2}
+.anskey .seq{letter-spacing:1.2px;font-weight:700;color:#1d3b52}
+.anskey .subj{line-height:1.9}
+.anskey .subj b{color:#8a5a00}
+.ans-note{font-size:12.8px;color:var(--muted);margin:6px 0 0}
+@media(max-width:760px){
+  .scan-grid{grid-template-columns:1fr;gap:12px}
+  .scan-card{padding:7px}
+  .scan-card figcaption{font-size:12px}
+  .anskey{font-size:12.4px}
+}
+@media print{
+  .scan-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .scan-card{box-shadow:none;break-inside:avoid}
+  .scan-card img{max-height:235mm;object-fit:contain}
+}
 </style></head>
 <body>
 
 <header class="hero">
   <div class="wrap">
     <span class="kicker">2027 四川统招专升本 · 计算机基础 · 真题档案</span>
-    <h1>2026 年真题（可核实部分）
-      <span class="light">4 月 16 日实考卷 ｜ 官方不公布试题 ｜ 本页为考后讲评转写整理出的 15 道</span>
+    <h1>2026 年考后资料档案
+      <span class="light">4 月 16 日实考 ｜ 官方不公布试题 ｜ 15 道重点题 + 60 题练习卷</span>
     </h1>
-    <p class="lead">先说清楚这一页是什么：省教育考试院<b>从不公布专升本试题与答案</b>，所以任何"全套真题"都不可能是官方出品。但 2026 年 4 月 16 日实考之后，多家机构做了逐题讲评，把题干和答案还原了出来。我逐条比对讲评转写后，确认了下面 <b>15 道</b>的题面、答案与考点，并按知识点归到了对应的课。</p>
+    <p class="lead">这一页分两层：第一层是<b>10 页 60 题练习卷</b>，60 题、带答案，题型和分值按四川卷结构编排，供闭卷练整卷；第二层是考后讲评整理的 <b>15 道重点题</b>，按知识点归到了对应课。两层都保留，练习卷用来练节奏，15 道用来校准重点。</p>
   </div>
 </header>
 
@@ -148,22 +173,85 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     <tr><td>单项选择题</td><td class="c">20 题 × 2 分 = 40</td><td class="c">20 题 × 2 分 = 40</td><td>完全一致</td></tr>
     <tr><td>判断题</td><td class="c">15 题 × 1 分 = 15</td><td class="c">15 题 × 1 分 = 15</td><td>完全一致</td></tr>
     <tr><td>多项选择题</td><td class="c">10 题 × 3 分 = 30</td><td class="c">10 题 × 3 分 = 30</td><td>完全一致</td></tr>
-    <tr><td>填空题</td><td class="c">10 题 × 3 分 = 30</td><td class="c">10 题 × 3 分 = 30</td><td>一致（2026 未复原题干）</td></tr>
-    <tr><td>简答题</td><td class="c">3 题 × 5 分 = 15</td><td class="c">3 题 × 5 分 = 15</td><td>一致（2026 未复原题干）</td></tr>
+    <tr><td>填空题</td><td class="c">10 题 × 3 分 = 30</td><td class="c">10 题 × 3 分 = 30</td><td>一致（练习卷含题干）</td></tr>
+    <tr><td>简答题</td><td class="c">3 题 × 5 分 = 15</td><td class="c">3 题 × 5 分 = 15</td><td>一致（练习卷含题干）</td></tr>
     <tr><td>综合应用题</td><td class="c">2 题 × 10 分 = 20</td><td class="c">2 题 × 10 分 = 20</td><td>一致，考办公软件</td></tr>
     <tr><td colspan="2" style="text-align:right"><b>合计</b></td><td class="c"><b>150 分 / 120 分钟</b></td><td>三年零变化</td></tr>
   </table>
 
-  <div class="okbox"><b>这条结论比任何一道题都值钱：</b>题型、题量、分值连续三年不变，说明命题组在<b>稳定输出</b>。你按 2024、2025 的题型去练，就是在按 2027 的题型练。多选仍是 10 题 30 分，仍是"少选多选都不得分"。</div>
+  <div class="okbox"><b>这条结论比任何一道题都值钱：</b>题型、题量、分值连续三年不变，说明这三年题型、题量、分值保持稳定。你按 2024、2025 的题型去练，就是在按 2027 的题型练。多选仍是 10 题 30 分，仍是"少选多选都不得分"。</div>
 </section>
 
-<!-- ============ 二、题目清单 ============ -->
-<section class="mod">
+<!-- ============ 二、2026 考后练习卷 ============ -->
+<section class="mod" id="full2026">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">Ⅱ</div>
     <div>
-      <h2>15 道题 · 按知识点归位</h2>
-      <span class="tag">最后一列是它已经/将要出现在哪一课</span>
+      <h2>2026 考后练习卷 · 60 题</h2>
+      <span class="tag">10 页扫描 ｜ 60 题带答案 ｜ 考后整理</span>
+    </div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="warnbox"><b>使用说明：</b>这 10 页是考后整理的 60 题练习卷，题型、题量、分值按四川卷结构编排，题目和答案可以拿来练。遇到题干转写有争议的地方，以第 Ⅲ 节的 15 道重点题和考纲为准。</div>
+
+  <p class="tbl-note" style="font-size:13.2px;color:var(--ink2);margin-top:12px">结构：单选 20×2=40 ｜ 判断 15×1=15 ｜ 多选 10×3=30 ｜ 填空 10×3=30 ｜ 简答 3×5=15 ｜ 综合 2×10=20，共 150 分 / 120 分钟。答案紧跟在每题后面；先遮住答案做，再翻回来核对。</p>
+
+  <div class="scan-grid">
+    <figure class="scan-card"><a href="../assets/exams/2026/01.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/01.webp" alt="2026 考后练习卷第 1 页：单选 1—8"></a><figcaption><b>第 1 页</b> · 单选 1—8 及部分答案</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/02.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/02.webp" alt="2026 考后练习卷第 2 页：单选 8—15"></a><figcaption><b>第 2 页</b> · 单选 8—15</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/03.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/03.webp" alt="2026 考后练习卷第 3 页：单选 16—23"></a><figcaption><b>第 3 页</b> · 单选 16—23</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/04.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/04.webp" alt="2026 考后练习卷第 4 页：单选 23—32"></a><figcaption><b>第 4 页</b> · 单选 23—32</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/05.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/05.webp" alt="2026 考后练习卷第 5 页：判断 32—40"></a><figcaption><b>第 5 页</b> · 判断 32—40</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/06.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/06.webp" alt="2026 考后练习卷第 6 页：多选 40—47"></a><figcaption><b>第 6 页</b> · 多选 40—47</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/07.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/07.webp" alt="2026 考后练习卷第 7 页：多选 47—56"></a><figcaption><b>第 7 页</b> · 多选 47—56</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/08.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/08.webp" alt="2026 考后练习卷第 8 页：56 进制转换、57 操作系统功能"></a><figcaption><b>第 8 页</b> · 56 进制转换、57 操作系统功能</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/09.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/09.webp" alt="2026 考后练习卷第 9 页：57 续、58 动画、59 二分查找"></a><figcaption><b>第 9 页</b> · 57 续、58 动画、59 二分查找</figcaption></figure>
+    <figure class="scan-card"><a href="../assets/exams/2026/10.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/10.webp" alt="2026 考后练习卷第 10 页：60 Word 综合应用"></a><figcaption><b>第 10 页</b> · 60 Word 综合应用</figcaption></figure>
+  </div>
+  <p class="ans-note">共 10 页；原文件第 11 张是第 1 页重复封面，已剔除。点击任一页可看大图。</p>
+
+  <h3 style="font-size:16px;margin:20px 0 6px;color:#1d3b52">答案总表（按题号顺序）</h3>
+  <table class="anskey">
+    <tr><th style="width:130px">题型 / 题号</th><th>答案</th></tr>
+    <tr><td>单选 1—10</td><td class="seq">D　C　B　C　A　D　D　A　D　A</td></tr>
+    <tr><td>单选 11—20</td><td class="seq">B　A　B　C　D　C　C　B　A　A</td></tr>
+    <tr><td>判断 21—35</td><td class="seq">A　A　B　A　A　A　A　B　A　B　B　B　A　A　A</td></tr>
+    <tr><td>多选 36—45</td><td class="seq">ABCD　／　CD　／　BCD　／　ACD　／　ABC　／　BC　／　ABCD　／　ABCD　／　BD　／　ABCD</td></tr>
+  </table>
+  <table class="anskey" style="margin-top:10px">
+    <tr><th style="width:70px">题号</th><th>填空答案</th></tr>
+    <tr><td>46</td><td>中、小规模集成电路</td></tr>
+    <tr><td>47</td><td>−63</td></tr>
+    <tr><td>48</td><td>+(2<sup>n−1</sup>−1)</td></tr>
+    <tr><td>49</td><td>R</td></tr>
+    <tr><td>50</td><td>声道数</td></tr>
+    <tr><td>51</td><td>邮件合并</td></tr>
+    <tr><td>52</td><td>5</td></tr>
+    <tr><td>53</td><td>讲义</td></tr>
+    <tr><td>54</td><td>EF03::1010</td></tr>
+    <tr><td>55</td><td>记录</td></tr>
+  </table>
+  <table class="anskey" style="margin-top:10px">
+    <tr><th style="width:70px">题号</th><th>简答 / 综合参考答案（要点）</th></tr>
+    <tr><td>56</td><td class="subj"><b>1046<sub>10</sub> = 2026<sub>8</sub></b>（除 8 取余，余数倒读：2、0、2、6）；<b>46.625<sub>10</sub> = 2E.A<sub>16</sub></b>（整数 46=2E；小数 0.625×16=10，即 A）。</td></tr>
+    <tr><td>57</td><td class="subj">操作系统五大功能：<b>处理机管理、存储管理、设备管理、文件管理、接口</b>（接口含命令接口与图形用户接口）。</td></tr>
+    <tr><td>58</td><td class="subj">PowerPoint 四类动画：<b>进入、退出、强调、动作路径</b>。</td></tr>
+    <tr><td>59</td><td class="subj">（1）<b>二分查找更适合</b>：数据已按学号升序排列且学号唯一，满足二分前提，效率更高。<br>（2）顺序查找最坏 <b>1024 次</b>；二分查找最坏 <b>10 次</b>（2<sup>10</sup>=1024）。<br>（3）顺序查找 <b>D. O(n)</b>；二分查找 <b>B. O(log n)</b>。</td></tr>
+    <tr><td>60</td><td class="subj">（1）插入<b>艺术字</b>；（2）<b>首字下沉</b>；（3）<b>文字水印</b>；（4）<b>项目符号</b>；（5）插入 <b>SmartArt</b>。</td></tr>
+  </table>
+  <p class="ans-note">答案按图文原页转录；判断题 A=正确、B=错误；多选题少选/多选均不得分。</p>
+
+  <div class="tip"><b>建议这样用：</b>先按 120 分钟闭卷做一遍，对答案只统计“错在哪一章”，不要逐题抄解析；第二遍只做错题，并回到本站对应课时补概念。练习卷的价值是<b>暴露整卷节奏</b>，不是替代 21 课的自测题。</div>
+</section>
+
+<!-- ============ 三、题目清单 ============ -->
+<section class="mod">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">Ⅲ</div>
+    <div>
+      <h2>15 道重点题 · 按知识点归位</h2>
+      <span class="tag">考后讲评整理；与练习卷互为参照；最后一列是它对应哪一课</span>
     </div>
   </div>
   <div class="hr"></div>
@@ -193,22 +281,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     <tr><td>多选</td><td>计算机采用二进制的原因 → <b>ABC</b>；D"能精确表示所有小数"错（0.6 转二进制无限循环）</td><td>第一章第 2 课（已写入）</td></tr>
   </table>
 
-  <p class="tbl-note">填空、简答、综合应用三类：讲评未覆盖题干，只知题型与分值，故不列入。已在课的"2026 真题"小节里写入的，标了"已写入"。</p>
+  <p class="tbl-note">这 15 道是考后讲评中的客观题片段；练习卷的填空、简答、综合应用题见第 Ⅱ 节。已在课的"2026 真题"小节里写入的，标了"已写入"。</p>
 </section>
 
-<!-- ============ 三、命题倾向 ============ -->
+<!-- ============ 四、命题倾向 ============ -->
 <section class="mod">
   <div class="mod-h">
-    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">Ⅲ</div>
+    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">Ⅳ</div>
     <div>
-      <h2>从这 15 道里读出的 5 个 2026 命题倾向</h2>
-      <span class="tag">这些倾向比单个知识点更能指导 2027 的复习</span>
+      <h2>从这 15 道重点题整理的 5 个命题特点</h2>
+      <span class="tag">这些特点只针对这 15 道题，不当作 2027 的押题结论</span>
     </div>
   </div>
   <div class="hr"></div>
 
   <table>
-    <tr><th style="width:40px">#</th><th style="width:150px">倾向</th><th>证据与应对</th></tr>
+    <tr><th style="width:40px">#</th><th style="width:150px">特点</th><th>证据与应对</th></tr>
     <tr><td class="c">1</td><td><b>送分题改成"四选项四坑"</b></td><td>2026 单选第 1 题存储单位，A/B 把 1024 写成 1000，C 把 GB 的指数写成 2<sup>40</sup>，D 才对。<b>应对：每个单位的指数都要能自己推，不能只背一句"1024"</b></td></tr>
     <tr><td class="c">2</td><td><b>概念题用"听起来对"的假项钓鱼</b></td><td>多选里加一条"能精确表示所有小数"，四个理由背得再熟也会栽。<b>应对：背概念时同步背"哪条常见说法是错的"</b></td></tr>
     <tr><td class="c">3</td><td><b>判断题盯绝对词</b></td><td>"只能重装系统""与编码方式无关"——<b>"只能/无关/只由"出现就高度可疑</b></td></tr>
@@ -216,16 +304,16 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     <tr><td class="c">5</td><td><b>细节考点往"操作后果"靠</b></td><td>行距 1.2 显示"多倍行距"、占位符改母版。<b>应对：Office 别记菜单位置，记"操作→结果"</b></td></tr>
   </table>
 
-  <div class="warnbox"><b>一句话总结 2026：</b>题不难，但"背了就会"的比例在下降，"懂了才不会错"的比例在上升。这也解释了为什么 2026 之后，光刷真题不理解原理，分数会卡在 90 分上下。</div>
+  <div class="warnbox"><b>一句话总结 2026：</b>题不难，但"背了就会"的比例在下降，"懂了才不会错"的比例在上升。所以只背结论、不核对操作后果，遇到换问法的题就容易失分。</div>
 </section>
 
-<!-- ============ 四、怎么用 ============ -->
+<!-- ============ 五、怎么用 ============ -->
 <section class="mod">
   <div class="mod-h">
-    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">Ⅳ</div>
+    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">Ⅴ</div>
     <div>
-      <h2>这 15 道怎么用</h2>
-      <span class="tag">别当套卷刷，当"命题样本"用</span>
+      <h2>15 道重点题 + 60 题练习卷怎么用</h2>
+      <span class="tag">先当重点样本，再当整卷练习</span>
     </div>
   </div>
   <div class="hr"></div>
@@ -233,17 +321,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <div class="mem"><b>六步用法：</b><br>
   ① 先按课学完第一章第 2、3 课，把这 4 道当场做掉（已写进课里）；<br>
   ② 第二、三、四章学到对应课时，再回头做那几道，检验"是不是真懂"；<br>
-  ③ 全部学完后，把这 15 道<b>遮住答案重做一遍</b>，要求 100% 正确——它们是最贴近 2027 的样本；<br>
+  ③ 全部学完后，先按 120 分钟闭卷做第 Ⅱ 节 60 题练习卷，再把这 15 道<b>遮住答案重做一遍</b>，要求 100% 正确——它们是考后重点题样本，必须能独立做出来；<br>
   ④ 每道错题写一句"错在哪一步"，不写"粗心"；<br>
-  ⑤ 对照第 Ⅲ 节的 5 个倾向，检查自己的复习方式有没有踩空；<br>
-  ⑥ 把这页和第 1 课的"历年真题"互相对照：<b>同一个考点连考两年，就是 2027 的高概率点</b>。</div>
+  ⑤ 对照第 Ⅳ 节的 5 个命题特点，检查自己的复习方式有没有踩空；<br>
+  ⑥ 把这页和第 1 课的"历年真题"互相对照：<b>同一个考点连续出现，说明它是稳定考点，值得重点复盘</b>。</div>
 
-  <div class="tip"><b>一句话：</b>15 道题不足以复原一张卷，但足以校准方向。真正决定分数的，还是每课那 10～14 道自测题有没有全部做对。</div>
+  <div class="tip"><b>一句话：</b>15 道重点题用来校准方向，60 题练习卷用来练整卷节奏；真正决定分数的，还是每课那 10～14 道自测题有没有全部做对。</div>
 </section>
 
 <footer>
-  <b>来源说明：</b>2026 年 4 月 16 日四川省普通高校专升本《计算机基础》实考卷，官方不公布试题；<br>
-  本页题干与答案由考后多家机构的逐题讲评整理互证，共 15 道，非完整试卷。<br>
+  <b>说明：</b>2026 年 4 月 16 日四川省普通高校专升本《计算机基础》实考，官方不公布试题；<br>
+  15 道重点题由考后讲评整理；10 页练习卷共 60 题、带答案，供练习。<br>
   结构对照：2024、2025 年真题；考纲：四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》。<br>
   试卷满分 150 分 · 考试时间 120 分钟 · 笔试闭卷
 </footer>
@@ -251,3 +339,5 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 </main>
 </body>
 </html>
+
+
