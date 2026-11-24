@@ -1,16 +1,16 @@
-name: Unpack 1.4.3 site bundle
+name: Unpack 1.4.5 site bundle
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - site-bundle-1.4.3.zip
+      - site-bundle-1.4.5.zip
 
 permissions:
   contents: write
 
 concurrency:
-  group: unpack-site-1.4.3
+  group: unpack-site-1.4.5
   cancel-in-progress: false
 
 jobs:
@@ -23,13 +23,13 @@ jobs:
 
       - name: Unpack site bundle
         run: |
-          unzip -o site-bundle-1.4.3.zip -d .
-          rm site-bundle-1.4.3.zip
+          unzip -o site-bundle-1.4.5.zip -d .
+          rm site-bundle-1.4.5.zip
 
       - name: Commit unpacked site
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "release: 1.4.3 统一站点与 App 的版本、AI 文案和隐私政策" || echo "no changes"
+          git commit -m "release: 1.4.5 补全二进制逻辑运算与 Word 2026 综合应用" || echo "no changes"
           git push
