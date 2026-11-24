@@ -739,7 +739,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
       var a = list[i];
       if(!a) continue;
       if(u === a) return true;
-      if(allowContain && a.length >= 3 && u.indexOf(a) >= 0) return true;
+      if(allowContain && a.length >= 2 && u.indexOf(a) >= 0) return true;
     }
     return false;
   }
@@ -761,14 +761,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     if(ALTS[t]){
       for(i = 0; i < ALTS[t].length; i++){
         var a = ALTS[t][i];
-        if(u === a || (allowContain && a.length >= 3 && u.indexOf(a) >= 0)) return true;
+        if(u === a || (allowContain && a.length >= 2 && u.indexOf(a) >= 0)) return true;
       }
     }
     for(i = 0; i < tv.length; i++){
       var v = tv[i];
       if(!v) continue;
       if(u === v) return true;
-      if(allowContain && v.length >= 3 && u.indexOf(v) >= 0) return true;
+      if(allowContain && v.length >= 2 && u.indexOf(v) >= 0) return true;
       if(hasAlias(v, u, allowContain)) return true;
     }
     for(j = 0; j < uv.length; j++){

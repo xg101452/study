@@ -1,343 +1,189 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>2026 年四川专升本计算机真题档案 · 15 道重点题 + 60 题练习卷</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>历年真题整卷 · 2025 / 2026 四川专升本计算机基础</title>
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
-  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
-  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
-  --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
-  --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
-  --gold:#8a5a00; --goldbg:#fbf3dd;
+  --paper:#f7f5f0; --card:#fff; --line:#e3ded4;
+  --teal:#0e6b8a; --teal-bg:#e9f2f6; --brick:#b23a2e; --brick-bg:#fbeeec;
+  --gold:#8a5a00; --gold-bg:#fbf3dd; --green:#1f6b4a; --green-bg:#e8f2ed;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Noto Sans CJK SC","Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
-  font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding:0 26px}
-.hero{padding:44px 0 30px;background:
-  radial-gradient(1000px 340px at 8% -30%, rgba(178,58,46,.11), transparent 62%),
-  radial-gradient(800px 300px at 92% -20%, rgba(14,107,138,.10), transparent 62%),#fff;
-  border-bottom:1px solid var(--line)}
-.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1.4px;
-  color:var(--c4);font-weight:700;margin-bottom:12px}
-.kicker::before{content:'';width:26px;height:2px;background:var(--c4);display:inline-block}
-h1{font-family:"Noto Serif SC","Songti SC",serif;font-weight:900;font-size:clamp(24px,3.3vw,36px);
-  line-height:1.3;margin:0 0 8px;letter-spacing:.5px}
-h1 .light{color:var(--muted);font-weight:500;font-size:.6em;display:block;margin-top:9px;letter-spacing:1px}
-.lead{color:var(--ink2);font-size:14.4px;max-width:840px;margin:12px 0 0}
-.mod{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:23px 25px 21px;
-  margin:23px 0;box-shadow:0 2px 14px rgba(20,32,43,.045);scroll-margin-top:62px}
-.mod-h{display:flex;align-items:flex-start;gap:12px;margin-bottom:4px}
-.mod-no{flex:0 0 auto;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
-  color:#fff;font-weight:700;font-size:15px;font-family:"Noto Serif CJK SC","Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif}
-.mod-h h2{font-family:"Noto Serif CJK SC","Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;font-size:19.5px;margin:2px 0 0;line-height:1.4}
-.mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
-.hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
-table{border-collapse:collapse;width:100%;font-size:13.2px;margin:8px 0 4px;background:#fff}
-th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
-th{background:#f4f1ea;font-weight:700;color:#2a3743}
-td.c{text-align:center;white-space:nowrap}
-tr:nth-child(even) td{background:#fdfcf9}
-.tbl-note{font-size:12.5px;color:var(--muted);margin:5px 0 0}
-.f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
-  margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
-.f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
-.f2{background:var(--goldbg);color:var(--gold);border:1px solid #ecd9a5}
-.f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
-.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
-.tip b{color:var(--c1)}
-.warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
-.warnbox b{color:#a32a1c}
-.okbox{background:var(--c5bg);border:1px solid #bfdccc;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
-.okbox b{color:#1f6b4a}
-.mem{background:var(--goldbg);border:1px solid #ecd9a5;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.4px}
-.mem b{color:var(--gold)}
-.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
-  border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
-.qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
-  background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
-.qz b{color:var(--ink)}
-.qz .no{color:#8a5a00;font-weight:700}
-footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 20px 52px;line-height:2}
-footer b{color:var(--ink2)}
-@media print{body{background:#fff;font-size:12.1px}.hero{padding:16px 0 10px}
-  .mod{box-shadow:none;break-inside:avoid;margin:11px 0;padding:16px 18px}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans CJK SC","Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration:none}
+button{font-family:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 320px at 8% -20%,rgba(178,58,46,.11),transparent 62%),
+  radial-gradient(760px 280px at 92% -20%,rgba(14,107,138,.12),transparent 62%),#fff;
+  border-bottom:1px solid var(--line);padding:38px 0 34px}
+.backlink{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.backlink a{font-weight:700}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:1.5px;color:var(--brick);font-weight:800;margin-bottom:10px}
+.kicker:before{content:"";width:20px;height:2px;background:var(--brick)}
+h1{margin:0 0 12px;font-size:38px;line-height:1.25;letter-spacing:.01em}
+.hero p{margin:0;max-width:830px;color:var(--ink2);font-size:15px}
+.hero .quick{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero .quick span{background:var(--teal-bg);border:1px solid #cfe2ea;color:#0b5a75;border-radius:6px;padding:5px 11px;font-size:12.5px;font-weight:700}
+.hero .quick span:nth-child(2){background:var(--brick-bg);border-color:#efd0ca;color:#963026}
+.hero .quick span:nth-child(3){background:var(--gold-bg);border-color:#ead9b8;color:#7a5215}
+.hero .quick span:nth-child(4){background:var(--green-bg);border-color:#cbe3d7;color:var(--green)}
+main{padding:30px 0 50px}
+.section-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 14px}
+.section-title h2{margin:0;font-size:22px;line-height:1.4}
+.section-title span{font-size:12.5px;color:var(--muted)}
+.papers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.paper-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:0 8px 30px rgba(21,33,44,.045);display:flex;flex-direction:column;min-height:330px;transition:.18s}
+.paper-card:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(21,33,44,.075);border-color:#d6cdbd}
+.paper-card:before{content:"";position:absolute;left:0;top:22px;width:4px;height:52px;border-radius:0 4px 4px 0;background:var(--teal)}
+.paper-card.alt:before{background:var(--brick)}
+.ribbon{align-self:flex-start;font-size:11.5px;font-weight:800;letter-spacing:.5px;border-radius:999px;padding:3px 10px;background:var(--teal-bg);color:#0b5a75;border:1px solid #cfe2ea}
+.paper-card.alt .ribbon{background:var(--brick-bg);color:#963026;border-color:#efd0ca}
+.paper-card h3{margin:12px 0 4px;font-size:25px;line-height:1.35}
+.paper-card .year{font-size:12.5px;color:var(--muted);letter-spacing:1px;font-weight:700}
+.paper-card .nums{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 12px}
+.nums span{background:#f8f6f0;border:1px solid #ece7db;border-radius:5px;padding:3px 8px;font-size:12px;color:var(--ink2)}
+.paper-card .desc{color:var(--ink2);font-size:13.5px;margin:0 0 12px}
+.structure{background:#fbfaf6;border:1px solid #ece6da;border-radius:8px;padding:11px 13px;font-size:12.5px;line-height:1.75;color:var(--ink2);margin:0 0 16px}
+.structure b{color:var(--ink)}
+.paper-actions{margin-top:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;padding:9px 15px;font-size:13.5px;font-weight:800;cursor:pointer;transition:.15s}
+.btn:hover{border-color:#b9c6cf;transform:translateY(-1px)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:#fff;padding:11px 20px;font-size:14.5px}
+.btn.primary:hover{background:#0b5a75}
+.paper-card.alt .btn.primary{background:var(--brick);border-color:var(--brick)}
+.paper-card.alt .btn.primary:hover{background:#963026}
+.btn.ghost{background:#fbfaf6;color:var(--ink2);font-weight:700}
+.hintline{font-size:12px;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0 8px}
+.feature{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px 16px}
+.feature .fi{width:28px;height:28px;border-radius:7px;background:var(--teal-bg);color:var(--teal);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;margin-bottom:8px}
+.feature:nth-child(2) .fi{background:var(--brick-bg);color:var(--brick)}
+.feature:nth-child(3) .fi{background:var(--gold-bg);color:var(--gold)}
+.feature:nth-child(4) .fi{background:var(--green-bg);color:var(--green)}
+.feature h4{margin:0 0 3px;font-size:14.5px}
+.feature p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.7}
+.compare{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:12px}
+.compare table{width:100%;border-collapse:collapse;font-size:13px}
+.compare th,.compare td{padding:10px 13px;border-bottom:1px solid #f0ece3;text-align:left;vertical-align:top}
+.compare th{background:#fbfaf6;font-size:12.5px;color:var(--ink2);font-weight:800}
+.compare tr:last-child td{border-bottom:0}
+.compare td b{color:var(--ink)}
+.compare .sec{color:var(--teal);font-weight:800}
+.compare .sec.alt{color:var(--brick)}
+.compare .muted{color:var(--muted);font-size:12px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.step .no{font-size:11px;font-weight:900;letter-spacing:1px;color:var(--brick);margin-bottom:5px}
+.step h4{margin:0 0 4px;font-size:14.5px}
+.step p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.7}
+.note{background:var(--gold-bg);border-left:4px solid #d8b25d;border-radius:0 8px 8px 0;padding:13px 16px;color:#6d541c;font-size:13px;line-height:1.8;margin-top:22px}
+.extra{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-top:18px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:10px;font-size:13px}
+.extra a{font-weight:800}
+footer{border-top:1px solid var(--line);padding:22px 0 32px;color:var(--muted);font-size:12px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:840px){
+  .papers{grid-template-columns:1fr}
+  .features{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .wrap{padding:0 14px}
+  h1{font-size:29px}
+  .hero{padding:26px 0 24px}
+  .backlink{margin-bottom:18px}
+  .paper-card{padding:20px}
+  .features{grid-template-columns:1fr}
+  .compare th:nth-child(3),.compare td:nth-child(3){display:none}
+}
 </style>
-<style id="design-refresh-20261123-lessons">
-/* 2026-11-23 全站排版与可读性统一：正文 16px、辅助文字对比度、触控与键盘焦点 */
-:root{--muted:#5b6976}
-body{font-size:16px;line-height:1.8;color:#332a35}
-.wrap{max-width:1000px;padding:0 22px}
-.hero{padding:38px 0 27px}
-.lead{font-size:15.5px;line-height:1.8}
-.syl-box p{font-size:14.5px;line-height:1.75}
-.q{font-size:14.2px;line-height:1.8}
-.toc{padding:10px 0}
-.toc a{font-size:13.2px;min-height:36px;display:inline-flex;align-items:center;padding:6px 13px}
-.mod{padding:24px 26px 22px}
-.mod-h h2{font-size:20px}
-.mod-h .tag{font-size:12.8px}
-table{font-size:14px}
-th,td{padding:8px 11px;line-height:1.7}
-.tbl-note{font-size:13.4px}
-.n{font-size:15px;line-height:1.78}
-.n.sm{font-size:14px}
-.n.l1{font-size:15.4px}
-.n.l1 .sub{font-size:13px}
-.tip,.warnbox,.okbox,.mem,.human,.qz{font-size:14.3px;line-height:1.8}
-.qz .lb{font-size:11.3px}
-.legend{font-size:13.4px}
-summary{font-size:14.5px}
-details .ans{font-size:14px;line-height:1.8}
-.btn{font-size:13.5px;min-height:38px;padding:8px 15px}
-footer{font-size:13.5px}
-.f{font-size:11.5px}
-.f0,.cut{color:#5f6e7a}
-a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible{outline:3px solid #8a5a00;outline-offset:3px;border-radius:6px}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-}
-@media(max-width:760px){
-  body{font-size:15.5px}
-  .wrap{padding:0 16px}
-  .hero{padding:28px 0 22px}
-  .mod{padding:19px 16px;border-radius:14px}
-  .mod-h h2{font-size:18.5px}
-  table{font-size:13.2px}
-  th,td{padding:6px 8px}
-  .toc a{font-size:12.8px;min-height:34px;padding:5px 10px}
-  .n{font-size:14.5px}
-  .n.sm{font-size:13.6px}
-  .n.l1{font-size:14.8px}
-  .tip,.warnbox,.okbox,.mem,.human,.qz{font-size:13.6px}
-  .btn{font-size:13px;min-height:36px}
-}
-</style><style id="exam-2026-full-scan">
-/* 2026 考后练习卷：扫描页 + 答案总表 */
-.scan-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 4px}
-.scan-card{margin:0;background:#fbfaf7;border:1px solid #ddd8cc;border-radius:11px;padding:8px;box-shadow:0 2px 8px rgba(20,32,43,.05)}
-.scan-card a{display:block;line-height:0;border-radius:6px;overflow:hidden}
-.scan-card img{width:100%;height:auto;display:block;border:1px solid #e4dfd4;background:#fff}
-.scan-card figcaption{font-size:12.2px;color:var(--muted);text-align:center;padding:6px 4px 0;line-height:1.55}
-.scan-card figcaption b{color:var(--ink2)}
-.anskey{font-size:13.2px}
-.anskey td:first-child{white-space:nowrap;font-weight:700;color:#3b4b59;background:#faf8f2}
-.anskey .seq{letter-spacing:1.2px;font-weight:700;color:#1d3b52}
-.anskey .subj{line-height:1.9}
-.anskey .subj b{color:#8a5a00}
-.ans-note{font-size:12.8px;color:var(--muted);margin:6px 0 0}
-@media(max-width:760px){
-  .scan-grid{grid-template-columns:1fr;gap:12px}
-  .scan-card{padding:7px}
-  .scan-card figcaption{font-size:12px}
-  .anskey{font-size:12.4px}
-}
-@media print{
-  .scan-grid{grid-template-columns:1fr 1fr;gap:8px}
-  .scan-card{box-shadow:none;break-inside:avoid}
-  .scan-card img{max-height:235mm;object-fit:contain}
-}
-</style></head>
+</head>
 <body>
 
 <header class="hero">
   <div class="wrap">
-    <span class="kicker">2027 四川统招专升本 · 计算机基础 · 真题档案</span>
-    <h1>2026 年考后资料档案
-      <span class="light">4 月 16 日实考 ｜ 官方不公布试题 ｜ 15 道重点题 + 60 题练习卷</span>
-    </h1>
-    <p class="lead">这一页分两层：第一层是<b>10 页 60 题练习卷</b>，60 题、带答案，题型和分值按四川卷结构编排，供闭卷练整卷；第二层是考后讲评整理的 <b>15 道重点题</b>，按知识点归到了对应课。两层都保留，练习卷用来练节奏，15 道用来校准重点。</p>
+    <div class="backlink"><a href="../index.html" target="_top">← 返回学习站</a><span>四川统招专升本 · 计算机基础</span></div>
+    <div class="kicker">历年真题 · 整卷可做版</div>
+    <h1>真题不是用来“看”的，<br>是用来做完、判分、复盘的。</h1>
+    <p>2025、2026 两套四川专升本计算机基础试卷，已经拆成逐题可作答的整卷模式。题干、选项、填空、简答和综合应用都在页面里完成，交卷后自动判分并逐题显示答案与解析。</p>
+    <div class="quick"><span>2 套整卷</span><span>各 60 题 / 150 分</span><span>120 分钟限时</span><span>客观题自动判分</span></div>
   </div>
 </header>
 
 <main class="wrap">
+  <div class="section-title"><h2>选择一套开始</h2><span>和冲刺卷同一套作答系统</span></div>
+  <div class="papers">
+    <article class="paper-card">
+      <span class="ribbon">完整 60 题 · 含两道综合应用</span>
+      <div class="year">2025 · SICHUAN</div>
+      <h3>2025 年真题</h3>
+      <div class="nums"><span>60 题</span><span>150 分</span><span>120 分钟</span><span>回忆题面</span></div>
+      <p class="desc">按公开完整题面整理，保留原卷顺序：单选、多选、填空、判断、简答、综合应用。Excel 综合题和流程图题都可以直接写公式、写过程。</p>
+      <div class="structure"><b>结构：</b>单选 20×2 ＋ 多选 10×3 ＋ 填空 10×3 ＋ 判断 15×1 ＋ 简答 3×5 ＋ 综合 2×10</div>
+      <div class="paper-actions">
+        <a class="btn primary" href="real-2025.html">开始做 2025 卷 →</a>
+        <span class="hintline">做完自动判分</span>
+      </div>
+    </article>
 
-<!-- ============ 一、结构确认 ============ -->
-<section class="mod">
-  <div class="mod-h">
-    <div class="mod-no" style="background:linear-gradient(135deg,#1d3b52,#0e6b8a)">Ⅰ</div>
-    <div>
-      <h2>先确认一件最关键的事：2026 的结构没变</h2>
-      <span class="tag">这决定了 2024、2025 真题还能不能接着用</span>
-    </div>
+    <article class="paper-card alt">
+      <span class="ribbon">完整 60 题 · 含两道综合应用</span>
+      <div class="year">2026 · SICHUAN</div>
+      <h3>2026 年考后复原卷</h3>
+      <div class="nums"><span>60 题</span><span>150 分</span><span>120 分钟</span><span>考后题面</span></div>
+      <p class="desc">按 2026 年考后公开题面复原，选择、判断、填空、简答和综合应用全部结构化。Word 综合题、进制转换、二分查找都能在页面里作答。</p>
+      <div class="structure"><b>结构：</b>单选 20×2 ＋ 判断 15×1 ＋ 多选 10×3 ＋ 填空 10×3 ＋ 简答 3×5 ＋ 综合 2×10</div>
+      <div class="paper-actions">
+        <a class="btn primary" href="real-2026.html">开始做 2026 卷 →</a>
+        <span class="hintline">做完自动判分</span>
+      </div>
+    </article>
   </div>
-  <div class="hr"></div>
 
-  <table>
-    <tr><th style="width:100px">题型</th><th style="width:96px">2026 年</th><th style="width:96px">2025 年</th><th>结论</th></tr>
-    <tr><td>单项选择题</td><td class="c">20 题 × 2 分 = 40</td><td class="c">20 题 × 2 分 = 40</td><td>完全一致</td></tr>
-    <tr><td>判断题</td><td class="c">15 题 × 1 分 = 15</td><td class="c">15 题 × 1 分 = 15</td><td>完全一致</td></tr>
-    <tr><td>多项选择题</td><td class="c">10 题 × 3 分 = 30</td><td class="c">10 题 × 3 分 = 30</td><td>完全一致</td></tr>
-    <tr><td>填空题</td><td class="c">10 题 × 3 分 = 30</td><td class="c">10 题 × 3 分 = 30</td><td>一致（练习卷含题干）</td></tr>
-    <tr><td>简答题</td><td class="c">3 题 × 5 分 = 15</td><td class="c">3 题 × 5 分 = 15</td><td>一致（练习卷含题干）</td></tr>
-    <tr><td>综合应用题</td><td class="c">2 题 × 10 分 = 20</td><td class="c">2 题 × 10 分 = 20</td><td>一致，考办公软件</td></tr>
-    <tr><td colspan="2" style="text-align:right"><b>合计</b></td><td class="c"><b>150 分 / 120 分钟</b></td><td>三年零变化</td></tr>
-  </table>
-
-  <div class="okbox"><b>这条结论比任何一道题都值钱：</b>题型、题量、分值连续三年不变，说明这三年题型、题量、分值保持稳定。你按 2024、2025 的题型去练，就是在按 2027 的题型练。多选仍是 10 题 30 分，仍是"少选多选都不得分"。</div>
-</section>
-
-<!-- ============ 二、2026 考后练习卷 ============ -->
-<section class="mod" id="full2026">
-  <div class="mod-h">
-    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">Ⅱ</div>
-    <div>
-      <h2>2026 考后练习卷 · 60 题</h2>
-      <span class="tag">10 页扫描 ｜ 60 题带答案 ｜ 考后整理</span>
-    </div>
+  <div class="features">
+    <div class="feature"><div class="fi">答</div><h4>逐题作答</h4><p>选项可点、填空可写、主观题可分点输入，不再把扫描图当题面。</p></div>
+    <div class="feature"><div class="fi">判</div><h4>即时判分</h4><p>客观题自动判；多选少选、错选不得分；主观题按要点命中给分。</p></div>
+    <div class="feature"><div class="fi">析</div><h4>答案与解析</h4><p>交卷后每题显示答案、解析和评分要点，方便直接复盘。</p></div>
+    <div class="feature"><div class="fi">续</div><h4>断点续做</h4><p>答案自动保存在当前浏览器，刷新后可继续；计时不暂停。</p></div>
   </div>
-  <div class="hr"></div>
 
-  <div class="warnbox"><b>使用说明：</b>这 10 页是考后整理的 60 题练习卷，题型、题量、分值按四川卷结构编排，题目和答案可以拿来练。遇到题干转写有争议的地方，以第 Ⅲ 节的 15 道重点题和考纲为准。</div>
-
-  <p class="tbl-note" style="font-size:13.2px;color:var(--ink2);margin-top:12px">结构：单选 20×2=40 ｜ 判断 15×1=15 ｜ 多选 10×3=30 ｜ 填空 10×3=30 ｜ 简答 3×5=15 ｜ 综合 2×10=20，共 150 分 / 120 分钟。答案紧跟在每题后面；先遮住答案做，再翻回来核对。</p>
-
-  <div class="scan-grid">
-    <figure class="scan-card"><a href="../assets/exams/2026/01.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/01.webp" alt="2026 考后练习卷第 1 页：单选 1—8"></a><figcaption><b>第 1 页</b> · 单选 1—8 及部分答案</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/02.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/02.webp" alt="2026 考后练习卷第 2 页：单选 8—15"></a><figcaption><b>第 2 页</b> · 单选 8—15</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/03.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/03.webp" alt="2026 考后练习卷第 3 页：单选 16—23"></a><figcaption><b>第 3 页</b> · 单选 16—23</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/04.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/04.webp" alt="2026 考后练习卷第 4 页：单选 23—32"></a><figcaption><b>第 4 页</b> · 单选 23—32</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/05.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/05.webp" alt="2026 考后练习卷第 5 页：判断 32—40"></a><figcaption><b>第 5 页</b> · 判断 32—40</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/06.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/06.webp" alt="2026 考后练习卷第 6 页：多选 40—47"></a><figcaption><b>第 6 页</b> · 多选 40—47</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/07.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/07.webp" alt="2026 考后练习卷第 7 页：多选 47—56"></a><figcaption><b>第 7 页</b> · 多选 47—56</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/08.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/08.webp" alt="2026 考后练习卷第 8 页：56 进制转换、57 操作系统功能"></a><figcaption><b>第 8 页</b> · 56 进制转换、57 操作系统功能</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/09.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/09.webp" alt="2026 考后练习卷第 9 页：57 续、58 动画、59 二分查找"></a><figcaption><b>第 9 页</b> · 57 续、58 动画、59 二分查找</figcaption></figure>
-    <figure class="scan-card"><a href="../assets/exams/2026/10.webp" target="_blank" rel="noopener"><img src="../assets/exams/2026/10.webp" alt="2026 考后练习卷第 10 页：60 Word 综合应用"></a><figcaption><b>第 10 页</b> · 60 Word 综合应用</figcaption></figure>
+  <div class="section-title" style="margin-top:30px"><h2>两套卷的题型对照</h2><span>分值相同，卷面顺序略有不同</span></div>
+  <div class="compare">
+    <table>
+      <thead><tr><th>题型</th><th>2025 年卷</th><th>2026 年卷</th><th>分值</th></tr></thead>
+      <tbody>
+        <tr><td><span class="sec">单项选择题</span></td><td>第 1—20 题</td><td>第 1—20 题</td><td><b>40 分</b><br><span class="muted">20 题 × 2 分</span></td></tr>
+        <tr><td><span class="sec alt">多项选择题</span></td><td>第 21—30 题</td><td>第 36—45 题</td><td><b>30 分</b><br><span class="muted">10 题 × 3 分</span></td></tr>
+        <tr><td><span class="sec">填空题</span></td><td>第 31—40 题</td><td>第 46—55 题</td><td><b>30 分</b><br><span class="muted">10 题 × 3 分</span></td></tr>
+        <tr><td><span class="sec alt">判断题</span></td><td>第 41—55 题</td><td>第 21—35 题</td><td><b>15 分</b><br><span class="muted">15 题 × 1 分</span></td></tr>
+        <tr><td><span class="sec">简答题</span></td><td>第 56—58 题</td><td>第 56—58 题</td><td><b>15 分</b><br><span class="muted">3 题 × 5 分</span></td></tr>
+        <tr><td><span class="sec alt">综合应用题</span></td><td>第 59—60 题</td><td>第 59—60 题</td><td><b>20 分</b><br><span class="muted">2 题 × 10 分</span></td></tr>
+      </tbody>
+    </table>
   </div>
-  <p class="ans-note">共 10 页；原文件第 11 张是第 1 页重复封面，已剔除。点击任一页可看大图。</p>
 
-  <h3 style="font-size:16px;margin:20px 0 6px;color:#1d3b52">答案总表（按题号顺序）</h3>
-  <table class="anskey">
-    <tr><th style="width:130px">题型 / 题号</th><th>答案</th></tr>
-    <tr><td>单选 1—10</td><td class="seq">D　C　B　C　A　D　D　A　D　A</td></tr>
-    <tr><td>单选 11—20</td><td class="seq">B　A　B　C　D　C　C　B　A　A</td></tr>
-    <tr><td>判断 21—35</td><td class="seq">A　A　B　A　A　A　A　B　A　B　B　B　A　A　A</td></tr>
-    <tr><td>多选 36—45</td><td class="seq">ABCD　／　CD　／　BCD　／　ACD　／　ABC　／　BC　／　ABCD　／　ABCD　／　BD　／　ABCD</td></tr>
-  </table>
-  <table class="anskey" style="margin-top:10px">
-    <tr><th style="width:70px">题号</th><th>填空答案</th></tr>
-    <tr><td>46</td><td>中、小规模集成电路</td></tr>
-    <tr><td>47</td><td>−63</td></tr>
-    <tr><td>48</td><td>+(2<sup>n−1</sup>−1)</td></tr>
-    <tr><td>49</td><td>R</td></tr>
-    <tr><td>50</td><td>声道数</td></tr>
-    <tr><td>51</td><td>邮件合并</td></tr>
-    <tr><td>52</td><td>5</td></tr>
-    <tr><td>53</td><td>讲义</td></tr>
-    <tr><td>54</td><td>EF03::1010</td></tr>
-    <tr><td>55</td><td>记录</td></tr>
-  </table>
-  <table class="anskey" style="margin-top:10px">
-    <tr><th style="width:70px">题号</th><th>简答 / 综合参考答案（要点）</th></tr>
-    <tr><td>56</td><td class="subj"><b>1046<sub>10</sub> = 2026<sub>8</sub></b>（除 8 取余，余数倒读：2、0、2、6）；<b>46.625<sub>10</sub> = 2E.A<sub>16</sub></b>（整数 46=2E；小数 0.625×16=10，即 A）。</td></tr>
-    <tr><td>57</td><td class="subj">操作系统五大功能：<b>处理机管理、存储管理、设备管理、文件管理、接口</b>（接口含命令接口与图形用户接口）。</td></tr>
-    <tr><td>58</td><td class="subj">PowerPoint 四类动画：<b>进入、退出、强调、动作路径</b>。</td></tr>
-    <tr><td>59</td><td class="subj">（1）<b>二分查找更适合</b>：数据已按学号升序排列且学号唯一，满足二分前提，效率更高。<br>（2）顺序查找最坏 <b>1024 次</b>；二分查找最坏 <b>10 次</b>（2<sup>10</sup>=1024）。<br>（3）顺序查找 <b>D. O(n)</b>；二分查找 <b>B. O(log n)</b>。</td></tr>
-    <tr><td>60</td><td class="subj">（1）插入<b>艺术字</b>；（2）<b>首字下沉</b>；（3）<b>文字水印</b>；（4）<b>项目符号</b>；（5）插入 <b>SmartArt</b>。</td></tr>
-  </table>
-  <p class="ans-note">答案按图文原页转录；判断题 A=正确、B=错误；多选题少选/多选均不得分。</p>
-
-  <div class="tip"><b>建议这样用：</b>先按 120 分钟闭卷做一遍，对答案只统计“错在哪一章”，不要逐题抄解析；第二遍只做错题，并回到本站对应课时补概念。练习卷的价值是<b>暴露整卷节奏</b>，不是替代 21 课的自测题。</div>
-</section>
-
-<!-- ============ 三、题目清单 ============ -->
-<section class="mod">
-  <div class="mod-h">
-    <div class="mod-no" style="background:linear-gradient(135deg,#b23a2e,#d1584a)">Ⅲ</div>
-    <div>
-      <h2>15 道重点题 · 按知识点归位</h2>
-      <span class="tag">考后讲评整理；与练习卷互为参照；最后一列是它对应哪一课</span>
-    </div>
+  <div class="section-title" style="margin-top:30px"><h2>建议这样用</h2><span>先做完整卷，再做错题</span></div>
+  <div class="steps">
+    <div class="step"><div class="no">STEP 01</div><h4>限时做完整卷</h4><p>点“开始考试”，按 120 分钟完成。不会的题先标记，别中途查答案。</p></div>
+    <div class="step"><div class="no">STEP 02</div><h4>交卷看解析</h4><p>交卷后看总分、分题型得分和逐题解析，尤其是主观题的评分要点。</p></div>
+    <div class="step"><div class="no">STEP 03</div><h4>回炉错题</h4><p>用“只看错题”和“重做本题”把错题再做一遍；两套卷交叉检查同一知识点。</p></div>
   </div>
-  <div class="hr"></div>
 
-  <table>
-    <tr><th style="width:70px">题号</th><th style="width:38%">考点与答案</th><th>归到哪一课</th></tr>
+  <div class="note"><b>题面说明：</b>2025 年卷依据公开完整回忆题面整理；2026 年卷依据考后公开题面复原。两套都不是官方原卷，题干表述、选项顺序和分值按公开版本与整卷结构核对。若你在某题上发现与手中纸质材料不一致，以纸质原卷为准，也欢迎告诉我具体题号，我会逐题修订。</div>
 
-    <tr style="background:#f6f2e8"><td colspan="3"><b>单项选择题（10 道）</b></td></tr>
-    <tr><td>单选 1</td><td>存储容量单位换算 → <b>D</b>（1PB = 2<sup>10</sup>TB；1GB 是 2<sup>30</sup>B 不是 2<sup>40</sup>B）</td><td>第一章第 3 课（已写入）</td></tr>
-    <tr><td>单选 2</td><td>无符号 (1101010)<sub>2</sub> → <b>106</b>（选 C）</td><td>第一章第 2 课（已写入）</td></tr>
-    <tr><td>单选 3</td><td>断电后数据丢失的存储器 → <b>RAM</b>（ROM、U 盘、硬盘都不断电丢数据）</td><td>第二章第 2 课 硬件系统</td></tr>
-    <tr><td>单选 4</td><td>直接关闭活动窗口的快捷键 → <b>Alt + F4</b>（Ctrl+Alt+Del 是任务管理器，Alt+Tab 是切换窗口）</td><td>第二章第 4 课 Windows 操作</td></tr>
-    <tr><td>单选 6</td><td>Word 中在<b>左侧选定区三击</b> → 选定整篇文档（单击一行、双击一段）</td><td>第三章第 1 课 Word 编辑</td></tr>
-    <tr><td>单选 7</td><td>段落行距设为 <b>1.2 倍</b>后，行距框显示<b>"多倍行距"</b>（不是单倍/1.5 倍）</td><td>第三章第 1 课 Word 排版</td></tr>
-    <tr><td>单选 9</td><td>A1:C3 每格为 1，A4 输入 <b>=SUM(A1:B3,B1:C3)</b> → <b>12</b>（重叠的 B1:B3 被算了两次）</td><td>第三章第 4 课 Excel 函数</td></tr>
-    <tr><td>单选 11</td><td><b>=YEAR(20500502)</b> → <b>#NUM!</b>（数值超出 Excel 日期范围）</td><td>第三章第 4 课 Excel 错误值</td></tr>
-    <tr><td>单选 13</td><td>幻灯片中<b>占位符</b>在哪设置 → <b>幻灯片母版</b></td><td>第三章第 6 课 PowerPoint</td></tr>
-    <tr><td>单选 17</td><td>C 类 IP 地址最大主机数 → <b>254</b>（2<sup>8</sup>−2，减去全 0 与全 1）</td><td>第四章第 2 课 IP 地址</td></tr>
-
-    <tr style="background:#f6f2e8"><td colspan="3"><b>判断题（4 道）</b></td></tr>
-    <tr><td>判断 2</td><td>两个二进制数做<b>逻辑与</b>，题面给出结果 1001 → 判断<b>正确</b>（0 与任何数相与为 0）</td><td>第一章第 2 课 二进制运算</td></tr>
-    <tr><td>判断 3</td><td>"字符占用的字节数与其编码方式<b>无关</b>" → <b>错</b>（英文 1B、汉字 2B 或 3B，正是编码决定的）</td><td>第一章第 3 课（已写入）</td></tr>
-    <tr><td>判断 27</td><td>"计算机感染病毒<b>只能</b>重装系统" → <b>错</b>（杀毒软件通常就能处理）</td><td>第四章第 3 课 信息安全</td></tr>
-    <tr><td>判断 29</td><td>利用 AI 合成并传播不实新闻，这一行为被否定 → 判断<b>正确</b></td><td>第四章第 3 课 信息素养</td></tr>
-
-    <tr style="background:#f6f2e8"><td colspan="3"><b>多项选择题（1 道）</b></td></tr>
-    <tr><td>多选</td><td>计算机采用二进制的原因 → <b>ABC</b>；D"能精确表示所有小数"错（0.6 转二进制无限循环）</td><td>第一章第 2 课（已写入）</td></tr>
-  </table>
-
-  <p class="tbl-note">这 15 道是考后讲评中的客观题片段；练习卷的填空、简答、综合应用题见第 Ⅱ 节。已在课的"2026 真题"小节里写入的，标了"已写入"。</p>
-</section>
-
-<!-- ============ 四、命题倾向 ============ -->
-<section class="mod">
-  <div class="mod-h">
-    <div class="mod-no" style="background:linear-gradient(135deg,#9a6b1f,#c08b33)">Ⅳ</div>
-    <div>
-      <h2>从这 15 道重点题整理的 5 个命题特点</h2>
-      <span class="tag">这些特点只针对这 15 道题，不当作 2027 的押题结论</span>
-    </div>
+  <div class="extra">
+    <span>想先热身，或只想做一套短一点的？</span>
+    <a href="sprint.html">打开冲刺模拟卷（一） →</a>
   </div>
-  <div class="hr"></div>
-
-  <table>
-    <tr><th style="width:40px">#</th><th style="width:150px">特点</th><th>证据与应对</th></tr>
-    <tr><td class="c">1</td><td><b>送分题改成"四选项四坑"</b></td><td>2026 单选第 1 题存储单位，A/B 把 1024 写成 1000，C 把 GB 的指数写成 2<sup>40</sup>，D 才对。<b>应对：每个单位的指数都要能自己推，不能只背一句"1024"</b></td></tr>
-    <tr><td class="c">2</td><td><b>概念题用"听起来对"的假项钓鱼</b></td><td>多选里加一条"能精确表示所有小数"，四个理由背得再熟也会栽。<b>应对：背概念时同步背"哪条常见说法是错的"</b></td></tr>
-    <tr><td class="c">3</td><td><b>判断题盯绝对词</b></td><td>"只能重装系统""与编码方式无关"——<b>"只能/无关/只由"出现就高度可疑</b></td></tr>
-    <tr><td class="c">4</td><td><b>Excel 仍是主战场，且考函数边界</b></td><td>SUM 重叠区域算两次、YEAR 超范围报 #NUM!。<b>应对：函数不只要会算，还要知道它在什么情况下报什么错</b></td></tr>
-    <tr><td class="c">5</td><td><b>细节考点往"操作后果"靠</b></td><td>行距 1.2 显示"多倍行距"、占位符改母版。<b>应对：Office 别记菜单位置，记"操作→结果"</b></td></tr>
-  </table>
-
-  <div class="warnbox"><b>一句话总结 2026：</b>题不难，但"背了就会"的比例在下降，"懂了才不会错"的比例在上升。所以只背结论、不核对操作后果，遇到换问法的题就容易失分。</div>
-</section>
-
-<!-- ============ 五、怎么用 ============ -->
-<section class="mod">
-  <div class="mod-h">
-    <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">Ⅴ</div>
-    <div>
-      <h2>15 道重点题 + 60 题练习卷怎么用</h2>
-      <span class="tag">先当重点样本，再当整卷练习</span>
-    </div>
-  </div>
-  <div class="hr"></div>
-
-  <div class="mem"><b>六步用法：</b><br>
-  ① 先按课学完第一章第 2、3 课，把这 4 道当场做掉（已写进课里）；<br>
-  ② 第二、三、四章学到对应课时，再回头做那几道，检验"是不是真懂"；<br>
-  ③ 全部学完后，先按 120 分钟闭卷做第 Ⅱ 节 60 题练习卷，再把这 15 道<b>遮住答案重做一遍</b>，要求 100% 正确——它们是考后重点题样本，必须能独立做出来；<br>
-  ④ 每道错题写一句"错在哪一步"，不写"粗心"；<br>
-  ⑤ 对照第 Ⅳ 节的 5 个命题特点，检查自己的复习方式有没有踩空；<br>
-  ⑥ 把这页和第 1 课的"历年真题"互相对照：<b>同一个考点连续出现，说明它是稳定考点，值得重点复盘</b>。</div>
-
-  <div class="tip"><b>一句话：</b>15 道重点题用来校准方向，60 题练习卷用来练整卷节奏；真正决定分数的，还是每课那 10～14 道自测题有没有全部做对。</div>
-</section>
+</main>
 
 <footer>
-  <b>说明：</b>2026 年 4 月 16 日四川省普通高校专升本《计算机基础》实考，官方不公布试题；<br>
-  15 道重点题由考后讲评整理；10 页练习卷共 60 题、带答案，供练习。<br>
-  结构对照：2024、2025 年真题；考纲：四川省教育厅《四川省普通高校专升本考试要求 · 计算机基础》。<br>
-  试卷满分 150 分 · 考试时间 120 分钟 · 笔试闭卷
+  <div class="wrap"><span>橘子学习站 · 历年真题整卷</span><span>2025 / 2026 四川专升本 · 计算机基础</span></div>
 </footer>
 
-</main>
 </body>
 </html>
-
-

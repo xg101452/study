@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026 四川专升本 · 计算机基础考后复原卷（可做版）</title>
+<style>
+:root{
+  --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
+  --paper:#f7f5f0; --card:#fff; --line:#e3ded4;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c3:#2b4a8b; --c3bg:#eaedf7; --c4:#b23a2e; --c4bg:#fbeeec;
+  --c5:#1f6b4a; --c5bg:#e8f2ed; --gold:#8a5a00; --goldbg:#fbf3dd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans CJK SC","Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.82;-webkit-font-smoothing:antialiased}
+a{color:var(--c1);text-decoration:none}
+button{font-family:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.hero{background:radial-gradient(900px 320px at 8% -20%,rgba(178,58,46,.10),transparent 62%),radial-gradient(760px 280px at 92% -20%,rgba(14,107,138,.10),transparent 62%),#fff;border-bottom:1px solid var(--line);padding:34px 0 26px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1.4px;color:var(--c4);font-weight:700;margin-bottom:8px}
+.kicker:before{content:"";width:18px;height:2px;background:var(--c4)}
+h1{margin:0 0 8px;font-size:32px;line-height:1.3;letter-spacing:.02em}
+.hero p{margin:0;color:var(--ink2);font-size:14px;max-width:840px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.meta span{display:inline-flex;align-items:center;gap:5px;background:var(--c1bg);color:#0b5a75;border:1px solid #cfe2ea;border-radius:6px;padding:4px 10px;font-size:12.5px;font-weight:700}
+.meta span:nth-child(2){background:var(--c2bg);color:#7a5215;border-color:#ead9b8}
+.meta span:nth-child(3){background:var(--c4bg);color:#963026;border-color:#efd0ca}
+.examtop{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 5px 18px rgba(21,33,44,.05)}
+.examtop .inner{max-width:1040px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.examtop .left{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--ink2);flex-wrap:wrap}
+.timer{font-variant-numeric:tabular-nums;font-weight:800;font-size:18px;color:var(--ink);letter-spacing:.04em}
+.timer.low{color:var(--c4)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--c5);display:inline-block;box-shadow:0 0 0 3px rgba(31,107,74,.12)}
+.progress{color:var(--muted)}
+.btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:7px;padding:8px 14px;font-size:13.5px;font-weight:700;cursor:pointer;transition:.15s}
+.btn:hover{border-color:#b9c6cf;transform:translateY(-1px)}
+.btn.primary{background:var(--c1);border-color:var(--c1);color:#fff;padding:11px 22px;font-size:15px}
+.btn.primary:hover{background:#0b5a75}
+.btn.danger{background:var(--c4);border-color:var(--c4);color:#fff}
+.btn.ghost{background:transparent}
+.btn.small{padding:6px 11px;font-size:12.5px}
+.intro{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 28px;margin:26px 0;box-shadow:0 8px 30px rgba(21,33,44,.04)}
+.intro h2{margin:0 0 12px;font-size:22px}
+.rules{margin:0;padding-left:20px;color:var(--ink2)}
+.rules li{margin:7px 0}
+.rules b{color:var(--ink)}
+.small-note{background:var(--goldbg);border-left:4px solid #d8b25d;padding:10px 13px;color:#6d541c;font-size:13.5px;border-radius:0 6px 6px 0;margin:14px 0 18px}
+.printline{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.printline .muted{font-size:12.5px;color:var(--muted)}
+.paper{padding-bottom:60px}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:18px 0;overflow:hidden;box-shadow:0 4px 18px rgba(21,33,44,.035)}
+.mod-h{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:14px;background:linear-gradient(180deg,#fff,#fcfbf8)}
+.mod-h h2{margin:0;font-size:20px;line-height:1.4}
+.mod-h .pts{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.sec-note{margin:0;padding:10px 20px;background:#fbfaf6;border-bottom:1px solid #f0ece3;color:var(--muted);font-size:12.5px}
+.qi{padding:20px;border-bottom:1px solid #f0ece3;position:relative}
+.qi:last-child{border-bottom:0}
+.qi.right{border-left:4px solid var(--c5);background:#fcfefd}
+.qi.partial{border-left:4px solid var(--c2);background:#fffdf8}
+.qi.wrong{border-left:4px solid var(--c4);background:#fffbfa}
+.qhead{display:flex;align-items:flex-start;gap:10px}
+.qn{flex:0 0 auto;min-width:28px;height:28px;border-radius:50%;background:var(--c1bg);color:var(--c1);font-size:12.5px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;margin-top:3px}
+.qh{flex:1;font-size:15.5px;line-height:1.9;color:var(--ink)}
+.qh code{background:#f3f0e9;border:1px solid #e7e0d2;border-radius:4px;padding:1px 5px;font-family:ui-monospace,Consolas,"Courier New",monospace;font-size:.92em}
+.st{flex:0 0 auto;font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 9px;margin-top:4px;white-space:nowrap;background:#faf9f5}
+.st.done{background:var(--c1bg);border-color:#cfe2ea;color:#0b5a75;font-weight:700}
+.st.right{background:var(--c5bg);border-color:#cbe3d7;color:var(--c5);font-weight:700}
+.st.wrong{background:var(--c4bg);border-color:#efd0ca;color:var(--c4);font-weight:700}
+.st.partial{background:var(--c2bg);border-color:#ead9b8;color:#7a5215;font-weight:700}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;margin:13px 0 0 38px}
+.opts.judge{grid-template-columns:repeat(2,minmax(0,1fr));max-width:420px}
+.op{display:flex;align-items:flex-start;gap:8px;width:100%;text-align:left;border:1px solid #e7e2d8;background:#fdfcf9;border-radius:7px;padding:8px 11px;color:var(--ink2);font-size:14px;line-height:1.6;cursor:pointer;transition:.12s}
+.op:hover{border-color:#c8d6de;background:#fbfdff}
+.op em{font-style:normal;flex:0 0 auto;width:20px;height:20px;border-radius:50%;border:1px solid #cfc8bb;background:#fff;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:2px}
+.op.sel{border-color:var(--c1);background:var(--c1bg)}
+.op.sel em{background:var(--c1);border-color:var(--c1);color:#fff}
+.op.correct{border-color:#8dc3a8;background:var(--c5bg)}
+.op.correct em{background:var(--c5);border-color:var(--c5);color:#fff}
+.op.wrong{border-color:#dfa79e;background:var(--c4bg)}
+.op.wrong em{background:var(--c4);border-color:var(--c4);color:#fff}
+.op.lock{cursor:default}
+.fillrow{display:flex;align-items:center;gap:9px;margin:13px 0 0 38px;flex-wrap:wrap}
+.filllabel{font-size:13px;color:var(--muted)}
+.fill{width:min(420px,76vw);border:1px solid #d8d1c4;background:#fff;border-radius:6px;padding:8px 11px;font-family:inherit;font-size:15px;color:var(--ink);outline:none}
+.fill:focus{border-color:var(--c1);box-shadow:0 0 0 3px rgba(14,107,138,.10)}
+.fill.right{border-color:#8dc3a8;background:#f7fcf9}
+.fill.wrong{border-color:#dfa79e;background:#fffafa}
+.essay{display:block;width:calc(100% - 38px);margin:13px 0 0 38px;border:1px solid #d8d1c4;background:#fff;border-radius:8px;padding:10px 12px;font-family:inherit;font-size:14.5px;line-height:1.8;color:var(--ink);resize:vertical;outline:none}
+.essay:focus{border-color:var(--c1);box-shadow:0 0 0 3px rgba(14,107,138,.10)}
+.essay.right{border-color:#8dc3a8;background:#f7fcf9}
+.essay.partial{border-color:#d8b25d;background:#fffdf8}
+.essay.wrong{border-color:#dfa79e;background:#fffafa}
+.hint{font-size:12px;color:var(--muted);margin:5px 0 0 38px}
+.qfoot{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:10px 0 0 38px}
+.mini{border:1px solid var(--line);background:#fff;color:var(--ink2);border-radius:6px;padding:4px 9px;font-size:12px;cursor:pointer}
+.mini:hover{border-color:#b9c6cf;background:#fbfdff}
+.ansbox{display:none;margin:13px 0 0 38px;border-radius:7px;background:#fbfaf6;border:1px solid #ece6da;padding:10px 13px;color:var(--ink2);font-size:13.5px;line-height:1.8}
+.ansbox.show{display:block}
+.ansbox b{color:var(--ink)}
+.ansbox .key{color:var(--c1);font-weight:800}
+.ansbox .ok{color:var(--c5);font-weight:700}
+.ansbox .bad{color:var(--c4);font-weight:700}
+.ejudge{display:none;font-size:12.5px;border-radius:5px;padding:3px 8px;margin-left:2px}
+.ejudge.ok{display:inline-block;background:var(--c5bg);color:var(--c5)}
+.ejudge.bad{display:inline-block;background:var(--c4bg);color:var(--c4)}
+.result{background:linear-gradient(180deg,#fff,#fbfaf6);border:1px solid var(--line);border-radius:14px;padding:24px;margin:24px 0;box-shadow:0 12px 40px rgba(21,33,44,.07)}
+.scorehero{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.scorenum{font-variant-numeric:tabular-nums;line-height:1;color:var(--c1);font-weight:900}
+.scorenum b{font-size:52px;letter-spacing:-.03em}
+.scorenum span{font-size:17px;color:var(--muted);font-weight:700}
+.scorehero h2{margin:0 0 4px;font-size:22px}
+.scorehero p{margin:0;color:var(--muted);font-size:13.5px}
+.bars{margin:17px 0 4px;display:grid;gap:8px}
+.barrow{display:grid;grid-template-columns:78px 1fr 62px;gap:10px;align-items:center;font-size:12.5px;color:var(--ink2)}
+.bartrack{height:9px;background:#eee9df;border-radius:999px;overflow:hidden}
+.bartrack i{display:block;height:100%;background:linear-gradient(90deg,#0e6b8a,#3f9db8);border-radius:999px}
+.barrow b{text-align:right;font-variant-numeric:tabular-nums}
+.result-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+.filterbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0 0;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.hide{display:none!important}
+.tip{font-size:12px;color:var(--muted);margin:5px 0 0 38px}
+@media(max-width:720px){
+  .wrap{padding:0 14px}
+  h1{font-size:25px}
+  .hero{padding:24px 0 20px}
+  .intro{padding:20px}
+  .qi{padding:16px}
+  .opts{grid-template-columns:1fr;margin-left:0}
+  .fillrow,.essay,.qfoot,.ansbox,.hint,.tip{margin-left:0}
+  .essay{width:100%}
+  .qh{font-size:14.5px}
+  .mod-h{align-items:flex-start;flex-direction:column;gap:4px}
+  .examtop .inner{padding:8px 14px}
+  .scorenum b{font-size:40px}
+}
+@media print{
+  .examtop,.result-actions,.qfoot,.filterbar{display:none!important}
+  .intro{display:none!important}
+  body{background:#fff}
+  .mod,.intro,.result{box-shadow:none}
+  .ansbox{display:block!important}
+}
+
+.backlink{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;font-size:12.5px;color:var(--muted)}
+.backlink a{color:var(--c1);font-weight:700;text-decoration:none}
+.backlink a:hover{text-decoration:underline}
+@media(max-width:720px){.backlink{flex-direction:column;align-items:flex-start;gap:4px}}
+</style>
+<style id="design-refresh-20261123-lessons">
+/* 2026-11-23 全站排版与可读性统一：正文 16px、辅助文字对比度、触控与键盘焦点 */
+:root{--muted:#5b6976}
+body{font-size:16px;line-height:1.8;color:#332a35}
+.wrap{max-width:1000px;padding:0 22px}
+.hero{padding:38px 0 27px}
+.lead{font-size:15.5px;line-height:1.8}
+.syl-box p{font-size:14.5px;line-height:1.75}
+.q{font-size:14.2px;line-height:1.8}
+.toc{padding:10px 0}
+.toc a{font-size:13.2px;min-height:36px;display:inline-flex;align-items:center;padding:6px 13px}
+.mod{padding:24px 26px 22px}
+.mod-h h2{font-size:20px}
+.mod-h .tag{font-size:12.8px}
+table{font-size:14px}
+th,td{padding:8px 11px;line-height:1.7}
+.tbl-note{font-size:13.4px}
+.n{font-size:15px;line-height:1.78}
+.n.sm{font-size:14px}
+.n.l1{font-size:15.4px}
+.n.l1 .sub{font-size:13px}
+.tip,.warnbox,.okbox,.mem,.human,.qz{font-size:14.3px;line-height:1.8}
+.qz .lb{font-size:11.3px}
+.legend{font-size:13.4px}
+summary{font-size:14.5px}
+details .ans{font-size:14px;line-height:1.8}
+.btn{font-size:13.5px;min-height:38px;padding:8px 15px}
+footer{font-size:13.5px}
+.f{font-size:11.5px}
+.f0,.cut{color:#5f6e7a}
+a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible{outline:3px solid #8a5a00;outline-offset:3px;border-radius:6px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+@media(max-width:760px){
+  body{font-size:15.5px}
+  .wrap{padding:0 16px}
+  .hero{padding:28px 0 22px}
+  .mod{padding:19px 16px;border-radius:14px}
+  .mod-h h2{font-size:18.5px}
+  table{font-size:13.2px}
+  th,td{padding:6px 8px}
+  .toc a{font-size:12.8px;min-height:34px;padding:5px 10px}
+  .n{font-size:14.5px}
+  .n.sm{font-size:13.6px}
+  .n.l1{font-size:14.8px}
+  .tip,.warnbox,.okbox,.mem,.human,.qz{font-size:13.6px}
+  .btn{font-size:13px;min-height:36px}
+}
+</style></head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="backlink"><a href="exam.html">← 返回真题整卷</a><span>2025 / 2026 四川专升本 · 计算机基础</span></div>
+    <div class="kicker">2026 四川统招专升本 · 计算机基础</div>
+    <h1>考后复原卷 · 完整可做版</h1>
+    <p>按 2026 年考后公开题面整理：单选 20、判断 15、多选 10、填空 10、简答 3、综合应用 2，共 60 题、150 分。题干、选项、答案和解析都在页面内，交卷后逐题显示得分。</p>
+    <div class="meta"><span>满分 150 分</span><span>120 分钟</span><span>闭卷</span><span>60 题</span></div>
+  </div>
+</header>
+
+<div class="examtop" id="examTop" hidden>
+  <div class="inner">
+    <div class="left"><span class="dot"></span><span class="timer" id="timer">120:00</span><span class="progress" id="progress">已答 0 / 60</span><span class="progress" id="saveTip">自动保存中</span></div>
+    <div class="right"><button type="button" class="btn danger small" id="submitBtn">交卷</button></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="intro" id="intro">
+    <h2>开始前请确认</h2>
+    <ul class="rules">
+      <li><b>考试时间：</b>120 分钟。点击“开始考试”后计时开始，时间到会自动交卷。</li>
+      <li><b>试卷结构：</b>单项选择题 20 题（每题 2 分）＋判断题 15 题（每题 1 分）＋多项选择题 10 题（每题 3 分）＋填空题 10 题（每题 3 分）＋简答题 3 题（每题 5 分）＋综合应用题 2 题（每题 10 分），合计 150 分。</li>
+      <li><b>判分方式：</b>选择、判断、填空自动判分；多选少选、错选均不得分；填空按要点核对，同义表达可接受，<b>错别字不算对</b>；简答和综合应用按要点命中情况合理给分。</li>
+      <li><b>作答方式：</b>答案自动保存在当前浏览器；中途刷新可以继续，但计时不会暂停。</li>
+      <li><b>特别提醒：</b>交卷后才能查看答案与解析；每道题在作答期间都可以点“重做本题”清空重写。</li>
+    </ul>
+    <div class="small-note">本卷按 2026 年考后公开题面整理；题干、选项顺序和分值按原卷结构重排。2026 年官方未公开试题，本卷不是官方原卷。<br>同系列：<a href="real-2025.html">2025 年真题完整可做版（150 分）</a></div>
+    <div class="printline">
+      <button type="button" class="btn primary" id="startBtn">开始考试</button>
+      <span class="muted">建议先准备纸笔，主观题分点作答。</span>
+    </div>
+  </section>
+
+  <div class="paper" id="paper" hidden>
+
+    <section class="mod" id="s1" data-sec="single">
+      <div class="mod-h"><h2>一、单项选择题</h2><span class="pts">20 小题 · 每题 2 分 · 共 40 分</span></div>
+      <p class="sec-note">每题只有一个最符合题意的选项。</p>
+
+      <div class="qi" data-qid="real-2026-1" data-sec="single" data-type="single" data-per="2" data-ans="D">
+        <div class="qhead"><span class="qn">1</span><div class="qh">下列关于计算机存储容量的描述，正确的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>1KB＝1000B</span></button><button type="button" class="op" data-k="B"><em>B</em><span>1MB＝1000KB</span></button><button type="button" class="op" data-k="C"><em>C</em><span>1GB＝2<sup>40</sup>B</span></button><button type="button" class="op" data-k="D"><em>D</em><span>1PB＝2<sup>10</sup>TB</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">D</span>。1KB＝1024B，1MB＝1024KB，1GB＝2<sup>30</sup>B；1PB＝1024TB＝2<sup>10</sup>TB。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-2" data-sec="single" data-type="single" data-per="2" data-ans="C">
+        <div class="qhead"><span class="qn">2</span><div class="qh">下列与无符号二进制数（1101010）<sub>2</sub>相等的十进制数是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>102</span></button><button type="button" class="op" data-k="B"><em>B</em><span>104</span></button><button type="button" class="op" data-k="C"><em>C</em><span>106</span></button><button type="button" class="op" data-k="D"><em>D</em><span>108</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">C</span>。64＋32＋8＋2＝106。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-3" data-sec="single" data-type="single" data-per="2" data-ans="B">
+        <div class="qhead"><span class="qn">3</span><div class="qh">下列计算机存储器中，断电会丢失的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>U 盘</span></button><button type="button" class="op" data-k="B"><em>B</em><span>RAM</span></button><button type="button" class="op" data-k="C"><em>C</em><span>ROM</span></button><button type="button" class="op" data-k="D"><em>D</em><span>硬盘</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">B</span>。RAM 是易失性存储器，断电后数据丢失；U 盘、硬盘、ROM 断电后仍能保存。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-4" data-sec="single" data-type="single" data-per="2" data-ans="C">
+        <div class="qhead"><span class="qn">4</span><div class="qh">在 Windows 系统中，能直接关闭当前活动窗口的组合键是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>Ctrl＋Alt＋Delete</span></button><button type="button" class="op" data-k="B"><em>B</em><span>Ctrl＋Shift＋Esc</span></button><button type="button" class="op" data-k="C"><em>C</em><span>Alt＋F4</span></button><button type="button" class="op" data-k="D"><em>D</em><span>Alt＋Tab</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">C</span>。Alt＋F4 关闭当前活动窗口；Alt＋Tab 切换窗口。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-5" data-sec="single" data-type="single" data-per="2" data-ans="A">
+        <div class="qhead"><span class="qn">5</span><div class="qh">在 Windows 系统中，文件系统的组织结构是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>树形</span></button><button type="button" class="op" data-k="B"><em>B</em><span>线形</span></button><button type="button" class="op" data-k="C"><em>C</em><span>网状形</span></button><button type="button" class="op" data-k="D"><em>D</em><span>星形</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">A</span>。Windows 文件系统采用树形结构，以盘符为根，向下分层组织文件夹和文件。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-6" data-sec="single" data-type="single" data-per="2" data-ans="D">
+        <div class="qhead"><span class="qn">6</span><div class="qh">文档选定区三击，可选择（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>一个词</span></button><button type="button" class="op" data-k="B"><em>B</em><span>一行</span></button><button type="button" class="op" data-k="C"><em>C</em><span>一段</span></button><button type="button" class="op" data-k="D"><em>D</em><span>整个文档</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">D</span>。在 Word 左侧选定区：单击选一行，双击选一段，三击选整个文档。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-7" data-sec="single" data-type="single" data-per="2" data-ans="D">
+        <div class="qhead"><span class="qn">7</span><div class="qh">行距设置为 1.2 倍，则“段落”对话框的“行距”列表框中显示的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>单倍</span></button><button type="button" class="op" data-k="B"><em>B</em><span>1.5 倍</span></button><button type="button" class="op" data-k="C"><em>C</em><span>2 倍</span></button><button type="button" class="op" data-k="D"><em>D</em><span>多倍</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">D</span>。预设行距只有单倍、1.5 倍、2 倍等；1.2 倍属于“多倍行距”，需在“设置值”中填 1.2。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-8" data-sec="single" data-type="single" data-per="2" data-ans="A">
+        <div class="qhead"><span class="qn">8</span><div class="qh">在 Excel 中，单元格 A1 为“常规”格式时，输入“（100）”，则单元格显示的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>-100</span></button><button type="button" class="op" data-k="B"><em>B</em><span>1/100</span></button><button type="button" class="op" data-k="C"><em>C</em><span>100</span></button><button type="button" class="op" data-k="D"><em>D</em><span>（100）</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">A</span>。在常规格式下，带括号的数值按负数处理，显示为 -100。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-9" data-sec="single" data-type="single" data-per="2" data-ans="D">
+        <div class="qhead"><span class="qn">9</span><div class="qh">在 Excel 中单元格区域 A1:C3 共 9 个单元格，全部为 1，在 A4 输入“=SUM(A1:B3,B1:C3)”，则 A4 单元格的值为（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>3</span></button><button type="button" class="op" data-k="B"><em>B</em><span>6</span></button><button type="button" class="op" data-k="C"><em>C</em><span>9</span></button><button type="button" class="op" data-k="D"><em>D</em><span>12</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">D</span>。A1:B3 有 6 个单元格，B1:C3 有 6 个单元格，其中 B1:B3 被重复计算一次，合计 12。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-10" data-sec="single" data-type="single" data-per="2" data-ans="A">
+        <div class="qhead"><span class="qn">10</span><div class="qh">在 Excel 中，关于降序排序结果，正确的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>数字 9 在字母 A 的后面</span></button><button type="button" class="op" data-k="B"><em>B</em><span>字母 B 在 A 的后面</span></button><button type="button" class="op" data-k="C"><em>C</em><span>9 在 0 的后面</span></button><button type="button" class="op" data-k="D"><em>D</em><span>TRUE 在 FALSE 的后面</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">A</span>。Excel 降序排列时，文本排在数字之前，所以数字 9 在字母 A 的后面；其余选项不符合降序顺序。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-11" data-sec="single" data-type="single" data-per="2" data-ans="B">
+        <div class="qhead"><span class="qn">11</span><div class="qh">在 Excel 中，单元格 A1 中输入“=YEAR(20500502)”，则 A1 中出现（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>#NAME!</span></button><button type="button" class="op" data-k="B"><em>B</em><span>#NUM!</span></button><button type="button" class="op" data-k="C"><em>C</em><span>#DIV/0!</span></button><button type="button" class="op" data-k="D"><em>D</em><span>#VALUE!</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">B</span>。20500502 作为日期序列号超出 Excel 可表示范围，YEAR 返回 #NUM!。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-12" data-sec="single" data-type="single" data-per="2" data-ans="A">
+        <div class="qhead"><span class="qn">12</span><div class="qh">在 Excel 中，单元格 A1 的值为 100，单元格 B1 的值为 95。选中 A1:B1 单元格区域，用鼠标拖动该区域的填充手柄至 E1，则单元格 E1 中的值为（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>80</span></button><button type="button" class="op" data-k="B"><em>B</em><span>85</span></button><button type="button" class="op" data-k="C"><em>C</em><span>95</span></button><button type="button" class="op" data-k="D"><em>D</em><span>100</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">A</span>。A1、B1 相差 -5，按等差序列填充：C1＝90，D1＝85，E1＝80。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-13" data-sec="single" data-type="single" data-per="2" data-ans="B">
+        <div class="qhead"><span class="qn">13</span><div class="qh">在 Excel 中，单元格 A1、A2 中均为数值 2，在单元格 A3 中输入“=A1=A2”，则单元格 A3 的值是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>A1=A2</span></button><button type="button" class="op" data-k="B"><em>B</em><span>TRUE</span></button><button type="button" class="op" data-k="C"><em>C</em><span>A2</span></button><button type="button" class="op" data-k="D"><em>D</em><span>2</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">B</span>。公式先比较 A1 与 A2 是否相等，结果为逻辑值 TRUE。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-14" data-sec="single" data-type="single" data-per="2" data-ans="C">
+        <div class="qhead"><span class="qn">14</span><div class="qh">下列关于 PowerPoint 幻灯片中占位符的说法正确的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>普通视图中不可以添加，不可以删除等</span></button><button type="button" class="op" data-k="B"><em>B</em><span>普通视图中可以添加，不可以删除等</span></button><button type="button" class="op" data-k="C"><em>C</em><span>母版视图中可以添加，可以删除等</span></button><button type="button" class="op" data-k="D"><em>D</em><span>母版视图中不可以添加，可以删除等</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">C</span>。母版视图中可以添加、删除和调整占位符；普通视图中对占位符的增删受到版式约束。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-15" data-sec="single" data-type="single" data-per="2" data-ans="D">
+        <div class="qhead"><span class="qn">15</span><div class="qh">下列属于 TCP/IP 体系结构中应用层协议的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>UDP</span></button><button type="button" class="op" data-k="B"><em>B</em><span>IP</span></button><button type="button" class="op" data-k="C"><em>C</em><span>TCP</span></button><button type="button" class="op" data-k="D"><em>D</em><span>HTTP</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">D</span>。HTTP 是应用层协议；TCP、UDP 属于传输层，IP 属于网络层。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-16" data-sec="single" data-type="single" data-per="2" data-ans="C">
+        <div class="qhead"><span class="qn">16</span><div class="qh">收到“银行账户将被冻结，请立即点击链接验证身份”的陌生短信时，下列做法恰当的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>立即点击链接并填写相关信息</span></button><button type="button" class="op" data-k="B"><em>B</em><span>根据短信提供的电话验证</span></button><button type="button" class="op" data-k="C"><em>C</em><span>通过银行官方渠道核实信息</span></button><button type="button" class="op" data-k="D"><em>D</em><span>回复短信咨询</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">C</span>。陌生短信中的链接和电话可能是钓鱼信息，应通过银行官方 App、客服电话或网点核实。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-17" data-sec="single" data-type="single" data-per="2" data-ans="C">
+        <div class="qhead"><span class="qn">17</span><div class="qh">一个 C 类 IP 地址的最大主机数为（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>126</span></button><button type="button" class="op" data-k="B"><em>B</em><span>128</span></button><button type="button" class="op" data-k="C"><em>C</em><span>254</span></button><button type="button" class="op" data-k="D"><em>D</em><span>256</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">C</span>。C 类地址主机位 8 位，可用主机数 2<sup>8</sup>－2＝254。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-18" data-sec="single" data-type="single" data-per="2" data-ans="B">
+        <div class="qhead"><span class="qn">18</span><div class="qh">在 E-R 图中，学生和课程之间的联系是选修，则表示此联系的图形是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>矩形</span></button><button type="button" class="op" data-k="B"><em>B</em><span>菱形</span></button><button type="button" class="op" data-k="C"><em>C</em><span>椭圆形</span></button><button type="button" class="op" data-k="D"><em>D</em><span>圆角矩形</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">B</span>。E-R 图中实体用矩形，属性用椭圆，联系用菱形。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-19" data-sec="single" data-type="single" data-per="2" data-ans="A">
+        <div class="qhead"><span class="qn">19</span><div class="qh">在“学生管理”数据库中有“学生表”，其主要字段有学号、姓名、性别、专业。要查询学号为“2025001”的学生信息，应使用的 SQL 命令是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>SELECT</span></button><button type="button" class="op" data-k="B"><em>B</em><span>UPDATE</span></button><button type="button" class="op" data-k="C"><em>C</em><span>INSERT</span></button><button type="button" class="op" data-k="D"><em>D</em><span>DELETE</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">A</span>。查询数据使用 SELECT；UPDATE 修改、INSERT 插入、DELETE 删除。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-20" data-sec="single" data-type="single" data-per="2" data-ans="A">
+        <div class="qhead"><span class="qn">20</span><div class="qh">在现代智能农业中，温湿度传感器采集环境温度和湿度。该传感器是在物联网三层结构中的（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>感知层</span></button><button type="button" class="op" data-k="B"><em>B</em><span>网络层</span></button><button type="button" class="op" data-k="C"><em>C</em><span>应用层</span></button><button type="button" class="op" data-k="D"><em>D</em><span>管理层</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">A</span>。传感器负责采集物理世界的数据，属于物联网感知层。</div></div>
+      </div>
+
+    </section>
+
+    <section class="mod" id="s2" data-sec="judge">
+      <div class="mod-h"><h2>四、判断题</h2><span class="pts">15 小题 · 每题 1 分 · 共 15 分</span></div>
+      <p class="sec-note">正确选 A，错误选 B。</p>
+
+      <div class="qi" data-qid="real-2026-21" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">21</span><div class="qh">计算机字长与 CPU 通用寄存器位数相等。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。字长通常指 CPU 一次能处理的二进制位数，常与通用寄存器位数一致。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-22" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">22</span><div class="qh">二进制数 1101 与二进制数 1001 做与运算的结果为 1001。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。1101 与 1001 按位与：1001。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-23" data-sec="judge" data-type="judge" data-per="1" data-ans="错">
+        <div class="qhead"><span class="qn">23</span><div class="qh">字符存储时所占的字节数与编码方式无关。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">错误</span>。同一字符在不同编码中占用的字节数可能不同，如 ASCII 与 UTF-8。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-24" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">24</span><div class="qh">在 Word 中，可以插入散点图、柱状图和饼图。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。Word 的图表功能支持散点图、柱状图、饼图等多种图表类型。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-25" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">25</span><div class="qh">不能为吸引流量，使用 AI 技术生成/合成不实新闻视频并进行网络传播。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。利用 AI 合成不实新闻视频并传播，属于制造和传播虚假信息，不应做。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-26" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">26</span><div class="qh">在 PPT 中，可以按任意顺序放映有多张幻灯片的演示文稿。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。通过“自定义放映”或“幻灯片放映”设置，可以按指定顺序放映。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-27" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">27</span><div class="qh">某网站的域名是 www.xxx.gov.cn，其中 gov 表示政府机构。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。gov 是政府机构（government）的域名类别。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-28" data-sec="judge" data-type="judge" data-per="1" data-ans="错">
+        <div class="qhead"><span class="qn">28</span><div class="qh">计算机病毒危害很大，如果个人计算机感染病毒，则只能重装系统。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">错误</span>。可使用杀毒软件清除、隔离或修复，未必要重装系统。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-29" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">29</span><div class="qh">在多个网站使用同一个密码，可能会增加被连带攻击的风险。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。一处泄露可能被撞库利用，导致其他网站账号也被攻破。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-30" data-sec="judge" data-type="judge" data-per="1" data-ans="错">
+        <div class="qhead"><span class="qn">30</span><div class="qh">算法的空间复杂度是指程序源文件在磁盘上占用空间的大小。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">错误</span>。空间复杂度指算法运行过程中临时占用存储空间的大小，不是源文件大小。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-31" data-sec="judge" data-type="judge" data-per="1" data-ans="错">
+        <div class="qhead"><span class="qn">31</span><div class="qh">计算思维就是记忆某一种编程语言的语法规则。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">错误</span>。计算思维是分析问题、抽象建模、设计算法等思维方式，不等于记语法。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-32" data-sec="judge" data-type="judge" data-per="1" data-ans="错">
+        <div class="qhead"><span class="qn">32</span><div class="qh">MySQL 数据库是长期存储在计算机内存中的，是可共享有结构的数据集。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">错误</span>。数据库长期存储在计算机外存中，不是内存；内存中的数据断电会丢失。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-33" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">33</span><div class="qh">结构化数据、半结构化数据和非结构化数据都属于大数据中最常见的数据类型。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。大数据常见的数据类型包括结构化、半结构化和非结构化数据。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-34" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">34</span><div class="qh">云计算提供的计算服务通常部署在计算机集群上。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。云计算以集群、虚拟化等技术为基础，通过网络提供弹性计算服务。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-35" data-sec="judge" data-type="judge" data-per="1" data-ans="对">
+        <div class="qhead"><span class="qn">35</span><div class="qh">元宝、kimi、豆包是大型 AI 模型应用。</div><span class="st">未答</span></div>
+        <div class="opts judge"><button type="button" class="op" data-k="对"><em>A</em><span>正确</span></button><button type="button" class="op" data-k="错"><em>B</em><span>错误</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">正确</span>。它们都是面向用户提供大模型能力的应用。</div></div>
+      </div>
+
+    </section>
+
+    <section class="mod" id="s3" data-sec="multi">
+      <div class="mod-h"><h2>二、多项选择题</h2><span class="pts">10 小题 · 每题 3 分 · 共 30 分</span></div>
+      <p class="sec-note">每题有两个或两个以上正确选项；少选、多选、错选均不得分。</p>
+
+      <div class="qi" data-qid="real-2026-36" data-sec="multi" data-type="multi" data-per="3" data-ans="ABCD">
+        <div class="qhead"><span class="qn">36</span><div class="qh">下列属于信息伦理基本原则（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>无害原则</span></button><button type="button" class="op" data-k="B"><em>B</em><span>公正原则</span></button><button type="button" class="op" data-k="C"><em>C</em><span>平等原则</span></button><button type="button" class="op" data-k="D"><em>D</em><span>诚信原则</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">ABCD</span>。信息伦理的基本原则包括无害、公正、平等、诚信等。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-37" data-sec="multi" data-type="multi" data-per="3" data-ans="CD">
+        <div class="qhead"><span class="qn">37</span><div class="qh">包括 GB2312 码有（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>ASCII 码</span></button><button type="button" class="op" data-k="B"><em>B</em><span>BCD 码</span></button><button type="button" class="op" data-k="C"><em>C</em><span>GBK</span></button><button type="button" class="op" data-k="D"><em>D</em><span>GB18030</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">CD</span>。GBK、GB18030 都兼容并包含 GB2312 的汉字编码；ASCII、BCD 不属于汉字编码体系。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-38" data-sec="multi" data-type="multi" data-per="3" data-ans="BCD">
+        <div class="qhead"><span class="qn">38</span><div class="qh">微型计算机系统总线的功能有（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>网络信号传输</span></button><button type="button" class="op" data-k="B"><em>B</em><span>地址信号传输</span></button><button type="button" class="op" data-k="C"><em>C</em><span>数据信号传输</span></button><button type="button" class="op" data-k="D"><em>D</em><span>控制信号传输</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">BCD</span>。系统总线按功能分为地址总线、数据总线和控制总线；网络信号传输不是系统总线的基本功能。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-39" data-sec="multi" data-type="multi" data-per="3" data-ans="ACD">
+        <div class="qhead"><span class="qn">39</span><div class="qh">下列文件扩展名，表示压缩文件格式的有（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>rar</span></button><button type="button" class="op" data-k="B"><em>B</em><span>wav</span></button><button type="button" class="op" data-k="C"><em>C</em><span>zip</span></button><button type="button" class="op" data-k="D"><em>D</em><span>7z</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">ACD</span>。rar、zip、7z 是压缩格式；wav 是音频文件格式。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-40" data-sec="multi" data-type="multi" data-per="3" data-ans="ABC">
+        <div class="qhead"><span class="qn">40</span><div class="qh">计算机内部采用二进制表示数据和存储（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>物理上实现容易</span></button><button type="button" class="op" data-k="B"><em>B</em><span>运算规则简单</span></button><button type="button" class="op" data-k="C"><em>C</em><span>易于实现逻辑运算和逻辑判断</span></button><button type="button" class="op" data-k="D"><em>D</em><span>能精确表示到小数</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">ABC</span>。二进制便于硬件实现、运算规则简单、便于逻辑运算；它不能精确表示所有小数。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-41" data-sec="multi" data-type="multi" data-per="3" data-ans="BC">
+        <div class="qhead"><span class="qn">41</span><div class="qh">微型计算机的显示接口有（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>SATA</span></button><button type="button" class="op" data-k="B"><em>B</em><span>HDMI</span></button><button type="button" class="op" data-k="C"><em>C</em><span>VGA</span></button><button type="button" class="op" data-k="D"><em>D</em><span>M.2</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">BC</span>。HDMI、VGA 是显示接口；SATA、M.2 主要用于存储设备。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-42" data-sec="multi" data-type="multi" data-per="3" data-ans="ABCD">
+        <div class="qhead"><span class="qn">42</span><div class="qh">幻灯片尺寸大小有哪些（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>全屏显示（4:3）</span></button><button type="button" class="op" data-k="B"><em>B</em><span>（16:9）</span></button><button type="button" class="op" data-k="C"><em>C</em><span>全屏显示（16:10）</span></button><button type="button" class="op" data-k="D"><em>D</em><span>横幅</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">ABCD</span>。PowerPoint 提供 4:3、16:9、16:10、横幅等幻灯片尺寸。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-43" data-sec="multi" data-type="multi" data-per="3" data-ans="ABCD">
+        <div class="qhead"><span class="qn">43</span><div class="qh">PowerPoint 可以填充颜色的对象有（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>艺术字</span></button><button type="button" class="op" data-k="B"><em>B</em><span>文本框</span></button><button type="button" class="op" data-k="C"><em>C</em><span>形状</span></button><button type="button" class="op" data-k="D"><em>D</em><span>表格</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">ABCD</span>。艺术字、文本框、形状和表格都可以设置填充颜色。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-44" data-sec="multi" data-type="multi" data-per="3" data-ans="BD">
+        <div class="qhead"><span class="qn">44</span><div class="qh">在 Excel 中，公式运算结果为 2025 的是（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>RIGHT("20250520",5)</span></button><button type="button" class="op" data-k="B"><em>B</em><span>LEFT("20250520",4)</span></button><button type="button" class="op" data-k="C"><em>C</em><span>LEN("2025")</span></button><button type="button" class="op" data-k="D"><em>D</em><span>MID("20250520",1,4)</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">BD</span>。LEFT 取前 4 位得“2025”；MID 从第 1 位取 4 位得“2025”；RIGHT 取后 5 位得“50520”；LEN 得 4。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-45" data-sec="multi" data-type="multi" data-per="3" data-ans="ABCD">
+        <div class="qhead"><span class="qn">45</span><div class="qh">下列属于算法的设计策略的有（　　）。</div><span class="st">未答</span></div>
+        <div class="opts"><button type="button" class="op" data-k="A"><em>A</em><span>回溯法</span></button><button type="button" class="op" data-k="B"><em>B</em><span>递归法</span></button><button type="button" class="op" data-k="C"><em>C</em><span>贪心法</span></button><button type="button" class="op" data-k="D"><em>D</em><span>动态规划法</span></button></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">ABCD</span>。回溯、递归、贪心、动态规划都是常见的算法设计策略。</div></div>
+      </div>
+
+    </section>
+
+    <section class="mod" id="s4" data-sec="fill">
+      <div class="mod-h"><h2>三、填空题</h2><span class="pts">10 小题 · 每题 3 分 · 共 30 分</span></div>
+      <p class="sec-note">按空填写；同义表达可接受，错别字不算对。</p>
+
+      <div class="qi" data-qid="real-2026-46" data-sec="fill" data-type="fill" data-per="3" data-key="中小规模集成电路">
+        <div class="qhead"><span class="qn">46</span><div class="qh">我国自主研制成功“III 型”计算机属于第三代计算机，它采用的物理器件是________。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">中小规模集成电路</span>。第三代计算机采用中小规模集成电路。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-47" data-sec="fill" data-type="fill" data-per="3" data-key="-63">
+        <div class="qhead"><span class="qn">47</span><div class="qh">假定计算机字长为 8 位，一个有符号数的补码是（11000001）<sub>2</sub>，其原码十进制是________。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">-63</span>。补码 11000001 的真值为 -63；其原码为 10111111，即 -63。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-48" data-sec="fill" data-type="fill" data-per="3" data-key="+(2^(n-1)-1)~2^(n-1)-1~(2^(n-1)-1)">
+        <div class="qhead"><span class="qn">48</span><div class="qh">原码定点整数最小值为 -(2<sup>n-1</sup>-1)，其中 n 为字长，则原码定点整数最大值为________。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">+(2^(n-1)-1)</span>。原码定点整数关于 0 对称，最大值为 +(2<sup>n-1</sup>-1)。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-49" data-sec="fill" data-type="fill" data-per="3" data-key="R">
+        <div class="qhead"><span class="qn">49</span><div class="qh">Windows 中，打开“运行”界面的组合键是 Win+________。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">R</span>。Win+R 打开“运行”对话框。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-50" data-sec="fill" data-type="fill" data-per="3" data-key="声道数">
+        <div class="qhead"><span class="qn">50</span><div class="qh">计算数字音频采样数据量的参数，包括采样频率、采样精度、________和时长。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">声道数</span>。音频数据量还与声道数有关，如单声道、双声道。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-51" data-sec="fill" data-type="fill" data-per="3" data-key="邮件合并">
+        <div class="qhead"><span class="qn">51</span><div class="qh">在 Word 中，批量生成内容和格式相同但姓名不同的邀请函，使用________功能。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">邮件合并</span>。邮件合并可将主文档与数据源结合，批量生成个性化文档。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-52" data-sec="fill" data-type="fill" data-per="3" data-key="5">
+        <div class="qhead"><span class="qn">52</span><div class="qh">Excel 中，单元格 D4 的数值是 4，在 E4 中输入“=IF(OR(D4&lt;1,D4&gt;9),2,5)”，则 E4 的值为________。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">5</span>。D4＝4 不满足 D4&lt;1，也不满足 D4&gt;9，OR 为 FALSE，IF 返回 5。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-53" data-sec="fill" data-type="fill" data-per="3" data-key="讲义">
+        <div class="qhead"><span class="qn">53</span><div class="qh">在 PowerPoint 中，“打印”对话框中，“打印内容”可以选择所有幻灯片、________、大纲、备注页。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">讲义</span>。打印内容可选幻灯片、讲义、大纲、备注页等。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-54" data-sec="fill" data-type="fill" data-per="3" data-key="EF03::1010">
+        <div class="qhead"><span class="qn">54</span><div class="qh">IPv6 地址为 EF03:0:0:0:0:0:0:1010，则可以简写为________。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">EF03::1010</span>。连续的 0 段可以用双冒号压缩，得到 EF03::1010。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-55" data-sec="fill" data-type="fill" data-per="3" data-key="记录">
+        <div class="qhead"><span class="qn">55</span><div class="qh">关系模型中一行称为元组，元组也称为________。</div><span class="st">未答</span></div>
+        <div class="fillrow"><span class="filllabel">答：</span><input class="fill" type="text" autocomplete="off" placeholder="填写答案"></div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>答案：</b><span class="key">记录</span>。关系模型中，行称为元组或记录；列称为属性或字段。</div></div>
+      </div>
+
+    </section>
+
+    <section class="mod" id="s5" data-sec="short">
+      <div class="mod-h"><h2>五、简答题</h2><span class="pts">3 小题 · 每题 5 分 · 共 15 分</span></div>
+      <p class="sec-note">分点作答，答出关键要点即可；按要点命中情况给分。</p>
+
+      <div class="qi" data-qid="real-2026-56" data-sec="short" data-type="essay" data-per="5">
+        <div class="qhead"><span class="qn">56</span><div class="qh">按要求完成进制转换，写出过程和结果。<br>（1）将十进制数 1046 转换成八进制。<br>（2）将十进制数 46.625 转换成十六进制。</div><span class="st">未答</span></div>
+        <textarea class="essay" rows="7" placeholder="整数部分“除 8 取余、逆序排列”；小数部分“乘 16 取整、顺序排列”。"></textarea>
+        <div class="hint">整数部分“除 8 取余、逆序排列”；小数部分“乘 16 取整、顺序排列”。</div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>参考答案：</b><br>（1）1046 连续除以 8，余数依次为 6、2、0、2，逆序排列得 <span class="key">2026</span>，即 1046＝(2026)<sub>8</sub>。<br>（2）整数部分 46 除以 16，余数依次为 14（E）、2，逆序得 2E；小数部分 0.625×16＝10（A），取整得 A；所以 46.625＝<span class="key">2E.A</span><sub>16</sub>。<br><b>评分要点：</b>第一问结果 3 分、过程 1 分；第二问结果 1 分；共 5 分。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-57" data-sec="short" data-type="essay" data-per="5">
+        <div class="qhead"><span class="qn">57</span><div class="qh">简述操作系统的五大功能。</div><span class="st">未答</span></div>
+        <textarea class="essay" rows="6" placeholder="按“处理机、存储、设备、文件、接口”五个方面分点作答。"></textarea>
+        <div class="hint">按“处理机、存储、设备、文件、接口”五个方面分点作答。</div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>参考答案：</b><br>① 处理机管理：对 CPU 进行分配、调度和控制。<br>② 存储管理：管理内存资源，包括内存分配、地址映射、保护和扩充。<br>③ 设备管理：管理外部设备，提供驱动程序，让用户统一、简便地使用设备。<br>④ 文件管理：对文件和目录进行组织、存储、检索和保护。<br>⑤ 接口管理：为用户提供命令行界面和图形用户界面等交互途径。<br><b>评分要点：</b>每个功能 1 分，共 5 分。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-58" data-sec="short" data-type="essay" data-per="5">
+        <div class="qhead"><span class="qn">58</span><div class="qh">列出 PowerPoint 中动画的种类。</div><span class="st">未答</span></div>
+        <textarea class="essay" rows="4" placeholder="从对象进入、退出、强调和沿路径运动四个角度作答。"></textarea>
+        <div class="hint">从对象进入、退出、强调和沿路径运动四个角度作答。</div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>参考答案：</b><br>① 进入动画：对象出现在幻灯片中，如淡入、飞入。<br>② 退出动画：对象从幻灯片中消失，如飞出、淡出。<br>③ 强调动画：对象在原地变化，如放大、缩小、变色、旋转。<br>④ 动作路径动画：对象沿指定路径移动，如直线、弧形、自定义路径。<br><b>评分要点：</b>每种动画 1.25 分，共 5 分。</div></div>
+      </div>
+
+    </section>
+
+    <section class="mod" id="s6" data-sec="comp">
+      <div class="mod-h"><h2>六、综合应用题</h2><span class="pts">2 小题 · 每题 10 分 · 共 20 分</span></div>
+      <p class="sec-note">写出公式、步骤或程序，按要点给分。</p>
+
+      <div class="qi" data-qid="real-2026-59" data-sec="comp" data-type="essay" data-per="10">
+        <div class="qhead"><span class="qn">59</span><div class="qh">现有按学号升序且学号唯一的 1024 名学生，需按学号查找学生数据，依据顺序查找和二分查找算法的原理，完成各小题。<br>（1）哪种更适合该场景，理由是什么？<br>（2）分别写出 2 种算法在该场景中最坏情况需比较的次数。<br>（3）①顺序查找的时间复杂度。②二分查找的时间复杂度是________。<br>A. O(1)　B. O(log n)　C. O(√n)　D. O(n)　E. O(n<sup>2</sup>)</div><span class="st">未答</span></div>
+        <textarea class="essay" rows="8" placeholder="先判断数据是否有序，再比较最坏比较次数和时间复杂度。"></textarea>
+        <div class="hint">先判断数据是否有序，再比较最坏比较次数和时间复杂度。</div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>参考答案：</b><br>（1）<span class="key">二分查找更适合</span>。因为学生数据已按学号升序排列，且学号唯一，满足二分查找的前提，查找效率更高。<br>（2）顺序查找最坏需比较 <span class="key">1024 次</span>；二分查找最坏需比较 <span class="key">10 次</span>。<br>（3）①顺序查找为 <span class="key">O(n)</span>；②二分查找为 <span class="key">O(log n)</span>，选 B。<br><b>评分要点：</b>第（1）问 2 分，第（2）问 4 分，第（3）问 4 分，共 10 分。</div></div>
+      </div>
+
+      <div class="qi" data-qid="real-2026-60" data-sec="comp" data-type="essay" data-per="10">
+        <div class="qhead"><span class="qn">60</span><div class="qh">图（a）的文本在 Word 中经过编辑和排版后的效果如图（b）所示。<br>（1）写出实现标题“学院学生会竞选通知”效果的方法。<br>（2）写出实现第一段第一个字“由”字效果的方法。<br>（3）写出出现背景“学院学生会”效果的方法。<br>（4）写出实现文中“三、竞选条件”各段落（即“自我约束……同学的意愿。”）效果的方法。<br>（5）写出实现文末“学院学生会职位结构图”效果的方法。</div><span class="st">未答</span></div>
+        <textarea class="essay" rows="9" placeholder="分别从艺术字、首字下沉、水印、项目符号和 SmartArt 考虑。"></textarea>
+        <div class="hint">分别从艺术字、首字下沉、水印、项目符号和 SmartArt 考虑。</div>
+        <div class="qfoot"></div>
+        <div class="ansbox"><div><b>参考答案：</b><br>（1）插入<span class="key">艺术字</span>，输入标题并设置艺术字样式。<br>（2）选中“由”字，使用<span class="key">首字下沉</span>功能。<br>（3）通过“设计/页面背景”→“水印”插入<span class="key">文字水印</span>“学院学生会”。<br>（4）选中相关段落，使用<span class="key">项目符号</span>功能添加项目符号。<br>（5）插入<span class="key">SmartArt</span>，选择层次结构图并填写部门名称。<br><b>评分要点：</b>每小题 2 分，共 10 分。</div></div>
+      </div>
+
+    </section>
+
+
+    <div class="filterbar" id="filterBar" hidden><span id="filterInfo">交卷后可查看逐题得分与解析。</span><button type="button" class="btn small ghost" id="filterWrong">只看错题</button></div>
+  </div>
+
+  <section class="result" id="result" hidden>
+    <div class="scorehero">
+      <div class="scorenum"><b id="scoreNum">0</b><span>/ 150</span></div>
+      <div><h2 id="scoreTitle">等待交卷</h2><p id="scoreSub">交卷后自动计算总分，并给出各板块得分。</p></div>
+    </div>
+    <div class="bars" id="scoreBars"></div>
+    <div class="result-actions">
+      <button type="button" class="btn danger" id="retryAll">重做整卷</button>
+      <button type="button" class="btn small ghost" id="backTop">回到卷首</button>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var ALTS_RAW = {
+    '中小规模集成电路': ['中规模集成电路', '中小规模', '中小规模集成电路', '中小规模集成电路iii型'],
+    '声道数': ['声道', '声道数量'],
+    '邮件合并': ['邮件合并功能'],
+    '普通视图': ['普通视图', '普通'],
+    '首行缩进': ['首行缩进'],
+    '修改': ['修改模式', '修订', '修订模式'],
+    '数据总线': ['数据总线db', '数据线'],
+    '编码': ['pcm编码', '编码'],
+    '感知层': ['感知层'],
+    '记录': ['记录', '元组'],
+    '讲义': ['讲义', '讲义页'],
+    'R': ['r', 'win+r'],
+    'EF03::1010': ['ef03::1010', 'ef03:0:0:0:0:0:0:1010'],
+    '硬件系统': ['硬件'],
+    '软件系统': ['软件'],
+    '智能化': ['智能'],
+    '计算机辅助设计': ['cad', '计算机辅助设计技术'],
+    '一次能传输的二进制位数': ['字长', '数据总线宽度', '一次传输位数', '一次传输的位数'],
+    '可寻址的内存空间大小': ['寻址空间', '可寻址空间', '地址空间', '内存空间大小', '可寻址的内存空间'],
+    '运算器': ['alu', '算术逻辑单元'],
+    '控制器': ['cu', '控制单元'],
+    '任意多个字符': ['任意字符', '多个字符', '任意多个', '任意数量字符'],
+    '任意一个字符': ['任意字符', '单个字符', '一个字符', '单一字符'],
+    '存储器': ['内存', '主存'],
+    '数据总线': ['数据线', '数据总线宽度'],
+    '文档': ['文档资料', '技术文档'],
+    '物理地址': ['硬件地址', 'mac地址', '物理硬件地址'],
+    '资源共享': ['共享资源'],
+    '数据通信': ['通信', '数据传输'],
+    '降序': ['从高到低', '由高到低', '递减'],
+    '总分': ['总成绩'],
+    '排序': ['排列'],
+    '四层': ['4层', '四层模型'],
+    '数据库管理系统': ['dbms'],
+    '属性': ['字段'],
+    '远程控制': ['后门', '远程控制通道'],
+    '操作数': ['地址码'],
+    '可用性': ['可用'],
+    '需求分析': ['需求调研', '需求分析阶段'],
+    '|': ['竖线', '管道符', '竖杠', '竖线符'],
+    'O(log₂n)': ['o(logn)', 'o(log2n)', 'log2n', 'logn'],
+    'ARPANET': ['arpanet网', '阿帕网'],
+    '1 张': ['1', '一张'],
+    '48 位': ['48', '48位'],
+    '6763 个': ['6763', '6763个'],
+    '2020': ['20h20h', '2020h'],
+    '3021': ['3021h'],
+    '2': ['2', '二'],
+    '16': ['16', '十六'],
+    '3': ['3', '三'],
+    '8': ['8', '八'],
+    '9': ['9', '九'],
+    '10': ['10', '十'],
+    '32': ['32', '三十二'],
+    '128': ['128', '一百二十八'],
+    '255': ['255', '二百五十五'],
+    '1024': ['1024', '一千零二十四'],
+    '5050': ['5050', '五千零五十'],
+    '236': ['236', '二百三十六'],
+    '72': ['72', '七十二'],
+    '2020': ['2020', '2020h'],
+    '数据库管理系统（DBMS）': ['数据库管理系统', 'dbms']
+  };
+  var ALTS = {};
+  var scripts = ['₂','₃','⁰','¹','²','³'];
+  var subMap = {'₂':'2','₃':'3','₀':'0','₁':'1','⁰':'0','¹':'1','²':'2','³':'3'};
+  function norm(s){
+    s = String(s == null ? '' : s);
+    s = s.replace(/[\uFF01-\uFF5E]/g, function(ch){ return String.fromCharCode(ch.charCodeAt(0) - 65248); });
+    s = s.replace(/[\u3000\s]/g, '');
+    s = s.replace(/[“”"'‘’]/g, '');
+    s = s.replace(/[，,。；;：:、（）()《》〈〉【】\[\]{}…·\-—–_!！?？]/g, '');
+    s = s.replace(/[₀₁₂₃⁰¹²³]/g, function(ch){ return subMap[ch] || ''; });
+    return s.toLowerCase();
+  }
+  function rawVariants(t){
+    t = String(t == null ? '' : t);
+    var out = [t], m = t.match(/（[^）]*）/g) || [], flat, i;
+    flat = t.replace(/（[^）]*）/g, '');
+    if(flat && flat !== t) out.push(flat);
+    for(i = 0; i < m.length; i++){
+      var inner = m[i].slice(1, -1);
+      if(inner) out.push(inner);
+    }
+    var cleaned = t.replace(/[“”"'‘’]/g, '');
+    if(cleaned !== t) out.push(cleaned);
+    return out;
+  }
+  for(var k in ALTS_RAW){
+    if(!Object.prototype.hasOwnProperty.call(ALTS_RAW, k)) continue;
+    ALTS[norm(k)] = ALTS_RAW[k].map(norm);
+  }
+  function numVal(s){
+    var m = norm(s).match(/^(-?\d+(?:\.\d+)?)(个|张|位|字节|次|年|b|h|kb|mb|gb)?$/);
+    return m ? parseFloat(m[1]) : null;
+  }
+  function hasAlias(v, u, allowContain){
+    var list = ALTS[v] || [];
+    for(var i = 0; i < list.length; i++){
+      var a = list[i];
+      if(!a) continue;
+      if(u === a) return true;
+      if(allowContain && a.length >= 2 && u.indexOf(a) >= 0) return true;
+    }
+    return false;
+  }
+  function matchOne(user, target, allowContain){
+    var u = norm(user), t = norm(target);
+    if(!u || !t) return false;
+    var uv = rawVariants(user).map(norm), tv = rawVariants(target).map(norm), i, j;
+    for(i = 0; i < uv.length; i++){
+      if(uv[i] === t) return true;
+    }
+    var un = numVal(user), tn = numVal(target);
+    if(un !== null && tn !== null) return un === tn;
+    if(t.charAt(0) === '.' && u === t.slice(1)) return true;
+    if(u.charAt(0) === '.' && t === u.slice(1)) return true;
+    if(t.indexOf('表名') >= 0){
+      var pre = t.replace('表名', '');
+      if(u.indexOf(pre) === 0 && u.length > pre.length) return true;
+    }
+    if(ALTS[t]){
+      for(i = 0; i < ALTS[t].length; i++){
+        var a = ALTS[t][i];
+        if(u === a || (allowContain && a.length >= 2 && u.indexOf(a) >= 0)) return true;
+      }
+    }
+    for(i = 0; i < tv.length; i++){
+      var v = tv[i];
+      if(!v) continue;
+      if(u === v) return true;
+      if(allowContain && v.length >= 2 && u.indexOf(v) >= 0) return true;
+      if(hasAlias(v, u, allowContain)) return true;
+    }
+    for(j = 0; j < uv.length; j++){
+      if(tv.indexOf(uv[j]) >= 0) return true;
+    }
+    return false;
+  }
+  function splitTargets(key){
+    return String(key == null ? '' : key).split('、').map(function(s){ return s.trim(); }).filter(Boolean);
+  }
+  function splitUsers(user, n){
+    var raw = String(user == null ? '' : user), strategies = [];
+    strategies.push([raw]);
+    strategies.push(raw.split(/[、,，;；\n]+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/[和与及]/).map(function(s){ return s.trim(); }).filter(Boolean));
+    strategies.push(raw.split(/\s+/).map(function(s){ return s.trim(); }).filter(Boolean));
+    var all = [];
+    for(var i = 0; i < strategies.length; i++){
+      if(strategies[i].length === n) all.push(strategies[i]);
+    }
+    return all.length ? all : [strategies[0]];
+  }
+  function evalAlt(key, user){
+    var targets = splitTargets(key), n = targets.length;
+    var splits = splitUsers(user, n), best = {hits: 0, total: n, parts: []};
+    for(var s = 0; s < splits.length; s++){
+      var parts = splits[s], hits = 0, detail = [];
+      if(parts.length === n){
+        for(var i = 0; i < n; i++){
+          var ok = matchOne(parts[i], targets[i]);
+          if(ok) hits++;
+          detail.push({t: targets[i], u: parts[i], ok: ok});
+        }
+      } else {
+        for(var j = 0; j < n; j++){
+          var ok2 = matchOne(user, targets[j]);
+          if(ok2) hits++;
+          detail.push({t: targets[j], u: user, ok: ok2});
+        }
+      }
+      if(hits > best.hits) best = {hits: hits, total: n, parts: detail};
+    }
+    return best;
+  }
+  function fill(key, user){
+    var groups = String(key == null ? '' : key).split('~'), best = null;
+    for(var i = 0; i < groups.length; i++){
+      var r = evalAlt(groups[i], user);
+      var rate = r.total ? r.hits / r.total : 0;
+      if(!best || rate > best.rate || (rate === best.rate && r.hits > best.hits)) best = {ok: false, hits: r.hits, total: r.total, rate: rate, parts: r.parts};
+    }
+    if(!best) best = {ok: false, hits: 0, total: 1, rate: 0, parts: []};
+    best.ok = best.total > 0 && best.hits === best.total;
+    return best;
+  }
+  function termMatch(user, target){
+    return matchOne(user, target, true);
+  }
+  function termInText(user, target){
+    var u = norm(user), t = norm(target);
+    return !!(u && t && u.indexOf(t) >= 0);
+  }
+  function pointsGrade(points, user){
+    points = points || [];
+    var max = 0, score = 0, hits = 0, details = [];
+    for(var i = 0; i < points.length; i++){
+      var p = points[i] || {};
+      var w = typeof p.w === 'number' ? p.w : 1;
+      max += w;
+      var ok = false, j;
+      if(p.all && p.all.length){
+        ok = true;
+        for(j = 0; j < p.all.length; j++){
+          if(!termInText(user, p.all[j])){ ok = false; break; }
+        }
+      } else {
+        var terms = [];
+        if(p.t) terms.push(p.t);
+        if(p.a) terms = terms.concat(p.a);
+        if(p.any) terms = terms.concat(p.any);
+        for(j = 0; j < terms.length; j++){
+          if(matchOne(user, terms[j], true)){ ok = true; break; }
+        }
+      }
+      if(ok){ hits++; score += w; }
+      details.push({t: p.t || (p.all || []).join('、') || '', a: p.a || [], w: w, ok: ok});
+    }
+    return {score: score, max: max, hits: hits, total: points.length, rate: max ? score / max : 0, details: details};
+  }
+  window.TYZGrade = {norm: norm, fill: fill, term: termMatch, inText: termInText, points: pointsGrade, variants: rawVariants};
+})();
+
+</script>
+<script>
+(function(){
+  var GRADE = window.TYZGrade;
+  var KEY = 'tyz2027:real-2026';
+  var DURATION = 120, MAX = 150, N = 60;
+  var QS = Array.prototype.slice.call(document.querySelectorAll('.qi'));
+  var SEC = {"single": {"name": "单项选择题", "max": 40}, "judge": {"name": "判断题", "max": 15}, "multi": {"name": "多项选择题", "max": 30}, "fill": {"name": "填空题", "max": 30}, "short": {"name": "简答题", "max": 15}, "comp": {"name": "综合应用题", "max": 20}};
+  var ESSAY_POINTS = {
+  "real-2026-56": [
+    {
+      "any": [
+        "除8取余",
+        "除以8",
+        "倒序",
+        "逆序"
+      ],
+      "t": "除8取余",
+      "w": 1
+    },
+    {
+      "any": [
+        "2026"
+      ],
+      "t": "1046=2026",
+      "w": 2
+    },
+    {
+      "any": [
+        "2e.a",
+        "2eah",
+        "2e.ah",
+        "2ea"
+      ],
+      "t": "46.625=2E.A",
+      "w": 1.5
+    },
+    {
+      "any": [
+        "乘16取整",
+        "乘以16取整",
+        "乘十六取整"
+      ],
+      "t": "小数部分乘16取整",
+      "w": 0.5
+    }
+  ],
+  "real-2026-57": [
+    {
+      "any": [
+        "处理机管理",
+        "处理器管理",
+        "cpu管理"
+      ],
+      "t": "处理机管理",
+      "w": 1
+    },
+    {
+      "any": [
+        "存储管理",
+        "内存管理"
+      ],
+      "t": "存储管理",
+      "w": 1
+    },
+    {
+      "any": [
+        "设备管理",
+        "外部设备管理"
+      ],
+      "t": "设备管理",
+      "w": 1
+    },
+    {
+      "any": [
+        "文件管理",
+        "目录管理"
+      ],
+      "t": "文件管理",
+      "w": 1
+    },
+    {
+      "any": [
+        "接口管理",
+        "用户接口",
+        "命令行界面",
+        "图形用户界面"
+      ],
+      "t": "接口管理",
+      "w": 1
+    }
+  ],
+  "real-2026-58": [
+    {
+      "any": [
+        "进入",
+        "入场"
+      ],
+      "t": "进入动画",
+      "w": 1.25
+    },
+    {
+      "any": [
+        "退出",
+        "离场"
+      ],
+      "t": "退出动画",
+      "w": 1.25
+    },
+    {
+      "any": [
+        "强调"
+      ],
+      "t": "强调动画",
+      "w": 1.25
+    },
+    {
+      "any": [
+        "动作路径",
+        "路径动画",
+        "运动路径"
+      ],
+      "t": "动作路径",
+      "w": 1.25
+    }
+  ],
+  "real-2026-59": [
+    {
+      "any": [
+        "二分查找更适合",
+        "二分查找更合适",
+        "二分法更适合",
+        "二分更适合",
+        "二分查找"
+      ],
+      "t": "二分查找更适合",
+      "w": 2
+    },
+    {
+      "any": [
+        "1024"
+      ],
+      "t": "顺序查找最坏 1024 次",
+      "w": 2
+    },
+    {
+      "any": [
+        "10"
+      ],
+      "t": "二分查找最坏 10 次",
+      "w": 2
+    },
+    {
+      "any": [
+        "o(n)",
+        "on",
+        "d"
+      ],
+      "t": "顺序 O(n)",
+      "w": 2
+    },
+    {
+      "any": [
+        "o(logn)",
+        "ologn",
+        "b"
+      ],
+      "t": "二分 O(log n)",
+      "w": 2
+    }
+  ],
+  "real-2026-60": [
+    {
+      "any": [
+        "艺术字",
+        "wordart"
+      ],
+      "t": "艺术字",
+      "w": 2
+    },
+    {
+      "any": [
+        "首字下沉",
+        "首字下沉效果"
+      ],
+      "t": "首字下沉",
+      "w": 2
+    },
+    {
+      "any": [
+        "文字水印",
+        "水印"
+      ],
+      "t": "文字水印",
+      "w": 2
+    },
+    {
+      "any": [
+        "项目符号",
+        "项目编号",
+        "符号"
+      ],
+      "t": "项目符号",
+      "w": 2
+    },
+    {
+      "any": [
+        "smartart",
+        "smart art",
+        "层次结构图"
+      ],
+      "t": "SmartArt",
+      "w": 2
+    }
+  ]
+};
+  var state = load();
+  var timerId = 0, alreadyAuto = false;
+
+  function load(){
+    try{
+      var o = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if(!o || !o.answers || !o.endsAt) return null;
+      return o;
+    }catch(e){ return null; }
+  }
+  function save(){
+    if(!state) return;
+    try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+    var tip = document.getElementById('saveTip');
+    if(tip){ tip.textContent = '已自动保存'; }
+  }
+  function newState(){
+    var now = Date.now();
+    return {v:1, startedAt:now, endsAt:now + DURATION*60*1000, answers:{}, submitted:false};
+  }
+  function ansOf(q){ return state && state.answers ? (state.answers[q.getAttribute('data-qid')] || '') : ''; }
+  function isAnswered(q){
+    var a = ansOf(q);
+    return !!(a && String(a).trim());
+  }
+  function setAns(q, val){
+    if(!state || state.submitted) return;
+    var id = q.getAttribute('data-qid');
+    if(val === null || val === undefined || String(val).trim() === '') delete state.answers[id];
+    else state.answers[id] = String(val);
+    save();
+    updateQ(q);
+    updateProgress();
+  }
+  function updateQ(q){
+    if(!q) return;
+    var st = q.querySelector('.st');
+    if(!st) return;
+    if(state && state.submitted && state.result && state.result.q[q.getAttribute('data-qid')]){
+      var r = state.result.q[q.getAttribute('data-qid')];
+      st.className = 'st ' + (r.score >= r.max ? 'right' : (r.score > 0 ? 'partial' : 'wrong'));
+      st.textContent = '得分 ' + fmtScore(r.score) + '/' + fmtScore(r.max);
+      return;
+    }
+    var done = isAnswered(q);
+    st.className = 'st' + (done ? ' done' : '');
+    st.textContent = done ? '已答' : '未答';
+  }
+  function updateProgress(){
+    var n = 0;
+    for(var i=0;i<QS.length;i++){ if(isAnswered(QS[i])) n++; }
+    var el = document.getElementById('progress');
+    if(el) el.textContent = '已答 ' + n + ' / ' + N;
+    var tip = document.getElementById('saveTip');
+    if(tip) tip.textContent = '已自动保存';
+  }
+  function fmtScore(x){
+    if(!isFinite(x)) return '0';
+    return (Math.round(x*10)/10).toString();
+  }
+  function syncOptions(q){
+    var type = q.getAttribute('data-type');
+    var a = ansOf(q);
+    var os = q.querySelectorAll('.op');
+    for(var i=0;i<os.length;i++){
+      var k = os[i].getAttribute('data-k');
+      var sel = type === 'multi' ? a.indexOf(k) >= 0 : a === k;
+      os[i].classList.toggle('sel', sel);
+      os[i].classList.toggle('lock', !!(state && state.submitted));
+      os[i].disabled = !!(state && state.submitted);
+    }
+  }
+  function hydrate(q){
+    var type = q.getAttribute('data-type');
+    var a = ansOf(q);
+    if(type === 'fill'){
+      var inp = q.querySelector('.fill');
+      if(inp){ inp.value = a; inp.disabled = !!(state && state.submitted); }
+    }else if(type === 'essay'){
+      var ta = q.querySelector('.essay');
+      if(ta){ ta.value = a; ta.disabled = !!(state && state.submitted); }
+    }else{
+      syncOptions(q);
+    }
+    updateQ(q);
+  }
+  function toggleMulti(q, k){
+    var a = ansOf(q).split('');
+    var idx = a.indexOf(k);
+    if(idx >= 0) a.splice(idx,1); else a.push(k);
+    a.sort();
+    setAns(q, a.join(''));
+    syncOptions(q);
+  }
+  function wire(){
+    for(var i=0;i<QS.length;i++){
+      (function(q){
+        var type = q.getAttribute('data-type');
+        var os = q.querySelectorAll('.op');
+        for(var j=0;j<os.length;j++){
+          (function(o){
+            o.addEventListener('click', function(){
+              if(!state || state.submitted) return;
+              var k = o.getAttribute('data-k');
+              if(type === 'multi') toggleMulti(q, k);
+              else { setAns(q, k); syncOptions(q); }
+            });
+          })(os[j]);
+        }
+        var inp = q.querySelector('.fill');
+        if(inp){
+          inp.addEventListener('input', function(){ setAns(q, inp.value); });
+          inp.addEventListener('change', function(){ setAns(q, inp.value); });
+        }
+        var ta = q.querySelector('.essay');
+        if(ta){
+          ta.addEventListener('input', function(){ setAns(q, ta.value); });
+          ta.addEventListener('change', function(){ setAns(q, ta.value); });
+        }
+        var rb = document.createElement('button');
+        rb.type = 'button'; rb.className = 'mini redo'; rb.textContent = '重做本题';
+        rb.addEventListener('click', function(){ redoOne(q); });
+        var foot = q.querySelector('.qfoot'); if(foot) foot.appendChild(rb);
+      })(QS[i]);
+    }
+  }
+  function redoOne(q){
+    if(!state || state.submitted) return;
+    var id = q.getAttribute('data-qid');
+    delete state.answers[id];
+    var type = q.getAttribute('data-type');
+    if(type === 'fill'){ var inp=q.querySelector('.fill'); if(inp){ inp.value=''; inp.classList.remove('right','wrong'); } }
+    else if(type === 'essay'){ var ta=q.querySelector('.essay'); if(ta){ ta.value=''; ta.classList.remove('right','wrong','partial'); } }
+    else {
+      var os=q.querySelectorAll('.op');
+      for(var i=0;i<os.length;i++) os[i].classList.remove('sel','correct','wrong','lock');
+    }
+    var ans = q.querySelector('.ansbox'); if(ans) ans.classList.remove('show');
+    save(); updateQ(q); updateProgress();
+  }
+  function startExam(){
+    state = newState();
+    save();
+    var res=document.getElementById('result'); if(res) res.hidden=true;
+    var ft=document.getElementById('filterBar'); if(ft) ft.hidden=true;
+    var tm=document.getElementById('timer'); if(tm){ tm.textContent='120:00'; tm.classList.remove('low'); }
+    var sb=document.getElementById('submitBtn'); if(sb){ sb.textContent='交卷'; sb.disabled=false; }
+    showExam();
+    scrollTo(0,0);
+  }
+  function showExam(){
+    var intro = document.getElementById('intro');
+    var paper = document.getElementById('paper');
+    var top = document.getElementById('examTop');
+    if(intro) intro.hidden = true;
+    if(paper) paper.hidden = false;
+    if(top) top.hidden = false;
+    for(var i=0;i<QS.length;i++) hydrate(QS[i]);
+    updateProgress();
+    var ft=document.getElementById('filterBar');
+    if(state && state.submitted){
+      if(!state.result) state.result = gradeAll();
+      if(ft) ft.hidden=false;
+      var tm=document.getElementById('timer'); if(tm){ tm.textContent='已交卷'; tm.classList.remove('low'); }
+      var sb=document.getElementById('submitBtn'); if(sb){ sb.textContent='已交卷'; sb.disabled=true; }
+      renderResult();
+      renderAnswers();
+    }else{
+      if(ft) ft.hidden=true;
+      startTimer();
+    }
+  }
+  function startTimer(){
+    clearInterval(timerId);
+    tick();
+    timerId = setInterval(tick, 1000);
+  }
+  function tick(){
+    if(!state || state.submitted){ clearInterval(timerId); return; }
+    var left = state.endsAt - Date.now();
+    var el = document.getElementById('timer');
+    if(left <= 0){
+      if(el){ el.textContent = '00:00'; el.classList.add('low'); }
+      if(!alreadyAuto){ alreadyAuto = true; submitExam(true); }
+      return;
+    }
+    var totalSec = Math.floor(left/1000);
+    var m = Math.floor(totalSec/60), s = totalSec % 60;
+    if(el){
+      el.textContent = (m<10?'0':'') + m + ':' + (s<10?'0':'') + s;
+      el.classList.toggle('low', left <= 10*60*1000);
+    }
+  }
+  function gradeQ(q){
+    var type = q.getAttribute('data-type');
+    var per = parseFloat(q.getAttribute('data-per') || '0');
+    var user = ansOf(q);
+    var qid = q.getAttribute('data-qid');
+    if(type === 'judge' || type === 'single'){
+      var ok1 = user === (q.getAttribute('data-ans') || '');
+      return {score: ok1 ? per : 0, max: per, ok: ok1, user: user, hits: ok1?1:0, total:1};
+    }
+    if(type === 'multi'){
+      var target = (q.getAttribute('data-ans') || '').split('').sort().join('');
+      var got = user.split('').sort().join('');
+      var ok2 = got === target;
+      return {score: ok2 ? per : 0, max: per, ok: ok2, user: user, hits: ok2?1:0, total:1};
+    }
+    if(type === 'fill'){
+      var r = GRADE ? GRADE.fill(q.getAttribute('data-key') || '', user) : {hits:0,total:1};
+      var sc = r.total ? per * (r.hits / r.total) : 0;
+      sc = Math.round(sc*10)/10;
+      return {score: sc, max: per, ok: sc === per, user: user, hits: r.hits, total: r.total};
+    }
+    if(type === 'essay'){
+      var p = ESSAY_POINTS[qid] || [];
+      var g = GRADE ? GRADE.points(p, user) : {score:0,max:per,hits:0,total:p.length,details:[]};
+      var sc2 = Math.round((g.max ? g.score/g.max*per : 0)*10)/10;
+      return {score: sc2, max: per, ok: sc2 === per, user: user, hits: g.hits, total: g.total, details: g.details};
+    }
+    return {score:0,max:per,ok:false,user:user,hits:0,total:1};
+  }
+  function gradeAll(){
+    var res = {total:0, max:MAX, q:{}, sec:{}};
+    for(var k in SEC){ res.sec[k] = {score:0,max:SEC[k].max}; }
+    for(var i=0;i<QS.length;i++){
+      var q = QS[i], qid = q.getAttribute('data-qid'), sec = q.getAttribute('data-sec');
+      var r = gradeQ(q);
+      res.q[qid] = r;
+      res.sec[sec].score += r.score;
+      res.total += r.score;
+    }
+    res.total = Math.round(res.total*10)/10;
+    res.rate = res.total / MAX;
+    return res;
+  }
+  function submitExam(auto){
+    if(!state || state.submitted) return;
+    if(!auto && !confirm('交卷后不能再修改答案，确定交卷吗？')) return;
+    state.submitted = true;
+    state.submittedAt = Date.now();
+    state.result = gradeAll();
+    save();
+    clearInterval(timerId);
+    var tm=document.getElementById('timer'); if(tm){ tm.textContent='已交卷'; tm.classList.remove('low'); }
+    var sb=document.getElementById('submitBtn'); if(sb){ sb.textContent='已交卷'; sb.disabled=true; }
+    renderResult();
+    renderAnswers();
+    for(var i=0;i<QS.length;i++){
+      QS[i].querySelectorAll('.op').forEach(function(o){ o.disabled = true; o.classList.add('lock'); });
+      var inp=QS[i].querySelector('.fill'); if(inp) inp.disabled=true;
+      var ta=QS[i].querySelector('.essay'); if(ta) ta.disabled=true;
+      var rb=QS[i].querySelector('.redo'); if(rb) rb.style.display='none';
+    }
+    var top=document.getElementById('examTop'); if(top) top.hidden=false;
+    var ft=document.getElementById('filterBar'); if(ft) ft.hidden=false;
+    var res=document.getElementById('result'); if(res) res.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function renderResult(){
+    var r = state.result || gradeAll();
+    var box = document.getElementById('result');
+    if(box) box.hidden = false;
+    document.getElementById('scoreNum').textContent = fmtScore(r.total);
+    var pct = Math.round(r.total / MAX * 100);
+    var title = '继续补漏，稳住基础';
+    if(pct >= 85) title = '冲刺状态很稳，保持手感';
+    else if(pct >= 70) title = '基础不错，重点补薄弱板块';
+    else if(pct >= 60) title = '刚过及格线，优先补办公自动化';
+    document.getElementById('scoreTitle').textContent = title;
+    document.getElementById('scoreSub').textContent = '得分率 ' + pct + '% ｜ 已交卷，下面每题都显示了得分、答案和解析。';
+    var bars = '';
+    for(var k in SEC){
+      var s = r.sec[k] || {score:0,max:SEC[k].max};
+      var w = s.max ? Math.min(100, s.score/s.max*100) : 0;
+      bars += '<div class="barrow"><span>'+SEC[k].name+'</span><div class="bartrack"><i style="width:'+w.toFixed(1)+'%"></i></div><b>'+fmtScore(s.score)+' / '+fmtScore(s.max)+'</b></div>';
+    }
+    document.getElementById('scoreBars').innerHTML = bars;
+    var fi = document.getElementById('filterInfo');
+    if(fi) fi.textContent = '总分 ' + fmtScore(r.total) + ' / 150，点击“只看错题”可集中复盘。';
+  }
+  function renderAnswers(){
+    var r = state.result || gradeAll();
+    for(var i=0;i<QS.length;i++){
+      var q = QS[i], qid = q.getAttribute('data-qid'), type = q.getAttribute('data-type');
+      var rr = r.q[qid] || {score:0,max:0,user:''};
+      var ans = q.querySelector('.ansbox'); if(ans) ans.classList.add('show');
+      q.classList.remove('right','partial','wrong');
+      q.classList.add(rr.score >= rr.max ? 'right' : (rr.score > 0 ? 'partial' : 'wrong'));
+      updateQ(q);
+      if(type === 'judge' || type === 'single' || type === 'multi'){
+        var target = (q.getAttribute('data-ans') || '').split('');
+        var got = (rr.user || '').split('');
+        var os = q.querySelectorAll('.op');
+        for(var j=0;j<os.length;j++){
+          var k = os[j].getAttribute('data-k');
+          os[j].classList.remove('correct','wrong','sel');
+          if(target.indexOf(k) >= 0) os[j].classList.add('correct');
+          if(got.indexOf(k) >= 0 && target.indexOf(k) < 0) os[j].classList.add('wrong');
+          if(got.indexOf(k) >= 0) os[j].classList.add('sel');
+        }
+      }else if(type === 'fill'){
+        var inp=q.querySelector('.fill');
+        if(inp){ inp.classList.remove('right','wrong'); inp.classList.add(rr.score >= rr.max ? 'right' : 'wrong'); }
+      }else if(type === 'essay'){
+        var ta=q.querySelector('.essay');
+        if(ta){ ta.classList.remove('right','wrong','partial'); ta.classList.add(rr.score >= rr.max ? 'right' : (rr.score > 0 ? 'partial' : 'wrong')); }
+      }
+    }
+  }
+  function resetExam(){
+    if(!confirm('清空本卷所有作答和成绩，重新开始？')) return;
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    location.reload();
+  }
+  function bind(){
+    var sb = document.getElementById('startBtn'); if(sb) sb.addEventListener('click', startExam);
+    var sub = document.getElementById('submitBtn'); if(sub) sub.addEventListener('click', function(){ submitExam(false); });
+    var retry = document.getElementById('retryAll'); if(retry) retry.addEventListener('click', resetExam);
+    var back = document.getElementById('backTop'); if(back) back.addEventListener('click', function(){ scrollTo({top:0,behavior:'smooth'}); });
+    var fw = document.getElementById('filterWrong');
+    if(fw) fw.addEventListener('click', function(){
+      var on = fw.getAttribute('data-on') === '1';
+      fw.setAttribute('data-on', on ? '0' : '1');
+      fw.textContent = on ? '只看错题' : '显示全部';
+      var r = state.result || {};
+      for(var i=0;i<QS.length;i++){
+        var rr = r.q && r.q[QS[i].getAttribute('data-qid')];
+        var hide = !on && rr && rr.score >= rr.max;
+        QS[i].classList.toggle('hide', hide);
+      }
+    });
+  }
+  function init(){
+    wire(); bind();
+    if(state){
+      showExam();
+      if(state.submitted){
+        if(!state.result) state.result = gradeAll();
+        renderResult(); renderAnswers();
+      }
+    }else{
+      var intro=document.getElementById('intro'); if(intro) intro.hidden=false;
+      var paper=document.getElementById('paper'); if(paper) paper.hidden=true;
+      var top=document.getElementById('examTop'); if(top) top.hidden=true;
+    }
+  }
+  window.__sprintExam = {start:startExam, submit:function(){ submitExam(true); }, reset:resetExam, grade:gradeAll, state:function(){ return state; }};
+  init();
+})();
+</script>
+</body>
+</html>
