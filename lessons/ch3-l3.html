@@ -197,7 +197,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <div class="syl">
       <div class="syl-box">
         <h3>考纲原文</h3>
-        <p class="q">三、2. 电子表格：<b>掌握</b>电子表格软件的基本操作（工作簿与工作表、数据录入与编辑）；<b>掌握</b>工作表的格式化；<b>理解</b>单元格地址（相对、绝对、混合引用）。</p>
+        <p class="q">三、2. 电子表格软件：<b>了解</b>基本概念和基本功能；<b>掌握</b>工作簿和工作表的创建、打开、隐藏、保存和关闭；<b>掌握</b>数据输入编辑、选定与插入删除、复制移动、工作表重命名和<b>工作表窗口的拆分和冻结</b>；<b>掌握</b>快速输入特殊数据、自定义序列填充、快速填充和<b>导入数据</b>；<b>掌握</b>单元格格式、列宽行高、条件格式、样式、<b>自动套用格式</b>；<b>了解</b>相对/绝对/混合地址，<b>掌握</b>正确引用。</p>
       </div>
       <div class="syl-box">
         <h3>本课在卷面上值多少</h3>
@@ -270,7 +270,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="tip"><b>本课最值钱的一句话：</b><code>$</code> 在字母前锁<b>列</b>，在数字前锁<b>行</b>，两个都有就都锁。<b>复制公式时，没被锁的部分才跟着"走"。</b>这句话能解开绝大多数引用题。</div>
 </section>
 
-<section data-tier="low" class="mod" id="s1">
+<section class="mod" id="s1">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
     <div>
@@ -332,6 +332,15 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mem"><b>一眼判断数据类型：</b><b>文本靠左、数字靠右、逻辑值居中</b>。看到某个"数字"靠左对齐，多半是被当成了文本（这也是输入身份证号、手机号要加 <code>'</code> 的原因）。</div>
 
   <div class="tip"><b>选择性粘贴（常考小题）：</b>复制后"选择性粘贴"可以只粘<b>数值</b>（去掉公式）、只粘<b>格式</b>、只粘<b>列宽</b>、<b>转置</b>（行列互换）。题目问"只保留计算结果不要公式"，答案＝<b>选择性粘贴→数值</b>。</div>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c4)">导入外部数据（考纲“掌握”）</h3>
+<table style="margin-top:12px">
+  <tr><th style="width:150px">导入数据（考纲“掌握”）</th><th>做法</th></tr>
+  <tr><td>从文本 / CSV 导入</td><td>“数据→获取外部数据→自文本”：按<b>分隔符</b>（逗号、制表符）或<b>固定宽度</b>分列，再逐列指定格式（文本/日期/常规）</td></tr>
+  <tr><td>从数据库 / 网站导入</td><td>“自 Access”“自网站”等；导入后保留连接，源数据变化时点“全部刷新”即可同步</td></tr>
+</table>
+<div class="tip"><b>导入和粘贴的区别：</b>导入是把<b>外部文件/数据源</b>搬进工作表，可保留连接并刷新；粘贴只是把剪贴板内容放进来，是一次性的。</div>
+
 </section>
 
 <section class="mod" id="s3">
@@ -369,6 +378,14 @@ body.slim section.mod[data-tier="low"]{display:none}
   </table>
 
   <div class="warnbox"><b>合并居中的副作用要记：</b>合并后的区域<b>只保留左上角单元格的数据</b>，其余被清空；且合并区域无法正常参与排序、筛选、透视，也无法单独复制其中一格。<b>"为了排序方便先合并居中"是错的。</b></div>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c4)">自动套用格式与拆分窗口（考纲“掌握”）</h3>
+<table style="margin-top:12px">
+  <tr><th style="width:150px">两个容易漏的操作</th><th>要点</th></tr>
+  <tr><td><b>自动套用格式</b></td><td>选中区域→“套用表格格式”，一键套用<b>预设的配色、边框与样式</b>；与“单元格样式”区别：前者管<b>一整片区域</b>，后者管<b>选中的单元格</b></td></tr>
+  <tr><td><b>拆分窗口</b></td><td>“视图→拆分”：把一个工作表分成<b>上下或左右两个窗格</b>，各自独立滚动、便于对照；<b>冻结</b>是让标题行/列固定不动，<b>拆分</b>是可滚动的两个视口，两者不是一回事</td></tr>
+</table>
+
 </section>
 
 <section class="mod" id="s4">
