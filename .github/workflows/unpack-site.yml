@@ -1,16 +1,16 @@
-name: Unpack 1.4.6 site bundle
+name: Unpack 1.4.7 site bundle
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - site-bundle-1.4.6.zip
+      - site-bundle-1.4.7.zip
 
 permissions:
   contents: write
 
 concurrency:
-  group: unpack-site-1.4.6
+  group: unpack-site-1.4.7
   cancel-in-progress: false
 
 jobs:
@@ -23,13 +23,13 @@ jobs:
 
       - name: Unpack site bundle
         run: |
-          unzip -o site-bundle-1.4.6.zip -d .
-          rm site-bundle-1.4.6.zip
+          unzip -o site-bundle-1.4.7.zip -d .
+          rm site-bundle-1.4.7.zip
 
       - name: Commit unpacked site
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "release: 1.4.6 历年真题整卷可作答" || echo "no changes"
+          git commit -m "release: 1.4.7 课程导学+知识链+只看必考+算法设计策略" || echo "no changes"
           git push
