@@ -7,8 +7,8 @@
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
-  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
-  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --paper:#fffaf8; --card:#ffffff; --line:#efe5e1;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#fae7e2;
   --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
   --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
   --gold:#8a5a00; --goldbg:#fbf3dd;
@@ -53,10 +53,10 @@ h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margi
 .mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
 .hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
 table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
-th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
-th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+th,td{border:1px solid #e6d7d2;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f6ebe8;font-weight:700;color:#2a3743;white-space:nowrap}
 td.c{text-align:center;white-space:nowrap}
-tr:nth-child(even) td{background:#fdfcf9}
+tr:nth-child(even) td{background:#fff9f7}
 .f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
   margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
 .f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
@@ -64,7 +64,7 @@ tr:nth-child(even) td{background:#fdfcf9}
 .f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
 .f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
 .cut{color:#9aa5ae}
-.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip{background:#fff8f6;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
 .tip b{color:var(--c1)}
 .warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
 .warnbox b{color:#a32a1c}
@@ -77,14 +77,14 @@ tr:nth-child(even) td{background:#fdfcf9}
 .flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
   font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
   white-space:pre;overflow-x:auto;margin:9px 0}
-.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+.qz{background:#fbfbf9;border:1px solid #dfcfca;border-left:4px solid #5b6b78;
   border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
 .qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
   background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
 .qz b{color:var(--ink)}
 .qz .no{color:#8a5a00;font-weight:700}
-.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
-details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+.qa{background:#fef7f5;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e7d6d1;padding:9px 15px}
 details:last-child{border-bottom:0}
 summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
 summary::-webkit-details-marker{display:none}
@@ -153,7 +153,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 }
 </style><style id="lesson-pager-style">
 .lesson-pager{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;margin:28px 0 8px;padding-top:14px;border-top:1px solid #e8dccf}
-.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fffaf5;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
+.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fff6f3;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
 .lesson-pager a:hover{background:#fbe9ee;border-color:#dfb9c5;color:#8c4057}
 .lesson-pager .pager-prev{align-items:flex-start;text-align:left}
 .lesson-pager .pager-next{align-items:flex-end;text-align:right}
@@ -219,7 +219,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s6">真题回放</a>
     <a href="#s7">易错清单</a>
     <a href="#s8">必背 13 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s9">自测 28 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -295,7 +295,28 @@ body.slim section.mod[data-tier="low"]{display:none}
   注意区分：<b>"幻灯片浏览视图"是缩略图排成一片</b>（没有编辑区和备注区），<b>"普通视图"才是三栏结构</b>。题目只要提到"包含备注窗格"，答案就是普通视图。</span></div>
 
   <div class="okbox"><b>用途对照记：</b>要<b>改内容</b>→普通视图；要<b>调顺序</b>→浏览视图；要<b>写讲稿</b>→备注页视图；要<b>看效果</b>→放映视图。</div>
-</section>
+
+  <div class="flow">五种视图的"能不能编辑"（判断题就考这一列）
+普通视图      可编辑单页内容        ← 默认视图，三栏结构
+幻灯片浏览    <b>不能编辑单页对象</b>，只能排序、复制、删除、设切换
+备注页视图    只能编辑<b>备注内容</b>
+阅读视图      <b>不支持编辑</b>，窗口内翻页预览
+幻灯片放映    <b>只能翻页</b>，不能编辑
+口诀：<b>普备浏阅放</b>（普通、备注页、浏览、阅读、放映）</div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">演示文稿的保存格式与两个"新建"</h3>
+  <table>
+    <tr><th style="width:110px">扩展名</th><th>含义</th></tr>
+    <tr><td><b>.pptx</b></td><td><b>默认</b>演示文稿格式（2010）</td></tr>
+    <tr><td><b>.ppsx</b></td><td><b>放映格式</b>：双击<b>直接进入放映</b>，不进编辑界面　★</td></tr>
+    <tr><td>.potx</td><td>模板文件</td></tr>
+    <tr><td>.thmx</td><td>主题文件（Office 主题可跨组件复用）</td></tr>
+    <tr><td>.pptm</td><td>启用宏的演示文稿</td></tr>
+    <tr><td>其他</td><td>可导出 <b>PDF、图片、视频</b></td></tr>
+  </table>
+
+  <div class="warnbox"><b>两个"新建"千万别混：</b><b>Ctrl + N</b> 新建一个<b>演示文稿（文件）</b>；<b>Ctrl + M</b>（或回车）新建一张<b>幻灯片（页）</b>。题目问"新建幻灯片的快捷键"，答 <b>Ctrl+M</b>，答 Ctrl+N 就错。<br>移动幻灯片：选中缩略图后 <b>Ctrl+Shift+↑/↓</b>；连续多选按 <b>Shift</b>，不连续按 <b>Ctrl</b>；删除用 <b>Delete 或 Backspace</b>。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -340,7 +361,19 @@ body.slim section.mod[data-tier="low"]{display:none}
   <tr><td>声音 / 视频设置</td><td>“播放”选项卡可设<b>自动播放或单击时播放</b>、<b>跨幻灯片播放</b>、循环播放、放映时隐藏图标</td></tr>
 </table>
 
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">主题、背景与文本框的三处细节</h3>
+  <table>
+    <tr><th style="width:110px">项目</th><th>要点</th></tr>
+    <tr><td><b>主题</b></td><td>入口在<b>设计</b>选项卡；一整套配色＋字体＋效果，可分别调整；<b>一个演示文稿可同时存在多个主题</b>；可只应用到<b>选中页</b>或<b>全部页</b>；可另存为 <b>.thmx</b></td></tr>
+    <tr><td><b>背景</b></td><td>入口在<b>设计</b>选项卡右侧；支持<b>纯色、渐变、图片或纹理、图案、图片</b>共 <b>5 种</b>填充；可只应用当前页，也可"<b>全部应用</b>"</td></tr>
+    <tr><td><b>版式</b></td><td>版式＝页内元素的<b>位置排列关系</b>（占位符布局）；开始 → 版式，或右键缩略图 → 版式。<b>改母版中某版式，只影响用了该版式的页</b></td></tr>
+    <tr><td><b>文本框</b></td><td>PPT <b>不能直接在空白处打字</b>，文字必须依托<b>占位符、文本框、形状</b>三类容器；<b>单击</b>插入的文本框<b>宽度随文字自动延展</b>，<b>拖动绘制</b>的文本框<b>宽度固定</b>、超宽自动换行　★易错</td></tr>
+    <tr><td>音视频</td><td>插入 → 媒体；音频可设<b>跨幻灯片播放</b>做背景音乐、循环播放、淡入淡出；视频可设<b>标牌框架</b>（自定义封面画面）、全屏播放；两者都可裁剪</td></tr>
+  </table>
+
+  <div class="tip"><b>三个"外观"概念的层级：</b><b>模板</b>是完整的场景解决方案（含母版＋主题＋示例内容）；<b>主题</b>只管配色字体效果；<b>母版/版式</b>管占位符位置与统一元素。占位符里的提示文字<b>放映时不会显示</b>。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -373,7 +406,23 @@ body.slim section.mod[data-tier="low"]{display:none}
 调整顺序＝在窗格里上下拖动</div>
 
   <div class="tip"><b>综合应用题写"设置动画"的步骤：</b>①选中对象；②"动画"选项卡选效果；③在动画窗格里设<b>开始方式、持续时间、延迟</b>；④需要多个对象依次出现时，把开始方式设为"<b>上一动画之后</b>"。<b>写这四句就够。</b></div>
-</section>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">动画的四个工具与"触发器"</h3>
+  <table>
+    <tr><th style="width:110px">工具</th><th>作用</th></tr>
+    <tr><td>效果选项</td><td>调整动画的方向、序列等细节</td></tr>
+    <tr><td><b>动画刷</b></td><td>复制已有动画到其他对象；<b>单击用一次，双击可连续用</b>（与格式刷同规律）</td></tr>
+    <tr><td>动画窗格</td><td>查看/调整所有动画的顺序、开始方式、持续时间、延迟</td></tr>
+    <tr><td>选择窗格</td><td>对象多时快速选中、重命名、隐藏对象</td></tr>
+    <tr><td><b>触发器</b></td><td><b>点击页面上某个指定对象，才触发另一个对象的动画</b>（如"点 A 对象播放 B 动画"），是做互动课件的关键　★</td></tr>
+  </table>
+
+  <div class="flow">三种开始（触发）条件的准确名称
+<b>单击开始</b>          点一下鼠标才播
+<b>从上一项开始</b>      与上一个动画<b>同时</b>播
+<b>从上一项之后开始</b>  上一个动画<b>结束后</b>接着播
+设置过动画/切换的对象或页面，会显示<b>小星号标记</b></div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -405,7 +454,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   </table>
 
   <div class="okbox"><b>动作按钮与超链接（2025 多选 41 全对）：</b>动作按钮可以实现<b>跳转到某一张幻灯片、跳转到某个文件/网址、返回上一页、结束放映、运行程序</b>——四个方向都算对。<b>别以为"按钮只能翻页"。</b></div>
-</section>
+
+  <div class="tip"><b>补充三条放映细节：</b>①<b>在展台浏览</b>是全屏自动循环，观众不能翻页，<b>只能按 Esc 退出</b>；②<b>隐藏幻灯片</b>只是放映时跳过，<b>内容仍保留</b>在文件里，编辑时可见；③<b>自定义放映</b>按<b>勾选</b>挑页并排序，是简答题高频点。另可设"<b>放映时不加动画</b>"快速关掉全部动画，以及"<b>广播幻灯片</b>"生成网页链接供他人在线观看。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -433,7 +484,20 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>为什么是 9 不是 12？</b>讲义的版式是固定的几种（1、2、3、4、6、9 张/页），<b>9 是上限</b>。别按"3×4＝12"去推，讲义的版式不是随便排的。</span></div>
 
   <div class="mem"><b>打包 vs 导出，一句话分清：</b><b>打包</b>是为了"<b>在别的电脑上能放</b>"（带上媒体和播放器）；<b>导出</b>是为了"<b>变成别的格式</b>"（PDF、图片、视频）。题目说"拷到没装 PPT 的机器上播放"→ <b>打包</b>。</div>
-</section>
+
+  <div class="flow">打包与共享的准确路径（都在"文件 → 保存并发送"下）
+<b>将演示文稿打包成 CD</b>   对方没装 PPT 也能放；<b>只支持 Windows，苹果系统不兼容</b>
+共享的五个去向         电子邮件 / 保存到 Web / 保存到 SharePoint / 广播 / 发布
+保护两条路径           文件 → 另存为 → 工具 → 常规选项（打开密码、修改密码）
+                       文件 → 信息 → 保护演示文稿</div>
+
+  <table>
+    <tr><th style="width:130px">打印细节</th><th>要点</th></tr>
+    <tr><td><b>打印范围</b></td><td><b>全部 / 所选幻灯片 / 当前幻灯片 / 自定义范围</b>四种</td></tr>
+    <tr><td><b>打印版式</b></td><td>整页幻灯片、<b>备注页</b>、<b>大纲</b>、<b>讲义</b>；讲义一页最多 <b>9 张</b>，可<b>横向或纵向</b>排列</td></tr>
+    <tr><td>页面参数</td><td>可自定义幻灯片<b>大小与横纵方向</b></td></tr>
+  </table>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -517,7 +581,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 28 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
@@ -548,6 +612,41 @@ body.slim section.mod[data-tier="low"]{display:none}
     <details><summary>13. 简述幻灯片母版的作用。</summary><div class="ans"><b>参考答案：</b>幻灯片母版用于统一控制演示文稿中幻灯片的外观与版式，包括<b>占位符的位置与字体格式、背景、页脚、公司标识</b>等；在母版中修改一次，所有应用该母版的幻灯片同步更新，便于保持全篇风格一致、提高制作效率。</div></details>
     <details><summary>14. 简述 PowerPoint 的三种放映方式。</summary><div class="ans"><b>参考答案：</b>①<b>演讲者放映（全屏）</b>，由演讲者控制翻页，可看备注、用画笔；②<b>观众自行浏览（窗口）</b>，在窗口内放映，观众可自行操作；③<b>在展台浏览（全屏）</b>，自动循环播放，观众不能手动翻页，适合展会。</div></details>
   </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:18px 0 6px"><b>补充题（按课程逐集精讲与四川考向新增 14 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>一、判断题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>15. 新建幻灯片的快捷键是 Ctrl+N。</summary><div class="ans"><b>错误。</b>新建<b>幻灯片</b>是 <b>Ctrl+M</b>（或回车）；Ctrl+N 是新建<b>演示文稿</b>。</div></details>
+    <details><summary>16. 在幻灯片浏览视图中可以直接修改某页的文字内容。</summary><div class="ans"><b>错误。</b>浏览视图只能排序、复制、删除、设切换，<b>不能编辑单页对象</b>。</div></details>
+    <details><summary>17. 双击 .ppsx 文件会直接进入放映状态。</summary><div class="ans"><b>正确。</b>PPSX 是放映格式，不进入编辑界面。</div></details>
+    <details><summary>18. 母版可以统一设置幻灯片之间的切换效果。</summary><div class="ans"><b>错误。</b>切换效果在<b>“切换”选项卡</b>里设置，不属于母版功能。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>19. 要实现“点击 A 对象才播放 B 对象的动画”，应使用（　）<br>A. 动画刷　B. 触发器　C. 排练计时　D. 自定义放映</summary><div class="ans"><b>B。</b>触发器是做互动课件的关键功能。</div></details>
+    <details><summary>20. “打包成 CD”功能不支持的操作系统是（　）<br>A. Windows 7　B. Windows 10　C. macOS　D. Windows 11</summary><div class="ans"><b>C。</b>只支持 Windows，苹果系统不兼容。</div></details>
+    <details><summary>21. 单击插入的文本框与拖动绘制的文本框，主要区别是（　）<br>A. 字体不同　B. 前者宽度随文字延展、后者宽度固定　C. 后者不能改字　D. 没有区别</summary><div class="ans"><b>B。</b>拖动绘制的宽度固定，文字超宽自动换行。</div></details>
+    <details><summary>22. “在展台浏览”方式下退出放映只能按（　）<br>A. Enter　B. 空格　C. Esc　D. Tab</summary><div class="ans"><b>C。</b>该方式全屏自动循环，观众不能手动翻页。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、多项选择题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>23. PPT 动画的四种类型是（　）<br>A. 进入　B. 退出　C. 强调　D. 动作路径</summary><div class="ans"><b>ABCD。</b>可单独使用也可叠加，一个对象能加多个动画。</div></details>
+    <details><summary>24. 幻灯片背景可使用的填充方式有（　）<br>A. 纯色　B. 渐变　C. 图片或纹理　D. 图案</summary><div class="ans"><b>ABCD。</b>共 5 种（含图片），入口在设计选项卡。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、填空题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>25. 动画的开始方式有“单击开始”“从上一项开始”和 ______ 三种。</summary><div class="ans"><b>从上一项之后开始</b>（上一个动画结束后接着播）。</div></details>
+    <details><summary>26. 打印讲义时一页最多可以放 ______ 张幻灯片。</summary><div class="ans"><b>9</b> 张（2025 填空 53）。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>五、简答题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>27. 简述“主题”“背景”“母版”三者的分工。（5 分）</summary><div class="ans">①<b>主题</b>：一整套<b>配色＋字体＋效果</b>，换主题全篇观感变，入口在<b>设计</b>选项卡；②<b>背景</b>：单页或全部幻灯片的<b>底色/图片填充</b>，共 5 种填充方式；③<b>母版</b>：<b>排版规则</b>，统一占位符位置、字体、页脚、Logo，分幻灯片母版/讲义母版/备注母版。<br>一句话：换配色用主题，换底色用背景，改版式用母版。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>六、操作题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>28. 要让标题先出现、正文随后自动出现，写出动画设置步骤。（4 分）</summary><div class="ans">①选中标题 → <b>动画</b>选项卡 → 选“进入”类效果，开始方式设<b>单击开始</b>；②选中正文 → 选“进入”类效果，开始方式设<b>从上一项之后开始</b>；③在<b>动画窗格</b>里核对顺序、持续时间与延迟。<br>也可用<b>动画刷</b>把标题的动画复制给正文，再改开始方式。</div></details>
+  </div>
+
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

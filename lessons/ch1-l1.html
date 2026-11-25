@@ -7,9 +7,9 @@
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
-  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
+  --paper:#fffaf8; --card:#ffffff; --line:#efe5e1;
   --c1:#0e6b8a; --c1bg:#e9f2f6;
-  --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --c2:#9a6b1f; --c2bg:#fae7e2;
   --c3:#2b4a8b; --c3bg:#eaeef7;
   --c4:#b23a2e; --c4bg:#fbeeec;
   --c5:#1f6b4a; --c5bg:#e8f2ed;
@@ -67,10 +67,10 @@ h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margi
 .hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
 
 table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
-th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
-th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+th,td{border:1px solid #e6d7d2;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f6ebe8;font-weight:700;color:#2a3743;white-space:nowrap}
 td.c{text-align:center;white-space:nowrap}
-tr:nth-child(even) td{background:#fdfcf9}
+tr:nth-child(even) td{background:#fff9f7}
 .tbl-note{font-size:12.5px;color:var(--muted);margin:5px 0 0}
 
 .f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
@@ -83,12 +83,12 @@ tr:nth-child(even) td{background:#fdfcf9}
 
 .tree{list-style:none;margin:0;padding:0}
 .tree ul{list-style:none;margin:0;padding:0 0 2px 26px;position:relative}
-.tree ul::before{content:'';position:absolute;left:8px;top:2px;bottom:18px;border-left:1.5px dashed #d9d3c6}
+.tree ul::before{content:'';position:absolute;left:8px;top:2px;bottom:18px;border-left:1.5px dashed #dbc9c4}
 .tree ul>li{position:relative}
-.tree ul>li::before{content:'';position:absolute;left:-18px;top:15px;width:18px;border-top:1.5px dashed #d9d3c6}
-.n{display:block;width:fit-content;max-width:100%;background:#fff;border:1px solid #e9e3d7;
+.tree ul>li::before{content:'';position:absolute;left:-18px;top:15px;width:18px;border-top:1.5px dashed #dbc9c4}
+.n{display:block;width:fit-content;max-width:100%;background:#fff;border:1px solid #ebdad5;
   border-radius:9px;padding:6px 13px;margin:4px 0;font-size:14px;line-height:1.74}
-.n.sm{font-size:13.3px;color:var(--ink2);padding:5px 12px;background:#fdfcf9}
+.n.sm{font-size:13.3px;color:var(--ink2);padding:5px 12px;background:#fff9f7}
 .n em.hi{font-style:normal;font-weight:700;color:#0b5a75;
   background:linear-gradient(transparent 64%, #d9edf4 64%);padding:0 2px;border-radius:2px}
 .n em.hir{font-style:normal;font-weight:700;color:#a32a1c;
@@ -106,7 +106,7 @@ tr:nth-child(even) td{background:#fdfcf9}
   font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
   white-space:pre;overflow-x:auto;margin:9px 0}
 
-.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip{background:#fff8f6;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
 .tip b{color:var(--c1)}
 .warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
 .warnbox b{color:#a32a1c}
@@ -117,7 +117,7 @@ tr:nth-child(even) td{background:#fdfcf9}
 .human{background:var(--c1bg);border:1px solid #c5e1ea;border-radius:11px;padding:11px 15px;margin:11px 0 0;font-size:13.4px}
 .human .lb{font-weight:700;color:var(--c1);font-size:12px;letter-spacing:.8px;display:block;margin-bottom:3px}
 
-.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+.qz{background:#fbfbf9;border:1px solid #dfcfca;border-left:4px solid #5b6b78;
   border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
 .qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
   background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
@@ -127,8 +127,8 @@ tr:nth-child(even) td{background:#fdfcf9}
 .legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin:10px 0 0;font-size:12.8px;color:var(--ink2)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 
-.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
-details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+.qa{background:#fef7f5;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e7d6d1;padding:9px 15px}
 details:last-child{border-bottom:0}
 summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
 summary::-webkit-details-marker{display:none}
@@ -207,7 +207,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 }
 </style><style id="lesson-pager-style">
 .lesson-pager{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;margin:28px 0 8px;padding-top:14px;border-top:1px solid #e8dccf}
-.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fffaf5;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
+.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fff6f3;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
 .lesson-pager a:hover{background:#fbe9ee;border-color:#dfb9c5;color:#8c4057}
 .lesson-pager .pager-prev{align-items:flex-start;text-align:left}
 .lesson-pager .pager-next{align-items:flex-end;text-align:right}
@@ -372,7 +372,7 @@ body.slim section.mod[data-tier="low"]{display:none}
       <ul>
         <li><div class="n sm"><b>运算速度快</b>　·　<b>计算精度高</b>　·　<b>存储容量大、记忆功能强</b></div></li>
         <li><div class="n sm"><b>具有逻辑判断能力</b>　·　<b>自动化程度高</b>　·　<b>通用性强</b></div></li>
-        <li><div class="n sm" style="border-color:#ecd9a5;background:#fdf8ec">简答写法（凑 5 条就满分）：①运算速度快；②计算精度高；③存储容量大、有记忆功能；④具有逻辑判断能力；⑤能自动运行、通用性强</div></li>
+        <li><div class="n sm" style="border-color:#ecd9a5;background:#ffefea">简答写法（凑 5 条就满分）：①运算速度快；②计算精度高；③存储容量大、有记忆功能；④具有逻辑判断能力；⑤能自动运行、通用性强</div></li>
       </ul>
     </li>
   </ul>
@@ -536,7 +536,7 @@ body.slim section.mod[data-tier="low"]{display:none}
       <div class="n l1 b5">人物与地位</div>
       <ul>
         <li><div class="n sm">美籍匈牙利数学家，被称为 <b>"现代计算机之父"</b>；1945 年提出 <b>存储程序控制原理</b>（EDVAC 方案），至今所有计算机仍遵循这一体系</div></li>
-        <li><div class="n sm" style="border-color:#ecd9a5;background:#fdf8ec">辨析：<b>冯·诺依曼＝现代计算机之父</b>；<b>图灵＝计算机科学之父＋人工智能之父</b>。两个"之父"不要互换，这是选择题常设的干扰项</div></li>
+        <li><div class="n sm" style="border-color:#ecd9a5;background:#ffefea">辨析：<b>冯·诺依曼＝现代计算机之父</b>；<b>图灵＝计算机科学之父＋人工智能之父</b>。两个"之父"不要互换，这是选择题常设的干扰项</div></li>
       </ul>
     </li>
     <li>

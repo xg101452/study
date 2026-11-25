@@ -7,8 +7,8 @@
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
-  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
-  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --paper:#fffaf8; --card:#ffffff; --line:#efe5e1;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#fae7e2;
   --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
   --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
   --gold:#8a5a00; --goldbg:#fbf3dd;
@@ -53,10 +53,10 @@ h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margi
 .mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
 .hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
 table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
-th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
-th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+th,td{border:1px solid #e6d7d2;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f6ebe8;font-weight:700;color:#2a3743;white-space:nowrap}
 td.c{text-align:center;white-space:nowrap}
-tr:nth-child(even) td{background:#fdfcf9}
+tr:nth-child(even) td{background:#fff9f7}
 .f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
   margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
 .f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
@@ -64,7 +64,7 @@ tr:nth-child(even) td{background:#fdfcf9}
 .f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
 .f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
 .cut{color:#9aa5ae}
-.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip{background:#fff8f6;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
 .tip b{color:var(--c1)}
 .warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
 .warnbox b{color:#a32a1c}
@@ -77,14 +77,14 @@ tr:nth-child(even) td{background:#fdfcf9}
 .flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
   font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
   white-space:pre;overflow-x:auto;margin:9px 0}
-.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+.qz{background:#fbfbf9;border:1px solid #dfcfca;border-left:4px solid #5b6b78;
   border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
 .qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
   background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
 .qz b{color:var(--ink)}
 .qz .no{color:#8a5a00;font-weight:700}
-.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
-details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+.qa{background:#fef7f5;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e7d6d1;padding:9px 15px}
 details:last-child{border-bottom:0}
 summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
 summary::-webkit-details-marker{display:none}
@@ -153,7 +153,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 }
 </style><style id="lesson-pager-style">
 .lesson-pager{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;margin:28px 0 8px;padding-top:14px;border-top:1px solid #e8dccf}
-.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fffaf5;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
+.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fff6f3;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
 .lesson-pager a:hover{background:#fbe9ee;border-color:#dfb9c5;color:#8c4057}
 .lesson-pager .pager-prev{align-items:flex-start;text-align:left}
 .lesson-pager .pager-next{align-items:flex-end;text-align:right}
@@ -218,7 +218,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 引用题实战</a>
     <a href="#s6">易错清单</a>
     <a href="#s7">必背 14 条</a>
-    <a href="#s8">自测 14 题</a>
+    <a href="#s8">自测 28 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -301,7 +301,27 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="warnbox"><b>两句必记：</b>①"工作表就是工作簿"——<b>错</b>，工作簿是文件，工作表是文件里的一页；②"删除工作表就是把内容清空"——<b>错</b>，删除会把<b>整张表连同格式</b>一起去掉，且不可撤销（清空内容才只是 Clear）。</div>
 
   <div class="mem"><b>区域计数速算：</b>A1:C3 = 3 列 × 3 行 = <b>9 个单元格</b>；B2:D5 = 3 列 × 4 行 = <b>12 个单元格</b>。<b>先数列、再数行、相乘</b>，别一个个点。</div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">必须记住的硬数据与快捷键</h3>
+  <div class="flow">Excel 2010 的容量与默认值
+一张工作表   <b>1048576 行</b>（= 2<sup>20</sup>）× <b>16384 列</b>（= 2<sup>14</sup>，最后一列列标 <b>XFD</b>）
+行号         阿拉伯数字，一行对应一条"记录"
+列标         英文字母，A…Z → AA…AZ → … → XFD（单字母→双字母→三字母）
+新建工作簿   默认名"工作簿1"，默认含 <b>3 张</b>工作表（数量上限由内存决定）
+扩展名       .xlsx；<b>带宏</b>的是 .xlsm
+活动单元格   任何时候<b>只有 1 个</b>；选中多个区域时，活动单元格在<b>左上角</b>
+名称框       编辑栏左侧，显示/跳转当前单元格地址，也可给区域<b>定义名称</b></div>
+
+  <table>
+    <tr><th style="width:150px">工作表操作</th><th>做法与规则</th></tr>
+    <tr><td>插入</td><td>右键标签 → 插入；点标签旁的"插入工作表"按钮；<b>Shift + F11</b></td></tr>
+    <tr><td>重命名</td><td><b>双击标签</b>，或右键 → 重命名</td></tr>
+    <tr><td>复制 / 移动</td><td>按住 <b>Ctrl 拖标签</b>＝复制（拖动时出现"+"号）；直接拖＝移动</td></tr>
+    <tr><td><b>删除 / 隐藏</b></td><td>右键菜单操作；<b>删除后不能 Ctrl+Z 撤销</b>　★高频易错</td></tr>
+    <tr><td>数量下限</td><td>工作簿<b>至少保留一张可视工作表</b>，不能全删或全隐藏</td></tr>
+    <tr><td>文件快捷键</td><td>新建 <b>Ctrl+N</b>　打开 <b>Ctrl+O</b>　保存 <b>Ctrl+S</b>　关闭工作簿 <b>Ctrl+F4</b></td></tr>
+  </table>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -341,7 +361,42 @@ body.slim section.mod[data-tier="low"]{display:none}
 </table>
 <div class="tip"><b>导入和粘贴的区别：</b>导入是把<b>外部文件/数据源</b>搬进工作表，可保留连接并刷新；粘贴只是把剪贴板内容放进来，是一次性的。</div>
 
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">录入提速：四个键与两条"批量"技巧</h3>
+  <table>
+    <tr><th style="width:170px">按键 / 操作</th><th>作用</th></tr>
+    <tr><td><b>F2</b></td><td>直接进入当前单元格的<b>编辑状态</b>（不必双击），可在原内容上改</td></tr>
+    <tr><td><b>Ctrl + Enter</b></td><td>先选中一片区域，输入内容后按它 → <b>整片区域批量填入相同内容</b></td></tr>
+    <tr><td><b>Ctrl + D</b></td><td>把<b>上方单元格</b>的内容向下填充到选中区域</td></tr>
+    <tr><td>Tab / Shift+Tab</td><td>当前单元格<b>右移 / 左移</b>一格</td></tr>
+    <tr><td>Enter / Shift+Enter</td><td>当前单元格<b>下移 / 上移</b>一格</td></tr>
+  </table>
+
+  <div class="flow">字符型数字的两种输入法与识别标志
+① 数字前加<b>半角单引号</b> '001     → 左上角出现<b>绿色三角</b>提示
+② 输入 <b>="001"</b>（等号 + 双引号包住）
+超过 <b>11 位</b>的数字会自动转<b>科学计数法</b>；身份证 18 位必须按文本存
+小数可省略前面的 0：输入 <b>.8</b> 得到 0.8
+百分数：先输小数，再点 开始 → 数字 → <b>百分比样式</b>
+逻辑值只有 <b>TRUE / FALSE</b> 两个，输入<b>不区分大小写</b>，默认<b>居中</b>对齐</div>
+
+  <table>
+    <tr><th style="width:180px">拖填充柄的默认行为</th><th>直接拖</th><th>按住 Ctrl 拖</th></tr>
+    <tr><td>纯数字、纯文本</td><td><b>复制</b></td><td><b>递增</b></td></tr>
+    <tr><td><b>字符型数字、日期</b></td><td><b>递增</b></td><td><b>复制</b>　★与上一行相反</td></tr>
+    <tr><td>文本 + 数字混合（如"第1名"）</td><td>文本不变、<b>数字递增</b></td><td>复制</td></tr>
+    <tr><td>先选中两个单元格再拖</td><td colspan="2">按两者的<b>等差</b>规律继续填充（1,3,5…）</td></tr>
+  </table>
+
+  <div class="tip"><b>静态与动态日期：</b><b>Ctrl+;</b> / <b>Ctrl+Shift+;</b> 录入的是<b>固定不变</b>的日期/时间；<b>=TODAY()</b> / <b>=NOW()</b> 是<b>随系统更新</b>的动态值（NOW 同时含日期与时间，中间用空格隔开）。日期分隔符可用 <b>/</b> 或 <b>-</b>，时间用 <b>:</b>；日期本质是数值，<b>可以直接相减算天数</b>。</div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">数据有效性与自定义序列</h3>
+  <table>
+    <tr><th style="width:130px">功能</th><th>入口与作用</th></tr>
+    <tr><td><b>数据有效性</b><br>（数据验证）</td><td><b>先选中单元格</b> → 数据 → 数据工具 → 数据有效性。用来<b>限制可输入的内容</b>，防止非法数据；选"<b>序列</b>"可做出<b>下拉选择</b>，来源用<b>半角逗号</b>分隔；还可设输入提示与出错警告</td></tr>
+    <tr><td><b>自定义序列</b></td><td>文件 → 选项 → 高级 → <b>自定义序列</b>；也可在"开始 → 填充 → 序列"里设<b>等差/等比/日期</b>与<b>终止值</b>（长序列不必手拖）。内置序列已有星期、月份、甲乙丙等</td></tr>
+  </table>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -386,7 +441,18 @@ body.slim section.mod[data-tier="low"]{display:none}
   <tr><td><b>拆分窗口</b></td><td>“视图→拆分”：把一个工作表分成<b>上下或左右两个窗格</b>，各自独立滚动、便于对照；<b>冻结</b>是让标题行/列固定不动，<b>拆分</b>是可滚动的两个视口，两者不是一回事</td></tr>
 </table>
 
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">Ctrl + 1：设置单元格格式的六个选项卡</h3>
+  <div class="flow">选中区域后按 <b>Ctrl + 1</b>（或右键 → 设置单元格格式）
+数字   常规 / 数值 / 货币 / 日期 / 百分比 / 科学记数 / 文本 / 自定义
+对齐   水平 + 垂直对齐、<b>自动换行</b>、<b>缩小字体填充</b>、合并单元格、文字方向
+字体   字体、字形、字号、颜色、删除线、上下标
+边框   内外框可用不同线型、颜色，还可画<b>斜线</b>
+填充   单元格底纹（背景色、图案）
+保护   <b>"锁定"默认已勾选</b>；只有再执行"保护工作表"后才真正生效</div>
+
+  <div class="tip"><b>行高列宽最快的调法：</b>选中若干行/列后，<b>双击行号或列标的交界线</b>＝按内容<b>自动适配</b>；也可 开始 → 单元格 → 格式 → 行高/列宽/自动调整。<br><b>Ctrl + T</b>（或"套用表格格式"）可把普通区域转成<b>超级表</b>：自动带表头筛选下拉、隔行配色，并出现"表工具-设计"选项卡，可一键加汇总行。</div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -448,7 +514,18 @@ A1 → $A$1 → A$1 → $A1 → A1  （四种状态循环）
   <div class="okbox"><b>三个"看错就错"的地方：</b>①区域 <code>$B1:$B3</code> 的<b>两个端点都要各自换算</b>，不能只改一个；②<b>行号加的是 2 不是 3</b>（1→3 是 +2）；③函数名 <code>SUM</code> <b>不参与变化</b>，别把 SUM 也改了。</div>
 
   <div class="mem"><b>一句话总结整节：</b>先算"右移几列、下移几行"，再看每个地址的 <code>$</code> 锁在哪，<b>锁住的不动、没锁的加位移</b>，最后原样拼回公式。</div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">另外两类变化规律：移动、增删行列</h3>
+  <table>
+    <tr><th style="width:130px">操作</th><th>地址怎么变</th></tr>
+    <tr><td><b>复制 / 填充柄填充</b></td><td>带 <b>$</b> 的锁住不变，不带 $ 的加位移（上面那道真题就是这一类）</td></tr>
+    <tr><td><b>移动 / 剪切</b></td><td><b>无论相对、混合、绝对，引用地址全部不变</b>　★别套用复制的规律</td></tr>
+    <tr><td><b>在被引用范围内</b>增删行列</td><td><b>所有引用地址同步偏移</b>（不论哪种引用），目的是让引用仍指向原来那份数据</td></tr>
+    <tr><td>在被引用范围<b>之外</b>增删行列</td><td>引用地址<b>不变</b></td></tr>
+  </table>
+
+  <div class="warnbox"><b>答这类题的第一步永远是"先看是什么操作"：</b>复制/填充 → 算位移；移动/剪切 → 地址原样不动；增删行列 → 看有没有落在引用范围里。三类前提完全不同，<b>套错前提必错</b>。另外，被引用的单元格<b>整个删除</b>时，公式会报 <b>#REF!</b>。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -508,7 +585,7 @@ A1 → $A$1 → A$1 → $A1 → A1  （四种状态循环）
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 28 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
@@ -539,6 +616,41 @@ A1 → $A$1 → A$1 → $A1 → A1  （四种状态循环）
     <details><summary>13. 要使输入的数字作为文本处理并保留前导零，应在数字前加 ______。</summary><div class="ans"><b>英文单引号 '</b>。</div></details>
     <details><summary>14. 引用其他工作表中 A1:A5 区域，写法为 ______。</summary><div class="ans"><b>工作表名!A1:A5</b>（如 Sheet2!A1:A5）。</div></details>
   </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:18px 0 6px"><b>补充题（按课程逐集精讲与四川考向新增 14 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>一、判断题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>15. Excel 2010 一张工作表最多有 65536 行。</summary><div class="ans"><b>错误。</b>是 <b>1048576 行</b>（2<sup>20</sup>）、<b>16384 列</b>（最后一列 XFD）。65536 是 2003 版的旧上限。</div></details>
+    <details><summary>16. 删除工作表后可以按 Ctrl+Z 撤销恢复。</summary><div class="ans"><b>错误。</b>删除工作表<b>不可撤销</b>。</div></details>
+    <details><summary>17. 选中多个不连续区域时，活动单元格有多个。</summary><div class="ans"><b>错误。</b>活动单元格<b>始终只有 1 个</b>，位于所选区域的左上角。</div></details>
+    <details><summary>18. 直接拖动日期单元格的填充柄，默认是复制。</summary><div class="ans"><b>错误。</b>日期默认<b>递增</b>，按住 Ctrl 拖才是复制；纯数字/纯文本正好相反。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>19. 快速进入单元格编辑状态的功能键是（　）<br>A. F1　B. F2　C. F4　D. F9</summary><div class="ans"><b>B。</b>F4 是切换引用类型。</div></details>
+    <details><summary>20. 先选中一片区域，输入内容后让整片区域填入相同内容，应按（　）<br>A. Enter　B. Alt+Enter　C. Ctrl+Enter　D. Shift+Enter</summary><div class="ans"><b>C。</b>Alt+Enter 是单元格内强制换行。</div></details>
+    <details><summary>21. 调出“设置单元格格式”对话框的快捷键是（　）<br>A. Ctrl+1　B. Ctrl+2　C. Ctrl+F　D. Ctrl+T</summary><div class="ans"><b>A。</b>Ctrl+T 是转为超级表。</div></details>
+    <details><summary>22. 把公式从 C1 <b>剪切</b>粘贴到 D3，公式中的相对引用地址会（　）<br>A. 列+1、行+2　B. 保持不变　C. 全变绝对引用　D. 报 #REF!</summary><div class="ans"><b>B。</b>移动/剪切时<b>所有引用地址都不变</b>；只有复制/填充才按位移偏移。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、多项选择题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>23. 要让 18 位身份证号按文本保存，可行的做法有（　）<br>A. 数字前加半角单引号　B. 输入 ="5101…"　C. 先把单元格格式设为文本再输入　D. 直接输入 18 位数字</summary><div class="ans"><b>ABC。</b>D 会被转成科学计数法并丢失末位精度。</div></details>
+    <details><summary>24. 关于数据清单，正确的有（　）<br>A. 首行必须是列标题　B. 同一列数据类型要一致　C. 应尽量避免空行空列　D. 可按 Ctrl+T 转为超级表</summary><div class="ans"><b>ABCD。</b>前两条是硬性要求，第三条是建议。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、填空题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>25. 用来限制单元格可输入内容、并可做出下拉选择的功能叫 ______。</summary><div class="ans"><b>数据有效性</b>（数据验证）。入口：数据 → 数据工具。</div></details>
+    <details><summary>26. 在被引用范围<b>之内</b>插入或删除行、列时，所有引用地址会同步 ______。</summary><div class="ans"><b>偏移</b>（以保证仍指向原来那份数据）；范围之外增删则地址不变。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>五、简答题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>27. 简述复制、移动、增删行列三种操作下，单元格引用地址的变化规律。（6 分）</summary><div class="ans">①<b>复制/填充柄填充</b>：带 <b>$</b> 的行列锁定不变，不带 $ 的按列、行位移量偏移；②<b>移动/剪切</b>：无论相对、混合、绝对，引用地址<b>全部不变</b>；③<b>增删行列</b>：若落在被引用范围<b>之内</b>，所有引用地址<b>同步偏移</b>；在范围<b>之外</b>则不变。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>六、操作题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>28. 要在 A 列输入 001、002、003…并保留前导 0，写出两种做法。（4 分）</summary><div class="ans">①先把 A 列单元格格式设为<b>文本</b>，再输入 001，然后拖填充柄（字符型数字默认<b>递增</b>）；②直接输入 <b>'001</b>（前置半角单引号，左上角出现绿色三角），再拖填充柄。<br>补充：也可用 ="001" 的形式输入。</div></details>
+  </div>
+
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

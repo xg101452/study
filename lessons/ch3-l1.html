@@ -7,8 +7,8 @@
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
-  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
-  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --paper:#fffaf8; --card:#ffffff; --line:#efe5e1;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#fae7e2;
   --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
   --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
   --gold:#8a5a00; --goldbg:#fbf3dd;
@@ -53,10 +53,10 @@ h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margi
 .mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
 .hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
 table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
-th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
-th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+th,td{border:1px solid #e6d7d2;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f6ebe8;font-weight:700;color:#2a3743;white-space:nowrap}
 td.c{text-align:center;white-space:nowrap}
-tr:nth-child(even) td{background:#fdfcf9}
+tr:nth-child(even) td{background:#fff9f7}
 .f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
   margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
 .f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
@@ -64,7 +64,7 @@ tr:nth-child(even) td{background:#fdfcf9}
 .f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
 .f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
 .cut{color:#9aa5ae}
-.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip{background:#fff8f6;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
 .tip b{color:var(--c1)}
 .warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
 .warnbox b{color:#a32a1c}
@@ -77,14 +77,14 @@ tr:nth-child(even) td{background:#fdfcf9}
 .flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
   font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
   white-space:pre;overflow-x:auto;margin:9px 0}
-.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+.qz{background:#fbfbf9;border:1px solid #dfcfca;border-left:4px solid #5b6b78;
   border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
 .qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
   background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
 .qz b{color:var(--ink)}
 .qz .no{color:#8a5a00;font-weight:700}
-.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
-details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+.qa{background:#fef7f5;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e7d6d1;padding:9px 15px}
 details:last-child{border-bottom:0}
 summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
 summary::-webkit-details-marker{display:none}
@@ -153,7 +153,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 }
 </style><style id="lesson-pager-style">
 .lesson-pager{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;margin:28px 0 8px;padding-top:14px;border-top:1px solid #e8dccf}
-.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fffaf5;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
+.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fff6f3;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
 .lesson-pager a:hover{background:#fbe9ee;border-color:#dfb9c5;color:#8c4057}
 .lesson-pager .pager-prev{align-items:flex-start;text-align:left}
 .lesson-pager .pager-next{align-items:flex-end;text-align:right}
@@ -215,11 +215,11 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s2">② 文本编辑与选定</a>
     <a href="#s3">③ 字符格式</a>
     <a href="#s4">④ 段落格式</a>
-    <a href="#s5">⑤ 页面设置</a>
+    <a href="#s5">⑤ 页面设置与视图</a>
     <a href="#s6">2026 真题</a>
     <a href="#s7">易错清单</a>
     <a href="#s8">必背 14 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s9">自测 28 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -283,22 +283,37 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <table>
     <tr><th style="width:120px">操作</th><th style="width:150px">常用方式</th><th>要点</th></tr>
-    <tr><td><b>新建</b></td><td>Ctrl + N</td><td>新建的是<b>空白文档</b>，默认名"文档1"</td></tr>
-    <tr><td><b>打开</b></td><td>Ctrl + O</td><td>可打开 .docx / .doc / .pdf / .txt 等</td></tr>
-    <tr><td><b>保存</b></td><td><b>Ctrl + S</b></td><td>保存到<b>原位置原文件名</b>；首次保存会弹出"另存为"对话框</td></tr>
-    <tr><td><b>另存为</b></td><td>F12</td><td>换<b>位置/文件名/格式</b>，原文件保持不变</td></tr>
-    <tr><td>关闭</td><td>Ctrl + W / Alt + F4</td><td>有未保存修改会提示"是否保存"</td></tr>
+    <tr><td><b>新建</b></td><td>Ctrl + N / 双击图标 / 快速访问工具栏</td><td>新建的是<b>空白文档</b>，默认名"文档1"；基于 <b>normal.dotm</b> 模板，所以默认字体是<b>宋体五号</b></td></tr>
+    <tr><td><b>打开</b></td><td>Ctrl + O / 双击文档 / 最近使用的文件</td><td>可打开 .docx / .doc / .pdf / .txt 等；快速访问工具栏可自定义增删按钮</td></tr>
+    <tr><td><b>保存</b></td><td><b>Ctrl + S</b></td><td>保存到<b>原位置原文件名</b>；首次保存会弹出"另存为"对话框；默认<b>每 10 分钟自动保存</b>一次（可改）</td></tr>
+    <tr><td><b>另存为</b></td><td>F12</td><td>换<b>位置/文件名/格式</b>，原文件保持不变；可设打开密码与修改密码</td></tr>
+    <tr><td>关闭</td><td><b>Ctrl + F4</b>（=Ctrl + W）只关文档；<b>Alt + F4</b> 退出程序</td><td>有未保存修改会提示"是否保存"</td></tr>
     <tr><td>打印</td><td>Ctrl + P</td><td>可设置份数、范围、单双面</td></tr>
+  </table>
+
+  <div class="flow">新建文档的两个隐藏考点
+默认名  "文档1"（不是"新建文档"）
+默认模板  normal.dotm（<b>启用宏</b>的模板；不是 .dotx）
+默认字体  宋体 · 五号（因为继承自 normal.dotm）</div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">保存 vs 另存为：什么时候一样，什么时候不一样</h3>
+  <table>
+    <tr><th style="width:130px">对比</th><th>保存</th><th>另存为</th></tr>
+    <tr><td><b>首次</b></td><td colspan="2">完全一样：都会弹出"另存为"对话框，让你选路径、填文件名</td></tr>
+    <tr><td><b>之后再改</b></td><td>直接覆盖<b>原文件</b>，文件名、路径、类型都不变</td><td>生成<b>新文件</b>，原文件不受影响；可改名、改路径、改类型</td></tr>
+    <tr><td><b>密码</b></td><td>不能设</td><td>「工具 → 常规选项」可设<b>打开密码</b>（没密码打不开）和<b>修改密码</b>（没密码只能只读）</td></tr>
   </table>
 
   <div class="flow">Word 文档的常见格式
 .docx  默认格式（2007 以后）    ← 考"默认扩展名"就答它
 .doc   旧版格式（97-2003）
 .dotx  模板文件
+.dotm  启用宏的模板（normal.dotm 就是它）
+.docm  启用宏的文档
 .pdf   固定版式，不易被改动
 .txt   纯文本，丢失所有格式</div>
 
-  <div class="warnbox"><b>三个必踩的坑：</b>①"Word 文档的默认扩展名是 .doc"——<b>错</b>，是 <b>.docx</b>（.doc 是旧版）；②"另存为会覆盖原文件"——<b>错</b>，另存为产生<b>新文件</b>；③"关闭文档等于关闭 Word 程序"——<b>错</b>，关闭最后一个文档时程序才退出。</div>
+  <div class="warnbox"><b>三个必踩的坑：</b>①"Word 文档的默认扩展名是 .doc"——<b>错</b>，是 <b>.docx</b>（.doc 是旧版）；②"另存为会覆盖原文件"——<b>错</b>，另存为产生<b>新文件</b>；③"关闭文档等于关闭 Word 程序"——<b>错</b>，Ctrl+F4 / Ctrl+W 只关当前文档，<b>Alt+F4</b> 才退出 Word。</div>
 </section>
 
 <section class="mod" id="s2">
@@ -330,6 +345,18 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td>Ctrl + A</td><td><b>全选</b></td></tr>
     <tr><td>Shift + 单击</td><td>从光标处<b>扩展到</b>单击处</td></tr>
     <tr><td>Alt + 拖动</td><td><b>纵向（列块）</b>选择</td></tr>
+    <tr><td>Ctrl + 单击正文</td><td>选中光标所在的<b>一句</b>（以句号断句）</td></tr>
+    <tr><td>F8 连按</td><td>逐级扩展：词组 → 句子 → 段落 → 全文；按 <b>Esc</b> 退出</td></tr>
+  </table>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #9a6b1f">录入与光标定位：这些小键常被单选考</h3>
+  <table>
+    <tr><th style="width:150px">按键</th><th>作用</th></tr>
+    <tr><td><b>Caps Lock</b></td><td>大写锁定键：只影响<b>字母</b>，不影响数字和符号</td></tr>
+    <tr><td><b>Shift</b></td><td>上档键：小写状态下按字母出<b>大写</b>；大写锁定下按字母反而出<b>小写</b>（反向）</td></tr>
+    <tr><td><b>Ctrl + 空格</b></td><td>系统默认<b>中英文切换</b>；<b>Ctrl + Shift</b> 切换不同输入法</td></tr>
+    <tr><td><b>Home / End</b></td><td>光标到<b>本行</b>行首 / 行尾；<b>Ctrl + Home / Ctrl + End</b> 到<b>整篇</b>文档开头 / 结尾</td></tr>
+    <tr><td><b>Page Up / Page Down</b></td><td>向上 / 向下翻一页</td></tr>
   </table>
 
   <table style="margin-top:12px">
@@ -340,6 +367,22 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td><b>查找 / 替换</b></td><td>Ctrl+F 查找、Ctrl+H 替换；可替换文字、格式，支持通配符</td></tr>
     <tr><td>撤销 / 恢复</td><td>Ctrl+Z 撤销；Ctrl+Y 恢复（重做）</td></tr>
   </table>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #9a6b1f">查找、替换、定位：三个键别混</h3>
+  <table>
+    <tr><th style="width:110px">功能</th><th style="width:110px">快捷键</th><th>要点</th></tr>
+    <tr><td><b>查找</b></td><td>Ctrl + F</td><td>弹出导航窗格，<b>高亮</b>所有匹配；也能查找图形、表格、公式</td></tr>
+    <tr><td><b>替换</b></td><td>Ctrl + H</td><td>可替换<b>文字</b>、<b>格式</b>（如全文 4 号字改成蓝色下划线）、<b>特殊格式</b></td></tr>
+    <tr><td><b>定位</b></td><td>Ctrl + G</td><td>跳到指定<b>页、节、行、书签、批注、图形、表格</b></td></tr>
+  </table>
+
+  <div class="flow">特殊替换四种常见考法
+手动换行符 → 段落标记     （软回车变硬回车）
+任意字母 / 任意数字 → 设好格式的空内容   （批量改字体颜色）
+两个段落标记 → 一个         （删多余空行，反复替换到无匹配）
+图形 → 留空                （一次删掉全文图片）</div>
+
+  <div class="tip"><b>剪贴板次数：</b>Word 内置剪贴板最多存 <b>24 次</b>复制内容；Win7 系统剪贴板只留<b>最近 1 次</b>。题目问"Word 剪贴板可保存多少次"，答 <b>24</b>。<br><b>Ctrl+Y 的双重身份：</b>刚做过撤销 → 它是<b>恢复</b>；没做过撤销 → 它是<b>重复上一次输入</b>。</div>
 
   <div class="mem"><b>最容易混的一对：</b>Backspace 删<b>左边</b>（往前删），Delete 删<b>右边</b>（往后删）。题目问"删除光标前一个字符"，答 <b>Backspace</b>。</div>
 </section>
@@ -363,7 +406,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td>颜色 / 突出显示</td><td>字体颜色 vs 底纹突出显示，两者不同</td></tr>
     <tr><td>字符间距</td><td>加宽/紧缩，按磅计</td></tr>
     <tr><td>上标 / 下标</td><td>如 x<sup>2</sup>、H<sub>2</sub>O</td></tr>
-    <tr><td><b>首字下沉</b></td><td>段首第一个字放大并下沉，属<b>段落级</b>的装饰效果</td></tr>
+    <tr><td><b>首字下沉</b></td><td>段首第一个字放大并下沉；入口在<b>插入 → 文本 → 首字下沉</b>，效果作用于<b>段落</b>（详见第 2 课）</td></tr>
   </table>
 
   <div class="qz"><span class="lb">真题</span><b>2025 · 判断 31</b>　在 Word 中设置文字格式时，"倾斜"与"加粗"不能同时使用。<br>
@@ -371,7 +414,38 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>反过来也要记：</b>字体、字号、字形、颜色可以<b>叠加</b>，但它们都属于"字符格式"，只作用于<b>选中的文字</b>——如果没选中就设置，只影响<b>光标之后新输入的字</b>。</span></div>
 
   <div class="okbox"><b>"选中 vs 未选中"这个细节能出判断：</b>不选中任何文字而直接改字体，<b>已输入的文字不变</b>，只有后面新打的字用新字体。想改已有的字，必须先选中它。</div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">字符格式的三条设置路径（操作题按这个顺序答）</h3>
+  <table>
+    <tr><th style="width:120px">路径</th><th>怎么调出</th><th style="width:150px">覆盖范围</th></tr>
+    <tr><td><b>浮动工具栏</b></td><td>选中文字后，文字<b>右上角自动浮出</b>小工具栏</td><td>只能做基础字符设置</td></tr>
+    <tr><td><b>功能区"字体"组</b></td><td><b>开始 → 字体</b>，直接点按钮</td><td>常用字符格式</td></tr>
+    <tr><td><b>字体对话框</b></td><td>三种调法：①"字体"组右下角的<b>对话框启动器</b>　②<b>Ctrl + D</b>　③选中文字<b>右键 → 字体</b></td><td><b>最全</b>，字符间距等高级项只有这里有</td></tr>
+  </table>
+
+  <div class="flow">字号两套体系怎么比大小
+磅值（阿拉伯数字）  数字越大，字越大      五号 = 10.5 磅
+中文字号（中文数字）数字越大，字越小      一号 &gt; 二号 &gt; 三号 &gt; 四号 &gt; 五号
+跨体系比较的桥梁    <b>14 磅 = 四号</b>，比默认的五号大</div>
+
+  <table>
+    <tr><th style="width:150px">只有字体对话框里才有</th><th>位置</th></tr>
+    <tr><td><b>着重号</b></td><td>"字体"选项卡 → <b>所有文字</b> → 着重号（给字加小圆点标重点）</td></tr>
+    <tr><td>单删除线 / <b>双删除线</b></td><td>"字体"选项卡 → <b>效果</b></td></tr>
+    <tr><td>上标 / 下标</td><td>"字体"选项卡 → 效果（化学式、数学式常用）</td></tr>
+    <tr><td><b>字符间距</b>（加宽/紧缩）、位置（提升/降低）</td><td><b>"高级"选项卡</b>　★ 考评频率高</td></tr>
+  </table>
+
+  <div class="flow">"开始 → 字体"组里要认全的按钮
+加粗 Ctrl+B（Bold）    倾斜 Ctrl+I（Italic）    下划线 Ctrl+U（Underline）
+删除线    上标 x²    下标 H₂O    字体颜色    <b>清除格式</b>
+增大字号 / 减小字号    突出显示文本    字符边框    字符底纹
+带圈字符    拼音指南    更改大小写    文本效果（阴影 / 倒影 / 发光）</div>
+
+  <div class="warnbox"><b>字符格式三个高频陷阱：</b>①同时选中"宋体 + 楷体"两种字体的文字，字体下拉框<b>显示空白</b>，不是显示其中任意一种；②<b>字体对话框里没有"对齐方式"</b>——对齐属于段落格式，问"字体对话框不能设置什么"就答对齐；③字符间距<b>加宽</b>后，每行能容纳的字数<b>变少</b>。</div>
+
+  <div class="okbox"><b>操作题的满分写法（三级结构）：</b>先写<b>选项卡</b>，再写<b>功能组</b>，最后写<b>按钮</b>。例如"选中文字 → <b>开始</b>选项卡 → <b>字体</b>组 → <b>加粗</b>按钮"。只写"点加粗"会被扣分。所有软件操作都遵循<b>先选中、后操作</b>。</div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -405,13 +479,55 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>这条题的思路值得记：</b>它不考你会不会点按钮，而考你知不知道<b>列表里有哪些固定项</b>。记住六个名字，就能反推出任意数值的归类。</span></div>
 
   <div class="tip"><b>行距三兄弟别混：</b>"单倍/1.5 倍/2 倍"是按<b>行</b>的倍数；"固定值"是按<b>磅</b>写死（如 20 磅），字号变大也不会自动撑开；"最小值"是给一个下限。<b>题目说"行距固定为 20 磅"→ 选固定值。</b></div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">段落标记：一段格式的"仓库"</h3>
+  <div class="flow">段落标记（¶）的四条必考规则
+① 段落标记里保存着<b>本段的全部段落格式</b>
+② 要复制一段的格式，必须把<b>段末的段落标记一起选中</b>再复制
+③ 删掉两段之间的段落标记 → 两段合并，合并后沿用<b>上一段</b>的格式
+④ 光标在某段内按回车，新段<b>自动继承</b>该段的格式</div>
+
+  <table>
+    <tr><th style="width:150px">两种回车</th><th style="width:120px">按键</th><th style="width:80px">通配符</th><th>效果</th></tr>
+    <tr><td><b>硬回车</b>（段落标记）</td><td>Enter</td><td><b>^p</b></td><td>分段，另起一段</td></tr>
+    <tr><td><b>软回车</b>（手动换行符）</td><td><b>Shift + Enter</b></td><td><b>^l</b></td><td>只换行，<b>仍属同一段</b></td></tr>
+  </table>
+
+  <div class="tip"><b>显示/隐藏段落标记：</b>开始 → 段落 → <b>"显示/隐藏编辑标记"</b>按钮；或 文件 → 选项 → 显示 → 勾选"显示所有格式标记"。<br><b>批量删空行：</b>Ctrl + H，查找 <b>^p^p</b> 替换为 <b>^p</b>，反复点"全部替换"直到提示找不到。</div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">补齐：默认对齐、左右缩进与行距细节</h3>
+  <table>
+    <tr><th style="width:150px">项目</th><th>要点</th></tr>
+    <tr><td><b>默认对齐方式</b></td><td><b>两端对齐</b>（不是左对齐）；两端对齐时<b>最后一行仍然靠左</b>　★ 最容易判错</td></tr>
+    <tr><td>分散对齐</td><td>把整行字符<b>均匀撑满</b>整行，字与字的间距相等</td></tr>
+    <tr><td><b>左缩进 / 右缩进</b></td><td>整段<b>所有行</b>一起右移 / 左移，改的是整段的左右边界（与首行、悬挂缩进并列，共<b>四种缩进</b>）</td></tr>
+    <tr><td><b>固定值行距</b></td><td>按磅写死；字号变大时行距<b>不会跟着撑开</b>，会出现<b>文字显示不全</b>　★</td></tr>
+    <tr><td>段前 / 段后间距</td><td>单位默认是<b>"行"</b>，也可手动改成<b>"磅"</b></td></tr>
+    <tr><td><b>调整行距的效果</b></td><td>只改行与行的距离，<b>不改变每行能容纳的字数</b>　★</td></tr>
+  </table>
+
+  <table>
+    <tr><th style="width:120px">对比</th><th>项目符号</th><th>编号</th></tr>
+    <tr><td><b>标识类型</b></td><td>字符，<b>也可以用自定义图片</b></td><td>只能用<b>有顺序的字符</b>，<b>不能用图片</b>　★ 高频易错</td></tr>
+    <tr><td>调整层级</td><td colspan="2">按 <b>Tab</b> 降一级，按 <b>Shift + Tab</b> 升一级</td></tr>
+    <tr><td>自定义</td><td>符号样式、图片</td><td>编号格式（1,2,3 / 一,二,三 / 甲,乙,丙 / A,B,C）；右键"<b>设置编号值</b>"可改起始序号</td></tr>
+  </table>
+
+  <div class="flow">段落对话框 → "换行和分页"选项卡（正式出版物、法律文书常用）
+孤行控制    不让段落的首行单独留在上页末尾、末行单独跑到下页开头
+段中不分页  整段不跨页
+与下段同页  本段与下一段必须排在同一页
+段前分页    本段之前自动分页
+取消行号 / 取消断字</div>
+
+  <div class="warnbox"><b>边框与底纹的边界：</b>入口是 开始 → 段落 → <b>边框下拉 → "边框和底纹"</b>，可设方框/阴影/三维、内外框用不同线型，应用范围默认<b>整个段落</b>。<b>底纹只能给文字和段落，不能给页面</b>；页面要背景色得用"页面颜色"填充。段落还能按<b>拼音</b>升序/降序<b>排序</b>。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
     <div>
-      <h2>页面设置：纸张、边距、页眉页脚、分页</h2>
+      <h2>页面设置与视图：纸张、边距、页眉页脚、分页、五大视图</h2>
       <span class="tag"><span class="f f2">★★</span>2025 判断第 32 题：页码能放页眉吗</span>
     </div>
   </div>
@@ -435,7 +551,68 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>这个陷阱的套路：</b>"只能/必须/一定"出现在位置类描述里，基本可以判错。</span></div>
 
   <div class="mem"><b>分页 vs 分节，一句话分清：</b>分页符只<b>换页</b>，页面设置还是同一套；分节符<b>换"章"</b>，可以让前后两节<b>各用各的纸张方向、页边距、页眉页脚</b>。要"封面不要页码、正文从 1 开始"，必须用<b>分节符</b>。</div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">页眉页脚与页码：五个易错点</h3>
+  <table>
+    <tr><th style="width:160px">项目</th><th>要点</th></tr>
+    <tr><td><b>页眉下面那条横线</b></td><td>它是页眉段落的<b>下边框线</b>，<b>不是下划线</b>；去掉的方法：开始 → 段落 → 边框 → <b>无边框</b>　★</td></tr>
+    <tr><td>默认生效范围</td><td>在任意一页加页眉/页脚，默认<b>所有页显示相同内容</b></td></tr>
+    <tr><td><b>奇偶页不同 / 首页不同</b></td><td>进入页眉页脚编辑状态后勾选，可分别设置（书籍印刷、封面常用）</td></tr>
+    <tr><td><b>页码在哪些视图可见</b></td><td>只有<b>页面视图</b>和<b>打印预览</b>能看到页码　★</td></tr>
+    <tr><td><b>页码能放的位置</b></td><td>页面顶端、底端、页边距，<b>还能放在任意光标处</b>，不限于页眉页脚　★</td></tr>
+    <tr><td>页码格式与起始值</td><td>可用 1,2,3 / A,B,C / 甲,乙,丙 / 一,二,三；<b>起始页码可自定义</b>，不必从 1 开始</td></tr>
+    <tr><td>进出编辑状态</td><td>页面视图下<b>双击页眉/页脚区</b>进入，<b>双击正文区</b>退出</td></tr>
+  </table>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">页面设置对话框的四个选项卡</h3>
+  <div class="flow">页面布局 → "页面设置"组右下角的对话框启动器
+页边距    上下左右边距 + <b>装订线</b> + 纸张方向（默认纵向）
+纸张      默认 <b>A4（21 cm × 29.7 cm）</b>，可改 A3 / B5 / Letter
+版式      页眉页脚边距、奇偶页不同、首页不同、行号、边框
+文档网格  指定<b>每行字数</b>和<b>每页行数</b>   ← 最容易被漏掉的考点</div>
+
+  <div class="warnbox"><b>页边距 ≠ 段落缩进（必考辨析）：</b><b>页边距</b>从"<b>纸张边缘</b>"量到"<b>正文编辑区边界</b>"，管整篇文档；<b>段落缩进</b>从"<b>正文编辑区边界</b>"量到"<b>段落首字符</b>"，只管选中的段落。两个起点完全不同，不能混。</div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">四种分隔符：分页、分栏、换行、分节</h3>
+  <table>
+    <tr><th style="width:110px">分隔符</th><th>插入方法</th><th style="width:230px">关键规则</th></tr>
+    <tr><td><b>分页符</b></td><td>①<b>Ctrl + Enter</b>　②页面布局 → 分隔符 → 分页符　③插入 → 分页</td><td><b>手动</b>分页符可选中按 Delete 删除；<b>自动</b>分页符<b>删不掉</b>，只能删减内容　★</td></tr>
+    <tr><td><b>分栏符</b></td><td>页面布局 → 分隔符 → 分栏符</td><td>后面的内容直接<b>跳到下一栏</b></td></tr>
+    <tr><td>自动换行符</td><td><b>Shift + Enter</b></td><td>只换行不分段（就是软回车）</td></tr>
+    <tr><td><b>分节符</b></td><td>页面布局 → 分隔符 → 分节符</td><td>四类：<b>下一页、连续、偶数页、奇数页</b>　★</td></tr>
+  </table>
+
+  <div class="flow">分节符四类的区别
+下一页    分节 + 分页，新节从下一页开始
+连续      <b>只分节不分页</b>，同一页里就能换一套页面设置
+偶数页    新节从下一个偶数页开始
+奇数页    新节从下一个奇数页开始
+新建文档默认只有 <b>1 个节</b>；同一节内所有页<b>共用一套页面设置</b></div>
+
+  <div class="tip"><b>分栏的三条规则：</b>①只对<b>选中的内容</b>生效，不必整篇分栏；②默认<b>等宽</b>，取消"栏宽相等"就能做<b>不等宽</b>分栏；③栏与栏之间可以加<b>分隔线</b>。</div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">五大视图、格式刷与样式模板</h3>
+  <table>
+    <tr><th style="width:130px">视图</th><th>特点与限制</th></tr>
+    <tr><td><b>页面视图</b></td><td><b>默认视图</b>，所见即所得；<b>页眉页脚、分栏、页码都能看到</b></td></tr>
+    <tr><td>阅读版式视图</td><td>默认<b>双页</b>显示，默认<b>不能编辑</b>（开启"允许键入"后才能改），可加批注</td></tr>
+    <tr><td>Web 版式视图</td><td>看文档转成网页后的效果；<b>不显示页眉页脚</b></td></tr>
+    <tr><td><b>大纲视图</b></td><td>按标题层级<b>折叠/展开</b>，长文档理框架专用；可设显示级别</td></tr>
+    <tr><td>草稿视图</td><td><b>只显示文字</b>，不显示图片等对象，<b>占用资源最少</b></td></tr>
+  </table>
+
+  <div class="flow">五大视图记忆口诀：<b>我打月页草</b>
+我 → Web 版式    打 → 大纲    月 → 阅读版式    页 → 页面    草 → 草稿
+切换入口全部在<b>"视图"选项卡</b>下</div>
+
+  <table>
+    <tr><th style="width:120px">工具</th><th>规则</th></tr>
+    <tr><td><b>格式刷</b></td><td><b>只复制格式，不复制内容</b>；<b>单击用一次，双击可连续用</b>，按 <b>Esc</b> 退出；快捷键 <b>Ctrl+Shift+C</b> 复制格式、<b>Ctrl+Shift+V</b> 粘贴格式</td></tr>
+    <tr><td><b>内置样式</b></td><td><b>可修改，不可删除</b>；改完全文用到该样式的地方<b>一起更新</b></td></tr>
+    <tr><td>自定义样式</td><td><b>可修改，也可删除</b></td></tr>
+    <tr><td>模板</td><td>模板扩展名 <b>.dotx</b>；Word 的默认模板是 <b>normal.dotm</b></td></tr>
+  </table>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -517,7 +694,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 28 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
@@ -548,6 +725,41 @@ body.slim section.mod[data-tier="low"]{display:none}
     <details><summary>13. 要在文档中强制从下一页开始，应插入 ______。</summary><div class="ans"><b>分页符</b>（Ctrl+Enter）。</div></details>
     <details><summary>14. 在 Word 中按 ______ 键可在插入与改写模式之间切换。</summary><div class="ans"><b>Insert</b>。</div></details>
   </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:18px 0 6px"><b>补充题（按课程逐集精讲与四川考向新增 14 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>一、判断题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>15. 在“字体”对话框中可以设置段落的对齐方式。</summary><div class="ans"><b>错误。</b>对齐方式属于<b>段落</b>格式，字体对话框里没有这一项。问“字体对话框不能设置什么”就答对齐。</div></details>
+    <details><summary>16. 同时选中含宋体与楷体两种字体的文字，字体下拉框会显示其中一种字体名称。</summary><div class="ans"><b>错误。</b>显示<b>空白</b>。</div></details>
+    <details><summary>17. 删除两段之间的段落标记后，合并成的新段落沿用后一段的格式。</summary><div class="ans"><b>错误。</b>沿用<b>上一段（前一段）</b>的格式。</div></details>
+    <details><summary>18. 把行距设为“固定值”后，字号调大时行距会自动撑开。</summary><div class="ans"><b>错误。</b>固定值按磅写死，字号超过行距值会<b>显示不全</b>。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>19. 打开“字体”对话框的快捷键是（　）<br>A. Ctrl+B　B. Ctrl+D　C. Ctrl+F　D. Ctrl+H</summary><div class="ans"><b>B。</b>另外两种调法：字体组右下角对话框启动器、选中后右键→字体。</div></details>
+    <details><summary>20. Word 默认的对齐方式是（　）<br>A. 左对齐　B. 居中对齐　C. 两端对齐　D. 分散对齐</summary><div class="ans"><b>C。</b>两端对齐时<b>最后一行仍靠左</b>，所以常被误判成左对齐。</div></details>
+    <details><summary>21. 关于页码，下列说法正确的是（　）<br>A. 只能插入到页脚　B. 草稿视图中也能看到页码　C. 可以插入到任意光标位置　D. 起始页码必须为 1</summary><div class="ans"><b>C。</b>页码只在<b>页面视图</b>与<b>打印预览</b>中可见；起始值可自定义。</div></details>
+    <details><summary>22. 只换行、不分段应按（　）<br>A. Enter　B. Shift+Enter　C. Ctrl+Enter　D. Alt+Enter</summary><div class="ans"><b>B。</b>软回车（手动换行符），通配符 <b>^l</b>；Ctrl+Enter 是分页符。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、多项选择题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>23. 下列属于“分节符”类型的有（　）<br>A. 下一页　B. 连续　C. 偶数页　D. 奇数页</summary><div class="ans"><b>ABCD。</b>四种全对。“连续”只分节不分页。</div></details>
+    <details><summary>24. 关于 Word 的五大视图，正确的有（　）<br>A. 页面视图是默认视图　B. 草稿视图不显示图片　C. Web 版式视图不显示页眉页脚　D. 大纲视图可按标题级别折叠</summary><div class="ans"><b>ABCD。</b>口诀“我打月页草”。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、填空题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>25. 14 磅相当于中文字号的 ______ 号。</summary><div class="ans"><b>四</b>号。这是磅值与中文字号两套体系比较的桥梁；默认字号是五号（10.5 磅）。</div></details>
+    <details><summary>26. 字符间距的加宽/紧缩要在“字体”对话框的 ______ 选项卡中设置。</summary><div class="ans"><b>高级</b>。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>五、简答题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>27. 简述“页边距”与“段落缩进”的区别。（4 分）</summary><div class="ans">①<b>页边距</b>：从<b>纸张边缘</b>量到<b>正文编辑区边界</b>的留白距离，作用于<b>整篇文档</b>；②<b>段落缩进</b>：从<b>正文编辑区边界</b>量到<b>段落首字符</b>的距离，只作用于<b>选中的段落</b>；③两者起算点不同，属于不同层级的排版参数，不能混。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>六、操作题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>28. 把文档标题设为“黑体、三号、加粗、居中”，写出规范的操作步骤。（4 分）</summary><div class="ans">①<b>选中</b>标题文字；②<b>开始</b>选项卡 → <b>字体</b>组 → 字体框选“黑体”、字号框选“三号”、点<b>加粗</b>按钮；③<b>开始</b>选项卡 → <b>段落</b>组 → 点<b>居中</b>按钮。<br><b>评分要点：</b>必须按“<b>选项卡 → 功能组 → 按钮</b>”三级结构描述，并体现“先选中、后操作”。</div></details>
+  </div>
+
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

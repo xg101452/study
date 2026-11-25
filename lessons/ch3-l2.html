@@ -7,8 +7,8 @@
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
-  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
-  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --paper:#fffaf8; --card:#ffffff; --line:#efe5e1;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#fae7e2;
   --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
   --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
   --gold:#8a5a00; --goldbg:#fbf3dd;
@@ -53,10 +53,10 @@ h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margi
 .mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
 .hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
 table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
-th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
-th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+th,td{border:1px solid #e6d7d2;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f6ebe8;font-weight:700;color:#2a3743;white-space:nowrap}
 td.c{text-align:center;white-space:nowrap}
-tr:nth-child(even) td{background:#fdfcf9}
+tr:nth-child(even) td{background:#fff9f7}
 .f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
   margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
 .f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
@@ -64,7 +64,7 @@ tr:nth-child(even) td{background:#fdfcf9}
 .f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
 .f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
 .cut{color:#9aa5ae}
-.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip{background:#fff8f6;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
 .tip b{color:var(--c1)}
 .warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
 .warnbox b{color:#a32a1c}
@@ -77,14 +77,14 @@ tr:nth-child(even) td{background:#fdfcf9}
 .flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
   font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
   white-space:pre;overflow-x:auto;margin:9px 0}
-.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+.qz{background:#fbfbf9;border:1px solid #dfcfca;border-left:4px solid #5b6b78;
   border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
 .qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
   background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
 .qz b{color:var(--ink)}
 .qz .no{color:#8a5a00;font-weight:700}
-.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
-details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+.qa{background:#fef7f5;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e7d6d1;padding:9px 15px}
 details:last-child{border-bottom:0}
 summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
 summary::-webkit-details-marker{display:none}
@@ -153,7 +153,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 }
 </style><style id="lesson-pager-style">
 .lesson-pager{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;margin:28px 0 8px;padding-top:14px;border-top:1px solid #e8dccf}
-.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fffaf5;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
+.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fff6f3;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
 .lesson-pager a:hover{background:#fbe9ee;border-color:#dfb9c5;color:#8c4057}
 .lesson-pager .pager-prev{align-items:flex-start;text-align:left}
 .lesson-pager .pager-next{align-items:flex-end;text-align:right}
@@ -220,7 +220,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s6">真题回放</a>
     <a href="#s7">易错清单</a>
     <a href="#s8">必背 14 条</a>
-    <a href="#s9">自测 15 题</a>
+    <a href="#s9">自测 29 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -297,7 +297,35 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mem"><b>Tab 在表格里的三种命运：</b>中间格子→<b>下一格</b>；最后一格→<b>多一行</b>；配合 Shift→<b>回上一格</b>。题目问"在表格末格按 Tab 会怎样"，答案就是"<b>新增一行</b>"。</div>
 
   <div class="warnbox"><b>别把"拆分表格"和"拆分单元格"搞混：</b>拆分<b>单元格</b>是把一格切成几格（表还在）；拆分<b>表格</b>是把一张表从某一行<b>断成两张表</b>。</div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">创建表格的五种方法（插入选项卡下）</h3>
+  <table>
+    <tr><th style="width:150px">方法</th><th>要点</th></tr>
+    <tr><td>①插入表格</td><td>指定行数、列数；可设"自动调整"列宽规则；勾选"<b>为新表格记忆尺寸</b>"后下次沿用</td></tr>
+    <tr><td><b>②绘制表格</b></td><td>鼠标变笔形自由画线，可画<b>斜线表头</b>；按 <b>Esc</b> 退出绘制　★重点</td></tr>
+    <tr><td><b>③文本转换成表格</b></td><td>文本必须<b>先选中</b>且用<b>统一分隔符</b>（段落标记/制表符/逗号/空格）隔开；还可反向"表格转换成文本"　★重点</td></tr>
+    <tr><td>④Excel 电子表格</td><td>插入 → 表格 → 电子表格，把 Excel 表嵌进 Word</td></tr>
+    <tr><td>⑤快速表格</td><td>调用 Word <b>内置预设样式</b>的表格，插入后内容与格式仍可改</td></tr>
+  </table>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">表格的选定与增删：Delete 和 Backspace 不一样</h3>
+  <table>
+    <tr><th style="width:150px">要选什么</th><th>怎么选</th></tr>
+    <tr><td>一个单元格</td><td>鼠标移到该格<b>左侧</b>，指针变成<b>黑色向右箭头</b>时单击（只拖选文字不算选中单元格）</td></tr>
+    <tr><td>一行 / 一列</td><td>行：页面<b>左侧空白区</b>单击；列：列的<b>顶端</b>单击</td></tr>
+    <tr><td>连续 / 不连续</td><td>连续按 <b>Shift</b> 点首尾；不连续按 <b>Ctrl</b> 逐个点</td></tr>
+    <tr><td>整个表格</td><td>点表格<b>左上角十字全选柄</b>，或按住 <b>Alt</b> 在页面左侧双击</td></tr>
+  </table>
+
+  <div class="flow">增删行列与清除内容
+Delete      只清除选中部分的<b>内容</b>，单元格/行/列还在
+Backspace   可<b>删除单元格、行、列、整张表</b>本身
+插入行      选中 N 行右键"插入"→ 一次插入 N 行；光标放在<b>行末右侧（表外）</b>按回车 → 下方新增一行
+拆分单元格  只有<b>连续</b>的单元格才能合并；拆分后原内容留在<b>首行首列</b>
+合并两张表  先把表格的<b>文字环绕设为"无"</b>，再删掉两表之间的段落标记</div>
+
+  <div class="tip"><b>跨页长表格必设：</b>选中表头行 → <b>表格工具-布局 → 数据 → "重复标题行"</b>，每页顶部自动重复表头。<br><b>排序：</b>最多可设 <b>3 个关键字</b>，类型支持<b>数字、日期、拼音、笔画</b>。<br><b>公式结果是"域"：</b><b>F9</b> 更新结果，<b>Shift + F9</b> 在"域代码 ↔ 结果"之间切换。<br><b>单元格边距：</b>在"表格属性"里设文字与上下左右边框的留白；外框内框可用<b>不同线型</b>。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -337,7 +365,38 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <div class="qz"><span class="lb">2026 · 判断 第 24 题</span><b>1 分</b>　在 Word 中，可以插入散点图、柱状图和饼图。<br>
   <span class="no">答案：<b>对</b>。Word 的"插入→图表"提供柱形图、饼图、折线图、散点图等多种类型；图表数据在随图表打开的 Excel 表格中填写或修改。</span></div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">各对象的"默认环绕方式"（高频送分题）</h3>
+  <table>
+    <tr><th style="width:220px">对象</th><th>插入后的默认环绕</th></tr>
+    <tr><td>图片、<b>剪贴画</b></td><td><b>嵌入型</b>（当成一个大字符，随文字流动）</td></tr>
+    <tr><td><b>形状、文本框、艺术字</b></td><td><b>浮于文字上方</b>（像图层，会遮住下面的字）</td></tr>
+    <tr><td><b>SmartArt</b>（智能图形）</td><td><b>嵌入型</b>（与图片一致）</td></tr>
+  </table>
+
+  <div class="flow">首字下沉：入口在<b>插入 → 文本 → 首字下沉</b>，三个选项
+无      取消效果
+下沉    放大的首字<b>不超出正文区左边缘</b>，与下方文字左对齐
+悬挂    放大的首字<b>伸到左侧页边距区域</b>里
+考试常给截图让你分辨"下沉"还是"悬挂"，看首字有没有越出正文左边界即可</div>
+
+  <table>
+    <tr><th style="width:150px">表格的混排</th><th>规则</th></tr>
+    <tr><td>表格对齐方式</td><td>只有<b>左、居中、右</b>三种（右键 → 表格属性）</td></tr>
+    <tr><td>表格环绕方式</td><td>只有<b>"无"和"环绕"</b>两种；<b>无环绕时表格独占一行</b></td></tr>
+    <tr><td><b>环绕后文字在哪</b></td><td>表格<b>左对齐 → 文字在右侧</b>；<b>右对齐 → 文字在左侧</b>；<b>居中 → 文字分布两侧</b>　★判断题常考</td></tr>
+  </table>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">图片、形状、文本框的编辑要点</h3>
+  <table>
+    <tr><th style="width:110px">对象</th><th>要点</th></tr>
+    <tr><td><b>图片</b></td><td>选中后自动出现<b>"图片工具-格式"</b>选项卡；<b>8 个控制点</b>缩放，拖<b>对角</b>等比例；绿色点旋转，按住 <b>Shift</b> 按 <b>15° 倍数</b>转；裁剪可"按形状裁剪"；<b>重设图片</b>一键还原；<b>删除背景</b>可抠图；可改色调/黑白/灰度、加艺术效果</td></tr>
+    <tr><td><b>剪贴画</b></td><td>Office 内置的<b>矢量图</b>，可直接<b>改颜色</b>（位图不行）</td></tr>
+    <tr><td><b>形状</b></td><td>插入 → 形状；<b>黄色控制点</b>调弧度等专属参数；"编辑形状 → <b>更改形状</b>/<b>编辑顶点</b>"可改成任意不规则形；<b>线条、箭头类不能加文字</b>，封闭形状可右键"编辑文字"；按 <b>Ctrl 或 Shift</b> 多选后右键"<b>组合</b>"成整体，可"取消组合"</td></tr>
+    <tr><td><b>文本框</b></td><td>可插入内置样式，也可绘制<b>横向/纵向</b>文本框；<b>选中框整体</b>即可改文字方向，不必选中框内文字；是<b>容器</b>，可放图片、项目符号；删除文本框会<b>连同框内内容一起删</b>；可创建"<b>文本框链接</b>"让文字跨框流动（<b>不是超链接</b>）</td></tr>
+    <tr><td><b>艺术字</b></td><td><b>兼具文本与图形</b>双重属性：既能改字体字号，又能旋转、立体、弯曲</td></tr>
+  </table>
+  </section>
 
 <!-- ============ S2B 2026 综合应用 ============ -->
 <section class="mod" id="s2b">
@@ -396,7 +455,11 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>依据：</b>Word 内置的标题样式只有"标题 1"到"标题 9"共 9 级，所以目录最多显示 9 级。题目若问"3 级"，那是"默认显示 3 级"，不是"最多"。</span></div>
 
   <div class="okbox"><b>两个"必须知道"：</b>①目录的<b>前提是应用标题样式</b>，不是手动排版；②目录本质是一个<b>域</b>，页面内容或页码变了必须<b>更新域</b>，否则目录里的页码是旧的。</div>
-</section>
+
+  <div class="warnbox"><b>目录的三个高频易错点：</b>①自动生成目录在<b>"引用"选项卡</b>，<b>不是"插入"选项卡</b>　★最爱考；②更新时选"<b>更新整个目录</b>"而不是"只更新页码"，否则改过的标题文字不会同步；③目录自带超链接，按住 <b>Ctrl 单击</b>条目可跳到对应标题；选中整个目录按 <b>Delete</b> 即可删除。</div>
+
+  <div class="tip"><b>配套技巧：</b>应用标题样式后，勾选 <b>视图 → 导航窗格</b>，左侧会自动出现层级导航，可快速跳转；插入目录时还能设置<b>显示级别</b>与<b>制表符前导符</b>（那串小点）。默认标题样式不合适时，<b>右键样式 → 修改</b>即可，全文同步生效。</div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -467,7 +530,29 @@ body.slim section.mod[data-tier="low"]{display:none}
   </table>
 
   <div class="warnbox"><b>保护的两个层次别混：</b><b>打开密码</b>管"能不能打开"；<b>限制编辑</b>管"打开后能不能改"。题目说"文件可以打开但不能修改"，答案必须是<b>限制编辑</b>。</div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">三类保护路径与打印细节</h3>
+  <table>
+    <tr><th style="width:130px">保护路径</th><th>入口</th><th style="width:200px">能做什么</th></tr>
+    <tr><td>限制编辑</td><td><b>审阅 → 保护</b></td><td>限制只能改部分内容或特定格式</td></tr>
+    <tr><td>全面保护</td><td><b>文件 → 信息 → 保护文档</b></td><td>标记为最终、打开密码、限制编辑、按人员权限、数字签名</td></tr>
+    <tr><td><b>密码保护</b>（最常用）</td><td><b>文件 → 另存为 → 工具 → 常规选项</b></td><td>设<b>打开密码</b>与<b>修改密码</b></td></tr>
+  </table>
+
+  <div class="flow">打开密码 vs 修改密码
+打开密码   没密码<b>连内容都看不到</b>
+修改密码   没密码<b>能看不能改</b>（只读打开）
+批注、修订、限制编辑三个功能<b>都在"审阅"选项卡</b>下
+修订必须先让<b>修订按钮高亮（进入修订状态）</b>，之后的改动才留痕
+"审阅窗格"可统一查看并统计所有修订；接受/拒绝可<b>单条</b>也可<b>全部</b></div>
+
+  <table>
+    <tr><th style="width:150px">打印细节</th><th>要点</th></tr>
+    <tr><td><b>页码范围的写法</b></td><td><b>短横线"-"表示连续</b>，<b>逗号","表示不连续</b>。如 <b>1-3,6-10</b> 共打印 <b>8 页</b>　★易错</td></tr>
+    <tr><td>打印预览</td><td>可看页眉页脚与分栏、可设页面参数，但<b>不能修改文档内容</b></td></tr>
+    <tr><td>打印过程</td><td>可设份数；<b>打印中途可以终止</b>，不必等打完</td></tr>
+  </table>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -550,7 +635,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 15 题</h2>
+      <h2>自测 29 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
@@ -582,6 +667,41 @@ body.slim section.mod[data-tier="low"]{display:none}
     <details><summary>14. 列出 Word 中图片的七种文字环绕方式。</summary><div class="ans"><b>参考答案：</b>嵌入型、四周型、紧密型、穿越型、上下型、衬于文字下方、浮于文字上方。</div></details>
     <details><summary>15. 要在文档标题上做艺术化文字、段首第一个字放大下沉、正文背后加文字背景、给并列段落加符号、文末做职位结构图，分别应使用什么功能？</summary><div class="ans"><b>参考答案：</b>标题→<b>艺术字</b>；段首字→<b>首字下沉</b>；背景→<b>文字水印</b>；并列段落→<b>项目符号</b>；职位结构图→<b>SmartArt 层次结构图</b>。这正是 2026 综合应用第 60 题的五个考点。</div></details>
   </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:18px 0 6px"><b>补充题（按课程逐集精讲与四川考向新增 14 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>一、判断题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>16. 项目编号和项目符号一样，都可以用图片作为标识。</summary><div class="ans"><b>错误。</b><b>编号只能用有顺序的字符，不能用图片</b>；项目符号可以用字符或自定义图片。</div></details>
+    <details><summary>17. 在 Word 表格中按 Backspace 与按 Delete 的作用相同。</summary><div class="ans"><b>错误。</b>Delete 只清除<b>内容</b>；Backspace 可删除<b>单元格、行、列、整张表</b>本身。</div></details>
+    <details><summary>18. 表格设为“环绕”且左对齐后，文字会分布在表格两侧。</summary><div class="ans"><b>错误。</b>左对齐→文字在<b>右侧</b>；右对齐→文字在左侧；<b>居中</b>才分布两侧。</div></details>
+    <details><summary>19. 自动生成目录的命令位于“插入”选项卡。</summary><div class="ans"><b>错误。</b>在<b>引用</b>选项卡。这是最爱考的入口题。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>20. 插入形状（图形）后默认的文字环绕方式是（　）<br>A. 嵌入型　B. 四周型　C. 浮于文字上方　D. 衬于文字下方</summary><div class="ans"><b>C。</b>形状、文本框、艺术字默认都是浮于文字上方；图片、剪贴画、SmartArt 默认是嵌入型。</div></details>
+    <details><summary>21. 插入 SmartArt 图形后默认的环绕方式是（　）<br>A. 嵌入型　B. 紧密型　C. 上下型　D. 浮于文字上方</summary><div class="ans"><b>A。</b>与图片一致。</div></details>
+    <details><summary>22. 要让跨页长表格每一页都自动出现表头，应使用（　）<br>A. 冻结窗格　B. 重复标题行　C. 拆分表格　D. 合并单元格</summary><div class="ans"><b>B。</b>选中表头行 → 表格工具-布局 → 数据 → 重复标题行。</div></details>
+    <details><summary>23. 首字下沉中，放大的首字伸到左侧页边距区域的效果叫（　）<br>A. 下沉　B. 悬挂　C. 缩进　D. 环绕</summary><div class="ans"><b>B。</b>下沉不越出正文左边界，悬挂会伸进页边距。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、多项选择题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>24. 关于 Word 表格，正确的有（　）<br>A. 排序最多可设 3 个关键字　B. 可按拼音或笔画排序　C. 只有连续的单元格才能合并　D. 公式结果按 F9 可更新</summary><div class="ans"><b>ABCD。</b>Shift+F9 可在域代码与结果之间切换。</div></details>
+    <details><summary>25. 关于批注与修订，正确的有（　）<br>A. 都在“审阅”选项卡下　B. 修订可单条接受或拒绝　C. 修订可全部接受或拒绝　D. 批注不改变正文内容</summary><div class="ans"><b>ABCD。</b>说“修订不能单条接受/拒绝”是错的。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、填空题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>26. 把上下相邻的两张表格合并，须先把表格的文字环绕设为 ______，再删除中间的段落标记。</summary><div class="ans"><b>无</b>。</div></details>
+    <details><summary>27. 打印页码范围输入“1-3,6-10”，共打印 ______ 页。</summary><div class="ans"><b>8</b> 页。短横线表示连续，逗号表示不连续。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>五、简答题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>28. 简述 Word 中“文本转换成表格”的前提条件与步骤。（4 分）</summary><div class="ans">①文本各列内容必须用<b>统一的分隔符</b>隔开（段落标记、制表符、逗号、空格等）；②<b>先选中</b>要转换的文本；③<b>插入</b>选项卡 → <b>表格</b>组 → <b>文本转换成表格</b>，指定分隔符与列数；④还可反向执行“表格转换成文本”。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>六、综合应用题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>29. 要为 200 名新生批量制作录取通知书，应使用什么功能？写出关键步骤。（6 分）</summary><div class="ans">使用<b>邮件合并</b>。①创建<b>主文档</b>（共同文字与版式）；②<b>选择数据源</b>（新生信息表，<b>首行为字段名</b>）；③插入<b>合并域</b>（姓名、专业等）；④<b>预览结果</b>；⑤<b>完成并合并</b>到新文档或直接打印。<br>答题要点：功能名称 + 五步 + “数据源首行是字段名”。</div></details>
+  </div>
+
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

@@ -7,8 +7,8 @@
 <style>
 :root{
   --ink:#15212c; --ink2:#3b4b59; --muted:#6b7a88;
-  --paper:#f7f5f0; --card:#ffffff; --line:#e3ded4;
-  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#f8f1e4;
+  --paper:#fffaf8; --card:#ffffff; --line:#efe5e1;
+  --c1:#0e6b8a; --c1bg:#e9f2f6; --c2:#9a6b1f; --c2bg:#fae7e2;
   --c3:#2b4a8b; --c3bg:#eaeef7; --c4:#b23a2e; --c4bg:#fbeeec;
   --c5:#1f6b4a; --c5bg:#e8f2ed; --c6:#455a64; --c6bg:#eef1f3;
   --gold:#8a5a00; --goldbg:#fbf3dd;
@@ -53,10 +53,10 @@ h1 .light{color:var(--muted);font-weight:500;font-size:.62em;display:block;margi
 .mod-h .tag{font-size:12.2px;color:var(--muted);margin-top:3px;display:block;font-weight:400}
 .hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:13px 0 15px}
 table{border-collapse:collapse;width:100%;font-size:13.4px;margin:8px 0 4px;background:#fff}
-th,td{border:1px solid #e4dfd4;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
-th{background:#f4f1ea;font-weight:700;color:#2a3743;white-space:nowrap}
+th,td{border:1px solid #e6d7d2;padding:7px 10px;text-align:left;vertical-align:top;line-height:1.66}
+th{background:#f6ebe8;font-weight:700;color:#2a3743;white-space:nowrap}
 td.c{text-align:center;white-space:nowrap}
-tr:nth-child(even) td{background:#fdfcf9}
+tr:nth-child(even) td{background:#fff9f7}
 .f{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:4px;
   margin-right:6px;white-space:nowrap;line-height:1.7;vertical-align:1px}
 .f3{background:#fdecea;color:#a32a1c;border:1px solid #f3c9c3}
@@ -64,7 +64,7 @@ tr:nth-child(even) td{background:#fdfcf9}
 .f1{background:#eef1f3;color:#455a64;border:1px solid #d5dde1}
 .f0{background:#f4f4f4;color:#9aa5ae;border:1px solid #e0e0e0}
 .cut{color:#9aa5ae}
-.tip{background:#fdfcf8;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
+.tip{background:#fff8f6;border:1px dashed #dbd4c6;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px;color:var(--ink2)}
 .tip b{color:var(--c1)}
 .warnbox{background:var(--c4bg);border:1px solid #f0c8c1;border-radius:11px;padding:11px 15px;margin:12px 0 0;font-size:13.3px}
 .warnbox b{color:#a32a1c}
@@ -77,14 +77,14 @@ tr:nth-child(even) td{background:#fdfcf9}
 .flow{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 16px;
   font-family:Consolas,"Courier New",monospace;font-size:12.6px;line-height:1.9;color:#2a3743;
   white-space:pre;overflow-x:auto;margin:9px 0}
-.qz{background:#fbfbf9;border:1px solid #ddd8cc;border-left:4px solid #5b6b78;
+.qz{background:#fbfbf9;border:1px solid #dfcfca;border-left:4px solid #5b6b78;
   border-radius:0 11px 11px 0;padding:12px 16px;margin:11px 0;font-size:13.3px;color:var(--ink2)}
 .qz .lb{display:inline-block;font-size:10.8px;font-weight:700;letter-spacing:1px;color:#fff;
   background:#5b6b78;border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:1px}
 .qz b{color:var(--ink)}
 .qz .no{color:#8a5a00;font-weight:700}
-.qa{background:#fcfbf7;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
-details{border-bottom:1px dashed #e5dfd3;padding:9px 15px}
+.qa{background:#fef7f5;border:1px solid var(--line);border-radius:11px;padding:2px 0;margin:12px 0}
+details{border-bottom:1px dashed #e7d6d1;padding:9px 15px}
 details:last-child{border-bottom:0}
 summary{cursor:pointer;font-size:13.6px;color:var(--ink);list-style:none;font-weight:500}
 summary::-webkit-details-marker{display:none}
@@ -153,7 +153,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 }
 </style><style id="lesson-pager-style">
 .lesson-pager{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;margin:28px 0 8px;padding-top:14px;border-top:1px solid #e8dccf}
-.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fffaf5;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
+.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fff6f3;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
 .lesson-pager a:hover{background:#fbe9ee;border-color:#dfb9c5;color:#8c4057}
 .lesson-pager .pager-prev{align-items:flex-start;text-align:left}
 .lesson-pager .pager-next{align-items:flex-end;text-align:right}
@@ -219,7 +219,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s6">2026 真题</a>
     <a href="#s7">易错清单</a>
     <a href="#s8">必背 15 条</a>
-    <a href="#s9">自测 15 题</a>
+    <a href="#s9">自测 29 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -301,7 +301,15 @@ body.slim section.mod[data-tier="low"]{display:none}
 括号 ( ) 永远最先算</div>
 
   <div class="okbox"><b>两个小结论：</b>①比较运算的结果是<b>逻辑值 TRUE/FALSE</b>，不是数字 1/0（虽然参与计算时 TRUE 当 1）；②文本必须加<b>双引号</b>，如 <code>=IF(A1&gt;="及格","通过","不通过")</code> 里的"及格"。</div>
-</section>
+
+  <div class="flow">等号的"双重身份"（判断题爱考）
+公式<b>开头</b>的 =    只是"这是公式"的<b>格式标识</b>，不是运算符
+公式<b>中间</b>的 =    才是<b>比较运算符</b>，结果是 TRUE / FALSE
+所有运算符、括号、逗号、引号都必须在<b>英文半角</b>状态下输入
+乘方写 <b>^</b>、乘写 <b>*</b>、除写 <b>/</b>；小于等于写 <b>&lt;=</b>，不能写成一个符号</div>
+
+  <div class="tip"><b>矩形区域的四种等价写法：</b>一个矩形可以用<b>两条对角线的任意两个端点</b>来表示，结果完全相同：<b>A1:B3 = B3:A1 = A3:B1 = B1:A3</b>。题目给"看起来倒着写"的区域，别以为错了。<br><b>给区域起名字：</b>选中区域后在<b>名称框</b>输入名称即可，之后可直接写 <b>=SUM(成绩)</b>。名称必须<b>全局唯一</b>，且<b>不能与单元格地址重名</b>（不能叫 A1）。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -334,7 +342,16 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mem"><b>记参数的笨办法但最有效：</b>把每个函数写成"<b>动词 + 宾语</b>"的中文句子。<br>
   SUMIF＝"<b>按条件</b>求和"→ (在哪个区域找条件, 条件是什么, 对哪个区域求和)；<br>
   VLOOKUP＝"<b>竖着</b>查"→ (查什么, 在哪片区域查, 返回第几列, 精确还是近似)。<b>中文说顺了，参数顺序就不会反。</b></div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">函数的统一运算规则：参数是"引用"还是"常量"，结果不一样</h3>
+  <table>
+    <tr><th style="width:150px">参数形式</th><th>文本型数字</th><th>逻辑值 TRUE/FALSE</th><th>文本、空单元格</th></tr>
+    <tr><td><b>单元格引用 / 区域</b><br>如 =SUM(A1:A10)</td><td><b>忽略</b>，不参与</td><td><b>忽略</b>，不参与</td><td>忽略</td></tr>
+    <tr><td><b>直接写常量</b><br>如 =SUM("3",TRUE,5)</td><td><b>先转成数值</b>再算</td><td><b>TRUE→1、FALSE→0</b> 再算</td><td>文本无法转换则报错</td></tr>
+  </table>
+
+  <div class="warnbox"><b>这是四川卷最爱的陷阱：</b>同样一堆数据，写成<b>区域引用</b>时"只认数值型"，写成<b>常量</b>时"先转换再计算"，两种写法结果<b>可能不同</b>。例如 A1:A10 里有 9 个数值、1 个文本型数字，<b>=AVERAGE(A1:A10) 只按 9 个求平均</b>，不是按 10 个。<br>该规则统一适用于 <b>SUM、AVERAGE、MAX、MIN、COUNT</b> 这 5 个函数，记一条就够，不必逐个背。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -369,7 +386,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <p class="tbl-note">注：考纲共列 18 个函数（ABS、SUM、SUMIF、AVERAGE、COUNT、COUNTIF、VLOOKUP、IF、MAX、MIN、RANK、YEAR、MONTH、DAY、MID、LEFT、RIGHT、MOD）。</p>
 
   <div class="warnbox"><b>参数顺序三个"反直觉"：</b>①<b>SUMIF</b> 是"条件区域在前、求和区域在后"（不是先求和区域）；②<b>MID</b> 的第二个参数是<b>起始位置</b>、第三个是<b>长度</b>（不是结束位置）；③<b>VLOOKUP</b> 的第三个参数是<b>返回第几列</b>（从查找区域的第一列起算为 1），不是"列号字母"。</div>
-</section>
+
+  <div class="tip"><b>补充两条省略规则：</b><b>LEFT / RIGHT 的第二个参数可以省略</b>，省略时默认取 <b>1 个</b>字符，如 =LEFT("橘子计算机") → "橘"；<b>MID 的三个参数都不能省</b>。<br><b>课堂拓展（不在考纲 18 个必背函数内，认得即可）：</b>LEN 数字符个数、LENB 数字节数（汉字算 2 字节）、TODAY() 取当前日期、NOW() 取当前日期与时间。MOD 的<b>除数不能为 0</b>，否则报错；余数符号与<b>除数</b>一致。</div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -422,7 +441,37 @@ body.slim section.mod[data-tier="low"]{display:none}
 文本结果一定要加双引号，否则会报 #NAME?</div>
 
   <div class="okbox"><b>为什么 RANK 要用绝对引用？</b>因为要往下填充公式时，<b>比较范围不能跟着移动</b>。若写成 <code>C2:C41</code>，填充到第二行就变成 C3:C42，最后一行会缺一格——这是 Excel 综合应用题最常见的扣分点。</div>
-</section>
+
+<h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">IF 多层嵌套的"剥洋葱"写法</h3>
+  <div class="flow">四步写出不会错的多层 IF（以成绩分等级为例）
+第1步  画数轴，标出题干给的分段节点：60、80、90
+第2步  从<b>最左（或最右）一端</b>开始写，先处理<b>完全确定</b>的那一段
+       =IF(A1&lt;60,"不及格",  )        ← 第三参数先留空
+第3步  把剩下的区间再写一层 IF，<b>整段塞进上一层的第三参数</b>
+       =IF(A1&lt;60,"不及格",IF(A1&lt;80,"及格",  ))
+第4步  继续剥到只剩一段，补齐所有<b>右括号</b>
+       =IF(A1&lt;60,"不及格",IF(A1&lt;80,"及格",IF(A1&lt;90,"良好","优秀")))</div>
+
+  <div class="okbox"><b>三个检查点：</b>①每层 IF 的<b>括号必须成对</b>，三层 IF 结尾就有三个右括号；②所有文本结果<b>加英文双引号</b>，漏了会报 <b>#NAME?</b>；③参数之间一律<b>英文逗号</b>。写完可选中公式按"公式求值"逐步验算。</div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid #0e6b8a">综合应用设计题范例：从身份证号里提取信息</h3>
+  <p style="font-size:13.6px;line-height:1.85;color:var(--ink2);margin:6px 0 10px">题型说明：给一张"身份信息表"（含身份证号）和一张"籍贯表"（籍贯代码 → 地区），要求写出公式完成后四位、年龄、性别、籍贯四项。这是<b>综合应用/设计题</b>的典型样式，把文本、日期、逻辑、查找四类函数串在一起考。</p>
+
+  <div class="flow">先记身份证的编码规则
+第 <b>7-10</b> 位   出生年份（4 位）
+第 <b>17</b> 位     奇数 = 男，偶数 = 女
+<b>前 6 位</b>       籍贯（行政区划）代码</div>
+
+  <table>
+    <tr><th style="width:110px">要求</th><th>公式（设身份证号在 B2）</th><th style="width:210px">思路</th></tr>
+    <tr><td><b>后四位</b></td><td><b>=RIGHT(B2,4)</b></td><td>从右取 4 个字符</td></tr>
+    <tr><td><b>年龄</b></td><td><b>=YEAR(TODAY())-MID(B2,7,4)</b></td><td>当前年份 − 出生年份；MID 从第 7 位取 4 位</td></tr>
+    <tr><td><b>性别</b></td><td><b>=IF(MOD(MID(B2,17,1),2)=0,"女","男")</b></td><td>取第 17 位 → 除 2 取余 → 余 0 为偶数即女</td></tr>
+    <tr><td><b>籍贯</b></td><td><b>=VLOOKUP(LEFT(B2,6),籍贯表!A:B,2,0)</b></td><td>取前 6 位代码 → 跨表精确查找 → 返回第 2 列</td></tr>
+  </table>
+
+  <div class="warnbox"><b>四个必踩的坑：</b>①身份证号是 <b>18 位</b>，必须按<b>文本型</b>存放（前置半角单引号），否则会变成科学计数法、后几位丢失；②<b>MID 的第三参数是"取几个"不是"取到第几位"</b>；③嵌套函数<b>从最内层往外算</b>：先 MID 再 MOD 最后 IF；④VLOOKUP 第四参数写 <b>0</b>（精确匹配），跨表引用要写 <b>表名!区域</b>。写完用<b>填充柄向下填充</b>批量生成，注意查找区域要用<b>绝对引用</b>锁定。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -549,7 +598,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 15 题</h2>
+      <h2>自测 29 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
@@ -581,6 +630,41 @@ body.slim section.mod[data-tier="low"]{display:none}
     <details><summary>14. 要在区域 B2:B10 中按"一班"为条件对 C2:C10 求和，公式为 ______。</summary><div class="ans"><b>=SUMIF(B2:B10,"一班",C2:C10)</b>。</div></details>
     <details><summary>15. 公式 =IF(AVERAGE(B2:B10)&gt;=60,"及格","不及格") 中，先计算的是 ______ 函数。</summary><div class="ans"><b>AVERAGE</b>（嵌套时先算最内层）。</div></details>
   </div>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:18px 0 6px"><b>补充题（按课程逐集精讲与四川考向新增 14 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>一、判断题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>16. =SUM(A1:A10) 与 =SUM("3",TRUE,5) 对文本型数字和逻辑值的处理规则相同。</summary><div class="ans"><b>错误。</b>参数是<b>引用</b>时只认数值型，文本型数字与逻辑值被忽略；参数是<b>常量</b>时先转换（文本型数字转数值、TRUE→1、FALSE→0）再计算。</div></details>
+    <details><summary>17. 公式开头的等号也是比较运算符。</summary><div class="ans"><b>错误。</b>开头的 = 只是“这是公式”的格式标识，公式中间出现的 = 才是比较运算符。</div></details>
+    <details><summary>18. LEFT 函数的第二个参数省略时会报错。</summary><div class="ans"><b>错误。</b>省略时默认取 <b>1 个</b>字符。RIGHT 同理。</div></details>
+    <details><summary>19. A1:B3 与 B3:A1 表示两个不同的区域。</summary><div class="ans"><b>错误。</b>同一个矩形可用两条对角线的任意端点表示，共 <b>4 种等价写法</b>。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <div class="qa">
+    <details><summary>20. A1:A10 中有 9 个数值和 1 个文本型数字，=AVERAGE(A1:A10) 按几个数求平均（　）<br>A. 10　B. 9　C. 1　D. 报错</summary><div class="ans"><b>B。</b>引用参数<b>只统计数值型</b>单元格，文本型数字被忽略。</div></details>
+    <details><summary>21. =MID("20261119",3,2) 的结果是（　）<br>A. 26　B. 2611　C. 11　D. 19</summary><div class="ans"><b>A。</b>从第 3 位起取 <b>2 个</b>字符（第三参数是“取几个”，不是“取到第几位”）。</div></details>
+    <details><summary>22. VLOOKUP 第三参数的计数起点是（　）<br>A. 工作表的 A 列　B. 查找区域的第一列　C. 查找值所在行　D. 活动单元格</summary><div class="ans"><b>B。</b>不是按工作表全局列号计数。</div></details>
+    <details><summary>23. =IF(MOD(MID(B2,17,1),2)=0,"女","男") 中最先执行的是（　）<br>A. IF　B. MOD　C. MID　D. 三者同时</summary><div class="ans"><b>C。</b>嵌套函数<b>从最内层往外算</b>：MID → MOD → IF。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、多项选择题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>24. 关于运算符优先级，正确的有（　）<br>A. 括号最先计算　B. 引用运算符高于算术运算符　C. 文本连接高于比较运算符　D. 乘方高于乘除</summary><div class="ans"><b>ABCD。</b>顺序：引用 → 算术 → 文本 → 比较。</div></details>
+    <details><summary>25. 关于 RANK 函数，正确的有（　）<br>A. 第三参数 0 或省略为降序　B. 第三参数非 0 为升序　C. 排名区域宜用绝对引用　D. 可向下填充批量排名</summary><div class="ans"><b>ABCD。</b>不锁区域会在填充时错位，是综合题最常见扣分点。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、填空题（2 题）</b></p>
+  <div class="qa">
+    <details><summary>26. 公式中把两段文本拼接起来的运算符是 ______。</summary><div class="ans"><b>&amp;</b>（文本连接运算符）。=123&amp;345 得文本 123345。</div></details>
+    <details><summary>27. 身份证号第 ______ 位为奇数表示男性。</summary><div class="ans"><b>17</b>。第 7-10 位是出生年份，前 6 位是籍贯代码。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>五、简答题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>28. 简述统计函数中“引用参数”与“常量参数”的运算规则差异。（5 分）</summary><div class="ans">①参数为<b>单元格引用或区域</b>时，<b>只识别数值型</b>数据，文本、文本型数字、逻辑值、空单元格<b>一律不参与</b>运算；②参数为<b>直接写入的常量</b>时，<b>先转换再计算</b>：文本型数字转为对应数值，<b>TRUE 转 1、FALSE 转 0</b>；③该规则统一适用于 SUM、AVERAGE、MAX、MIN、COUNT 五个函数。</div></details>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>六、综合应用题（1 题）</b></p>
+  <div class="qa">
+    <details><summary>29. 身份证号存放在 B2（文本型），写出计算“年龄”和“性别”的公式。（6 分）</summary><div class="ans"><b>年龄：</b>=YEAR(TODAY())-MID(B2,7,4)　（当前年份减出生年份）<br><b>性别：</b>=IF(MOD(MID(B2,17,1),2)=0,"女","男")<br>评分要点：MID 第三参数为 4 与 1；MOD 判奇偶；文本结果加英文双引号；写完用填充柄向下填充。</div></details>
+  </div>
+
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>第六章 专项练习 · 复习题 · 冲刺测试（2027 四川专升本计算机）</title>
 <style>
-:root{--ink:#15212c;--ink2:#3b4b59;--muted:#6b7a88;--paper:#f7f5f0;--card:#fff;--line:#e3ded4;
+:root{--ink:#15212c;--ink2:#3b4b59;--muted:#6b7a88;--paper:#fffaf8;--card:#fff;--line:#efe5e1;
 --c1:#0e6b8a;--c1bg:#e9f2f6;--c4:#b23a2e;--c4bg:#fbeeec;--c5:#1f6b4a;--c5bg:#e8f2ed;
 --gold:#8a5a00;--goldbg:#fbf3dd;--c3:#2b4a8b;--c3bg:#eaeef7}
 *{box-sizing:border-box}
@@ -33,7 +33,7 @@ h1 .light{color:var(--muted);font-weight:500;font-size:.6em;display:block;margin
 .mod-h .tag{font-size:12px;color:var(--muted);display:block;margin-top:2px}
 .hr{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:11px 0 12px}
 .sub{margin:16px 0 6px;padding:6px 12px;background:var(--c3bg);border-left:3px solid var(--c3);border-radius:0 8px 8px 0;font-size:13.2px;font-weight:700;color:#1e356b}
-.qi{border-bottom:1px dashed #e6e0d4;padding:9px 0 10px}
+.qi{border-bottom:1px dashed #e8d7d2;padding:9px 0 10px}
 .qi:last-child{border-bottom:0}
 .qh{font-size:13.9px;line-height:1.75}
 .qn{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;background:#eef1f3;color:#42535f;border-radius:6px;font-weight:700;font-size:12.5px;margin-right:7px}
@@ -63,7 +63,7 @@ footer b{color:var(--ink2)}
 .st.wrong{background:#fbeeec;color:#a32a1c;border-color:#efc4bc}
 .st.done{background:#e9effa;color:#2b4a8b;border-color:#c3d0ea}
 .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:6px;margin:7px 0 2px}
-.op{display:flex;gap:8px;align-items:flex-start;text-align:left;font-family:inherit;font-size:13.2px;line-height:1.7;color:#3d4d5a;background:#fcfcfa;border:1px solid #e3ded4;border-radius:9px;padding:7px 11px;cursor:pointer;transition:background .12s,border-color .12s}
+.op{display:flex;gap:8px;align-items:flex-start;text-align:left;font-family:inherit;font-size:13.2px;line-height:1.7;color:#3d4d5a;background:#fcfcfa;border:1px solid #efe5e1;border-radius:9px;padding:7px 11px;cursor:pointer;transition:background .12s,border-color .12s}
 .op:hover{border-color:#a8cfdd;background:#f2f9fc}
 .op b{flex:0 0 auto;width:20px;height:20px;line-height:20px;text-align:center;border-radius:5px;background:#eef1f3;color:#42535f;font-size:12px;margin-top:1px}
 .op em{margin-left:auto;font-style:normal;font-weight:700;font-size:12px;padding-left:6px}
@@ -76,11 +76,11 @@ footer b{color:var(--ink2)}
 .op.sel{border-color:#2b4a8b;background:#eaeef7}
 .op.sel b{background:#2b4a8b;color:#fff}
 .op.lock{cursor:default}
-.op.lock:hover{border-color:#e3ded4;background:#fcfcfa}
+.op.lock:hover{border-color:#efe5e1;background:#fcfcfa}
 .op.correct.lock:hover{border-color:#3f9b74;background:#e8f5ee}
 .op.wrong.lock:hover{border-color:#d1584a;background:#fbeeec}
 .qfoot{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap;align-items:center}
-.mini{cursor:pointer;font-family:inherit;font-size:11.6px;border:1px solid #dcd6c9;background:#fff;color:#66757f;border-radius:7px;padding:3px 11px;transition:.12s}
+.mini{cursor:pointer;font-family:inherit;font-size:11.6px;border:1px solid #deccc7;background:#fff;color:#66757f;border-radius:7px;padding:3px 11px;transition:.12s}
 .mini:hover{color:#0b5a75;border-color:#a8cfdd;background:#f2f9fc}
 .mini.on{border-color:#a8cfdd;background:#e9f2f6;color:#0b5a75;font-weight:700}
 .tip{font-size:11.6px;color:#a32a1c;margin-left:2px}
@@ -88,14 +88,14 @@ footer b{color:var(--ink2)}
 .ansbox.show{display:block}
 .sbar{display:flex;align-items:center;gap:10px;margin:2px 0 10px;font-size:11.8px;color:#6b7a88}
 .sbar-t{flex:0 0 auto;font-variant-numeric:tabular-nums}
-.track{flex:1;height:5px;background:#ece6da;border-radius:3px;overflow:hidden}
+.track{flex:1;height:5px;background:#eeddd8;border-radius:3px;overflow:hidden}
 .track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c93b0,#1f6b4a);border-radius:3px;transition:width .2s}
 .scorebar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:12.2px;color:#5a6975;padding:5px 26px 3px;margin:0 auto}
 .scorebar b{color:#b23a2e;font-variant-numeric:tabular-nums}
 .scorebar .hint{color:#8b929a;font-size:11.4px}
 
 .fillrow{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-top:7px}
-.fill{flex:1 1 220px;min-width:170px;font-family:inherit;font-size:13.3px;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:8px;padding:6px 11px;line-height:1.6}
+.fill{flex:1 1 220px;min-width:170px;font-family:inherit;font-size:13.3px;color:#2a3743;background:#fff;border:1px solid #deccc7;border-radius:8px;padding:6px 11px;line-height:1.6}
 .fill::placeholder{color:#a8b0b7}
 .fill:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
 .fill.right{border-color:#3f9b74;background:#f3fbf7}
@@ -103,7 +103,7 @@ footer b{color:var(--ink2)}
 .fill:disabled{opacity:.92;cursor:default}
 @media print{.fillrow{display:none}}
 
-.essay{margin-top:7px;width:100%;min-height:86px;font-family:inherit;font-size:13.2px;line-height:1.72;color:#2a3743;background:#fff;border:1px solid #dcd6c9;border-radius:9px;padding:8px 11px;resize:vertical}
+.essay{margin-top:7px;width:100%;min-height:86px;font-family:inherit;font-size:13.2px;line-height:1.72;color:#2a3743;background:#fff;border:1px solid #deccc7;border-radius:9px;padding:8px 11px;resize:vertical}
 .essay::placeholder{color:#a8b0b7}
 .essay:focus{outline:none;border-color:#a8cfdd;box-shadow:0 0 0 3px rgba(44,147,176,.12)}
 .essay.right{border-color:#3f9b74;background:#f6fcf8}
@@ -167,7 +167,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 }
 </style><style id="lesson-pager-style">
 .lesson-pager{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:stretch;margin:28px 0 8px;padding-top:14px;border-top:1px solid #e8dccf}
-.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fffaf5;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
+.lesson-pager a{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;padding:10px 13px;border:1px solid #e6d7c8;border-radius:11px;background:#fff6f3;color:#4b3a2e;text-decoration:none;transition:background .15s,border-color .15s}
 .lesson-pager a:hover{background:#fbe9ee;border-color:#dfb9c5;color:#8c4057}
 .lesson-pager .pager-prev{align-items:flex-start;text-align:left}
 .lesson-pager .pager-next{align-items:flex-end;text-align:right}
