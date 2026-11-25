@@ -1,16 +1,16 @@
-name: Unpack 1.4.8 site bundle
+name: Unpack 1.4.9 site bundle
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - site-bundle-1.4.8.zip
+      - site-bundle-1.4.9.zip
 
 permissions:
   contents: write
 
 concurrency:
-  group: unpack-site-1.4.8
+  group: unpack-site-1.4.9
   cancel-in-progress: false
 
 jobs:
@@ -23,13 +23,13 @@ jobs:
 
       - name: Unpack site bundle
         run: |
-          unzip -o site-bundle-1.4.8.zip -d .
-          rm site-bundle-1.4.8.zip
+          unzip -o site-bundle-1.4.9.zip -d .
+          rm site-bundle-1.4.9.zip
 
       - name: Commit unpacked site
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "release: 1.4.8 按四川考纲补全缺失考点" || echo "no changes"
+          git commit -m "release: 1.4.9 第三章逐集核对补缺、题目更新与粉白配色统一" || echo "no changes"
           git push
