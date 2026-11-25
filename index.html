@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' https://vassdtgvjjowlldnncad.supabase.co; frame-src 'self' data: blob:; form-action 'self'" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' https://vassdtgvjjowlldnncad.supabase.co https://mantledb.sh; frame-src 'self' data: blob:; form-action 'self'" />
 <title>小野寺 · 计算机基础手帐｜2027 四川专升本</title>
 <meta name="description" content="2027 四川统招专升本计算机基础：21 课讲义、7 册专项练习与冲刺测试、2025 / 2026 真题整卷、即时判分与进度记录。" />
 <link rel="preload" as="image" href="assets/art-floral.webp" fetchpriority="high">
@@ -1170,7 +1170,12 @@ function scheduleReview(r, ok){
 }
 function refreshErrBadge(){ var el=document.getElementById('errCnt'); if(el) el.textContent=errDueCount(); }
 function chapterOfBook(b){ for(var i=0;i<CHAP.length;i++) if(CHAP[i].book===b) return CHAP[i]; return null; }
-function hasFullAccess(){ return !!(accountState && accountState.isInternal === true); }
+function hasFullAccess(){
+  if(!accountState) return false;
+  // 站长分配的旧账号（admin / student01-05）走 MantleDB，登录即视为内部账号，开放全部资料。
+  if(accountState.provider === 'legacy') return true;
+  return accountState.isInternal === true;
+}
 function isAdminAccount(){ return !!(accountState && accountState.role === 'admin'); }
 function isExternalAccount(){ return !hasFullAccess(); }
 function isFreeDoc(id){ return id === 'ch1-l1' || id === 'ch1-l2' || id === 'ch1-l3' || id === 'ch1-book'; }
@@ -2928,7 +2933,7 @@ document.addEventListener('visibilitychange', function(){
   </section>
 </div>
 
-<div class="site-signature" style="position:fixed;left:50%;transform:translateX(-50%);bottom:6px;z-index:9999;font-size:12px;color:#a88f96;letter-spacing:.12em;opacity:.7;pointer-events:none;font-family:inherit">香菇喜欢你 · 小野寺 · v1.4.9</div>
+<div class="site-signature" style="position:fixed;left:50%;transform:translateX(-50%);bottom:6px;z-index:9999;font-size:12px;color:#a88f96;letter-spacing:.12em;opacity:.7;pointer-events:none;font-family:inherit">香菇喜欢你 · 小野寺 · v1.4.10</div>
 <script>
 /* ===== 橘子 Supabase 兼容层：邮箱登录、进度/错题/答题同步、注销 ===== */
 (function(){
