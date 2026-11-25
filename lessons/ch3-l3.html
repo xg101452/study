@@ -165,8 +165,26 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 .lesson-pager .pager-mid a:hover{background:transparent;color:#8c4057}
 @media(max-width:640px){.lesson-pager{grid-template-columns:1fr;gap:8px}.lesson-pager .pager-mid{order:-1;padding:0 0 2px;gap:4px}.lesson-pager a{padding:10px 12px}.lesson-pager .pager-next{align-items:flex-start;text-align:left}}
 </style>
+
+<style id="lead-layer-style">
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:2px 0 12px;font-size:12.6px}
+.chain .ck{background:#fff;border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:var(--muted)}
+.chain .ck.now{background:var(--c1bg);border-color:#a8cfdd;color:#0b5a75;font-weight:700}
+.chain .ar{color:#b9c2c9}
+.leadq{font-size:16.5px;font-weight:700;color:var(--ink);margin:0 0 8px;line-height:1.6}
+.leadq::before{content:'本课只解决一个问题 ';color:var(--c4);font-size:12px;font-weight:700;letter-spacing:1px;display:block;margin-bottom:2px}
+.leadbody{font-size:14.6px;line-height:1.9;color:var(--ink2)}
+.leadbridge{display:grid;gap:6px;margin-top:12px;font-size:13.4px}
+.leadbridge .lb1{color:var(--muted)}
+.leadbridge .lb2{color:#0b5a75}
+.leadhow{margin-top:12px;font-size:13px;color:var(--gold);background:var(--goldbg);border:1px solid #ecd9a5;border-radius:9px;padding:8px 12px}
+body.slim .syl{display:none}
+body.slim section.mod[data-tier="low"]{display:none}
+.slimtoggle{margin-left:auto}
+@media(max-width:760px){.leadq{font-size:15.5px}.leadbody{font-size:14px}}
+</style>
 </head>
-<body>
+<body class="slim">
 
 <header class="hero">
   <div class="wrap">
@@ -191,6 +209,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 
 <nav class="toc">
   <div class="wrap">
+    <a href="#lead">人话导学</a>
     <a href="#s0">考 / 不考</a>
     <a href="#s1">① 三个层级</a>
     <a href="#s2">② 录入技巧</a>
@@ -200,10 +219,29 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     <a href="#s6">易错清单</a>
     <a href="#s7">必背 14 条</a>
     <a href="#s8">自测 14 题</a>
+  
+    <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
 </nav>
 
 <main class="wrap">
+<section class="mod" id="lead">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#1f6b4a)">读</div>
+    <div><h2>人话导学：先读懂，再背考点</h2>
+    <span class="tag">零基础先读这一节 · 考点只是给刚懂的东西起名字</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="chain"><span class="ck">表格/图文/目录</span><span class="ar">→</span><span class="ck now">Excel 三层+地址</span><span class="ar">→</span><span class="ck">公式与函数</span></div>
+  <p class="leadq">工作簿、工作表、单元格是什么关系？地址怎么写？</p>
+  <div class="leadbody">工作簿＝一本账本，工作表＝账本里的一页，单元格＝页上的一个格子。格子地址＝列字母+行号（B3）。<br>关键在“<b>引用</b>”：相对地址 B3 复制会跟着变，绝对地址 $B$3 复制不变，混合 $B3/B$3 锁一半。本课就把这三种地址和填充柄练熟。</div>
+  <div class="leadbridge">
+    <span class="lb1">承上：Word 处理文章，Excel 处理数据。</span>
+    <span class="lb2">启下：地址会写了，下一课在格子里做计算：公式与函数。</span>
+  </div>
+  <div class="leadhow">怎么读本课：① 读懂上面这段 → ② 默认已开启“只看必考”，觉得不够再点“显示全部” → ③ 做文末自测，全对就进下一课。</div>
+</section>
+
 
 <section class="mod" id="s0">
   <div class="mod-h">
@@ -232,7 +270,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <div class="tip"><b>本课最值钱的一句话：</b><code>$</code> 在字母前锁<b>列</b>，在数字前锁<b>行</b>，两个都有就都锁。<b>复制公式时，没被锁的部分才跟着"走"。</b>这句话能解开绝大多数引用题。</div>
 </section>
 
-<section class="mod" id="s1">
+<section data-tier="low" class="mod" id="s1">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
     <div>

@@ -165,8 +165,26 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 .lesson-pager .pager-mid a:hover{background:transparent;color:#8c4057}
 @media(max-width:640px){.lesson-pager{grid-template-columns:1fr;gap:8px}.lesson-pager .pager-mid{order:-1;padding:0 0 2px;gap:4px}.lesson-pager a{padding:10px 12px}.lesson-pager .pager-next{align-items:flex-start;text-align:left}}
 </style>
+
+<style id="lead-layer-style">
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:2px 0 12px;font-size:12.6px}
+.chain .ck{background:#fff;border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:var(--muted)}
+.chain .ck.now{background:var(--c1bg);border-color:#a8cfdd;color:#0b5a75;font-weight:700}
+.chain .ar{color:#b9c2c9}
+.leadq{font-size:16.5px;font-weight:700;color:var(--ink);margin:0 0 8px;line-height:1.6}
+.leadq::before{content:'本课只解决一个问题 ';color:var(--c4);font-size:12px;font-weight:700;letter-spacing:1px;display:block;margin-bottom:2px}
+.leadbody{font-size:14.6px;line-height:1.9;color:var(--ink2)}
+.leadbridge{display:grid;gap:6px;margin-top:12px;font-size:13.4px}
+.leadbridge .lb1{color:var(--muted)}
+.leadbridge .lb2{color:#0b5a75}
+.leadhow{margin-top:12px;font-size:13px;color:var(--gold);background:var(--goldbg);border:1px solid #ecd9a5;border-radius:9px;padding:8px 12px}
+body.slim .syl{display:none}
+body.slim section.mod[data-tier="low"]{display:none}
+.slimtoggle{margin-left:auto}
+@media(max-width:760px){.leadq{font-size:15.5px}.leadbody{font-size:14px}}
+</style>
 </head>
-<body>
+<body class="slim">
 
 <header class="hero">
   <div class="wrap">
@@ -191,6 +209,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 
 <nav class="toc">
   <div class="wrap">
+    <a href="#lead">人话导学</a>
     <a href="#s0">考 / 不考</a>
     <a href="#s1">① 数字媒体概念</a>
     <a href="#s2">② 音频数字化</a>
@@ -200,10 +219,29 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     <a href="#s6">易错清单</a>
     <a href="#s7">必背 12 条</a>
     <a href="#s8">自测 12 题</a>
+  
+    <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
 </nav>
 
 <main class="wrap">
+<section class="mod" id="lead">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#1f6b4a)">读</div>
+    <div><h2>人话导学：先读懂，再背考点</h2>
+    <span class="tag">零基础先读这一节 · 考点只是给刚懂的东西起名字</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="chain"><span class="ck">Windows 操作台</span><span class="ar">→</span><span class="ck now">媒体数字化</span><span class="ar">→</span><span class="ck">Word 字/段/页</span></div>
+  <p class="leadq">声音、图片、视频本来是连续的，怎么变成 0/1？</p>
+  <div class="leadbody">连续的东西要“<b>切碎了量</b>”。声音：每秒量很多次（采样频率）、每次量多细（量化位数），乘起来就是数据量。图片：切成一个个像素，每像素记颜色（位深）。视频：一帧帧图片连播。<br>本课就三个公式：声音、图像、视频数据量，以及“采样/量化/像素/分辨率”几个词。</div>
+  <div class="leadbridge">
+    <span class="lb1">承上：前面都是“文字和数字”，这一课处理“连续媒体”。</span>
+    <span class="lb2">启下：媒体会表示了，第二章完。下一章进入“用电脑干活”：Office。</span>
+  </div>
+  <div class="leadhow">怎么读本课：① 读懂上面这段 → ② 默认已开启“只看必考”，觉得不够再点“显示全部” → ③ 做文末自测，全对就进下一课。</div>
+</section>
+
 
 <section class="mod" id="s0">
   <div class="mod-h">
@@ -232,7 +270,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <div class="tip"><b>本课的最小复习量：</b>背两个公式 + 记住"位图会糊、矢量不会糊" + 记住四个格式的归属（WMF 矢量、JPEG 有损、BMP 无损、GIF 动图）。这四点能覆盖本课的绝大多数题。</div>
 </section>
 
-<section class="mod" id="s1">
+<section data-tier="low" class="mod" id="s1">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#2c93b0)">①</div>
     <div>
@@ -366,7 +404,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
   <div class="okbox"><b>反过来也考：</b>给"分辨率 1024×768、色深 32 位"，问显存至少多少？→ 1024×768×32÷8 = 3 145 728 B = 3 MB。<b>显存题与图像数据量是同一个公式</b>，只是换了场景。</div>
 </section>
 
-<section class="mod" id="s5">
+<section data-tier="low" class="mod" id="s5">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#1f6b4a,#35996d)">⑤</div>
     <div>

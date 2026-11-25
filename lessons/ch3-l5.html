@@ -165,8 +165,26 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 .lesson-pager .pager-mid a:hover{background:transparent;color:#8c4057}
 @media(max-width:640px){.lesson-pager{grid-template-columns:1fr;gap:8px}.lesson-pager .pager-mid{order:-1;padding:0 0 2px;gap:4px}.lesson-pager a{padding:10px 12px}.lesson-pager .pager-next{align-items:flex-start;text-align:left}}
 </style>
+
+<style id="lead-layer-style">
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:2px 0 12px;font-size:12.6px}
+.chain .ck{background:#fff;border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:var(--muted)}
+.chain .ck.now{background:var(--c1bg);border-color:#a8cfdd;color:#0b5a75;font-weight:700}
+.chain .ar{color:#b9c2c9}
+.leadq{font-size:16.5px;font-weight:700;color:var(--ink);margin:0 0 8px;line-height:1.6}
+.leadq::before{content:'本课只解决一个问题 ';color:var(--c4);font-size:12px;font-weight:700;letter-spacing:1px;display:block;margin-bottom:2px}
+.leadbody{font-size:14.6px;line-height:1.9;color:var(--ink2)}
+.leadbridge{display:grid;gap:6px;margin-top:12px;font-size:13.4px}
+.leadbridge .lb1{color:var(--muted)}
+.leadbridge .lb2{color:#0b5a75}
+.leadhow{margin-top:12px;font-size:13px;color:var(--gold);background:var(--goldbg);border:1px solid #ecd9a5;border-radius:9px;padding:8px 12px}
+body.slim .syl{display:none}
+body.slim section.mod[data-tier="low"]{display:none}
+.slimtoggle{margin-left:auto}
+@media(max-width:760px){.leadq{font-size:15.5px}.leadbody{font-size:14px}}
+</style>
 </head>
-<body>
+<body class="slim">
 
 <header class="hero">
   <div class="wrap">
@@ -191,6 +209,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
 
 <nav class="toc">
   <div class="wrap">
+    <a href="#lead">人话导学</a>
     <a href="#s0">考 / 不考</a>
     <a href="#s1">① 图表类型怎么选</a>
     <a href="#s2">② 图表元素与操作</a>
@@ -201,10 +220,29 @@ a:focus-visible,button:focus-visible,summary:focus-visible,details:focus-visible
     <a href="#s7">易错清单</a>
     <a href="#s8">必背 14 条</a>
     <a href="#s9">自测 14 题</a>
+  
+    <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
 </nav>
 
 <main class="wrap">
+<section class="mod" id="lead">
+  <div class="mod-h">
+    <div class="mod-no" style="background:linear-gradient(135deg,#0e6b8a,#1f6b4a)">读</div>
+    <div><h2>人话导学：先读懂，再背考点</h2>
+    <span class="tag">零基础先读这一节 · 考点只是给刚懂的东西起名字</span></div>
+  </div>
+  <div class="hr"></div>
+  <div class="chain"><span class="ck">公式与函数</span><span class="ar">→</span><span class="ck now">图表/排序/筛选</span><span class="ar">→</span><span class="ck">PPT 母版/动画</span></div>
+  <p class="leadq">一堆数字，怎么一眼看出趋势、只看想要的行？</p>
+  <div class="leadbody">图表是“数字的画”：比大小用柱形、看占比用饼图、看趋势用折线。排序是“排队”（可按多个关键字），筛选是“只露出符合条件的行”（数据没删），分类汇总是“先按某列排序再分组求和”。<br>本课记“场景→图形”和“先排序后汇总”。</div>
+  <div class="leadbridge">
+    <span class="lb1">承上：上一课会算。</span>
+    <span class="lb2">启下：Excel 完。下一课做“汇报”：PowerPoint。</span>
+  </div>
+  <div class="leadhow">怎么读本课：① 读懂上面这段 → ② 默认已开启“只看必考”，觉得不够再点“显示全部” → ③ 做文末自测，全对就进下一课。</div>
+</section>
+
 
 <section class="mod" id="s0">
   <div class="mod-h">
