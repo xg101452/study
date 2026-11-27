@@ -274,7 +274,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 冯·诺依曼</a>
     <a href="#s6">⑥ 四个"第一台"</a>
     <a href="#s7">必背 10 条</a>
-    <a href="#s8">自测 14 题</a>
+    <a href="#s8">自测 18 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -386,7 +386,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   × "计算机运算速度快，所以结果一定不出错" —— 速度快 ≠ 结果正确；<br>
   × "计算机具有逻辑判断能力，所以能完全代替人脑" —— 无创造性、无自主学习能力；<br>
   × "计算机的通用性意味着它能做任何事" —— 通用指"换程序就能换用途"，不是"无所不能"。</div>
-</section>
+
+  <div class="tip"><b>定义的四个关键词</b>（与上面三句话一一对应）：<b>自动运行</b>（按预存程序自动、连续逐条执行）· <b>数值计算</b> · <b>逻辑计算</b>（比较、判断真假）· <b>存储记忆</b>（内存与外存保存程序和数据）。<br><b>反向判断题：</b>计算机<b>"体积庞大、价格昂贵"不属于它的基本特点</b>；"运算速度快"也不等于"结果一定正确"。</div>
+  </section>
 
 <!-- ============ S2 发展历史 ============ -->
 <section class="mod" id="s2">
@@ -430,7 +432,20 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <div class="qz"><span class="lb">补充</span><b>摩尔定律（★，有印象即可）</b>　集成电路上可容纳的晶体管数目，约每 <b>18～24 个月</b> 翻一番。<br>
   <b>为什么提它</b>：它解释了"第四代为什么能持续 50 年还在迭代"，也是"微处理器划代"的理论背景。但真题从未单独考过它的具体数字。</div>
-</section>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c2)">早期计算工具与新型计算机：了解级别，认得名字就行</h3>
+  <div class="tip"><b>早期计算工具（6 种）</b>：绳结 → 算筹 → 算盘 → 计算尺 → 机械加法器 → 电子计算器。判断只考常识：<b>算盘会计算、能临时"记"数，但不能按程序自动运行</b>，所以不属于现代计算机；<b>计算尺是模拟式计算工具</b>。</div>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:18px 0 8px;padding-left:11px;border-left:4px solid var(--c2)">四类新型计算机（★ 有印象即可）</h3>
+  <table>
+    <tr><th style="width:150px">类型</th><th>核心思路</th></tr>
+    <tr><td><b>光计算机</b></td><td>用<b>光信号</b>代替电信号传输与运算，速度快、并行性好</td></tr>
+    <tr><td><b>生物（分子）计算机</b></td><td>以<b>生物分子 / DNA</b> 作数据载体，靠生化反应完成运算</td></tr>
+    <tr><td><b>超导计算机</b></td><td>用<b>超导器件</b>，功耗低、开关速度快</td></tr>
+    <tr><td><b>量子计算机</b></td><td>按<b>量子力学规律</b>存储和处理信息，可实现并行计算</td></tr>
+  </table>
+  <div class="warnbox"><b>别看混：</b>模拟计算机（按处理对象分类）<b>不是</b>新型计算机；四类新型计算机是<b>光、生物（分子）、超导、量子</b>。</div>
+  </section>
 
 <!-- ============ S3 分类与应用 ============ -->
 <section class="mod" id="s3">
@@ -565,7 +580,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   ③ "由<b>三大</b>部件组成" —— <b>错</b>，是<b>五大</b>部件（有的教材再加"总线"说六大，但考试按五作答）。</div>
 
   <div class="mem"><b>一句话串两个考点：</b>「ENIAC 三缺 —— 缺二进制、缺存储程序、缺程序自动控制；冯·诺依曼三补 —— 补二进制、补五大部件、补存储程序控制。」<br>背这一句，上一节和这一节同时解决。</div>
-</section>
+
+  <div class="tip"><b>课堂口诀「冯二存五」：</b>冯·诺依曼体系 → <b>二</b>进制表示 + <b>存</b>储程序控制 + <b>五</b>大部件。默写时先写出这三个字，再逐字往回扩成完整句子。</div>
+  </section>
 
 <!-- ============ S6 四个第一台 ============ -->
 <section class="mod" id="s6">
@@ -605,7 +622,11 @@ body.slim section.mod[data-tier="low"]{display:none}
   <span style="color:#6b7a88">四个选项逐个排除：A 是 ISO 国际标准化组织在 1984 年提出的网络体系结构，与图灵无关；C 量子计算机是当代技术方向，也不是图灵的贡献。只剩 BD —— 图灵机（1936）与图灵测试（1950）。</span></div>
 
   <div class="mem"><b>图灵只需记四个数字 + 两个名字：</b>1936 图灵机（模型）、1950 图灵测试（判断机器是否智能）、<b>计算机科学之父</b>、<b>人工智能之父</b>。看到"图灵机是实体机器""图灵提出 OSI"一律判错。</div>
-</section>
+
+  <div class="tip"><b>图灵机的两个组成部分（判断、填空）：</b>一条<b>无限长的纸带</b>（存符号）+ 一个<b>读写头</b>（读、写纸带并左右移动）。它依然是<b>抽象的计算模型</b>，不是造出来的实体机器。</div>
+
+  <div class="warnbox"><b>巴贝奇的"两台机器"别混：</b><b>差分机</b>（1822）用齿轮自动计算多项式；<b>分析机</b>（1834）才具备运算、存储、控制等部件雏形，教材说的"<b>现代通用计算机的雏形</b>"指的是<b>分析机</b>。两者都是机械式，不是电子式。</div>
+  </section>
 
 <!-- ============ S7 必背 ============ -->
 <section class="mod" id="s7">
@@ -638,40 +659,44 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 18 题</h2>
       <span class="tag">点题目看答案 · 全对即可进入第 2 课</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
   <div class="qa">
     <details><summary>1. ENIAC 采用二进制编码，并采用了存储程序方式。</summary><div class="ans"><b>错误。</b>ENIAC 用的是十进制，而且未采用存储程序方式，程序靠外部接线。存储程序是 EDSAC 的事。</div></details>
     <details><summary>2. 计算机划代的依据是所采用的物理器件。</summary><div class="ans"><b>正确。</b>物理器件（也叫逻辑元件）是唯一划分依据，不是操作系统、不是速度。</div></details>
     <details><summary>3. 微型计算机属于第三代计算机。</summary><div class="ans"><b>错误。</b>微型机属<b>第四代</b>，以微处理器出现为标志。</div></details>
     <details><summary>4. 图灵机是一台真实存在的电子计算机。</summary><div class="ans"><b>错误。</b>图灵机是 1936 年提出的<b>抽象计算模型</b>，用来讨论"什么问题是可计算的"，不是实体机器。</div></details>
+    <details><summary>5. 计算机"体积庞大、价格昂贵"属于计算机的基本特点。</summary><div class="ans"><b>错误。</b>六大特点是快、准、记、判、自、通，<b>体积与价格都不在其中</b>。这是"听着像、其实不是"型干扰项。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（7 题）</b></p>
   <div class="qa">
-    <details><summary>5. ENIAC 采用的电子元器件是（　）<br>A. 电子管　B. 晶体管　C. 中小规模集成电路　D. 大规模集成电路</summary><div class="ans"><b>A。</b>1946 年，第一代，电子管。真题原题。</div></details>
-    <details><summary>6. 世界上第一台实际运行的存储程序式电子计算机是（　）<br>A. ENIAC　B. EDSAC　C. EDVAC　D. UNIVAC</summary><div class="ans"><b>B。</b>EDSAC（1949，英国剑桥）。EDVAC 只是"设计"，UNIVAC 是"商用"。</div></details>
-    <details><summary>7. 第三代计算机采用的物理器件是（　）<br>A. 电子管　B. 晶体管　C. 中小规模集成电路　D. 大规模集成电路</summary><div class="ans"><b>C。</b>三代是"中小规模"；"大规模、超大规模"属第四代。这是最常见的错项设置。</div></details>
-    <details><summary>8. 目前计算机应用最广泛的领域是（　）<br>A. 科学计算　B. 数据处理　C. 过程控制　D. 人工智能</summary><div class="ans"><b>B。</b>数据处理最广泛；科学计算只是"最早"。这题几乎每套模拟卷都有。</div></details>
-    <details><summary>9. 下列关于计算机发展趋势的表述，不正确的是（　）<br>A. 巨型化　B. 微型化　C. 网络化　D. 单一化</summary><div class="ans"><b>D。</b>四化是巨型化、微型化、网络化、智能化。"单一化"是编出来的干扰项。</div></details>
+    <details><summary>6. ENIAC 采用的电子元器件是（　）<br>A. 电子管　B. 晶体管　C. 中小规模集成电路　D. 大规模集成电路</summary><div class="ans"><b>A。</b>1946 年，第一代，电子管。真题原题。</div></details>
+    <details><summary>7. 世界上第一台实际运行的存储程序式电子计算机是（　）<br>A. ENIAC　B. EDSAC　C. EDVAC　D. UNIVAC</summary><div class="ans"><b>B。</b>EDSAC（1949，英国剑桥）。EDVAC 只是"设计"，UNIVAC 是"商用"。</div></details>
+    <details><summary>8. 第三代计算机采用的物理器件是（　）<br>A. 电子管　B. 晶体管　C. 中小规模集成电路　D. 大规模集成电路</summary><div class="ans"><b>C。</b>三代是"中小规模"；"大规模、超大规模"属第四代。这是最常见的错项设置。</div></details>
+    <details><summary>9. 目前计算机应用最广泛的领域是（　）<br>A. 科学计算　B. 数据处理　C. 过程控制　D. 人工智能</summary><div class="ans"><b>B。</b>数据处理最广泛；科学计算只是"最早"。这题几乎每套模拟卷都有。</div></details>
+    <details><summary>10. 下列关于计算机发展趋势的表述，不正确的是（　）<br>A. 巨型化　B. 微型化　C. 网络化　D. 单一化</summary><div class="ans"><b>D。</b>四化是巨型化、微型化、网络化、智能化。"单一化"是编出来的干扰项。</div></details>
+    <details><summary>11. 下列不属于新型计算机的是（　）<br>A. 光计算机　B. 生物计算机　C. 量子计算机　D. 模拟计算机</summary><div class="ans"><b>D。</b>模拟计算机是<b>按处理对象分类</b>的一类（处理连续物理量），不是新型计算机；新型计算机是光、生物（分子）、超导、量子四类。</div></details>
+    <details><summary>12. 巴贝奇提出、被称为"现代通用计算机雏形"的是（　）<br>A. 差分机　B. 分析机　C. 算盘　D. 图灵机</summary><div class="ans"><b>B。</b>分析机（1834）含运算、存储、控制等部件雏形；差分机只是自动计算多项式的机械装置，图灵机是抽象模型。</div></details>
   </div>
 
   <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、多项选择题（2 题）</b></p>
   <div class="qa">
-    <details><summary>10. 图灵的主要贡献有（　）<br>A. OSI 参考模型的建立　B. 图灵机　C. 量子计算机　D. 图灵测试</summary><div class="ans"><b>BD。</b>2025 真题原题。图灵机（1936）＋ 图灵测试（1950）。OSI 是 ISO 提出的，量子计算机与图灵无关。</div></details>
-    <details><summary>11. 下列属于计算机主要特点的有（　）<br>A. 运算速度快　B. 计算精度高　C. 具有逻辑判断能力　D. 通用性强</summary><div class="ans"><b>ABCD。</b>六大特点中的四个。四川卷多选题常出现"四项全对"，不要因为看着都像就怀疑。</div></details>
+    <details><summary>13. 图灵的主要贡献有（　）<br>A. OSI 参考模型的建立　B. 图灵机　C. 量子计算机　D. 图灵测试</summary><div class="ans"><b>BD。</b>2025 真题原题。图灵机（1936）＋ 图灵测试（1950）。OSI 是 ISO 提出的，量子计算机与图灵无关。</div></details>
+    <details><summary>14. 下列属于计算机主要特点的有（　）<br>A. 运算速度快　B. 计算精度高　C. 具有逻辑判断能力　D. 通用性强</summary><div class="ans"><b>ABCD。</b>六大特点中的四个。四川卷多选题常出现"四项全对"，不要因为看着都像就怀疑。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、填空题（3 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、填空题（4 题）</b></p>
   <div class="qa">
-    <details><summary>12. 冯·诺依曼体系结构的三个要点是：采用 ______、由 ______ 组成、采用 ______ 原理。</summary><div class="ans"><b>二进制；五大部件；存储程序控制。</b>三个空各 1 分，写"五大部分"也给分，写"三大部件"不得分。</div></details>
-    <details><summary>13. 计算机能够自动、连续工作的根本原因是 ______。</summary><div class="ans"><b>存储程序控制原理。</b>不要答"运算速度快""有操作系统"。</div></details>
-    <details><summary>14. 有人说"第一台存储程序计算机是 ENIAC"。请判断并说明理由。</summary><div class="ans"><b>错误。</b>ENIAC 未采用存储程序方式，程序靠外部接线控制。第一台<b>实际运行</b>的存储程序式电子计算机是 <b>EDSAC</b>（1949）；<b>EDVAC</b> 是按存储程序思想<b>设计</b>的机器（1945 方案）。</div></details>
+    <details><summary>15. 冯·诺依曼体系结构的三个要点是：采用 ______、由 ______ 组成、采用 ______ 原理。</summary><div class="ans"><b>二进制；五大部件；存储程序控制。</b>三个空各 1 分，写"五大部分"也给分，写"三大部件"不得分。</div></details>
+    <details><summary>16. 计算机能够自动、连续工作的根本原因是 ______。</summary><div class="ans"><b>存储程序控制原理。</b>不要答"运算速度快""有操作系统"。</div></details>
+    <details><summary>17. 有人说"第一台存储程序计算机是 ENIAC"。请判断并说明理由。</summary><div class="ans"><b>错误。</b>ENIAC 未采用存储程序方式，程序靠外部接线控制。第一台<b>实际运行</b>的存储程序式电子计算机是 <b>EDSAC</b>（1949）；<b>EDVAC</b> 是按存储程序思想<b>设计</b>的机器（1945 方案）。</div></details>
+    <details><summary>18. 冯·诺依曼体系可记为"冯二存五"，其中"五"指的是 ______。</summary><div class="ans"><b>五大部件。</b>运算器、控制器、存储器、输入设备、输出设备；CPU＝运算器＋控制器。</div></details>
   </div>
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

@@ -221,7 +221,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s6b">2026 真题</a>
     <a href="#s7">易错清单</a>
     <a href="#s8">必背 12 条</a>
-    <a href="#s9">自测 12 题</a>
+    <a href="#s9">自测 15 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -308,7 +308,12 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <div class="qz"><span class="lb">真题</span><b>2025 · 单选 18（2 分）</b>　16 位二进制可以表示的无符号整数个数是（　）　A. 16　B. 65535　C. 65536　D. 32768<br>
   <span class="no">答案：C。n 位二进制能表示 2<sup>n</sup> 个不同组合；16 位 → 2<sup>16</sup>=65536 个，取值范围 0~65535。<b>"个数"和"最大值"差 1，这是本题唯一的坑。</b></span></div>
-</section>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c2)">由地址范围求内存容量（常考计算，两步就能算完）</h3>
+  <div class="tip"><b>内存按字节编址</b>——每个地址对应 1 个字节，所以：<b>存储单元数（字节数）＝末地址 − 首地址 + 1</b>。<br><b>三步走：</b>① 十六进制相减再 +1（借 1 当 <b>16</b>，不是当 10）；② 按位权展开成十进制，或直接写成 2 的幂；③ ÷2<sup>10</sup> 换成 KB。<br><b>【例】</b>地址 1000H～4FFFH：4FFFH − 1000H = 3FFFH，+1 = <b>4000H</b>；4000H = 4×16<sup>3</sup> = 4×2<sup>12</sup> B = 2<sup>14</sup> B = <b>16 KB</b>。</div>
+  <div class="warnbox"><b>两个常见错：</b>①忘了 <b>+1</b>（首末地址都算在内，少加 1 就整题错）；②把十六进制借位当十进制（借 1 当 <b>16</b>）。</div>
+  <div class="tip"><b>单位链再往后：</b>PB → <b>EB</b> → <b>ZB</b>，每一级仍是 1024（2<sup>10</sup>）。四川卷只考到 TB / PB，后面两级认得名字即可。</div>
+  </section>
 
 <!-- ============ S2 数值 ============ -->
 <section class="mod" id="s2">
@@ -357,7 +362,17 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td>n 位有符号（补码）</td><td>−2<sup>n−1</sup> ~ 2<sup>n−1</sup>−1</td><td>2<sup>n</sup></td></tr>
   </table>
   <div class="mem"><b>为什么补码比原码多一个 −128？</b>因为补码里 1000 0000 被解释成 −128，而原码里它表示"负零"，是浪费掉的一个编码。所以补码<b>没有负零</b>，能多表示一个数。<br><b>口诀：n 位补码，范围是 −2<sup>n−1</sup> 到 2<sup>n−1</sup>−1。</b></div>
-</section>
+
+  <div class="tip"><b>先分清两个术语：</b><b>真值</b>＝带正负号的真实数值（如 −70）；<b>机器数</b>＝它在机器里的二进制形式（含符号位，如 10111010）。题目问"−70 在机器内以什么形式存放"，答<b>机器数</b>。</div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:110px">编码</th><th style="width:170px">8 位表示范围</th><th>0 的编码</th></tr>
+    <tr><td><b>原码</b></td><td>−127 ~ +127</td><td>有 <b>+0、−0 两种</b>（0000 0000 / 1000 0000）</td></tr>
+    <tr><td><b>反码</b></td><td>−127 ~ +127</td><td>同样有 <b>+0、−0 两种</b>（0000 0000 / 1111 1111）</td></tr>
+    <tr><td><b>补码</b></td><td><b>−128 ~ +127</b></td><td><b>只有一种</b>；1000 0000 专门用来表示 −128</td></tr>
+  </table>
+  <div class="warnbox"><b>判断题两个送分点：</b>①"原码与补码的表示范围相同"——<b>错</b>，补码多一个 −128；②"补码中 0 有两种表示"——<b>错</b>，±0 只出现在原码和反码里。</div>
+  </section>
 
 <!-- ============ S3 定点浮点 ============ -->
 <section class="mod" id="s3">
@@ -469,7 +484,13 @@ body.slim section.mod[data-tier="low"]{display:none}
 通用公式： n×n 点阵的一个汉字字形码 = n² ÷ 8 字节
 （24×24 → 576 bit → 72 B；32×32 → 1024 bit → 128 B）</div>
   <div class="tip"><b>注意区分：</b>这道题问的是<b>字形码（点阵）</b>占多少，不是机内码。一个汉字在计算机里<b>存储</b>只占 2 字节（GB2312 机内码），但<b>显示</b>用的 16×16 点阵要 32 字节。两个数字差 16 倍，正是考题爱设的陷阱。</div>
-</section>
+
+  <div class="tip"><b>输入码（外码）按编码依据分三类：</b><b>音码</b>（按读音，如拼音输入法）· <b>形码</b>（按字根字形，如五笔字型）· <b>音形结合码</b>（读音＋字形）。共同特点：<b>不唯一</b>——同一个字可用不同输入码，同一个人也能换输入法。</div>
+
+  <div class="warnbox"><b>三个"唯一 / 分别"必须写准：</b>①<b>机内码唯一</b>（一个字在机器里只有一个内码），输入码不唯一；②<b>国标码就是交换码</b>，2 字节、每字节最高位为 0（21H～7EH）；机内码 2 字节、每字节最高位为 1；③加 2020H / 8080H 时<b>两个字节分别加</b>，4 位十六进制不能当一个整体直接加，否则进位会串到高字节。</div>
+
+  <div class="tip"><b>字形码的两种形式：</b><b>点阵</b>——用黑白光点拼字，点阵越大越清晰，占用按 n²÷8 字节算；<b>矢量</b>——用数学描述笔画，<b>与分辨率无关，放大不失真</b>，字库更省空间。判断"矢量字形放大后会模糊"——<b>错</b>。</div>
+  </section>
 
 <!-- ============ S6 容量计算 ============ -->
 <section class="mod" id="s6">
@@ -589,38 +610,41 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 12 题</h2>
+      <h2>自测 15 题</h2>
       <span class="tag">点题目看答案与推导 · 做错的题一定回到原文那一节</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
   <div class="qa">
     <details><summary>1. 1KB 等于 1000 字节。</summary><div class="ans"><b>错误。</b>1KB = 1024B = 2<sup>10</sup>B。</div></details>
     <details><summary>2. 8 位二进制补码所能表示的整数范围是 −128 ~ +127。</summary><div class="ans"><b>正确。</b>−2<sup>7</sup> ~ 2<sup>7</sup>−1。注意补码没有负零，所以比原码多一个负数。</div></details>
     <details><summary>3. ASCII 码用 8 位二进制编码，共可表示 256 个字符。</summary><div class="ans"><b>错误。</b>ASCII 是 <b>7 位编码、128 个字符</b>；8 位是它"存储时占用的字节宽度"，最高位通常补 0。</div></details>
     <details><summary>4. 一个 16×16 点阵汉字的字形码占 32 个字节。</summary><div class="ans"><b>正确。</b>16×16 = 256 个点，每点 1 位 → 256 bit ÷ 8 = 32 B。</div></details>
+    <details><summary>5. 矢量字形码放大后会变得模糊、出现锯齿。</summary><div class="ans"><b>错误。</b>矢量字形用数学描述笔画，<b>与分辨率无关</b>，放大不失真；会模糊的是点阵字形。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
   <div class="qa">
-    <details><summary>5. 计算机中存储容量的基本单位是（　）<br>A. 位　B. 字节　C. 字　D. 千字节</summary><div class="ans"><b>B。</b>位是信息最小单位，字节才是容量基本单位——两个"基本/最小"极易混，看清题干问哪个。</div></details>
-    <details><summary>6. 某计算机字长为 32 位，表示该机（　）<br>A. 内存容量为 32 位　B. 一次能处理 32 位二进制数据　C. 有 32 个 CPU　D. 主频为 32MHz</summary><div class="ans"><b>B。</b>字长＝CPU 一次并行处理的二进制位数。</div></details>
-    <details><summary>7. 已知字符 'A' 的 ASCII 码为 65，则字符 'D' 的 ASCII 码是（　）<br>A. 66　B. 67　C. 68　D. 100</summary><div class="ans"><b>C。</b>A→65，B→66，C→67，D→68，逐个大写字母 +1。</div></details>
-    <details><summary>8. 某 8 位补码为 1001 0110，其真值是（　）<br>A. −22　B. −106　C. 150　D. −150</summary><div class="ans"><b>B。</b>最高位 1 → 负。取反加一：10010110 → 01101001 → +1 → 01101010 = 106 → <b>−106</b>。（若误按位权算出 150 再减 256 得 −106 也一样，但方法不同、易错）</div></details>
+    <details><summary>6. 计算机中存储容量的基本单位是（　）<br>A. 位　B. 字节　C. 字　D. 千字节</summary><div class="ans"><b>B。</b>位是信息最小单位，字节才是容量基本单位——两个"基本/最小"极易混，看清题干问哪个。</div></details>
+    <details><summary>7. 某计算机字长为 32 位，表示该机（　）<br>A. 内存容量为 32 位　B. 一次能处理 32 位二进制数据　C. 有 32 个 CPU　D. 主频为 32MHz</summary><div class="ans"><b>B。</b>字长＝CPU 一次并行处理的二进制位数。</div></details>
+    <details><summary>8. 已知字符 'A' 的 ASCII 码为 65，则字符 'D' 的 ASCII 码是（　）<br>A. 66　B. 67　C. 68　D. 100</summary><div class="ans"><b>C。</b>A→65，B→66，C→67，D→68，逐个大写字母 +1。</div></details>
+    <details><summary>9. 某 8 位补码为 1001 0110，其真值是（　）<br>A. −22　B. −106　C. 150　D. −150</summary><div class="ans"><b>B。</b>最高位 1 → 负。取反加一：10010110 → 01101001 → +1 → 01101010 = 106 → <b>−106</b>。（若误按位权算出 150 再减 256 得 −106 也一样，但方法不同、易错）</div></details>
+    <details><summary>10. 某内存地址范围是 1000H～4FFFH，其容量是（　）<br>A. 8 KB　B. 16 KB　C. 20 KB　D. 32 KB</summary><div class="ans"><b>B。</b>4FFFH−1000H=3FFFH，+1=4000H=4×16<sup>3</sup>=4×2<sup>12</sup> B=2<sup>14</sup> B=<b>16 KB</b>。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（3 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（4 题）</b></p>
   <div class="qa">
-    <details><summary>9. 1 GB = ______ MB。</summary><div class="ans"><b>1024。</b></div></details>
-    <details><summary>10. 一幅 640×480 像素、24 位真彩色的未压缩图像，数据量约为 ______ KB。</summary><div class="ans"><b>900 KB。</b>640×480×24÷8 = 921 600 B；921 600÷1024 = 900 KB。</div></details>
-    <details><summary>11. 某汉字的区位码为 1601，则它的机内码是 ______H。</summary><div class="ans"><b>B0A1H。</b>国标码 = 10H+20H=30H、01H+20H=21H → 3021H；机内码 = 3021H+8080H = B0A1H。</div></details>
+    <details><summary>11. 1 GB = ______ MB。</summary><div class="ans"><b>1024。</b></div></details>
+    <details><summary>12. 一幅 640×480 像素、24 位真彩色的未压缩图像，数据量约为 ______ KB。</summary><div class="ans"><b>900 KB。</b>640×480×24÷8 = 921 600 B；921 600÷1024 = 900 KB。</div></details>
+    <details><summary>13. 某汉字的区位码为 1601，则它的机内码是 ______H。</summary><div class="ans"><b>B0A1H。</b>国标码 = 10H+20H=30H、01H+20H=21H → 3021H；机内码 = 3021H+8080H = B0A1H。</div></details>
+    <details><summary>14. 汉字的输入码按编码依据分为音码、形码和 ______ 三类。</summary><div class="ans"><b>音形结合码。</b>音码看读音（拼音），形码看字根字形（五笔），音形结合码二者都用。</div></details>
   </div>
 
   <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、简答题（1 题，5 分）</b></p>
   <div class="qa">
-    <details><summary>12. 简述计算机中常用的信息存储单位及其换算关系。</summary>
+    <details><summary>15. 简述计算机中常用的信息存储单位及其换算关系。</summary>
     <div class="ans"><b>参考答案：</b><br>
     ①<b>位（bit）</b>：一个二进制位，是信息的最小单位；<br>
     ②<b>字节（Byte）</b>：8 个二进制位，是存储容量的基本单位，1B = 8bit；<br>

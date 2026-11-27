@@ -236,7 +236,7 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 二进制运算与逻辑</a>
     <a href="#s6">⑥ 易错清单</a>
     <a href="#s7">必背 9 条</a>
-    <a href="#s8">自测 12 题</a>
+    <a href="#s8">自测 15 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -335,7 +335,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   ① 八进制里<b>不会出现 8、9</b>，十六进制里<b>不会出现 G</b>——题目写成"578O""12G"就一定是错的；<br>
   ② 判断"十六进制数 A 表示 10"—— <b>对</b>；<br>
   ③ "基数就是数制的位数"—— 错，基数指<b>数码的个数</b>，不是"位数"。</div>
-</section>
+
+  <div class="tip"><b>进位计数制 vs 非进位计数制（"理解数制"的常考边界）：</b><br><b>进位计数制</b>——同一个数码放在不同位置表示不同的值，<b>逢基数进一</b>；二进制、八进制、十进制、十六进制都属于这一类。<br><b>非进位计数制</b>——数码表示的值<b>不随位置改变</b>，典型代表是<b>罗马数字</b>（Ⅳ 无论写在哪都是 4）。问"下列属于非进位计数制的是"，答案选罗马数字。</div>
+  </section>
 
 <!-- ============ S2 对照表 ============ -->
 <section class="mod" id="s2">
@@ -452,7 +454,13 @@ body.slim section.mod[data-tier="low"]{display:none}
   (EA)<sub>16</sub> = 14×16<sup>1</sup>+10×16<sup>0</sup> = 224+10 = <b>234</b><br>
   因为 236 &gt; 234 &gt; 230，所以 <b>(354)<sub>8</sub> 最大</b>。<br>
   <span class="no">评分：三个换算各 1 分，比较结论 2 分。只写"354最大"不写过程，通常只给 1～2 分。</span></div>
-</section>
+
+  <div class="tip"><b>分组后的速算（不必按权展开）：</b>3 位二进制从左到右永远是 <b>4-2-1</b>，4 位是 <b>8-4-2-1</b>；某位是 1 就加上对应数，是 0 就跳过。例：<b>1011</b> → 8+0+2+1 = <b>11</b>；<b>110</b> → 4+2+0 = <b>6</b>；<b>1010 1001</b> 按 3 位分组 → 010 | 101 | 001 → 2、5、1 → <b>251</b>（八进制）。<br><b>补零方向别搞反：</b>整数部分在<b>最左边</b>补 0，小数部分在<b>最右边</b>补 0。</div>
+
+  <div class="tip"><b>为什么刚好 3 位、4 位：</b>N 位二进制一共有 <b>2<sup>N</sup></b> 种组合（每一位 0/1 两种，按乘法原理连乘），所以 3 位正好 8 种，对应 1 位八进制；4 位正好 16 种，对应 1 位十六进制。这条结论同时也是"16 位无符号数有 2<sup>16</sup> 个"的来源。</div>
+
+  <div class="warnbox"><b>小数转换的终止条件：</b>乘基取整要一直乘到<b>小数部分为 0</b>；如果乘不到 0（如 0.1、0.6 转二进制是无限循环），题目一定会写"保留 n 位小数"，<b>按给定精度截断</b>，不要自己四舍五入。</div>
+  </section>
 
 <!-- ============ S5 二进制运算 ============ -->
 <section class="mod" id="s5">
@@ -576,38 +584,41 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 12 题</h2>
+      <h2>自测 15 题</h2>
       <span class="tag">别只看，动手算 · 点题目看答案与步骤</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
   <div class="qa">
     <details><summary>1. 十六进制数中的字母 A 表示十进制数 10。</summary><div class="ans"><b>正确。</b>A=10、B=11、C=12、D=13、E=14、F=15。</div></details>
     <details><summary>2. 二进制数 1011 对应的十进制数是 13。</summary><div class="ans"><b>错误。</b>1×8+0×4+1×2+1×1 = <b>11</b>。13 对应的是 1101。</div></details>
     <details><summary>3. 十进制小数转换为二进制小数时，采用"乘基取整"法，结果按正序排列。</summary><div class="ans"><b>正确。</b>整数部分才是"除基取余、倒序"。</div></details>
     <details><summary>4. 八进制数 (354)<sub>8</sub> 比十六进制数 (EA)<sub>16</sub> 小。</summary><div class="ans"><b>错误。</b>(354)<sub>8</sub>=236，(EA)<sub>16</sub>=234，所以 354 反而更大。这两个数就是 2025 年真题里的那一组。</div></details>
+    <details><summary>5. 罗马数字属于非进位计数制。</summary><div class="ans"><b>正确。</b>罗马数字的符号值<b>不随位置改变</b>（Ⅳ 永远是 4），所以是非进位计数制；二、八、十、十六进制都是进位计数制。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
   <div class="qa">
-    <details><summary>5. (1101)<sub>2</sub> 对应的十进制数是（　）<br>A. 11　B. 13　C. 15　D. 26</summary><div class="ans"><b>B。</b>8+4+0+1 = 13。</div></details>
-    <details><summary>6. 十进制数 100 转换为二进制数是（　）<br>A. 1100100　B. 1000100　C. 1101000　D. 1110100</summary><div class="ans"><b>A。</b>100 = 64+32+4 = 2<sup>6</sup>+2<sup>5</sup>+2<sup>2</sup> → 1100100。</div></details>
-    <details><summary>7. 八进制数 (37)<sub>8</sub> 对应的十进制数是（　）<br>A. 30　B. 31　C. 37　D. 56</summary><div class="ans"><b>B。</b>3×8+7 = 31。注意不是"直接相加"，七进制权重是 8 不是 10。</div></details>
-    <details><summary>8. 十进制小数 0.375 转换为二进制小数是（　）<br>A. 0.011　B. 0.101　C. 0.110　D. 0.111</summary><div class="ans"><b>A。</b>0.375×2=0.75 取 <b>0</b>；0.75×2=1.5 取 <b>1</b>；0.5×2=1.0 取 <b>1</b> → 0.011。</div></details>
+    <details><summary>6. (1101)<sub>2</sub> 对应的十进制数是（　）<br>A. 11　B. 13　C. 15　D. 26</summary><div class="ans"><b>B。</b>8+4+0+1 = 13。</div></details>
+    <details><summary>7. 十进制数 100 转换为二进制数是（　）<br>A. 1100100　B. 1000100　C. 1101000　D. 1110100</summary><div class="ans"><b>A。</b>100 = 64+32+4 = 2<sup>6</sup>+2<sup>5</sup>+2<sup>2</sup> → 1100100。</div></details>
+    <details><summary>8. 八进制数 (37)<sub>8</sub> 对应的十进制数是（　）<br>A. 30　B. 31　C. 37　D. 56</summary><div class="ans"><b>B。</b>3×8+7 = 31。注意不是"直接相加"，七进制权重是 8 不是 10。</div></details>
+    <details><summary>9. 十进制小数 0.375 转换为二进制小数是（　）<br>A. 0.011　B. 0.101　C. 0.110　D. 0.111</summary><div class="ans"><b>A。</b>0.375×2=0.75 取 <b>0</b>；0.75×2=1.5 取 <b>1</b>；0.5×2=1.0 取 <b>1</b> → 0.011。</div></details>
+    <details><summary>10. 二进制数 (10110)<sub>2</sub> 对应的十进制数是（　）<br>A. 20　B. 22　C. 24　D. 26</summary><div class="ans"><b>B。</b>用 4-2-1 速算：16+0+4+2+0 = <b>22</b>；也可按权展开 2<sup>4</sup>+2<sup>2</sup>+2<sup>1</sup>。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（3 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（4 题）</b></p>
   <div class="qa">
-    <details><summary>9. (11100110)<sub>2</sub> = ______（十进制）。</summary><div class="ans"><b>230。</b>128+64+32+4+2。</div></details>
-    <details><summary>10. (10110111)<sub>2</sub> = ______（十六进制）。</summary><div class="ans"><b>B7。</b>4 位一组从右往左：1011 | 0111 → 1011=11=B，0111=7。</div></details>
-    <details><summary>11. (354)<sub>8</sub> = ______（十六进制）。</summary><div class="ans"><b>EC。</b>先拆二进制 011 101 100 → 011101100 → 4 位分组 0110|1100 → 6，C。</div></details>
+    <details><summary>11. (11100110)<sub>2</sub> = ______（十进制）。</summary><div class="ans"><b>230。</b>128+64+32+4+2。</div></details>
+    <details><summary>12. (10110111)<sub>2</sub> = ______（十六进制）。</summary><div class="ans"><b>B7。</b>4 位一组从右往左：1011 | 0111 → 1011=11=B，0111=7。</div></details>
+    <details><summary>13. (354)<sub>8</sub> = ______（十六进制）。</summary><div class="ans"><b>EC。</b>先拆二进制 011 101 100 → 011101100 → 4 位分组 0110|1100 → 6，C。</div></details>
+    <details><summary>14. n 位二进制一共可以表示 ______ 种不同的组合。</summary><div class="ans"><b>2<sup>n</sup>。</b>每一位 0/1 两种取值，按乘法原理连乘得 2<sup>n</sup>；16 位即 2<sup>16</sup>=65536 个（0~65535）。</div></details>
   </div>
 
   <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>四、简答题（1 题，5 分）</b></p>
   <div class="qa">
-    <details><summary>12. 比较 (10101100)<sub>2</sub>、(255)<sub>8</sub>、(AF)<sub>16</sub> 的大小，写出转换过程与结果。</summary>
+    <details><summary>15. 比较 (10101100)<sub>2</sub>、(255)<sub>8</sub>、(AF)<sub>16</sub> 的大小，写出转换过程与结果。</summary>
     <div class="ans"><b>过程：</b><br>
     (10101100)<sub>2</sub> = 128+32+8+4 = <b>172</b><br>
     (255)<sub>8</sub> = 2×64+5×8+5 = 128+40+5 = <b>173</b><br>
