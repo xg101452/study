@@ -217,8 +217,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s4">④ 图像数据量</a>
     <a href="#s5">⑤ 视频与移动端</a>
     <a href="#s6">易错清单</a>
-    <a href="#s7">必背 12 条</a>
-    <a href="#s8">自测 12 题</a>
+    <a href="#s7">必背 14 条</a>
+    <a href="#s8">自测 15 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -293,7 +293,18 @@ body.slim section.mod[data-tier="low"]{display:none}
   </table>
 
   <div class="okbox"><b>注意：</b>数字媒体<b>不是</b>"只能看不能动"的。传统媒体（报纸、广播）是单向的，数字媒体的核心区别就在<b>交互性</b>和<b>数字化</b>。</div>
-</section>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c2)">媒体的两层含义与五大分类（选择题的高频出处）</h3>
+  <table>
+    <tr><th style="width:110px">类别</th><th>定义</th><th style="width:250px">典型例子</th></tr>
+    <tr><td><b>感觉媒体</b></td><td>直接作用于人的感官</td><td>听到的声音、看到的图像</td></tr>
+    <tr><td><b>表示媒体</b></td><td>用于数据交换的<b>编码</b></td><td>ASCII 码、国标码、机内码、音视频编码；<b>条形码</b></td></tr>
+    <tr><td><b>表现媒体</b></td><td>计算机的<b>输入输出设备</b></td><td>键盘、鼠标、显示器、打印机</td></tr>
+    <tr><td><b>存储媒体</b></td><td>存放信息的<b>物理实体</b></td><td>U 盘、硬盘、光盘</td></tr>
+    <tr><td><b>传输媒体</b></td><td>传输信息的<b>物理介质</b></td><td>光纤、无线电波、双绞线</td></tr>
+  </table>
+  <div class="tip"><b>媒体还有两层含义：</b>一是<b>存储信息的实体</b>（U 盘、硬盘、光盘），二是<b>承载信息的形式</b>（文字、声音、图像、视频）。<br><b>声音三要素：</b><b>音调</b>由<b>频率</b>决定、<b>音量（响度）</b>由<b>振幅</b>决定、<b>音色</b>由<b>发声体的材料与结构</b>决定——"三个由什么决定"是填空题常客。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -336,7 +347,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   </table>
 
   <div class="warnbox"><b>最容易被"钓鱼"的一句：</b>"MIDI 文件也是通过采样、量化得到的"——<b>错</b>。MIDI 记录的是<b>指令</b>，播放时才由合成器生成声音，所以文件极小。</div>
-</section>
+
+  <div class="tip"><b>两个单位坑：</b>① <b>量化位数</b>又叫<b>采样精度 / 采样位数</b>，单位是 <b>bit</b>（不是 Hz、不是 B）；② 采样频率里 <b>44.1 kHz 的 k 按 1000 算</b>（即 44100 Hz），而存储容量里 <b>1 KB＝1024 B</b>——同一条公式里两套进制，混用就差几个百分点。<br><b>双声道数据量是单声道的 2 倍</b>；采样频率至少要取最高频率的 <b>2 倍</b>（人耳 20 Hz～20 kHz，所以 CD 定为 44.1 kHz）。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -373,7 +386,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="qz"><span class="lb">真题</span><b>2025 · 判断</b>　JPEG 的压缩比低于 BMP。<br>
   <span class="no">→ <b>错</b>。BMP 基本不压缩，<b>JPEG 压缩比高得多</b>，同画面体积远小于 BMP。<br>
   记住方向：<b>压缩比：JPEG &gt; BMP</b>；画质：<b>BMP &gt; JPEG</b>（无损 vs 有损）。</span></div>
-</section>
+
+  <div class="tip"><b>图像的数字化也走三步：</b><b>采样</b>（把连续画面切成一个个<b>像素</b>，切多细由<b>分辨率</b>决定）→ <b>量化</b>（每个像素的颜色用有限等级表示，等级多少由<b>颜色深度</b>决定）→ <b>编码</b>（转成二进制存起来）。<br><b>分辨率＝横向像素数×纵向像素数</b>，也就是全图<b>总像素数</b>；颜色深度为 N 位 → 能表示 <b>2<sup>N</sup></b> 种颜色（1 位黑白、8 位 256 色、24 位真彩色）。</div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -402,7 +417,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="tip"><b>单位三连问（每年都有人栽）：</b>①公式算出的是<b>字节 B</b>；②题目若问 KB 要 <b>÷1024</b>；③题目若给"色深 24 位"但问"多少 MB"，记得再 ÷1024。<b>先算 B，再换单位，别一步乱跳。</b></div>
 
   <div class="okbox"><b>反过来也考：</b>给"分辨率 1024×768、色深 32 位"，问显存至少多少？→ 1024×768×32÷8 = 3 145 728 B = 3 MB。<b>显存题与图像数据量是同一个公式</b>，只是换了场景。</div>
-</section>
+
+  <div class="tip"><b>反向考法的两手：</b>① 给"能表示 <b>65536</b> 种颜色"→ 因为 2<sup>16</sup>＝65536，所以色深＝<b>16 位</b>（求 N 就是求"2 的几次方"）；② 给"每像素占 <b>2 字节</b>"→ 直接 <b>分辨率×2</b>，<b>不要再 ÷8</b>。<br><b>【例】</b>1024×768、每像素 2 B → 1024×768×2 = 1 572 864 B ≈ <b>1.5 MB</b>。<br><b>【例】</b>4 GB 卡存 1024×768、16 位色的照片：单张≈1.5 MB，4 GB÷1.5 MB≈<b>2048 张</b>；若相机支持 <b>4 倍压缩</b>，则为 <b>8192 张</b>。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -446,7 +463,9 @@ body.slim section.mod[data-tier="low"]{display:none}
 </table>
 <div class="tip"><b>数字媒体技术的发展趋势：</b>高清/超高清化、移动化、社交化、智能化（AI 生成与修复）、融合化（文字＋图＋音＋视频）。问“趋势”答这几个方向即可。</div>
 
-</section>
+
+  <div class="tip"><b>视频的两个术语：</b>模拟视频变数字视频叫 <b>A/D 转换</b>（内部仍是采样、量化、编码），数字还原成模拟叫 <b>D/A 转换</b>；<b>帧是视频的最小单位</b>，视频就是按时间顺序连续播放的<b>图像序列</b>。<br><b>存储量＝总帧数×单帧数据量</b>，总帧数＝<b>帧频×时长（秒）</b>，单帧数据量套图像公式。常见错法：忘了先算总帧数，或算完字节没 ÷1024 换成 MB。<br><b>压缩：</b>分<b>无损压缩</b>（能完整还原）与<b>有损压缩</b>（牺牲冗余信息换高压缩比）。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -470,13 +489,15 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">9</td><td>24 位真彩色只有 256 种颜色</td><td>24 位＝2<sup>24</sup>≈<b>1677 万色</b>；8 位才是 256 色</td></tr>
     <tr><td class="c">10</td><td>流媒体必须先下载完整文件才能播放</td><td>流媒体<b>边下边播</b></td></tr>
   </table>
-</section>
+
+  <div class="warnbox"><b>再补三条：</b>① "GIF 采用有损压缩"→<b>错</b>，GIF 是<b>无损压缩</b>、最多 256 色、支持动画；② "PNG 一定比 JPG 小"→<b>错</b>，PNG 无损，通常<b>比 JPG 大</b>；③ "条形码属于存储媒体"→<b>错</b>，它是对商品信息的<b>编码</b>，属<b>表示媒体</b>。</div>
+  </section>
 
 <section class="mod" id="s7">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 12 条</h2>
+      <h2>本课必背 14 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -495,6 +516,9 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">10</td><td>颜色深度：1 位黑白、8 位 256 色、<b>24 位真彩色 ≈ 1677 万色</b></td></tr>
     <tr><td class="c">11</td><td>视频基于<b>视觉暂留</b>（约 0.1 s）；帧率 fps：电影 24、PAL 25、NTSC 30</td></tr>
     <tr><td class="c">12</td><td>移动端流程：<b>录制 → 剪辑 → 导出 → 发布</b>；流媒体＝<b>边下载边播放</b></td></tr>
+      <tr><td class="c">13</td><td>媒体五分类：<b>感觉</b>（声音 / 图像）· <b>表示</b>（编码、条形码）· <b>表现</b>（键鼠 / 显示器）· <b>存储</b>（U 盘 / 硬盘）· <b>传输</b>（光纤 / 无线电波）</td></tr>
+    <tr><td class="c">14</td><td>声音三要素：<b>音调←频率</b>、<b>音量←振幅</b>、<b>音色←发声体</b>；图像数字化三环节＝<b>采样（分辨率）→量化（色深）→编码</b>；视频靠 <b>A/D 转换</b></td></tr>
+
   </table>
 </section>
 
@@ -502,13 +526,13 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 12 题</h2>
+      <h2>自测 15 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. 矢量图放大后边缘会出现马赛克。</summary><div class="ans"><b>错误。</b>矢量图由数学公式描述，放大不失真。</div></details>
     <details><summary>2. JPEG 采用有损压缩，其压缩比高于 BMP。</summary><div class="ans"><b>正确。</b>BMP 基本不压缩。</div></details>
@@ -517,26 +541,30 @@ body.slim section.mod[data-tier="low"]{display:none}
     <details><summary>5. 流媒体必须把整个文件下载完才能播放。</summary><div class="ans"><b>错误。</b>流媒体边下载边播放。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+      <details><summary>6. GIF 采用有损压缩，因此不适合保存线条图形。</summary><div class="ans"><b>错误。</b>GIF 是<b>无损压缩</b>，但最多只有 <b>256 色</b>，色彩层次丰富的照片才不适合用它；动画与简单图形正是它的强项。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
   <div class="qa">
-    <details><summary>6. 下列属于矢量图格式的是（　）<br>A. BMP　B. JPG　C. WMF　D. GIF</summary><div class="ans"><b>C。</b>2025 单选第 4 题原题。</div></details>
-    <details><summary>7. 一幅 160×160、24 位色的图像，未压缩的数据量约为（　）<br>A. 25KB　B. 75KB　C. 150KB　D. 600KB</summary><div class="ans"><b>B。</b>160×160×24÷8 = 76 800 B ≈ 75KB（2025 单选第 20 题）。</div></details>
-    <details><summary>8. 数字音频的数字化过程依次为（　）<br>A. 量化→采样→编码　B. 采样→量化→编码　C. 编码→采样→量化　D. 采样→编码→量化</summary><div class="ans"><b>B。</b>先按时间取点，再把幅度分级，最后转成二进制。</div></details>
-    <details><summary>9. 24 位真彩色能表示的颜色数约为（　）<br>A. 256 种　B. 1024 种　C. 1677 万种　D. 10 亿种</summary><div class="ans"><b>C。</b>2<sup>24</sup> ≈ 1677 万。</div></details>
+    <details><summary>7. 下列属于矢量图格式的是（　）<br>A. BMP　B. JPG　C. WMF　D. GIF</summary><div class="ans"><b>C。</b>2025 单选第 4 题原题。</div></details>
+    <details><summary>8. 一幅 160×160、24 位色的图像，未压缩的数据量约为（　）<br>A. 25KB　B. 75KB　C. 150KB　D. 600KB</summary><div class="ans"><b>B。</b>160×160×24÷8 = 76 800 B ≈ 75KB（2025 单选第 20 题）。</div></details>
+    <details><summary>9. 数字音频的数字化过程依次为（　）<br>A. 量化→采样→编码　B. 采样→量化→编码　C. 编码→采样→量化　D. 采样→编码→量化</summary><div class="ans"><b>B。</b>先按时间取点，再把幅度分级，最后转成二进制。</div></details>
+    <details><summary>10. 24 位真彩色能表示的颜色数约为（　）<br>A. 256 种　B. 1024 种　C. 1677 万种　D. 10 亿种</summary><div class="ans"><b>C。</b>2<sup>24</sup> ≈ 1677 万。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题 / 简答（3 题）</b></p>
+      <details><summary>11. 商品上的条形码属于（　）<br>A. 感觉媒体　B. 表示媒体　C. 表现媒体　D. 存储媒体</summary><div class="ans"><b>B。</b>条形码是把商品信息编制成的<b>编码</b>，属表示媒体；显示器、打印机是表现媒体，U 盘、硬盘是存储媒体。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题 / 简答（4 题）</b></p>
   <div class="qa">
-    <details><summary>10. 一幅 1024×768 像素、32 位色的图像，未压缩时约占 ______ MB。</summary><div class="ans"><b>3 MB。</b>1024×768×32÷8 = 3 145 728 B = 3 MB。</div></details>
-    <details><summary>11. 简述位图与矢量图的主要区别。</summary><div class="ans"><b>参考答案：</b>①<b>构成</b>：位图由像素点阵组成，矢量图由数学公式描述的几何对象组成；②<b>缩放</b>：位图放大会失真（马赛克），矢量图放大不失真；③<b>体积</b>：位图通常较大（随分辨率、色深增长），矢量图通常较小；④<b>适用</b>：位图适合照片与色彩丰富的画面，矢量图适合 Logo、图标、图表与工程图。</div></details>
-    <details><summary>12. 简述移动端短视频的制作流程。</summary><div class="ans"><b>参考答案：</b>①<b>录制</b>：用手机摄像头采集，设置分辨率（1080P/4K）与帧率；②<b>剪辑</b>：用剪映等 App 完成裁剪、拼接、字幕、配乐、转场与变速；③<b>导出</b>：按发布平台要求选择画面比例（如竖屏 9:16）、分辨率与码率；④<b>发布</b>：上传至短视频平台，注意版权与个人隐私保护。</div></details>
+    <details><summary>12. 一幅 1024×768 像素、32 位色的图像，未压缩时约占 ______ MB。</summary><div class="ans"><b>3 MB。</b>1024×768×32÷8 = 3 145 728 B = 3 MB。</div></details>
+    <details><summary>13. 简述位图与矢量图的主要区别。</summary><div class="ans"><b>参考答案：</b>①<b>构成</b>：位图由像素点阵组成，矢量图由数学公式描述的几何对象组成；②<b>缩放</b>：位图放大会失真（马赛克），矢量图放大不失真；③<b>体积</b>：位图通常较大（随分辨率、色深增长），矢量图通常较小；④<b>适用</b>：位图适合照片与色彩丰富的画面，矢量图适合 Logo、图标、图表与工程图。</div></details>
+    <details><summary>14. 简述移动端短视频的制作流程。</summary><div class="ans"><b>参考答案：</b>①<b>录制</b>：用手机摄像头采集，设置分辨率（1080P/4K）与帧率；②<b>剪辑</b>：用剪映等 App 完成裁剪、拼接、字幕、配乐、转场与变速；③<b>导出</b>：按发布平台要求选择画面比例（如竖屏 9:16）、分辨率与码率；④<b>发布</b>：上传至短视频平台，注意版权与个人隐私保护。</div></details>
+  <details><summary>15. 颜色深度为 16 位时，一个像素最多可以表示 ______ 种颜色。</summary><div class="ans"><b>65536（2<sup>16</sup>）。</b>反过来记：能表示 65536 色 → 色深 16 位；24 位才是真彩色（约 1677 万色）。</div></details>
   </div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
-  </div>
-</section>
+  </div></section>
 
 <nav class="lesson-pager" aria-label="课程翻页">
   <a class="pager-prev" href="ch2-l4.html"><span class="pager-k">← 上一课</span><span class="pager-t">第4课 Windows 操作与工具</span></a>

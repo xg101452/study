@@ -219,8 +219,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 文件管理</a>
     <a href="#s6">2026 真题</a>
     <a href="#s7">易错清单</a>
-    <a href="#s8">必背 14 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s8">必背 17 条</a>
+    <a href="#s9">自测 18 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -297,7 +297,11 @@ body.slim section.mod[data-tier="low"]{display:none}
   注意"复制到剪贴板"和"保存为图片文件"是两件事：按键只是进剪贴板，还要粘贴到画图/文档里才成为文件。</span></div>
 
   <div class="okbox"><b>为什么只考活动窗口？</b>因为"同一时刻只有一个活动窗口"本身就是考点。题目若说"可以同时有多个活动窗口"，一律判错。</div>
-</section>
+
+  <div class="tip"><b>桌面＝系统启动后显示的整个屏幕</b>（填空原话）。图标分三类：<b>系统图标</b>（计算机、回收站）· <b>快捷方式图标</b>（左下角带<b>小箭头</b>，扩展名 <b>.lnk</b>）· <b>用户文件 / 文件夹图标</b>。<br><b>图标排序只有四种：</b>名称、大小、类型、<b>修改日期</b>——<b>没有"创建日期"</b>（多选常拿它当干扰项）；"自动排列"打开后图标统一靠左、<b>不能再随便拖</b>。<br><b>32 位 / 64 位：</b>32 位系统只能运行 32 位程序；<b>64 位系统既能运行 32 位、也能运行 64 位程序</b>（向下兼容）。</div>
+
+  <div class="tip"><b>窗口的几条固定结论：</b>拖<b>标题栏</b>移动窗口，拖到屏幕顶部＝最大化；<b>双击标题栏</b>在最大化与还原之间切换；<b>最大化与还原按钮共用同一个位置</b>，不会同时出现；<b>最小化只是收进任务栏，程序仍在后台运行</b>；<b>关闭＝结束该程序</b>（Alt+F4）。切换：<b>Alt+Tab</b>（带预览）· <b>Alt+Esc</b>（不带预览、直接轮换）· <b>Win+Tab</b>（三维任务视图）。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -325,7 +329,11 @@ body.slim section.mod[data-tier="low"]{display:none}
   </table>
 
   <div class="tip"><b>拖动那条别记反：</b>同一磁盘内拖动＝移动，跨磁盘拖动＝复制；<b>加 Ctrl 强制复制，加 Shift 强制移动</b>。考"复制"时最常见的正确项就是"按住 Ctrl 拖动"。</div>
-</section>
+
+  <div class="tip"><b>对话框 vs 窗口（判断、单选的老题眼）：</b>两者<b>唯一共同点</b>是都能<b>移动、关闭</b>；<b>对话框没有菜单栏和工具栏、尺寸固定、不能最大化 / 最小化</b>，只带选项卡。对话框里<b>圆点＝单选</b>（互斥），<b>方框＝复选</b>（可多选）；按钮后面带"…"＝点击会弹出对话框。<br><b>四类菜单怎么打开：</b>开始菜单（<b>Win</b> 键或 <b>Ctrl+Esc</b>）· 控制菜单（<b>标题栏左侧图标</b>单击 / 右击，也可 Alt+空格）· 快捷菜单（<b>右键</b>任意对象，"万物皆可右键"）· 下拉菜单（单击菜单栏，或按 <b>Alt</b> 激活后用字母键）。</div>
+
+  <div class="tip"><b>菜单里的符号（今年真题点）：</b><b>灰色</b>＝当前状态不可用；<b>后面带"…"</b>＝会弹出对话框；<b>右侧黑色三角</b>＝还有<b>下级子菜单（级联菜单）</b>；<b>向下箭头</b>＝菜单未完全展开；<b>右侧"功能键＋字母"</b>＝快捷键（热键）。<br><b>鼠标基本操作只有 5 种：</b>指向、单击、双击、右击、拖动——<b>没有"三击"</b>。键盘分<b>五个区：</b>主键盘区、功能键区、光标控制区、小键盘区、指示灯区；<b>Num Lock</b> 灯灭时小键盘当光标键用；<b>Ctrl＋滚轮</b>可缩放图标视图。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -389,7 +397,9 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <div class="qz"><span class="lb">真题</span><b>2025 · 判断 28</b>　回收站的大小是固定的，用户不能修改。<br>
   <span class="no">→ <b>错</b>。右键回收站 → 属性，可以按驱动器分别设置容量上限，超过上限时会提示或自动清除最旧的文件。</span></div>
-</section>
+
+  <div class="tip"><b>四个"管理器"别混：</b><b>任务管理器</b>（看进程、CPU / 内存占用、结束卡死程序，<b>Ctrl+Shift+Esc</b>）· <b>资源管理器</b>（管文件，<b>Win+E</b>）· <b>设备管理器</b>（管硬件与驱动）· <b>控制面板</b>（系统设置总入口，相当于手机的"设置"）。<br><b>磁盘三件事：</b><b>磁盘清理</b>＝删掉无用文件、<b>释放空间</b>；<b>碎片整理</b>＝把零散文件排整齐、<b>提升速度但不释放空间</b>；<b>磁盘查错</b>＝检查并修复磁盘错误。<b>格式化</b>＝划分磁道与扇区；<b>快速格式化</b>只能用于<b>已格式化过</b>的盘，且不做坏道检测。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -421,7 +431,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mem"><b>通配符记一句：</b><b>星号管"一串"，问号管"一个"</b>。<br>例：要找"所有以 a 开头的文本文件"，写 <b>a*.txt</b>；要找"文件名只有两个字符的 bmp"，写 <b>??.bmp</b>。</div>
 
   <div class="warnbox"><b>三个高频判断：</b>①"Shift+Delete 删除的文件能从回收站还原"——<b>错</b>，它不进回收站；②"U 盘上删除的文件在回收站里"——<b>错</b>，U 盘不走回收站；③"文件扩展名改变后，内容也随之改变"——<b>错</b>，扩展名只影响关联程序。</div>
-</section>
+
+  <div class="tip"><b>三个"基本单位"按场景分（填空、单选）：</b>操作系统管理信息的单位＝<b>文件</b>；信息存储的基本单位＝<b>字节（B）</b>；磁盘读写的最小单位＝<b>扇区</b>。<br><b>格式的压缩属性：</b><b>BMP 无压缩</b>（体积最大）、<b>WAV 无压缩</b>（音质好、体积大）、<b>MP3 有损压缩</b>（体积小）、<b>JPEG 有损</b>（适合照片）、<b>GIF / PNG 无损</b>（GIF 支持动画、最多 256 色；PNG 支持透明）。<br>文件名禁用 <b>9 个半角字符</b>：\ / : * ? " &lt; &gt; |，<b>全角（中文）字符不受限制</b>。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -471,13 +483,15 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">11</td><td>文件夹之间是网状关系</td><td><b>树形结构</b></td></tr>
     <tr><td class="c">12</td><td>Ctrl+F4 与 Alt+F4 效果相同</td><td>Ctrl+F4 关文档窗口，<b>Alt+F4 关程序</b></td></tr>
   </table>
-</section>
+
+  <div class="warnbox"><b>再补四条：</b>① "磁盘碎片整理可以释放磁盘空间"→<b>错</b>，它只提速、不释放空间；② "对话框可以最大化和调整大小"→<b>错</b>，尺寸固定；③ "菜单项右侧的黑色三角表示快捷键"→<b>错</b>，三角＝<b>还有下级子菜单</b>；④ "鼠标有单击、双击、三击三种基本操作"→<b>错</b>，基本操作 5 种，<b>没有三击</b>。</div>
+  </section>
 
 <section class="mod" id="s8">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 14 条</h2>
+      <h2>本课必背 17 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -498,6 +512,10 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">12</td><td>通配符：<b>*</b>＝任意多个字符；<b>?</b>＝一个字符</td></tr>
     <tr><td class="c">13</td><td>绝对路径从<b>盘符</b>开始；相对路径从当前位置起算</td></tr>
     <tr><td class="c">14</td><td>压缩工具（WinRAR/7-Zip）用于<b>减小体积、打包多个文件</b>；解压需对应工具</td></tr>
+      <tr><td class="c">15</td><td>桌面＝<b>启动后显示的整个屏幕</b>；图标三类：<b>系统图标 · 快捷方式（.lnk，左下角小箭头）· 用户文件</b></td></tr>
+    <tr><td class="c">16</td><td>对话框与窗口唯一共同点是<b>移动与关闭</b>；对话框<b>无菜单栏、尺寸固定</b>；<b>黑三角＝子菜单</b>，灰色＝不可用，"…"＝弹对话框</td></tr>
+    <tr><td class="c">17</td><td>任务 / 资源 / 设备 / 控制面板四个管理器分工；<b>磁盘清理释放空间、碎片整理只提速</b>；文件 / 字节 / 扇区三种基本单位</td></tr>
+
   </table>
 </section>
 
@@ -505,13 +523,13 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 18 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（7 题）</b></p>
   <div class="qa">
     <details><summary>1. 删除桌面上某程序的快捷方式，该程序就被卸载了。</summary><div class="ans"><b>错误。</b>快捷方式只是指针，删它不影响原程序。</div></details>
     <details><summary>2. Windows 中同一时刻可以有多个活动窗口。</summary><div class="ans"><b>错误。</b>只能有一个。</div></details>
@@ -520,28 +538,33 @@ body.slim section.mod[data-tier="low"]{display:none}
     <details><summary>5. Windows 文件名不区分大小写，ABC.txt 与 abc.txt 是同一个文件。</summary><div class="ans"><b>正确。</b></div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
+      <details><summary>6. 磁盘碎片整理可以释放磁盘空间。</summary><div class="ans"><b>错误。</b>碎片整理只把零散存放的文件排整齐、<b>提升访问速度</b>，并不删除文件，所以<b>不释放空间</b>；释放空间靠磁盘清理。</div></details>
+    <details><summary>7. 对话框和窗口一样，可以最大化并拖动边框调整大小。</summary><div class="ans"><b>错误。</b>对话框<b>尺寸固定</b>，不能最大化 / 最小化，也没有菜单栏、工具栏；它与窗口的共同点只有<b>移动和关闭</b>。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（7 题）</b></p>
   <div class="qa">
-    <details><summary>6. 要选定不连续的多个文件，应按住（　）再单击<br>A. Shift　B. Ctrl　C. Alt　D. Tab</summary><div class="ans"><b>B。</b>2025 单选第 2 题原题。</div></details>
-    <details><summary>7. 截取当前活动窗口画面应按（　）<br>A. PrintScreen　B. Alt+PrintScreen　C. Ctrl+PrintScreen　D. Shift+PrintScreen</summary><div class="ans"><b>B。</b>2025 单选第 3 题原题。</div></details>
-    <details><summary>8. 直接关闭当前活动窗口的快捷键是（　）<br>A. Ctrl+Alt+Delete　B. Alt+Tab　C. Alt+F4　D. Ctrl+F4</summary><div class="ans"><b>C。</b>2026 单选第 4 题原题。</div></details>
-    <details><summary>9. Windows 中文件系统的组织结构是（　）<br>A. 网状　B. 树形　C. 线性　D. 环状</summary><div class="ans"><b>B。</b>2026 单选第 5 题原题。</div></details>
-    <details><summary>10. 要永久删除文件而不放入回收站，应按（　）<br>A. Delete　B. Shift+Delete　C. Ctrl+Delete　D. Alt+Delete</summary><div class="ans"><b>B。</b></div></details>
-    <details><summary>11. 下列文件名中，合法的是（　）<br>A. 报告?.docx　B. 报*告.docx　C. 报告:2026.docx　D. 报告2026.docx</summary><div class="ans"><b>D。</b>? * : 都是非法字符（? 与 * 是通配符，: 是保留字符）。</div></details>
+    <details><summary>8. 要选定不连续的多个文件，应按住（　）再单击<br>A. Shift　B. Ctrl　C. Alt　D. Tab</summary><div class="ans"><b>B。</b>2025 单选第 2 题原题。</div></details>
+    <details><summary>9. 截取当前活动窗口画面应按（　）<br>A. PrintScreen　B. Alt+PrintScreen　C. Ctrl+PrintScreen　D. Shift+PrintScreen</summary><div class="ans"><b>B。</b>2025 单选第 3 题原题。</div></details>
+    <details><summary>10. 直接关闭当前活动窗口的快捷键是（　）<br>A. Ctrl+Alt+Delete　B. Alt+Tab　C. Alt+F4　D. Ctrl+F4</summary><div class="ans"><b>C。</b>2026 单选第 4 题原题。</div></details>
+    <details><summary>11. Windows 中文件系统的组织结构是（　）<br>A. 网状　B. 树形　C. 线性　D. 环状</summary><div class="ans"><b>B。</b>2026 单选第 5 题原题。</div></details>
+    <details><summary>12. 要永久删除文件而不放入回收站，应按（　）<br>A. Delete　B. Shift+Delete　C. Ctrl+Delete　D. Alt+Delete</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>13. 下列文件名中，合法的是（　）<br>A. 报告?.docx　B. 报*告.docx　C. 报告:2026.docx　D. 报告2026.docx</summary><div class="ans"><b>D。</b>? * : 都是非法字符（? 与 * 是通配符，: 是保留字符）。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（3 题）</b></p>
+      <details><summary>14. 菜单项右侧带有黑色三角形，表示（　）<br>A. 该功能有快捷键　B. 该项还有下级子菜单　C. 该项当前不可用　D. 点击后会弹出对话框</summary><div class="ans"><b>B。</b>黑色三角＝<b>级联菜单</b>（还有下一级）；"…"才是弹对话框，灰色是不可用，右侧"功能键＋字母"才是快捷键。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（4 题）</b></p>
   <div class="qa">
-    <details><summary>12. 在资源管理器中，要选择连续的多个文件，应按住 ______ 键再单击。</summary><div class="ans"><b>Shift</b>。</div></details>
-    <details><summary>13. 通配符中，代表任意一个字符的是 ______。</summary><div class="ans"><b>?</b>（* 代表任意多个字符）。</div></details>
-    <details><summary>14. 若要查找当前文件夹下所有扩展名为 .docx 的文件，搜索框应输入 ______。</summary><div class="ans"><b>*.docx</b>。</div></details>
+    <details><summary>15. 在资源管理器中，要选择连续的多个文件，应按住 ______ 键再单击。</summary><div class="ans"><b>Shift</b>。</div></details>
+    <details><summary>16. 通配符中，代表任意一个字符的是 ______。</summary><div class="ans"><b>?</b>（* 代表任意多个字符）。</div></details>
+    <details><summary>17. 若要查找当前文件夹下所有扩展名为 .docx 的文件，搜索框应输入 ______。</summary><div class="ans"><b>*.docx</b>。</div></details>
+  <details><summary>18. 在 Windows 中，磁盘读写操作的最小单位是 ______。</summary><div class="ans"><b>扇区。</b>信息存储的基本单位是字节，操作系统管理信息的单位是文件，三者按场景区分。</div></details>
   </div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
-  </div>
-</section>
+  </div></section>
 
 <nav class="lesson-pager" aria-label="课程翻页">
   <a class="pager-prev" href="ch2-l3.html"><span class="pager-k">← 上一课</span><span class="pager-t">第3课 软件与操作系统</span></a>

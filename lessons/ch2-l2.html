@@ -219,8 +219,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 性能指标</a>
     <a href="#s6">2026 真题</a>
     <a href="#s7">易错清单</a>
-    <a href="#s8">必背 12 条</a>
-    <a href="#s9">自测 12 题</a>
+    <a href="#s8">必背 14 条</a>
+    <a href="#s9">自测 15 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -304,7 +304,9 @@ CPU 与内存之间还有一层：Cache（高速缓冲存储器）</div>
 
   <div class="qz"><span class="lb">真题</span><b>2024 · 判断 4</b>　多线程可以减少 CPU 的闲置时间。<br>
   <span class="no">→ <b>正确</b>。一个线程等 I/O 时，CPU 可以切去执行另一个线程，等待时间被利用起来。</span></div>
-</section>
+
+  <div class="tip"><b>"主机"在计算机学科里有严格范围（高频易错）：</b><b>主机＝CPU＋内存</b>；<b>外部设备＝外存＋I/O 设备</b>。所以机箱里那块硬盘<b>不属于主机</b>，它属于外存，也就是外设。判断"硬盘装在主机箱内，所以属于主机"→<b>错</b>。<br>CPU 的运算器由<b>算术逻辑单元（ALU）＋寄存器</b>组成，做算术与逻辑运算；控制器负责取指令、分析指令、发控制信号。整机性能主要取决于 <b>CPU</b>。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -344,7 +346,9 @@ CPU 与内存之间还有一层：Cache（高速缓冲存储器）</div>
   ① 外存容量越大，读取速度越快？<b>错</b>——容量和速度是两回事，同代技术下容量大≠速度快。<br>
   ② Cache 的作用是扩大内存容量？<b>错</b>——它是提速的，不是扩容的。<br>
   ③ 内存比外存快但容量小？<b>对</b>——这正是金字塔的方向。</div>
-</section>
+
+  <div class="tip"><b>为什么必须分层：</b>要同时满足"容量大、速度快、成本低"，只能做成多级结构——<b>Cache（最快、最小、最贵）→ 内存 → 外存（最慢、最大、最便宜）</b>。排序题记：<b>Cache ＞ 内存 ＞ 硬盘</b>。<br><b>存取周期</b>＝存储器两次独立读写操作之间的间隔时间，<b>越短越快</b>（它的方向与"主频越高越快"相反，别记反）。内存由<b>半导体</b>材料制成，可被 CPU 直接访问。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -434,7 +438,9 @@ CPU 与内存之间还有一层：Cache（高速缓冲存储器）</div>
   </table>
 
   <div class="mem"><b>一句话记法：</b>字长看"一次能吃多少"，主频看"每秒咬几口"，MIPS 看"实际吃得多快"，容量看"能吃多久不饿"。<b>四个词分开记，别用一个"性能好"糊过去。</b></div>
-</section>
+
+  <div class="tip"><b>三个最容易漏的指标：</b>① <b>外频</b>＝系统总线的工作频率，<b>主频＝外频×倍频</b>；② <b>运算速度</b>常用 <b>MIPS</b>（每秒百万条指令），更大单位是 <b>BIPS</b>（每秒十亿条）；③ <b>存取周期</b>越短，读写越快。<b>非核心指标：</b>硬盘容量、输入输出设备配置——对整机核心性能影响有限，多选题常拿它们当"不属于主要性能指标"的选项。<br><b>两条提速主线：</b><b>流水线</b>把多条指令的不同步骤<b>重叠</b>执行（3 条指令串行 9 ms、流水 5 ms）；<b>多核</b>让多个核心并行工作。<b>多线程</b>解决的是"等 I/O 时 CPU 闲着"，三者别混成一句话。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -481,13 +487,15 @@ CPU 与内存之间还有一层：Cache（高速缓冲存储器）</div>
     <tr><td class="c">9</td><td>逻辑与 1∧1=10</td><td>逻辑与 <b>1∧1=1</b>；1+1=10 是算术加法</td></tr>
     <tr><td class="c">10</td><td>CPU 就是运算器</td><td>CPU = <b>运算器 + 控制器</b>（+寄存器）</td></tr>
   </table>
-</section>
+
+  <div class="warnbox"><b>再补三条：</b>① "硬盘在机箱里，属于主机"→<b>错</b>，主机只有 CPU＋内存；② "存取周期越长，存储器越快"→<b>错</b>，越短越快；③ "主频＝外频"→<b>错</b>，<b>主频＝外频×倍频</b>。</div>
+  </section>
 
 <section class="mod" id="s8">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 12 条</h2>
+      <h2>本课必背 14 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -506,6 +514,9 @@ CPU 与内存之间还有一层：Cache（高速缓冲存储器）</div>
     <tr><td class="c">10</td><td><b>触摸屏</b>、网卡、调制解调器属"既输入又输出"；投影仪只输出</td></tr>
     <tr><td class="c">11</td><td>性能指标：字长、主频、<b>运算速度（MIPS）</b>、内存容量、外存容量、可靠性</td></tr>
     <tr><td class="c">12</td><td>运算对照：算术 <b>1+1=10</b>；逻辑与 <b>1∧1=1</b>，有 0 则 0</td></tr>
+      <tr><td class="c">13</td><td>主机＝<b>CPU＋内存</b>；外设＝<b>外存＋I/O</b>；硬盘属外存，<b>不是主机</b></td></tr>
+    <tr><td class="c">14</td><td>主频＝<b>外频×倍频</b>；<b>MIPS</b>＝每秒百万条指令；存取周期越短越快；<b>流水线/多核</b>是提速两条主线</td></tr>
+
   </table>
 </section>
 
@@ -513,13 +524,13 @@ CPU 与内存之间还有一层：Cache（高速缓冲存储器）</div>
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 12 题</h2>
+      <h2>自测 15 题</h2>
       <span class="tag">点题目看答案 · 判断错一条就回原文重看那一节</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. ROM 中的信息断电后不会丢失，RAM 中的信息断电后会丢失。</summary><div class="ans"><b>正确。</b>这正是两者最本质的区别。</div></details>
     <details><summary>2. Cache 的作用是扩大内存的容量。</summary><div class="ans"><b>错误。</b>Cache 容量很小，作用是<b>缓解 CPU 与内存的速度差</b>。</div></details>
@@ -528,26 +539,30 @@ CPU 与内存之间还有一层：Cache（高速缓冲存储器）</div>
     <details><summary>5. 硬盘上一个 3KB 的文件实际占用的空间可能大于 3KB。</summary><div class="ans"><b>正确。</b>按簇分配，最小占用一个簇（常见 4KB）。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+      <details><summary>6. 硬盘安装在主机箱内，因此属于主机的一部分。</summary><div class="ans"><b>错误。</b>主机只含 <b>CPU 与内存</b>；硬盘属于<b>外存</b>，算外部设备。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>6. 下列设备中，既是输入设备又是输出设备的是（　）<br>A. 键盘　B. 显示器　C. 触摸屏　D. 打印机</summary><div class="ans"><b>C。</b>2025 单选第 1 题同款。</div></details>
-    <details><summary>7. CPU 由（　）组成<br>A. 运算器和存储器　B. 运算器和控制器　C. 控制器和存储器　D. 寄存器和外存</summary><div class="ans"><b>B。</b></div></details>
-    <details><summary>8. 计算机中用于解决 CPU 与内存速度不匹配问题的部件是（　）<br>A. 寄存器　B. Cache　C. 硬盘　D. 虚拟内存</summary><div class="ans"><b>B。</b>Cache 是关键。虚拟内存解决的是"容量不够"，不是"速度差"。</div></details>
-    <details><summary>9. 下列存储器中，断电后数据会丢失的是（　）<br>A. 硬盘　B. U 盘　C. ROM　D. RAM</summary><div class="ans"><b>D。</b>2026 单选第 3 题原题。</div></details>
-    <details><summary>10. 表示计算机运算速度的常用指标是（　）<br>A. MIPS　B. dpi　C. Hz 只表示分辨率　D. GB</summary><div class="ans"><b>A。</b>MIPS＝每秒百万条指令；dpi 是打印/扫描分辨率，Hz 是频率，GB 是容量。</div></details>
+    <details><summary>7. 下列设备中，既是输入设备又是输出设备的是（　）<br>A. 键盘　B. 显示器　C. 触摸屏　D. 打印机</summary><div class="ans"><b>C。</b>2025 单选第 1 题同款。</div></details>
+    <details><summary>8. CPU 由（　）组成<br>A. 运算器和存储器　B. 运算器和控制器　C. 控制器和存储器　D. 寄存器和外存</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>9. 计算机中用于解决 CPU 与内存速度不匹配问题的部件是（　）<br>A. 寄存器　B. Cache　C. 硬盘　D. 虚拟内存</summary><div class="ans"><b>B。</b>Cache 是关键。虚拟内存解决的是"容量不够"，不是"速度差"。</div></details>
+    <details><summary>10. 下列存储器中，断电后数据会丢失的是（　）<br>A. 硬盘　B. U 盘　C. ROM　D. RAM</summary><div class="ans"><b>D。</b>2026 单选第 3 题原题。</div></details>
+    <details><summary>11. 表示计算机运算速度的常用指标是（　）<br>A. MIPS　B. dpi　C. Hz 只表示分辨率　D. GB</summary><div class="ans"><b>A。</b>MIPS＝每秒百万条指令；dpi 是打印/扫描分辨率，Hz 是频率，GB 是容量。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（2 题）</b></p>
+      <details><summary>12. CPU 的主频、外频与倍频之间的关系是（　）<br>A. 主频＝外频＋倍频　B. 主频＝外频×倍频　C. 外频＝主频×倍频　D. 三者没有关系</summary><div class="ans"><b>B。</b>外频是系统总线频率，倍频是 CPU 内部放大的倍数，二者相乘得主频。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（3 题）</b></p>
   <div class="qa">
-    <details><summary>11. 计算机的存储器层次中，速度最快的是 ______。</summary><div class="ans"><b>寄存器</b>（CPU 内部，比 Cache 更快）。</div></details>
-    <details><summary>12. 逻辑运算中，1 与 1 的结果是 ______。</summary><div class="ans"><b>1。</b>逻辑与"有 0 则 0，全 1 才 1"，不进位；算术加法 1+1 才是 10。</div></details>
+    <details><summary>13. 计算机的存储器层次中，速度最快的是 ______。</summary><div class="ans"><b>寄存器</b>（CPU 内部，比 Cache 更快）。</div></details>
+    <details><summary>14. 逻辑运算中，1 与 1 的结果是 ______。</summary><div class="ans"><b>1。</b>逻辑与"有 0 则 0，全 1 才 1"，不进位；算术加法 1+1 才是 10。</div></details>
+  <details><summary>15. 表示计算机运算速度、含义为"每秒百万条指令"的单位是 ______。</summary><div class="ans"><b>MIPS。</b>每秒十亿条是 BIPS；主频的单位是 Hz/GHz，容量的单位是 B/KB/MB。</div></details>
   </div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
-  </div>
-</section>
+  </div></section>
 
 <nav class="lesson-pager" aria-label="课程翻页">
   <a class="pager-prev" href="ch2-l1.html"><span class="pager-k">← 上一课</span><span class="pager-t">第1课 系统组成与体系结构</span></a>

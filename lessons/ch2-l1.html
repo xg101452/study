@@ -218,8 +218,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s4">④ 总线</a>
     <a href="#s5">⑤ 主板与 BIOS</a>
     <a href="#s6">易错清单</a>
-    <a href="#s7">必背 10 条</a>
-    <a href="#s8">自测 10 题</a>
+    <a href="#s7">必背 12 条</a>
+    <a href="#s8">自测 15 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -259,7 +259,7 @@ body.slim section.mod[data-tier="low"]{display:none}
       <td>冯·诺依曼三要点（二进制、<b>存储程序控制</b>、五大部件）· 五大部件名称与归属（运算器+控制器=CPU）· <b>系统总线 = 数据 + 地址 + 控制</b>· 数据总线宽度＝同时传输的位数</td>
       <td>必须能<b>默写 + 判断</b></td></tr>
     <tr><td class="c"><span class="f f2">★★</span></td>
-      <td>硬件/软件的两分 · 系统软件与应用软件的分界 · 指令的组成（操作码 + 地址码）· 指令执行四步</td>
+      <td>硬件/软件的两分 · 系统软件与应用软件的分界 · 指令的组成（操作码 + 地址码）· 指令执行三步（取指→分析→执行）</td>
       <td>能分清、能排序</td></tr>
     <tr><td class="c"><span class="f f1">★</span></td>
       <td>主板（母板）的作用 · BIOS 的定位 · 总线分三个层次（内部/系统/外部）</td>
@@ -304,7 +304,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="human"><span class="lb">人话解释 · 为什么硬件和软件要分开算</span>
   硬件是"身体"，软件是"会做的事"。同一台电脑，装 Windows 能做办公，装 Linux 能做服务器——<b>身体一样，能力不同</b>。所以考纲说"计算机系统 = 硬件 + 软件"，强调的就是"缺一个都不算完整系统"。
   </div>
-</section>
+
+  <div class="tip"><b>三个词对齐（判断、填空都从这里出）：</b>运算器＋控制器＝<b>CPU</b>；输入设备＋输出设备统称 <b>I/O 设备</b>（I＝Input，O＝Output）；硬件是<b>物质基础</b>、软件是<b>灵魂</b>，只有硬件、没有任何软件的计算机叫<b>裸机</b>。<br><b>数据怎么走：</b>外部程序与数据 → 输入设备 → <b>内存</b> → CPU（运算＋控制）→ 内存 → 输出设备。<b>外存不在这个回路里</b>——外存中的程序必须<b>先调入内存</b>，CPU 才能执行。这也是填空题"内存 / 外存位置别写反"的由来。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -348,7 +350,9 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <div class="okbox"><b>怎么答"冯·诺依曼体系结构的内容"这道简答（5 分）：</b><br>
   ①计算机由运算器、控制器、存储器、输入设备、输出设备五大部件组成；②程序和数据以二进制形式表示；③程序和数据存放在存储器中，计算机按存储程序控制方式自动执行；④以<b>运算器为中心</b>改为以存储器为中心（现代改进）。四条按顺序写，不必展开。</div>
-</section>
+
+  <div class="tip"><b>体系的适用边界：</b>现在绝大多数商用微机（台式机、笔记本、手机）<b>仍属冯·诺依曼体系</b>；只有<b>超导、量子、光子</b>等新型计算机才跳出这个体系，还处在科研阶段、<b>不在考试范围</b>。所以判断"现代计算机已不再采用冯·诺依曼体系"→<b>错</b>。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -370,10 +374,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="flow">指令执行的基本过程（一个指令周期）
 ① 取指令（Fetch）    —— 按程序计数器 PC 的地址，从内存取出指令送到指令寄存器
 ② 分析指令（Decode） —— 控制器对操作码译码，判断要做什么
-③ 执行指令（Execute）—— 由运算器或相应部件完成操作
-④ 存结果（Store）    —— 把结果写回寄存器或内存，并修改 PC 指向下一条
+③ 执行指令（Execute）—— 由运算器或相应部件完成操作，结果写回寄存器或内存（有的教材把"存结果"单列为第 ④ 步）
 
-四条循环往复 → 这就是"存储程序控制"在工作</div>
+三步循环往复 → 这就是"存储程序控制"在工作</div>
 
   <div class="warnbox"><b>易错：</b>① 指令的<b>操作码</b>决定"做什么"，<b>地址码</b>决定"数据在哪"，两者不要对调；② 程序是"<b>有序</b>指令序列"，顺序不可乱，"一堆指令"不等于程序；③ 指令系统由<b>硬件</b>决定，不同 CPU 指令系统不同（所以程序不能随便跨平台直接跑）。</div>
 </section>
@@ -410,7 +413,11 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <div class="qz"><span class="lb">真题</span><b>2024 · 判断 3</b>　总线带宽是指总线在同一时刻能同时传输的二进制位数。<br>
   <span class="no">→ <b>错</b>。"同时传输的二进制位数"是总线<b>宽度</b>；<b>带宽 = 宽度 × 总线频率</b>（单位 B/s），是"单位时间能传多少"。两个概念一宽一快，别混。</span></div>
-</section>
+
+  <div class="tip"><b>三种总线的"方向"规律（判断常考）：</b><b>地址总线单向</b>——只由 CPU 向外发出地址；<b>数据总线、控制总线双向</b>。<br><b>地址位数 → 寻址空间：</b>n 根地址线 → 2<sup>n</sup> 个单元（按字节编址即 2<sup>n</sup> B）。<b>16 位 → 64 KB</b>，<b>20 位 → 1 MB</b>，<b>32 位 → 4 GB</b>；反过来问"内存 4 GB 需要多少根地址线"，答 <b>32 根</b>。<br><b>数据总线位数＝CPU 字长</b>；<b>带宽＝宽度×频率</b>（B/s），别把"宽度"说成"带宽"。</div>
+
+  <div class="warnbox"><b>层次名称有两套说法，别被绕住：</b><b>片内总线</b>（＝内部总线，CPU 芯片内部）· <b>系统总线</b>（主机内部，即数据/地址/控制三条）· <b>通信总线</b>（＝外部总线，主机与外设之间，如 USB）。题目写"片内总线"就是在说内部总线。</div>
+  </section>
 
 <section data-tier="low" class="mod" id="s5">
   <div class="mod-h">
@@ -432,7 +439,15 @@ body.slim section.mod[data-tier="low"]{display:none}
   <span class="no">→ <b>错</b>。BIOS 固化在主板的 ROM 里，负责上电自检和引导，<b>早于操作系统运行</b>；操作系统装在硬盘上，是另一个层次的东西。</span></div>
 
   <div class="tip"><b>顺手记住这条链：</b>加电 → <b>BIOS 自检</b> → 引导程序 → 装入操作系统 → 操作系统接管硬件。所以 BIOS 坏了，机器连"开机"这一步都过不去，更谈不上进系统。</div>
-</section>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c2)">芯片组与常见接口：北桥管快、南桥管慢</h3>
+  <table>
+    <tr><th style="width:80px">部件</th><th>位置与分工</th><th style="width:230px">考点</th></tr>
+    <tr><td><b>北桥</b></td><td>离 CPU <b>更近</b>，连接 CPU、内存、显卡等<b>高速</b>部件</td><td>起<b>主导</b>作用；芯片组常以<b>北桥</b>命名</td></tr>
+    <tr><td><b>南桥</b></td><td>离 CPU 较远，协调硬盘、USB 等<b>输入输出</b>设备的数据</td><td>"南桥管慢、管 I/O"</td></tr>
+  </table>
+  <div class="tip"><b>主板</b>又叫<b>母板、系统板</b>，是机箱内<b>最大的集成电路板</b>，由<b>芯片（芯片组、BIOS）＋插槽与接口</b>两部分组成，是各部件的连接枢纽。<b>常见接口：</b>USB（通用串行，接键鼠、U 盘，支持热插拔）· HDMI（高清音视频一线传，当前主流）· VGA（老式视频接口，已逐步淘汰）· 网口、音频口。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -454,13 +469,15 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">7</td><td>BIOS 是操作系统的一部分</td><td>BIOS 在 ROM 中，<b>早于</b>操作系统</td></tr>
     <tr><td class="c">8</td><td>指令的操作码说明数据在哪</td><td><b>操作码</b>说明做什么，<b>地址码</b>才是数据位置</td></tr>
   </table>
-</section>
+
+  <div class="warnbox"><b>本课再补三条边界：</b>① "现代计算机已不采用冯·诺依曼体系"→<b>错</b>（绝大多数商用机仍是）；② "主板芯片组以<b>南桥</b>命名"→<b>错</b>，以<b>北桥</b>命名；③ "地址总线可以双向传输"→<b>错</b>，地址总线<b>单向</b>，数据总线与控制总线才是双向。</div>
+  </section>
 
 <section class="mod" id="s7">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 10 条</h2>
+      <h2>本课必背 12 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -473,10 +490,13 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">4</td><td>五大部件：<b>运算器、控制器、存储器、输入设备、输出设备</b></td></tr>
     <tr><td class="c">5</td><td><b>运算器 + 控制器 = CPU</b>；存储器分内存（主存）与外存（辅存）</td></tr>
     <tr><td class="c">6</td><td>指令 = <b>操作码 + 地址码</b>；程序 = 有序指令序列；指令系统由硬件决定</td></tr>
-    <tr><td class="c">7</td><td>指令执行四步：<b>取指令 → 分析指令 → 执行指令 → 存结果</b></td></tr>
+    <tr><td class="c">7</td><td>指令执行三步：<b>取指令 → 分析指令 → 执行指令</b>（"存结果"并入执行，循环到结束指令）</td></tr>
     <tr><td class="c">8</td><td><b>系统总线 = 数据总线 + 地址总线 + 控制总线</b></td></tr>
     <tr><td class="c">9</td><td>数据总线宽度＝一次传输的位数；地址总线宽度决定寻址空间；<b>带宽 = 宽度 × 频率</b></td></tr>
     <tr><td class="c">10</td><td>主板是<b>连接枢纽</b>；BIOS 固化在 <b>ROM</b>，负责自检与引导，<b>不是操作系统的一部分</b></td></tr>
+      <tr><td class="c">11</td><td>主板＝<b>连接枢纽</b>（机箱内最大电路板），芯片组分<b>北桥（近 CPU、主导、命名）</b>与<b>南桥（管 I/O）</b>；常见接口 USB、HDMI、VGA</td></tr>
+    <tr><td class="c">12</td><td>地址总线<b>单向</b>；<b>16 位地址线 → 64 KB</b> 寻址空间；数据总线位数＝<b>字长</b></td></tr>
+
   </table>
 </section>
 
@@ -484,13 +504,13 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 10 题</h2>
+      <h2>自测 15 题</h2>
       <span class="tag">点题目看答案与解析</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. 计算机软件就是程序。</summary><div class="ans"><b>错误。</b>软件 = 程序 + 数据 + 文档，缺一不可。</div></details>
     <details><summary>2. 冯·诺依曼体系结构的核心思想是存储程序控制。</summary><div class="ans"><b>正确。</b>把程序存入存储器，由机器自动按序执行，这是"自动计算"的根本。</div></details>
@@ -498,25 +518,31 @@ body.slim section.mod[data-tier="low"]{display:none}
     <details><summary>4. BIOS 是操作系统的一部分，装在硬盘上。</summary><div class="ans"><b>错误。</b>BIOS 固化在主板的 ROM 中，负责加电自检与引导，运行在操作系统之前。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+      <details><summary>5. 地址总线是双向传输的。</summary><div class="ans"><b>错误。</b>地址总线<b>单向</b>，只能由 CPU 向外发出地址；<b>数据总线和控制总线</b>才是双向。</div></details>
+    <details><summary>6. 主板芯片组通常以北桥芯片的名称来命名。</summary><div class="ans"><b>正确。</b>北桥离 CPU 近、连接高速部件、起主导作用，芯片组习惯以其命名；南桥负责协调输入输出。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>5. 下列不属于系统软件的是（　）<br>A. Windows　B. 编译程序　C. 数据库管理系统　D. Excel</summary><div class="ans"><b>D。</b>Excel 是办公应用软件。</div></details>
-    <details><summary>6. 冯·诺依曼计算机的五大部件中，负责指挥协调各部件工作的是（　）<br>A. 运算器　B. 控制器　C. 存储器　D. 输入设备</summary><div class="ans"><b>B。</b>控制器是"司令部"，负责取指令、分析指令、发出控制信号。</div></details>
-    <details><summary>7. 一条指令通常由（　）两部分组成<br>A. 操作码和地址码　B. 数据码和控制码　C. 源地址和目的地址　D. 指令码和状态码</summary><div class="ans"><b>A。</b>操作码＝做什么，地址码＝数据在哪。</div></details>
-    <details><summary>8. 系统总线不包括（　）<br>A. 数据总线　B. 地址总线　C. 控制总线　D. 电源总线</summary><div class="ans"><b>D。</b>系统总线只有数据、地址、控制三类。</div></details>
+    <details><summary>7. 下列不属于系统软件的是（　）<br>A. Windows　B. 编译程序　C. 数据库管理系统　D. Excel</summary><div class="ans"><b>D。</b>Excel 是办公应用软件。</div></details>
+    <details><summary>8. 冯·诺依曼计算机的五大部件中，负责指挥协调各部件工作的是（　）<br>A. 运算器　B. 控制器　C. 存储器　D. 输入设备</summary><div class="ans"><b>B。</b>控制器是"司令部"，负责取指令、分析指令、发出控制信号。</div></details>
+    <details><summary>9. 一条指令通常由（　）两部分组成<br>A. 操作码和地址码　B. 数据码和控制码　C. 源地址和目的地址　D. 指令码和状态码</summary><div class="ans"><b>A。</b>操作码＝做什么，地址码＝数据在哪。</div></details>
+    <details><summary>10. 系统总线不包括（　）<br>A. 数据总线　B. 地址总线　C. 控制总线　D. 电源总线</summary><div class="ans"><b>D。</b>系统总线只有数据、地址、控制三类。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（2 题）</b></p>
+      <details><summary>11. 现代微型计算机普遍采用的体系结构是（　）<br>A. 冯·诺依曼体系　B. 量子计算体系　C. 光子计算体系　D. 生物计算体系</summary><div class="ans"><b>A。</b>绝大多数商用机仍是冯·诺依曼体系（二进制、存储程序、五大部件）；量子、光子、生物属新型计算机，科研阶段、不考。</div></details>
+    <details><summary>12. 某机地址总线为 16 位，按字节编址，其可直接寻址的空间为（　）<br>A. 16 KB　B. 32 KB　C. 64 KB　D. 1 MB</summary><div class="ans"><b>C。</b>2<sup>16</sup>＝65536 个单元＝64 KB。记：16 位→64 KB、20 位→1 MB、32 位→4 GB。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（3 题）</b></p>
   <div class="qa">
-    <details><summary>9. 系统总线分为数据总线、______ 和控制总线。</summary><div class="ans"><b>地址总线</b>。（2025 填空第 46 题原题）</div></details>
-    <details><summary>10. 若有 20 根地址总线，则可直接寻址的内存空间为 ______ MB。</summary><div class="ans"><b>1 MB。</b>2<sup>20</sup> = 1 048 576 个单元 = 1024 KB = 1 MB（每单元按 1 字节计）。</div></details>
+    <details><summary>13. 系统总线分为数据总线、______ 和控制总线。</summary><div class="ans"><b>地址总线</b>。（2025 填空第 46 题原题）</div></details>
+    <details><summary>14. 若有 20 根地址总线，则可直接寻址的内存空间为 ______ MB。</summary><div class="ans"><b>1 MB。</b>2<sup>20</sup> = 1 048 576 个单元 = 1024 KB = 1 MB（每单元按 1 字节计）。</div></details>
+  <details><summary>15. 主板芯片组中，负责协调输入输出设备数据传输的是 ______ 芯片。</summary><div class="ans"><b>南桥。</b>北桥近 CPU、管高速部件并以它命名；南桥远 CPU、管硬盘与 USB 等 I/O。</div></details>
   </div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
-  </div>
-</section>
+  </div></section>
 
 <nav class="lesson-pager" aria-label="课程翻页">
   <a class="pager-prev" href="ch1-l3.html"><span class="pager-k">← 上一课</span><span class="pager-t">第3课 数值与字符表示</span></a>

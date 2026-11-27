@@ -218,8 +218,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s4">④ 五大功能</a>
     <a href="#s5">⑤ 主流 OS 与国产</a>
     <a href="#s6">易错清单</a>
-    <a href="#s7">必背 12 条</a>
-    <a href="#s8">自测 12 题</a>
+    <a href="#s7">必背 14 条</a>
+    <a href="#s8">自测 15 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -302,7 +302,17 @@ body.slim section.mod[data-tier="low"]{display:none}
   </table>
 
   <div class="warnbox"><b>两个判断题模板：</b>①"软件就是程序"——<b>错</b>（还有数据和文档）；②"系统软件是用户为解决某个问题开发的"——<b>错</b>（那是应用软件）。这两句话 2026 年还以多选的形式出现过，属于年年可考的老陷阱。</div>
-</section>
+
+  <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c2)">程序设计语言与"翻译"：机器、汇编、高级，谁能直接跑</h3>
+  <table>
+    <tr><th style="width:100px">语言</th><th style="width:130px">能否直接执行</th><th>核心特点</th><th style="width:90px">归类</th></tr>
+    <tr><td><b>机器语言</b></td><td><b>能</b>（二进制指令）</td><td>速度最快、可读性最差、可移植性差（与硬件绑定）</td><td>低级语言</td></tr>
+    <tr><td><b>汇编语言</b></td><td>不能，需<b>汇编程序</b>翻译</td><td>用英文<b>助记符</b>代替二进制，仍面向硬件</td><td>低级语言</td></tr>
+    <tr><td><b>高级语言</b></td><td>不能，需编译/解释</td><td>接近自然语言、可读性强、可移植性好（C、Python、Java）</td><td>高级语言</td></tr>
+  </table>
+  <div class="tip"><b>一条完整的链：</b>源程序（人写的）→ <b>语言处理程序</b>（翻译工具）→ 目标程序（机器语言）→ 运行。<br><b>解释方式：</b>逐句翻译、逐句执行，<b>不生成</b>独立目标程序，速度慢；<b>编译方式：</b>整篇翻译完再执行，<b>生成</b>独立目标程序，速度快。<br><b>两头对齐：</b>与人类自然语言最接近的是<b>高级语言</b>，与计算机本身最接近的是<b>机器语言</b>。</div>
+  <div class="warnbox"><b>归类提示（教材口径有差异）：</b>多数教材把<b>数据库管理系统</b>算进系统软件，本省参考教材把它归为<b>应用软件</b>。遇到单独考归类的题，<b>以题干给出的分类标准 / 指定教材为准</b>，别硬顶；但"<b>语言处理程序属于系统软件</b>"这一条是确定的。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -331,7 +341,9 @@ body.slim section.mod[data-tier="low"]{display:none}
    越靠下越"底层"，越靠近硬件</div>
 
   <div class="okbox"><b>这条层次链能直接答三个判断：</b>①OS 是最基本的系统软件（对）；②OS 属于应用软件（错）；③应用软件可以直接控制硬件（错，必须通过 OS）。</div>
-</section>
+
+  <div class="tip"><b>按"用户数＋任务数"分三档（选择题常考）：</b>DOS＝<b>单用户单任务</b>；Windows XP＝<b>单用户多任务</b>；Windows 7 及以后、Unix、Linux＝<b>多用户多任务</b>。笼统说"Windows"时按<b>多用户多任务</b>答，只有明确写 XP 才答单用户多任务。<br><b>按界面分：</b>命令行界面（DOS）与图形用户界面（Windows）。<b>按功能分：</b>批处理、分时、实时、网络、嵌入式、移动 OS。</div>
+  </section>
 
 <section data-tier="low" class="mod" id="s3">
   <div class="mod-h">
@@ -390,7 +402,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>关系是"多对多"</b>：同一个程序可以被多次运行，产生多个进程（如开了三个 Word 窗口）；一个进程也可以调用多个程序。所以既不是"一一对应"，也不是"程序就是进程"。</span></div>
 
   <div class="okbox"><b>怎么答"操作系统的基本功能"这道简答（5 分）：</b>先一句总起"操作系统是最基本的系统软件，负责管理计算机的软硬件资源并为用户提供接口"，再分五条（处理器管理、存储器管理、设备管理、文件管理、用户接口），每条后面加半句解释。<b>总—分条—每条一句</b>，这是四川简答的标准结构。</div>
-</section>
+
+  <div class="tip"><b>进程的三个基本状态（判断、填空都考）：</b><b>就绪</b>（万事俱备，只等 CPU）→ <b>运行</b>（正占用 CPU）→ <b>阻塞 / 等待</b>（等 I/O 或某事件）→ 事件完成又回到就绪。<b>线程</b>是比进程<b>更小</b>的执行单元，一个进程可含多个线程；程序<b>静态</b>、进程<b>动态</b>，一个程序可对应多个进程。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -418,7 +432,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>这类题的套路：</b>三个国产 + 一个国外，只要记住"麒麟、鸿蒙、UOS"三个名字，剩下那个自动排除。</span></div>
 
   <div class="mem"><b>特点对比口诀：</b>Windows <b>好用</b>、Linux <b>免费又稳</b>、macOS <b>只认苹果</b>、Android <b>开源靠 Linux</b>、iOS <b>封闭</b>、国产认<b>麒麟鸿蒙UOS</b>。</div>
-</section>
+
+  <div class="tip"><b>典型代表记牢：</b><b>分时</b>——Windows、Unix、Linux（时间片轮转，人人有份）；<b>实时</b>——导弹发射、工业控制、机票订票（严格限时响应，来不及就出事）；<b>网络 OS</b>——Windows Server、Unix、Linux（装在服务器上，提供网络服务）。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -442,13 +458,15 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">9</td><td>没有操作系统，应用软件也能直接控制硬件</td><td>必须通过 OS 提供的接口</td></tr>
     <tr><td class="c">10</td><td>编译程序属于应用软件</td><td>语言处理程序属于<b>系统软件</b></td></tr>
   </table>
-</section>
+
+  <div class="warnbox"><b>再补三条：</b>① "Windows XP 是多用户多任务系统"→<b>错</b>，XP 是<b>单用户多任务</b>；② "汇编语言能被计算机直接执行"→<b>错</b>，须先经<b>汇编程序</b>翻译成机器语言；③ "解释方式会生成目标程序"→<b>错</b>，解释逐句执行、<b>不生成</b>独立目标程序。</div>
+  </section>
 
 <section class="mod" id="s7">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 12 条</h2>
+      <h2>本课必背 14 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -467,6 +485,9 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">10</td><td>Linux = <b>内核 + 发行版</b>（Ubuntu、CentOS、RedHat）</td></tr>
     <tr><td class="c">11</td><td>Android <b>基于 Linux 内核</b>、开源；iOS 类 Unix、闭源</td></tr>
     <tr><td class="c">12</td><td>国产 OS：<b>麒麟、鸿蒙（HarmonyOS）、统信 UOS</b></td></tr>
+      <tr><td class="c">13</td><td>三种语言：机器（<b>可直接执行</b>、低级）· 汇编（<b>助记符</b>、需汇编程序、低级）· 高级（C/Python/Java、可移植）</td></tr>
+    <tr><td class="c">14</td><td><b>解释</b>＝逐句翻译、无目标程序、慢；<b>编译</b>＝整体翻译、生成目标程序、快；进程三态＝<b>就绪 / 运行 / 阻塞</b></td></tr>
+
   </table>
 </section>
 
@@ -474,13 +495,13 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 12 题</h2>
+      <h2>自测 15 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（7 题）</b></p>
   <div class="qa">
     <details><summary>1. 操作系统是最基本的系统软件。</summary><div class="ans"><b>正确。</b>它管理软硬件资源并为其他软件提供运行环境。</div></details>
     <details><summary>2. 进程与程序是一一对应的。</summary><div class="ans"><b>错误。</b>程序静态、进程动态，同一程序可产生多个进程（2025 判断 27）。</div></details>
@@ -489,25 +510,30 @@ body.slim section.mod[data-tier="low"]{display:none}
     <details><summary>5. 编译程序属于应用软件。</summary><div class="ans"><b>错误。</b>语言处理程序属于<b>系统软件</b>。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（4 题）</b></p>
+      <details><summary>6. Windows XP 属于多用户多任务操作系统。</summary><div class="ans"><b>错误。</b>XP 是典型的<b>单用户多任务</b>系统；多用户多任务要数 Windows 7 及以后版本、Unix、Linux。</div></details>
+    <details><summary>7. 采用解释方式时，程序执行过程中会生成独立的目标程序。</summary><div class="ans"><b>错误。</b>解释是逐句翻译、逐句执行，<b>不生成</b>独立目标程序；生成目标程序的是编译方式。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
   <div class="qa">
-    <details><summary>6. 操作系统的基本功能不包括（　）<br>A. 处理器管理　B. 文件管理　C. 用户接口　D. 财务管理</summary><div class="ans"><b>D。</b>"财务管理"是应用软件干的事。</div></details>
-    <details><summary>7. 下列全部属于国产操作系统的一组是（　）<br>A. 麒麟、鸿蒙、UOS　B. Windows、Linux、iOS　C. Android、Ubuntu、macOS　D. 麒麟、Windows、UOS</summary><div class="ans"><b>A。</b>2025 多选 36 的同源考点。</div></details>
-    <details><summary>8. 用户与计算机之间的接口是（　）<br>A. 应用软件　B. 操作系统　C. 编译程序　D. 数据库</summary><div class="ans"><b>B。</b>OS 兼具"资源管理者"和"用户接口"两个身份。</div></details>
-    <details><summary>9. 多道批处理系统主要解决的问题是（　）<br>A. 提高 CPU 利用率　B. 提高显示分辨率　C. 增加外存容量　D. 缩短开机时间</summary><div class="ans"><b>A。</b>多道程序"重叠"执行，减少 CPU 等待。</div></details>
+    <details><summary>8. 操作系统的基本功能不包括（　）<br>A. 处理器管理　B. 文件管理　C. 用户接口　D. 财务管理</summary><div class="ans"><b>D。</b>"财务管理"是应用软件干的事。</div></details>
+    <details><summary>9. 下列全部属于国产操作系统的一组是（　）<br>A. 麒麟、鸿蒙、UOS　B. Windows、Linux、iOS　C. Android、Ubuntu、macOS　D. 麒麟、Windows、UOS</summary><div class="ans"><b>A。</b>2025 多选 36 的同源考点。</div></details>
+    <details><summary>10. 用户与计算机之间的接口是（　）<br>A. 应用软件　B. 操作系统　C. 编译程序　D. 数据库</summary><div class="ans"><b>B。</b>OS 兼具"资源管理者"和"用户接口"两个身份。</div></details>
+    <details><summary>11. 多道批处理系统主要解决的问题是（　）<br>A. 提高 CPU 利用率　B. 提高显示分辨率　C. 增加外存容量　D. 缩短开机时间</summary><div class="ans"><b>A。</b>多道程序"重叠"执行，减少 CPU 等待。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、简答题（2 题）</b></p>
+      <details><summary>12. 下列程序设计语言中，计算机能够直接识别和执行的是（　）<br>A. 汇编语言　B. 机器语言　C. C 语言　D. Python</summary><div class="ans"><b>B。</b>机器语言就是二进制指令序列，可直接执行；汇编要经汇编程序、高级语言要经编译或解释。</div></details>
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、简答题（3 题）</b></p>
   <div class="qa">
-    <details><summary>10. 简述操作系统的五大基本功能。</summary><div class="ans"><b>参考答案：</b>操作系统是最基本的系统软件，负责管理计算机的软硬件资源并为用户提供操作接口。其基本功能包括：①<b>处理器管理</b>，为进程分配 CPU 并进行调度；②<b>存储器管理</b>，完成内存分配回收与虚拟存储；③<b>设备管理</b>，负责设备分配、驱动与缓冲；④<b>文件管理</b>，实现文件的按名存取、共享与保护；⑤<b>用户接口</b>，提供命令接口、图形界面与系统调用。</div></details>
-    <details><summary>11. 简述 Windows 与 Linux 的主要区别。</summary><div class="ans"><b>参考答案：</b>①<b>授权方式</b>：Windows 为商业软件需授权付费，Linux 开源免费；②<b>界面</b>：Windows 以图形界面为主、易用性强，Linux 命令行功能更强；③<b>稳定性与安全</b>：Linux 多用户多任务、稳定性和安全性更好，常用于服务器；④<b>应用生态</b>：Windows 桌面软件与游戏丰富，Linux 服务器与开发工具生态更强。</div></details>
+    <details><summary>13. 简述操作系统的五大基本功能。</summary><div class="ans"><b>参考答案：</b>操作系统是最基本的系统软件，负责管理计算机的软硬件资源并为用户提供操作接口。其基本功能包括：①<b>处理器管理</b>，为进程分配 CPU 并进行调度；②<b>存储器管理</b>，完成内存分配回收与虚拟存储；③<b>设备管理</b>，负责设备分配、驱动与缓冲；④<b>文件管理</b>，实现文件的按名存取、共享与保护；⑤<b>用户接口</b>，提供命令接口、图形界面与系统调用。</div></details>
+    <details><summary>14. 简述 Windows 与 Linux 的主要区别。</summary><div class="ans"><b>参考答案：</b>①<b>授权方式</b>：Windows 为商业软件需授权付费，Linux 开源免费；②<b>界面</b>：Windows 以图形界面为主、易用性强，Linux 命令行功能更强；③<b>稳定性与安全</b>：Linux 多用户多任务、稳定性和安全性更好，常用于服务器；④<b>应用生态</b>：Windows 桌面软件与游戏丰富，Linux 服务器与开发工具生态更强。</div></details>
+  <details><summary>15. 简述机器语言、汇编语言与高级语言的主要区别。</summary><div class="ans"><b>参考答案：</b>①<b>机器语言</b>由二进制指令组成，<b>可被计算机直接执行</b>，速度快但可读性、可移植性差，属低级语言；②<b>汇编语言</b>用英文助记符代替二进制指令，不能直接执行，需<b>汇编程序</b>翻译，仍属低级语言；③<b>高级语言</b>接近自然语言，可读性强、可移植性好（C、Python、Java），需经<b>编译或解释</b>才能执行。<br>另外：与自然语言最接近的是高级语言，与计算机最接近的是机器语言。</div></details>
   </div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">收起全部答案</button>
-  </div>
-</section>
+  </div></section>
 
 <nav class="lesson-pager" aria-label="课程翻页">
   <a class="pager-prev" href="ch2-l2.html"><span class="pager-k">← 上一课</span><span class="pager-t">第2课 硬件系统</span></a>
