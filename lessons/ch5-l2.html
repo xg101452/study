@@ -218,8 +218,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 顺序与二分查找</a>
     <a href="#s6">⑥ 冒泡排序</a>
     <a href="#s7">⑦ 读图三步法</a>
-    <a href="#s8">必背 12 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s8">必背 15 条</a>
+    <a href="#s9">自测 17 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -415,7 +415,12 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>记结论：二分查找的前提是"有序"，不是"递增有序"。</b></span></div>
 
   <div class="okbox"><b>算次数的小技巧：</b>二分查找 n 个元素，最多比较 <b>⌈log₂n⌉</b> 次。<b>2⁹＝512、2¹⁰＝1024</b>，所以 <b>1000 个元素最多 10 次</b>，<b>100 个元素最多 7 次</b>（2⁶＝64 不够，2⁷＝128 够）。</div>
-</section>
+
+  <div class="mem"><b>两种查找的"次数账"（选择题常算）：</b><br>
+  <b>顺序查找</b>：不要求有序，从头逐个比；查找成功平均比较 <b>(n+1)/2</b> 次，最多 <b>n</b> 次。<br>
+  <b>二分（折半）查找</b>：<b>必须有序</b>（升序降序都行），每次砍掉一半，最多比较 <b>⌊log₂n⌋+1</b> 次；<b>无序表不能直接用</b>。<br>
+  <b>二分三句核心：</b>① 中间下标 <b>M = INT((L+R)/2)</b>（向下取整）；② 目标在左半区 → <b>R = M−1</b>；目标在右半区 → <b>L = M+1</b>；③ 循环条件 <b>L ≤ R</b>，一旦 <b>L &gt; R</b> 即查找失败。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -447,7 +452,12 @@ body.slim section.mod[data-tier="low"]{display:none}
   例：<b>5 个数排序</b>→ 最多 <b>4 趟</b>，比较 <b>4+3+2+1＝10</b> 次。</div>
 
   <div class="warnbox"><b>冒泡的方向别搞错：</b>升序排列时，每趟把<b>最大的</b>送到末尾（<b>大的往后换</b>）；降序则相反。<b>题目问"第一趟结束后哪个数一定在最终位置"——答"最大（或最小）的那个数"。</b></div>
-</section>
+
+  <div class="mem"><b>冒泡排序的三个数（n 个元素）：</b><br>
+  ① 最多 <b>n−1 趟</b>；② 第 i 趟比较 <b>n−i 次</b>（每趟把当前最大"冒"到末尾，末尾已定位的不再比）；③ 总比较次数最多 <b>n(n−1)/2</b> 次。<br>
+  <b>提前结束：</b>设一个<b>标志变量</b>，某趟<b>一次交换都没发生</b>就说明已有序，立即结束（最好情况只需 1 趟、n−1 次比较）。<br>
+  <b>数组角标：</b>C 语言习惯从 <b>0</b> 开始（a[0]～a[n−1]），教材示例常用 <b>1</b> 开始（a[1]～a[n]）；<b>按题目给的角标走，别自己改</b>。</div>
+  </section>
 
 <section class="mod" id="s7">
   <div class="mod-h">
@@ -485,7 +495,7 @@ s ← 0 ;  i ← 1
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 12 条</h2>
+      <h2>本课必背 15 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -504,6 +514,10 @@ s ← 0 ;  i ← 1
     <tr><td class="c">10</td><td><b>冒泡某趟无交换即可提前结束</b>（说明已有序）</td></tr>
     <tr><td class="c">11</td><td>升序冒泡每趟把<b>最大值</b>送到末尾；一趟结束，最大数<b>已在最终位置</b></td></tr>
     <tr><td class="c">12</td><td>看流程图三步：<b>找初值 → 找条件 → 找规律</b>，再取小 n 手工跑一遍</td></tr>
+      <tr><td class="c">13</td><td>顺序查找不要求有序，平均 <b>(n+1)/2</b> 次、最多 <b>n</b> 次；二分要求<b>有序</b>，最多 <b>⌊log₂n⌋+1</b> 次</td></tr>
+    <tr><td class="c">14</td><td>二分三句：<b>M=INT((L+R)/2)</b>；左半区 <b>R=M−1</b>、右半区 <b>L=M+1</b>；<b>L&gt;R</b> 即失败</td></tr>
+    <tr><td class="c">15</td><td>冒泡：最多 <b>n−1</b> 趟、第 i 趟比 <b>n−i</b> 次、总比 <b>n(n−1)/2</b>；某趟无交换即已有序，可提前结束</td></tr>
+
   </table>
 </section>
 
@@ -511,37 +525,40 @@ s ← 0 ;  i ← 1
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 17 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. 循环体中的语句至少会被执行一次。</summary><div class="ans"><b>错误。</b>2025 判断 34；while 循环可 0 次。</div></details>
     <details><summary>2. 冒泡排序某趟没有发生交换，可以提前结束。</summary><div class="ans"><b>正确。</b>2025 判断 35。</div></details>
     <details><summary>3. 二分查找要求数据必须按关键字递增排列。</summary><div class="ans"><b>错误。</b>只要求<b>有序</b>，递增或递减均可。</div></details>
     <details><summary>4. 三种基本结构的共同点是只有一个入口和一个出口。</summary><div class="ans"><b>正确。</b></div></details>
     <details><summary>5. 求 n! 时，累乘变量的初值应设为 0。</summary><div class="ans"><b>错误。</b>应设为 <b>1</b>，设 0 则结果永远为 0。</div></details>
-  </div>
+        <details><summary>6. 二分查找可以在无序的数列上直接使用。</summary><div class="ans"><b>错。</b>二分查找<b>必须先有序</b>（升序或降序均可），无序表只能用顺序查找或先排序。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>6. 对 n 个元素进行冒泡排序，最多需要进行的趟数是（　）<br>A. n　B. n−1　C. n+1　D. n²</summary><div class="ans"><b>B。</b></div></details>
-    <details><summary>7. 在长度为 n 的线性表中进行顺序查找，最多比较次数为（　）<br>A. 1　B. log₂n　C. n　D. n²</summary><div class="ans"><b>C。</b></div></details>
-    <details><summary>8. 1000 个有序元素做二分查找，最多比较次数约为（　）<br>A. 10　B. 100　C. 500　D. 1000</summary><div class="ans"><b>A。</b>2¹⁰＝1024。</div></details>
-    <details><summary>9. 流程图中表示"判断"的符号是（　）<br>A. 矩形　B. 菱形　C. 平行四边形　D. 圆角矩形</summary><div class="ans"><b>B。</b></div></details>
-    <details><summary>10. 5 个数用冒泡排序（最坏情况），总比较次数为（　）<br>A. 5　B. 10　C. 15　D. 25</summary><div class="ans"><b>B。</b>5×4/2＝10。</div></details>
-  </div>
+    <details><summary>7. 对 n 个元素进行冒泡排序，最多需要进行的趟数是（　）<br>A. n　B. n−1　C. n+1　D. n²</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>8. 在长度为 n 的线性表中进行顺序查找，最多比较次数为（　）<br>A. 1　B. log₂n　C. n　D. n²</summary><div class="ans"><b>C。</b></div></details>
+    <details><summary>9. 1000 个有序元素做二分查找，最多比较次数约为（　）<br>A. 10　B. 100　C. 500　D. 1000</summary><div class="ans"><b>A。</b>2¹⁰＝1024。</div></details>
+    <details><summary>10. 流程图中表示"判断"的符号是（　）<br>A. 矩形　B. 菱形　C. 平行四边形　D. 圆角矩形</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>11. 5 个数用冒泡排序（最坏情况），总比较次数为（　）<br>A. 5　B. 10　C. 15　D. 25</summary><div class="ans"><b>B。</b>5×4/2＝10。</div></details>
+        <details><summary>12. 对 n 个元素进行冒泡排序（升序），最多需要多少趟（　）<br>A. n　B. n−1　C. n/2　D. log₂n</summary><div class="ans"><b>B。</b>每趟定位一个最大元素，n−1 趟即可全部有序。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（5 题）</b></p>
   <div class="qa">
-    <details><summary>11. 三种基本结构是顺序结构、选择结构和 ______。</summary><div class="ans"><b>循环结构</b>。</div></details>
-    <details><summary>12. 执行"s←0；i←1；当 i≤100 时 s←s+i，i←i+1"，输出 s ＝ ______。</summary><div class="ans"><b>5050</b>（1+2+…+100）。</div></details>
-    <details><summary>13. 简述当型循环与直到型循环的区别。</summary><div class="ans"><b>参考答案：</b>①<b>当型（while）</b>在循环体<b>之前</b>判断条件，条件为真才执行循环体，<b>条件一开始不成立时循环体一次都不执行（最少 0 次）</b>；②<b>直到型（do-while）</b>先执行循环体、<b>之后</b>再判断条件，条件为真则继续，<b>循环体至少执行一次</b>。</div></details>
-    <details><summary>14. 简述冒泡排序的基本思想，并说明 n 个数最多需要多少趟。</summary><div class="ans"><b>参考答案：</b>①<b>基本思想</b>：从第一个元素开始，<b>相邻两两比较，若顺序不符合要求则交换</b>，一趟下来最大的（升序时）元素被送到末尾；下一趟在剩余元素中重复，直到全部有序。②<b>趟数</b>：n 个数最多需要 <b>n−1 趟</b>；第 i 趟比较 n−i 次，最坏共比较 n(n−1)/2 次，时间复杂度 O(n²)。③若<b>某一趟没有发生交换</b>，说明已有序，<b>可提前结束</b>。</div></details>
-  </div>
+    <details><summary>13. 三种基本结构是顺序结构、选择结构和 ______。</summary><div class="ans"><b>循环结构</b>。</div></details>
+    <details><summary>14. 执行"s←0；i←1；当 i≤100 时 s←s+i，i←i+1"，输出 s ＝ ______。</summary><div class="ans"><b>5050</b>（1+2+…+100）。</div></details>
+    <details><summary>15. 简述当型循环与直到型循环的区别。</summary><div class="ans"><b>参考答案：</b>①<b>当型（while）</b>在循环体<b>之前</b>判断条件，条件为真才执行循环体，<b>条件一开始不成立时循环体一次都不执行（最少 0 次）</b>；②<b>直到型（do-while）</b>先执行循环体、<b>之后</b>再判断条件，条件为真则继续，<b>循环体至少执行一次</b>。</div></details>
+    <details><summary>16. 简述冒泡排序的基本思想，并说明 n 个数最多需要多少趟。</summary><div class="ans"><b>参考答案：</b>①<b>基本思想</b>：从第一个元素开始，<b>相邻两两比较，若顺序不符合要求则交换</b>，一趟下来最大的（升序时）元素被送到末尾；下一趟在剩余元素中重复，直到全部有序。②<b>趟数</b>：n 个数最多需要 <b>n−1 趟</b>；第 i 趟比较 n−i 次，最坏共比较 n(n−1)/2 次，时间复杂度 O(n²)。③若<b>某一趟没有发生交换</b>，说明已有序，<b>可提前结束</b>。</div></details>
+        <details><summary>17. 二分查找中，若目标值大于中间元素，应把左边界 L 更新为 ______。</summary><div class="ans"><b>M+1</b>（中间元素已比较过，排除掉）。</div></details>
+</div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

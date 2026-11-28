@@ -218,8 +218,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 三种运算</a>
     <a href="#s6">⑥ SQL 与常用 DBMS</a>
     <a href="#s7">易错清单</a>
-    <a href="#s8">必背 12 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s8">必背 15 条</a>
+    <a href="#s9">自测 17 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -357,7 +357,17 @@ body.slim section.mod[data-tier="low"]{display:none}
 ④ 标类型 → 在连线旁标 <b>1:1 / 1:n / m:n</b></div>
 <div class="tip"><b>联系类型怎么判断：</b>“一个班有多名学生、一名学生只在一个班” → <b>1:n</b>；“学生选课，一人选多门、一门被多人选” → <b>m:n</b>；“一人一张身份证” → <b>1:1</b>。<b>画图题顺序：先实体、再属性、后联系、最后标类型。</b></div>
 
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">三个层次</th><th>做什么</th><th style="width:30%">典型</th></tr>
+    <tr><td><b>概念模型</b></td><td>把现实世界抽象成实体与联系，给设计人员和用户看</td><td><b>E-R 图</b></td></tr>
+    <tr><td><b>逻辑模型</b></td><td>面向数据库实现的结构描述</td><td>层次、网状、<b>关系模型</b></td></tr>
+    <tr><td><b>物理模型</b></td><td>数据在存储介质上<b>怎么存、怎么取</b></td><td>存储结构、索引</td></tr>
+  </table>
+
+  <div class="mem"><b>完整性约束（数据模型三要素之一）分三类：</b><br>
+  ① <b>实体完整性</b>：<b>主键不能为空、不能重复</b>；② <b>参照完整性</b>：<b>外键</b>的取值必须能在被参照表的主键中找到（或为空）；③ <b>用户定义完整性</b>：业务规则，如"性别只能是男/女""年龄 0～150"。</div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -409,7 +419,18 @@ body.slim section.mod[data-tier="low"]{display:none}
   · <b>"找出成绩大于 90 的学生"</b> → <b>选择</b>（筛行）<br>
   · <b>"只列出学号和姓名两列"</b> → <b>投影</b>（去列）<br>
   · <b>"把学生表和班级表按班级号拼起来"</b> → <b>连接</b>（拼表）</div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">运算</th><th>怎么做</th><th style="width:30%">结果规模</th></tr>
+    <tr><td><b>并</b></td><td>两个结构相同的表，记录合到一起（去重）</td><td>行相加</td></tr>
+    <tr><td><b>交</b></td><td>只保留两张表<b>都有的</b>记录</td><td><b>行减少、列不变</b></td></tr>
+    <tr><td><b>差</b></td><td>在 A 中但不在 B 中的记录</td><td>行减少、列不变</td></tr>
+    <tr><td><b>笛卡尔积</b></td><td><b>列相加、行相乘</b>：R 的每条记录与 S 的每条记录逐一组合</td><td><b>M+N 列、i×j 行</b></td></tr>
+    <tr><td><b>自然连接</b></td><td>在笛卡尔积基础上，取<b>公共属性等值</b>的记录，再去掉重复的公共列</td><td>列变少、只留匹配行</td></tr>
+  </table>
+
+  <div class="tip"><b>一句话分清：</b><b>选择</b>管<b>行</b>（挑记录）、<b>投影</b>管<b>列</b>（挑字段）、<b>连接</b>管<b>拼表</b>（按公共属性合并）。"只改元组个数、不改属性个数"的运算＝<b>交</b>（并、差也改行不改列）。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -450,7 +471,20 @@ SELECT 姓名 FROM 学生 WHERE 成绩 > 90;</div>
     <tr><td><b>MySQL</b></td><td><b>开源免费</b>，Web 应用最常用（LAMP 组合）</td></tr>
     <tr><td><b>Oracle</b></td><td><b>大型商业数据库</b>，金融、电信等高端场景</td></tr>
   </table>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">DBMS</th><th>定位</th></tr>
+    <tr><td><b>Access</b></td><td>微软 Office 组件，<b>中小型</b>桌面数据库</td></tr>
+    <tr><td><b>SQL Server</b></td><td>微软<b>中大型</b>关系数据库，网站后台常用</td></tr>
+    <tr><td><b>Visual FoxPro（VFP）</b></td><td>早年计算机二级常考的小型数据库</td></tr>
+    <tr><td><b>Oracle</b></td><td>甲骨文，<b>大型商用</b>，功能强、成本高</td></tr>
+    <tr><td><b>MySQL</b></td><td><b>开源免费</b>，中小型网站最常用</td></tr>
+    <tr><td><b>DB2</b></td><td>IBM 大型商用，企业核心业务</td></tr>
+  </table>
+
+  <div class="mem"><b>SQL＝结构化查询语言</b>，四类核心语句（增删改查）：<b>SELECT</b> 查询、<b>INSERT</b> 插入、<b>UPDATE</b> 更新、<b>DELETE</b> 删除。<br>
+  <b>DBA</b>＝数据库管理员，负责建库、授权、备份与性能维护；<b>DBS</b>＝数据库系统（数据库＋DBMS＋应用程序＋人）。</div>
+  </section>
 
 <section class="mod" id="s7">
   <div class="mod-h">
@@ -482,7 +516,7 @@ SELECT 姓名 FROM 学生 WHERE 成绩 > 90;</div>
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 12 条</h2>
+      <h2>本课必背 15 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -501,6 +535,10 @@ SELECT 姓名 FROM 学生 WHERE 成绩 > 90;</div>
     <tr><td class="c">10</td><td>关系运算：<b>选择管行、投影管列、连接拼两表</b></td></tr>
     <tr><td class="c">11</td><td>SQL：<b>SELECT … FROM … WHERE</b>；<b>CREATE 属 DDL</b>，INSERT/UPDATE/DELETE 属 DML</td></tr>
     <tr><td class="c">12</td><td>E-R 图：<b>实体矩形、属性椭圆、联系菱形</b>；联系有 <b>1:1、1:n、m:n</b></td></tr>
+      <tr><td class="c">13</td><td>数据模型三层＝<b>概念模型（E-R 图）、逻辑模型、物理模型</b>；逻辑模型含层次、网状、<b>关系</b></td></tr>
+    <tr><td class="c">14</td><td>完整性三类＝<b>实体完整性（主键非空不重）、参照完整性（外键有效）、用户定义完整性</b></td></tr>
+    <tr><td class="c">15</td><td><b>笛卡尔积</b>＝列相加（M+N 列）、行相乘（i×j 行）；<b>自然连接</b>按公共属性等值再删重复列</td></tr>
+
   </table>
 </section>
 
@@ -508,37 +546,40 @@ SELECT 姓名 FROM 学生 WHERE 成绩 > 90;</div>
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 17 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. 数据模型由数据结构、数据操作和完整性约束三部分组成。</summary><div class="ans"><b>正确。</b>2025 判断 29。</div></details>
     <details><summary>2. 主键只能由一个字段组成。</summary><div class="ans"><b>错误。</b>可以是复合主键（2024 判断）。</div></details>
     <details><summary>3. 关系模型用二维表表示实体及其联系。</summary><div class="ans"><b>正确。</b></div></details>
     <details><summary>4. 数据库管理系统就是数据库。</summary><div class="ans"><b>错误。</b>DBMS 是软件，DB 是数据集合。</div></details>
     <details><summary>5. 投影运算是按条件从表中选出满足条件的行。</summary><div class="ans"><b>错误。</b>这是<b>选择</b>；投影是选列。</div></details>
-  </div>
+        <details><summary>6. E-R 图属于物理模型。</summary><div class="ans"><b>错。</b>E-R 图是<b>概念模型</b>；物理模型描述数据在存储介质上的存放方式。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>6. 下列不属于数据库管理系统的是（　）<br>A. MySQL　B. SQL Server　C. Chrome　D. Access</summary><div class="ans"><b>C。</b>2025 单选 5 原题。</div></details>
-    <details><summary>7. 用二维表表示实体及其联系的数据模型是（　）<br>A. 层次模型　B. 网状模型　C. 关系模型　D. 概念模型</summary><div class="ans"><b>C。</b>2025 单选 6 原题。</div></details>
-    <details><summary>8. SQL 中用于建立数据库对象的语句是（　）<br>A. SELECT　B. CREATE　C. INSERT　D. DROP</summary><div class="ans"><b>B。</b>2025 单选 7。</div></details>
-    <details><summary>9. 从学生表中只取出"学号、姓名"两列，这种运算是（　）<br>A. 选择　B. 投影　C. 连接　D. 排序</summary><div class="ans"><b>B。</b>取列＝投影。</div></details>
-    <details><summary>10. 能唯一标识表中每一行的是（　）<br>A. 外键　B. 主键　C. 索引　D. 视图</summary><div class="ans"><b>B。</b></div></details>
-  </div>
+    <details><summary>7. 下列不属于数据库管理系统的是（　）<br>A. MySQL　B. SQL Server　C. Chrome　D. Access</summary><div class="ans"><b>C。</b>2025 单选 5 原题。</div></details>
+    <details><summary>8. 用二维表表示实体及其联系的数据模型是（　）<br>A. 层次模型　B. 网状模型　C. 关系模型　D. 概念模型</summary><div class="ans"><b>C。</b>2025 单选 6 原题。</div></details>
+    <details><summary>9. SQL 中用于建立数据库对象的语句是（　）<br>A. SELECT　B. CREATE　C. INSERT　D. DROP</summary><div class="ans"><b>B。</b>2025 单选 7。</div></details>
+    <details><summary>10. 从学生表中只取出"学号、姓名"两列，这种运算是（　）<br>A. 选择　B. 投影　C. 连接　D. 排序</summary><div class="ans"><b>B。</b>取列＝投影。</div></details>
+    <details><summary>11. 能唯一标识表中每一行的是（　）<br>A. 外键　B. 主键　C. 索引　D. 视图</summary><div class="ans"><b>B。</b></div></details>
+        <details><summary>12. 关系 R 有 3 列 4 行，关系 S 有 2 列 3 行，R 与 S 的笛卡尔积有（　）<br>A. 5 列 7 行　B. 5 列 12 行　C. 6 列 12 行　D. 2 列 12 行</summary><div class="ans"><b>B。</b>列相加 3+2=5，行相乘 4×3=12。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（5 题）</b></p>
   <div class="qa">
-    <details><summary>11. 数据库系统由数据库、______、应用程序和人员组成。</summary><div class="ans"><b>数据库管理系统（DBMS）</b>。</div></details>
-    <details><summary>12. 关系模型中，表中的一行称为 ______，一列称为 ______。</summary><div class="ans"><b>元组、属性</b>。</div></details>
-    <details><summary>13. 简述数据库系统的特点。</summary><div class="ans"><b>参考答案：</b>①<b>数据结构化</b>，数据之间有联系；②<b>数据共享性高、冗余度低</b>，可被多用户多应用共享；③<b>数据独立性高</b>，数据的逻辑结构与物理存储改变时应用程序不必修改；④<b>由 DBMS 统一管理和控制</b>，提供安全性、完整性、并发控制与恢复功能。</div></details>
-    <details><summary>14. 简述选择、投影、连接三种关系运算的区别。</summary><div class="ans"><b>参考答案：</b>①<b>选择</b>：按给定条件<b>筛选满足条件的行（元组）</b>，是"挑记录"；②<b>投影</b>：从表中<b>选取指定的列（属性）</b>，去掉不需要的列，是"挑字段"；③<b>连接</b>：把<b>两张表按公共属性（连接条件）横向拼接</b>成一张新表，是"拼表"。</div></details>
-  </div>
+    <details><summary>13. 数据库系统由数据库、______、应用程序和人员组成。</summary><div class="ans"><b>数据库管理系统（DBMS）</b>。</div></details>
+    <details><summary>14. 关系模型中，表中的一行称为 ______，一列称为 ______。</summary><div class="ans"><b>元组、属性</b>。</div></details>
+    <details><summary>15. 简述数据库系统的特点。</summary><div class="ans"><b>参考答案：</b>①<b>数据结构化</b>，数据之间有联系；②<b>数据共享性高、冗余度低</b>，可被多用户多应用共享；③<b>数据独立性高</b>，数据的逻辑结构与物理存储改变时应用程序不必修改；④<b>由 DBMS 统一管理和控制</b>，提供安全性、完整性、并发控制与恢复功能。</div></details>
+    <details><summary>16. 简述选择、投影、连接三种关系运算的区别。</summary><div class="ans"><b>参考答案：</b>①<b>选择</b>：按给定条件<b>筛选满足条件的行（元组）</b>，是"挑记录"；②<b>投影</b>：从表中<b>选取指定的列（属性）</b>，去掉不需要的列，是"挑字段"；③<b>连接</b>：把<b>两张表按公共属性（连接条件）横向拼接</b>成一张新表，是"拼表"。</div></details>
+        <details><summary>17. 关系运算中，只保留两张表中都有的记录，且属性个数不变的运算是 ______。</summary><div class="ans"><b>交</b>（并、差同样只改行不改列）。</div></details>
+</div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

@@ -219,8 +219,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s6">⑥ 六个程序概念</a>
     <a href="#s6b">⑥+ 算法设计策略</a>
     <a href="#s7">易错清单</a>
-    <a href="#s8">必背 14 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s8">必背 17 条</a>
+    <a href="#s9">自测 17 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -311,7 +311,18 @@ body.slim section.mod[data-tier="low"]{display:none}
 </table>
 <div class="mem"><b>计算思维四种方法：</b>抽象（抓本质）、分解（拆小）、模式识别（找规律）、算法设计（定步骤）。<b>“自动化”是计算思维的目标，不是第四种方法</b>，多选题别被它带偏。</div>
 
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">计算思维四方法</th><th>一句话</th></tr>
+    <tr><td><b>分层思维</b></td><td>把大问题拆成若干小问题，逐个解决（整章拆小节）</td></tr>
+    <tr><td><b>模式识别</b></td><td>找事物之间的共同点与相似规律（看到 -ing 就想到现在分词）</td></tr>
+    <tr><td><b>流程建设</b></td><td>把步骤固定成流程、按顺序执行（先看视频→再练题→再总结）</td></tr>
+    <tr><td><b>抽象化</b></td><td>提炼本质、去掉次要信息（狗来回跑→只算速度×相遇时间）</td></tr>
+  </table>
+
+  <div class="mem"><b>计算思维的定义与本质：</b>利用计算机科学的基本概念<b>求解问题、设计系统、理解人类行为</b>；本质是<b>抽象与自动化</b>。<br>
+  <b>三大科学思维：理论思维、实验思维、计算思维</b>（现代科学的三大支柱，选择、填空常考）。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -396,7 +407,18 @@ body.slim section.mod[data-tier="low"]{display:none}
   <span class="no">→ <b>错误</b>。<b>自然语言是算法的描述方法之一</b>，只是它<b>容易有歧义、不够严谨</b>，所以通常更推荐流程图或伪代码。<b>"不能用"改"不推荐用"才成立。</b></span></div>
 
   <div class="okbox"><b>四种方法一句话总结：</b><b>自然语言最通俗、流程图最直观、伪代码最好转程序、程序语言最精确。</b></div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:140px">流程图图框</th><th>形状</th></tr>
+    <tr><td><b>起止框</b></td><td><b>圆角矩形</b>（或椭圆）</td></tr>
+    <tr><td><b>输入 / 输出框</b></td><td><b>平行四边形</b></td></tr>
+    <tr><td><b>处理框</b></td><td><b>矩形</b></td></tr>
+    <tr><td><b>判断框</b></td><td><b>菱形</b>：<b>1 个入口、2 个出口</b>，分支标 <b>Y/N</b>（真/假）且必须成对，不能混用</td></tr>
+  </table>
+
+  <div class="tip"><b>描述方法其实有五种：</b>自然语言、流程图、<b>盒图（N-S 图）</b>、伪代码、<b>程序设计语言</b>（直接用 Java 等写出可运行代码）。<br>
+  盒图里循环也分<b>当型</b>（先判断后执行）与<b>直到型</b>（先执行后判断）；<b>要求循环体至少执行一次，必须用直到型</b>。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -419,7 +441,12 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mem"><b>三代记法：</b><b>机器（二进制）→ 汇编（助记符）→ 高级（C/Java/Python）</b>。<b>机器语言和汇编语言都是"低级语言"</b>（面向硬件），<b>高级语言才面向人</b>。</div>
 
   <div class="warnbox"><b>必错点：</b>①"汇编语言可以直接被计算机执行"——<b>错</b>，必须经<b>汇编程序</b>翻译；②"高级语言可以被计算机直接执行"——<b>错</b>，必须经<b>编译或解释</b>；③<b>只有机器语言能直接被 CPU 执行</b>。</div>
-</section>
+
+  <div class="mem"><b>编译的完整链路（背这条箭头）：</b>高级语言<b>源程序</b> →（<b>编译程序</b>）→ <b>目标程序</b> →（<b>连接程序</b>）→ <b>可执行程序</b>，才能运行。<br>
+  <b>解释程序</b>边翻译边执行，<b>不产生独立的目标程序</b>，所以"编译能产生目标程序、解释不能"是常考判断。<br>
+  <b>语言处理程序</b>（汇编程序、编译程序、解释程序）都属于<b>系统软件</b>；汇编程序只翻译汇编语言，<b>不同语言的翻译程序不通用</b>。<br>
+  <b>可移植性：</b>机器语言最差 → 汇编语言差 → 高级语言最好。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -461,7 +488,21 @@ body.slim section.mod[data-tier="low"]{display:none}
   ③<b>共同点：都要把高级语言翻译成机器能懂的形式。</b></div>
 
   <div class="warnbox"><b>判断题高频陷阱：</b>"解释程序会生成目标程序"——<b>错</b>；"编译程序逐条翻译逐条执行"——<b>错</b>（那是解释）；"目标程序可以直接运行"——<b>错</b>，要链接成可执行程序。</div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">设计策略</th><th>关键词</th></tr>
+    <tr><td><b>枚举法（穷举）</b></td><td>把所有可能情况<b>一一试遍</b>，用时间换全面</td></tr>
+    <tr><td><b>迭代法（递推）</b></td><td>由<b>旧值推出新值</b>，逐步逼近结果（等差数列、猴子吃桃）</td></tr>
+    <tr><td><b>递归法</b></td><td>自己调用自己，必须有<b>终止条件</b>（大纲外了解）</td></tr>
+    <tr><td><b>分治法</b></td><td>大问题拆成<b>相互独立、性质相同</b>的子问题（分而治之）</td></tr>
+    <tr><td><b>动态规划法</b></td><td>子问题<b>相互关联</b>，中间结果<b>保存复用</b>（最短路径）</td></tr>
+    <tr><td><b>贪心法</b></td><td>每步只取<b>当前局部最优</b>，不保证全局最优</td></tr>
+    <tr><td><b>回溯法（试探）</b></td><td>走不通就<b>退回上一步换路径</b>（走迷宫）</td></tr>
+  </table>
+
+  <div class="warn"><b>最容易混的两组：</b>① <b>分治 vs 动态规划</b>——子问题独立＝分治，子问题关联且结果留存＝动态规划；② <b>迭代 vs 递归</b>——循环推新值＝迭代，函数自调用＝递归。<br>
+  <b>猴子吃桃</b>：每天吃掉前一天的一半再多吃一个，第 10 天剩 1 个 → 用<b>反向递推</b>（前一天＝(今天+1)×2），属官方参考书原题案例。</div>
+  </section>
 
 <section class="mod" id="s6b">
   <div class="mod-h">
@@ -517,6 +558,9 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">10</td><td>只有高级语言是低级语言</td><td>表述混乱：<b>机器语言、汇编语言属低级语言</b></td></tr>
     <tr><td class="c">11</td><td>解释程序会生成目标程序</td><td><b>不会</b>；编译才生成目标程序</td></tr>
     <tr><td class="c">12</td><td>目标程序就是可执行程序</td><td>目标程序<b>经链接</b>才成为可执行程序</td></tr>
+      <tr><td>算法必须有输入，没有输入就不是算法。</td><td>算法<b>可以 0 个输入</b>（如 Excel 的 TODAY 函数），但<b>至少有 1 个输出</td></tr>
+    <tr><td>解释程序和编译程序都会生成目标程序。</td><td>只有<b>编译</b>产生目标程序；<b>解释</b>边翻译边执行，不产生独立目标程序。</td></tr>
+
   </table>
 </section>
 
@@ -524,7 +568,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 14 条</h2>
+      <h2>本课必背 17 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -545,6 +589,10 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">12</td><td><b>指令＝操作码＋操作数</b></td></tr>
     <tr><td class="c">13</td><td><b>源程序 →（编译/汇编）→ 目标程序 →（链接）→ 可执行程序</b></td></tr>
     <tr><td class="c">14</td><td><b>编译</b>：整体翻译、生成目标程序、执行快；<b>解释</b>：逐条翻译执行、<b>不生成目标程序</b>、执行慢</td></tr>
+      <tr><td class="c">15</td><td>计算思维四方法＝<b>分层、模式识别、流程建设、抽象化</b>；三大科学思维＝理论、实验、计算</td></tr>
+    <tr><td class="c">16</td><td>流程图：起止<b>圆角矩形</b>、输入输出<b>平行四边形</b>、处理<b>矩形</b>、判断<b>菱形</b>（1 入 2 出，Y/N 成对）</td></tr>
+    <tr><td class="c">17</td><td>设计策略＝<b>枚举、迭代（递推）、递归、分治、动态规划、贪心、回溯</b>；子问题独立＝分治，结果留存＝动态规划</td></tr>
+
   </table>
 </section>
 
@@ -552,37 +600,40 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 17 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. 算法的时间复杂度越高，执行效率越高。</summary><div class="ans"><b>错误。</b>2024 判断原题，方向相反。</div></details>
     <details><summary>2. 算法不能用自然语言来描述。</summary><div class="ans"><b>错误。</b>2024 判断原题，可以描述，只是易生歧义。</div></details>
     <details><summary>3. 一个算法可以没有输入，但必须有输出。</summary><div class="ans"><b>正确。</b></div></details>
     <details><summary>4. 汇编语言可以被计算机直接识别和执行。</summary><div class="ans"><b>错误。</b>需经汇编程序翻译；只有机器语言可直接执行。</div></details>
     <details><summary>5. 解释程序在运行过程中会生成目标程序。</summary><div class="ans"><b>错误。</b>解释程序不生成目标程序。</div></details>
-  </div>
+        <details><summary>6. 算法可以没有输入，但至少要有 1 个输出。</summary><div class="ans"><b>对。</b>输入可 0 个或多个（TODAY 函数无参数也有结果），输出至少 1 个。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>6. 下列不属于算法特征的是（　）<br>A. 有穷性　B. 确定性　C. 可行性　D. 无限性</summary><div class="ans"><b>D。</b>五特性为有穷、确定、可行、输入、输出。</div></details>
-    <details><summary>7. 二分查找的时间复杂度是（　）<br>A. O(1)　B. O(log₂n)　C. O(n)　D. O(n²)</summary><div class="ans"><b>B。</b></div></details>
-    <details><summary>8. 某算法基本操作执行次数为 3n²+5n+7，其时间复杂度为（　）<br>A. O(n)　B. O(n²)　C. O(3n²)　D. O(1)</summary><div class="ans"><b>B。</b>取最高阶、去系数。</div></details>
-    <details><summary>9. 计算机唯一能直接识别和执行的语言是（　）<br>A. 汇编语言　B. 机器语言　C. C 语言　D. Python</summary><div class="ans"><b>B。</b></div></details>
-    <details><summary>10. 把高级语言源程序整体翻译成目标程序的程序是（　）<br>A. 汇编程序　B. 解释程序　C. 编译程序　D. 链接程序</summary><div class="ans"><b>C。</b></div></details>
-  </div>
+    <details><summary>7. 下列不属于算法特征的是（　）<br>A. 有穷性　B. 确定性　C. 可行性　D. 无限性</summary><div class="ans"><b>D。</b>五特性为有穷、确定、可行、输入、输出。</div></details>
+    <details><summary>8. 二分查找的时间复杂度是（　）<br>A. O(1)　B. O(log₂n)　C. O(n)　D. O(n²)</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>9. 某算法基本操作执行次数为 3n²+5n+7，其时间复杂度为（　）<br>A. O(n)　B. O(n²)　C. O(3n²)　D. O(1)</summary><div class="ans"><b>B。</b>取最高阶、去系数。</div></details>
+    <details><summary>10. 计算机唯一能直接识别和执行的语言是（　）<br>A. 汇编语言　B. 机器语言　C. C 语言　D. Python</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>11. 把高级语言源程序整体翻译成目标程序的程序是（　）<br>A. 汇编程序　B. 解释程序　C. 编译程序　D. 链接程序</summary><div class="ans"><b>C。</b></div></details>
+        <details><summary>12. 下列算法设计策略中，要求子问题相互独立、且与原问题性质相同的是（　）<br>A. 动态规划　B. 分治　C. 贪心　D. 回溯</summary><div class="ans"><b>B。</b>子问题关联、结果留存复用的是动态规划。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（5 题）</b></p>
   <div class="qa">
-    <details><summary>11. 程序 ＝ 算法 ＋ ______。</summary><div class="ans"><b>数据结构</b>。</div></details>
-    <details><summary>12. 算法的五种特性是有穷性、确定性、可行性、______ 和 ______。</summary><div class="ans"><b>输入、输出</b>（输入 0 或多个，输出 1 或多个）。</div></details>
-    <details><summary>13. 简述编译与解释的区别。</summary><div class="ans"><b>参考答案：</b>①<b>编译</b>是把高级语言源程序<b>整体翻译</b>成目标程序，<b>一次翻译、以后直接执行</b>，执行速度快，源程序修改后需重新编译；②<b>解释</b>是<b>逐条翻译、逐条执行</b>，<b>不生成目标程序</b>，执行速度慢，但便于调试；③二者都是把高级语言翻译成机器可执行的形式。</div></details>
-    <details><summary>14. 简述算法的特征，并说明为什么"没有输出的过程"不能称为算法。</summary><div class="ans"><b>参考答案：</b>算法具有<b>有穷性、确定性、可行性</b>，并有 <b>0 个或多个输入、1 个或多个输出</b>。算法的作用是<b>求解问题并给出结果</b>，如果一个过程执行完不产生任何输出，就无法得到求解结果，也就失去了"算法"的意义，因此<b>至少要有一个输出</b>。</div></details>
-  </div>
+    <details><summary>13. 程序 ＝ 算法 ＋ ______。</summary><div class="ans"><b>数据结构</b>。</div></details>
+    <details><summary>14. 算法的五种特性是有穷性、确定性、可行性、______ 和 ______。</summary><div class="ans"><b>输入、输出</b>（输入 0 或多个，输出 1 或多个）。</div></details>
+    <details><summary>15. 简述编译与解释的区别。</summary><div class="ans"><b>参考答案：</b>①<b>编译</b>是把高级语言源程序<b>整体翻译</b>成目标程序，<b>一次翻译、以后直接执行</b>，执行速度快，源程序修改后需重新编译；②<b>解释</b>是<b>逐条翻译、逐条执行</b>，<b>不生成目标程序</b>，执行速度慢，但便于调试；③二者都是把高级语言翻译成机器可执行的形式。</div></details>
+    <details><summary>16. 简述算法的特征，并说明为什么"没有输出的过程"不能称为算法。</summary><div class="ans"><b>参考答案：</b>算法具有<b>有穷性、确定性、可行性</b>，并有 <b>0 个或多个输入、1 个或多个输出</b>。算法的作用是<b>求解问题并给出结果</b>，如果一个过程执行完不产生任何输出，就无法得到求解结果，也就失去了"算法"的意义，因此<b>至少要有一个输出</b>。</div></details>
+        <details><summary>17. 算法有 0 个或多个 ______，但至少有 1 个输出。</summary><div class="ans"><b>输入</b>。</div></details>
+</div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

@@ -218,8 +218,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 人工智能</a>
     <a href="#s6">⑥ 伦理与法律</a>
     <a href="#s7">易错清单</a>
-    <a href="#s8">必背 14 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s8">必背 17 条</a>
+    <a href="#s9">自测 17 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -306,7 +306,13 @@ body.slim section.mod[data-tier="low"]{display:none}
   </table>
 
   <div class="okbox"><b>典型应用场景：</b>云存储与备份、云办公与协同、云主机/云数据库、视频转码与渲染、大数据分析平台、企业 ERP/CRM 上云。</div>
-</section>
+
+  <div class="mem"><b>云计算的定义（一句话）：</b>云计算是<b>分布式计算</b>的一种，通过<b>网络按需</b>提供<b>可计量</b>的计算服务（算力、存储、软件）。<br>
+  <b>三个核心特征：</b>① <b>超大规模</b>（服务商算力极强）；② <b>资源抽象</b>（用户不用管底层在哪台机器）；③ <b>高可靠</b>（自动更新、备份，用户免维护）。</div>
+
+  <div class="tip"><b>部署模式还有个"社区云"（行业云）：</b>面向<b>两个及以上特定组织</b>（如某市所有医院）提供服务，介于私有云与公有云之间。<br>
+  考纲要求掌握的三种＝<b>公有云、私有云、混合云</b>；多选题把<b>社区云</b>列进来一般也算对。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -373,7 +379,17 @@ body.slim section.mod[data-tier="low"]{display:none}
 
 <div class="tip"><b>大数据的安全风险与防护：</b>风险＝数据泄露与滥用、隐私追踪（用户画像/定位）、数据篡改伪造、平台集中存放的供应链风险。<b>防护</b>＝分类分级、脱敏与加密、最小必要采集、访问控制与审计、备份与应急。<b>法规</b>＝《网络安全法》《数据安全法》《个人信息保护法》。</div>
 
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">数据类型</th><th>特征</th><th style="width:30%">例子</th></tr>
+    <tr><td><b>结构化数据</b></td><td>行列规整、能直接入库</td><td>Excel 表、关系数据库记录</td></tr>
+    <tr><td><b>半结构化数据</b></td><td>有一定标记但结构不固定</td><td><b>HTML 网页、XML、JSON</b></td></tr>
+    <tr><td><b>非结构化数据</b></td><td>无法直接用二维表表示</td><td><b>语音、图片、视频</b>（占比最高）</td></tr>
+  </table>
+
+  <div class="mem"><b>大数据思维的三个转变（简答常考）：</b><br>
+  ① <b>全体代替抽样</b>——能统计全部就统计全部；② <b>允许不精确</b>——少量脏数据不影响整体结论；③ <b>重相关、轻因果</b>——知道"买啤酒的人常买尿布"就够，不必先证明为什么。</div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -405,7 +421,19 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="okbox"><b>典型应用：</b>智能家居（门锁、空调）、智慧城市（路灯、停车）、车联网与自动驾驶、工业互联网、智能农业（土壤监测）、智慧医疗（可穿戴设备）。</div>
 
   <div class="tip"><b>三个"网"的关系（可能出判断题）：</b><b>物联网</b>解决"物与物"的连接；<b>互联网</b>解决"人与人/人与信息"的连接；<b>大数据</b>是物联网产生的海量数据的"加工厂"；<b>AI</b>是让这些数据"变聪明"的大脑。<b>四者互相支撑，不是替代关系。</b></div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">关键技术</th><th>作用</th></tr>
+    <tr><td><b>RFID 射频识别</b></td><td>俗称<b>电子标签</b>，"让物品开口说话"；门禁卡、ETC、仓储盘点</td></tr>
+    <tr><td><b>传感技术</b></td><td>把物理量转成电信号，相当于人的<b>感觉器官</b></td></tr>
+    <tr><td><b>嵌入式技术</b></td><td>软件嵌进硬件，<b>体积小、响应快、自动化程度高</b></td></tr>
+    <tr><td><b>位置服务</b></td><td>遥感 + <b>GPS</b> + <b>GIS</b> + 电子地图，解决"在哪"</td></tr>
+    <tr><td><b>IPv6</b></td><td>IPv4 只有 <b>32 位</b>地址不够用，IPv6 是 <b>128 位</b>，能撑起海量设备联网</td></tr>
+  </table>
+
+  <div class="tip"><b>三层对应三句话：</b>感知层＝<b>全面感知</b>（采集）、网络层＝<b>可靠传递</b>（传输）、应用层＝<b>智能处理</b>（用数据）。<br>
+  <b>AIoT</b>＝物联网（IoT）＋人工智能（AI），让设备不只联网还能"看懂、判断"。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -436,7 +464,22 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="okbox"><b>典型应用（能列举三条即可）：</b>语音识别与合成（智能音箱）、图像识别（人脸识别、医学影像）、机器翻译、智能推荐、自动驾驶、智能客服、AIGC（AI 生成文本/图片/视频）。</div>
 
   <div class="mem"><b>"三驾马车"记法：</b><b>数据（燃料）＋ 算法（引擎）＋ 算力（马力）</b>，三者共同驱动人工智能。<b>深度学习</b>是目前主流方法，<b>需要大量标注数据与强大算力</b>。</div>
-</section>
+
+  <div class="mem"><b>人工智能的定义：</b>用<b>计算机（程序）模拟人类智能行为</b>的技术，实现的根本途径是<b>机器学习</b>。<br>
+  <b>四大能力：感知（获取数据）、学习（自主优化）、推理（逻辑分析）、交互（多模态交流）</b>。</div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:110px">年份</th><th>里程碑</th></tr>
+    <tr><td><b>1950</b></td><td><b>图灵测试</b>：判断机器是否具有智能的测试方法</td></tr>
+    <tr><td><b>1956</b></td><td><b>达特茅斯会议</b>：首次提出"人工智能"这一术语（AI 诞生年）</td></tr>
+    <tr><td><b>1968</b></td><td>首台智能机器人 <b>Shakey</b></td></tr>
+    <tr><td><b>1997</b></td><td>IBM <b>深蓝</b>战胜国际象棋世界冠军</td></tr>
+    <tr><td><b>2016</b></td><td><b>AlphaGo</b> 战胜围棋世界冠军李世石</td></tr>
+    <tr><td><b>2022</b></td><td><b>ChatGPT</b> 上线，<b>AIGC</b>（生成式 AI）爆发：文心一言、Midjourney、Sora</td></tr>
+  </table>
+
+  <div class="tip"><b>AI 三要素：数据、算法、算力</b>——喂的数据越多、算法越好、算力越强，模型能力越强。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -496,7 +539,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 14 条</h2>
+      <h2>本课必背 17 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -517,6 +560,10 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">12</td><td>里程碑：<b>1950 图灵测试、1956 达特茅斯会议（AI 诞生）、1997 深蓝、2016 AlphaGo</b></td></tr>
     <tr><td class="c">13</td><td><b>图灵</b>＝计算机科学之父 / AI 之父；<b>冯·诺依曼</b>＝现代计算机之父</td></tr>
     <tr><td class="c">14</td><td>国产大模型：<b>DeepSeek、通义千问、文心一言、豆包</b>；<b>不得用 AI 造谣诈骗侵权</b>（2026 判断 29）</td></tr>
+      <tr><td class="c">15</td><td>云计算＝分布式计算＋<b>按需、可计量</b>；三特征＝<b>超大规模、资源抽象、高可靠</b>；部署含社区云</td></tr>
+    <tr><td class="c">16</td><td>物联网技术＝<b>RFID（电子标签）、传感、嵌入式、位置服务（GPS/GIS）、IPv6</b></td></tr>
+    <tr><td class="c">17</td><td>AI 四能力＝<b>感知、学习、推理、交互</b>；<b>1950 图灵测试 / 1956 达特茅斯 / 1997 深蓝 / 2016 AlphaGo</b></td></tr>
+
   </table>
 </section>
 
@@ -524,37 +571,40 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 17 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. 大数据的价值密度低，但整体价值高。</summary><div class="ans"><b>正确。</b>2024 判断原题。</div></details>
     <details><summary>2. DeepSeek R1 是我国自主研发的大语言模型。</summary><div class="ans"><b>正确。</b>2025 判断 30。</div></details>
     <details><summary>3. 物联网体系结构从下往上依次是感知层、网络层、应用层。</summary><div class="ans"><b>正确。</b>2025 填空 48。</div></details>
     <details><summary>4. SaaS 向用户提供的是服务器、存储等基础设施。</summary><div class="ans"><b>错误。</b>那是 IaaS；SaaS 提供软件。</div></details>
     <details><summary>5. 利用 AI 合成技术制作并传播不实新闻属于违法违规行为。</summary><div class="ans"><b>正确。</b>2026 判断 29。</div></details>
-  </div>
+        <details><summary>6. 云计算就是让用户自己维护服务器和系统。</summary><div class="ans"><b>错。</b>云计算由服务商统一维护，用户<b>按需获取、按量付费</b>，无需关心底层设备。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>6. 下列不属于大数据特征的是（　）<br>A. Volume　B. Velocity　C. Validity　D. Variety</summary><div class="ans"><b>C。</b>2025 单选 8 原题。</div></details>
-    <details><summary>7. 用户通过网络直接使用在线文档、企业邮箱，这种服务模式属于（　）<br>A. IaaS　B. PaaS　C. SaaS　D. DaaS</summary><div class="ans"><b>C。</b>直接拿到能用的软件＝SaaS。</div></details>
-    <details><summary>8. 物联网中负责采集数据的一层是（　）<br>A. 应用层　B. 网络层　C. 感知层　D. 传输层</summary><div class="ans"><b>C。</b></div></details>
-    <details><summary>9. "人工智能"一词正式提出的标志性事件是（　）<br>A. 1950 年图灵测试　B. 1956 年达特茅斯会议　C. 1997 年深蓝获胜　D. 2016 年 AlphaGo</summary><div class="ans"><b>B。</b></div></details>
-    <details><summary>10. 下列不属于云计算特点的是（　）<br>A. 按需自助服务　B. 弹性伸缩　C. 资源池化　D. 必须自建机房</summary><div class="ans"><b>D。</b>云计算的初衷就是"不用自建机房"。</div></details>
-  </div>
+    <details><summary>7. 下列不属于大数据特征的是（　）<br>A. Volume　B. Velocity　C. Validity　D. Variety</summary><div class="ans"><b>C。</b>2025 单选 8 原题。</div></details>
+    <details><summary>8. 用户通过网络直接使用在线文档、企业邮箱，这种服务模式属于（　）<br>A. IaaS　B. PaaS　C. SaaS　D. DaaS</summary><div class="ans"><b>C。</b>直接拿到能用的软件＝SaaS。</div></details>
+    <details><summary>9. 物联网中负责采集数据的一层是（　）<br>A. 应用层　B. 网络层　C. 感知层　D. 传输层</summary><div class="ans"><b>C。</b></div></details>
+    <details><summary>10. "人工智能"一词正式提出的标志性事件是（　）<br>A. 1950 年图灵测试　B. 1956 年达特茅斯会议　C. 1997 年深蓝获胜　D. 2016 年 AlphaGo</summary><div class="ans"><b>B。</b></div></details>
+    <details><summary>11. 下列不属于云计算特点的是（　）<br>A. 按需自助服务　B. 弹性伸缩　C. 资源池化　D. 必须自建机房</summary><div class="ans"><b>D。</b>云计算的初衷就是"不用自建机房"。</div></details>
+        <details><summary>12. 提出"人工智能"这一术语的会议是（　）<br>A. 图灵测试　B. 达特茅斯会议　C. 深蓝比赛　D. AlphaGo 对局</summary><div class="ans"><b>B。</b>1956 年达特茅斯会议首次使用"人工智能"术语，被视为 AI 诞生标志。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（5 题）</b></p>
   <div class="qa">
-    <details><summary>11. 云计算的服务模式分为 IaaS、______ 和 SaaS。</summary><div class="ans"><b>PaaS（平台即服务）</b>。</div></details>
-    <details><summary>12. 大数据的 5V 特征中，表示"价值密度低"的是 ______。</summary><div class="ans"><b>Value</b>。</div></details>
-    <details><summary>13. 简述云计算的特点与三种服务模式。</summary><div class="ans"><b>参考答案：</b>①<b>特点</b>：按需自助服务、广泛的网络接入、资源池化、快速弹性伸缩、服务可计量（按使用付费）。②<b>服务模式</b>：<b>IaaS</b> 提供服务器、存储、网络等基础设施；<b>PaaS</b> 提供开发与运行平台（操作系统、数据库、中间件）；<b>SaaS</b> 提供可直接使用的应用软件。③<b>部署模式</b>：公有云、私有云、混合云。</div></details>
-    <details><summary>14. 简述物联网的体系结构及各层作用。</summary><div class="ans"><b>参考答案：</b>物联网分三层：①<b>感知层</b>（最底层）：通过传感器、RFID、摄像头、GPS 等<b>采集数据、识别物体</b>；②<b>网络层</b>：借助互联网、移动通信网等<b>传输数据</b>，实现互联互通；③<b>应用层</b>（最上层）：对数据<b>处理分析并与行业业务结合</b>，实现智能家居、智慧城市、车联网等应用。</div></details>
-  </div>
+    <details><summary>13. 云计算的服务模式分为 IaaS、______ 和 SaaS。</summary><div class="ans"><b>PaaS（平台即服务）</b>。</div></details>
+    <details><summary>14. 大数据的 5V 特征中，表示"价值密度低"的是 ______。</summary><div class="ans"><b>Value</b>。</div></details>
+    <details><summary>15. 简述云计算的特点与三种服务模式。</summary><div class="ans"><b>参考答案：</b>①<b>特点</b>：按需自助服务、广泛的网络接入、资源池化、快速弹性伸缩、服务可计量（按使用付费）。②<b>服务模式</b>：<b>IaaS</b> 提供服务器、存储、网络等基础设施；<b>PaaS</b> 提供开发与运行平台（操作系统、数据库、中间件）；<b>SaaS</b> 提供可直接使用的应用软件。③<b>部署模式</b>：公有云、私有云、混合云。</div></details>
+    <details><summary>16. 简述物联网的体系结构及各层作用。</summary><div class="ans"><b>参考答案：</b>物联网分三层：①<b>感知层</b>（最底层）：通过传感器、RFID、摄像头、GPS 等<b>采集数据、识别物体</b>；②<b>网络层</b>：借助互联网、移动通信网等<b>传输数据</b>，实现互联互通；③<b>应用层</b>（最上层）：对数据<b>处理分析并与行业业务结合</b>，实现智能家居、智慧城市、车联网等应用。</div></details>
+        <details><summary>17. 物联网三层体系中，负责信息采集的是 ______ 层。</summary><div class="ans"><b>感知</b>（网络层负责传递、应用层负责处理）。</div></details>
+</div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
