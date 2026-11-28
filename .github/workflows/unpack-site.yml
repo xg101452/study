@@ -1,16 +1,16 @@
-name: Unpack 1.4.13 site bundle
+name: Unpack 1.4.14 site bundle
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - site-bundle-1.4.13.zip
+      - site-bundle-1.4.14.zip
 
 permissions:
   contents: write
 
 concurrency:
-  group: unpack-site-1.4.13
+  group: unpack-site-1.4.14
   cancel-in-progress: false
 
 jobs:
@@ -23,13 +23,13 @@ jobs:
 
       - name: Unpack site bundle
         run: |
-          unzip -o site-bundle-1.4.13.zip -d .
-          rm site-bundle-1.4.13.zip
+          unzip -o site-bundle-1.4.14.zip -d .
+          rm site-bundle-1.4.14.zip
 
       - name: Commit unpacked site
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "feat: 1.4.13 第四章 11 集逐集核对补缺、自测扩至 51 题、背诵册按章抽背与第四章同步" || echo "no changes"
+          git commit -m "feat: 1.4.14 第五至七章 18 集逐集核对补缺、自测扩至 68 题、背诵册五至七章同步" || echo "no changes"
           git push
