@@ -218,8 +218,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 主要服务</a>
     <a href="#s6">⑥ 信息检索</a>
     <a href="#s7">易错清单</a>
-    <a href="#s8">必背 14 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s8">必背 17 条</a>
+    <a href="#s9">自测 17 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -291,7 +291,11 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mem"><b>三个"第一"别混：</b>1969 <b>ARPANET</b>（前身，4 节点）；1983 <b>TCP/IP</b> 成为标准；1994 中国<b>正式接入</b>。</div>
 
   <div class="okbox"><b>"Internet 是网络的网络"这句话常在判断里出现，是对的。</b>它由成千上万个局域网、城域网、广域网互联而成，没有一个"总开关"。</div>
-</section>
+
+  <div class="mem"><b>ISP 与 Internet 的三个阶段（填空题原话）：</b><br>
+  <b>ISP＝Internet Service Provider，互联网服务提供商</b>——电信、移动、联通就是 ISP，我们通过 ISP 才能接入 Internet。<br>
+  三阶段：① <b>ARPANET</b>（阿帕网，1969，因特网前身）→ ② <b>三级结构的骨干网</b>（主干网—地区网—校园/企业网）→ ③ <b>多层次 ISP 结构</b>（今天：骨干 ISP → 地区 ISP → 用户）。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -332,7 +336,14 @@ IPv6 = 128 位，写成 8 组十六进制，如 2001:0db8::1</div>
   </table>
 
   <div class="okbox"><b>子网掩码的作用：</b>用一串"1"标出<b>网络号占几位</b>，"0"标出<b>主机号占几位</b>。IP 与掩码<b>按位与</b>得到网络号。<b>255.255.255.0 表示前 24 位是网络号、后 8 位是主机号。</b></div>
-</section>
+
+  <div class="mem"><b>判断两个 IP 是否在同一子网（考试必考手法）：</b><br>
+  把两个 IP <b>分别与子网掩码按位与</b>（"与"＝遇 0 则 0、全 1 则 1），结果相同即<b>同一子网</b>，不同则需<b>路由器</b>转发。<br>
+  <b>速算技巧：</b>掩码里 <b>255</b> 的字节<b>原样照抄</b>，<b>0</b> 的字节直接<b>清 0</b>。<br>
+  例：<b>192.168.1.10 / 255.255.255.0</b> → 网络号 <b>192.168.1.0</b>；<b>192.168.1.200</b> → 也是 <b>192.168.1.0</b>，两者<b>同网</b>；而 <b>192.168.2.10</b> → <b>192.168.2.0</b>，<b>不同网</b>。</div>
+
+  <div class="tip"><b>顺带记网络数（按分类地址口径）：</b>可分配网络数 ＝ 2<sup>网络位数−2</sup>——A 类 <b>2<sup>7</sup>−2＝126</b>（首字节去掉 0 和 127）、B 类 <b>2<sup>14</sup>−2</b>、C 类 <b>2<sup>21</sup>−2</b>。别和"可用主机数 2<sup>主机位</sup>−2"混：<b>网络数减 2 是去掉 0 和 127（A 类）</b>。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -427,7 +438,7 @@ www . scedu . gov . cn
   <div class="mem"><b>协议速记：</b><b>HTTP 看网页、SMTP 发邮件、POP3 收邮件、FTP 传文件、DNS 翻域名、ping 试连通、SSH 远程管</b>。<br>
   邮件那条单独记：<b>"S" 是 Send（发），"POP" 是收到信箱里（收）</b>。</div>
 
-  <div class="tip"><b>B/S 与 C/S 的区别（可能出选择）：</b><b>B/S</b>＝浏览器/服务器（不用装客户端，如网银、教务系统）；<b>C/S</b>＝客户端/服务器（要装软件，如 QQ、微信桌面版）。<b>WWW 属于 B/S。</b></div>
+  <div class="tip"><b>B/S 与 C/S 的区别（可能出选择）：</b><b>B/S</b>＝浏览器/服务器（不用装客户端，如网银、教务系统）；<b>C/S</b>＝客户端/服务器（要装软件，如 QQ、微信桌面版）。<b>WWW 属于 B/S（有的讲解按 C/S 讲也对：B/S 就是 C/S 里“客户端换成浏览器”的那一类，两条口径不冲突）。</b></div>
 
   <h3 style="font-family:'Noto Serif SC',serif;font-size:16px;margin:22px 0 8px;padding-left:11px;border-left:4px solid var(--c4)">电子邮件系统的使用方法（考纲“掌握”）</h3>
 <table style="margin-top:12px">
@@ -436,7 +447,30 @@ www . scedu . gov . cn
   <tr><td>收发</td><td>点“发送”后邮件进<b>发件箱</b>，发送成功转入“已发送”；点“接收/发送”把服务器上的新邮件拉到<b>收件箱</b></td></tr>
   <tr><td>回复与转发</td><td><b>回复</b>只给发件人；<b>回复全部</b>给发件人加所有收件人；<b>转发</b>把原邮件（含附件）转给他人</td></tr>
 </table>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">应用</th><th>一句话定位</th></tr>
+    <tr><td><b>VPN 虚拟专用网络</b></td><td>在公网上用<b>加密隧道</b>建"专用通道"，远程安全接入内网（考点：<b>VPN＝加密</b>）</td></tr>
+    <tr><td><b>远程桌面</b></td><td>远程操作另一台电脑的桌面</td></tr>
+    <tr><td><b>即时通信</b></td><td>QQ / 微信，文字、语音、视频实时聊天</td></tr>
+    <tr><td><b>博客 / 微博</b></td><td>个人或机构发布信息、短内容分享</td></tr>
+    <tr><td><b>电子商务</b></td><td>网上买卖（淘宝、京东），属 Internet 应用而非"协议"</td></tr>
+  </table>
+
+  <div class="mem">Internet 的<b>八大应用</b>：<b>WWW、FTP、电子邮件、即时通信、博客/微博、VPN、远程桌面、电子商务</b>。</div>
+  
+  <table style="margin-top:12px">
+    <tr><th style="width:140px">接入方式</th><th>靠什么</th><th style="width:34%">特点 / 考点</th></tr>
+    <tr><td><b>ADSL</b></td><td>电话线 + ADSL Modem</td><td>利用原有电话线，上网打电话互不干扰</td></tr>
+    <tr><td><b>有线电视接入</b></td><td>有线电视同轴电缆 + Cable Modem</td><td><b>带宽社区共享</b>：<b>用户越多越慢</b></td></tr>
+    <tr><td><b>光纤接入</b></td><td>光纤 + 光猫</td><td>速度最快、目前<b>最普及</b>（"光纤到户"）</td></tr>
+    <tr><td><b>无线接入</b></td><td>无线 AP / 手机热点</td><td>方便，但<b>接入终端数有限（约 30～100 台）</b>，信号受墙体影响</td></tr>
+    <tr><td><b>共享接入</b></td><td>路由器 + 交换机</td><td>路由器 <b>WAN 口是公网 IP</b>，<b>LAN 口下是私有 IP</b>，以 NAT 共享一条线</td></tr>
+  </table>
+
+  <div class="mem"><b>"最后一公里"</b>＝从<b>骨干网到用户</b>这一段接入线路，ADSL、光纤、有线电视争的就是这一段。<br>
+  <b>私有地址不能直接上公网</b>，必须经路由器的 <b>NAT</b> 转换才能访问 Internet。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -489,6 +523,9 @@ www . scedu . gov . cn
     <tr><td class="c">10</td><td>FTP 用于浏览网页</td><td>FTP 用于<b>文件传输</b>；浏览网页是 HTTP</td></tr>
     <tr><td class="c">11</td><td>ping 用来上传文件</td><td>ping 用于<b>测试连通性</b></td></tr>
     <tr><td class="c">12</td><td>搜索时加引号会扩大范围</td><td>引号是<b>精确匹配</b>，会缩小范围</td></tr>
+      <tr><td>IP 地址 192.168.1.0 可以分配给某台主机使用。</td><td>C 类里末段为 <b>0</b> 是<b>网络地址</b>、末段为 <b>255</b> 是<b>广播地址</b>，<b>都不能给主机</b>。</td></tr>
+    <tr><td>ISP 就是 Internet 本身。</td><td><b>ISP</b> 是<b>互联网服务提供商</b>（电信、移动、联通），是"接入 Internet 的服务商"，不是 Internet。</td></tr>
+
   </table>
 </section>
 
@@ -496,7 +533,7 @@ www . scedu . gov . cn
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 14 条</h2>
+      <h2>本课必背 17 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -517,6 +554,10 @@ www . scedu . gov . cn
     <tr><td class="c">12</td><td><b>HTTP</b> 传网页（HTTPS 加密）、<b>SMTP</b> 发邮件、<b>POP3/IMAP</b> 收邮件、<b>FTP</b> 传文件、<b>SSH</b> 远程登录</td></tr>
     <tr><td class="c">13</td><td><b>ping</b> 测试连通性；ipconfig 查看本机 IP 配置</td></tr>
     <tr><td class="c">14</td><td>检索：<b>引号精确、site: 限站点、filetype: 限类型、OR 扩范围、减号排除</b></td></tr>
+      <tr><td class="c">15</td><td><b>ISP</b>＝互联网服务提供商；三阶段＝<b>ARPANET → 三级结构骨干网 → 多层次 ISP</b></td></tr>
+    <tr><td class="c">16</td><td>同子网判断：两 IP <b>各与掩码按位与</b>，网络号相同即同网；255 照抄、0 清 0</td></tr>
+    <tr><td class="c">17</td><td>接入五种＝<b>ADSL、有线电视、光纤、无线、共享</b>；有线电视<b>社区共享、人越多越慢</b></td></tr>
+
   </table>
 </section>
 
@@ -524,37 +565,40 @@ www . scedu . gov . cn
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 17 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. Internet 的前身是 ARPANET。</summary><div class="ans"><b>正确。</b>1969 年建立，最初 4 个节点。</div></details>
     <details><summary>2. IPv4 地址由 64 位二进制数组成。</summary><div class="ans"><b>错误。</b>IPv4 是 <b>32 位</b>，IPv6 才是 128 位。</div></details>
     <details><summary>3. 一个 C 类网络最多可容纳 254 台主机。</summary><div class="ans"><b>正确。</b>2⁸−2＝254（2026 单选 17）。</div></details>
     <details><summary>4. DNS 的作用是把 IP 地址转换为域名。</summary><div class="ans"><b>错误。</b>是<b>域名→IP</b>。</div></details>
     <details><summary>5. 访问网站既可用域名，也可直接用 IP 地址。</summary><div class="ans"><b>正确。</b>2025 判断第 26 题。</div></details>
-  </div>
+        <details><summary>6. 判断两个 IP 是否在同一子网，只需比较第一段数字是否相同。</summary><div class="ans"><b>错。</b>要把两个 IP <b>分别与子网掩码按位与</b>得到网络号，<b>网络号相同</b>才是同一子网。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>6. 一个 C 类 IP 地址段最多可容纳的主机数是（　）<br>A. 256　B. 255　C. 254　D. 128</summary><div class="ans"><b>C。</b>2026 单选第 17 题原题。</div></details>
-    <details><summary>7. 测试与目标主机是否连通的命令是（　）<br>A. ftp　B. ping　C. telnet　D. http</summary><div class="ans"><b>B。</b>2025 单选第 14 题原题。</div></details>
-    <details><summary>8. 下列 IP 地址中属于 B 类的是（　）<br>A. 10.1.2.3　B. 172.16.5.4　C. 192.168.1.1　D. 224.0.0.1</summary><div class="ans"><b>B。</b>A 是 A 类，C 是 C 类，D 是 D 类组播。</div></details>
-    <details><summary>9. 发送电子邮件使用的协议是（　）<br>A. POP3　B. SMTP　C. FTP　D. HTTP</summary><div class="ans"><b>B。</b>"S" 即 Send。</div></details>
-    <details><summary>10. 下列顶级域名中表示教育机构的是（　）<br>A. .com　B. .gov　C. .edu　D. .org</summary><div class="ans"><b>C。</b></div></details>
-  </div>
+    <details><summary>7. 一个 C 类 IP 地址段最多可容纳的主机数是（　）<br>A. 256　B. 255　C. 254　D. 128</summary><div class="ans"><b>C。</b>2026 单选第 17 题原题。</div></details>
+    <details><summary>8. 测试与目标主机是否连通的命令是（　）<br>A. ftp　B. ping　C. telnet　D. http</summary><div class="ans"><b>B。</b>2025 单选第 14 题原题。</div></details>
+    <details><summary>9. 下列 IP 地址中属于 B 类的是（　）<br>A. 10.1.2.3　B. 172.16.5.4　C. 192.168.1.1　D. 224.0.0.1</summary><div class="ans"><b>B。</b>A 是 A 类，C 是 C 类，D 是 D 类组播。</div></details>
+    <details><summary>10. 发送电子邮件使用的协议是（　）<br>A. POP3　B. SMTP　C. FTP　D. HTTP</summary><div class="ans"><b>B。</b>"S" 即 Send。</div></details>
+    <details><summary>11. 下列顶级域名中表示教育机构的是（　）<br>A. .com　B. .gov　C. .edu　D. .org</summary><div class="ans"><b>C。</b></div></details>
+        <details><summary>12. 下列接入方式中，带宽由社区共享、用户越多速度越慢的是（　）<br>A. ADSL　B. 有线电视接入　C. 光纤接入　D. 无线接入</summary><div class="ans"><b>B。</b>有线电视接入用同轴电缆，一个片区共享带宽，人越多分到的越少。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题（5 题）</b></p>
   <div class="qa">
-    <details><summary>11. IPv4 地址长度为 ______ 位。</summary><div class="ans"><b>32</b>。</div></details>
-    <details><summary>12. 一个 B 类网络最多可容纳 ______ 台主机。</summary><div class="ans"><b>65 534</b>（2¹⁶−2）。</div></details>
-    <details><summary>13. 域名解析服务使用的协议是 ______。</summary><div class="ans"><b>DNS</b>。</div></details>
-    <details><summary>14. 本机回环地址是 ______。</summary><div class="ans"><b>127.0.0.1</b>。</div></details>
-  </div>
+    <details><summary>13. IPv4 地址长度为 ______ 位。</summary><div class="ans"><b>32</b>。</div></details>
+    <details><summary>14. 一个 B 类网络最多可容纳 ______ 台主机。</summary><div class="ans"><b>65 534</b>（2¹⁶−2）。</div></details>
+    <details><summary>15. 域名解析服务使用的协议是 ______。</summary><div class="ans"><b>DNS</b>。</div></details>
+    <details><summary>16. 本机回环地址是 ______。</summary><div class="ans"><b>127.0.0.1</b>。</div></details>
+        <details><summary>17. Internet 的发展经历三个阶段：从 ARPANET 到三级结构的骨干网，再到多层次 ______ 结构。</summary><div class="ans"><b>ISP</b>（互联网服务提供商）。</div></details>
+</div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>

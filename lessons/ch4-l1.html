@@ -218,8 +218,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 网络设备</a>
     <a href="#s6">⑥ 介质与带宽</a>
     <a href="#s7">易错清单</a>
-    <a href="#s8">必背 14 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s8">必背 17 条</a>
+    <a href="#s9">自测 17 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -301,7 +301,17 @@ body.slim section.mod[data-tier="low"]{display:none}
 ③ 共同遵守的<b>网络协议</b>（没有协议就只是"连着的机器"，不是网络）</div>
 
   <div class="okbox"><b>为什么强调"独立功能"？</b>因为"一台主机 + 若干终端"（如早期终端连主机）不算真正的网络——终端本身不能独立处理任务。<b>判断题常在这里设陷阱。</b></div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">子网</th><th>由什么组成</th><th style="width:34%">负责什么</th></tr>
+    <tr><td><b>通信子网</b></td><td><b>通信设备</b>（路由器、交换机）+ <b>通信线路</b>（网线、光纤）</td><td>数据的<b>转发与传输</b>（管道）</td></tr>
+    <tr><td><b>资源子网</b></td><td><b>主机、终端</b>设备</td><td>向用户提供<b>资源与服务</b>（内容）</td></tr>
+  </table>
+
+  <div class="mem"><b>逻辑功能上只分两个子网（2026 统考填空题原话）：</b><br>
+  问"计算机网络从逻辑功能上分为 ______ 和资源子网"→ 填 <b>通信子网</b>。<br>
+  <b>归属别搞反：</b>路由器、交换机、网线属<b>通信子网</b>；主机、手机、终端属<b>资源子网</b>。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -316,9 +326,9 @@ body.slim section.mod[data-tier="low"]{display:none}
   <table>
     <tr><th style="width:120px">阶段</th><th>特征</th></tr>
     <tr><td>第一代</td><td><b>面向终端</b>的计算机网络：一台主机 + 多个终端，终端无独立处理能力</td></tr>
-    <tr><td>第二代</td><td><b>计算机—计算机网络</b>：多台主机互联，采用<b>分组交换</b></td></tr>
+    <tr><td>第二代</td><td><b>计算机—计算机网络</b>：多台主机互联，采用<b>分组交换</b>；代表 <b>阿帕网</b>（因特网前身）</td></tr>
     <tr><td>第三代</td><td><b>开放标准化网络</b>：提出 <b>OSI 参考模型</b>，网络走向标准化</td></tr>
-    <tr><td>第四代</td><td><b>高速网络 / Internet</b>：光纤、宽带、多媒体应用</td></tr>
+    <tr><td>第四代</td><td><b>网络互联为核心 / Internet</b>：光纤、宽带、多媒体应用</td></tr>
   </table>
 
   <table style="margin-top:12px">
@@ -333,7 +343,18 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <div class="mem"><b>范围三兄弟的口诀：</b><b>LAN 一个院、MAN 一个城、WAN 一个国家</b>。速度是反过来：<b>LAN 最快，WAN 最慢</b>。<br>
   考试常问"Internet 属于哪种网络"→ <b>广域网（WAN）</b>，而不是"城域网"。</div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:130px">按服务方式</th><th>特点</th><th style="width:32%">典型场景</th></tr>
+    <tr><td><b>对等网（P2P）</b></td><td>每台计算机<b>既是服务器又是客户机</b>，互相提供资源</td><td>宿舍几台电脑联机</td></tr>
+    <tr><td><b>C/S 模式</b></td><td>客户机—服务器，需<b>安装客户端</b>才能用服务</td><td>QQ、微信桌面版</td></tr>
+    <tr><td><b>B/S 模式</b></td><td>浏览器—服务器，<b>不用装客户端</b>，开浏览器即可</td><td>网银、教务系统、网页游戏</td></tr>
+  </table>
+
+  <div class="mem"><b>四个阶段一句话各记一个关键词：</b><br>
+  <b>面向终端</b> → <b>分组交换网为中心</b>（阿帕网＝因特网前身）→ <b>体系结构标准化</b>（OSI 参考模型）→ <b>网络互联为核心</b>（Internet）。<br>
+  部分教材还有"第五代＝下一代网络"，应试答<b>前四个</b>即可。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -400,7 +421,16 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="okbox"><b>三个层次常识：</b>①OSI 是<b>理论/参考模型</b>（七层），TCP/IP 是<b>事实标准</b>（四层）；②分层的好处是"<b>各层独立、对等通信</b>"，改一层不影响其他层；③<b>数据在发送时逐层封装（加头），接收时逐层解封装（去头）</b>。</div>
 
   <div class="mem"><b>七层顺序记忆：</b>从下往上——<b>物、数、网、传、会、表、应</b>。取谐音："<b>物数网传会表应</b>"。倒过来背也可以："应用—表示—会话—传输—网络—链路—物理"。</div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">协议三要素</th><th>含义</th></tr>
+    <tr><td><b>语义</b></td><td>规定<b>说什么</b>：对协议元素的解释（报文含义）</td></tr>
+    <tr><td><b>语法</b></td><td>规定<b>怎么说</b>：信息传输的<b>格式</b>与编码规范</td></tr>
+    <tr><td><b>时序</b></td><td>规定<b>何时说</b>：事件的执行<b>顺序</b>与速度匹配</td></tr>
+  </table>
+
+  <div class="tip"><b>什么叫网络协议：</b>通信双方<b>共同遵守的规则</b>——相当于两个国家的人交流前先约定说同一种语言。<b>没有协议，只是"连着的机器"，不是网络。</b></div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -431,7 +461,12 @@ body.slim section.mod[data-tier="low"]{display:none}
   对照：集线器（物理层，只放大信号）、交换机（链路层，按 MAC 转发）、中继器（物理层，延长距离）——<b>它们都不能连接"不同网络"</b>。</span></div>
 
   <div class="mem"><b>一句分层口诀：</b><b>集线器在物理层、交换机在链路层、路由器在网络层</b>——"<b>越聪明的设备在越上层</b>"。交换机看 MAC，路由器看 IP。</div>
-</section>
+
+  <div class="mem"><b>三个细节常被拿来当干扰项：</b><br>
+  ① <b>集线器＝多端口的中继器</b>，两者都在<b>物理层</b>，只搬比特流、<b>不认地址</b>；<br>
+  ② 中继器只用于<b>相同类型的网络</b>，功能是<b>放大整形、延长距离</b>，不改协议、不改网络性质；<br>
+  ③ 网卡（网络适配器）是计算机接入网络的<b>接口设备</b>，有全球唯一的 <b>48 位 MAC 地址</b>，用 <b>ipconfig /all</b> 可查看。</div>
+  </section>
 
 <section class="mod" id="s6">
   <div class="mod-h">
@@ -457,7 +492,17 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>看到"100M 宽带下载 100MB/s"——一定是错的。</b></div>
 
   <div class="okbox"><b>MAC 地址 vs IP 地址：</b><b>MAC</b> 是网卡的<b>物理地址</b>（出厂固定，48 位），用于<b>同一局域网内</b>寻址；<b>IP</b> 是<b>逻辑地址</b>（可配置、可变化），用于<b>跨网络</b>寻址。<b>交换机认 MAC，路由器认 IP。</b></div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">指标</th><th>含义</th><th style="width:26%">单位</th></tr>
+    <tr><td><b>速率</b>（比特率）</td><td>数据<b>实际</b>传输的快慢</td><td>bps、Mbps（位/秒）</td></tr>
+    <tr><td><b>带宽</b></td><td>链路<b>允许的最高</b>传输速率（上限）</td><td>与速率相同（位/秒）</td></tr>
+  </table>
+
+  <div class="mem"><b>两个例子记住换算：</b><br>
+  100 Mbps 宽带 ≈ 100 ÷ 8 = <b>12.5 MB/s</b>；<b>8 Mbps ≈ 1 MB/s</b>。<br>
+  题干说"速率"是<b>实际速度</b>，说"带宽"是<b>最高速度</b>；<b>两者单位都是 bps，不是 B/s</b>。</div>
+  </section>
 
 <section class="mod" id="s7">
   <div class="mod-h">
@@ -482,6 +527,9 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">10</td><td>集线器能为每个端口提供独享带宽</td><td>集线器<b>共享带宽</b>；交换机才独享</td></tr>
     <tr><td class="c">11</td><td>100 Mbps 宽带下载速度是 100 MB/s</td><td>≈ <b>12.5 MB/s</b>（÷8）</td></tr>
     <tr><td class="c">12</td><td>MAC 地址是可以随意修改的逻辑地址</td><td>MAC 是<b>物理地址</b>（出厂固定）；IP 才是逻辑地址</td></tr>
+      <tr><td>通信子网由主机和终端组成。</td><td>通信子网＝<b>通信设备＋通信线路</b>；<b>主机、终端</b>属<b>资源子网</b>。</td></tr>
+    <tr><td>速率和带宽是一回事。</td><td>速率是<b>实际</b>传输速度，带宽是链路<b>允许的最高</b>速度；单位同为 <b>bps</b>。</td></tr>
+
   </table>
 </section>
 
@@ -489,7 +537,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 14 条</h2>
+      <h2>本课必背 17 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -510,6 +558,10 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">12</td><td>调制解调器做<b>数字↔模拟</b>转换；网关做<b>协议转换</b></td></tr>
     <tr><td class="c">13</td><td>双绞线有效距离约 <b>100 米</b>；<b>光纤</b>带宽最高、抗干扰最强</td></tr>
     <tr><td class="c">14</td><td><b>1 B = 8 bit</b>；100 Mbps ≈ <b>12.5 MB/s</b></td></tr>
+      <tr><td class="c">15</td><td>逻辑组成＝<b>通信子网</b>（设备＋线路）＋<b>资源子网</b>（主机＋终端）</td></tr>
+    <tr><td class="c">16</td><td>协议三要素＝<b>语义、语法、时序</b></td></tr>
+    <tr><td class="c">17</td><td><b>速率</b>＝实际速度、<b>带宽</b>＝最高速度，单位都是 <b>bps</b>；<b>8 Mbps ≈ 1 MB/s</b></td></tr>
+
   </table>
 </section>
 
@@ -517,36 +569,43 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 17 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. 计算机网络最主要的功能是数据通信。</summary><div class="ans"><b>错误。</b>最主要的是<b>资源共享</b>。</div></details>
     <details><summary>2. Internet 是当今世界上最大的广域网。</summary><div class="ans"><b>正确。</b></div></details>
     <details><summary>3. 星型拓扑的可靠性最高，因为结构简单。</summary><div class="ans"><b>错误。</b>可靠性最高的是<b>网状</b>；星型中心节点故障会全网瘫痪。</div></details>
     <details><summary>4. TCP/IP 协议族只包含 TCP 和 IP 两个协议。</summary><div class="ans"><b>错误。</b>还含 UDP、HTTP、FTP、DNS 等（2024 判断）。</div></details>
     <details><summary>5. 交换机和路由器都根据 IP 地址转发数据。</summary><div class="ans"><b>错误。</b>交换机按 <b>MAC</b>，路由器按 <b>IP</b>。</div></details>
+  <details><summary>6. 通信子网由主机和终端设备组成，负责向用户提供资源与服务。</summary><div class="ans"><b>错。</b>通信子网由<b>通信设备</b>（路由器、交换机）与<b>通信线路</b>组成，负责数据转发；<b>主机与终端属资源子网</b>。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>6. 实现不同网络互联并根据 IP 地址选择路径的设备是（　）<br>A. 集线器　B. 交换机　C. 路由器　D. 中继器</summary><div class="ans"><b>C。</b>2025 单选第 15 题原题。</div></details>
-    <details><summary>7. 下列网络中覆盖范围最大的是（　）<br>A. 局域网　B. 城域网　C. 广域网　D. 校园网</summary><div class="ans"><b>C。</b></div></details>
-    <details><summary>8. OSI 参考模型共分为（　）层<br>A. 四　B. 五　C. 六　D. 七</summary><div class="ans"><b>D。</b>TCP/IP 才是四层。</div></details>
-    <details><summary>9. 100 Mbps 的宽带，理论最高下载速度约为（　）<br>A. 100 MB/s　B. 50 MB/s　C. 12.5 MB/s　D. 1 MB/s</summary><div class="ans"><b>C。</b>100 ÷ 8 = 12.5。</div></details>
-    <details><summary>10. 下列设备中工作在物理层的是（　）<br>A. 交换机　B. 路由器　C. 集线器　D. 网关</summary><div class="ans"><b>C。</b></div></details>
+    <details><summary>7. 实现不同网络互联并根据 IP 地址选择路径的设备是（　）<br>A. 集线器　B. 交换机　C. 路由器　D. 中继器</summary><div class="ans"><b>C。</b>2025 单选第 15 题原题。</div></details>
+    <details><summary>8. 下列网络中覆盖范围最大的是（　）<br>A. 局域网　B. 城域网　C. 广域网　D. 校园网</summary><div class="ans"><b>C。</b></div></details>
+    <details><summary>9. OSI 参考模型共分为（　）层<br>A. 四　B. 五　C. 六　D. 七</summary><div class="ans"><b>D。</b>TCP/IP 才是四层。</div></details>
+    <details><summary>10. 100 Mbps 的宽带，理论最高下载速度约为（　）<br>A. 100 MB/s　B. 50 MB/s　C. 12.5 MB/s　D. 1 MB/s</summary><div class="ans"><b>C。</b>100 ÷ 8 = 12.5。</div></details>
+    <details><summary>11. 下列设备中工作在物理层的是（　）<br>A. 交换机　B. 路由器　C. 集线器　D. 网关</summary><div class="ans"><b>C。</b></div></details>
+  <details><summary>12. 下列属于资源子网组成的是（　）<br>A. 路由器　B. 交换机　C. 主机与终端　D. 光纤</summary><div class="ans"><b>C。</b>资源子网由主机、终端等提供资源与服务的设备组成；A、B、D 都属通信子网。</div></details>
   </div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题与简答（4 题）</b></p>
+  
+
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空题与简答（5 题）</b></p>
   <div class="qa">
-    <details><summary>11. 计算机网络按覆盖范围可分为局域网、城域网和 ______。</summary><div class="ans"><b>广域网（WAN）</b>。</div></details>
-    <details><summary>12. 交换机根据 ______ 地址转发数据帧。</summary><div class="ans"><b>MAC</b>（物理地址）。</div></details>
-    <details><summary>13. 简述计算机网络的五种拓扑结构及其特点。</summary><div class="ans"><b>参考答案：</b>①<b>星型</b>：所有节点连接中心节点，结构简单易扩展，但中心故障则全网瘫痪；②<b>总线型</b>：共享一条总线，布线省、成本低，但易冲突；③<b>环型</b>：节点首尾相连成环，传输顺序确定，但单点故障影响大；④<b>树型</b>：分级的星型结构，层次清晰便于管理；⑤<b>网状</b>：多路径互连，可靠性最高，但结构复杂成本高。</div></details>
-    <details><summary>14. 简述 OSI 七层模型的层次名称（自下而上）。</summary><div class="ans"><b>参考答案：</b>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</div></details>
+    <details><summary>13. 计算机网络按覆盖范围可分为局域网、城域网和 ______。</summary><div class="ans"><b>广域网（WAN）</b>。</div></details>
+    <details><summary>14. 交换机根据 ______ 地址转发数据帧。</summary><div class="ans"><b>MAC</b>（物理地址）。</div></details>
+    <details><summary>15. 简述计算机网络的五种拓扑结构及其特点。</summary><div class="ans"><b>参考答案：</b>①<b>星型</b>：所有节点连接中心节点，结构简单易扩展，但中心故障则全网瘫痪；②<b>总线型</b>：共享一条总线，布线省、成本低，但易冲突；③<b>环型</b>：节点首尾相连成环，传输顺序确定，但单点故障影响大；④<b>树型</b>：分级的星型结构，层次清晰便于管理；⑤<b>网状</b>：多路径互连，可靠性最高，但结构复杂成本高。</div></details>
+    <details><summary>16. 简述 OSI 七层模型的层次名称（自下而上）。</summary><div class="ans"><b>参考答案：</b>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</div></details>
+    <details><summary>17. 计算机网络从逻辑功能上分为通信子网和 ______。</summary><div class="ans"><b>资源子网。</b>通信子网管转发传输，资源子网管提供资源与服务（2026 统考填空同源）。</div></details>
   </div>
 
   <div class="btnrow">

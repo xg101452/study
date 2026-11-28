@@ -218,8 +218,8 @@ body.slim section.mod[data-tier="low"]{display:none}
     <a href="#s5">⑤ 个人信息安全</a>
     <a href="#s6">⑥ 信息素养与伦理</a>
     <a href="#s7">易错清单</a>
-    <a href="#s8">必背 14 条</a>
-    <a href="#s9">自测 14 题</a>
+    <a href="#s8">必背 17 条</a>
+    <a href="#s9">自测 17 题</a>
   
     <button class="btn slimtoggle" type="button" onclick="var b=document.body;b.classList.toggle('slim');this.textContent=b.classList.contains('slim')?'显示全部':'只看必考';">显示全部</button>
   </div>
@@ -292,7 +292,11 @@ body.slim section.mod[data-tier="low"]{display:none}
   考试常给一个场景问"破坏了哪个要素"：<b>被看到→保密性；被改动→完整性；用不了→可用性</b>。</div>
 
   <div class="okbox"><b>补充两个常说到的性质：</b><b>可控性</b>（信息传播与内容可管理）与<b>不可否认性</b>（事后不能赖账，靠数字签名实现）。多选题若把"可控性/不可否认性"列进来，一般也算正确项。</div>
-</section>
+
+  <div class="mem"><b>信息安全的定义（可背）：</b>保护信息系统的<b>硬件、软件、数据</b>及<b>人员、物理环境</b>不受偶然或恶意的破坏、更改、泄露，系统能<b>连续可靠正常运行</b>。<br>
+  <b>四个基本特征：完整性（与精确性）、可用性、保密性、可控性</b>——比 CIA 多一个<b>可控性</b>，多选题别漏。<br>
+  <b>威胁来源四类：</b>① <b>自然因素</b>（火灾、水灾、雷击）② <b>系统自身故障</b>（硬件损坏、软件缺陷）③ <b>人为操作失误</b>（误删、误配）④ <b>蓄意破坏</b>（黑客、病毒、内部作案）。</div>
+  </section>
 
 <section class="mod" id="s2">
   <div class="mod-h">
@@ -322,7 +326,20 @@ body.slim section.mod[data-tier="low"]{display:none}
 
   <div class="mem"><b>公私钥方向别弄反（背这句话）：</b><b>签名用私钥，验签用公钥；加密用对方公钥，解密用自己的私钥。</b><br>
   私钥＝自己的印章（只有自己能用）；公钥＝公开的验证工具。</div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">术语</th><th>含义</th></tr>
+    <tr><td><b>明文</b></td><td>加密<b>前</b>的原始信息</td></tr>
+    <tr><td><b>密文</b></td><td>加密<b>后</b>的信息</td></tr>
+    <tr><td><b>加密</b></td><td>把明文<b>变换成密文</b>的过程</td></tr>
+    <tr><td><b>解密</b></td><td>把密文<b>还原成明文</b>的过程</td></tr>
+  </table>
+
+  <div class="mem"><b>加密技术＝加密算法＋密钥，其中算法是核心。</b><br>
+  <b>对称加密：</b>DES、IDEA、AES；最古老的是<b>凯撒密码</b>（换位/代换类）。<br>
+  <b>非对称加密：</b>RSA（最常用）、<b>背包算法</b>。<br>
+  <b>记法：</b>对称＝一把钥匙开一把锁（快、适合大批数据）；非对称＝公钥给别人、私钥留自己（慢、适合传密钥与签名）。</div>
+  </section>
 
 <section class="mod" id="s3">
   <div class="mod-h">
@@ -363,7 +380,17 @@ body.slim section.mod[data-tier="low"]{display:none}
   <b>"只能…才…"这种句式在安全题里几乎必错。</b></span></div>
 
   <div class="okbox"><b>防治五条（简答可写）：</b>①安装<b>杀毒软件并保持病毒库更新</b>；②<b>及时打系统与软件补丁</b>；③<b>不打开陌生邮件附件、不点不明链接、不装来源不明的软件</b>；④<b>U 盘/移动硬盘先查毒再使用</b>；⑤<b>定期备份重要数据</b>。<b>再加一句"杀毒软件不能保证 100% 安全"更稳。</b></div>
-</section>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:150px">分类角度</th><th>类型</th></tr>
+    <tr><td><b>按发作条件</b></td><td><b>定时</b>（到某日期发作）、<b>定数</b>（触发若干次后发作）、<b>随机</b></td></tr>
+    <tr><td><b>按破坏后果</b></td><td><b>良性病毒</b>（只占资源、恶作剧）、<b>恶性病毒</b>（删文件、毁数据、瘫痪系统）</td></tr>
+    <tr><td><b>文件型细分</b></td><td><b>外壳型</b>（附在文件外壳上）、<b>源码型</b>（编进源程序一起编译）、<b>嵌入型</b>（插入文件中间）</td></tr>
+  </table>
+
+  <div class="warn"><b>特征条数两种讲法，按真题口径答：</b>本站按"<b>六特征、传染性最本质</b>"写；有的讲解把特征列成<b>七条</b>（针对性、传染性、潜伏性、触发性、破坏性、变异性、寄生性），并说"<b>破坏性</b>才是区别于正常程序的本质"。<br>
+  <b>应试口径：</b>问"最本质的特征"→ 答<b>传染性</b>（能自我复制传播）；问"病毒与正常程序的区别"→ 答<b>破坏性</b>。判断题把两者对调时，按题目上下文选。</div>
+  </section>
 
 <section class="mod" id="s4">
   <div class="mod-h">
@@ -391,7 +418,11 @@ body.slim section.mod[data-tier="low"]{display:none}
   <span class="no">→ <b>正确</b>。企业出口常用<b>硬件防火墙</b>，个人电脑上装的是<b>软件防火墙</b>。</span></div>
 
   <div class="warnbox"><b>三条"防火墙做不到"必须记：</b>①<b>杀毒</b>（防火墙只看"谁能进出"，不看"文件里有没有毒"）；②<b>防内部作案</b>（内网用户有合法权限，防火墙管不了他做什么）；③<b>防物理途径</b>（U 盘拷入、内网直连）。<b>题目里出现"防火墙可以查杀病毒"——一定错。</b></div>
-</section>
+
+  <div class="mem"><b>防火墙的四大功能（背四个词）：</b><br>
+  ① <b>数据包监测</b>（逐个检查进出报文）② <b>访问控制列表</b>（按 IP/端口规则放行或拒绝）③ <b>状态检查</b>（跟踪连接状态）④ <b>日志记录与警报</b>（留下记录、异常报警）。<br>
+  <b>四个"不能"再补三条：</b>不能<b>检测/清除本机病毒</b>；不能<b>阻止用户双击打开带毒文件</b>；不能<b>拦截垃圾邮件</b>（那是邮件网关/反垃圾系统的活）。</div>
+  </section>
 
 <section class="mod" id="s5">
   <div class="mod-h">
@@ -448,14 +479,36 @@ body.slim section.mod[data-tier="low"]{display:none}
   这类题 2026 专门设了一道，说明"<b>新技术 + 伦理法律</b>"已成新考点。记住两条：①<b>AI 生成内容不得用于造谣、诈骗、侵权</b>；②<b>转发之前先核实，不造谣不传谣是网络社会的基本责任</b>。</span></div>
 
   <div class="mem"><b>社会责任四条：</b><b>不造谣不传谣</b>、<b>尊重知识产权</b>、<b>保护他人隐私</b>、<b>抵制网络暴力与诈骗</b>。</div>
-</section>
+
+  <div class="mem"><b>信息素养的定义：</b>能<b>确定、检索、评估并有效利用</b>信息的能力。<br>
+  <b>四项能力：获取、评价、处理、创造</b>（与"意识/知识/能力/道德"四要素是两个并列的提法，选择题都会用）。</div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">信息伦理</th><th>内容</th></tr>
+    <tr><td><b>底线（底线伦理）</b></td><td><b>无害、公正、平等、互利</b></td></tr>
+    <tr><td><b>自律</b></td><td><b>自尊、自主、慎独、诚信</b></td></tr>
+  </table>
+
+  <div class="tip"><b>辨别虚假信息的七个办法：</b>① 查<b>来源</b>是否权威 ② 判断内容是否<b>合乎常理</b> ③ <b>多方比对</b>主流媒体 ④ 看语言是否<b>夸张煽动</b> ⑤ 图片/音频/视频<b>可被伪造</b>（AI 合成） ⑥ 核对<b>时间戳</b>是否旧闻新炒 ⑦ 看<b>转发链接</b>是否指向山寨站。</div>
+
+  <div class="mem"><b>五部相关法规：</b>《<b>计算机软件保护条例</b>》《<b>计算机信息系统安全保护条例</b>》《<b>计算机信息网络国际联网安全保护管理办法</b>》《<b>计算机病毒防治管理办法</b>》《<b>网络安全法</b>》。<br>
+  <b>知识产权的三部法：</b>《<b>商标法</b>》《<b>专利法</b>》《<b>著作权法</b>》（软件著作权受著作权法保护）。</div>
+
+  <table style="margin-top:12px">
+    <tr><th style="width:120px">软件按版权分</th><th>含义</th></tr>
+    <tr><td><b>商品软件</b></td><td>付费购买，受版权保护，不能随意复制</td></tr>
+    <tr><td><b>共享软件</b></td><td>可试用，试用期满需付费或停止使用（先试后买）</td></tr>
+    <tr><td><b>自由软件</b></td><td>可自由使用、复制、修改、分发（如 Linux）</td></tr>
+    <tr><td><b>公有软件</b></td><td>版权已过期或放弃，任何人都可用</td></tr>
+  </table>
+  </section>
 
 <section class="mod" id="s7">
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#455a64,#6b7f8a)">⑦</div>
     <div>
       <h2>本课易错清单</h2>
-      <span class="tag">十二条</span>
+      <span class="tag">十四条</span>
     </div>
   </div>
   <div class="hr"></div>
@@ -473,6 +526,9 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">10</td><td>数字签名的作用是给文件加密</td><td>签名证明<b>身份与完整性、不可否认</b>；加密是另一件事</td></tr>
     <tr><td class="c">11</td><td>签名用公钥、验签用私钥</td><td><b>私钥签名、公钥验签</b></td></tr>
     <tr><td class="c">12</td><td>信息素养只包括会用电脑</td><td>含<b>意识、知识、能力、道德</b>四方面</td></tr>
+      <tr><td>防火墙能检测并清除本机病毒。</td><td>不能。<b>看谁进出、不看文件有毒没毒</b>；杀毒靠杀毒软件。</td></tr>
+    <tr><td>信息安全的特征只有保密性、完整性、可用性三个。</td><td>基本特征还有<b>可控性</b>（部分教材加<b>不可否认性</b>），多选题别漏。</td></tr>
+
   </table>
 </section>
 
@@ -480,7 +536,7 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#8a5a00,#b8860b)">★</div>
     <div>
-      <h2>本课必背 14 条</h2>
+      <h2>本课必背 17 条</h2>
       <span class="tag">进考场前扫一眼</span>
     </div>
   </div>
@@ -501,6 +557,10 @@ body.slim section.mod[data-tier="low"]{display:none}
     <tr><td class="c">12</td><td>个人信息风险：<b>钓鱼、撞库、恶意二维码、公共 Wi-Fi、APP 过度索权、假冒客服</b></td></tr>
     <tr><td class="c">13</td><td>三法：<b>网络安全法、数据安全法、个人信息保护法</b>；个人信息处理遵循<b>合法、正当、必要</b></td></tr>
     <tr><td class="c">14</td><td>信息素养＝<b>意识、知识、能力、道德</b>；网络伦理靠<b>技术+法律+伦理</b>共同构建；<b>不造谣不传谣</b></td></tr>
+      <tr><td class="c">15</td><td>信息安全保护<b>硬件、软件、数据、人员、物理环境</b>；威胁四来源＝<b>自然因素、系统故障、人为失误、蓄意破坏</b></td></tr>
+    <tr><td class="c">16</td><td>加密技术＝<b>算法＋密钥</b>（<b>算法是核心</b>）；对称 <b>DES/IDEA/AES</b>，非对称 <b>RSA/背包算法</b></td></tr>
+    <tr><td class="c">17</td><td>信息素养四能力＝<b>获取、评价、处理、创造</b>；辨假先查<b>来源</b>、再<b>多方比对</b></td></tr>
+
   </table>
 </section>
 
@@ -508,37 +568,40 @@ body.slim section.mod[data-tier="low"]{display:none}
   <div class="mod-h">
     <div class="mod-no" style="background:linear-gradient(135deg,#22663a,#3f8a56)">✓</div>
     <div>
-      <h2>自测 14 题</h2>
+      <h2>自测 17 题</h2>
       <span class="tag">点题目看答案</span>
     </div>
   </div>
   <div class="hr"></div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:0 0 6px"><b>一、判断题（6 题）</b></p>
   <div class="qa">
     <details><summary>1. 计算机病毒最本质的特征是破坏性。</summary><div class="ans"><b>错误。</b>最本质的是<b>传染性</b>。</div></details>
     <details><summary>2. 计算机感染病毒后，只能通过重装操作系统才能清除。</summary><div class="ans"><b>错误。</b>可用杀毒软件、手工清除、备份恢复（2026 判断 27）。</div></details>
     <details><summary>3. 防火墙既可以是硬件设备，也可以是软件程序。</summary><div class="ans"><b>正确。</b>2024 判断原题。</div></details>
     <details><summary>4. 防火墙可以有效查杀计算机病毒。</summary><div class="ans"><b>错误。</b>防火墙只过滤流量，不查杀病毒。</div></details>
     <details><summary>5. 数字签名用发送者的私钥签名，接收者用其公钥验证。</summary><div class="ans"><b>正确。</b></div></details>
-  </div>
+        <details><summary>6. 防火墙既能过滤流量，也能检测并清除本机病毒。</summary><div class="ans"><b>错。</b>防火墙只管"谁能进出"，<b>不查文件里有没有毒</b>，杀毒要靠杀毒软件。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（5 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>二、单项选择题（6 题）</b></p>
   <div class="qa">
-    <details><summary>6. 信息安全的基本要素不包括（　）<br>A. 保密性　B. 完整性　C. 可用性　D. 美观性</summary><div class="ans"><b>D。</b>三要素是 CIA。</div></details>
-    <details><summary>7. 伪装成正常程序、为攻击者提供远程控制通道的恶意程序是（　）<br>A. 蠕虫　B. 木马　C. 宏病毒　D. 引导区病毒</summary><div class="ans"><b>B。</b>2024 判断题的同源考点。</div></details>
-    <details><summary>8. 下列属于对"完整性"破坏的是（　）<br>A. 密码被窃取　B. 成绩被篡改　C. 网站无法访问　D. 硬盘损坏</summary><div class="ans"><b>B。</b>A 破坏保密性，C/D 破坏可用性。</div></details>
-    <details><summary>9. 关于防火墙，下列说法正确的是（　）<br>A. 能查杀所有病毒　B. 能防止内部人员滥用权限　C. 可在内外网之间过滤流量　D. 只能是硬件设备</summary><div class="ans"><b>C。</b></div></details>
-    <details><summary>10. 利用甲网站泄露的账号密码去尝试登录乙网站，这种行为称为（　）<br>A. 钓鱼　B. 撞库　C. 蠕虫传播　D. 端口扫描</summary><div class="ans"><b>B。</b></div></details>
-  </div>
+    <details><summary>7. 信息安全的基本要素不包括（　）<br>A. 保密性　B. 完整性　C. 可用性　D. 美观性</summary><div class="ans"><b>D。</b>三要素是 CIA。</div></details>
+    <details><summary>8. 伪装成正常程序、为攻击者提供远程控制通道的恶意程序是（　）<br>A. 蠕虫　B. 木马　C. 宏病毒　D. 引导区病毒</summary><div class="ans"><b>B。</b>2024 判断题的同源考点。</div></details>
+    <details><summary>9. 下列属于对"完整性"破坏的是（　）<br>A. 密码被窃取　B. 成绩被篡改　C. 网站无法访问　D. 硬盘损坏</summary><div class="ans"><b>B。</b>A 破坏保密性，C/D 破坏可用性。</div></details>
+    <details><summary>10. 关于防火墙，下列说法正确的是（　）<br>A. 能查杀所有病毒　B. 能防止内部人员滥用权限　C. 可在内外网之间过滤流量　D. 只能是硬件设备</summary><div class="ans"><b>C。</b></div></details>
+    <details><summary>11. 利用甲网站泄露的账号密码去尝试登录乙网站，这种行为称为（　）<br>A. 钓鱼　B. 撞库　C. 蠕虫传播　D. 端口扫描</summary><div class="ans"><b>B。</b></div></details>
+        <details><summary>12. 下列不属于信息安全基本特征的是（　）<br>A. 保密性　B. 完整性　C. 可用性　D. 传染性</summary><div class="ans"><b>D。</b>传染性是<b>计算机病毒</b>的特征，不是信息安全的特征。</div></details>
+</div>
 
-  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（4 题）</b></p>
+  <p style="font-size:13.5px;color:var(--ink2);margin:16px 0 6px"><b>三、填空与简答（5 题）</b></p>
   <div class="qa">
-    <details><summary>11. 信息安全的三个基本要素是保密性、完整性和 ______。</summary><div class="ans"><b>可用性</b>。</div></details>
-    <details><summary>12. 计算机病毒最本质的特征是 ______。</summary><div class="ans"><b>传染性</b>。</div></details>
-    <details><summary>13. 简述计算机病毒的特征。</summary><div class="ans"><b>参考答案：</b>①<b>传染性</b>，能自我复制并传播，是最本质的特征；②<b>潜伏性</b>，侵入后不立即发作；③<b>破坏性</b>，破坏数据或影响系统运行；④<b>隐蔽性</b>，藏于正常程序中不易察觉；⑤<b>可触发性</b>，满足特定条件才发作；⑥<b>衍生性</b>，可变形产生新变种。</div></details>
-    <details><summary>14. 简述防火墙的作用与局限。</summary><div class="ans"><b>参考答案：</b>①<b>作用</b>：设置在内部网络与外部网络之间，按预设规则<b>监控和过滤进出流量</b>，阻断未授权访问、允许合法通信，并可记录日志；形式上有硬件防火墙与软件防火墙。②<b>局限</b>：<b>不能查杀病毒</b>；<b>不能防止内部人员合法权限的滥用</b>；<b>不能防范绕过防火墙的途径</b>（如 U 盘拷贝、内网直连），因此需与杀毒软件、访问控制、备份等措施配合使用。</div></details>
-  </div>
+    <details><summary>13. 信息安全的三个基本要素是保密性、完整性和 ______。</summary><div class="ans"><b>可用性</b>。</div></details>
+    <details><summary>14. 计算机病毒最本质的特征是 ______。</summary><div class="ans"><b>传染性</b>。</div></details>
+    <details><summary>15. 简述计算机病毒的特征。</summary><div class="ans"><b>参考答案：</b>①<b>传染性</b>，能自我复制并传播，是最本质的特征；②<b>潜伏性</b>，侵入后不立即发作；③<b>破坏性</b>，破坏数据或影响系统运行；④<b>隐蔽性</b>，藏于正常程序中不易察觉；⑤<b>可触发性</b>，满足特定条件才发作；⑥<b>衍生性</b>，可变形产生新变种。</div></details>
+    <details><summary>16. 简述防火墙的作用与局限。</summary><div class="ans"><b>参考答案：</b>①<b>作用</b>：设置在内部网络与外部网络之间，按预设规则<b>监控和过滤进出流量</b>，阻断未授权访问、允许合法通信，并可记录日志；形式上有硬件防火墙与软件防火墙。②<b>局限</b>：<b>不能查杀病毒</b>；<b>不能防止内部人员合法权限的滥用</b>；<b>不能防范绕过防火墙的途径</b>（如 U 盘拷贝、内网直连），因此需与杀毒软件、访问控制、备份等措施配合使用。</div></details>
+        <details><summary>17. 信息伦理的底线包括无害、公正、平等和 ______。</summary><div class="ans"><b>互利</b>；自律包括自尊、自主、慎独、诚信。</div></details>
+</div>
 
   <div class="btnrow">
     <button class="btn" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">展开全部答案</button>
